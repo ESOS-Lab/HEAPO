@@ -1,7 +1,7 @@
 all : malloc_free
 
 malloc_free : pos-lib.o pos-malloc.o
-	gcc -o malloc_free malloc_free.c -L /usr/local/lib -lpos
+	arm-xilinx-linux-gnueabi-gcc -o malloc_free malloc_free.c -L . -lpos
 
 #pos-lib.o :
 #	gcc -c -o pos-lib.o pos-lib.c
