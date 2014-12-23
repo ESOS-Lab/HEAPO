@@ -1,0 +1,26 @@
+Git Repository Download
+
+$ git clone https://github.com/ESOS-Lab/HEAPO.git
+
+
+1. linux-xlnx Compile
+
+$ make ARCH=arm UIMAGE_LOADADDR=0x8000 uImage
+
+2. Library Compile
+
+$ cd ~/HEAPO_ARM_3.15/Library/
+$ ./install
+$ make
+$ ./malloc_free create
+$ ./malloc_free persistency
+$ ./malloc_free persistency
+$ ./malloc_free persistency
+
+3. NVRAM Latency Control
+
+$ arm-xilinx-linux-gnueabi-gcc -o latency_controller latency_controller.c
+$ ./latency_controller 0 0
+$ ./latency_controller 5 5
+$ ./latency_controller 10 10
+$ ./latency_controller 15 15
