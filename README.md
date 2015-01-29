@@ -4,7 +4,7 @@ we developed a heap-based persistent object store, HEAPO, to manage persistent o
 
 Publication
 -----
-* Taeho Hwang, Jaemin Jung, and Youjip Won, "HEAPO: Heap-based Persistent Object Store", ACM Transactions on Storage, Accepted for publication, May 2014 
+* Taeho Hwang, Jaemin Jung, and Youjip Won, "[HEAPO: Heap-based Persistent Object Store](http://delivery.acm.org/10.1145/2630000/2629619/a3-hwang.pdf?ip=166.104.46.128&id=2629619&acc=ACTIVE%20SERVICE&key=0EC22F8658578FE1%2E3DD5647BAD8CE12F%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&CFID=595391126&CFTOKEN=80988479&__acm__=1422531290_a779e4b0feaab4060a9ce8ac4e1a9979)", ACM Transactions on Storage, Accepted for publication, May 2014 
 
 Acknowledgement
 -----
