@@ -1931,7 +1931,8 @@ asmlinkage void *sys_pos_seg_alloc(char __user *name, unsigned long len)
 	//해당 객체저장소를 맵핑한 프로세스인지 확인
 	task_pid = record->task_list;
 	while (task_pid) {
-		if (task_pid->pid_nr == task_pid_nr(task)) {
+		if (task_pid-pid_nr == task->tgid){ 
+		//if (task_pid->pid_nr == task_pid_nr(task)) {
 			break;
 		} else {
 			task_pid = task_pid->task_next;
