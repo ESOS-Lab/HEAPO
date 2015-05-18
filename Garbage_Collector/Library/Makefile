@@ -1,0 +1,20 @@
+all : malloc_free
+
+malloc_free : pos-lib.o pos-malloc.o pos-btree.o pos-log.o
+	gcc -o malloc_free malloc_free.c pos-lib.o pos-malloc.o pos-btree.o pos-log.o -lrt
+
+pos-lib.o :
+	gcc -c -o pos-lib.o pos-lib.c
+
+pos-malloc.o :
+	gcc -c -o pos-malloc.o pos-malloc.c
+
+pos-btree.o : 
+	gcc -c -o pos-btree.o pos-btree.c
+
+pos-log.o :
+	gcc -c -o pos-log.o pos-log.c
+
+clean : 
+	rm *.o malloc_free
+

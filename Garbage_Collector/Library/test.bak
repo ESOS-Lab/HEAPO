@@ -1,0 +1,2798 @@
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+     Can't print free chunks.
+    2) Inuse objects
+
+Allocation tree creation
+----- pos_btree_init start -----
+initializing alloc tree
+--------------------------------------
+alloc_tree_init_flag =0
+alloc_tree_meta_update_flag =0
+--------------------------------------
+------ pos_set_prime_object-----
+obj = 0x5ffef8002a20
+ptr->prime obj = 0x5ffef8002a20
+------------------------------
+----- pos_btree_init end-----
+Alloc_tree head = 0x5ffef8002a20
+--------------------------
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687084064
+val = 105548687084064
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 0
+--------------------------
+----- btree_grow start  -----
+----- btree_node_alloc start -----
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+----- btree_node_alloc end -----
+----- btree_grow end  -----
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8002a40
+------ pos_set_prime_object-----
+obj = 0x5ffef8000a20
+ptr->prime obj = 0x5ffef8000a20
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+New Allocation
+key = 105548687093776
+val = 105548687093776
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 1
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8002a40
+------ pos_set_prime_object-----
+obj = 0x5ffef8003010
+ptr->prime obj = 0x5ffef8003010
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8003410, size=134112(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8003410, size=134112(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687094816
+val = 105548687094816
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 1
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8002a40
+------ pos_set_prime_object-----
+obj = 0x5ffef8003420
+ptr->prime obj = 0x5ffef8003420
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8003820, size=133072(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8003820, size=133072(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687095856
+val = 105548687095856
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 1
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8002a40
+------ pos_set_prime_object-----
+obj = 0x5ffef8003830
+ptr->prime obj = 0x5ffef8003830
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8003C30, size=132032(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8003C30, size=132032(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687096896
+val = 105548687096896
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 1
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8002a40
+------ pos_set_prime_object-----
+obj = 0x5ffef8003c40
+ptr->prime obj = 0x5ffef8003c40
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8004040, size=130992(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8004040, size=130992(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687097936
+val = 105548687097936
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 1
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 3
+----- btree_node_alloc start -----
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+----- btree_node_alloc end -----
+check point 4
+check point 5
+----- btree_insert_level -----
+head->height = 1
+--------------------------
+----- btree_grow start  -----
+----- btree_node_alloc start -----
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+----- btree_node_alloc end -----
+----- btree_grow end  -----
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 12
+check point 14
+check point 6
+check point 8
+check point 9
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8002a40
+------ pos_set_prime_object-----
+obj = 0x5ffef8004050
+ptr->prime obj = 0x5ffef8004050
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8004450, size=129952(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8004450, size=129952(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687098976
+val = 105548687098976
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 2
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8002a40
+------ pos_set_prime_object-----
+obj = 0x5ffef8004460
+ptr->prime obj = 0x5ffef8004460
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8004860, size=128912(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8004860, size=128912(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687100016
+val = 105548687100016
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 2
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 3
+----- btree_node_alloc start -----
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+----- btree_node_alloc end -----
+check point 4
+check point 5
+----- btree_insert_level -----
+head->height = 2
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 12
+check point 14
+check point 6
+check point 8
+check point 9
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8002cd0
+------ pos_set_prime_object-----
+obj = 0x5ffef8004870
+ptr->prime obj = 0x5ffef8004870
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8004C70, size=127872(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8004C70, size=127872(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687101056
+val = 105548687101056
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 2
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8002cd0
+------ pos_set_prime_object-----
+obj = 0x5ffef8004c80
+ptr->prime obj = 0x5ffef8004c80
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8005080, size=126832(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8005080, size=126832(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687102096
+val = 105548687102096
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 2
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8002cd0
+------ pos_set_prime_object-----
+obj = 0x5ffef8005090
+ptr->prime obj = 0x5ffef8005090
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8005490, size=125792(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8005490, size=125792(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687103136
+val = 105548687103136
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 2
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 3
+----- btree_node_alloc start -----
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+----- btree_node_alloc end -----
+check point 4
+check point 5
+----- btree_insert_level -----
+head->height = 2
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 12
+check point 14
+check point 6
+check point 8
+check point 9
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8002dc0
+------ pos_set_prime_object-----
+obj = 0x5ffef80054a0
+ptr->prime obj = 0x5ffef80054a0
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF80058A0, size=124752(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF80058A0, size=124752(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687104176
+val = 105548687104176
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 2
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8002dc0
+------ pos_set_prime_object-----
+obj = 0x5ffef80058b0
+ptr->prime obj = 0x5ffef80058b0
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8005CB0, size=123712(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8005CB0, size=123712(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687105216
+val = 105548687105216
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 2
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8002dc0
+------ pos_set_prime_object-----
+obj = 0x5ffef8005cc0
+ptr->prime obj = 0x5ffef8005cc0
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF80060C0, size=122672(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF80060C0, size=122672(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687106256
+val = 105548687106256
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 2
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 3
+----- btree_node_alloc start -----
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+----- btree_node_alloc end -----
+check point 4
+check point 5
+----- btree_insert_level -----
+head->height = 2
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 12
+check point 14
+check point 6
+check point 8
+check point 9
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8002eb0
+------ pos_set_prime_object-----
+obj = 0x5ffef80060d0
+ptr->prime obj = 0x5ffef80060d0
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF80064D0, size=121632(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF80064D0, size=121632(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687107296
+val = 105548687107296
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 2
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8002eb0
+------ pos_set_prime_object-----
+obj = 0x5ffef80064e0
+ptr->prime obj = 0x5ffef80064e0
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF80068E0, size=120592(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF80068E0, size=120592(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687108336
+val = 105548687108336
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 2
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8002eb0
+------ pos_set_prime_object-----
+obj = 0x5ffef80068f0
+ptr->prime obj = 0x5ffef80068f0
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8006CF0, size=119552(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8006CF0, size=119552(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687109376
+val = 105548687109376
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 2
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 3
+----- btree_node_alloc start -----
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+----- btree_node_alloc end -----
+check point 4
+check point 5
+----- btree_insert_level -----
+head->height = 2
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 3
+----- btree_node_alloc start -----
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+----- btree_node_alloc end -----
+check point 4
+check point 5
+----- btree_insert_level -----
+head->height = 2
+--------------------------
+----- btree_grow start  -----
+----- btree_node_alloc start -----
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+----- btree_node_alloc end -----
+----- btree_grow end  -----
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 12
+check point 14
+check point 6
+check point 8
+check point 9
+check point 1
+check point 2
+check point 10
+check point 11
+check point 12
+check point 14
+check point 6
+check point 8
+check point 9
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8024010
+------ pos_set_prime_object-----
+obj = 0x5ffef8006d00
+ptr->prime obj = 0x5ffef8006d00
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8007100, size=118512(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8007100, size=118512(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687110416
+val = 105548687110416
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8024010
+------ pos_set_prime_object-----
+obj = 0x5ffef8007110
+ptr->prime obj = 0x5ffef8007110
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8007510, size=117472(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8007510, size=117472(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687111456
+val = 105548687111456
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8024010
+------ pos_set_prime_object-----
+obj = 0x5ffef8007520
+ptr->prime obj = 0x5ffef8007520
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8007920, size=116432(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8007920, size=116432(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687112496
+val = 105548687112496
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 3
+----- btree_node_alloc start -----
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+----- btree_node_alloc end -----
+check point 4
+check point 5
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 12
+check point 14
+check point 6
+check point 8
+check point 9
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8024220
+------ pos_set_prime_object-----
+obj = 0x5ffef8007930
+ptr->prime obj = 0x5ffef8007930
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8007D30, size=115392(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8007D30, size=115392(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687113536
+val = 105548687113536
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8024220
+------ pos_set_prime_object-----
+obj = 0x5ffef8007d40
+ptr->prime obj = 0x5ffef8007d40
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8008140, size=114352(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8008140, size=114352(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687114576
+val = 105548687114576
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8024220
+------ pos_set_prime_object-----
+obj = 0x5ffef8008150
+ptr->prime obj = 0x5ffef8008150
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8008550, size=113312(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8008150, object's data = 25
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8008550, size=113312(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8008150, object's data = 25
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687115616
+val = 105548687115616
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 3
+----- btree_node_alloc start -----
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+----- btree_node_alloc end -----
+check point 4
+check point 5
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 12
+check point 14
+check point 6
+check point 8
+check point 9
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8024310
+------ pos_set_prime_object-----
+obj = 0x5ffef8008560
+ptr->prime obj = 0x5ffef8008560
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8008960, size=112272(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8008560, object's data = 10
+      object = 0x5FFEF8008150, object's data = 25
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8008960, size=112272(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8008560, object's data = 10
+      object = 0x5FFEF8008150, object's data = 25
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687116656
+val = 105548687116656
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8024310
+------ pos_set_prime_object-----
+obj = 0x5ffef8008970
+ptr->prime obj = 0x5ffef8008970
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8008D70, size=111232(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8008970, object's data = 10
+      object = 0x5FFEF8008560, object's data = 10
+      object = 0x5FFEF8008150, object's data = 25
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8008D70, size=111232(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8008970, object's data = 10
+      object = 0x5FFEF8008560, object's data = 10
+      object = 0x5FFEF8008150, object's data = 25
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687117696
+val = 105548687117696
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8024310
+------ pos_set_prime_object-----
+obj = 0x5ffef8008d80
+ptr->prime obj = 0x5ffef8008d80
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8009180, size=110192(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8008D80, object's data = 90
+      object = 0x5FFEF8008970, object's data = 10
+      object = 0x5FFEF8008560, object's data = 10
+      object = 0x5FFEF8008150, object's data = 25
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8009180, size=110192(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8008D80, object's data = 90
+      object = 0x5FFEF8008970, object's data = 10
+      object = 0x5FFEF8008560, object's data = 10
+      object = 0x5FFEF8008150, object's data = 25
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687118736
+val = 105548687118736
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 3
+----- btree_node_alloc start -----
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+----- btree_node_alloc end -----
+check point 4
+check point 5
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 3
+----- btree_node_alloc start -----
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+----- btree_node_alloc end -----
+check point 4
+check point 5
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 12
+check point 14
+check point 6
+check point 8
+check point 9
+check point 1
+check point 2
+check point 10
+check point 11
+check point 12
+check point 14
+check point 6
+check point 8
+check point 9
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8024400
+------ pos_set_prime_object-----
+obj = 0x5ffef8009190
+ptr->prime obj = 0x5ffef8009190
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8009590, size=109152(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8009190, object's data = 90
+      object = 0x5FFEF8008D80, object's data = 90
+      object = 0x5FFEF8008970, object's data = 10
+      object = 0x5FFEF8008560, object's data = 10
+      object = 0x5FFEF8008150, object's data = 25
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8009590, size=109152(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8009190, object's data = 90
+      object = 0x5FFEF8008D80, object's data = 90
+      object = 0x5FFEF8008970, object's data = 10
+      object = 0x5FFEF8008560, object's data = 10
+      object = 0x5FFEF8008150, object's data = 25
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687119776
+val = 105548687119776
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8024400
+------ pos_set_prime_object-----
+obj = 0x5ffef80095a0
+ptr->prime obj = 0x5ffef80095a0
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF80099A0, size=108112(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF80095A0, object's data = 2
+      object = 0x5FFEF8009190, object's data = 90
+      object = 0x5FFEF8008D80, object's data = 90
+      object = 0x5FFEF8008970, object's data = 10
+      object = 0x5FFEF8008560, object's data = 10
+      object = 0x5FFEF8008150, object's data = 25
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF80099A0, size=108112(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF80095A0, object's data = 2
+      object = 0x5FFEF8009190, object's data = 90
+      object = 0x5FFEF8008D80, object's data = 90
+      object = 0x5FFEF8008970, object's data = 10
+      object = 0x5FFEF8008560, object's data = 10
+      object = 0x5FFEF8008150, object's data = 25
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687120816
+val = 105548687120816
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8024400
+------ pos_set_prime_object-----
+obj = 0x5ffef80099b0
+ptr->prime obj = 0x5ffef80099b0
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8009DB0, size=107072(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF80099B0, object's data = 2
+      object = 0x5FFEF80095A0, object's data = 2
+      object = 0x5FFEF8009190, object's data = 90
+      object = 0x5FFEF8008D80, object's data = 90
+      object = 0x5FFEF8008970, object's data = 10
+      object = 0x5FFEF8008560, object's data = 10
+      object = 0x5FFEF8008150, object's data = 25
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF8009DB0, size=107072(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF80099B0, object's data = 2
+      object = 0x5FFEF80095A0, object's data = 2
+      object = 0x5FFEF8009190, object's data = 90
+      object = 0x5FFEF8008D80, object's data = 90
+      object = 0x5FFEF8008970, object's data = 10
+      object = 0x5FFEF8008560, object's data = 10
+      object = 0x5FFEF8008150, object's data = 25
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687121856
+val = 105548687121856
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 3
+----- btree_node_alloc start -----
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+----- btree_node_alloc end -----
+check point 4
+check point 5
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 12
+check point 14
+check point 6
+check point 8
+check point 9
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8024580
+------ pos_set_prime_object-----
+obj = 0x5ffef8009dc0
+ptr->prime obj = 0x5ffef8009dc0
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF800A1C0, size=106032(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8009DC0, object's data = 2
+      object = 0x5FFEF80099B0, object's data = 2
+      object = 0x5FFEF80095A0, object's data = 2
+      object = 0x5FFEF8009190, object's data = 90
+      object = 0x5FFEF8008D80, object's data = 90
+      object = 0x5FFEF8008970, object's data = 10
+      object = 0x5FFEF8008560, object's data = 10
+      object = 0x5FFEF8008150, object's data = 25
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
+
+POS test start
+
+  Before pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF800A1C0, size=106032(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF8009DC0, object's data = 2
+      object = 0x5FFEF80099B0, object's data = 2
+      object = 0x5FFEF80095A0, object's data = 2
+      object = 0x5FFEF8009190, object's data = 90
+      object = 0x5FFEF8008D80, object's data = 90
+      object = 0x5FFEF8008970, object's data = 10
+      object = 0x5FFEF8008560, object's data = 10
+      object = 0x5FFEF8008150, object's data = 25
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =0
+--------------------------------------
+large bin in next size
+key = 105548687122896
+val = 105548687122896
+head = 0x5ffef8002a20
+----- btree_insert_level -----
+head->height = 3
+--------------------------
+----- btree_insert_level RETRY -----
+check point 1
+check point 2
+check point 10
+check point 11
+check point 13
+Allocation tree mapping
+--------------------------------------
+alloc_tree_init_flag =1
+alloc_tree_meta_update_flag =1
+--------------------------------------
+check point 14
+ptr = 0x5ffef8024580
+------ pos_set_prime_object-----
+obj = 0x5ffef800a1d0
+ptr->prime obj = 0x5ffef800a1d0
+------------------------------
+  After pos_malloc()
+    1) Free objects
+      ******************** Free chunks of `object_1` ************************
+      *  1. Fast bins(0~7)
+      *  2. Unsorted(1) / Small(2~63) / Large(64~128) bins
+      *    [  1] addr=0x5FFEF800A5D0, size=104992(L)
+      *    [ 26] addr=0x5FFEF8000E20, size=416(L)
+      ***********************************************************************
+    2) Inuse objects
+      object = 0x5FFEF800A1D0, object's data = 62
+      object = 0x5FFEF8009DC0, object's data = 2
+      object = 0x5FFEF80099B0, object's data = 2
+      object = 0x5FFEF80095A0, object's data = 2
+      object = 0x5FFEF8009190, object's data = 90
+      object = 0x5FFEF8008D80, object's data = 90
+      object = 0x5FFEF8008970, object's data = 10
+      object = 0x5FFEF8008560, object's data = 10
+      object = 0x5FFEF8008150, object's data = 25
+      object = 0x5FFEF8007D40, object's data = 25
+      object = 0x5FFEF8007930, object's data = 25
+      object = 0x5FFEF8007520, object's data = 46
+      object = 0x5FFEF8007110, object's data = 46
+      object = 0x5FFEF8006D00, object's data = 9
+      object = 0x5FFEF80068F0, object's data = 9
+      object = 0x5FFEF80064E0, object's data = 9
+      object = 0x5FFEF80060D0, object's data = 4
+      object = 0x5FFEF8005CC0, object's data = 4
+      object = 0x5FFEF80058B0, object's data = 77
+      object = 0x5FFEF80054A0, object's data = 77
+      object = 0x5FFEF8005090, object's data = 77
+      object = 0x5FFEF8004C80, object's data = 86
+      object = 0x5FFEF8004870, object's data = 86
+      object = 0x5FFEF8004460, object's data = 86
+      object = 0x5FFEF8004050, object's data = 7
+      object = 0x5FFEF8003C40, object's data = 7
+      object = 0x5FFEF8003830, object's data = 33
+      object = 0x5FFEF8003420, object's data = 33
+      object = 0x5FFEF8003010, object's data = 32
+      object = 0x5FFEF8000A20, object's data = 64
+
+
