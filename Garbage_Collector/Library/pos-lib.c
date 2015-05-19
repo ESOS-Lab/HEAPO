@@ -19,7 +19,7 @@
 #define POS_NAME_TABLE		25
 
 //#define DEBUG	1
-#define DEBUG	1
+#define DEBUG	0
 
 
 /*struct pos_name_entry {
@@ -328,21 +328,21 @@ pos_seg_alloc(char *name, unsigned long len)
 	struct pos_name_entry *name_entry;
 	int index;
 	
-	printf("pos_seg_alloc ck 1\n");
+	//printf("pos_seg_alloc ck 1\n");
 	if (strlen(name) >= POS_NAME_LENGTH)
 		return (void *)0;
-	printf("pos_seg_alloc ck 2\n");
+	//printf("pos_seg_alloc ck 2\n");
 	//라이브러리에서 관리하는 name table 먼저 확인
 	index = pos_name_table_index(name);
 	name_entry = name_table[index];
-	printf("pos_seg_alloc ck 3\n");
+	//printf("pos_seg_alloc ck 3\n");
 	while (name_entry) {
 		if (strcmp(name, name_entry->name) == 0) {
 			void *addr;
-			printf("pos_seg_alloc ck 4\n");
+			//printf("pos_seg_alloc ck 4\n");
 			//sys_pos_seg_alloc() 시스템 콜 호출
 			addr = (void *)syscall(303, name, len);
-			printf("pos_seg_alloc ck 5\n");
+			//printf("pos_seg_alloc ck 5\n");
 			if (addr == (void *)0) {
 				debug_printf("pos_seg_alloc() error!\n");
 			} else {
@@ -353,7 +353,7 @@ pos_seg_alloc(char *name, unsigned long len)
 				
 			return addr;
 		} else {
-			printf("pos_seg_alloc ck 6\n");
+			//printf("pos_seg_alloc ck 6\n");
 			name_entry = name_entry->next;
 		}
 	}

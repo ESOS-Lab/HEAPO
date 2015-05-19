@@ -293,7 +293,7 @@ errout:
 				}
 
 				oid_ret = syscall(307, name, &value_test);
-				if(oid_ret = -1)
+				if(oid_ret = -1 && POS_DEBUG ==1)
 				{
 					printf("error, oid_ret = %d\n", oid_ret);
 				}
@@ -315,7 +315,10 @@ errout:
 				insert_lock();
 				return_val = alloc_tree_insert(Alloc_tree, &p, &value_test, 0);
 				insert_unlock();
-				//printf("return_val = %d\n", return_val);
+				if(POS_DEBUG == 1)
+				{
+					printf("return_val = %d\n", return_val);
+				}
 
 				if(POS_DEBUG == 1)
 				{
@@ -373,7 +376,7 @@ errout:
 
 				
 				oid_ret = syscall(307, name, &value_test);
-				if(oid_ret = -1)
+				if(oid_ret = -1 && POS_DEBUG == 1)
 				{
 					printf("error, oid_ret = %d\n", oid_ret);
 				}
@@ -394,7 +397,10 @@ errout:
 				insert_lock();
 				return_val = alloc_tree_insert(Alloc_tree, &p, &value_test, 0);
 				insert_unlock();
-				printf("return_val = %d\n", return_val);
+				if(POS_DEBUG == 1)
+				{
+					printf("return_val = %d\n", return_val);
+				}
 				
 				if(POS_DEBUG == 1)
 				{
@@ -489,7 +495,7 @@ errout:
 					}
 					
 					oid_ret = syscall(307, name, &value_test);
-					if(oid_ret == -1)
+					if(oid_ret == -1 && POS_DEBUG == 1)
 					{
 						printf("error, oid_ret = %d\n", oid_ret);
 					}
@@ -511,8 +517,10 @@ errout:
 					insert_lock();
 					return_val = alloc_tree_insert(Alloc_tree, &p, &value_test, 0);
 					insert_unlock();
-					
-					printf("return_val = %d\n", return_val);
+					if(POS_DEBUG ==1)
+					{
+						printf("return_val = %d\n", return_val);
+					}
 					if(POS_DEBUG == 1)
 					{
 						ptr=pos_btree_lookup(Alloc_tree, &p);
@@ -557,7 +565,7 @@ errout:
 					}
 					
 					oid_ret = syscall(307, name, &value_test);
-					if(oid_ret = -1)
+					if(oid_ret = -1 && POS_DEBUG == 1)
 					{
 						printf("error, oid_ret = %d\n", oid_ret);
 					}
@@ -579,7 +587,10 @@ errout:
 					insert_lock();
 					return_val = alloc_tree_insert(Alloc_tree, &p, &value_test, 0);
 					insert_unlock();
-					printf("return_val = %d\n", return_val);
+					if(POS_DEBUG ==1)
+					{
+						printf("return_val = %d\n", return_val);
+					}
 
 					if(POS_DEBUG == 1)
 					{
@@ -745,7 +756,7 @@ errout:
 					}
 					
 					oid_ret = syscall(307, name, &value_test);
-					if(oid_ret = -1)
+					if(oid_ret = -1 && POS_DEBUG == 1)
 					{
 						printf("error, oid_ret = %d\n", oid_ret);
 					}
@@ -763,7 +774,10 @@ errout:
 					insert_lock();
 					return_val = alloc_tree_insert(Alloc_tree, &p, &value_test, 0);
 					insert_unlock();
-					printf("return_val = %d\n", return_val);
+					if(POS_DEBUG == 1)
+					{
+						printf("return_val = %d\n", return_val);
+					}
 					
 					if(POS_DEBUG == 1)
 					{
@@ -898,7 +912,7 @@ errout:
 					}
 					
 					oid_ret = syscall(307, name, &value_test);
-					if(oid_ret == -1)
+					if(oid_ret == -1 && POS_DEBUG == 1)
 					{
 						printf("error, oid_ret = %d\n", oid_ret);
 					}
@@ -924,8 +938,10 @@ errout:
 					insert_lock();
 					return_val = alloc_tree_insert(Alloc_tree, &p, &value_test, 0);
 					insert_unlock();
-					
-					printf("return_val = %d\n", return_val);
+					if(POS_DEBUG == 1)
+					{
+						printf("return_val = %d\n", return_val);
+					}
 					if(POS_DEBUG == 1)
 					{
 						ptr=pos_btree_lookup(Alloc_tree, &p);
@@ -960,15 +976,15 @@ errout:
 new_alloc:
 
 		// 6. new allocation
-		printf("this point : new alloc\n");
+		//printf("this point : new alloc\n");
 		size = (nb + MINSIZE +2*SIZE_SZ + pagemask) & ~pagemask;
 		size += DEFAULT_PAD;
 
 		//char* mm = (char*)(SEG_ALLOC(0, size, PROT_READ|PROT_WRITE, MAP_PRIVATE));
-		printf("check 1\n");
+		//printf("check 1\n");
 		char *mm = (char *)pos_seg_alloc(name, size);
 		memset(mm , 0 , size);
-		printf("check 2\n");
+		//printf("check 2\n");
 
 #if CONSISTENCY == 1
 		pos_log_insert_malloc_free(name, (unsigned long)mm, size);
@@ -980,11 +996,11 @@ new_alloc:
 #else
 			av->system_mem += size;
 #endif
-			printf("check 3\n");
+			//printf("check 3\n");
 			mchunkptr p;
 
 			p = (mchunkptr)mm;
-			printf("check 4\n");
+			//printf("check 4\n");
 			remainder_size = size - nb - 2*SIZE_SZ;
 			remainder = chunk_at_offset(p, nb);
 
@@ -993,7 +1009,7 @@ new_alloc:
 #else
 			insert_to_unsorted(av, remainder, bck, fwd, remainder_size);
 #endif
-			printf("check 5\n");
+			//printf("check 5\n");
 			/*if (in_smallbin_range(nb))
 				av->last_remainder = remainder;*/
 
@@ -1010,7 +1026,7 @@ new_alloc:
 
 			//return p;
 			//dk s
-			printf("check 6\n");
+			//printf("check 6\n");
 			p2 = chunk2mem(p);
 
 			if(alloc_tree_init_flag == 1 && alloc_tree_meta_update_flag == 0)
@@ -1023,7 +1039,7 @@ new_alloc:
 				}
 				
 				oid_ret = syscall(307, name, &value_test);
-				if(oid_ret = -1)
+				if(oid_ret = -1 && POS_DEBUG == 1)
 				{
 					printf("error, oid_ret = %d\n", oid_ret);
 				}
@@ -1034,7 +1050,10 @@ new_alloc:
 				insert_lock();
 				return_val = alloc_tree_insert(Alloc_tree, &p2, &value_test, 0);
 				insert_unlock();
-				printf("return_val = %d\n", return_val);
+				if(POS_DEBUG == 1)
+				{
+					printf("return_val = %d\n", return_val);
+				}
 				
 				if(POS_DEBUG == 1)
 				{

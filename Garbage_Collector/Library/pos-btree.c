@@ -142,8 +142,8 @@ int tree_height;
 extern char* Alloc_tree;
 struct btree_head *root_node_ptr = NULL;
 unsigned long *node_ptr = NULL;
-extern int garbage_count;
-extern int find_count;
+int garbage_count = 0;
+int find_count = 0;
 //dk e
 
 
@@ -164,7 +164,7 @@ static unsigned long *btree_node_alloc(char *name)
 	alloc_tree_meta_update_flag = 1;
 	//dk e
 	node = (unsigned long *)pos_malloc(name, NODESIZE);
-	printf("alloc node = %p\n", node);
+	//printf("alloc node = %p\n", node);
 	alloc_tree_meta_update_flag = 0;
 
 	if(POS_DEBUG == 1)
@@ -1106,7 +1106,10 @@ static int btree_grow(char *name, struct btree_head *head, struct btree_geo *geo
 	int fill;
 
 	//dk s
-	printf("----- btree_grow start  -----\n");
+	if(POS_DEBUG ==1 )
+	{
+		printf("----- btree_grow start  -----\n");
+	}
 	//node = btree_node_alloc(head, gfp);
 	node = btree_node_alloc(name);
 	//dk e
@@ -1127,7 +1130,10 @@ static int btree_grow(char *name, struct btree_head *head, struct btree_geo *geo
 	head->height++;
 #endif
 	//dk s
-	printf("----- btree_grow end  -----\n");
+	if(POS_DEBUG ==1 )
+	{
+		printf("----- btree_grow end  -----\n");
+	}
 	//dk e
 	
 	return 0;

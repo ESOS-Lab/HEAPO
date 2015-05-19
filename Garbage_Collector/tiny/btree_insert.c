@@ -6,7 +6,7 @@
 //#include "list/pos-list.h" 
 //#include "hashtable/pos-hashtable.h"
 //#include "hashtable/pos-hashtable_private.h" 
-#include "btree/pos-btree.h" 
+#include "pos-btree.h" 
 //#include "btree/@btree-type.h" 
 //#include "btree/@btree-128.h" 
 
@@ -46,8 +46,8 @@ static void smerge(char * name , struct btree_head * head , struct btree_geo * g
 
 //dk s
 extern char* Alloc_tree;
-int garbage_count = 0;
-int find_count = 0;
+extern int garbage_count;
+extern int find_count;
 extern void * dk_buf[];
 //dk e
 
@@ -68,7 +68,7 @@ const float smax_load_factor = 0.65;
 #define ENOENT 2
 #define ENOMEM	12
 static int static_key[3000000] = {0} ;
-static int debug_int = 0 ;  
+
 struct btree_geo{
 	int keylen ;
 	int no_pairs;
@@ -77,7 +77,47 @@ struct btree_geo{
 
 //dk s
 int insert_num = 0;
+int alloc_node_count = 0;
 //dk e
+
+static inline void __btree_init(struct btree_head *head)
+{
+	head->node = NULL;
+	head->height = 0;
+}
+
+int pos_sbtree_init(char *name)
+{
+	struct btree_head *head;
+
+	if (pos_create(name) == 0)
+		return -1;
+
+	head = (struct btree_head *)pos_malloc(name, sizeof(struct btree_head));
+	pos_set_prime_object(name, head);
+	
+	__btree_init(head);
+	//head->mempool = mempool_create(0, btree_alloc, btree_free, NULL);
+	//if (!head->mempool)
+	//	return -ENOMEM;
+
+#if CONSISTENCY == 1
+	pos_transaction_end(name);
+	pos_log_unmap(name);
+#endif
+	pos_unmap(name);
+	return 0;
+}
+
+int pos_btree_open(char *name)
+{
+	if (pos_map(name) == 1) {
+		return 0;
+	} else
+		return -1;
+}
+
+
 
 void print_time(struct timeval T1 , struct timeval T2){
        long sec,usec;
@@ -99,12 +139,58 @@ void print_time(struct timeval T1 , struct timeval T2){
 
         time = (double)sec + (double)usec/1000000;
 
-        printf("[TIME] :%8ld sec %06ldus.\n",sec,usec);
+        printf("Insert Time          :%6ld sec %06ldus\n",sec,usec);
+	  //printf("[Time]:%8ld sec %06ld us\n" , sec , usec) ; 
 
+}
 
+void print_time1(struct timeval T1 , struct timeval T2){
+       long sec,usec;
+        double time;
+        double rate;
 
+        time_t t;
 
-        //printf("[Time]:%8ld sec %06ld us\n" , sec , usec) ; 
+        if(T1.tv_usec > T2.tv_usec)
+        {
+                sec = T2.tv_sec - T1.tv_sec -1;
+                usec = 1000000 + T2.tv_usec - T1.tv_usec;
+        }
+        else
+        {
+                sec = T2.tv_sec - T1.tv_sec;
+                usec = T2.tv_usec - T1.tv_usec;
+        }
+
+        time = (double)sec + (double)usec/1000000;
+
+        printf("Finding Time         :%6ld sec %06ldus\n",sec,usec);
+	  //printf("[Time]:%8ld sec %06ld us\n" , sec , usec) ; 
+
+}
+
+void print_time2(struct timeval T1 , struct timeval T2){
+       long sec,usec;
+        double time;
+        double rate;
+
+        time_t t;
+
+        if(T1.tv_usec > T2.tv_usec)
+        {
+                sec = T2.tv_sec - T1.tv_sec -1;
+                usec = 1000000 + T2.tv_usec - T1.tv_usec;
+        }
+        else
+        {
+                sec = T2.tv_sec - T1.tv_sec;
+                usec = T2.tv_usec - T1.tv_usec;
+        }
+
+        time = (double)sec + (double)usec/1000000;
+
+        printf("Freeing Time         :%6ld sec %06ldus\n",sec,usec);
+	  //printf("[Time]:%8ld sec %06ld us\n" , sec , usec) ; 
 
 }
 
@@ -297,6 +383,9 @@ unsigned long* sbtree_node_alloc(char * name){
 	unsigned long * node ; 	
 	int i ; 	
 	node = (unsigned long *)pos_malloc(name , NODESIZE) ; 	
+	//dk s
+	alloc_node_count++;
+	//dk e
 	if(node){ 
 		memset(node , 0 , NODESIZE) ; 	
 	}
@@ -814,7 +903,7 @@ void *sbtree_lookup( char * name ,unsigned long * key){
         return NULL;
 
 } 
-static int index_counter = 0 ; 	
+
 int spos_btree_insert( char * name , void *_key , void *_val , unsigned long val_size){ 
 	struct btree_head * head ; 	
 	unsigned long * key , * val ; 	
@@ -860,72 +949,10 @@ int spos_btree_insert( char * name , void *_key , void *_val , unsigned long val
  
 }
 
-/*int spos_btree_remove( char * name , void *_key){ 
-	struct btree_head * head; 	
-	unsigned long * key;  	
-        int rval;
-
-        if (name==NULL || key==NULL)
-                return -1;
-
-        key = (unsigned long *)_key;
-        head = (struct btree_head *)pos_get_prime_object(name);
-        if (head->height == 0)
-                return -1;
-
-        //return btree_remove_level(head, geo, key, 1);
-        //return btree_remove_level(name, head, &btree_geo128, key, 1);
-        rval = sbtree_remove_level(name, head, &btree_geo128, key, 1);
-        return rval;
-
-}*/
- 
-static int btree_sum = 0 ; 	 
-void* normal_btree_insert(void * data){ 
-	int dat = *(int *)data ; 	
-	int ret_dat= dat*30000 ; 	
-	int i = 0 ; 	
-	for( i = 0 + ret_dat ; i < 30000 + ret_dat ; i++){ 
-		pos_btree_insert(obj_store,&static_key[i],&static_key[i],0);
-	}
-}
-void* normal_btree_remove(void * data){ 
-	int dat = *(int *)data ; 	
-	int ret_dat = dat * 30000 ; 	
-	int i = 0 ; 	
-	for( i = 0 + ret_dat ; i < 30000 + ret_dat ; i++){ 
-//		printf("%d\n" , i) ;
-		pos_btree_remove(obj_store , &static_key[i]) ; 	
-	}	
-}  
-void* lock_btree_insert(void * data){ 
-	int dat = *(int *)data ; 	
-	int ret_dat= dat*10 ; 	
-	int i = 0 ; 	
-	printf("[%s]\n" , __func__ ) ; 	
-	printf("data : %d\n" , dat) ; 
-	//for( i = 0 + ret_dat ; i < 30000 + ret_dat ; i++){ 
-	for( i = 0 + ret_dat ; i < 10 + ret_dat ; i++){ 
-		m_lock() ; 
-		printf("====== iteratiron = %d\n", i);
-		pos_btree_insert(obj_store,&static_key[i],&static_key[i],0);
-		m_unlock() ; 	
-	}
-} 
-void* lock_btree_remove(void * data){ 
-	int dat = *(int *)data ; 	
-	int ret_dat = dat * 30000 ; 	
-	int i = 0 ; 	
-	for( i = 0 + ret_dat ; i < 30000 + ret_dat ; i++){ 
-		m_lock() ; 	
-		pos_btree_remove(obj_store , &static_key[i]) ; 	
-		m_unlock() ;
-	}	
-} 
 void* stm_btree_insert(void * data){ 
-	printf("[%s]\n" , __func__ ) ; 	
+	//printf("[%s]\n" , __func__ ) ; 	
 	int dat = *(int *)data ; 	
-	printf("data : %d\n" , dat) ; 
+	//printf("data : %d\n" , dat) ; 
 	int ret_dat = dat*insert_num; 	
 	
 	int i = 0 ; 	
@@ -936,106 +963,25 @@ void* stm_btree_insert(void * data){
 	TM_EXIT_THREAD; 
 
 }
-void* stm_btree_remove(void * data){ 
-	//printf("[%s]\n" , __func__ ) ;
-	int i = 0 ; 	
-	int dat = *(int *)data ; 	
-//	t_lock() ; 	
-	int ret_dat = dat*30000 ; 	
-	TM_INIT_THREAD ; 	
-	for( i = 0+ret_dat ; i < 30000+ret_dat ; i++){ 
-		spos_btree_remove( obj_store , &static_key[i]) ; 		
-	}	
-	TM_EXIT_THREAD ;
-//	t_unlock(); 	 
-}
-void* stm_btree_lookup_nil(void * data){ 
-	int dat = *(int *)data ; 	
-	int i = 0 ; 	
-	for( i = 0 ; i < 3000000 ; i++){ 
-		void * addr = sbtree_lookup(obj_store , &static_key[i]) ; 
-		printf("%d's [%p] is not nil remove is not thread-safe\n" , i , addr) ;
-		if(addr != NULL ) sleep(2); 
-	}
-} 
-void* stm_btree_lookup(void * data){ 
-	//printf("[%s]\n" , __func__ ) ; 	
-	int i = 0 ; 	
-//	int data = *(int*)data; 	
-//	for( i = 0 + (data*3000) ; i < 3000+(data*3000) ; i++ );
-// 	sequential count
-	int dat = *(int *)data ; 	
-
-	for( i = 0  ; i < 3000000 ; i++){ 
-//		void * addr = sbtree_lookup( obj_store , &i) ; 	
-		void * addr = sbtree_lookup( obj_store , &static_key[i]) ;
-		if( addr == NULL ) sleep(2);
-		printf("[%d] found addr : [%p]\n" , i , addr) ;
-	}
-}  
  
-void help(){ 
-	printf("[1] normal btree insert \n") ; 	
-	printf("[2] normal btree remove \n") ; 	
-	printf("[3] lock   btree insert \n") ; 	
-	printf("[4] lock   btree remove \n") ; 	
-	printf("[5] stm    btree insert \n") ; 	
-	printf("[6] stm    btree remove \n") ; 	
-	printf("[7] lookup addr         \n") ; 	
-	printf("[8] lookup nil		\n") ; 
-}
 int main(int argc , char ** argv){ 
 	struct timeval T1,T2 ;
-	struct timeval T_GC1,T_GC2 ;
+	struct timeval T_GC1,T_GC2, T_GC3, T_GC4;
 	pthread_t * threads; 
-	if( argc != 5 ){
-		help();	
-		exit(1) ; 	
-	}
-	// input obj , thread_num ;
+
 	obj_store = argv[1] ; 	
 	int thread_num = atoi( argv[2] ) ; 	
-	int num = atoi( argv[3] ) ; 	
-	insert_num = atoi(argv[4]);
-
-	
-	//dk s
+	insert_num = atoi(argv[3]);
+	int alloc_size = 0;
+	char answer1;
+	char answer2;
 	pos_map(Alloc_tree);
-	/*
-	int ret = 0;
-	printf("main ck point 1\n");
-	if(pos_create(obj_store) == 1)
-	{
-		printf("main ck point 2\n");
-		ret = pos_btree_init(obj_store) ; 	
-		printf("main ck point 3\n");
-		ret = pos_btree_open( obj_store ) ;
-		printf("open ret = %d\n", ret);
-	}
-	else
-	{
-		printf("main ck point 4\n");
-		pos_map(obj_store);
-		printf("main ck point 5\n");
-		ret = pos_btree_init(obj_store) ; 
-		printf("main ck point 6\n");
-		ret = pos_btree_open( obj_store ) ; 	
-		printf("open ret = %d\n", ret);
-	}
-	*/
-	//dk e
 	
 	int a[100] = {0} ; 	
 	int q = 0 ; 	
 	for( q = 0 ; q < 100; q++){ 
 		a[q] = q; 
 	}
-//	printf("\n[BTREE operation]\n") ; 	
-//	printf("[5] INSERT 30,000 ops\n") ; 	
-//	printf("[6] REMOVE 30,000 ops\n") ; 	
-//	printf("[7] LOOKUP-addr 30,000 ops\n") ; 	
-//	printf("[8] LOOKUP-nul 30,000 ops\n") ; 	
-//	scanf("%d", &num) ; 	
 	
 
 	if(( threads = (pthread_t *)malloc(thread_num * sizeof(pthread_t)))==NULL){
@@ -1044,12 +990,8 @@ int main(int argc , char ** argv){
 	}
 	// This Program is only btree performance program.
 	
-	//printf("bt ck point 0\n");
-	int ret = pos_btree_init(obj_store) ; 	
-	//printf("init ret = %d\n", ret);
+	int ret = pos_sbtree_init(obj_store) ; 	
 	ret = pos_btree_open( obj_store ) ; 	
-	//printf("open ret = %d\n", ret);
-	//printf("bt ck point 2\n");
 	
 	// global key initialization
 	int j = 0 ; 	
@@ -1057,179 +999,53 @@ int main(int argc , char ** argv){
 		static_key[j] = j ; 	
 	}
 	TM_INIT; //this is coded in pos_list_init(?) or pos_list_close(?)
-	if( num == 1){// normal btree insert
-		if( thread_num > 1 ){
-			printf("[normal mode must be one thread]\n") ; 
-			exit(1) ; 	
-		} 
-		gettimeofday(&T1,NULL) ; 	
-		// btree 30,000 insert
- 		int i = 0 ; 	
-		for( i = 0 ; i < thread_num ; i++){
-			if(pthread_create(&threads[i] , NULL , normal_btree_insert , (void *)&a[i])!=0){ 
-				fprintf(stderr, "Error creating threads\n") ; 	
-				exit(1);
-			}
-		}
-		for( i = 0 ; i < thread_num ; i++){ 
-			if(pthread_join(threads[i] , NULL)!=0){ 
-				fprintf(stderr, "Error waiting for thread completion\n") ; 	
-				exit(1) ; 	
-			}
-		} 
-		gettimeofday(&T2,NULL) ; 	
-		print_time(T1,T2) ; 
-		//spos_btree_count( obj_store ) ; 	
-		pos_btree_close( obj_store) ; 	
-	}else if( num == 2){ // normal btree remove
-		if( thread_num > 1 ){
-			printf("[normal mode must be one thread]\n") ; 
-			exit(1) ; 	
-		} 
-		gettimeofday(&T1,NULL) ; 	
-		// btree 30,000 insert
- 		int i = 0 ; 	
-		for( i = 0 ; i < thread_num ; i++){
-			if(pthread_create(&threads[i] , NULL , normal_btree_remove , (void *)&a[i])!=0){ 
-				fprintf(stderr, "Error creating threads\n") ; 	
-				exit(1);
-			}
-		}
-		for( i = 0 ; i < thread_num ; i++){ 
-			if(pthread_join(threads[i] , NULL)!=0){ 
-				fprintf(stderr, "Error waiting for thread completion\n") ; 	
-				exit(1) ; 	
-			}
-		}
-		gettimeofday(&T2,NULL) ; 	
-		print_time(T1,T2) ; 
-		pos_btree_close(obj_store) ; 	
-	}else if( num == 3 ){ // lock btree insert 
-		gettimeofday(&T1,NULL) ; 	
-		// btree 30,000 insert
- 		int i = 0 ; 	
-		for( i = 0 ; i < thread_num ; i++){
-			if(pthread_create(&threads[i] , NULL , lock_btree_insert , (void *)&a[i])!=0){ 
-				fprintf(stderr, "Error creating threads\n") ; 	
-				exit(1);
-			}
-		}
-		for( i = 0 ; i < thread_num ; i++){ 
-			if(pthread_join(threads[i] , NULL)!=0){ 
-				fprintf(stderr, "Error waiting for thread completion\n") ; 	
-				exit(1) ; 	
-			}
-		}
-		gettimeofday(&T2,NULL) ; 	
-		print_time(T1,T2) ;
-		pos_btree_close(obj_store) ; 	 
-	}else if( num == 4 ){ // lock btree remove 
-		gettimeofday(&T1,NULL) ; 	
-		// btree 30,000 insert
- 		int i = 0 ; 	
-		for( i = 0 ; i < thread_num ; i++){
-			if(pthread_create(&threads[i] , NULL , lock_btree_remove , (void *)&a[i])!=0){ 
-				fprintf(stderr, "Error creating threads\n") ; 	
-				exit(1);
-			}
-		}
-		for( i = 0 ; i < thread_num ; i++){ 
-			if(pthread_join(threads[i] , NULL)!=0){ 
-				fprintf(stderr, "Error waiting for thread completion\n") ; 	
-				exit(1) ; 	
-			}
-		}
-		gettimeofday(&T2,NULL) ; 	
-		print_time(T1,T2) ;
-		pos_btree_close(obj_store) ; 	 
-	}
-	else if( num == 5 ){
-
-		gettimeofday(&T1,NULL) ; 	
+	
+	
+	gettimeofday(&T1,NULL) ; 	
  
-		// btree 30,000 insert
- 		int i = 0 ; 	
-		printf("bt ck point 1111\n");
-		for( i = 0 ; i < thread_num ; i++){
-			printf("bt ck point 2222\n");
-			if(pthread_create(&threads[i] , NULL , stm_btree_insert , (void *)&a[i])!=0){ 
+	// btree 30,000 insert
+	printf("\n"); 
+	printf("=========== Node insert start ===========\n");
+
+ 	int i = 0 ; 	
+	for( i = 0 ; i < thread_num ; i++)
+	{
+		if(pthread_create(&threads[i] , NULL , stm_btree_insert , (void *)&a[i])!=0){ 
 				fprintf(stderr, "Error creating threads\n") ; 	
 				exit(1);
-			}
-		}
-		for( i = 0 ; i < thread_num ; i++){ 
-			if(pthread_join(threads[i] , NULL)!=0){ 
-				fprintf(stderr, "Error waiting for thread completion\n") ; 	
-				exit(1) ; 	
-			}
-		} 
-		
-		gettimeofday(&T2,NULL) ; 	
-		print_time(T1,T2) ;
-		//spos_btree_count( obj_store ) ; 	
-		pos_btree_close( obj_store) ; 	
-	}else if( num == 6 ){ 
-		// btree 30,000 remove
- 		int i = 0 ; 	
-		gettimeofday(&T1,NULL) ; 	
-		for( i = 0 ; i < thread_num ; i++){ 
-			if(pthread_create(&threads[i] , NULL , stm_btree_remove , (void *)&a[i])!=0){ 
-				fprintf(stderr, "Error creating threads\n") ; 	
-				exit(1);
-			}
-		}
-		for( i = 0 ; i < thread_num ; i++){ 
-			if(pthread_join(threads[i] , NULL)!=0){ 
-				fprintf(stderr, "Error waiting for thread completion\n") ; 	
-				exit(1) ; 	
-			}
-		} 
-		gettimeofday(&T2,NULL) ; 	
-		print_time(T1,T2);
-		//spos_btree_count( obj_store ) ; 	
-		pos_btree_close( obj_store) ; 	
-	}else if( num == 7){ 
-		//btree 30,000 lookup
-		int i = 0 ; 	
-		for( i = 0 ; i < 1; i++){ 
-			if(pthread_create(&threads[i] , NULL , stm_btree_lookup, (void *)&a[i])!=0){
-				fprintf(stderr, "Error creating threads\n") ; 	
-				exit(1) ; 	
-			}
-		}
-		for( i = 0 ; i < 1 ;i++){ 
-			if(pthread_join(threads[i] , NULL)!=0){
-				fprintf(stderr, "Error waiting for thread completion\n") ; 	
-				exit(1); 	
-			}
-		}
-		pos_btree_close(obj_store) ; 	
-	}else if( num == 8 ){ 
-		int i = 0 ; 
-		for( i = 0 ; i < 1 ; i++){ 
-			if(pthread_create(&threads[i] , NULL , stm_btree_lookup_nil , (void *)&a[i])!=0){
-				fprintf(stderr, "Error creating threads\n") ; 	
-				exit(1) ; 	
-			}
-		}
-		for( i = 0 ; i < 1 ; i++){ 
-			if (pthread_join( threads[i] , NULL)!=0){ 
-				fprintf(stderr , "Error waiting for thread completion\n") ; 	
-				exit(1); 	
-			}
 		}
 	}
+	for( i = 0 ; i < thread_num ; i++)
+	{ 
+		if(pthread_join(threads[i] , NULL)!=0)
+		{ 
+				fprintf(stderr, "Error waiting for thread completion\n") ; 	
+				exit(1) ; 	
+		}
+	} 
+	gettimeofday(&T2,NULL) ; 	
+
+	alloc_size = alloc_node_count * NODESIZE;
+	printf("Inserted Key Count   : %12d  keys\n", thread_num*insert_num);
+	printf("Created Tree Node    : %12d nodes\n", alloc_node_count);
+	printf("Tree Size            : %12d bytes\n", alloc_size);
+	print_time(T1,T2) ;
+	printf("=========== Node insert end   ===========\n");
+	//spos_btree_count( obj_store ) ; 	
+	pos_btree_close( obj_store) ; 	
+	
 
 	TM_EXIT; //this is coded in pos_list_delete(?) or pos_list_close(?) 
 
+	
 	struct btree_head *root_node_ptr;
 	unsigned long *node_ptr = NULL;
 
 	pos_map(obj_store);
 
-	root_node_ptr=pos_get_prime_object(obj_store);
+	//root_node_ptr=pos_get_prime_object(obj_store);
 	//printf("root_node_ptr = %p\n", root_node_ptr);
-	node_ptr = root_node_ptr->node;
+	//node_ptr = root_node_ptr->node;
 	//printf("node_ptr = %p\n", root_node_ptr->node);
 	//pos_btree_traverse(node_ptr);
 
@@ -1238,27 +1054,55 @@ int main(int argc , char ** argv){
 	node_ptr = root_node_ptr->node;
 	//printf("Alloc_tree head = %p\n", root_node_ptr->node);
 	//pos_btree_traverse(node_ptr);
-	
-	printf("GC start\n");
+	printf("\n"); 
+	printf("continue? (y/n) "); 
+	scanf(" %c", &answer1);
+	//while(getchar()!="\n");
+	printf("\n"); 
+	if(strcmp(&answer1, "n\n") == 0)
+	{
+		return 0;
+	}
+
+	printf("========= Garbage Finding start =========\n");		
 	gettimeofday(&T_GC1, NULL) ;
 	pos_btree_gc(node_ptr, obj_store);
+	gettimeofday(&T_GC2, NULL) ;
+	
 	int k;
 	void * address;
 	//printf("find count = %d\n", find_count);
-	printf("garbage count = %d\n", garbage_count);
-
+	printf("Garbage              : %12d nodes\n", garbage_count);
+	print_time1(T_GC1,T_GC2) ;
+	printf("========= Garbage Finding end   =========\n");		
+	//printf("=== Garbage  size : %d bytes ===\n", garbage_count*NODESIZE);
 	
+
 	for(k=0 ; k<garbage_count ; k++)
 	{
 		//printf("dk_buf[%d] = %p\n", k, dk_buf[k]);
 		address = dk_buf[k];
-		printf("address = %p\n", address);
+		//printf("Garbage node address = %p ===\n", address);
+	}
+	printf("\n"); 
+	printf("continue? (y/n) "); 
+	scanf(" %c", &answer2);
+	//while(getchar()!="\n");
+	printf("\n"); 
+	if(strcmp(&answer2, "n\n") == 0)
+	{
+		return 0;
+	}
+	printf("========= Garbage Freeing start =========\n");		
+	gettimeofday(&T_GC3, NULL) ;
+	for(k=0 ; k<garbage_count ; k++)
+	{
 		pos_free(obj_store, address);
 	}
-	
-	gettimeofday(&T_GC2, NULL) ;
-	printf("GC end\n");
-	print_time(T_GC1,T_GC2) ;
-
-
+	gettimeofday(&T_GC4, NULL) ;
+	print_time2(T_GC3,T_GC4) ;	
+	printf("Overall Alloc Size   : %12d bytes\n", alloc_size + garbage_count*NODESIZE);
+	printf("Saved Memory Size    : %12d bytes\n", garbage_count*NODESIZE);
+	printf("========= Garbage Freeing end   =========\n");		
+	printf("\n"); 
 } 
