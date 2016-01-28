@@ -1,48 +1,71 @@
 
-¼³Ä¡ È¯°æ
+ì„¤ì¹˜ í™˜ê²½
   - Ubuntu 10.04, 64bit
 
-ÆÄÀÏ À§Ä¡
+íŒŒì¼ ìœ„ì¹˜
   - /usr/src/pos.c
   - /usr/src/pos.h
   - /usr/src/move.sh
-  - /usr/src/pos.diff
+  - /usr/src/POS.patch
   - /root/library-pos.tar.bz2
 
 ---------------------------------------------------------------------------------------
 
-1. ÆĞÄ¡ Àû¿ë, Ä¿³Î ÄÄÆÄÀÏ
+1. ì»¤ë„ ì»´íŒŒì¼ ë“±ì„ ìœ„í•œ í˜í‚¤ì§€ ë‹¤ìš´ë¡œë“œ (Package download for kernel compile)
 
   # su root
   # cd /usr/src
   # apt-get install build-essential bin86 kernel-package libncurses5-dev
+
+---------------------------------------------------------------------------------------
+
+2. ì»¤ë„ ë‹¤ìš´ë¡œë“œ ë° ì••ì¶•í•´ì œ (Kernel source download)
+
   # wget -P /usr/src http://www.kernel.org/pub/linux/kernel/v2.6/linux-2.6.32.tar.bz2
   # tar xvfj linux-2.6.32.tar.bz2
-  # patch -p0 < pos.diff
+
+---------------------------------------------------------------------------------------
+
+3. íŒ¨ì¹˜ ì ìš© (Kernel Patch)
+
+  # cp /home/qwerty/HEAPO/HEAPO_x86_2.6.32/Kernel/*.* /usr/src
+  # chmod 777 move.sh
   # ./move.sh
-  # ln -s /usr/src/linux-2.6.32 /usr/src/linux
-  # cd /usr/src/linux
+  # patch -p0 < POS.patch
+
+---------------------------------------------------------------------------------------
+  
+4. ì»¤ë„ ì»´íŒŒì¼ ë° ë¶€íŒ… ì»¤ë„ ë³€ê²½ (Kernel compile and change boot kernel)
+
+  # cd linux-2.6.32
+  # cp /boot/config-2.6.32-33-generic .config
   # make menuconfig
+  ë©”ë‰´ì»¨í”¼ê·¸ ì°½ì´ ëœ¨ë©´ Load ë¥¼ ì„ íƒí•˜ê³ , .config ë¥¼ ë¶ˆëŸ¬ì˜¨ë‹¤.  
+  (When popup menuconfig windows, select Load and load with .config)
+  ê·¸ë¦¬ê³  Save í•˜ê³  Exit.
+  (And Exit after Save)
+  
   # make-kpkg clean
   # make-kpkg --initrd --revision=pos1 kernel_image kernel_headers modules_image
   # cd /usr/src
   # dpkg -i linux*pos1*.deb
   # cd /boot
   # mkinitramfs -o initrd.img-2.6.32 2.6.32
+  
   # vi /etc/default/grub
-    GRUB_DEFAULT=2 // Linux 2.6.32·Î ÁöÁ¤
+    GRUB_DEFAULT=2 // Linux 2.6.32ë¡œ ì§€ì •
   # update-grub
   # reboot
 
----------------------------------------------
 
-update-grub ¸í·ÉÀ» ½ÇÇà ½Ã
+update-grub ëª…ë ¹ì„ ì‹¤í–‰ ì‹œ(update-grub command implement)
 
 sh: getcwd() failed: No such file or directory
 sh: getcwd() failed: No such file or directory
 /usr/sbin/grub-probe: error: out of memory.
 
-À§¿Í °°Àº ¸Ş¼¼Áö°¡ ¶ã °æ¿ì ¾Æ·¡ÀÇ ¸í·É¾î¸¦ ½ÇÇà µÚ update-grub ¸í·ÉÀ» ½ÇÇàÇÏ¸é µÊ.
+ìœ„ì™€ ê°™ì€ ë©”ì„¸ì§€ê°€ ëœ° ê²½ìš° ì•„ë˜ì˜ ëª…ë ¹ì–´ë¥¼ ì‹¤í–‰ ë’¤ update-grub ëª…ë ¹ì„ ì‹¤í–‰í•˜ë©´ ë¨.
+If this message appear, you implement update-grub command after following command implement.
 
 # cd /home/
 # mkdir bugreprod
@@ -51,36 +74,30 @@ sh: getcwd() failed: No such file or directory
 
 ---------------------------------------------------------------------------------------
 
-2. °øÀ¯ ¶óÀÌºê·¯¸® ÄÄÆÄÀÏ
+5. ê³µìœ  ë¼ì´ë¸ŒëŸ¬ë¦¬ ì»´íŒŒì¼ (Shared library compile)
 
   # su root
-  # cd /root
-  # tar xvfj library-pos.tar.bz2
-  # cd library-pos
+  # cd /home/qwerty/HEAPO/HEAPO_x86_2.6.32/Library
+  # chmod 777 install.sh
   # ./install.sh
   # vi /etc/ld.so.conf
-    /usr/local/lib/ Ãß°¡
+ ì¶”ê°€(append) usr/local/lib/
   # /sbin/ldconfig
 
----------------------------------------------
-
-¶óÀÌºê·¯¸®¸¦ Æ÷ÇÔ ½ÃÅ°±âÀ§ÇØ ÄÄÆÄÀÏ ½Ã
--L /usr/local/lib -lpos ¶Ç´Â /usr/local/lib/libpos.so.0.0.0¸¦
-ÄÄÆÄÀÏ ¿É¼ÇÀ¸·Î Æ÷ÇÔ½ÃÄÑ¾ßÇÔ.
+ë¼ì´ë¸ŒëŸ¬ë¦¬ë¥¼ í¬í•¨ ì‹œí‚¤ê¸°ìœ„í•´ ì»´íŒŒì¼ ì‹œ
+-L /usr/local/lib -lpos ë˜ëŠ” /usr/local/lib/libpos.so.0.0.0ë¥¼
+ì»´íŒŒì¼ ì˜µì…˜ìœ¼ë¡œ í¬í•¨ì‹œì¼œì•¼í•¨.
+(When you compile it, including "-L /usr/local/lib -lpos" or "/usr/local/lib/libpos.so.0.0.0" compile option for include library.)
 
 ---------------------------------------------------------------------------------------
 
-3. Å×½ºÆ® ÄÚµå ½ÇÇà
+6. í…ŒìŠ¤íŠ¸ ì½”ë“œ ì‹¤í–‰ (Test code implement)
 
   # su root
-  # cd /root/library-pos
+  # cd /home/qwerty/HEAPO/HEAPO_x86_2.6.32/Library
   # make
   # ./malloc-free create
   # ./malloc-free persistency
-  # ./malloc-free persistency
-	# ./malloc-free persistency
-	# ./malloc-free persistency
-	# ./malloc-free persistency
 
 ---------------------------------------------------------------------------------------
 
