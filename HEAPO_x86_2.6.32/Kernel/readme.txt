@@ -1,5 +1,5 @@
 
-설치 환경
+설치 환경(Install Environment)
   - Ubuntu 10.04, 64bit
 
 파일 위치
@@ -58,7 +58,7 @@
   # reboot
 
 
-update-grub 명령을 실행 시(update-grub command implement)
+update-grub 명령을 실행 시(When update-grub command implement)
 
 sh: getcwd() failed: No such file or directory
 sh: getcwd() failed: No such file or directory
