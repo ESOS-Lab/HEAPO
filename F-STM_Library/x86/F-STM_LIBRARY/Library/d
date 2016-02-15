@@ -1,0 +1,1159 @@
+<4>[  569.633901] 	 pos_map_vma
+<4>[  569.633908] 	 vma zalloc 
+<4>[  569.633978] 	 pos_map_vma
+<4>[  569.633982] 	find vma : 18446612132562510176
+<1>[  569.634109] BUG: Bad page map in process test7  pte:800000000eecb067 pmd:0eeca067
+<1>[  569.634119] page:ffffea0000343c68 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  569.634125] addr:00005ffef8076000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:0
+<4>[  569.634132] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.634136] Call Trace:
+<4>[  569.634155]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  569.634162]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  569.634171]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  569.634181]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  569.634189]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.634195]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.634201]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.634218]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.634225] BUG: Bad page map in process test7  pte:800000000edc2067 pmd:0eeca067
+<1>[  569.634231] page:ffffea0000340270 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:ffff88000edc3ef0
+<1>[  569.634236] addr:00005ffef8077000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:1
+<4>[  569.634241] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.634244] Call Trace:
+<4>[  569.634251]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  569.634258]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  569.634264]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  569.634272]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  569.634280]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.634286]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.634291]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.634300]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.634305] BUG: Bad page map in process test7  pte:800000000edc3067 pmd:0eeca067
+<1>[  569.634309] page:ffffea00003402a8 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  569.634314] addr:00005ffef8078000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:2
+<4>[  569.634319] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.634322] Call Trace:
+<4>[  569.634328]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  569.634335]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  569.634340]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  569.634349]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  569.634356]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.634362]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.634367]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.634375]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.634380] BUG: Bad page map in process test7  pte:800000000edf6067 pmd:0eeca067
+<1>[  569.634385] page:ffffea0000340dd0 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:ffff88000edf6000
+<1>[  569.634390] addr:00005ffef8079000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:3
+<4>[  569.634395] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.634397] Call Trace:
+<4>[  569.634403]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  569.634410]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  569.634415]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  569.634423]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  569.634431]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.634436]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.634442]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.634450]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.634455] BUG: Bad page map in process test7  pte:800000000edf7067 pmd:0eeca067
+<1>[  569.634459] page:ffffea0000340e08 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  569.634464] addr:00005ffef807a000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:4
+<4>[  569.634468] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.634471] Call Trace:
+<4>[  569.634477]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  569.634483]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  569.634488]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  569.634497]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  569.634504]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.634510]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.634515]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.634523]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.634577] BUG: Bad page map in process test7  pte:800000000ee24067 pmd:0eeca067
+<1>[  569.634582] page:ffffea00003417e0 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  569.634586] addr:00005ffef807b000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:5
+<4>[  569.634591] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.634594] Call Trace:
+<4>[  569.634601]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  569.634607]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  569.634613]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  569.634621]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  569.634628]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.634634]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.634639]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.634648]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.634652] BUG: Bad page map in process test7  pte:800000000ee25067 pmd:0eeca067
+<1>[  569.634657] page:ffffea0000341818 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  569.634662] addr:00005ffef807c000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:6
+<4>[  569.634666] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.634669] Call Trace:
+<4>[  569.634674]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  569.634681]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  569.634686]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  569.634694]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  569.634701]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.634707]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.634712]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.634721]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.634725] BUG: Bad page map in process test7  pte:800000000efb0067 pmd:0eeca067
+<1>[  569.634730] page:ffffea0000346e80 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  569.634735] addr:00005ffef807d000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:7
+<4>[  569.634739] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.634742] Call Trace:
+<4>[  569.634747]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  569.634754]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  569.634759]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  569.634767]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  569.634774]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.634780]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.634785]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.634794]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.634798] BUG: Bad page map in process test7  pte:800000000efb1067 pmd:0eeca067
+<1>[  569.634803] page:ffffea0000346eb8 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  569.634807] addr:00005ffef807e000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:8
+<4>[  569.634812] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.634815] Call Trace:
+<4>[  569.634820]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  569.634826]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  569.634832]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  569.634840]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  569.634847]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.634853]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.634858]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.634866]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.634871] BUG: Bad page map in process test7  pte:800000000efb2067 pmd:0eeca067
+<1>[  569.634876] page:ffffea0000346ef0 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:ffff88000efb2000
+<1>[  569.634880] addr:00005ffef807f000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:9
+<4>[  569.634885] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.634887] Call Trace:
+<4>[  569.634893]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  569.634899]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  569.634905]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  569.634913]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  569.634920]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.634926]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.634931]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.634939]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.634944] BUG: Bad page map in process test7  pte:800000000efb3067 pmd:0eeca067
+<1>[  569.634949] page:ffffea0000346f28 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  569.634953] addr:00005ffef8080000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:a
+<4>[  569.634957] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.634960] Call Trace:
+<4>[  569.634966]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  569.634972]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  569.634977]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  569.634985]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  569.634993]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.634998]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.635004]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.635012]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.635017] BUG: Bad page map in process test7  pte:800000000ef30067 pmd:0eeca067
+<1>[  569.635021] page:ffffea0000345280 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:ffff88000ef30c60
+<1>[  569.635026] addr:00005ffef8081000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:b
+<4>[  569.635031] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.635034] Call Trace:
+<4>[  569.635039]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  569.635046]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  569.635051]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  569.635059]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  569.635066]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.635072]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.635078]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.635086]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.635090] BUG: Bad page map in process test7  pte:800000000ef31067 pmd:0eeca067
+<1>[  569.635095] page:ffffea00003452b8 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  569.635100] addr:00005ffef8082000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:c
+<4>[  569.635104] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.635107] Call Trace:
+<4>[  569.635112]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  569.635119]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  569.635124]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  569.635132]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  569.635139]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.635145]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.635150]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.635159]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.635163] BUG: Bad page map in process test7  pte:800000000ef34067 pmd:0eeca067
+<1>[  569.635168] page:ffffea0000345360 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:ffff88000ef35ef0
+<1>[  569.635173] addr:00005ffef8083000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:d
+<4>[  569.635177] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.635180] Call Trace:
+<4>[  569.635186]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  569.635192]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  569.635197]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  569.635206]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  569.635213]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.635219]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.635224]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.635232]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.635237] BUG: Bad page map in process test7  pte:800000000ef45067 pmd:0eeca067
+<1>[  569.635242] page:ffffea0000345718 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  569.635246] addr:00005ffef8084000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:e
+<4>[  569.635251] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.635253] Call Trace:
+<4>[  569.635259]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  569.635265]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  569.635270]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  569.635279]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  569.635286]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.635292]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.635297]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.635305]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.635310] BUG: Bad page map in process test7  pte:800000000ee6d067 pmd:0eeca067
+<1>[  569.635315] page:ffffea00003427d8 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  569.635320] addr:00005ffef8085000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:f
+<4>[  569.635324] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.635327] Call Trace:
+<4>[  569.635332]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  569.635339]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  569.635344]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  569.635352]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  569.635359]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.635365]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.635370]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.635378]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.635387] BUG: Bad page state in process test7  pfn:0ef34
+<1>[  569.635392] page:ffffea0000345360 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:ffff88000ef35ef0
+<4>[  569.635397] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.635399] Call Trace:
+<4>[  569.635408]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  569.635416]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  569.635423]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  569.635431]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  569.635438]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  569.635445]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  569.635460]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  569.635468]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  569.635561]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.635570]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.635576]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.635586]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.635593] BUG: Bad page state in process test7  pfn:0ef31
+<1>[  569.635600] page:ffffea00003452b8 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  569.635607] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.635611] Call Trace:
+<4>[  569.635618]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  569.635625]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  569.635633]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  569.635640]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  569.635648]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  569.635655]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  569.635664]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  569.635671]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  569.635678]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.635684]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.635690]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.635698]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.635703] BUG: Bad page state in process test7  pfn:0ef30
+<1>[  569.635708] page:ffffea0000345280 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:ffff88000ef30c60
+<4>[  569.635714] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.635716] Call Trace:
+<4>[  569.635723]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  569.635728]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  569.635735]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  569.635742]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  569.635750]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  569.635757]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  569.635764]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  569.635771]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  569.635779]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.635784]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.635790]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.635798]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.635803] BUG: Bad page state in process test7  pfn:0efb3
+<1>[  569.635807] page:ffffea0000346f28 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  569.635812] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.635815] Call Trace:
+<4>[  569.635821]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  569.635826]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  569.635833]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  569.635840]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  569.635847]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  569.635854]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  569.635861]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  569.635869]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  569.635876]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.635882]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.635887]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.635895]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.635900] BUG: Bad page state in process test7  pfn:0efb2
+<1>[  569.635904] page:ffffea0000346ef0 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:ffff88000efb2000
+<4>[  569.635909] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.635912] Call Trace:
+<4>[  569.635918]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  569.635923]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  569.635930]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  569.635936]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  569.635944]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  569.635950]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  569.635958]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  569.635965]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  569.635972]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.635978]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.635983]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.635992]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.635996] BUG: Bad page state in process test7  pfn:0efb1
+<1>[  569.636000] page:ffffea0000346eb8 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  569.636005] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.636007] Call Trace:
+<4>[  569.636013]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  569.636018]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  569.636025]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  569.636032]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  569.636039]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  569.636046]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  569.636053]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  569.636061]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  569.636127]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.636133]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.636138]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.636147]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.636152] BUG: Bad page state in process test7  pfn:0efb0
+<1>[  569.636157] page:ffffea0000346e80 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  569.636161] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.636164] Call Trace:
+<4>[  569.636170]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  569.636176]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  569.636183]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  569.636190]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  569.636197]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  569.636204]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  569.636212]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  569.636219]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  569.636226]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.636232]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.636237]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.636245]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.636250] BUG: Bad page state in process test7  pfn:0ee25
+<1>[  569.636254] page:ffffea0000341818 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  569.636258] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.636261] Call Trace:
+<4>[  569.636267]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  569.636272]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  569.636278]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  569.636285]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  569.636292]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  569.636299]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  569.636306]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  569.636313]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  569.636320]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.636326]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.636332]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.636340]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.636344] BUG: Bad page state in process test7  pfn:0ee24
+<1>[  569.636348] page:ffffea00003417e0 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  569.636353] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.636355] Call Trace:
+<4>[  569.636361]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  569.636366]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  569.636373]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  569.636380]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  569.636387]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  569.636393]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  569.636401]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  569.636408]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  569.636415]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.636421]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.636426]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.636434]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.636439] BUG: Bad page state in process test7  pfn:0edf7
+<1>[  569.636443] page:ffffea0000340e08 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  569.636447] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.636450] Call Trace:
+<4>[  569.636456]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  569.636461]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  569.636468]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  569.636475]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  569.636482]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  569.636488]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  569.636496]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  569.636503]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  569.636510]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.636516]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.636521]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.636529]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.636533] BUG: Bad page state in process test7  pfn:0edf6
+<1>[  569.636538] page:ffffea0000340dd0 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:ffff88000edf6000
+<4>[  569.636543] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.636545] Call Trace:
+<4>[  569.636551]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  569.636556]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  569.636562]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  569.636569]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  569.636577]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  569.636583]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  569.636591]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  569.636598]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  569.636605]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.636610]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.636616]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.636624]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.636628] BUG: Bad page state in process test7  pfn:0edc3
+<1>[  569.636632] page:ffffea00003402a8 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  569.636637] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.636640] Call Trace:
+<4>[  569.636645]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  569.636650]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  569.636657]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  569.636664]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  569.636671]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  569.636678]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  569.636685]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  569.636692]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  569.636699]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.636705]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.636710]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.636718]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.636722] BUG: Bad page state in process test7  pfn:0edc2
+<1>[  569.636727] page:ffffea0000340270 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:ffff88000edc3ef0
+<4>[  569.636731] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.636734] Call Trace:
+<4>[  569.636740]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  569.636745]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  569.636751]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  569.636758]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  569.636766]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  569.636772]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  569.636779]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  569.636787]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  569.636793]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.636799]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.636804]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.636813]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.636817] BUG: Bad page state in process test7  pfn:0eecb
+<1>[  569.636821] page:ffffea0000343c68 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  569.636826] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.636828] Call Trace:
+<4>[  569.636834]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  569.636839]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  569.636846]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  569.636853]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  569.636860]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  569.636866]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  569.636874]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  569.636881]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  569.636888]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.636893]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.636899]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.636907]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.636912] BUG: Bad page state in process test7  pfn:0ee6d
+<1>[  569.636917] page:ffffea00003427d8 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  569.636921] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.636924] Call Trace:
+<4>[  569.636930]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  569.636935]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  569.636941]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  569.636948]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  569.636955]  [<ffffffff810f72ec>] release_pages+0x23c/0x290
+<4>[  569.636962]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  569.636969]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  569.636976]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  569.636983]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.636989]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.636994]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.637003]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.637007] BUG: Bad page state in process test7  pfn:0ef45
+<1>[  569.637011] page:ffffea0000345718 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  569.637015] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.637018] Call Trace:
+<4>[  569.637024]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  569.637029]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  569.637035]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  569.637042]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  569.637050]  [<ffffffff810f72ec>] release_pages+0x23c/0x290
+<4>[  569.637056]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  569.637063]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  569.637071]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  569.637078]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.637083]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.637088]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.637097]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.637121] BUG: Bad page map in process test7  pte:800000000efef067 pmd:0eeca067
+<1>[  569.637127] page:ffffea0000347c48 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  569.637132] addr:00005ffef8075000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:ffffffffffffffff
+<4>[  569.637137] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.637140] Call Trace:
+<4>[  569.637146]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  569.637153]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  569.637161]  [<ffffffff810f72ec>] ? release_pages+0x23c/0x290
+<4>[  569.637169]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  569.637176]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.637182]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.637187]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.637195]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  569.637205] BUG: Bad page state in process test7  pfn:0efef
+<1>[  569.637209] page:ffffea0000347c48 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  569.637214] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  569.637217] Call Trace:
+<4>[  569.637223]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  569.637235]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  569.637241]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  569.637248]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  569.637257]  [<ffffffff811058a5>] ? __dec_zone_page_state+0x35/0x40
+<4>[  569.637265]  [<ffffffff810f72ec>] release_pages+0x23c/0x290
+<4>[  569.637271]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  569.637279]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  569.637286]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  569.637293]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  569.637299]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  569.637304]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  569.637313]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<4>[  569.637381] 
+<4>[  569.637383] 
+<4>[  569.637384] ===========sys_pos_map=============
+<4>[  569.637385] 
+<4>[  569.637389] 18446612132677419008 is trie_root
+<4>[  569.637392]  name buf = dasdddd , len = 7
+<4>[  569.637394]   TASK PID = 2355
+<4>[  569.637398] 	 pos_map_vma
+<4>[  569.637401] 	 vma zalloc 
+<4>[  569.637405] return value : 105548687560704
+<4>[  569.637408] ========================
+<4>[  569.637409] 
+<4>[  569.637426] 
+<4>[  569.637427] 
+<4>[  569.637428] ===========sys_pos_map=============
+<4>[  569.637430] 
+<4>[  569.637432] 18446612132677419008 is trie_root
+<4>[  569.637436]  name buf = dasddddTS , len = 9
+<4>[  569.637437]   TASK PID = 2355
+<4>[  569.637442] 	 pos_map_vma
+<4>[  569.637445] 	find vma : 18446612132562510176
+<4>[  569.637448] return value : 105548687564800
+<4>[  569.637450] ========================
+<4>[  569.637452] 
+<1>[  570.440363] BUG: Bad page map in process test7  pte:800000000eecb067 pmd:12caf067
+<1>[  570.440376] page:ffffea0000343c68 flags:0100000000000014 count:0 mapcount:-2 mapping:(null) index:0
+<1>[  570.440383] addr:00005ffef8076000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:0
+<4>[  570.440390] Pid: 2355, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  570.440395] Call Trace:
+<4>[  570.440414]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  570.440422]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  570.440432]  [<ffffffff81113f4b>] exit_mmap+0xbb/0x190
+<4>[  570.440444]  [<ffffffff8105e5fd>] mmput+0x4d/0x110
+<4>[  570.440450]  [<ffffffff81064de2>] exit_mm+0x112/0x150
+<4>[  570.440456]  [<ffffffff8106515d>] do_exit+0x12d/0x7f0
+<4>[  570.440466]  [<ffffffff81071a55>] ? try_to_del_timer_sync+0x75/0xd0
+<4>[  570.440473]  [<ffffffff81065875>] do_group_exit+0x55/0xd0
+<4>[  570.440482]  [<ffffffff810760a7>] get_signal_to_deliver+0x1d7/0x3d0
+<4>[  570.440490]  [<ffffffff81115128>] ? vma_merge+0x1b8/0x3a0
+<4>[  570.440500]  [<ffffffff81011315>] do_signal+0x75/0x7a0
+<4>[  570.440508]  [<ffffffff810568f0>] ? default_wake_function+0x0/0x20
+<4>[  570.440520]  [<ffffffff8132a97e>] ? tty_ldisc_deref+0xe/0x10
+<4>[  570.440527]  [<ffffffff81321ef0>] ? tty_read+0xb0/0xf0
+<4>[  570.440536]  [<ffffffff81011a9d>] do_notify_resume+0x5d/0x80
+<4>[  570.440559]  [<ffffffff8113e271>] ? sys_read+0x51/0x80
+<4>[  570.440568]  [<ffffffff8101233e>] int_signal+0x12/0x17
+<4>[  573.340926] 	 pos_map_vma
+<4>[  573.340933] 	 vma zalloc 
+<4>[  573.340995] 	 pos_map_vma
+<4>[  573.340999] 	find vma : 18446612132563278016
+<1>[  573.341209] BUG: Bad page map in process test7  pte:800000000ef57067 pmd:0ed57067
+<1>[  573.341219] page:ffffea0000345b08 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  573.341224] addr:00005ffef8087000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:0
+<4>[  573.341232] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.341236] Call Trace:
+<4>[  573.341254]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  573.341262]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  573.341271]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  573.341281]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  573.341288]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.341294]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.341300]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.341311]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.341317] BUG: Bad page map in process test7  pte:8000000005425067 pmd:0ed57067
+<1>[  573.341323] page:ffffea0000126818 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  573.341328] addr:00005ffef8088000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:1
+<4>[  573.341333] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.341336] Call Trace:
+<4>[  573.341342]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  573.341349]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  573.341354]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  573.341363]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  573.341370]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.341376]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.341382]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.341390]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.341396] BUG: Bad page map in process test7  pte:800000000efd2067 pmd:0ed57067
+<1>[  573.341401] page:ffffea00003475f0 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  573.341405] addr:00005ffef8089000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:2
+<4>[  573.341410] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.341413] Call Trace:
+<4>[  573.341419]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  573.341425]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  573.341431]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  573.341439]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  573.341447]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.341453]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.341458]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.341466]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.341471] BUG: Bad page map in process test7  pte:800000000ef5f067 pmd:0ed57067
+<1>[  573.341476] page:ffffea0000345cc8 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  573.341481] addr:00005ffef808a000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:3
+<4>[  573.341485] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.341488] Call Trace:
+<4>[  573.341494]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  573.341500]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  573.341506]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  573.341514]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  573.341521]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.341527]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.341532]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.341540]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.341545] BUG: Bad page map in process test7  pte:800000000efd8067 pmd:0ed57067
+<1>[  573.341550] page:ffffea0000347740 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  573.341554] addr:00005ffef808b000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:4
+<4>[  573.341559] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.341562] Call Trace:
+<4>[  573.341567]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  573.341574]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  573.341579]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  573.341587]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  573.341595]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.341600]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.341606]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.341614]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.341619] BUG: Bad page map in process test7  pte:800000000eed4067 pmd:0ed57067
+<1>[  573.341623] page:ffffea0000343e60 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  573.341628] addr:00005ffef808c000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:5
+<4>[  573.341632] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.341635] Call Trace:
+<4>[  573.341641]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  573.341647]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  573.341652]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  573.341661]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  573.341668]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.341674]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.341679]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.341687]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.341692] BUG: Bad page map in process test7  pte:800000000eec5067 pmd:0ed57067
+<1>[  573.341696] page:ffffea0000343b18 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  573.341701] addr:00005ffef808d000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:6
+<4>[  573.341705] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.341708] Call Trace:
+<4>[  573.341714]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  573.341720]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  573.341726]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  573.341734]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  573.341741]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.341747]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.341752]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.341760]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.341765] BUG: Bad page map in process test7  pte:800000000eef3067 pmd:0ed57067
+<1>[  573.341770] page:ffffea0000344528 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  573.341774] addr:00005ffef808e000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:7
+<4>[  573.341779] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.341781] Call Trace:
+<4>[  573.341787]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  573.341793]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  573.341799]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  573.341807]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  573.341814]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.341820]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.341825]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.341833]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.341838] BUG: Bad page map in process test7  pte:800000000efdc067 pmd:0ed57067
+<1>[  573.341843] page:ffffea0000347820 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  573.341847] addr:00005ffef808f000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:8
+<4>[  573.341852] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.341854] Call Trace:
+<4>[  573.341860]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  573.341866]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  573.341871]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  573.341880]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  573.341887]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.341893]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.341898]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.341906]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.341911] BUG: Bad page map in process test7  pte:8000000012d68067 pmd:0ed57067
+<1>[  573.341916] page:ffffea000041eec0 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  573.341920] addr:00005ffef8090000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:9
+<4>[  573.341925] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.341928] Call Trace:
+<4>[  573.341933]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  573.341940]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  573.341945]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  573.341953]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  573.341966]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.341972]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.341977]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.341985]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.341991] BUG: Bad page map in process test7  pte:800000000eec3067 pmd:0ed57067
+<1>[  573.341995] page:ffffea0000343aa8 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  573.342000] addr:00005ffef8091000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:a
+<4>[  573.342004] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.342007] Call Trace:
+<4>[  573.342013]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  573.342019]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  573.342024]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  573.342033]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  573.342040]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.342045]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.342051]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.342059]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.342064] BUG: Bad page map in process test7  pte:800000003b468067 pmd:0ed57067
+<1>[  573.342069] page:ffffea0000cf76c0 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  573.342074] addr:00005ffef8092000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:b
+<4>[  573.342078] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.342081] Call Trace:
+<4>[  573.342086]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  573.342093]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  573.342098]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  573.342106]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  573.342113]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.342119]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.342124]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.342133]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.342141] BUG: Bad page map in process test7  pte:8000000012ca7067 pmd:0ed57067
+<1>[  573.342146] page:ffffea000041c488 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  573.342151] addr:00005ffef8093000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:c
+<4>[  573.342155] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.342158] Call Trace:
+<4>[  573.342164]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  573.342170]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  573.342175]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  573.342184]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  573.342191]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.342197]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.342202]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.342210]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.342215] BUG: Bad page map in process test7  pte:800000000ee2c067 pmd:0ed57067
+<1>[  573.342220] page:ffffea00003419a0 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  573.342225] addr:00005ffef8094000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:d
+<4>[  573.342229] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.342232] Call Trace:
+<4>[  573.342237]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  573.342244]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  573.342249]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  573.342257]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  573.342265]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.342270]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.342276]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.342372]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.342386] BUG: Bad page map in process test7  pte:800000000eff4067 pmd:0ed57067
+<1>[  573.342394] page:ffffea0000347d60 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  573.342400] addr:00005ffef8095000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:e
+<4>[  573.342407] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.342410] Call Trace:
+<4>[  573.342420]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  573.342428]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  573.342435]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  573.342444]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  573.342451]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.342457]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.342463]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.342472]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.342477] BUG: Bad page map in process test7  pte:800000000ee28067 pmd:0ed57067
+<1>[  573.342483] page:ffffea00003418c0 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+<1>[  573.342488] addr:00005ffef8096000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:f
+<4>[  573.342493] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.342496] Call Trace:
+<4>[  573.342502]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  573.342508]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  573.342514]  [<ffffffff81061766>] ? release_console_sem+0x1d6/0x220
+<4>[  573.342522]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  573.342530]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.342535]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.342541]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.342549]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.342559] BUG: Bad page state in process test7  pfn:0ee2c
+<1>[  573.342564] page:ffffea00003419a0 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  573.342569] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.342571] Call Trace:
+<4>[  573.342579]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  573.342588]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  573.342595]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  573.342603]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  573.342610]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  573.342618]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  573.342628]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  573.342636]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  573.342643]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.342649]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.342654]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.342663]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.342668] BUG: Bad page state in process test7  pfn:12ca7
+<1>[  573.342672] page:ffffea000041c488 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  573.342677] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.342680] Call Trace:
+<4>[  573.342686]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  573.342691]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  573.342698]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  573.342705]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  573.342713]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  573.342720]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  573.342728]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  573.342735]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  573.342742]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.342748]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.342753]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.342762]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.342766] BUG: Bad page state in process test7  pfn:3b468
+<1>[  573.342770] page:ffffea0000cf76c0 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  573.342775] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.342777] Call Trace:
+<4>[  573.342783]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  573.342789]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  573.342795]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  573.342802]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  573.342810]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  573.342816]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  573.342824]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  573.342831]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  573.342838]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.342844]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.342849]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.342858]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.342862] BUG: Bad page state in process test7  pfn:0eec3
+<1>[  573.342866] page:ffffea0000343aa8 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  573.342871] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.342873] Call Trace:
+<4>[  573.342879]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  573.342884]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  573.342891]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  573.342898]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  573.342905]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  573.342912]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  573.342919]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  573.342926]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  573.342933]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.342939]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.342944]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.342953]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.342957] BUG: Bad page state in process test7  pfn:12d68
+<1>[  573.342961] page:ffffea000041eec0 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  573.342966] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.342968] Call Trace:
+<4>[  573.342974]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  573.342979]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  573.342986]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  573.342993]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  573.343000]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  573.343007]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  573.343014]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  573.343021]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  573.343028]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.343034]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.343039]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.343047]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.343051] BUG: Bad page state in process test7  pfn:0efdc
+<1>[  573.343056] page:ffffea0000347820 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  573.343060] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.343063] Call Trace:
+<4>[  573.343069]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  573.343074]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  573.343080]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  573.343087]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  573.343095]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  573.343102]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  573.343109]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  573.343116]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  573.343123]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.343129]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.343134]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.343143]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.343147] BUG: Bad page state in process test7  pfn:0eef3
+<1>[  573.343151] page:ffffea0000344528 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  573.343156] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.343158] Call Trace:
+<4>[  573.343164]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  573.343169]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  573.343176]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  573.343183]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  573.343190]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  573.343197]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  573.343204]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  573.343211]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  573.343218]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.343224]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.343229]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.343237]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.343241] BUG: Bad page state in process test7  pfn:0eec5
+<1>[  573.343246] page:ffffea0000343b18 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  573.343250] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.343253] Call Trace:
+<4>[  573.343259]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  573.343264]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  573.343271]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  573.343278]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  573.343285]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  573.343292]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  573.343299]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  573.343306]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  573.343313]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.343319]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.343324]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.343332]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.343336] BUG: Bad page state in process test7  pfn:0eed4
+<1>[  573.343341] page:ffffea0000343e60 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  573.343345] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.343348] Call Trace:
+<4>[  573.343354]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  573.343359]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  573.343366]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  573.343373]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  573.343380]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  573.343386]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  573.343394]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  573.343401]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  573.343408]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.343414]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.343419]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.343427]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.343431] BUG: Bad page state in process test7  pfn:0efd8
+<1>[  573.343436] page:ffffea0000347740 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  573.343440] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.343443] Call Trace:
+<4>[  573.343449]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  573.343454]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  573.343460]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  573.343467]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  573.343475]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  573.343482]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  573.343489]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  573.343496]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  573.343503]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.343509]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.343514]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.343522]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.343526] BUG: Bad page state in process test7  pfn:0ef5f
+<1>[  573.343531] page:ffffea0000345cc8 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  573.343535] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.343538] Call Trace:
+<4>[  573.343544]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  573.343549]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  573.343555]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  573.343562]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  573.343570]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  573.343576]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  573.343584]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  573.343591]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  573.343598]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.343604]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.343609]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.343617]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.343621] BUG: Bad page state in process test7  pfn:0efd2
+<1>[  573.343625] page:ffffea00003475f0 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  573.343630] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.343633] Call Trace:
+<4>[  573.343638]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  573.343644]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  573.343650]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  573.343657]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  573.343665]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  573.343671]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  573.343679]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  573.343686]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  573.343693]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.343698]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.343704]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.343712]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.343716] BUG: Bad page state in process test7  pfn:05425
+<1>[  573.343720] page:ffffea0000126818 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  573.343725] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.343728] Call Trace:
+<4>[  573.343733]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  573.343738]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  573.343745]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  573.343752]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  573.343759]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  573.343766]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  573.343773]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  573.343781]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  573.343788]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.343793]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.343799]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.343807]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.343811] BUG: Bad page state in process test7  pfn:0ef57
+<1>[  573.343815] page:ffffea0000345b08 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  573.343820] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.343823] Call Trace:
+<4>[  573.343828]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  573.343833]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  573.343840]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  573.343847]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  573.343854]  [<ffffffff810f7265>] release_pages+0x1b5/0x290
+<4>[  573.343861]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  573.343868]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  573.343876]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  573.343883]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.343889]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.343894]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.343902]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.343907] BUG: Bad page state in process test7  pfn:0ee28
+<1>[  573.343911] page:ffffea00003418c0 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  573.343916] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.343918] Call Trace:
+<4>[  573.343924]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  573.343929]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  573.343936]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  573.343943]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  573.343950]  [<ffffffff810f72ec>] release_pages+0x23c/0x290
+<4>[  573.343957]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  573.343964]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  573.343971]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  573.343978]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.343984]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.343989]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.343998]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.344002] BUG: Bad page state in process test7  pfn:0eff4
+<1>[  573.344006] page:ffffea0000347d60 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+<4>[  573.344010] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.344013] Call Trace:
+<4>[  573.344019]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  573.344024]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  573.344031]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  573.344037]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  573.344045]  [<ffffffff810f72ec>] release_pages+0x23c/0x290
+<4>[  573.344051]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  573.344059]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  573.344066]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  573.344073]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.344078]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.344084]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.344092]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.344113] BUG: Bad page map in process test7  pte:800000000edc4067 pmd:0ed57067
+<1>[  573.344118] page:ffffea00003402e0 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:ffff88000edc40c0
+<1>[  573.344123] addr:00005ffef8086000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:ffffffffffffffff
+<4>[  573.344128] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.344131] Call Trace:
+<4>[  573.344137]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  573.344143]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  573.344151]  [<ffffffff810f72ec>] ? release_pages+0x23c/0x290
+<4>[  573.344159]  [<ffffffff81115a0e>] unmap_region+0xce/0x170
+<4>[  573.344166]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.344172]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.344177]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.344186]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<1>[  573.344193] BUG: Bad page state in process test7  pfn:0edc4
+<1>[  573.344198] page:ffffea00003402e0 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:ffff88000edc40c0
+<4>[  573.344203] Pid: 2357, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  573.344206] Call Trace:
+<4>[  573.344212]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+<4>[  573.344217]  [<ffffffff815226a1>] ? dump_stack+0x77/0x80
+<4>[  573.344223]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+<4>[  573.344230]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+<4>[  573.344239]  [<ffffffff811058a5>] ? __dec_zone_page_state+0x35/0x40
+<4>[  573.344247]  [<ffffffff810f72ec>] release_pages+0x23c/0x290
+<4>[  573.344253]  [<ffffffff8111e8c4>] free_pages_and_swap_cache+0xb4/0xe0
+<4>[  573.344261]  [<ffffffff8129f6eb>] ? cpumask_any_but+0x2b/0x40
+<4>[  573.344268]  [<ffffffff81115a90>] unmap_region+0x150/0x170
+<4>[  573.344275]  [<ffffffff81115d26>] do_munmap+0x276/0x360
+<4>[  573.344281]  [<ffffffff8110878b>] pos_unmap_vma+0x1b/0x20
+<4>[  573.344286]  [<ffffffff811088a3>] sys_pos_unmap+0x113/0x160
+<4>[  573.344294]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+<4>[  573.344359] 
+<4>[  573.344361] 
+<4>[  573.344362] ===========sys_pos_map=============
+<4>[  573.344363] 
+<4>[  573.344367] 18446612132677419008 is trie_root
+<4>[  573.344370]  name buf = dasddddd , len = 8
+<4>[  573.344371]   TASK PID = 2357
+<4>[  573.344376] 	 pos_map_vma
+<4>[  573.344379] 	 vma zalloc 
+<4>[  573.344383] return value : 105548687630336
+<4>[  573.344385] ========================
+<4>[  573.344387] 
+<4>[  573.344404] 
+<4>[  573.344406] 
+<4>[  573.344407] ===========sys_pos_map=============
+<4>[  573.344408] 
+<4>[  573.344411] 18446612132677419008 is trie_root
+<4>[  573.344414]  name buf = dasdddddTS , len = 10
+<4>[  573.344416]   TASK PID = 2357
+<4>[  573.344420] 	 pos_map_vma
+<4>[  573.344423] 	find vma : 18446612132563055776
+<4>[  573.344426] return value : 105548687634432
+<4>[  573.344429] ========================
+<4>[  573.344430] 
+<4>[  574.297118] 
+<4>[  574.297123] 
+<4>[  574.297124] === sys_pos_thread_map is called ===
+<4>[  574.297131]  name_buf : dasddddd
+<4>[  574.297134]  sb->trie_root = 18446612132677419008
+<4>[  574.297141]  TASK PID = 2358
+<4>[  574.297144]  task_pid : 18446612133293719624
+<4>[  574.297147] ================================
+<4>[  574.297166] 
+<4>[  574.297167] 
+<4>[  574.297168] === sys_pos_thread_map is called ===
+<4>[  574.297172]  name_buf : dasdddddTS
+<4>[  574.297174]  sb->trie_root = 18446612132677419008
+<4>[  574.297178]  TASK PID = 2358
+<4>[  574.297180]  task_pid : 18446612133293719648
+<4>[  574.297183] ================================
+<4>[  574.297877]  len is 135168
+<4>[  574.297881] ==================
+<4>[  574.297884] matching : 2358 2358
+<4>[  574.297886] ==================
+<4>[  574.297889] parent task : 2358
+<4>[  574.297891]  mode setting complte
+<4>[  574.297894] vm_start : 105548687699968
+<4>[  574.297897] vm_end : 105548687835136
+<4>[  574.297900]  prev_vma is not existed
+<4>[  574.297906]  18446612132494737424 18446612133293719624
+<4>[  574.297909]  seg pid : 2358
+<4>[  574.297912] result of find_get_pid :  pid = 796229504
+<4>[  574.297915]  task : 18446612132771978048
+<4>[  574.297917] 	 pos_map_vma
+<4>[  574.297921] 	find vma : 18446612132563055776
+<4>[  574.297924]  seg pid : 2357
+<4>[  574.297927] result of find_get_pid :  pid = 465357184
+<4>[  574.297930]  task : 18446612133107555136
+<4>[  574.297933] 	 pos_map_vma
+<4>[  574.297935] 	 vma zalloc 
+<4>[  574.297939]  insert error
+<4>[  574.297941] This error? I don't know
+<6>[  574.297964] test7[2358]: segfault at 0 ip 00005fa4aebf679b sp 00005fa4aeb6dce8 error 6 in libc-2.11.1.so[5fa4aeb6f000+17f000]
+<1>[  574.298469] BUG: Bad page map in process test7  pte:800000000edc4067 pmd:170ff067
+<1>[  574.298480] page:ffffea00003402e0 flags:0100000000000014 count:0 mapcount:-2 mapping:(null) index:ffff88000edc40c0
+<1>[  574.298487] addr:00005ffef8086000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:ffffffffffffffff
+<4>[  574.298494] Pid: 2359, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  574.298498] Call Trace:
+<4>[  574.298516]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  574.298524]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  574.298533]  [<ffffffff81113f4b>] exit_mmap+0xbb/0x190
+<4>[  574.298544]  [<ffffffff8105e5fd>] mmput+0x4d/0x110
+<4>[  574.298550]  [<ffffffff81064de2>] exit_mm+0x112/0x150
+<4>[  574.298556]  [<ffffffff8106515d>] do_exit+0x12d/0x7f0
+<4>[  574.298562]  [<ffffffff81065875>] do_group_exit+0x55/0xd0
+<4>[  574.298573]  [<ffffffff810760a7>] get_signal_to_deliver+0x1d7/0x3d0
+<4>[  574.298583]  [<ffffffff81011315>] do_signal+0x75/0x7a0
+<4>[  574.298591]  [<ffffffff81111478>] ? handle_mm_fault+0x1b8/0xb10
+<4>[  574.298601]  [<ffffffff81037739>] ? default_spin_lock_flags+0x9/0x10
+<4>[  574.298610]  [<ffffffff81011a9d>] do_notify_resume+0x5d/0x80
+<4>[  574.298618]  [<ffffffff8101233e>] int_signal+0x12/0x17
+<1>[  574.298624] BUG: Bad page map in process test7  pte:800000000ef57067 pmd:170ff067
+<1>[  574.298630] page:ffffea0000345b08 flags:0100000000000014 count:0 mapcount:-2 mapping:(null) index:0
+<1>[  574.298635] addr:00005ffef8087000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:0
+<4>[  574.298641] Pid: 2359, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  574.298643] Call Trace:
+<4>[  574.298650]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  574.298657]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  574.298665]  [<ffffffff81113f4b>] exit_mmap+0xbb/0x190
+<4>[  574.298673]  [<ffffffff8105e5fd>] mmput+0x4d/0x110
+<4>[  574.298678]  [<ffffffff81064de2>] exit_mm+0x112/0x150
+<4>[  574.298684]  [<ffffffff8106515d>] do_exit+0x12d/0x7f0
+<4>[  574.298690]  [<ffffffff81065875>] do_group_exit+0x55/0xd0
+<4>[  574.298699]  [<ffffffff810760a7>] get_signal_to_deliver+0x1d7/0x3d0
+<4>[  574.298707]  [<ffffffff81011315>] do_signal+0x75/0x7a0
+<4>[  574.298713]  [<ffffffff81111478>] ? handle_mm_fault+0x1b8/0xb10
+<4>[  574.298721]  [<ffffffff81037739>] ? default_spin_lock_flags+0x9/0x10
+<4>[  574.298729]  [<ffffffff81011a9d>] do_notify_resume+0x5d/0x80
+<4>[  574.298737]  [<ffffffff8101233e>] int_signal+0x12/0x17
+<1>[  574.298742] BUG: Bad page map in process test7  pte:800000000efd8067 pmd:170ff067
+<1>[  574.298748] page:ffffea0000347740 flags:0100000000000014 count:0 mapcount:-2 mapping:(null) index:0
+<1>[  574.298753] addr:00005ffef808b000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:4
+<4>[  574.298757] Pid: 2359, comm: test7 Tainted: G    B      2.6.32 #17
+<4>[  574.298760] Call Trace:
+<4>[  574.298766]  [<ffffffff8110d192>] print_bad_pte+0x1d2/0x280
+<4>[  574.298773]  [<ffffffff8110ec70>] unmap_vmas+0x910/0x9f0
+<4>[  574.298781]  [<ffffffff81113f4b>] exit_mmap+0xbb/0x190
+<4>[  574.298788]  [<ffffffff8105e5fd>] mmput+0x4d/0x110
+<4>[  574.298794]  [<ffffffff81064de2>] exit_mm+0x112/0x150
+<4>[  574.298800]  [<ffffffff8106515d>] do_exit+0x12d/0x7f0
+<4>[  574.298806]  [<ffffffff81065875>] do_group_exit+0x55/0xd0
+<4>[  574.298814]  [<ffffffff810760a7>] get_signal_to_deliver+0x1d7/0x3d0
+<4>[  574.298822]  [<ffffffff81011315>] do_signal+0x75/0x7a0
+<4>[  574.298828]  [<ffffffff81111478>] ? handle_mm_fault+0x1b8/0xb10
+<4>[  574.298836]  [<ffffffff81037739>] ? default_spin_lock_flags+0x9/0x10
+<4>[  574.298844]  [<ffffffff81011a9d>] do_notify_resume+0x5d/0x80
+<4>[  574.298852]  [<ffffffff8101233e>] int_signal+0x12/0x17
