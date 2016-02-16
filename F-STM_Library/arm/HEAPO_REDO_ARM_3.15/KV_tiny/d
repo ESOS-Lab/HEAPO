@@ -1,0 +1,11 @@
+[Usage]: ./performance [obj_name] [thread_num] [mode]
+[Mode Manual]
+[1] : list insert
+[2] : list remove
+[3] : list count
+[4] : hash insert
+[5] : hash remove
+[6] : hash count
+[7] : btree insert
+[8] : btree remove
+[9] : btree count
