@@ -1,0 +1,25 @@
+[stm_pos_list_init]
+[stm_pos_list_init] already created
+==> stm_init()
+	sizeof(word)=8
+	VERSION_MAX=0xfffffffffffdfff
+==> stm_quiesce_init()
+[stm_pos_list_open] pos_map called
+tid : 2694 pid : 2694
+[stm_pos_list_open] stm_pos_log_map called
+[jdnw_TM] pid:[2694]
+mstate : [-134213632]
+[stm_pos_list_open]
+[LIB] list insert mode
+[tx_malloc_aligned][jdnw_TM]
+[tx_malloc_aligned][360]
+[tx_malloc_aligned][jdnw_TM]
+[tx_malloc_aligned][360]
+[tx_malloc_aligned][0x5ffef8001bb0]
+[rs_ws_malloc_aligned][jdnw_TM]
+[rs_ws_malloc_aligned][65536]
+[tx_malloc_aligned][0x5ffef8001dc0]
+[rs_ws_malloc_aligned][jdnw_TM]
+[rs_ws_malloc_aligned][65536]
+==> stm_exit()
+==> stm_quiesce_exit()

@@ -1,0 +1,73 @@
+# Reference
+http://www.wiki.xilinx.com/Install+Xilinx+Tools
+
+
+
+sudo apt-get update
+sudo apt-get upgrade
+
+# Get sources and tools
+git clone git://git.xilinx.com/u-boot-xlnx.git
+git clone git://git.xilinx.com/linux-xlnx.git
+git clone git://git.xilinx.com/device-tree.git
+2014.2 Vivado and SDK Standalone Web Install Client
+
+# install tools
+Vivado_installer
+dash shell disables: dpkg-reconfigure -plow dash -> no
+X11 connection: libsm-dev, libxi-dev, libxrender-dev, libxrandr-dev
+license? cancel
+
+
+# Prepare tools
+export CROSS_COMPILE=arm-xilinx-linux-gnueabi-
+source Vivado/SDK/settings64.sh
+export PATH=Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/bin:$PATH
+export PATH=u-boot-xlnx/tools:$PATH
+
+# Build 
+@ u-boot-xlnx
+make zynq_zc70x
+GLIBCXX errors: copy /usr/lib/x86_64-linux-gnu/libstdc++.so.6 to Vivado/SDK/common/lib/lin64/libstdc++.so.6
+--> 1. ./u-boot, 1327 KB
+
+@ linux-xlnx
+make ARCH=arm xilinx_zynq_defconfig
+make ARCH=arm UIMAGE_LOADADDR=0x8000 uImage  --> 2. arch/arm/boot/uImage, 2816 KB
+make ARCH=arm zynq-zc702.dtb  --> 3. arch/arm/boot/dts/zynq-zc702.dtb, 7 KB
+wget http://www.wiki.xilinx.com/file/view/arm_ramdisk.image.gz/419243558/arm_ramdisk.image.gz
+mkimage -A arm -T ramdisk -C gzip -d arm_ramdisk.image.gz uramdisk.image.gz   --> 4. uramdisk.image.gz 5186 KB
+
+now we have four items. rename them.
+1. u-boot.elf
+2. uImage
+3. devicetree.dtb
+4. uramdisk.image.gz
+
+plus, get FSBL.elf and system_top.bit from RTL project.
+
+# Bootgen
+bootgen -image bootimage.bif -w on -o i BOOT.bin
+ex) bootimage.bif
+image: {
+   [bootloader]FSBL.elf
+   system_top.bit
+   u-boot.elf
+}
+
+# Check sample Makefile from Build to Bootgen, need ruby
+
+# BOOT medium (SD card)
+BOOT.bin, uImage, devicetree.dtb, uramdisk.image.gz, init.sh
+ex) init.sh
+echo "Starting Network..."
+ifconfig eth0 192.168.0.6 network 255.255.255.0 up > /dev/null
+echo "Mount secondary partition"
+mkdir -p /mnt/second 2> /dev/null
+mount -t ext4 /dev/mmcblk0p2 /mnt/second
+sleep 5s
+
+# Makefile
+source Vivado/SDK/settings64.sh
+make
+

@@ -1602,6 +1602,51 @@ void pos_unmap_vma(struct mm_struct *mm, struct pos_vm_area *pos_vma)
 ////////////////////////////////////////////////////////////////////////////////
 
 
+#define KEONWOO_DEBUG 1 
+#if KEONWOO_DEBUG == 1 
+#define KEON_PRINT(...) printf(__VA_ARGS__) ;
+#else 
+#define KEON_PRINT(...) /* do nothing */ 
+#endif
+
+asmlinkage int sys_pos_recovery( char *name ){ 
+	struct pos_ns_record *record ; 	
+	struct pos_superblock *sb ; 	
+	struct pos_task_pid *task_pid , **prev_task_pid ; 	
+	struct task_struct *task ; 	
+
+	char name_buf[POS_NAME_LENGTH] ;
+
+	KEON_PRINT("[%s]name[%s]\n",__func__, name) ; 		
+	task = current ; 	
+	sb = pos_get_sb() ; 	
+	if( sb == NULL || sb->trie_root == NULL) return -1; 	
+	
+	copy_from_user(name_buf , name , POS_NAME_LENGTH) ; 	
+	record = pos_ns_search(sb->trie_root , name_buf , strlen(name_buf)) ; 	
+	if( record == NULL ) return -1; 	
+
+	prev_task_pid = &record->task_list ; 	
+	task_pid = record->task_list ; 	
+	
+	/* all remove node */
+	while(task_pid != NULL ){ 
+		if( task_pid->pid_nr != 	
+				task_pid_nr(task )){ 
+			KEON_PRINT("task_pid->pid_nr[%d], task_pid_nr(task)[%d]\n",task_pid->pid_nr, task_pid_nr(task)) ; 	
+			*prev_task_pid = task_pid->task_next ; 	
+			/* free slab */
+			kmem_cache_free(pos_task_pid_struct_cachep,
+					 task_pid) ; 	
+		} 	
+		/* next point */ 	
+		task_pid = task_pid->next ; 	
+	} 	
+	KEON_PRINT("[%s]return_data[%d]\n" , __func__ , POS_NORMAL);
+	return POS_NORMAL ; 	
+} 
+
+
 asmlinkage void *sys_pos_create(char __user *name, unsigned long size)
 {
 	struct pos_superblock *sb;

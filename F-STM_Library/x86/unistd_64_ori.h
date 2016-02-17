@@ -704,9 +704,9 @@ __SYSCALL(__NR_pos_check_seg_addr, sys_pos_check_seg_addr)
 
 // POS (Keonwoo Lee)
 // For multithreading environment
-#define __NR_pos_thread_map			307
-__SYSCALL(__NR_pos_thread_map , sys_pos_thread_map) 
-#define __NR_pos_recovery			308
+//#define __NR_pos_thread_map			307
+//__SYSCALL(__NR_pos_thread_map , sys_pos_thread_map) 
+#define __NR_pos_recovery			307
 __SYSCALL(__NR_pos_recovery , sys_pos_recovery) 
 
 #ifndef __NO_STUBS
