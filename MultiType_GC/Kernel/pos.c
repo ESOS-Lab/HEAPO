@@ -32,6 +32,17 @@
 
 #include <linux/kernel.h>	//printk
 
+//DK start
+#include <linux/rbtree.h>
+//DK end
+
+//DK start
+struct rb_root pos_mtgc_permanent_object_tree;
+struct rb_root pos_mtgc_half_permanent_object_tree;
+struct rb_root pos_mtgc_tempoal_object_tree;
+//need to bind at the NVM area
+//DK end
+
 struct pos_superblock* pos_sb;
 
 struct kmem_cache *pos_task_pid_struct_cachep;
@@ -1900,6 +1911,9 @@ asmlinkage void *sys_pos_seg_alloc(char __user *name, unsigned long len)
 	char name_buf[POS_NAME_LENGTH];
 	fmode_t mode;
 	
+	//DK start
+	struct rb_node rb_node;
+	//DK end
 
 	task = current;
 	mm = task->mm;
@@ -1986,6 +2000,12 @@ asmlinkage void *sys_pos_seg_alloc(char __user *name, unsigned long len)
 		prev_task_pid = &task_pid->task_next;
 		task_pid = task_pid->task_next;
 	}
+
+	//DK start
+	rb_node = kmalloc(sizeof(struct rb_node), GFP_KERNEL);
+	rb_link_node(rb_node, parent_node, root_node);
+	//no insert call needed
+	//DK end
 
 	//세그먼트의 시작 주소 리턴
 	return (void *)vm_start;
@@ -2314,5 +2334,14 @@ void pos_init(void)
 			sizeof(struct pos_task_pid), 0,
 			(SLAB_RECLAIM_ACCOUNT|SLAB_PANIC|SLAB_MEM_SPREAD),
 			NULL);
+
+	//DK start
+	pos_mtgc_perment_object_tree = kmem_cache_create("perment_tree", sizeof(struct rb_root), 0, (SLAB_RECLAIM_ACCOUNT|SLAB_PANIC|SLAB_MEM_SPREAD), NULL);
+	pos_mtgc_half_perment_object_tree = kmem_cache_create("half_tree", sizeof(struct rb_root), 0, (SLAB_RECLAIM_ACCOUNT|SLAB_PANIC|SLAB_MEM_SPREAD), NULL);
+	pos_mtgc_temporal_object_tree = kmem_cache_create("temporal_tree", sizeof(struct rb_root), 0, (SLAB_RECLAIM_ACCOUNT|SLAB_PANIC|SLAB_MEM_SPREAD), NULL);
+	//DK end
+
+
+
 }
 EXPORT_SYMBOL(pos_init);
