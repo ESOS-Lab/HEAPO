@@ -190,6 +190,9 @@ errout:
 #endif
 
 			void *p = chunk2mem(victim);
+			//dk start
+		        pos_gc_insert_tree(*p, POS_OBJ_TYPE);
+			//dk end
 			return p;
 		}
 	}
@@ -218,6 +221,9 @@ errout:
 #endif
 
 			void *p = chunk2mem(victim);
+			//dk start
+		        pos_gc_insert_tree(*p, POS_OBJ_TYPE);
+			//dk end
 			return p;
 		}
 	}
@@ -286,6 +292,9 @@ errout:
 #endif
 
 				void *p = chunk2mem(victim);
+				//dk start
+				pos_gc_insert_tree(*p, POS_OBJ_TYPE);
+				//dk end
 				return p;
 			}
 
@@ -305,6 +314,9 @@ errout:
 #endif
 
 				void *p = chunk2mem(victim);
+				//dk start
+				pos_gc_insert_tree(*p, POS_OBJ_TYPE);
+				//dk end
 				return p;
 			}
 
@@ -443,6 +455,9 @@ errout:
 				}
 
 				void *p = chunk2mem(victim);
+				//dk start
+				pos_gc_insert_tree(*p, POS_OBJ_TYPE);
+				//dk end
 				return p;
 			}
 		}
@@ -543,6 +558,9 @@ errout:
 				}
 
 				void *p = chunk2mem(victim);
+				//dk start
+				pos_gc_insert_tree(*p, POS_OBJ_TYPE);
+				//dk end				
 				return p;
 			}
 		}
@@ -595,6 +613,9 @@ new_alloc:
 //#endif
 
 			//return p;
+			//dk start
+		        pos_gc_insert_tree(chunk2mem(p), POS_OBJ_TYPE);
+			//dk end
 			return chunk2mem(p);
 		} 
 		else
