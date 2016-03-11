@@ -5,6 +5,14 @@
    Embedded Software Systems Laboratory, Hanyang University
 */
 
+/*
+  160311
+  1. new struct 'gc_node' added
+  2. rb-tree insertion/search routine added (pos_gc_node_insert()/pos_gc_node_search)
+  3. syscall 'sys_pos_gc_insert_tree' added
+  
+  by Dokeun Lee
+ */
 #include <linux/mm.h>
 #include <linux/memory.h>
 #include <linux/types.h>
@@ -53,7 +61,7 @@ struct pos_superblock* pos_sb;
 struct kmem_cache *pos_task_pid_struct_cachep;
 
 //DK start
-int gc_node_insert(struct rb_root *root, GC_NODE *key_node)
+int pos_gc_node_insert(struct rb_root *root, GC_NODE *key_node)
 {
   struct rb_node **new_node = &(root->rb_node);
   struct rb_node *parent = NULL;
@@ -85,7 +93,7 @@ int gc_node_insert(struct rb_root *root, GC_NODE *key_node)
 //DK end
 
 //DK start
-GC_NODE gc_node_search(struct rb_root *root, unsigned long key);
+GC_NODE pos_gc_node_search(struct rb_root *root, unsigned long key);
 {
   struct rb_node *node_pointer; 
   GC_NODE *key_node;
@@ -2338,11 +2346,11 @@ asmlinkage int sys_pos_gc_insert_tree(unsigned long key, unsigned int obj_type)
   switch(obj_type)
   {
     case 0;
-       gc_node_insert(&pos_mtgc_temporal_object_tree, inserted_node);
+       pos_gc_node_insert(&pos_mtgc_temporal_object_tree, inserted_node);
     case 1;
-       gc_node_insert(&pos_mtgc_half_permanent_object_tree, inserted_node);
+       pos_gc_node_insert(&pos_mtgc_half_permanent_object_tree, inserted_node);
     case 2;
-    gc_node_insert(&pos_mtgc_permanent_object_tree, inserted_node);
+       pos_gc_node_insert(&pos_mtgc_permanent_object_tree, inserted_node);
   }
   
   return 1;

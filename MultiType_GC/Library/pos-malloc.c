@@ -27,7 +27,11 @@
    write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
    Boston, MA 02111-1307, USA.  */
 
-
+/*
+  160311
+  1. allocation tree insertion routine added.
+     => address(nv object chunk's start address) will be inserted to allocation tree(rb-tree) 
+ */
 
 #include <pos-malloc.h>
 #include <stdio.h>
