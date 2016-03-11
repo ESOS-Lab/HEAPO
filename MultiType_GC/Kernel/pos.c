@@ -40,6 +40,11 @@
 struct rb_root pos_mtgc_permanent_object_tree;
 struct rb_root pos_mtgc_half_permanent_object_tree;
 struct rb_root pos_mtgc_tempoal_object_tree;
+
+typedef struct gc_node {
+  struct rb_node node;
+  unsigned long key;
+}GC_NODE;
 //need to bind at the NVM area
 //DK end
 
@@ -47,6 +52,66 @@ struct pos_superblock* pos_sb;
 
 struct kmem_cache *pos_task_pid_struct_cachep;
 
+//DK start
+int gc_node_insert(struct rb_root *root, GC_NODE *key_node)
+{
+  struct rb_node **new_node = &(root->rb_node);
+  struct rb_node *parent = NULL;
+  GC_NODE *current_node;
+  int determine = 0;
+
+  while(*new)
+  {
+      current_node = rb_entry(*new_node, GC_NODE, node);
+      determine = key_node->key - this_node->key;
+      parent = *new_node;
+      if(determine < 0)
+      {
+	new_node = &((*new)->rb_left);
+      }
+      else if(determine > 0)
+      {
+	new_node = &((*new)->rb_right);
+      }
+      else
+      {
+	return 0;
+      }
+      rb_link_node(&key_node->node, parent, new);
+      rb_insert_color(&data->node, root);
+
+      return 1;
+}
+//DK end
+
+//DK start
+GC_NODE gc_node_search(struct rb_root *root, unsigned long key);
+{
+  struct rb_node *node_pointer; 
+  GC_NODE *key_node;
+  int determine = 0;
+
+  node = root->rb_node;
+  while(node_pointer)
+  {
+    key_node = rb_entry(node_pointer, GC_NODE, node);
+    determine = key - key_node->key;
+    if(determine < 0)
+    {
+      node_pointer = node->rb_left;
+    }
+    else if(determine > 0)
+    {
+      node_pointer = node->rb_right;
+    }
+    else
+    {
+      return key_node;
+    }
+  }
+  return NULL;
+}
+//DK end
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -1912,7 +1977,7 @@ asmlinkage void *sys_pos_seg_alloc(char __user *name, unsigned long len)
 	fmode_t mode;
 	
 	//DK start
-	struct rb_node rb_node;
+	struct rb_node *rb_node;
 	//DK end
 
 	task = current;
@@ -2003,7 +2068,8 @@ asmlinkage void *sys_pos_seg_alloc(char __user *name, unsigned long len)
 
 	//DK start
 	rb_node = kmalloc(sizeof(struct rb_node), GFP_KERNEL);
-	rb_link_node(rb_node, parent_node, root_node);
+
+	rb_link_node(rb_node, parent_node, rb_link);
 	//no insert call needed
 	//DK end
 
@@ -2255,6 +2321,35 @@ asmlinkage int sys_pos_meta_deliver(int __user parcel)
 
 }
 //dk e
+
+//dk start
+asmlinkage int sys_pos_gc_insert_tree(unsigned long key, unsigned int obj_type)
+{
+  unsigned long key_buffer;
+  unsigned int type_buffer;
+  GC_NODE *inserted_node;
+
+  copy_from_user(&key_buffer, &key, sizeof(unsigned long));
+  
+  inserted_node = (GC_NODE*)kmalloc(sizeof(GC_NODE), GFP_KERNEL);
+  rb_init_node(&inserted_node->node);
+  inserted_node->key = key_buffer;
+
+  switch(obj_type)
+  {
+    case 0;
+       gc_node_insert(&pos_mtgc_temporal_object_tree, inserted_node);
+    case 1;
+       gc_node_insert(&pos_mtgc_half_permanent_object_tree, inserted_node);
+    case 2;
+    gc_node_insert(&pos_mtgc_permanent_object_tree, inserted_node);
+  }
+  
+  return 1;
+    
+}
+//dk end
+
 void pos_init(void)
 {
 	int i;
@@ -2282,7 +2377,7 @@ void pos_init(void)
 
 		pos_sb->pos_desc_struct_cachep = 
 			pos_kmem_cache_create("pos_descriptor",
-				sizeof(struct pos_descriptor), 0,
+B				sizeof(struct pos_descriptor), 0,
 				(SLAB_RECLAIM_ACCOUNT|SLAB_PANIC|SLAB_MEM_SPREAD),
 				NULL);
 
@@ -2336,12 +2431,9 @@ void pos_init(void)
 			NULL);
 
 	//DK start
-	pos_mtgc_perment_object_tree = kmem_cache_create("perment_tree", sizeof(struct rb_root), 0, (SLAB_RECLAIM_ACCOUNT|SLAB_PANIC|SLAB_MEM_SPREAD), NULL);
-	pos_mtgc_half_perment_object_tree = kmem_cache_create("half_tree", sizeof(struct rb_root), 0, (SLAB_RECLAIM_ACCOUNT|SLAB_PANIC|SLAB_MEM_SPREAD), NULL);
-	pos_mtgc_temporal_object_tree = kmem_cache_create("temporal_tree", sizeof(struct rb_root), 0, (SLAB_RECLAIM_ACCOUNT|SLAB_PANIC|SLAB_MEM_SPREAD), NULL);
+	//	pos_mtgc_perment_object_tree = kmem_cache_create("perment_tree", sizeof(struct rb_root), 0, (SLAB_RECLAIM_ACCOUNT|SLAB_PANIC|SLAB_MEM_SPREAD), NULL);
+	//	pos_mtgc_half_perment_object_tree = kmem_cache_create("half_tree", sizeof(struct rb_root), 0, (SLAB_RECLAIM_ACCOUNT|SLAB_PANIC|SLAB_MEM_SPREAD), NULL);
+	//pos_mtgc_temporal_object_tree = kmem_cache_create("temporal_tree", sizeof(struct rb_root), 0, (SLAB_RECLAIM_ACCOUNT|SLAB_PANIC|SLAB_MEM_SPREAD), NULL);
 	//DK end
-
-
-
 }
 EXPORT_SYMBOL(pos_init);
