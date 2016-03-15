@@ -13,6 +13,13 @@
   
   by Dokeun Lee
  */
+
+/*160315
+  for move the domain of gc to pos-lib, 
+  1. remove gc-trees
+  2. remove rb-tree routines
+  3. remove syscall about gc
+ */
 #include <linux/mm.h>
 #include <linux/memory.h>
 #include <linux/types.h>
@@ -44,6 +51,7 @@
 #include <linux/rbtree.h>
 //DK end
 
+/* 160315 removed 
 //DK start
 struct rb_root pos_mtgc_permanent_object_tree;
 struct rb_root pos_mtgc_half_permanent_object_tree;
@@ -55,71 +63,12 @@ typedef struct gc_node {
 }GC_NODE;
 //need to bind at the NVM area
 //DK end
+*/
 
 struct pos_superblock* pos_sb;
 
 struct kmem_cache *pos_task_pid_struct_cachep;
 
-//DK start
-int pos_gc_node_insert(struct rb_root *root, GC_NODE *key_node)
-{
-  struct rb_node **new_node = &(root->rb_node);
-  struct rb_node *parent = NULL;
-  GC_NODE *current_node;
-  int determine = 0;
-
-  while(*new)
-  {
-      current_node = rb_entry(*new_node, GC_NODE, node);
-      determine = key_node->key - this_node->key;
-      parent = *new_node;
-      if(determine < 0)
-      {
-	new_node = &((*new)->rb_left);
-      }
-      else if(determine > 0)
-      {
-	new_node = &((*new)->rb_right);
-      }
-      else
-      {
-	return 0;
-      }
-      rb_link_node(&key_node->node, parent, new);
-      rb_insert_color(&data->node, root);
-
-      return 1;
-}
-//DK end
-
-//DK start
-GC_NODE pos_gc_node_search(struct rb_root *root, unsigned long key);
-{
-  struct rb_node *node_pointer; 
-  GC_NODE *key_node;
-  int determine = 0;
-
-  node = root->rb_node;
-  while(node_pointer)
-  {
-    key_node = rb_entry(node_pointer, GC_NODE, node);
-    determine = key - key_node->key;
-    if(determine < 0)
-    {
-      node_pointer = node->rb_left;
-    }
-    else if(determine > 0)
-    {
-      node_pointer = node->rb_right;
-    }
-    else
-    {
-      return key_node;
-    }
-  }
-  return NULL;
-}
-//DK end
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -2330,6 +2279,7 @@ asmlinkage int sys_pos_meta_deliver(int __user parcel)
 }
 //dk e
 
+/* 160315 removed
 //dk start
 asmlinkage int sys_pos_gc_insert_tree(unsigned long key, unsigned int obj_type)
 {
@@ -2357,6 +2307,26 @@ asmlinkage int sys_pos_gc_insert_tree(unsigned long key, unsigned int obj_type)
     
 }
 //dk end
+
+//dk start
+ int pos_gc_start()
+ {
+	 GC_NODE *tree_root;
+	 //1. load the temporal object alloc tree root
+	 tree_root = pos_mgtc_temporal_object_tree.node;
+
+	 //2. free these object
+	 
+	 //3. check free space of NVM region
+	 //4. load the half-permanent object alloc tree root
+	 //5. check whether obj is mapped or not
+	 //6. free therse object
+	 //7. check free space of NVM region
+	 //8. load the permanent object alloc tree root
+	 //9. call swapping function
+ }
+//dk end
+*/
 
 void pos_init(void)
 {
@@ -2438,10 +2408,12 @@ B				sizeof(struct pos_descriptor), 0,
 			(SLAB_RECLAIM_ACCOUNT|SLAB_PANIC|SLAB_MEM_SPREAD),
 			NULL);
 
+	/* 160315 removed
 	//DK start
 	//	pos_mtgc_perment_object_tree = kmem_cache_create("perment_tree", sizeof(struct rb_root), 0, (SLAB_RECLAIM_ACCOUNT|SLAB_PANIC|SLAB_MEM_SPREAD), NULL);
 	//	pos_mtgc_half_perment_object_tree = kmem_cache_create("half_tree", sizeof(struct rb_root), 0, (SLAB_RECLAIM_ACCOUNT|SLAB_PANIC|SLAB_MEM_SPREAD), NULL);
 	//pos_mtgc_temporal_object_tree = kmem_cache_create("temporal_tree", sizeof(struct rb_root), 0, (SLAB_RECLAIM_ACCOUNT|SLAB_PANIC|SLAB_MEM_SPREAD), NULL);
 	//DK end
+	*/
 }
 EXPORT_SYMBOL(pos_init);

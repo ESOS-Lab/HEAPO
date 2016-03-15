@@ -168,6 +168,11 @@ struct pos_superblock
 	struct kmem_cache *pos_ns_node_struct_cachep;
 
 	//struct kmem_cache *pos_task_pid_struct_cachep;
+
+	//dk start
+	unsigned int page_count;
+	//dk end
+
 };
 
 extern struct kmem_cache *pos_task_pid_struct_cachep;

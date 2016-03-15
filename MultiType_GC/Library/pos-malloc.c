@@ -33,13 +33,37 @@
      => address(nv object chunk's start address) will be inserted to allocation tree(rb-tree) 
  */
 
+/*160315
+  1. previous allocation tree insertion routine deleted
+  2. rb-tree insert/search function added
+  3. gc_node structure added
+  4. rb-tree initialization routine added
+*/
+
 #include <pos-malloc.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <syscall.h>
 
+//dk start
+#include <linux/rbtree.h>
+//dk end
 
 INTERNAL_SIZE_T global_max_fast = 144;
+
+//dk start
+#define POS_DEBUG 1
+
+char* alloc_tree;
+int alloc_tree_init_flag = 0;
+int alloc_tree_meta_update_flag = 0;
+
+typedef struct gc_node {
+  struct rb_node node;
+  unsigned long key;
+}GC_NODE;
+
+//dk end
 
 #define pos_public_fREe		pos_free
 #define pos_public_mALLOc	pos_malloc
@@ -62,6 +86,76 @@ int check_valid_address(struct seg_info *head, Void_t *ptr);
 void pos_check_unsafe_segment(char *name, mstate av, struct seg_info *head, Void_t *first_chunk);
 Void_t* pos_unsafe_region_relocate(char *name, mstate av, Void_t *p);
 void pos_check_unsafe_region(char *name, mstate av, struct seg_info *head, mchunkptr chunk_ptr);
+
+
+//DK start
+int pos_gc_node_insert(struct rb_root *root, GC_NODE *key_node)
+{
+  struct rb_node **new_node = &(root->rb_node);
+  struct rb_node *parent = NULL;
+  GC_NODE *current_node;
+  int determine = 0;
+
+  while(*new_node)
+  {
+      current_node = rb_entry(*new_node, GC_NODE, node);
+      determine = key_node->key - this_node->key;
+      parent = *new_node;
+      if(determine < 0)
+      {
+		  new_node = &((*new)->rb_left);
+      }
+      else if(determine > 0)
+      {
+		  new_node = &((*new)->rb_right);
+      }
+      else
+      {
+		  return 0;
+      }
+      rb_link_node(&key_node->node, parent, new);
+      rb_insert_color(&data->node, root);
+
+      return 1;
+}
+//DK end
+
+//DK start
+GC_NODE pos_gc_node_search(struct rb_root *root, unsigned long key);
+{
+  struct rb_node *node_pointer; 
+  GC_NODE *key_node;
+  int determine = 0;
+
+  node = root->rb_node;
+  while(node_pointer)
+  {
+    key_node = rb_entry(node_pointer, GC_NODE, node);
+    determine = key - key_node->key;
+    if(determine < 0)
+    {
+      node_pointer = node->rb_left;
+    }
+    else if(determine > 0)
+    {
+      node_pointer = node->rb_right;
+    }
+    else
+    {
+      return key_node;
+    }
+  }
+  return NULL;
+}
+//DK end
+
+GC_NODE create_gc_node(GC_NODE *node)
+{
+	GC_NODE* new_node = pos_malloc("gc_tree", sizeof(GC_NODE), 2);
+	rb_init_node(&new_node->node);
+	new_node->key = 0;
+}
+
 /*
   ------------------------------ pos_malloc_consolidate ------------------------------
 */
@@ -137,6 +231,12 @@ pos_int_malloc(char *name, mstate av, size_t bytes, int pos_obj_type)
 	mchunkptr fwd;
 	mchunkptr bck;
 
+	//dk start
+
+
+	//dk end
+
+
 	//const char *errstr = NULL;
 
 	size_t pagemask  = PAGESIZE - 1;
@@ -170,6 +270,74 @@ pos_int_malloc(char *name, mstate av, size_t bytes, int pos_obj_type)
 	}
 	
 	//Edited by dklee }
+	
+	//dk start
+	Alloc_tree = (char*)malloc(sizeof(char)*50);
+
+	if(POS_OBJ_TYPE == POS_TEMPORAL)
+	{
+		strcpy(alloc_tree, "pos_temporal_obj_alloc_tree");
+	}
+	else if(POS_OBJ_TYPE == POS_HALF_PERMANENT)
+	{
+		strcpy(alloc_tree, "pos_half_obj_alloc_tree");
+	}
+	else if(POS_OBJ_TYPE == PERMANENT)
+	{
+		strcpy(alloc_tree, "pos_permanent_obj_alloc_tree");
+	}
+	else
+	{
+			//error
+	}
+	//dk end
+
+	//dk start
+	if(pos_create(Alloc_tree) == 1) 
+	{
+		alloc_tree_init_flag = 0;
+		if(POS_DEBUG == 1)
+		{
+			printf("Allocation tree creation\n");
+		}
+		//alloc_tree_init(Alloc_tree);
+		//rb-tree root init needed
+
+		if(POS_DEBUG == 1)
+		{
+			ptr=pos_get_prime_object(Alloc_tree);
+			printf("Alloc Tree head =%p\n",ptr);
+		}	
+		alloc_tree_init_flag = 1;
+	}
+	else
+	{
+		if(alloc_tree_init_flag ==0)
+		{
+			if(POS_DEBUG == 1)
+			{
+				printf("initializing alloc tree\n");
+			}
+		}
+		else
+		{
+			alloc_tree_init_flag = 1;
+			if(POS_DEBUG == 1)
+			{
+				printf("Allocation tree mapping\n");
+			}
+			pos_map(Alloc_tree);
+		}
+	}
+	
+	if(POS_DEBUG == 1)
+	{
+		printf("--------------------------------------\n");
+		printf("alloc_tree_init_flag =%d\n", alloc_tree_init_flag);
+		printf("alloc_tree_meta_update_flag =%d\n", alloc_tree_meta_update_flag);
+		printf("--------------------------------------\n");
+	}
+	//dk end
 
 
 	// 1. fast bin (<=144)
@@ -1265,8 +1433,9 @@ pos_malloc_init_state(char *name, mstate av)
   ------------------------------ pos_malloc_wrapper ------------------------------
 */
 
+//dk start
 Void_t*
-pos_public_mALLOc(char *name, unsigned long _bytes)
+pos_public_mALLOc(char *name, unsigned long _bytes, int obj_type) 
 {
 	struct malloc_state *ar_ptr;
 	Void_t *victim = NULL;
@@ -1288,12 +1457,12 @@ pos_public_mALLOc(char *name, unsigned long _bytes)
 	}
 
 	(void)mutex_lock(&ar_ptr->mutex);
-	victim = pos_int_malloc(name, ar_ptr, bytes);
+	victim = pos_int_malloc(name, ar_ptr, bytes, obj_type);
 	(void)mutex_unlock(&ar_ptr->mutex);
 
 	return victim;
 }
-
+//dk end
 
 /*
   ------------------------------ pos_free_wrapper ------------------------------
