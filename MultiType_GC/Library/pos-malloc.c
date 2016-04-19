@@ -156,6 +156,58 @@ GC_NODE create_gc_node(GC_NODE *node)
 	new_node->key = 0;
 }
 
+//dk s
+int pos_local_gc(char* name)
+{
+	mchunkptr ptr;
+	void *mem_ptr;
+	void *p;
+	short obj_type = 0;
+	int type;
+	int size;
+	int key_count;
+	int val_count;
+
+	p = pos_get_prime_object(name);
+	ptr = mem2chunk(p);
+
+	obj_type = pos_get_object_type(name);
+	type = obj_type & 0xF; //1111
+	size = obj_type & 0xF0; //11110000
+	key_count = obj_type & 0xF00; //111100000000
+	val_count = obj_type & 0XF000 //1111000000000000	
+
+	if(type == 1) // linked list
+	{
+		make_list_for_list(p);
+	}
+	else if(type == 2) //b-tree
+	{
+		make_list_for_btree(p);
+	}
+	else if(type == 3) //hash
+	{
+		make_list_for_hashtable(p);
+	}
+	else
+	{
+			//error
+	}
+
+	while(chunk_is_last(ptr != 1)
+	{
+		mem_ptr = chunk2mem(ptr);
+		mem_ptr = //alloc list key 
+		ptr = next_chunk(ptr);
+		if(inuse(ptr) != 1)
+		{
+			ptr=next_chunk(ptr);
+		}
+	}
+	return 0;
+}
+//dk e
+
 /*
   ------------------------------ pos_malloc_consolidate ------------------------------
 */
@@ -204,14 +256,9 @@ pos_malloc_consolidate(char *name, mstate av)
   ------------------------------ pos_malloc ------------------------------
 */
 
-//Edited by DKLEE {
-#define POS_TEMPORAL 0
-#define POS_HALF_PERMANENT 1
-#define POS_PERMANENT 2
-//Edited by DKLEE }
 
 static Void_t*
-pos_int_malloc(char *name, mstate av, size_t bytes, int pos_obj_type)
+pos_int_malloc(char *name, mstate av, size_t bytes)
 {
 	INTERNAL_SIZE_T nb;
 	unsigned int idx;
@@ -231,113 +278,19 @@ pos_int_malloc(char *name, mstate av, size_t bytes, int pos_obj_type)
 	mchunkptr fwd;
 	mchunkptr bck;
 
-	//dk start
-
-
-	//dk end
-
+	//dk s
+	int gc_result = 0;
+	mchunkptr present_last_chunk = NULL;
+	//dk e
 
 	//const char *errstr = NULL;
 
 	size_t pagemask  = PAGESIZE - 1;
 
-	//Edited by DKLEE {
-	int POS_OBJ_TYPE;
-	//Edited by DKLEE }
 
+ first:
 	//16바이트 단위로 정렬
 	checked_request2size(bytes, nb);
-
-	//Edited by dklee {
-
-	switch(pos_obj_type)
-	{
-		case 0: 
-			POS_OBJ_TYPE = POS_TEMPORAL;
-			break;
-		case 1: 
-			POS_OBJ_TYPE = POS_HALF_PERMANENT;
-			break;
-		case 2: 
-			POS_OBJ_TYPE = POS_PERMANENT;
-			break;
-		
-		default:
-			printf("Please check the Persistent Object Type\n");
-			printf("(0: temporal, 1: half_permanent, 2: permanent)\n");
-			return;
-			break;	
-	}
-	
-	//Edited by dklee }
-	
-	//dk start
-	Alloc_tree = (char*)malloc(sizeof(char)*50);
-
-	if(POS_OBJ_TYPE == POS_TEMPORAL)
-	{
-		strcpy(alloc_tree, "pos_temporal_obj_alloc_tree");
-	}
-	else if(POS_OBJ_TYPE == POS_HALF_PERMANENT)
-	{
-		strcpy(alloc_tree, "pos_half_obj_alloc_tree");
-	}
-	else if(POS_OBJ_TYPE == PERMANENT)
-	{
-		strcpy(alloc_tree, "pos_permanent_obj_alloc_tree");
-	}
-	else
-	{
-			//error
-	}
-	//dk end
-
-	//dk start
-	if(pos_create(Alloc_tree) == 1) 
-	{
-		alloc_tree_init_flag = 0;
-		if(POS_DEBUG == 1)
-		{
-			printf("Allocation tree creation\n");
-		}
-		//alloc_tree_init(Alloc_tree);
-		//rb-tree root init needed
-
-		if(POS_DEBUG == 1)
-		{
-			ptr=pos_get_prime_object(Alloc_tree);
-			printf("Alloc Tree head =%p\n",ptr);
-		}	
-		alloc_tree_init_flag = 1;
-	}
-	else
-	{
-		if(alloc_tree_init_flag ==0)
-		{
-			if(POS_DEBUG == 1)
-			{
-				printf("initializing alloc tree\n");
-			}
-		}
-		else
-		{
-			alloc_tree_init_flag = 1;
-			if(POS_DEBUG == 1)
-			{
-				printf("Allocation tree mapping\n");
-			}
-			pos_map(Alloc_tree);
-		}
-	}
-	
-	if(POS_DEBUG == 1)
-	{
-		printf("--------------------------------------\n");
-		printf("alloc_tree_init_flag =%d\n", alloc_tree_init_flag);
-		printf("alloc_tree_meta_update_flag =%d\n", alloc_tree_meta_update_flag);
-		printf("--------------------------------------\n");
-	}
-	//dk end
 
 
 	// 1. fast bin (<=144)
@@ -362,9 +315,7 @@ errout:
 #endif
 
 			void *p = chunk2mem(victim);
-			//dk start
-		        pos_gc_insert_tree(*p, POS_OBJ_TYPE);
-			//dk end
+
 			return p;
 		}
 	}
@@ -393,9 +344,7 @@ errout:
 #endif
 
 			void *p = chunk2mem(victim);
-			//dk start
-		        pos_gc_insert_tree(*p, POS_OBJ_TYPE);
-			//dk end
+
 			return p;
 		}
 	}
@@ -421,7 +370,7 @@ errout:
 			if (in_smallbin_range(nb) &&
 			   bck == unsorted_chunks(av) &&
 			   victim == av->last_remainder &&
-			   (unsigned long)(size) > (unsigned long)(nb + MINSIZE)) {
+				(unsigned long)(size) > (unsigned long)(nb + MINSIZE)) { //initial state 
 
 				remainder_size = size - nb;
 				remainder = chunk_at_offset(victim, nb);
@@ -441,7 +390,12 @@ errout:
 
 // Remainder dosen't need logging...
 				if (chunk_is_last(victim))
+				{
 					set_head(remainder, remainder_size | LAST_CHUNK | PREV_INUSE);
+					//dk s
+					av->last_chunk_pointer = remainder;
+					//dk e
+				}
 				else
 					set_head(remainder, remainder_size | PREV_INUSE);
 
@@ -464,9 +418,7 @@ errout:
 #endif
 
 				void *p = chunk2mem(victim);
-				//dk start
-				pos_gc_insert_tree(*p, POS_OBJ_TYPE);
-				//dk end
+
 				return p;
 			}
 
@@ -486,9 +438,7 @@ errout:
 #endif
 
 				void *p = chunk2mem(victim);
-				//dk start
-				pos_gc_insert_tree(*p, POS_OBJ_TYPE);
-				//dk end
+
 				return p;
 			}
 
@@ -603,7 +553,12 @@ errout:
 
 // Remainder dosen't need logging...
 					if (chunk_is_last(victim))
+					{
 						set_head(remainder, remainder_size | LAST_CHUNK | PREV_INUSE);
+						//dk s
+						av->last_chunk_pointer = remainder;
+						//dk e
+					}
 					else
 						set_head(remainder, remainder_size | PREV_INUSE);
 
@@ -627,9 +582,7 @@ errout:
 				}
 
 				void *p = chunk2mem(victim);
-				//dk start
-				pos_gc_insert_tree(*p, POS_OBJ_TYPE);
-				//dk end
+
 				return p;
 			}
 		}
@@ -706,7 +659,12 @@ errout:
 					}
 
 					if (chunk_is_last(victim))
+					{
 						set_head(remainder, remainder_size | LAST_CHUNK | PREV_INUSE);
+						//dk s
+						av->last_chunk_pointer = remainder;
+						//dk e
+					}
 					else
 						set_head(remainder, remainder_size | PREV_INUSE);
 
@@ -730,9 +688,7 @@ errout:
 				}
 
 				void *p = chunk2mem(victim);
-				//dk start
-				pos_gc_insert_tree(*p, POS_OBJ_TYPE);
-				//dk end				
+
 				return p;
 			}
 		}
@@ -740,7 +696,23 @@ errout:
 new_alloc:
 
 		// 6. new allocation
-		size = (nb + MINSIZE +2*SIZE_SZ + pagemask) & ~pagemask;
+		
+		if(gc_result < 1)
+		{
+			pos_local_gc(name);		
+			gc_result++;
+		}
+		
+		if(gc_result == 1)
+		{
+			gc_result++;
+			goto first;
+		}
+
+		//size = (nb + MINSIZE +2*SIZE_SZ + pagemask) & ~pagemask;
+		//dk s
+		size = (nb + MINSIZE +4*SIZE_SZ + pagemask) & ~pagemask;
+		//dk e
 		size += DEFAULT_PAD;
 
 		//char* mm = (char*)(SEG_ALLOC(0, size, PROT_READ|PROT_WRITE, MAP_PRIVATE));
@@ -762,7 +734,10 @@ new_alloc:
 
 			p = (mchunkptr)mm;
 
-			remainder_size = size - nb - 2*SIZE_SZ;
+			//remainder_size = size - nb - 2*SIZE_SZ;
+			//dk s
+			remainder_size = size - nb - 4*SIZE_SZ;
+			//dk e
 			remainder = chunk_at_offset(p, nb);
 
 #if CONSISTENCY == 1
@@ -782,12 +757,18 @@ new_alloc:
 
 			set_foot(remainder, remainder_size);
 			clear_inuse_bit_at_offset(remainder, remainder_size);
+			
+			//dk s
+			present_last_chunk = av->last_chunk_pointer;
+			set_next_seg_pointer(present_last_chunk, chunksize(present_last_chunk), p); //insert next seg pointer at present last chunk
+			set_next_seg_pointer(remainder, remainder_size, 0); //initialize next seg pointer field
+			//((mchunkptr)((char*)(remainder)+(reminder_size)))->size = 0; // next segment pointer
+			
+			av->last_chunk_pointer = remainder;
+  			//dk e
 //#endif
-
 			//return p;
-			//dk start
-		        pos_gc_insert_tree(chunk2mem(p), POS_OBJ_TYPE);
-			//dk end
+
 			return chunk2mem(p);
 		} 
 		else
@@ -804,7 +785,7 @@ new_alloc:
 void
 pos_int_free(char *name, mstate av, mchunkptr p, int flag)
 {
-	INTERNAL_SIZE_T size;
+	INTERNA_SIZE_T size;
 	mfastbinptr* fb;
 	mchunkptr prevchunk;
 	INTERNAL_SIZE_T prevsize;
@@ -1026,6 +1007,9 @@ errout:
 				insert_to_unsorted(av, p, bck, fwd, size);
 
 				set_head(p, size | LAST_CHUNK | PREV_INUSE);
+				//dk s
+				av->last_chunk_pointer = p;
+				//dk e
 				set_foot(p, size);
 				clear_inuse_bit_at_offset(p, size);
 #endif
@@ -1174,6 +1158,9 @@ errout:
 			set_head(p, size | FIRST_CHUNK | PREV_INUSE);
 		} else if (chunk_is_last(nextchunk)&&!nextinuse) {
 			set_head(p, size | LAST_CHUNK | PREV_INUSE);
+			//dk s
+			av->last_chunk_pointer = remainder;
+			//dk e
 		} else {
 			set_head(p, size | PREV_INUSE);
 		}
@@ -1321,7 +1308,12 @@ errout:
 		remainder = chunk_at_offset(newp, nb);
 
 		if (chunk_is_last(newp))
+		{
 			set_head(remainder, remainder_size | LAST_CHUNK | PREV_INUSE);
+			//dk s
+			av->last_chunk_pointer = remainder;
+			//dk e
+		}
 		else
 			set_head(remainder, remainder_size | PREV_INUSE);
 
@@ -1388,18 +1380,27 @@ pos_malloc_init_state(char *name, mstate av)
 
 	// first chunk
 	first_chunk = chunk_at_offset(av, sizeof(struct malloc_state));
-	first_size = (PAGESIZE - sizeof(struct malloc_state) - 2*SIZE_SZ)/2;	// 956
+	//first_size = (PAGESIZE - sizeof(struct malloc_state) - 2*SIZE_SZ)/2;	// 956
+	//dk s
+	first_size = (PAGESIZE - sizeof(struct malloc_state) - 4*SIZE_SZ)/2;	// 4kb - 2172 - 16
+	//dk e
+
 //#if CONSISTENCY == 1
 	//first_size = (128*1024-1)*4096 + 960; //536867776
 	//first_size = request2size(first_size); // 536867792
 //#else
-	first_size = 0;
+	//dk s
+//	first_size = 0;
+	//dk e
 //#endif
 //insert_to_unsorted(av, first_chunk, bck, fwd, first_size);
 
 	set_head(first_chunk, first_size | FIRST_CHUNK | PREV_INUSE);
 	set_foot(first_chunk, first_size);
 	clear_inuse_bit_at_offset(first_chunk, first_size);
+	//dk s
+	insert_to_unsorted(av, first_chunk, bck, fwd, first_size);
+	//dk e
 
 	// last_chunk
 	last_chunk = chunk_at_offset(first_chunk, first_size);
@@ -1410,11 +1411,17 @@ pos_malloc_init_state(char *name, mstate av)
 	//last_size = request2size(last_size); // 536874032
 //#else
 //	last_size = 988;
-	last_size = 1456;
+	//dk s
+	//last_size = 1456;
+	last_size = first_size;
+	//dk e
 //#endif
 	insert_to_unsorted(av, last_chunk, bck, fwd, last_size);
 
 	set_head(last_chunk, last_size | LAST_CHUNK | PREV_INUSE);
+	//dk s
+	av->last_chunk_pointer = last_chunk;
+	//dk e
 	set_foot(last_chunk, last_size);
 	clear_inuse_bit_at_offset(last_chunk, last_size);
 

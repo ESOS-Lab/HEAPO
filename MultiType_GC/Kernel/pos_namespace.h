@@ -1,3 +1,4 @@
+
 /*
    Persistent Object Store
    
@@ -37,6 +38,9 @@ struct pos_ns_record
 	struct pos_task_pid *task_list;	// This points volatile struct.
 	struct pos_descriptor *desc;
 	struct pos_ns_record *next;
+	//dk s
+	struct list_head gc_member;
+	//dk e
 };
 
 

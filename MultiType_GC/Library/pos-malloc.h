@@ -584,7 +584,9 @@ POS_WRITE_VAUE(name, (unsigned long *)&((mchunkptr)(((char*)(p)) + (s)))->size, 
 
 /* Set size at footer (only when chunk is not in use) */
 #define set_foot(p, s)       (((mchunkptr)((char*)(p) + (s)))->prev_size = (s))
-
+//dk s
+#define set_next_seg_pointer(p, s, pp) (((mchunkptr)((char*)(p) + (s)))->size = (pp)) //size = pointer to next seg
+//dk e
 #if CONSISTENCY == 1
 #define set_head_size_log(name, p, s)   \
 POS_WRITE_VAUE(name, (unsigned long *)&(p)->size, (unsigned long)(((p)->size & SIZE_BITS) | (s)))
@@ -1040,6 +1042,9 @@ typedef struct malloc_chunk* mbinptr;
    ----------- Internal state representation and initialization -----------
 */
 // 2168Bytes
+//dk s
+//2168+4 bytes
+//dk e
 struct malloc_state {
 	/* Serialize access.  */
 	mutex_t mutex;
@@ -1065,6 +1070,7 @@ struct malloc_state {
 
 	Void_t *prime_obj;
 	struct node_info node_obj;
+	mchunkptr last_chunk_pointer;
 };
 
 struct malloc_state;

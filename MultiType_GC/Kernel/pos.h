@@ -1,8 +1,15 @@
+
 /*
    Persistent Object Store
    
    Author: Taeho Hwang (htaeh@hanyang.ac.kr)
    Embedded Software Systems Laboratory, Hanyang University
+*/
+
+/*
+  20160411
+  obj_storage_type field added at pos_descriptor
+  by DKLEE
 */
 
 #ifndef _LINUX_POS_H
@@ -44,7 +51,6 @@ extern struct pos_superblock* pos_get_sb(void);
 #define POS_AREA_SIZE			0x200000000000							// 32TB
 #define POS_AREA_START			(TASK_SIZE-min_gap()-POS_AREA_SIZE)	// 0x5FFEF8000000
 #define POS_AREA_END 			(POS_AREA_START+POS_AREA_SIZE)			// 0x7FFEF8000000
-
 #define POS_DESCRIPTOR			1
 #define POS_VM_AREA			2
 #define POS_MAP_ARRAY			3
@@ -136,6 +142,9 @@ struct pos_descriptor
 	uid_t	d_uid;
 	gid_t	d_gid;
 	fmode_t d_mode;
+	//dk s
+	short obj_storage_type;
+  	//dk e
 };
 
 
@@ -170,7 +179,7 @@ struct pos_superblock
 	//struct kmem_cache *pos_task_pid_struct_cachep;
 
 	//dk start
-	unsigned int page_count;
+	struct list_head gc_list; //init needed
 	//dk end
 
 };

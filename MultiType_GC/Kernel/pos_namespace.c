@@ -101,7 +101,7 @@ int pos_ns_ratio_burst(struct pos_ns_trie_node *trie_node, int index,
 		struct pos_ns_container *container)
 {
 	int ratio;
-
+	
 	if (container->cnt_accesses < POS_NS_RATIO_ACCESS)
 		return POS_NS_FALSE;
 
@@ -291,6 +291,10 @@ struct pos_ns_record *pos_ns_insert(struct pos_ns_trie_node *root,
 	record->task_list = NULL;
 	record->desc = NULL;
 	record->next = NULL;
+
+	//dk s
+	LIST_INIT_HEAD(&record->gc_member);
+	//dk e
 	
 	trie_node->ptrs[0] = (unsigned long)record;
 	return record;

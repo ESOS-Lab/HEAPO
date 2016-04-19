@@ -1812,6 +1812,10 @@ asmlinkage void *sys_pos_map(char __user *name)
 	char name_buf[POS_NAME_LENGTH];
 	fmode_t mode;
 
+	//dk start
+	struct list_head *gc_list;
+	gc_list = &(sb->gc_list);
+	//dk end
 
 	mm = current->mm;
 	sb = pos_get_sb();
@@ -1855,6 +1859,10 @@ asmlinkage void *sys_pos_map(char __user *name)
 		pos_map_vma(mm, pos_vma->vm_start, pos_vma->vm_end, mode);
 	}
 
+	//dk start
+	list_del(gc_list, &record->gc_member);
+	//dk end
+
 	return (void *)desc->prime_seg;
 }
 
@@ -1871,7 +1879,6 @@ asmlinkage int sys_pos_unmap(char __user *name)
 	struct mm_struct *mm;
 	char name_buf[POS_NAME_LENGTH];
 
-
 	task = current;
 	mm = task->mm;
 	sb = pos_get_sb();
@@ -1887,6 +1894,10 @@ asmlinkage int sys_pos_unmap(char __user *name)
 	
 	desc = record->desc;
 
+	//dk s
+	gc_list = &(sb->gc_list);
+	//dk e
+
 	// Remove pos_task_ptr
 	prev_task_pid = &record->task_list;
 	task_pid = record->task_list;
@@ -1897,7 +1908,6 @@ asmlinkage int sys_pos_unmap(char __user *name)
 			task_pid->task_next = NULL;
 
 			kmem_cache_free(pos_task_pid_struct_cachep, task_pid);
-
 			break;
 		}
 
@@ -1914,6 +1924,10 @@ asmlinkage int sys_pos_unmap(char __user *name)
 		pos_unmap_vma(mm, pos_vma);
 	}
 	
+	//dk start
+	list_add_tail(gc_list, &record->gc_member);
+	//dk end
+
 	return POS_NORMAL;
 }
 
@@ -2022,13 +2036,6 @@ asmlinkage void *sys_pos_seg_alloc(char __user *name, unsigned long len)
 		prev_task_pid = &task_pid->task_next;
 		task_pid = task_pid->task_next;
 	}
-
-	//DK start
-	rb_node = kmalloc(sizeof(struct rb_node), GFP_KERNEL);
-
-	rb_link_node(rb_node, parent_node, rb_link);
-	//no insert call needed
-	//DK end
 
 	//세그먼트의 시작 주소 리턴
 	return (void *)vm_start;
@@ -2279,6 +2286,92 @@ asmlinkage int sys_pos_meta_deliver(int __user parcel)
 }
 //dk e
 
+//dk s
+asmlinkage int sys_pos_set_storage_type(char* __user obj_storage_name, int __user type, int __user size, int __user key, int __user value)
+{
+	struct pos_superblock *sb;
+	struct pos_ns_record *ptr;
+	struct pos_descriptor *obj_storage_descriptor;
+	
+	char name_buf[POS_NAME_LENGTH];
+	int type_buffer;
+	int size_buffer;
+	int key_buffer;
+	int value_buffer;
+
+	copy_from_user(name_buf, obj_storage_name, POS_NAME_LENGTH);
+	copy_from_user(&type_buffer, &type, sizeof(int));
+	copy_from_user(&size_buffer, &size, sizeof(int));
+	copy_from_user(&key_buffer, &key, sizeof(int));
+	copy_from_user(&value_buffer, &value, sizeof(int));
+	
+	size_buffer = size_buffer << 4;
+	key_buffer = key_buffer << 8;
+	value_buffer = value_buffer << 16;
+
+	sb = pos_get_sb();
+	ptr = pos_ns_search(sb->trie_root, name_buf, strlen(name_buf));
+	obj_storage_descriptor = ptr->desc;
+
+	obj_storage_descriptor->obj_stroage_type = 0; 
+	obj_storage_descriptor->obj_stroage_type = obj_storage_descriptor->obj_storage_type | (short)type_buffer;
+	obj_storage_descriptor->obj_stroage_type = obj_storage_descriptor->obj_storage_type | (short)size_buffer;
+	obj_storage_descriptor->obj_stroage_type = obj_storage_descriptor->obj_storage_type | (short)key_buffer;
+	obj_storage_descriptor->obj_stroage_type = obj_storage_descriptor->obj_storage_type | (short)value_buffer;
+
+	return 0;
+}
+
+asmlinkage short sys_pos_get_storage_type(char *obj_storage_name, short type)
+{
+	struct pos_superblock *sb;
+	struct pos_ns_record *ptr;
+	struct pos_descriptor *obj_storage_descriptor;
+
+	char name_buf[POS_NAME_LENGTH];
+	copy_from_user(name_buf, obj_storage_name, POS_NAME_LENGTH);
+
+	sb = pos_get_sb();
+	ptr = pos_ns_search(sb->trie_root, name_buf, strlen(name_buf));
+	obj_storage_descriptor = ptr->desc;
+
+	copy_to_user(type, obj_storage_descriptor->obj_storage_type, sizeof(short)); 
+	
+	return 0;
+}
+//dk e
+
+//dk s
+asmlinkage int sys_pos_get_sfgc_list(char **victim_list)
+{
+	struct pos_superblock *sb; //pos superblock
+	struct pos_ns_record *ptr; //name table
+	struct list_head *gc_ptr; //gc_list pointer
+	char name_buf[POS_NAME_LENGTH];               //object storage name
+	int obj_count = 0;       //ojbect storage count               
+	int overall_NVM_page = 0;
+
+	overall_NVM_page = (1024*1024*1024)/(4*1024); //1GB / 4KB page
+
+	if(sb->total_vm > (overall_NVM_page / (8/10))) //if total vm = 80% overall space
+	{
+	    sb = pos_get_sb();
+	    gc_ptr = sb->gc_list;
+
+		while(obj_count < 10 && gc_ptr->next != NULL)
+		{
+			ptr = list_entry(gc_ptr, struct pos_ns_record, gc_member);
+			strcpy(name_buf, ptr->str, sizeof(POS_NAME_LENGTH));
+			copy_to_user(victim_list[obj_count], name_buf, sizeof(POS_NAME_LENGTH));
+			obj_count++;			
+			gc_ptr = gc_ptr->next;
+		}
+	}
+
+	return 0;
+}
+//dk e
+
 /* 160315 removed
 //dk start
 asmlinkage int sys_pos_gc_insert_tree(unsigned long key, unsigned int obj_type)
@@ -2350,12 +2443,15 @@ void pos_init(void)
 		pos_sb->total_vm = 0;
 		pos_sb->vm_count = 0;
 
+		//dk s
+		INIT_LIST_HEAD(&sb->gc_list);
+		//dk e
 		for (i=0; i<POS_PVAL_TABLE; i++)
 			pos_sb->pval_table[i] = NULL;
 
 		pos_sb->pos_desc_struct_cachep = 
 			pos_kmem_cache_create("pos_descriptor",
-B				sizeof(struct pos_descriptor), 0,
+				sizeof(struct pos_descriptor), 0,
 				(SLAB_RECLAIM_ACCOUNT|SLAB_PANIC|SLAB_MEM_SPREAD),
 				NULL);
 
