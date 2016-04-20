@@ -1398,7 +1398,11 @@ pos_malloc_init_state(char *name, mstate av)
 	//first_size = (PAGESIZE - sizeof(struct malloc_state) - 2*SIZE_SZ)/2;	// 956
 	//dk s
 	first_size = (PAGESIZE - sizeof(struct malloc_state) - 4*SIZE_SZ)/2;	// 4kb - 2172 - 16
+	printf("mstate size = %d\n", sizeof(mstate));
+	printf("first chunk size = %d\n", first_size);
+	prtinf("SIZE_SZ size = %d\n", SIZE_SZ));
 	//dk e
+   
 
 //#if CONSISTENCY == 1
 	//first_size = (128*1024-1)*4096 + 960; //536867776
