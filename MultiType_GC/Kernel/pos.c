@@ -2251,7 +2251,7 @@ asmlinkage int sys_pos_meta_deliver(int __user parcel)
 //dk e
 */
 //dk s
-asmlinkage int sys_pos_set_storage_type(char* __user obj_storage_name, int __user type, int __user size, int __user key, int __user value)
+asmlinkage int sys_pos_set_storage_type(char* __user obj_storage_name, int* __user type, int* __user size, int* __user key, int* __user value)
 {
 	struct pos_superblock *sb;
 	struct pos_ns_record *ptr;
@@ -2264,10 +2264,10 @@ asmlinkage int sys_pos_set_storage_type(char* __user obj_storage_name, int __use
 	int value_buffer;
 
 	copy_from_user(name_buf, obj_storage_name, POS_NAME_LENGTH);
-	copy_from_user(&type_buffer, &type, sizeof(int));
-	copy_from_user(&size_buffer, &size, sizeof(int));
-	copy_from_user(&key_buffer, &key, sizeof(int));
-	copy_from_user(&value_buffer, &value, sizeof(int));
+	copy_from_user(&type_buffer, type, sizeof(int));
+	copy_from_user(&size_buffer, size, sizeof(int));
+	copy_from_user(&key_buffer, key, sizeof(int));
+	copy_from_user(&value_buffer, value, sizeof(int));
 	
 	size_buffer = size_buffer << 4;
 	key_buffer = key_buffer << 8;
