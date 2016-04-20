@@ -30,7 +30,7 @@
 //#include "list/pos-list.h"
 //#include "alloc_list/alloc_list.h"
 
-#define TEST_OBJ_NAME "S"
+#define TEST_OBJ_NAME "obj9"
 
 int main(void)
 {
@@ -46,6 +46,7 @@ int main(void)
 		printf("error of creating object storage!\n");
 		return 0;
 	}
+	printf("node size = %lu\n", sizeof(struct list_node));
 
 	printf("[MAP POS]\n");
 	pos_map(TEST_OBJ_NAME);

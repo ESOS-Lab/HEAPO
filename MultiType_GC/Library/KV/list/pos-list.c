@@ -297,6 +297,7 @@ int make_list_for_list(struct list_head *lh, Node **head)
 {
 	//struct list_head *lh;
 	struct list_node *cur_node;
+	unsigned long *value;
 
 	//lh = (struct list_head *)pos_get_prime_object(name);
 	//printf("lh : %p, *head : %p\n", lh, *head);	
@@ -307,9 +308,11 @@ int make_list_for_list(struct list_head *lh, Node **head)
 	// repeat while next node is not NULL
 	while(cur_node != NULL) {
 		// insert current node's address in the alloc tree
+		value = cur_node->value;
 		insert_node(head, (unsigned long)cur_node);
+		insert_node(head, (unsigned long)value);
 #if LIST_DEBUG == 1
-		printf("cur_node(%p) inserted\n", cur_node);
+		printf("cur_node(%p), value(%p), inserted\n", cur_node, value);
 #endif
 		cur_node = cur_node->next;
 	}
@@ -321,6 +324,7 @@ int make_list_for_list2(char *name, Node **head)
 {
 	struct list_head *lh;
 	struct list_node *cur_node;
+	unsigned long *value;
 
 	lh = (struct list_head *)pos_get_prime_object(name);
 	//printf("lh : %p, *head : %p\n", lh, *head);	
@@ -331,12 +335,13 @@ int make_list_for_list2(char *name, Node **head)
 	// repeat while next node is not NULL
 	while(cur_node != NULL) {
 		// insert current node's address in the alloc tree
+		value = cur_node->value;
 		insert_node(head, (unsigned long)cur_node);
+		insert_node(head, (unsigned long)value);
 #if LIST_DEBUG == 1
-		printf("cur_node(%p) inserted\n", cur_node);
+		printf("cur_node(%p), value(%p), inserted\n", cur_node, value);
 #endif
 		cur_node = cur_node->next;
 	}
-
 	return 1;
 }

@@ -56,6 +56,7 @@ INTERNAL_SIZE_T global_max_fast = 144;
 
 //dk start
 #define POS_DEBUG 1
+#define POS_DEBUG_MALLOC	1
 //dk end
 
 #define pos_public_fREe		pos_free
@@ -166,14 +167,20 @@ int pos_local_gc(char* name)
 
 	p = pos_get_prime_object(name);
 	ptr = mem2chunk(p);
-
+if(POS_DEBUG_MALLOC == 1)
+{
+printf("[gc] 1\n");
+}
 	//obj_type = pos_get_object_type(name);
 	syscall(308, name, &obj_type); 
 	type = obj_type & 0xF; //1111
 	size = obj_type & 0xF0; //11110000
 	key_count = obj_type & 0xF00; //111100000000
 	val_count = obj_type & 0XF000; //1111000000000000	
-
+if(POS_DEBUG_MALLOC == 1)
+{
+printf("[gc] 2\n");
+}
 	if(type == 1) // linked list
 	{
 		make_list_for_list((struct list_head *)p, &alloc_list_head);
@@ -188,9 +195,13 @@ int pos_local_gc(char* name)
 	}
 	else
 	{
-			//error
+		//error
+		printf("wrong storage type!\n");
 	}
-
+if(POS_DEBUG_MALLOC == 1)
+{
+printf("[gc] 3\n");
+}
 	cur_node = alloc_list_head;
 	while(chunk_is_last(ptr) != 1)
 	{
@@ -218,7 +229,11 @@ int pos_local_gc(char* name)
 			}
 		}
 	}
-	
+if(POS_DEBUG_MALLOC == 1)
+{
+printf("[gc] 4\n");
+}
+
 	return 0;
 }
 //dk e
@@ -314,7 +329,10 @@ pos_int_malloc(char *name, mstate av, size_t bytes)
 		mfastbinptr* fb = &fastbin(av, idx);
 
 		victim = *fb;
-
+if(POS_DEBUG_MALLOC == 1)
+{
+	printf("fast bin - size : %lu\n", (unsigned long)bytes);
+}
 		if (victim != 0) {
 
 		/*if (fastbin_index (chunksize (victim)) != idx) {
@@ -340,6 +358,10 @@ errout:
 		idx = smallbin_index(nb);
 		bin = bin_at(av,idx);
 
+if(POS_DEBUG_MALLOC == 1)
+{
+	printf("small bin - size : %lu\n", (unsigned long)bytes);
+}
 		if ( (victim = last(bin)) != bin) {
 			bck = victim->bk;
 
@@ -376,6 +398,10 @@ errout:
 		int iters = 0;
 
 		// 3. unsorted bin
+if(POS_DEBUG_MALLOC == 1)
+{
+	printf("unsorted bin - size : %lu\n", (unsigned long)bytes);
+}
 		while ((victim = unsorted_chunks(av)->bk) != unsorted_chunks(av)) {
 			bck = victim->bk;
 			/*if (victim->size <= 2 * SIZE_SZ || victim->size > av->system_mem)
@@ -528,6 +554,10 @@ errout:
 		}
 
 		// 4. large bin (1024<=)
+if(POS_DEBUG_MALLOC == 1)
+{
+	printf("large bin - size : %lu\n", (unsigned long)bytes);
+}
 		if (!in_smallbin_range(nb)) {
 
 			bin = bin_at(av, idx);
@@ -603,6 +633,10 @@ errout:
 		}
 
 		// 5. large bin in next size
+if(POS_DEBUG_MALLOC == 1)
+{
+	printf("large bin in next size - size : %lu\n", (unsigned long)bytes);
+}
 		++idx;
 		bin = bin_at(av,idx);
 		block = idx2block(idx);
@@ -711,7 +745,10 @@ errout:
 new_alloc:
 
 		// 6. new allocation
-		
+if(POS_DEBUG_MALLOC == 1)
+{
+	printf("new allocation - size : %lu\n", (unsigned long)bytes);
+}	
 		if(gc_result < 1)
 		{
 			pos_local_gc(name);		
@@ -1398,9 +1435,11 @@ pos_malloc_init_state(char *name, mstate av)
 	//first_size = (PAGESIZE - sizeof(struct malloc_state) - 2*SIZE_SZ)/2;	// 956
 	//dk s
 	first_size = (PAGESIZE - sizeof(struct malloc_state) - 4*SIZE_SZ)/2;	// 4kb - 2172 - 16
-	printf("mstate size = %d\n", sizeof(mstate));
-	printf("first chunk size = %d\n", first_size);
-	prtinf("SIZE_SZ size = %d\n", SIZE_SZ));
+	first_size = 0;
+	printf("mstate size = %lu\n", sizeof(struct malloc_state));
+	printf("page size = %d\n", PAGESIZE);
+	printf("first chunk size = %lu\n", first_size);
+	printf("SIZE_SZ size = %lu\n", SIZE_SZ);
 	//dk e
    
 
@@ -1418,7 +1457,7 @@ pos_malloc_init_state(char *name, mstate av)
 	set_foot(first_chunk, first_size);
 	clear_inuse_bit_at_offset(first_chunk, first_size);
 	//dk s
-	insert_to_unsorted(av, first_chunk, bck, fwd, first_size);
+	//insert_to_unsorted(av, first_chunk, bck, fwd, first_size);
 	//dk e
 
 	// last_chunk
@@ -1432,7 +1471,8 @@ pos_malloc_init_state(char *name, mstate av)
 //	last_size = 988;
 	//dk s
 	//last_size = 1456;
-	last_size = first_size;
+	//last_size = first_size;
+	last_size = 1480;
 	//dk e
 //#endif
 	insert_to_unsorted(av, last_chunk, bck, fwd, last_size);

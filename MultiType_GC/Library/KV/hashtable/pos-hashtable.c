@@ -588,6 +588,7 @@ int make_list_for_hashtable(struct hashtable *h, Node **head)
 	//struct hashtable *h;
 	int i;
 	struct entry *e;
+	unsigned long *value;
 
 	//h = (struct hashtable *)pos_get_prime_object(name);	
 	if(h == NULL)
@@ -597,10 +598,11 @@ int make_list_for_hashtable(struct hashtable *h, Node **head)
 	for(i=0; i<h->tablelength; i++) {
 		e = h->table[i];
 
-//		if(e != NULL) {
-		while(NULL != e) {
+	while(NULL != e) {
+			value = e->v;
 			insert_node(head, (unsigned long)e);
-			printf("index : %d, e : 0x%lx\n", i, (unsigned long)e);
+			insert_node(head, (unsigned long)value);
+			printf("[index : %d]e : %p, v : %p inserted\n", i, e, value);
 			e = e->next;
 			//printf("next e : %p\n", e);
 		}
@@ -614,6 +616,7 @@ int make_list_for_hashtable2(char *name, Node **head)
 	struct hashtable *h;
 	int i;
 	struct entry *e;
+	unsigned long *value;
 
 	h = (struct hashtable *)pos_get_prime_object(name);	
 	if(h == NULL)
@@ -625,8 +628,10 @@ int make_list_for_hashtable2(char *name, Node **head)
 
 //		if(e != NULL) {
 		while(NULL != e) {
+			value = e->v;
 			insert_node(head, (unsigned long)e);
-			printf("index : %d, e : 0x%lx\n", i, (unsigned long)e);
+			insert_node(head, (unsigned long)value);
+			printf("[index : %d]e : %p, v : %p inserted\n", i, e, value);
 			e = e->next;
 			//printf("next e : %p\n", e);
 		}
