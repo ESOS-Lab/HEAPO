@@ -737,6 +737,23 @@ diff -urN linux-2.6.32/arch/x86/include/asm/unistd_64.h.orig linux-2.6.32_modifi
 +#define __NR_pos_check_seg_addr			306
 +__SYSCALL(__NR_pos_check_seg_addr, sys_pos_check_seg_addr)
 +
++//dk s
++// POS (Dokeun Lee)
++#define __NR_pos_get_object_id			307
++__SYSCALL(__NR_pos_get_object_id, sys_pos_get_object_id)
++
++#define __NR_pos_set_storage_type			309
++__SYSCALL(__NR_pos_set_storage_type, sys_pos_set_storage_type)
++
++#define __NR_pos_get_storage_type			310
++__SYSCALL(__NR_pos_get_storage_type, sys_pos_get_storage_type)
++
++#define	__NR_pos_get_sfgc_list			311
++__SYSCALL(__NR_pos_get_sfgc_list, sys_pos_get_sfgc_list)
++// dk e
+
+
++
 +#ifndef __NO_STUBS
 +#define __ARCH_WANT_OLD_READDIR
 +#define __ARCH_WANT_OLD_STAT

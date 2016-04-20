@@ -1,0 +1,1000 @@
+[    1.805471] pci 0000:00:17.6: PCI bridge, secondary bus 0000:19
+[    1.805472] pci 0000:00:17.6:   IO window: disabled
+[    1.805491] pci 0000:00:17.6:   MEM window: 0xfba00000-0xfbafffff
+[    1.805504] pci 0000:00:17.6:   PREFETCH window: 0x000000e6000000-0x000000e60fffff
+[    1.805534] pci 0000:00:17.7: PCI bridge, secondary bus 0000:1a
+[    1.805535] pci 0000:00:17.7:   IO window: disabled
+[    1.805554] pci 0000:00:17.7:   MEM window: 0xfb600000-0xfb6fffff
+[    1.805567] pci 0000:00:17.7:   PREFETCH window: 0x000000e5c00000-0x000000e5cfffff
+[    1.805598] pci 0000:00:18.0: PCI bridge, secondary bus 0000:1b
+[    1.805605] pci 0000:00:18.0:   IO window: 0x7000-0x7fff
+[    1.805624] pci 0000:00:18.0:   MEM window: 0xfd100000-0xfd1fffff
+[    1.805637] pci 0000:00:18.0:   PREFETCH window: 0x000000e7700000-0x000000e77fffff
+[    1.805667] pci 0000:00:18.1: PCI bridge, secondary bus 0000:1c
+[    1.805675] pci 0000:00:18.1:   IO window: 0xb000-0xbfff
+[    1.805693] pci 0000:00:18.1:   MEM window: 0xfcd00000-0xfcdfffff
+[    1.805706] pci 0000:00:18.1:   PREFETCH window: 0x000000e7300000-0x000000e73fffff
+[    1.805737] pci 0000:00:18.2: PCI bridge, secondary bus 0000:1d
+[    1.805737] pci 0000:00:18.2:   IO window: disabled
+[    1.805756] pci 0000:00:18.2:   MEM window: 0xfc900000-0xfc9fffff
+[    1.805769] pci 0000:00:18.2:   PREFETCH window: 0x000000e6f00000-0x000000e6ffffff
+[    1.805800] pci 0000:00:18.3: PCI bridge, secondary bus 0000:1e
+[    1.805801] pci 0000:00:18.3:   IO window: disabled
+[    1.805820] pci 0000:00:18.3:   MEM window: 0xfc500000-0xfc5fffff
+[    1.805832] pci 0000:00:18.3:   PREFETCH window: 0x000000e6b00000-0x000000e6bfffff
+[    1.805863] pci 0000:00:18.4: PCI bridge, secondary bus 0000:1f
+[    1.805864] pci 0000:00:18.4:   IO window: disabled
+[    1.805883] pci 0000:00:18.4:   MEM window: 0xfc100000-0xfc1fffff
+[    1.805896] pci 0000:00:18.4:   PREFETCH window: 0x000000e6700000-0x000000e67fffff
+[    1.805927] pci 0000:00:18.5: PCI bridge, secondary bus 0000:20
+[    1.805928] pci 0000:00:18.5:   IO window: disabled
+[    1.805947] pci 0000:00:18.5:   MEM window: 0xfbd00000-0xfbdfffff
+[    1.805959] pci 0000:00:18.5:   PREFETCH window: 0x000000e6300000-0x000000e63fffff
+[    1.805990] pci 0000:00:18.6: PCI bridge, secondary bus 0000:21
+[    1.805991] pci 0000:00:18.6:   IO window: disabled
+[    1.806010] pci 0000:00:18.6:   MEM window: 0xfb900000-0xfb9fffff
+[    1.806023] pci 0000:00:18.6:   PREFETCH window: 0x000000e5f00000-0x000000e5ffffff
+[    1.806056] pci 0000:00:18.7: PCI bridge, secondary bus 0000:22
+[    1.806056] pci 0000:00:18.7:   IO window: disabled
+[    1.806075] pci 0000:00:18.7:   MEM window: 0xfb500000-0xfb5fffff
+[    1.806088] pci 0000:00:18.7:   PREFETCH window: 0x000000e5b00000-0x000000e5bfffff
+[    1.806140] pci 0000:00:01.0: setting latency timer to 64
+[    1.806202] pci 0000:00:15.0: setting latency timer to 64
+[    1.806244] pci 0000:00:15.1: setting latency timer to 64
+[    1.806286] pci 0000:00:15.2: setting latency timer to 64
+[    1.806329] pci 0000:00:15.3: setting latency timer to 64
+[    1.806371] pci 0000:00:15.4: setting latency timer to 64
+[    1.806413] pci 0000:00:15.5: setting latency timer to 64
+[    1.806455] pci 0000:00:15.6: setting latency timer to 64
+[    1.806498] pci 0000:00:15.7: setting latency timer to 64
+[    1.806540] pci 0000:00:16.0: setting latency timer to 64
+[    1.806582] pci 0000:00:16.1: setting latency timer to 64
+[    1.806624] pci 0000:00:16.2: setting latency timer to 64
+[    1.806667] pci 0000:00:16.3: setting latency timer to 64
+[    1.806709] pci 0000:00:16.4: setting latency timer to 64
+[    1.806751] pci 0000:00:16.5: setting latency timer to 64
+[    1.806793] pci 0000:00:16.6: setting latency timer to 64
+[    1.806835] pci 0000:00:16.7: setting latency timer to 64
+[    1.806877] pci 0000:00:17.0: setting latency timer to 64
+[    1.806920] pci 0000:00:17.1: setting latency timer to 64
+[    1.806962] pci 0000:00:17.2: setting latency timer to 64
+[    1.807004] pci 0000:00:17.3: setting latency timer to 64
+[    1.807047] pci 0000:00:17.4: setting latency timer to 64
+[    1.807128] pci 0000:00:17.5: setting latency timer to 64
+[    1.807170] pci 0000:00:17.6: setting latency timer to 64
+[    1.807212] pci 0000:00:17.7: setting latency timer to 64
+[    1.807255] pci 0000:00:18.0: setting latency timer to 64
+[    1.807297] pci 0000:00:18.1: setting latency timer to 64
+[    1.807339] pci 0000:00:18.2: setting latency timer to 64
+[    1.807381] pci 0000:00:18.3: setting latency timer to 64
+[    1.807423] pci 0000:00:18.4: setting latency timer to 64
+[    1.807466] pci 0000:00:18.5: setting latency timer to 64
+[    1.807508] pci 0000:00:18.6: setting latency timer to 64
+[    1.807550] pci 0000:00:18.7: setting latency timer to 64
+[    1.807558] pci_bus 0000:00: resource 0 io:  [0x00-0xffff]
+[    1.807559] pci_bus 0000:00: resource 1 mem: [0x000000-0xffffffffffffffff]
+[    1.807561] pci_bus 0000:02: resource 0 io:  [0x2000-0x3fff]
+[    1.807562] pci_bus 0000:02: resource 1 mem: [0xfd500000-0xfdffffff]
+[    1.807563] pci_bus 0000:02: resource 2 pref mem [0xe7b00000-0xe7ffffff]
+[    1.807564] pci_bus 0000:02: resource 3 io:  [0x00-0xffff]
+[    1.807564] pci_bus 0000:02: resource 4 mem: [0x000000-0xffffffffffffffff]
+[    1.807566] pci_bus 0000:03: resource 0 io:  [0x4000-0x4fff]
+[    1.807567] pci_bus 0000:03: resource 1 mem: [0xfd400000-0xfd4fffff]
+[    1.807568] pci_bus 0000:03: resource 2 pref mem [0xe7a00000-0xe7afffff]
+[    1.807569] pci_bus 0000:04: resource 0 io:  [0x8000-0x8fff]
+[    1.807569] pci_bus 0000:04: resource 1 mem: [0xfd000000-0xfd0fffff]
+[    1.807570] pci_bus 0000:04: resource 2 pref mem [0xe7600000-0xe76fffff]
+[    1.807571] pci_bus 0000:05: resource 0 io:  [0xc000-0xcfff]
+[    1.807572] pci_bus 0000:05: resource 1 mem: [0xfcc00000-0xfccfffff]
+[    1.807573] pci_bus 0000:05: resource 2 pref mem [0xe7200000-0xe72fffff]
+[    1.807574] pci_bus 0000:06: resource 1 mem: [0xfc800000-0xfc8fffff]
+[    1.807575] pci_bus 0000:06: resource 2 pref mem [0xe6e00000-0xe6efffff]
+[    1.807576] pci_bus 0000:07: resource 1 mem: [0xfc400000-0xfc4fffff]
+[    1.807577] pci_bus 0000:07: resource 2 pref mem [0xe6a00000-0xe6afffff]
+[    1.807578] pci_bus 0000:08: resource 1 mem: [0xfc000000-0xfc0fffff]
+[    1.807579] pci_bus 0000:08: resource 2 pref mem [0xe6600000-0xe66fffff]
+[    1.807580] pci_bus 0000:09: resource 1 mem: [0xfbc00000-0xfbcfffff]
+[    1.807580] pci_bus 0000:09: resource 2 pref mem [0xe6200000-0xe62fffff]
+[    1.807581] pci_bus 0000:0a: resource 1 mem: [0xfb800000-0xfb8fffff]
+[    1.807582] pci_bus 0000:0a: resource 2 pref mem [0xe5e00000-0xe5efffff]
+[    1.807583] pci_bus 0000:0b: resource 0 io:  [0x5000-0x5fff]
+[    1.807584] pci_bus 0000:0b: resource 1 mem: [0xfd300000-0xfd3fffff]
+[    1.807585] pci_bus 0000:0b: resource 2 pref mem [0xe7900000-0xe79fffff]
+[    1.807586] pci_bus 0000:0c: resource 0 io:  [0x9000-0x9fff]
+[    1.807587] pci_bus 0000:0c: resource 1 mem: [0xfcf00000-0xfcffffff]
+[    1.807587] pci_bus 0000:0c: resource 2 pref mem [0xe7500000-0xe75fffff]
+[    1.807588] pci_bus 0000:0d: resource 0 io:  [0xd000-0xdfff]
+[    1.807589] pci_bus 0000:0d: resource 1 mem: [0xfcb00000-0xfcbfffff]
+[    1.807590] pci_bus 0000:0d: resource 2 pref mem [0xe7100000-0xe71fffff]
+[    1.807591] pci_bus 0000:0e: resource 1 mem: [0xfc700000-0xfc7fffff]
+[    1.807592] pci_bus 0000:0e: resource 2 pref mem [0xe6d00000-0xe6dfffff]
+[    1.807593] pci_bus 0000:0f: resource 1 mem: [0xfc300000-0xfc3fffff]
+[    1.807593] pci_bus 0000:0f: resource 2 pref mem [0xe6900000-0xe69fffff]
+[    1.807594] pci_bus 0000:10: resource 1 mem: [0xfbf00000-0xfbffffff]
+[    1.807595] pci_bus 0000:10: resource 2 pref mem [0xe6500000-0xe65fffff]
+[    1.807596] pci_bus 0000:11: resource 1 mem: [0xfbb00000-0xfbbfffff]
+[    1.807597] pci_bus 0000:11: resource 2 pref mem [0xe6100000-0xe61fffff]
+[    1.807598] pci_bus 0000:12: resource 1 mem: [0xfb700000-0xfb7fffff]
+[    1.807599] pci_bus 0000:12: resource 2 pref mem [0xe5d00000-0xe5dfffff]
+[    1.807600] pci_bus 0000:13: resource 0 io:  [0x6000-0x6fff]
+[    1.807600] pci_bus 0000:13: resource 1 mem: [0xfd200000-0xfd2fffff]
+[    1.807601] pci_bus 0000:13: resource 2 pref mem [0xe7800000-0xe78fffff]
+[    1.807602] pci_bus 0000:14: resource 0 io:  [0xa000-0xafff]
+[    1.807603] pci_bus 0000:14: resource 1 mem: [0xfce00000-0xfcefffff]
+[    1.807604] pci_bus 0000:14: resource 2 pref mem [0xe7400000-0xe74fffff]
+[    1.807605] pci_bus 0000:15: resource 0 io:  [0xe000-0xefff]
+[    1.807606] pci_bus 0000:15: resource 1 mem: [0xfca00000-0xfcafffff]
+[    1.807606] pci_bus 0000:15: resource 2 pref mem [0xe7000000-0xe70fffff]
+[    1.807607] pci_bus 0000:16: resource 1 mem: [0xfc600000-0xfc6fffff]
+[    1.807608] pci_bus 0000:16: resource 2 pref mem [0xe6c00000-0xe6cfffff]
+[    1.807609] pci_bus 0000:17: resource 1 mem: [0xfc200000-0xfc2fffff]
+[    1.807610] pci_bus 0000:17: resource 2 pref mem [0xe6800000-0xe68fffff]
+[    1.807611] pci_bus 0000:18: resource 1 mem: [0xfbe00000-0xfbefffff]
+[    1.807612] pci_bus 0000:18: resource 2 pref mem [0xe6400000-0xe64fffff]
+[    1.807613] pci_bus 0000:19: resource 1 mem: [0xfba00000-0xfbafffff]
+[    1.807614] pci_bus 0000:19: resource 2 pref mem [0xe6000000-0xe60fffff]
+[    1.807615] pci_bus 0000:1a: resource 1 mem: [0xfb600000-0xfb6fffff]
+[    1.807615] pci_bus 0000:1a: resource 2 pref mem [0xe5c00000-0xe5cfffff]
+[    1.807616] pci_bus 0000:1b: resource 0 io:  [0x7000-0x7fff]
+[    1.807617] pci_bus 0000:1b: resource 1 mem: [0xfd100000-0xfd1fffff]
+[    1.807618] pci_bus 0000:1b: resource 2 pref mem [0xe7700000-0xe77fffff]
+[    1.807619] pci_bus 0000:1c: resource 0 io:  [0xb000-0xbfff]
+[    1.807620] pci_bus 0000:1c: resource 1 mem: [0xfcd00000-0xfcdfffff]
+[    1.807621] pci_bus 0000:1c: resource 2 pref mem [0xe7300000-0xe73fffff]
+[    1.807622] pci_bus 0000:1d: resource 1 mem: [0xfc900000-0xfc9fffff]
+[    1.807622] pci_bus 0000:1d: resource 2 pref mem [0xe6f00000-0xe6ffffff]
+[    1.807623] pci_bus 0000:1e: resource 1 mem: [0xfc500000-0xfc5fffff]
+[    1.807624] pci_bus 0000:1e: resource 2 pref mem [0xe6b00000-0xe6bfffff]
+[    1.807625] pci_bus 0000:1f: resource 1 mem: [0xfc100000-0xfc1fffff]
+[    1.807626] pci_bus 0000:1f: resource 2 pref mem [0xe6700000-0xe67fffff]
+[    1.807627] pci_bus 0000:20: resource 1 mem: [0xfbd00000-0xfbdfffff]
+[    1.807628] pci_bus 0000:20: resource 2 pref mem [0xe6300000-0xe63fffff]
+[    1.807629] pci_bus 0000:21: resource 1 mem: [0xfb900000-0xfb9fffff]
+[    1.807629] pci_bus 0000:21: resource 2 pref mem [0xe5f00000-0xe5ffffff]
+[    1.807630] pci_bus 0000:22: resource 1 mem: [0xfb500000-0xfb5fffff]
+[    1.807631] pci_bus 0000:22: resource 2 pref mem [0xe5b00000-0xe5bfffff]
+[    1.807698] NET: Registered protocol family 2
+[    1.807775] IP route cache hash table entries: 65536 (order: 7, 524288 bytes)
+[    1.808406] TCP established hash table entries: 262144 (order: 10, 4194304 bytes)
+[    1.815679] TCP bind hash table entries: 65536 (order: 8, 1048576 bytes)
+[    1.817578] TCP: Hash tables configured (established 262144 bind 65536)
+[    1.817579] TCP reno registered
+[    1.817785] NET: Registered protocol family 1
+[    1.817792] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    1.817807] pci 0000:00:0f.0: Boot video device
+[    1.818030] Trying to unpack rootfs image as initramfs...
+[    1.928683] Freeing initrd memory: 8371k freed
+[    1.929514] Simple Boot Flag at 0x36 set to 0x80
+[    1.930048] Scanning for low memory corruption every 60 seconds
+[    1.930173] audit: initializing netlink socket (disabled)
+[    1.930179] type=2000 audit(1461123034.811:1): initialized
+[    1.934792] HugeTLB registered 2 MB page size, pre-allocated 0 pages
+[    1.936866] VFS: Disk quotas dquot_6.5.2
+[    1.936892] Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    1.937279] fuse init (API version 7.13)
+[    1.937318] msgmni has been set to 4003
+[    1.938386] alg: No test for stdrng (krng)
+[    1.938425] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 253)
+[    1.938427] io scheduler noop registered
+[    1.938428] io scheduler anticipatory registered
+[    1.938429] io scheduler deadline registered
+[    1.938444] io scheduler cfq registered (default)
+[    1.939021]   alloc irq_desc for 24 on node -1
+[    1.939022]   alloc kstat_irqs on node -1
+[    1.939057] pcieport 0000:00:15.0: irq 24 for MSI/MSI-X
+[    1.939096] pcieport 0000:00:15.0: setting latency timer to 64
+[    1.939826]   alloc irq_desc for 25 on node -1
+[    1.939827]   alloc kstat_irqs on node -1
+[    1.939859] pcieport 0000:00:15.1: irq 25 for MSI/MSI-X
+[    1.939897] pcieport 0000:00:15.1: setting latency timer to 64
+[    1.940619]   alloc irq_desc for 26 on node -1
+[    1.940620]   alloc kstat_irqs on node -1
+[    1.940652] pcieport 0000:00:15.2: irq 26 for MSI/MSI-X
+[    1.940690] pcieport 0000:00:15.2: setting latency timer to 64
+[    1.941373]   alloc irq_desc for 27 on node -1
+[    1.941374]   alloc kstat_irqs on node -1
+[    1.941406] pcieport 0000:00:15.3: irq 27 for MSI/MSI-X
+[    1.941443] pcieport 0000:00:15.3: setting latency timer to 64
+[    1.942120]   alloc irq_desc for 28 on node -1
+[    1.942120]   alloc kstat_irqs on node -1
+[    1.942151] pcieport 0000:00:15.4: irq 28 for MSI/MSI-X
+[    1.942188] pcieport 0000:00:15.4: setting latency timer to 64
+[    1.942860]   alloc irq_desc for 29 on node -1
+[    1.942861]   alloc kstat_irqs on node -1
+[    1.942892] pcieport 0000:00:15.5: irq 29 for MSI/MSI-X
+[    1.942928] pcieport 0000:00:15.5: setting latency timer to 64
+[    1.943632]   alloc irq_desc for 30 on node -1
+[    1.943633]   alloc kstat_irqs on node -1
+[    1.943664] pcieport 0000:00:15.6: irq 30 for MSI/MSI-X
+[    1.943701] pcieport 0000:00:15.6: setting latency timer to 64
+[    1.944359]   alloc irq_desc for 31 on node -1
+[    1.944360]   alloc kstat_irqs on node -1
+[    1.944391] pcieport 0000:00:15.7: irq 31 for MSI/MSI-X
+[    1.944428] pcieport 0000:00:15.7: setting latency timer to 64
+[    1.945086]   alloc irq_desc for 32 on node -1
+[    1.945087]   alloc kstat_irqs on node -1
+[    1.945140] pcieport 0000:00:16.0: irq 32 for MSI/MSI-X
+[    1.945177] pcieport 0000:00:16.0: setting latency timer to 64
+[    1.945833]   alloc irq_desc for 33 on node -1
+[    1.945834]   alloc kstat_irqs on node -1
+[    1.945865] pcieport 0000:00:16.1: irq 33 for MSI/MSI-X
+[    1.945901] pcieport 0000:00:16.1: setting latency timer to 64
+[    1.946603]   alloc irq_desc for 34 on node -1
+[    1.946603]   alloc kstat_irqs on node -1
+[    1.946634] pcieport 0000:00:16.2: irq 34 for MSI/MSI-X
+[    1.946671] pcieport 0000:00:16.2: setting latency timer to 64
+[    1.947334]   alloc irq_desc for 35 on node -1
+[    1.947335]   alloc kstat_irqs on node -1
+[    1.947366] pcieport 0000:00:16.3: irq 35 for MSI/MSI-X
+[    1.947403] pcieport 0000:00:16.3: setting latency timer to 64
+[    1.948062]   alloc irq_desc for 36 on node -1
+[    1.948062]   alloc kstat_irqs on node -1
+[    1.948093] pcieport 0000:00:16.4: irq 36 for MSI/MSI-X
+[    1.948171] pcieport 0000:00:16.4: setting latency timer to 64
+[    1.948884]   alloc irq_desc for 37 on node -1
+[    1.948885]   alloc kstat_irqs on node -1
+[    1.948916] pcieport 0000:00:16.5: irq 37 for MSI/MSI-X
+[    1.948953] pcieport 0000:00:16.5: setting latency timer to 64
+[    1.949695]   alloc irq_desc for 38 on node -1
+[    1.949696]   alloc kstat_irqs on node -1
+[    1.949728] pcieport 0000:00:16.6: irq 38 for MSI/MSI-X
+[    1.949764] pcieport 0000:00:16.6: setting latency timer to 64
+[    1.950444]   alloc irq_desc for 39 on node -1
+[    1.950445]   alloc kstat_irqs on node -1
+[    1.950476] pcieport 0000:00:16.7: irq 39 for MSI/MSI-X
+[    1.950513] pcieport 0000:00:16.7: setting latency timer to 64
+[    1.951194]   alloc irq_desc for 40 on node -1
+[    1.951195]   alloc kstat_irqs on node -1
+[    1.951252] pcieport 0000:00:17.0: irq 40 for MSI/MSI-X
+[    1.951310] pcieport 0000:00:17.0: setting latency timer to 64
+[    1.951987]   alloc irq_desc for 41 on node -1
+[    1.951988]   alloc kstat_irqs on node -1
+[    1.952019] pcieport 0000:00:17.1: irq 41 for MSI/MSI-X
+[    1.952055] pcieport 0000:00:17.1: setting latency timer to 64
+[    1.952791]   alloc irq_desc for 42 on node -1
+[    1.952792]   alloc kstat_irqs on node -1
+[    1.952823] pcieport 0000:00:17.2: irq 42 for MSI/MSI-X
+[    1.952860] pcieport 0000:00:17.2: setting latency timer to 64
+[    1.953540]   alloc irq_desc for 43 on node -1
+[    1.953540]   alloc kstat_irqs on node -1
+[    1.953571] pcieport 0000:00:17.3: irq 43 for MSI/MSI-X
+[    1.953608] pcieport 0000:00:17.3: setting latency timer to 64
+[    1.954288]   alloc irq_desc for 44 on node -1
+[    1.954288]   alloc kstat_irqs on node -1
+[    1.954320] pcieport 0000:00:17.4: irq 44 for MSI/MSI-X
+[    1.954376] pcieport 0000:00:17.4: setting latency timer to 64
+[    1.955322]   alloc irq_desc for 45 on node -1
+[    1.955323]   alloc kstat_irqs on node -1
+[    1.955387] pcieport 0000:00:17.5: irq 45 for MSI/MSI-X
+[    1.955470] pcieport 0000:00:17.5: setting latency timer to 64
+[    1.956213]   alloc irq_desc for 46 on node -1
+[    1.956214]   alloc kstat_irqs on node -1
+[    1.956245] pcieport 0000:00:17.6: irq 46 for MSI/MSI-X
+[    1.956282] pcieport 0000:00:17.6: setting latency timer to 64
+[    1.956941]   alloc irq_desc for 47 on node -1
+[    1.956942]   alloc kstat_irqs on node -1
+[    1.956973] pcieport 0000:00:17.7: irq 47 for MSI/MSI-X
+[    1.957009] pcieport 0000:00:17.7: setting latency timer to 64
+[    1.957693]   alloc irq_desc for 48 on node -1
+[    1.957693]   alloc kstat_irqs on node -1
+[    1.957725] pcieport 0000:00:18.0: irq 48 for MSI/MSI-X
+[    1.957761] pcieport 0000:00:18.0: setting latency timer to 64
+[    1.958480]   alloc irq_desc for 49 on node -1
+[    1.958481]   alloc kstat_irqs on node -1
+[    1.958513] pcieport 0000:00:18.1: irq 49 for MSI/MSI-X
+[    1.958549] pcieport 0000:00:18.1: setting latency timer to 64
+[    1.959267]   alloc irq_desc for 50 on node -1
+[    1.959267]   alloc kstat_irqs on node -1
+[    1.959299] pcieport 0000:00:18.2: irq 50 for MSI/MSI-X
+[    1.959335] pcieport 0000:00:18.2: setting latency timer to 64
+[    1.959998]   alloc irq_desc for 51 on node -1
+[    1.959998]   alloc kstat_irqs on node -1
+[    1.960030] pcieport 0000:00:18.3: irq 51 for MSI/MSI-X
+[    1.960066] pcieport 0000:00:18.3: setting latency timer to 64
+[    1.960727]   alloc irq_desc for 52 on node -1
+[    1.960727]   alloc kstat_irqs on node -1
+[    1.960759] pcieport 0000:00:18.4: irq 52 for MSI/MSI-X
+[    1.960795] pcieport 0000:00:18.4: setting latency timer to 64
+[    1.961513]   alloc irq_desc for 53 on node -1
+[    1.961514]   alloc kstat_irqs on node -1
+[    1.961545] pcieport 0000:00:18.5: irq 53 for MSI/MSI-X
+[    1.961582] pcieport 0000:00:18.5: setting latency timer to 64
+[    1.962322]   alloc irq_desc for 54 on node -1
+[    1.962323]   alloc kstat_irqs on node -1
+[    1.962383] pcieport 0000:00:18.6: irq 54 for MSI/MSI-X
+[    1.962420] pcieport 0000:00:18.6: setting latency timer to 64
+[    1.963077]   alloc irq_desc for 55 on node -1
+[    1.963078]   alloc kstat_irqs on node -1
+[    1.963130] pcieport 0000:00:18.7: irq 55 for MSI/MSI-X
+[    1.963177] pcieport 0000:00:18.7: setting latency timer to 64
+[    1.963443] pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+[    1.965406] pciehp 0000:00:15.0:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.965549] pciehp 0000:00:15.0:pcie04: service driver pciehp loaded
+[    1.965630] pciehp 0000:00:15.1:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.965764] pciehp 0000:00:15.1:pcie04: service driver pciehp loaded
+[    1.965844] pciehp 0000:00:15.2:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.965977] pciehp 0000:00:15.2:pcie04: service driver pciehp loaded
+[    1.966057] pciehp 0000:00:15.3:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.966272] pciehp 0000:00:15.3:pcie04: service driver pciehp loaded
+[    1.966374] pciehp 0000:00:15.4:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.966529] pciehp 0000:00:15.4:pcie04: service driver pciehp loaded
+[    1.966631] pciehp 0000:00:15.5:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.966788] pciehp 0000:00:15.5:pcie04: service driver pciehp loaded
+[    1.966868] pciehp 0000:00:15.6:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.967002] pciehp 0000:00:15.6:pcie04: service driver pciehp loaded
+[    1.967082] pciehp 0000:00:15.7:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.967221] pciehp 0000:00:15.7:pcie04: service driver pciehp loaded
+[    1.967302] pciehp 0000:00:16.0:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.967436] pciehp 0000:00:16.0:pcie04: service driver pciehp loaded
+[    1.967516] pciehp 0000:00:16.1:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.967649] pciehp 0000:00:16.1:pcie04: service driver pciehp loaded
+[    1.967729] pciehp 0000:00:16.2:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.967866] pciehp 0000:00:16.2:pcie04: service driver pciehp loaded
+[    1.967946] pciehp 0000:00:16.3:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.968080] pciehp 0000:00:16.3:pcie04: service driver pciehp loaded
+[    1.968208] pciehp 0000:00:16.4:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.968344] pciehp 0000:00:16.4:pcie04: service driver pciehp loaded
+[    1.968424] pciehp 0000:00:16.5:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.968557] pciehp 0000:00:16.5:pcie04: service driver pciehp loaded
+[    1.968655] pciehp 0000:00:16.6:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.968850] pciehp 0000:00:16.6:pcie04: service driver pciehp loaded
+[    1.968931] pciehp 0000:00:16.7:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.969157] pciehp 0000:00:16.7:pcie04: service driver pciehp loaded
+[    1.969266] pciehp 0000:00:17.0:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.969401] pciehp 0000:00:17.0:pcie04: service driver pciehp loaded
+[    1.969481] pciehp 0000:00:17.1:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.969614] pciehp 0000:00:17.1:pcie04: service driver pciehp loaded
+[    1.969734] pciehp 0000:00:17.2:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.969867] pciehp 0000:00:17.2:pcie04: service driver pciehp loaded
+[    1.969947] pciehp 0000:00:17.3:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.970084] pciehp 0000:00:17.3:pcie04: service driver pciehp loaded
+[    1.970171] pciehp 0000:00:17.4:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.970304] pciehp 0000:00:17.4:pcie04: service driver pciehp loaded
+[    1.970386] pciehp 0000:00:17.5:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.970519] pciehp 0000:00:17.5:pcie04: service driver pciehp loaded
+[    1.970599] pciehp 0000:00:17.6:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.970733] pciehp 0000:00:17.6:pcie04: service driver pciehp loaded
+[    1.970813] pciehp 0000:00:17.7:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.970946] pciehp 0000:00:17.7:pcie04: service driver pciehp loaded
+[    1.971029] pciehp 0000:00:18.0:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.971169] pciehp 0000:00:18.0:pcie04: service driver pciehp loaded
+[    1.971249] pciehp 0000:00:18.1:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.971383] pciehp 0000:00:18.1:pcie04: service driver pciehp loaded
+[    1.971463] pciehp 0000:00:18.2:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.971596] pciehp 0000:00:18.2:pcie04: service driver pciehp loaded
+[    1.971676] pciehp 0000:00:18.3:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.971812] pciehp 0000:00:18.3:pcie04: service driver pciehp loaded
+[    1.971893] pciehp 0000:00:18.4:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.972029] pciehp 0000:00:18.4:pcie04: service driver pciehp loaded
+[    1.972110] pciehp 0000:00:18.5:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.972276] pciehp 0000:00:18.5:pcie04: service driver pciehp loaded
+[    1.972357] pciehp 0000:00:18.6:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.972490] pciehp 0000:00:18.6:pcie04: service driver pciehp loaded
+[    1.972571] pciehp 0000:00:18.7:pcie04: HPC vendor_id 15ad device_id 7a0 ss_vid 0 ss_did 0
+[    1.972707] pciehp 0000:00:18.7:pcie04: service driver pciehp loaded
+[    1.972711] pciehp: PCI Express Hot Plug Controller Driver version: 0.4
+[    1.972908] ACPI: AC Adapter [ACAD] (on-line)
+[    1.972945] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    1.972948] ACPI: Power Button [PWRF]
+[    1.974337] processor LNXCPU:00: registered as cooling_device0
+[    1.974617] processor LNXCPU:01: registered as cooling_device1
+[    1.974944] processor LNXCPU:02: registered as cooling_device2
+[    1.975365] processor LNXCPU:03: registered as cooling_device3
+[    1.975784] processor LNXCPU:04: registered as cooling_device4
+[    1.976194] processor LNXCPU:05: registered as cooling_device5
+[    1.976546] processor LNXCPU:06: registered as cooling_device6
+[    1.976919] processor LNXCPU:07: registered as cooling_device7
+[    2.023539] Linux agpgart interface v0.103
+[    2.023541] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    2.023857] serial8250: ttyS0 at I/O 0x3f8 (irq = 4) is a 16550A
+[    2.024189] serial8250: ttyS1 at I/O 0x2f8 (irq = 3) is a 16550A
+[    2.024560] 00:09: ttyS0 at I/O 0x3f8 (irq = 4) is a 16550A
+[    2.024848] 00:0a: ttyS1 at I/O 0x2f8 (irq = 3) is a 16550A
+[    2.025517] brd: module loaded
+[    2.025768] loop: module loaded
+[    2.025804] input: Macintosh mouse button emulation as /devices/virtual/input/input1
+[    2.025853] ata_piix 0000:00:07.1: version 2.13
+[    2.026090] scsi0 : ata_piix
+[    2.026204] scsi1 : ata_piix
+[    2.026230] ata1: PATA max UDMA/33 cmd 0x1f0 ctl 0x3f6 bmdma 0x1060 irq 14
+[    2.026231] ata2: PATA max UDMA/33 cmd 0x170 ctl 0x376 bmdma 0x1068 irq 15
+[    2.026384] Fixed MDIO Bus: probed
+[    2.026397] PPP generic driver version 2.4.2
+[    2.026413] tun: Universal TUN/TAP device driver, 1.6
+[    2.026414] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    2.026446] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    2.026480]   alloc irq_desc for 17 on node -1
+[    2.026481]   alloc kstat_irqs on node -1
+[    2.026512] ehci_hcd 0000:02:03.0: PCI INT A -> GSI 17 (level, low) -> IRQ 17
+[    2.026573] ehci_hcd 0000:02:03.0: EHCI Host Controller
+[    2.026601] ehci_hcd 0000:02:03.0: new USB bus registered, assigned bus number 1
+[    2.026685] ehci_hcd 0000:02:03.0: cache line size of 32 is not supported
+[    2.026756] ehci_hcd 0000:02:03.0: irq 17, io mem 0xfd5ef000
+[    2.178775] ehci_hcd 0000:02:03.0: USB 2.0 started, EHCI 1.00
+[    2.179001] usb usb1: configuration #1 chosen from 1 choice
+[    2.179046] hub 1-0:1.0: USB hub found
+[    2.179057] hub 1-0:1.0: 6 ports detected
+[    2.179331] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    2.179362] uhci_hcd: USB Universal Host Controller Interface driver
+[    2.179469]   alloc irq_desc for 18 on node -1
+[    2.179472]   alloc kstat_irqs on node -1
+[    2.179543] uhci_hcd 0000:02:00.0: PCI INT A -> GSI 18 (level, low) -> IRQ 18
+[    2.179639] uhci_hcd 0000:02:00.0: UHCI Host Controller
+[    2.179797] uhci_hcd 0000:02:00.0: new USB bus registered, assigned bus number 2
+[    2.180362] uhci_hcd 0000:02:00.0: irq 18, io base 0x00002080
+[    2.180718] usb usb2: configuration #1 chosen from 1 choice
+[    2.180757] hub 2-0:1.0: USB hub found
+[    2.180765] hub 2-0:1.0: 2 ports detected
+[    2.181098] PNP: PS/2 Controller [PNP0303:KBC,PNP0f13:MOUS] at 0x60,0x64 irq 1,12
+[    2.183109] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    2.183153] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    2.183317] mice: PS/2 mouse device common for all mice
+[    2.183393] Driver 'rtc_cmos' needs updating - please use bus_type methods
+[    2.183698] rtc_cmos 00:04: rtc core: registered rtc_cmos as rtc0
+[    2.183776] rtc0: alarms up to one month, y3k, 114 bytes nvram
+[    2.184012] device-mapper: uevent: version 1.0.3
+[    2.184482] device-mapper: ioctl: 4.15.0-ioctl (2009-04-01) initialised: dm-devel@redhat.com
+[    2.187141] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input2
+[    2.188111] device-mapper: multipath: version 1.1.0 loaded
+[    2.188118] device-mapper: multipath round-robin: version 1.0.0 loaded
+[    2.191048] cpuidle: using governor ladder
+[    2.191052] cpuidle: using governor menu
+[    2.191686] TCP cubic registered
+[    2.192054] NET: Registered protocol family 10
+[    2.193579] lo: Disabled Privacy Extensions
+[    2.193963] NET: Registered protocol family 17
+[    2.194688] PM: Resume from disk failed.
+[    2.194706] registered taskstats version 1
+[    2.207904]   Magic number: 12:283:513
+[    2.208203] rtc_cmos 00:04: setting system clock to 2016-04-20 03:30:35 UTC (1461123035)
+[    2.208207] BIOS EDD facility v0.16 2004-Jun-25, 0 devices found
+[    2.208208] EDD information not available.
+[    2.208230] ata2.00: ATAPI: VMware Virtual IDE CDROM Drive, 00000001, max UDMA/33
+[    2.249090] ata2.00: configured for UDMA/33
+[    2.249736] scsi 1:0:0:0: CD-ROM            NECVMWar VMware IDE CDR10 1.00 PQ: 0 ANSI: 5
+[    2.250926] sr0: scsi3-mmc drive: 1x/1x writer dvd-ram cd/rw xa/form2 cdda tray
+[    2.250930] Uniform CD-ROM driver Revision: 3.20
+[    2.251050] sr 1:0:0:0: Attached scsi CD-ROM sr0
+[    2.251105] sr 1:0:0:0: Attached scsi generic sg0 type 5
+[    2.251328] Freeing unused kernel memory: 868k freed
+[    2.251443] Write protecting the kernel read-only data: 7508k
+[    2.277046] udev: starting version 151
+[    2.286150] VMware vmxnet3 virtual NIC driver - version 1.0.5.0-k-NAPI
+[    2.320274] VMware PVSCSI driver - version 1.2.3.0
+[    2.336953] Fusion MPT base driver 3.04.12
+[    2.336955] Copyright (c) 1999-2008 LSI Corporation
+[    2.338910] Intel(R) PRO/1000 Network Driver - version 7.3.21-k5-NAPI
+[    2.338912] Copyright (c) 1999-2006 Intel Corporation.
+[    2.340377] VMware vmxnet virtual NIC driver
+[    2.345782] Fusion MPT SPI Host driver 3.04.12
+[    2.349477] mptspi 0000:00:10.0: PCI INT A -> GSI 17 (level, low) -> IRQ 17
+[    2.349499]   alloc irq_desc for 19 on node -1
+[    2.349501]   alloc kstat_irqs on node -1
+[    2.349510] e1000 0000:02:01.0: PCI INT A -> GSI 19 (level, low) -> IRQ 19
+[    2.349547] e1000 0000:02:01.0: setting latency timer to 64
+[    2.349811] mptbase: ioc0: Initiating bringup
+[    2.350689] Floppy drive(s): fd0 is 1.44M
+[    2.368944] FDC 0 is a post-1991 82077
+[    2.498188] usb 2-1: new full speed USB device using uhci_hcd and address 2
+[    2.529359] ioc0: LSI53C1030 B0: Capabilities={Initiator}
+[    2.673812] e1000: 0000:02:01.0: e1000_probe: (PCI:66MHz:32-bit) 00:0c:29:88:4f:27
+[    2.721320] e1000: eth0: e1000_probe: Intel(R) PRO/1000 Network Connection
+[    2.930836] scsi2 : ioc0: LSI53C1030 B0, FwRev=01032920h, Ports=1, MaxQ=128, IRQ=17
+[    3.219450] scsi 2:0:0:0: Direct-Access     VMware,  VMware Virtual S 1.0  PQ: 0 ANSI: 2
+[    3.219482] scsi target2:0:0: Beginning Domain Validation
+[    3.220174] scsi target2:0:0: Domain Validation skipping write tests
+[    3.220176] scsi target2:0:0: Ending Domain Validation
+[    3.220196] scsi target2:0:0: FAST-40 WIDE SCSI 80.0 MB/s ST (25 ns, offset 127)
+[    3.221174] sd 2:0:0:0: [sda] 209715200 512-byte logical blocks: (107 GB/100 GiB)
+[    3.221196] sd 2:0:0:0: [sda] Write Protect is off
+[    3.221198] sd 2:0:0:0: [sda] Mode Sense: 61 00 00 00
+[    3.221547] sd 2:0:0:0: [sda] Cache data unavailable
+[    3.221548] sd 2:0:0:0: [sda] Assuming drive cache: write through
+[    3.221881] sd 2:0:0:0: [sda] Cache data unavailable
+[    3.221882] sd 2:0:0:0: [sda] Assuming drive cache: write through
+[    3.221972]  sda: sda1 sda2 < sda5 >
+[    3.222152] sd 2:0:0:0: Attached scsi generic sg1 type 0
+[    3.222445] sd 2:0:0:0: [sda] Cache data unavailable
+[    3.222446] sd 2:0:0:0: [sda] Assuming drive cache: write through
+[    3.222495] sd 2:0:0:0: [sda] Attached SCSI disk
+[    3.274926] EXT4-fs (sda1): mounted filesystem with ordered data mode
+[    3.453354] usb 2-1: configuration #1 chosen from 1 choice
+[    3.599033] usb 2-2: new full speed USB device using uhci_hcd and address 3
+[    3.798088] usb 2-2: configuration #1 chosen from 1 choice
+[    3.808788] hub 2-2:1.0: USB hub found
+[    3.812697] hub 2-2:1.0: 7 ports detected
+[   10.361479] udev: starting version 151
+[   10.367238] Adding 2974712k swap on /dev/sda5.  Priority:-1 extents:1 across:2974712k 
+[   10.566731] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[   10.578253] agpgart-intel 0000:00:00.0: Intel 440BX Chipset
+[   10.590232] agpgart-intel 0000:00:00.0: AGP aperture is 256M @ 0x0
+[   10.590312] piix4_smbus 0000:00:07.3: Host SMBus controller not enabled!
+[   10.597690] input: ImPS/2 Generic Wheel Mouse as /devices/platform/i8042/serio1/input/input3
+[   10.598731] lp: driver loaded but no devices found
+[   10.601567] parport_pc 00:08: reported by Plug and Play ACPI
+[   10.601727] parport0: PC-style at 0x378, irq 7 [PCSPP,TRISTATE]
+[   10.604548] ppdev: user-space parallel port driver
+[   10.610691] udev: renamed network interface eth0 to eth3
+[   10.694539] lp0: using parport0 (interrupt-driven).
+[   10.748470] [509]: VMCI: shared components initialized.
+[   10.748499] Probing for vmci/PCI.
+[   10.748531]   alloc irq_desc for 16 on node -1
+[   10.748533]   alloc kstat_irqs on node -1
+[   10.748544] vmci 0000:00:07.7: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[   10.748602] Found vmci/PCI at 0x1080, irq 16.
+[   10.748641] VMCI: using capabilities 0xc.
+[   10.748719] [509]: VMCI: Host capability check passed.
+[   10.749040]   alloc irq_desc for 56 on node -1
+[   10.749041]   alloc kstat_irqs on node -1
+[   10.749118] vmci 0000:00:07.7: irq 56 for MSI/MSI-X
+[   10.749120]   alloc irq_desc for 57 on node -1
+[   10.749122]   alloc kstat_irqs on node -1
+[   10.749182] vmci 0000:00:07.7: irq 57 for MSI/MSI-X
+[   10.749651] Registered vmci device.
+[   10.749910] [509]: VMCI: Using guest personality
+[   10.749914] [509]: VMCI: host components initialized.
+[   10.750024] [509]: VMCI: Module registered (name=vmci, major=10, minor=55).
+[   10.750026] [509]: VMCI: Using host personality
+[   10.750028] [509]: VMCI: Module (name=vmci) is initialized
+[   10.781424] usbcore: registered new interface driver hiddev
+[   11.054591] e1000: eth3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: None
+[   11.057688] ADDRCONF(NETDEV_UP): eth3: link is not ready
+[   11.059767] ADDRCONF(NETDEV_CHANGE): eth3: link becomes ready
+[   11.093795] input: VMware VMware Virtual USB Mouse as /devices/pci0000:00/0000:00:11.0/0000:02:00.0/usb2/2-1/2-1:1.0/input/input4
+[   11.093838] generic-usb 0003:0E0F:0003.0001: input,hidraw0: USB HID v1.10 Mouse [VMware VMware Virtual USB Mouse] on usb-0000:02:00.0-1/input0
+[   11.125106] input: VMware VMware Virtual USB Mouse as /devices/pci0000:00/0000:00:11.0/0000:02:00.0/usb2/2-1/2-1:1.1/input/input5
+[   11.125186] generic-usb 0003:0E0F:0003.0002: input,hidraw1: USB HID v1.10 Mouse [VMware VMware Virtual USB Mouse] on usb-0000:02:00.0-1/input1
+[   11.125221] usbcore: registered new interface driver usbhid
+[   11.125223] usbhid: v2.6:USB HID core driver
+[   11.133969] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[   11.134300] acpiphp: Slot [32] registered
+[   11.134321] acpiphp: Slot [33] registered
+[   11.134339] acpiphp: Slot [34] registered
+[   11.134357] acpiphp: Slot [35] registered
+[   11.134374] acpiphp: Slot [36] registered
+[   11.134391] acpiphp: Slot [37] registered
+[   11.134413] acpiphp: Slot [38] registered
+[   11.134432] acpiphp: Slot [39] registered
+[   11.134451] acpiphp: Slot [40] registered
+[   11.134469] acpiphp: Slot [41] registered
+[   11.134486] acpiphp: Slot [42] registered
+[   11.134503] acpiphp: Slot [43] registered
+[   11.134522] acpiphp: Slot [44] registered
+[   11.134539] acpiphp: Slot [45] registered
+[   11.134558] acpiphp: Slot [46] registered
+[   11.134577] acpiphp: Slot [47] registered
+[   11.134596] acpiphp: Slot [48] registered
+[   11.134616] acpiphp: Slot [49] registered
+[   11.134634] acpiphp: Slot [50] registered
+[   11.134652] acpiphp: Slot [51] registered
+[   11.134669] acpiphp: Slot [52] registered
+[   11.134687] acpiphp: Slot [53] registered
+[   11.134704] acpiphp: Slot [54] registered
+[   11.134723] acpiphp: Slot [55] registered
+[   11.134741] acpiphp: Slot [56] registered
+[   11.134758] acpiphp: Slot [57] registered
+[   11.134776] acpiphp: Slot [58] registered
+[   11.134796] acpiphp: Slot [59] registered
+[   11.134814] acpiphp: Slot [60] registered
+[   11.134831] acpiphp: Slot [61] registered
+[   11.134864] acpiphp: Slot [62] registered
+[   11.134882] acpiphp: Slot [63] registered
+[   11.135105] acpiphp_glue: Slot 160 already registered by another hotplug driver
+[   11.135133] acpiphp_glue: Slot 192 already registered by another hotplug driver
+[   11.135159] acpiphp_glue: Slot 224 already registered by another hotplug driver
+[   11.135185] acpiphp_glue: Slot 256 already registered by another hotplug driver
+[   11.135234] acpiphp_glue: Slot 161 already registered by another hotplug driver
+[   11.135260] acpiphp_glue: Slot 162 already registered by another hotplug driver
+[   11.135286] acpiphp_glue: Slot 163 already registered by another hotplug driver
+[   11.135313] acpiphp_glue: Slot 164 already registered by another hotplug driver
+[   11.135339] acpiphp_glue: Slot 165 already registered by another hotplug driver
+[   11.135366] acpiphp_glue: Slot 166 already registered by another hotplug driver
+[   11.135392] acpiphp_glue: Slot 167 already registered by another hotplug driver
+[   11.135417] acpiphp_glue: Slot 193 already registered by another hotplug driver
+[   11.135444] acpiphp_glue: Slot 194 already registered by another hotplug driver
+[   11.135470] acpiphp_glue: Slot 195 already registered by another hotplug driver
+[   11.135496] acpiphp_glue: Slot 196 already registered by another hotplug driver
+[   11.135521] acpiphp_glue: Slot 197 already registered by another hotplug driver
+[   11.135547] acpiphp_glue: Slot 198 already registered by another hotplug driver
+[   11.135572] acpiphp_glue: Slot 199 already registered by another hotplug driver
+[   11.135598] acpiphp_glue: Slot 225 already registered by another hotplug driver
+[   11.135624] acpiphp_glue: Slot 226 already registered by another hotplug driver
+[   11.135650] acpiphp_glue: Slot 227 already registered by another hotplug driver
+[   11.135676] acpiphp_glue: Slot 228 already registered by another hotplug driver
+[   11.135702] acpiphp_glue: Slot 229 already registered by another hotplug driver
+[   11.135729] acpiphp_glue: Slot 230 already registered by another hotplug driver
+[   11.135755] acpiphp_glue: Slot 231 already registered by another hotplug driver
+[   11.135781] acpiphp_glue: Slot 257 already registered by another hotplug driver
+[   11.135807] acpiphp_glue: Slot 258 already registered by another hotplug driver
+[   11.135833] acpiphp_glue: Slot 259 already registered by another hotplug driver
+[   11.135874] acpiphp_glue: Slot 260 already registered by another hotplug driver
+[   11.135901] acpiphp_glue: Slot 261 already registered by another hotplug driver
+[   11.135926] acpiphp_glue: Slot 262 already registered by another hotplug driver
+[   11.135952] acpiphp_glue: Slot 263 already registered by another hotplug driver
+[   11.243040] ENS1371 0000:02:02.0: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+[   11.602832] vmmemctl: started kernel thread pid=1015
+[   11.602853] VMware memory control driver initialized
+[   12.061649] NET: Registered protocol family 36
+[   12.862181] CPU0 attaching NULL sched-domain.
+[   12.862183] CPU1 attaching NULL sched-domain.
+[   12.862184] CPU2 attaching NULL sched-domain.
+[   12.862185] CPU3 attaching NULL sched-domain.
+[   12.862185] CPU4 attaching NULL sched-domain.
+[   12.862186] CPU5 attaching NULL sched-domain.
+[   12.862187] CPU6 attaching NULL sched-domain.
+[   12.862187] CPU7 attaching NULL sched-domain.
+[   12.895241] CPU0 attaching sched-domain:
+[   12.895243]  domain 0: span 0-7 level MC
+[   12.895244]   groups: 0 1 2 3 4 5 6 7
+[   12.895261] CPU1 attaching sched-domain:
+[   12.895262]  domain 0: span 0-7 level MC
+[   12.895263]   groups: 1 2 3 4 5 6 7 0
+[   12.895266] CPU2 attaching sched-domain:
+[   12.895266]  domain 0: span 0-7 level MC
+[   12.895267]   groups: 2 3 4 5 6 7 0 1
+[   12.895269] CPU3 attaching sched-domain:
+[   12.895270]  domain 0: span 0-7 level MC
+[   12.895271]   groups: 3 4 5 6 7 0 1 2
+[   12.895273] CPU4 attaching sched-domain:
+[   12.895274]  domain 0: span 0-7 level MC
+[   12.895275]   groups: 4 5 6 7 0 1 2 3
+[   12.895277] CPU5 attaching sched-domain:
+[   12.895278]  domain 0: span 0-7 level MC
+[   12.895279]   groups: 5 6 7 0 1 2 3 4
+[   12.895281] CPU6 attaching sched-domain:
+[   12.895282]  domain 0: span 0-7 level MC
+[   12.895282]   groups: 6 7 0 1 2 3 4 5
+[   12.895285] CPU7 attaching sched-domain:
+[   12.895286]  domain 0: span 0-7 level MC
+[   12.895286]   groups: 7 0 1 2 3 4 5 6
+[   13.543931] CPU0 attaching NULL sched-domain.
+[   13.543934] CPU1 attaching NULL sched-domain.
+[   13.543935] CPU2 attaching NULL sched-domain.
+[   13.543935] CPU3 attaching NULL sched-domain.
+[   13.543936] CPU4 attaching NULL sched-domain.
+[   13.543937] CPU5 attaching NULL sched-domain.
+[   13.543938] CPU6 attaching NULL sched-domain.
+[   13.543939] CPU7 attaching NULL sched-domain.
+[   13.592900] CPU0 attaching sched-domain:
+[   13.592903]  domain 0: span 0-7 level MC
+[   13.592904]   groups: 0 1 2 3 4 5 6 7
+[   13.592908] CPU1 attaching sched-domain:
+[   13.592909]  domain 0: span 0-7 level MC
+[   13.592910]   groups: 1 2 3 4 5 6 7 0
+[   13.592912] CPU2 attaching sched-domain:
+[   13.592913]  domain 0: span 0-7 level MC
+[   13.592914]   groups: 2 3 4 5 6 7 0 1
+[   13.592917] CPU3 attaching sched-domain:
+[   13.592917]  domain 0: span 0-7 level MC
+[   13.592918]   groups: 3 4 5 6 7 0 1 2
+[   13.592921] CPU4 attaching sched-domain:
+[   13.592921]  domain 0: span 0-7 level MC
+[   13.592922]   groups: 4 5 6 7 0 1 2 3
+[   13.592925] CPU5 attaching sched-domain:
+[   13.592926]  domain 0: span 0-7 level MC
+[   13.592926]   groups: 5 6 7 0 1 2 3 4
+[   13.592929] CPU6 attaching sched-domain:
+[   13.592930]  domain 0: span 0-7 level MC
+[   13.592931]   groups: 6 7 0 1 2 3 4 5
+[   13.592933] CPU7 attaching sched-domain:
+[   13.592934]  domain 0: span 0-7 level MC
+[   13.592935]   groups: 7 0 1 2 3 4 5 6
+[   21.789501] eth3: no IPv6 routers present
+[ 5900.158062] BUG: Bad page map in process list_test  pte:800000006286e067 pmd:6285d067
+[ 5900.158066] page:ffffea000158d810 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+[ 5900.158067] addr:00005ffef8000000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:ffffffffffffffff
+[ 5900.158069] Pid: 2754, comm: list_test Not tainted 2.6.32 #3
+[ 5900.158081] Call Trace:
+[ 5900.158121]  [<ffffffff8110d082>] print_bad_pte+0x1d2/0x280
+[ 5900.158141]  [<ffffffff810f28a8>] ? __alloc_pages_nodemask+0xf8/0x6c0
+[ 5900.158144]  [<ffffffff8110eb60>] unmap_vmas+0x910/0x9f0
+[ 5900.158146]  [<ffffffff811158fe>] unmap_region+0xce/0x170
+[ 5900.158147]  [<ffffffff81115c16>] do_munmap+0x276/0x360
+[ 5900.158149]  [<ffffffff81108a9b>] pos_unmap_vma+0x1b/0x20
+[ 5900.158150]  [<ffffffff81108bcb>] sys_pos_unmap+0x12b/0x1b0
+[ 5900.158153]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+[ 5900.158154] Disabling lock debugging due to kernel taint
+[ 5900.158157] BUG: Bad page state in process list_test  pfn:6286e
+[ 5900.158158] page:ffffea000158d810 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+[ 5900.158160] Pid: 2754, comm: list_test Tainted: G    B      2.6.32 #3
+[ 5900.158160] Call Trace:
+[ 5900.158162]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+[ 5900.158163]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+[ 5900.158165]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+[ 5900.158167]  [<ffffffff811058a5>] ? __dec_zone_page_state+0x35/0x40
+[ 5900.158169]  [<ffffffff810f72ec>] release_pages+0x23c/0x290
+[ 5900.158171]  [<ffffffff8111e7b4>] free_pages_and_swap_cache+0xb4/0xe0
+[ 5900.158192]  [<ffffffff8129f5db>] ? cpumask_any_but+0x2b/0x40
+[ 5900.158194]  [<ffffffff81115980>] unmap_region+0x150/0x170
+[ 5900.158195]  [<ffffffff81115c16>] do_munmap+0x276/0x360
+[ 5900.158196]  [<ffffffff81108a9b>] pos_unmap_vma+0x1b/0x20
+[ 5900.158198]  [<ffffffff81108bcb>] sys_pos_unmap+0x12b/0x1b0
+[ 5900.158200]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+[ 5900.158259] list_test[2754]: segfault at 0 ip 00005f5ae6bc409c sp 00007fff410bad10 error 4 in libpos.so.0.0.0[5f5ae6bc0000+c000]
+[ 5900.158287] BUG: Bad page map in process list_test  pte:800000006286e067 pmd:67043067
+[ 5900.158288] page:ffffea000158d810 flags:0100000000000014 count:0 mapcount:-2 mapping:(null) index:0
+[ 5900.158289] addr:00005ffef8000000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:ffffffffffffffff
+[ 5900.158291] Pid: 2754, comm: list_test Tainted: G    B      2.6.32 #3
+[ 5900.158291] Call Trace:
+[ 5900.158293]  [<ffffffff8110d082>] print_bad_pte+0x1d2/0x280
+[ 5900.158295]  [<ffffffff8110eb60>] unmap_vmas+0x910/0x9f0
+[ 5900.158297]  [<ffffffff81113e3b>] exit_mmap+0xbb/0x190
+[ 5900.158310]  [<ffffffff8105e5fd>] mmput+0x4d/0x110
+[ 5900.158312]  [<ffffffff81064de2>] exit_mm+0x112/0x150
+[ 5900.158313]  [<ffffffff8106515d>] do_exit+0x12d/0x7f0
+[ 5900.158325]  [<ffffffff81072e4d>] ? __sigqueue_free+0x3d/0x50
+[ 5900.158328]  [<ffffffff81075a01>] ? __dequeue_signal+0xe1/0x1f0
+[ 5900.158329]  [<ffffffff81065875>] do_group_exit+0x55/0xd0
+[ 5900.158331]  [<ffffffff810760a7>] get_signal_to_deliver+0x1d7/0x3d0
+[ 5900.158333]  [<ffffffff81011315>] do_signal+0x75/0x7a0
+[ 5900.158334]  [<ffffffff8110c913>] ? print_vma_addr+0xb3/0x120
+[ 5900.158347]  [<ffffffff81522712>] ? printk+0x41/0x47
+[ 5900.158349]  [<ffffffff8103e6f6>] ? __bad_area_nosemaphore+0xf6/0x1e0
+[ 5900.158351]  [<ffffffff8103e84e>] ? bad_area+0x4e/0x60
+[ 5900.158352]  [<ffffffff81011a9d>] do_notify_resume+0x5d/0x80
+[ 5900.158354]  [<ffffffff81012adc>] retint_signal+0x48/0x8c
+[ 6447.220095] BUG: Bad page map in process btree_test  pte:800000007a89f067 pmd:629ca067
+[ 6447.220098] page:ffffea0001ace2c8 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:100
+[ 6447.220100] addr:00005ffef8001000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:ffffffffffffffff
+[ 6447.220102] Pid: 2920, comm: btree_test Tainted: G    B      2.6.32 #3
+[ 6447.220103] Call Trace:
+[ 6447.220110]  [<ffffffff8110d082>] print_bad_pte+0x1d2/0x280
+[ 6447.220111]  [<ffffffff8110eb60>] unmap_vmas+0x910/0x9f0
+[ 6447.220115]  [<ffffffff81056902>] ? default_wake_function+0x12/0x20
+[ 6447.220117]  [<ffffffff811158fe>] unmap_region+0xce/0x170
+[ 6447.220119]  [<ffffffff81115c16>] do_munmap+0x276/0x360
+[ 6447.220120]  [<ffffffff81108a9b>] pos_unmap_vma+0x1b/0x20
+[ 6447.220122]  [<ffffffff81108bcb>] sys_pos_unmap+0x12b/0x1b0
+[ 6447.220125]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+[ 6447.220127] BUG: Bad page state in process btree_test  pfn:7a89f
+[ 6447.220129] page:ffffea0001ace2c8 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:100
+[ 6447.220130] Pid: 2920, comm: btree_test Tainted: G    B      2.6.32 #3
+[ 6447.220131] Call Trace:
+[ 6447.220133]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+[ 6447.220136]  [<ffffffff81522591>] ? dump_stack+0x77/0x80
+[ 6447.220138]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+[ 6447.220139]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+[ 6447.220142]  [<ffffffff811058a5>] ? __dec_zone_page_state+0x35/0x40
+[ 6447.220144]  [<ffffffff810f72ec>] release_pages+0x23c/0x290
+[ 6447.220146]  [<ffffffff8111e7b4>] free_pages_and_swap_cache+0xb4/0xe0
+[ 6447.220150]  [<ffffffff8129f5db>] ? cpumask_any_but+0x2b/0x40
+[ 6447.220151]  [<ffffffff81115980>] unmap_region+0x150/0x170
+[ 6447.220153]  [<ffffffff81115c16>] do_munmap+0x276/0x360
+[ 6447.220154]  [<ffffffff81108a9b>] pos_unmap_vma+0x1b/0x20
+[ 6447.220156]  [<ffffffff81108bcb>] sys_pos_unmap+0x12b/0x1b0
+[ 6447.220158]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+[ 6447.220257] btree_test[2920]: segfault at 0 ip 00005f23a2cd310c sp 00007fff2d9ec6f0 error 4 in libpos.so.0.0.0[5f23a2ccf000+d000]
+[ 6447.220279] BUG: Bad page map in process btree_test  pte:800000007a89f067 pmd:628a6067
+[ 6447.220280] page:ffffea0001ace2c8 flags:0100000000000014 count:0 mapcount:-2 mapping:(null) index:100
+[ 6447.220282] addr:00005ffef8001000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:ffffffffffffffff
+[ 6447.220283] Pid: 2920, comm: btree_test Tainted: G    B      2.6.32 #3
+[ 6447.220284] Call Trace:
+[ 6447.220286]  [<ffffffff8110d082>] print_bad_pte+0x1d2/0x280
+[ 6447.220287]  [<ffffffff8110eb60>] unmap_vmas+0x910/0x9f0
+[ 6447.220289]  [<ffffffff81113e3b>] exit_mmap+0xbb/0x190
+[ 6447.220292]  [<ffffffff8105e5fd>] mmput+0x4d/0x110
+[ 6447.220293]  [<ffffffff81064de2>] exit_mm+0x112/0x150
+[ 6447.220294]  [<ffffffff8106515d>] do_exit+0x12d/0x7f0
+[ 6447.220297]  [<ffffffff81072e4d>] ? __sigqueue_free+0x3d/0x50
+[ 6447.220299]  [<ffffffff81075a01>] ? __dequeue_signal+0xe1/0x1f0
+[ 6447.220301]  [<ffffffff81065875>] do_group_exit+0x55/0xd0
+[ 6447.220303]  [<ffffffff810760a7>] get_signal_to_deliver+0x1d7/0x3d0
+[ 6447.220305]  [<ffffffff81011315>] do_signal+0x75/0x7a0
+[ 6447.220307]  [<ffffffff8110c913>] ? print_vma_addr+0xb3/0x120
+[ 6447.220308]  [<ffffffff81522712>] ? printk+0x41/0x47
+[ 6447.220310]  [<ffffffff8103e6f6>] ? __bad_area_nosemaphore+0xf6/0x1e0
+[ 6447.220312]  [<ffffffff8103e84e>] ? bad_area+0x4e/0x60
+[ 6447.220314]  [<ffffffff81011a9d>] do_notify_resume+0x5d/0x80
+[ 6447.220315]  [<ffffffff81012adc>] retint_signal+0x48/0x8c
+[ 6527.412437] BUG: Bad page map in process hash_test  pte:800000006e8b6067 pmd:6299e067
+[ 6527.412440] page:ffffea000182e7d0 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+[ 6527.412442] addr:00005ffef8002000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:ffffffffffffffff
+[ 6527.412444] Pid: 2921, comm: hash_test Tainted: G    B      2.6.32 #3
+[ 6527.412445] Call Trace:
+[ 6527.412451]  [<ffffffff8110d082>] print_bad_pte+0x1d2/0x280
+[ 6527.412453]  [<ffffffff8110eb60>] unmap_vmas+0x910/0x9f0
+[ 6527.412456]  [<ffffffff81056902>] ? default_wake_function+0x12/0x20
+[ 6527.412458]  [<ffffffff811158fe>] unmap_region+0xce/0x170
+[ 6527.412460]  [<ffffffff81115c16>] do_munmap+0x276/0x360
+[ 6527.412462]  [<ffffffff81108a9b>] pos_unmap_vma+0x1b/0x20
+[ 6527.412463]  [<ffffffff81108bcb>] sys_pos_unmap+0x12b/0x1b0
+[ 6527.412466]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+[ 6527.412469] BUG: Bad page state in process hash_test  pfn:6e8b6
+[ 6527.412470] page:ffffea000182e7d0 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+[ 6527.412471] Pid: 2921, comm: hash_test Tainted: G    B      2.6.32 #3
+[ 6527.412472] Call Trace:
+[ 6527.412475]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+[ 6527.412477]  [<ffffffff81522591>] ? dump_stack+0x77/0x80
+[ 6527.412479]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+[ 6527.412481]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+[ 6527.412483]  [<ffffffff811058a5>] ? __dec_zone_page_state+0x35/0x40
+[ 6527.412485]  [<ffffffff810f72ec>] release_pages+0x23c/0x290
+[ 6527.412487]  [<ffffffff8111e7b4>] free_pages_and_swap_cache+0xb4/0xe0
+[ 6527.412491]  [<ffffffff8129f5db>] ? cpumask_any_but+0x2b/0x40
+[ 6527.412492]  [<ffffffff81115980>] unmap_region+0x150/0x170
+[ 6527.412494]  [<ffffffff81115c16>] do_munmap+0x276/0x360
+[ 6527.412495]  [<ffffffff81108a9b>] pos_unmap_vma+0x1b/0x20
+[ 6527.412497]  [<ffffffff81108bcb>] sys_pos_unmap+0x12b/0x1b0
+[ 6527.412499]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+[ 6527.412545] hash_test[2921]: segfault at 0 ip 00005f188cd1410c sp 00007fff8da933f0 error 4 in libpos.so.0.0.0[5f188cd10000+d000]
+[ 6527.412566] BUG: Bad page map in process hash_test  pte:800000006e8b6067 pmd:6d659067
+[ 6527.412568] page:ffffea000182e7d0 flags:0100000000000014 count:0 mapcount:-2 mapping:(null) index:0
+[ 6527.412569] addr:00005ffef8002000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:ffffffffffffffff
+[ 6527.412570] Pid: 2921, comm: hash_test Tainted: G    B      2.6.32 #3
+[ 6527.412571] Call Trace:
+[ 6527.412573]  [<ffffffff8110d082>] print_bad_pte+0x1d2/0x280
+[ 6527.412575]  [<ffffffff8110eb60>] unmap_vmas+0x910/0x9f0
+[ 6527.412577]  [<ffffffff81113e3b>] exit_mmap+0xbb/0x190
+[ 6527.412579]  [<ffffffff8105e5fd>] mmput+0x4d/0x110
+[ 6527.412580]  [<ffffffff81064de2>] exit_mm+0x112/0x150
+[ 6527.412582]  [<ffffffff8106515d>] do_exit+0x12d/0x7f0
+[ 6527.412585]  [<ffffffff81072e4d>] ? __sigqueue_free+0x3d/0x50
+[ 6527.412587]  [<ffffffff81075a01>] ? __dequeue_signal+0xe1/0x1f0
+[ 6527.412588]  [<ffffffff81065875>] do_group_exit+0x55/0xd0
+[ 6527.412590]  [<ffffffff810760a7>] get_signal_to_deliver+0x1d7/0x3d0
+[ 6527.412592]  [<ffffffff81011315>] do_signal+0x75/0x7a0
+[ 6527.412594]  [<ffffffff8110c913>] ? print_vma_addr+0xb3/0x120
+[ 6527.412595]  [<ffffffff81522712>] ? printk+0x41/0x47
+[ 6527.412597]  [<ffffffff8103e6f6>] ? __bad_area_nosemaphore+0xf6/0x1e0
+[ 6527.412599]  [<ffffffff8103e84e>] ? bad_area+0x4e/0x60
+[ 6527.412601]  [<ffffffff81011a9d>] do_notify_resume+0x5d/0x80
+[ 6527.412602]  [<ffffffff81012adc>] retint_signal+0x48/0x8c
+[ 7006.670604] BUG: Bad page map in process list_test  pte:800000006eb42067 pmd:62939067
+[ 7006.670608] page:ffffea0001837670 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:0
+[ 7006.670609] addr:00005ffef8003000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:ffffffffffffffff
+[ 7006.670612] Pid: 2939, comm: list_test Tainted: G    B      2.6.32 #3
+[ 7006.670613] Call Trace:
+[ 7006.670619]  [<ffffffff8110d082>] print_bad_pte+0x1d2/0x280
+[ 7006.670622]  [<ffffffff810f28a8>] ? __alloc_pages_nodemask+0xf8/0x6c0
+[ 7006.670624]  [<ffffffff8110eb60>] unmap_vmas+0x910/0x9f0
+[ 7006.670626]  [<ffffffff811158fe>] unmap_region+0xce/0x170
+[ 7006.670628]  [<ffffffff81115c16>] do_munmap+0x276/0x360
+[ 7006.670630]  [<ffffffff81108a9b>] pos_unmap_vma+0x1b/0x20
+[ 7006.670631]  [<ffffffff81108bcb>] sys_pos_unmap+0x12b/0x1b0
+[ 7006.670634]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+[ 7006.670637] BUG: Bad page state in process list_test  pfn:6eb42
+[ 7006.670638] page:ffffea0001837670 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:0
+[ 7006.670639] Pid: 2939, comm: list_test Tainted: G    B      2.6.32 #3
+[ 7006.670640] Call Trace:
+[ 7006.670642]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+[ 7006.670644]  [<ffffffff81522591>] ? dump_stack+0x77/0x80
+[ 7006.670646]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+[ 7006.670648]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+[ 7006.670651]  [<ffffffff811058a5>] ? __dec_zone_page_state+0x35/0x40
+[ 7006.670653]  [<ffffffff810f72ec>] release_pages+0x23c/0x290
+[ 7006.670654]  [<ffffffff8111e7b4>] free_pages_and_swap_cache+0xb4/0xe0
+[ 7006.670658]  [<ffffffff8129f5db>] ? cpumask_any_but+0x2b/0x40
+[ 7006.670674]  [<ffffffff81115980>] unmap_region+0x150/0x170
+[ 7006.670676]  [<ffffffff81115c16>] do_munmap+0x276/0x360
+[ 7006.670677]  [<ffffffff81108a9b>] pos_unmap_vma+0x1b/0x20
+[ 7006.670679]  [<ffffffff81108bcb>] sys_pos_unmap+0x12b/0x1b0
+[ 7006.670681]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+[ 7006.670733] list_test[2939]: segfault at 0 ip 00005f89669af10c sp 00007fff79f609e0 error 4 in libpos.so.0.0.0[5f89669ab000+d000]
+[ 7006.670755] BUG: Bad page map in process list_test  pte:800000006eb42067 pmd:6fa4e067
+[ 7006.670757] page:ffffea0001837670 flags:0100000000000014 count:0 mapcount:-2 mapping:(null) index:0
+[ 7006.670758] addr:00005ffef8003000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:ffffffffffffffff
+[ 7006.670759] Pid: 2939, comm: list_test Tainted: G    B      2.6.32 #3
+[ 7006.670760] Call Trace:
+[ 7006.670762]  [<ffffffff8110d082>] print_bad_pte+0x1d2/0x280
+[ 7006.670763]  [<ffffffff8110eb60>] unmap_vmas+0x910/0x9f0
+[ 7006.670766]  [<ffffffff81113e3b>] exit_mmap+0xbb/0x190
+[ 7006.670769]  [<ffffffff8105e5fd>] mmput+0x4d/0x110
+[ 7006.670770]  [<ffffffff81064de2>] exit_mm+0x112/0x150
+[ 7006.670771]  [<ffffffff8106515d>] do_exit+0x12d/0x7f0
+[ 7006.670774]  [<ffffffff81072e4d>] ? __sigqueue_free+0x3d/0x50
+[ 7006.670776]  [<ffffffff81075a01>] ? __dequeue_signal+0xe1/0x1f0
+[ 7006.670778]  [<ffffffff81065875>] do_group_exit+0x55/0xd0
+[ 7006.670780]  [<ffffffff810760a7>] get_signal_to_deliver+0x1d7/0x3d0
+[ 7006.670782]  [<ffffffff81011315>] do_signal+0x75/0x7a0
+[ 7006.670783]  [<ffffffff8110c913>] ? print_vma_addr+0xb3/0x120
+[ 7006.670785]  [<ffffffff81522712>] ? printk+0x41/0x47
+[ 7006.670787]  [<ffffffff8103e6f6>] ? __bad_area_nosemaphore+0xf6/0x1e0
+[ 7006.670789]  [<ffffffff8103e84e>] ? bad_area+0x4e/0x60
+[ 7006.670790]  [<ffffffff81011a9d>] do_notify_resume+0x5d/0x80
+[ 7006.670792]  [<ffffffff81012adc>] retint_signal+0x48/0x8c
+[ 7498.041758] BUG: Bad page map in process list_test  pte:80000000673b8067 pmd:62879067
+[ 7498.041762] page:ffffea0001695040 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:ffff8800673b8420
+[ 7498.041763] addr:00005ffef8004000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:ffffffffffffffff
+[ 7498.041765] Pid: 3034, comm: list_test Tainted: G    B      2.6.32 #3
+[ 7498.041766] Call Trace:
+[ 7498.041772]  [<ffffffff8110d082>] print_bad_pte+0x1d2/0x280
+[ 7498.041776]  [<ffffffff810f28a8>] ? __alloc_pages_nodemask+0xf8/0x6c0
+[ 7498.041778]  [<ffffffff8110eb60>] unmap_vmas+0x910/0x9f0
+[ 7498.041780]  [<ffffffff811158fe>] unmap_region+0xce/0x170
+[ 7498.041782]  [<ffffffff81115c16>] do_munmap+0x276/0x360
+[ 7498.041783]  [<ffffffff81108a9b>] pos_unmap_vma+0x1b/0x20
+[ 7498.041785]  [<ffffffff81108bcb>] sys_pos_unmap+0x12b/0x1b0
+[ 7498.041788]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+[ 7498.041791] BUG: Bad page state in process list_test  pfn:673b8
+[ 7498.041792] page:ffffea0001695040 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:ffff8800673b8420
+[ 7498.041794] Pid: 3034, comm: list_test Tainted: G    B      2.6.32 #3
+[ 7498.041794] Call Trace:
+[ 7498.041796]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+[ 7498.041799]  [<ffffffff81522591>] ? dump_stack+0x77/0x80
+[ 7498.041801]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+[ 7498.041802]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+[ 7498.041805]  [<ffffffff811058a5>] ? __dec_zone_page_state+0x35/0x40
+[ 7498.041807]  [<ffffffff810f72ec>] release_pages+0x23c/0x290
+[ 7498.041809]  [<ffffffff8111e7b4>] free_pages_and_swap_cache+0xb4/0xe0
+[ 7498.041812]  [<ffffffff8129f5db>] ? cpumask_any_but+0x2b/0x40
+[ 7498.041814]  [<ffffffff81115980>] unmap_region+0x150/0x170
+[ 7498.041815]  [<ffffffff81115c16>] do_munmap+0x276/0x360
+[ 7498.041817]  [<ffffffff81108a9b>] pos_unmap_vma+0x1b/0x20
+[ 7498.041818]  [<ffffffff81108bcb>] sys_pos_unmap+0x12b/0x1b0
+[ 7498.041820]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+[ 7498.041967] list_test[3034]: segfault at 0 ip 00005ffafc43910c sp 00007fff38ca2420 error 4 in libpos.so.0.0.0[5ffafc435000+d000]
+[ 7498.041991] BUG: Bad page map in process list_test  pte:80000000673b8067 pmd:6fa4f067
+[ 7498.041993] page:ffffea0001695040 flags:0100000000000014 count:0 mapcount:-2 mapping:(null) index:ffff8800673b8420
+[ 7498.041994] addr:00005ffef8004000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:ffffffffffffffff
+[ 7498.041996] Pid: 3034, comm: list_test Tainted: G    B      2.6.32 #3
+[ 7498.041996] Call Trace:
+[ 7498.041998]  [<ffffffff8110d082>] print_bad_pte+0x1d2/0x280
+[ 7498.042000]  [<ffffffff8110eb60>] unmap_vmas+0x910/0x9f0
+[ 7498.042002]  [<ffffffff81113e3b>] exit_mmap+0xbb/0x190
+[ 7498.042005]  [<ffffffff8105e5fd>] mmput+0x4d/0x110
+[ 7498.042007]  [<ffffffff81064de2>] exit_mm+0x112/0x150
+[ 7498.042008]  [<ffffffff8106515d>] do_exit+0x12d/0x7f0
+[ 7498.042011]  [<ffffffff81072e4d>] ? __sigqueue_free+0x3d/0x50
+[ 7498.042013]  [<ffffffff81075a01>] ? __dequeue_signal+0xe1/0x1f0
+[ 7498.042014]  [<ffffffff81065875>] do_group_exit+0x55/0xd0
+[ 7498.042016]  [<ffffffff810760a7>] get_signal_to_deliver+0x1d7/0x3d0
+[ 7498.042019]  [<ffffffff81011315>] do_signal+0x75/0x7a0
+[ 7498.042020]  [<ffffffff8110c913>] ? print_vma_addr+0xb3/0x120
+[ 7498.042022]  [<ffffffff81522712>] ? printk+0x41/0x47
+[ 7498.042024]  [<ffffffff8103e6f6>] ? __bad_area_nosemaphore+0xf6/0x1e0
+[ 7498.042025]  [<ffffffff8103e84e>] ? bad_area+0x4e/0x60
+[ 7498.042027]  [<ffffffff81011a9d>] do_notify_resume+0x5d/0x80
+[ 7498.042029]  [<ffffffff81012adc>] retint_signal+0x48/0x8c
+[ 7675.790277] BUG: Bad page map in process list_test  pte:80000000628c8067 pmd:6d630067
+[ 7675.790289] page:ffffea000158ebc0 flags:0100000000000014 count:1 mapcount:-1 mapping:(null) index:ffff8800628c8630
+[ 7675.790296] addr:00005ffef8005000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:ffffffffffffffff
+[ 7675.790303] Pid: 3082, comm: list_test Tainted: G    B      2.6.32 #3
+[ 7675.790307] Call Trace:
+[ 7675.790325]  [<ffffffff8110d082>] print_bad_pte+0x1d2/0x280
+[ 7675.790335]  [<ffffffff810f28a8>] ? __alloc_pages_nodemask+0xf8/0x6c0
+[ 7675.790342]  [<ffffffff8110eb60>] unmap_vmas+0x910/0x9f0
+[ 7675.790352]  [<ffffffff811158fe>] unmap_region+0xce/0x170
+[ 7675.790360]  [<ffffffff81115c16>] do_munmap+0x276/0x360
+[ 7675.790366]  [<ffffffff81108a9b>] pos_unmap_vma+0x1b/0x20
+[ 7675.790372]  [<ffffffff81108bcb>] sys_pos_unmap+0x12b/0x1b0
+[ 7675.790383]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+[ 7675.790393] BUG: Bad page state in process list_test  pfn:628c8
+[ 7675.790399] page:ffffea000158ebc0 flags:0100000000000014 count:0 mapcount:-1 mapping:(null) index:ffff8800628c8630
+[ 7675.790405] Pid: 3082, comm: list_test Tainted: G    B      2.6.32 #3
+[ 7675.790408] Call Trace:
+[ 7675.790415]  [<ffffffff810f11c5>] bad_page+0xf5/0x150
+[ 7675.790423]  [<ffffffff81522591>] ? dump_stack+0x77/0x80
+[ 7675.790431]  [<ffffffff810f4157>] free_hot_cold_page+0x1e7/0x240
+[ 7675.790438]  [<ffffffff810f4209>] __pagevec_free+0x59/0xb0
+[ 7675.790447]  [<ffffffff811058a5>] ? __dec_zone_page_state+0x35/0x40
+[ 7675.790455]  [<ffffffff810f72ec>] release_pages+0x23c/0x290
+[ 7675.790462]  [<ffffffff8111e7b4>] free_pages_and_swap_cache+0xb4/0xe0
+[ 7675.790472]  [<ffffffff8129f5db>] ? cpumask_any_but+0x2b/0x40
+[ 7675.790480]  [<ffffffff81115980>] unmap_region+0x150/0x170
+[ 7675.790487]  [<ffffffff81115c16>] do_munmap+0x276/0x360
+[ 7675.790493]  [<ffffffff81108a9b>] pos_unmap_vma+0x1b/0x20
+[ 7675.790499]  [<ffffffff81108bcb>] sys_pos_unmap+0x12b/0x1b0
+[ 7675.790507]  [<ffffffff81012072>] system_call_fastpath+0x16/0x1b
+[ 7675.791210] list_test[3082]: segfault at 0 ip 00005f6a9339710c sp 00007fffa54d07f0 error 4 in libpos.so.0.0.0[5f6a93393000+d000]
+[ 7675.791301] BUG: Bad page map in process list_test  pte:80000000628c8067 pmd:672c8067
+[ 7675.791308] page:ffffea000158ebc0 flags:0100000000000014 count:0 mapcount:-2 mapping:(null) index:ffff8800628c8630
+[ 7675.791314] addr:00005ffef8005000 vm_flags:0000000b anon_vma:(null) mapping:(null) index:ffffffffffffffff
+[ 7675.791319] Pid: 3082, comm: list_test Tainted: G    B      2.6.32 #3
+[ 7675.791322] Call Trace:
+[ 7675.791331]  [<ffffffff8110d082>] print_bad_pte+0x1d2/0x280
+[ 7675.791338]  [<ffffffff8110eb60>] unmap_vmas+0x910/0x9f0
+[ 7675.791347]  [<ffffffff81113e3b>] exit_mmap+0xbb/0x190
+[ 7675.791357]  [<ffffffff8105e5fd>] mmput+0x4d/0x110
+[ 7675.791363]  [<ffffffff81064de2>] exit_mm+0x112/0x150
+[ 7675.791369]  [<ffffffff8106515d>] do_exit+0x12d/0x7f0
+[ 7675.791378]  [<ffffffff81072e4d>] ? __sigqueue_free+0x3d/0x50
+[ 7675.791388]  [<ffffffff81075a01>] ? __dequeue_signal+0xe1/0x1f0
+[ 7675.791394]  [<ffffffff81065875>] do_group_exit+0x55/0xd0
+[ 7675.791402]  [<ffffffff810760a7>] get_signal_to_deliver+0x1d7/0x3d0
+[ 7675.791411]  [<ffffffff81011315>] do_signal+0x75/0x7a0
+[ 7675.791417]  [<ffffffff8110c913>] ? print_vma_addr+0xb3/0x120
+[ 7675.791424]  [<ffffffff81522712>] ? printk+0x41/0x47
+[ 7675.791432]  [<ffffffff8103e6f6>] ? __bad_area_nosemaphore+0xf6/0x1e0
+[ 7675.791438]  [<ffffffff8103e84e>] ? bad_area+0x4e/0x60
+[ 7675.791446]  [<ffffffff81011a9d>] do_notify_resume+0x5d/0x80
+[ 7675.791452]  [<ffffffff81012adc>] retint_signal+0x48/0x8c

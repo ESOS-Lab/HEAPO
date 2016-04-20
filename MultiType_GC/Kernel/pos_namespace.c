@@ -293,7 +293,7 @@ struct pos_ns_record *pos_ns_insert(struct pos_ns_trie_node *root,
 	record->next = NULL;
 
 	//dk s
-	LIST_INIT_HEAD(&record->gc_member);
+	INIT_LIST_HEAD(&record->gc_member);
 	//dk e
 	
 	trie_node->ptrs[0] = (unsigned long)record;

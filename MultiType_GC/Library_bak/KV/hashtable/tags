@@ -1,0 +1,48 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CONSISTENCY	pos-hashtable.c	24;"	d	file:
+KEY_SIZE	pos-hashtable_private.h	16;"	d
+LOG_CNT_ON	pos-hashtable.c	26;"	d	file:
+MODE	pos-hashtable.c	21;"	d	file:
+OFFSET_BASE	pos-hashtable.c	22;"	d	file:
+__HASHTABLE_CWC22_H__	pos-hashtable.h	12;"	d
+__HASHTABLE_PRIVATE_CWC22_H__	pos-hashtable_private.h	12;"	d
+create_hashtable	pos-hashtable.c	/^create_hashtable(char *name, unsigned int minsize,$/;"	f
+default_hashfunction	pos-hashtable.c	/^unsigned long default_hashfunction(unsigned long *key)$/;"	f
+default_key_eq_fn	pos-hashtable.c	/^int default_key_eq_fn(unsigned long *key1, unsigned long *key2)$/;"	f
+entry	pos-hashtable_private.h	/^struct entry$/;"	s
+entrycount	pos-hashtable_private.h	/^    unsigned long entrycount;$/;"	m	struct:hashtable
+eqfn	pos-hashtable_private.h	/^    int (*eqfn) (unsigned long *k1, unsigned long *k2);$/;"	m	struct:hashtable
+h	pos-hashtable_private.h	/^    unsigned long h; $/;"	m	struct:entry
+hash	pos-hashtable.c	/^hash(struct hashtable *h, unsigned long *k)$/;"	f
+hashfn	pos-hashtable_private.h	/^    unsigned long (*hashfn) (unsigned long *k);$/;"	m	struct:hashtable
+hashtable	pos-hashtable_private.h	/^struct hashtable {$/;"	s
+hashtable_destroy	pos-hashtable.c	/^hashtable_destroy(char *name)$/;"	f
+hashtable_expand	pos-hashtable.c	/^hashtable_expand(char *name, struct hashtable *h)$/;"	f	file:
+hashtable_insert	pos-hashtable.c	/^hashtable_insert(char *name, struct hashtable *h, unsigned long *k, unsigned long *v, $/;"	f
+hashtable_remove	pos-hashtable.c	/^hashtable_remove(char *name, struct hashtable *h, unsigned long *k)$/;"	f
+hashtable_search	pos-hashtable.c	/^hashtable_search(struct hashtable *h, unsigned long *k)$/;"	f
+indexFor	pos-hashtable_private.h	/^indexFor(unsigned long tablelength, unsigned long hashvalue) {$/;"	f
+k	pos-hashtable_private.h	/^    unsigned long k[KEY_SIZE];$/;"	m	struct:entry
+loadlimit	pos-hashtable_private.h	/^    unsigned long loadlimit;$/;"	m	struct:hashtable
+make_list_for_hashtable	pos-hashtable.c	/^int make_list_for_hashtable(char *name, Node **head)$/;"	f
+max_load_factor	pos-hashtable.c	/^const float max_load_factor = 0.65;$/;"	v
+next	pos-hashtable_private.h	/^    struct entry *next;$/;"	m	struct:entry	typeref:struct:entry::entry
+pos_create_hashtable	pos-hashtable.c	/^pos_create_hashtable(char *name, unsigned int minsize,$/;"	f
+pos_hashtable_close	pos-hashtable.c	/^void pos_hashtable_close(char *name)$/;"	f
+pos_hashtable_destroy	pos-hashtable.c	/^pos_hashtable_destroy(char *name)$/;"	f
+pos_hashtable_insert	pos-hashtable.c	/^pos_hashtable_insert(char *name, void *_k, void *_v, unsigned long v_size)$/;"	f
+pos_hashtable_open	pos-hashtable.c	/^int pos_hashtable_open(char *name)$/;"	f
+pos_hashtable_remove	pos-hashtable.c	/^pos_hashtable_remove(char *name, void *_k)$/;"	f
+pos_hashtable_search	pos-hashtable.c	/^pos_hashtable_search(char *name, void *_k)$/;"	f
+pos_write_value	pos-hashtable.c	25;"	d	file:
+prime_table_length	pos-hashtable.c	/^const unsigned int prime_table_length = sizeof(primes)\/sizeof(primes[0]);	\/\/ 26$/;"	v
+primeindex	pos-hashtable_private.h	/^    unsigned long primeindex;$/;"	m	struct:hashtable
+primes	pos-hashtable.c	/^static const unsigned int primes[] = {$/;"	v	file:
+table	pos-hashtable_private.h	/^    struct entry **table;$/;"	m	struct:hashtable	typeref:struct:hashtable::entry
+tablelength	pos-hashtable_private.h	/^    unsigned long tablelength;$/;"	m	struct:hashtable
+v	pos-hashtable_private.h	/^    unsigned long *v; $/;"	m	struct:entry

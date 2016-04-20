@@ -45,24 +45,17 @@
 #include <unistd.h>
 #include <syscall.h>
 
-//dk start
-#include <linux/rbtree.h>
-//dk end
+//sb s
+#include "KV/alloc_list/alloc_list.h"
+#include "KV/list/pos-list.h"
+#include "KV/hashtable/pos-hashtable.h"
+#include "KV/btree/pos-btree.h"
+//sb e
 
 INTERNAL_SIZE_T global_max_fast = 144;
 
 //dk start
 #define POS_DEBUG 1
-
-char* alloc_tree;
-int alloc_tree_init_flag = 0;
-int alloc_tree_meta_update_flag = 0;
-
-typedef struct gc_node {
-  struct rb_node node;
-  unsigned long key;
-}GC_NODE;
-
 //dk end
 
 #define pos_public_fREe		pos_free
@@ -86,8 +79,8 @@ int check_valid_address(struct seg_info *head, Void_t *ptr);
 void pos_check_unsafe_segment(char *name, mstate av, struct seg_info *head, Void_t *first_chunk);
 Void_t* pos_unsafe_region_relocate(char *name, mstate av, Void_t *p);
 void pos_check_unsafe_region(char *name, mstate av, struct seg_info *head, mchunkptr chunk_ptr);
-
-
+void chunk_change_pointer(mchunkptr chunk_ptr, Void_t *p , unsigned long offset);
+/*
 //DK start
 int pos_gc_node_insert(struct rb_root *root, GC_NODE *key_node)
 {
@@ -155,6 +148,7 @@ GC_NODE create_gc_node(GC_NODE *node)
 	rb_init_node(&new_node->node);
 	new_node->key = 0;
 }
+*/
 
 //dk s
 int pos_local_gc(char* name)
@@ -167,43 +161,64 @@ int pos_local_gc(char* name)
 	int size;
 	int key_count;
 	int val_count;
+	Node *alloc_list_head = NULL;
+	Node *cur_node = NULL;
 
 	p = pos_get_prime_object(name);
 	ptr = mem2chunk(p);
 
-	obj_type = pos_get_object_type(name);
+	//obj_type = pos_get_object_type(name);
+	syscall(308, name, &obj_type); 
 	type = obj_type & 0xF; //1111
 	size = obj_type & 0xF0; //11110000
 	key_count = obj_type & 0xF00; //111100000000
-	val_count = obj_type & 0XF000 //1111000000000000	
+	val_count = obj_type & 0XF000; //1111000000000000	
 
 	if(type == 1) // linked list
 	{
-		make_list_for_list(p);
+		make_list_for_list((struct list_head *)p, &alloc_list_head);
 	}
 	else if(type == 2) //b-tree
 	{
-		make_list_for_btree(p);
+		make_list_for_btree((struct btree_head *)p, &alloc_list_head);
 	}
 	else if(type == 3) //hash
 	{
-		make_list_for_hashtable(p);
+		make_list_for_hashtable((struct hashtable *)p, &alloc_list_head);
 	}
 	else
 	{
 			//error
 	}
 
-	while(chunk_is_last(ptr != 1)
+	cur_node = alloc_list_head;
+	while(chunk_is_last(ptr) != 1)
 	{
 		mem_ptr = chunk2mem(ptr);
-		mem_ptr = //alloc list key 
-		ptr = next_chunk(ptr);
-		if(inuse(ptr) != 1)
+		//mem_ptr = //alloc list key
+		if(mem_ptr == (void *)cur_node->addr)
 		{
-			ptr=next_chunk(ptr);
+			cur_node = cur_node->next;
+			// new s
+			ptr = next_chunk(ptr);
+			while(inuse(ptr) != 1)
+			{
+				ptr = next_chunk(ptr);
+			}
+			// new e
+		}
+		else
+		{
+			pos_free(name, mem_ptr);
+
+			ptr = next_chunk(ptr);
+			while(inuse(ptr) != 1)
+			{
+				ptr = next_chunk(ptr);
+			}
 		}
 	}
+	
 	return 0;
 }
 //dk e
@@ -785,7 +800,7 @@ new_alloc:
 void
 pos_int_free(char *name, mstate av, mchunkptr p, int flag)
 {
-	INTERNA_SIZE_T size;
+	INTERNAL_SIZE_T size;
 	mfastbinptr* fb;
 	mchunkptr prevchunk;
 	INTERNAL_SIZE_T prevsize;
@@ -1159,7 +1174,7 @@ errout:
 		} else if (chunk_is_last(nextchunk)&&!nextinuse) {
 			set_head(p, size | LAST_CHUNK | PREV_INUSE);
 			//dk s
-			av->last_chunk_pointer = remainder;
+			av->last_chunk_pointer = p;
 			//dk e
 		} else {
 			set_head(p, size | PREV_INUSE);
@@ -1431,7 +1446,7 @@ pos_malloc_init_state(char *name, mstate av)
 	}
 	av->system_mem = PAGESIZE;
 
-	av -> prime_obj = NULL;
+	av->prime_obj = NULL;
 }
 
 
@@ -1442,7 +1457,7 @@ pos_malloc_init_state(char *name, mstate av)
 
 //dk start
 Void_t*
-pos_public_mALLOc(char *name, unsigned long _bytes, int obj_type) 
+pos_public_mALLOc(char *name, unsigned long _bytes) 
 {
 	struct malloc_state *ar_ptr;
 	Void_t *victim = NULL;
@@ -1464,7 +1479,7 @@ pos_public_mALLOc(char *name, unsigned long _bytes, int obj_type)
 	}
 
 	(void)mutex_lock(&ar_ptr->mutex);
-	victim = pos_int_malloc(name, ar_ptr, bytes, obj_type);
+	victim = pos_int_malloc(name, ar_ptr, bytes);
 	(void)mutex_unlock(&ar_ptr->mutex);
 
 	return victim;
@@ -1676,7 +1691,7 @@ void pos_check_unsafe_pointer(char *name)
         printf("Not Allocate Memory\n");
 
     name_entry = pos_lookup_name_entry(name);
-    name_entry -> seg_head = (struct seg_info *)malloc(sizeof(struct seg_info) * 1024);
+    name_entry->seg_head = (struct seg_info *)malloc(sizeof(struct seg_info) * 1024);
     memset(name_entry -> seg_head, 0, sizeof(struct seg_info) * 1024);
 
     //Search Seg_info System call
@@ -1731,7 +1746,7 @@ int check_valid_address(struct seg_info *head, Void_t *ptr)
 
     while(head[i].addr != 0)
     {
-        if((ptr >= head[i].addr) && (ptr < head[i].addr + head[i].size))
+        if((ptr >= (void *)head[i].addr) && (ptr < (void *)(head[i].addr + head[i].size)))
             return 1;
         i++;
     }
@@ -1750,11 +1765,11 @@ void pos_check_unsafe_region(char *name, mstate av, struct seg_info *head, mchun
         if(av -> node_obj.ptr_offset[i] == 0)
 	    break;
 
-	ptr = lookup_pointer(chunk_ptr, av -> node_obj.ptr_offset[i]);
+	ptr = lookup_pointer(chunk_ptr, av->node_obj.ptr_offset[i]);
 	if((!check_valid_address(head, ptr)) && ptr != NULL)
 	{	
 	    new_ptr = pos_unsafe_region_relocate(name, av, ptr);
-	    chunk_change_pointer(chunk_ptr, new_ptr, av -> node_obj.ptr_offset[i]);
+	    chunk_change_pointer(chunk_ptr, new_ptr, av->node_obj.ptr_offset[i]);
 	}		
     }	
 }
@@ -1787,24 +1802,24 @@ Void_t* pos_unsafe_region_relocate(char *name, mstate av, Void_t *p)
 
     for(i = 0; i < 50; i++)
     {
-        if(av -> node_obj.ptr_offset[i] == 0)
+        if(av->node_obj.ptr_offset[i] == 0)
 	    break;
 
-	mem_ptr = lookup_pointer(mem2chunk(new_addr), av -> node_obj.ptr_offset[i]);
+	mem_ptr = lookup_pointer(mem2chunk(new_addr), av->node_obj.ptr_offset[i]);
 	if(mem_ptr == NULL)
 	    break;
 
 	for(j = 0; j < 50; j++)
 	{
-	    if(av -> node_obj.ptr_offset[j] == 0)
+	    if(av->node_obj.ptr_offset[j] == 0)
 	        break;
 
-	    next_mem_ptr = lookup_pointer(mem2chunk(mem_ptr), av -> node_obj.ptr_offset[j]);
+	    next_mem_ptr = lookup_pointer(mem2chunk(mem_ptr), av->node_obj.ptr_offset[j]);
 	    if(next_mem_ptr == NULL)
   	        break;
 
 	    if(next_mem_ptr == p){
-	        chunk_change_pointer(mem2chunk(mem_ptr), new_addr, av -> node_obj.ptr_offset[j]);   
+	        chunk_change_pointer(mem2chunk(mem_ptr), new_addr, av->node_obj.ptr_offset[j]);   
 		}
 	}	
     }
