@@ -31,11 +31,8 @@
 //#include "list/pos-list.h"
 //#include "alloc_list/alloc_list.h"
 
-<<<<<<< HEAD
 //#define TEST_OBJ_NAME "objadbA"
-=======
-#define TEST_OBJ_NAME "obj9"
->>>>>>> 4fcbc3e39363bec90b791895e44d3b748066c911
+//#define TEST_OBJ_NAME "obj9"
 
 int main(int argc, char *argv[])
 {
@@ -61,12 +58,9 @@ int main(int argc, char *argv[])
 		return 0;
 	}
 	printf("node size = %lu\n", sizeof(struct list_node));
-<<<<<<< HEAD
 
 	 printf("obj_type = %d\n", obj_type);
   syscall(307, TEST_OBJ_NAME, &obj_type, &obj_size, &key_num, &val_num);
-=======
->>>>>>> 4fcbc3e39363bec90b791895e44d3b748066c911
 
 	printf("[MAP POS]\n");
 	pos_map(TEST_OBJ_NAME);
@@ -80,22 +74,21 @@ int main(int argc, char *argv[])
 		for(j=0; j<2; j++) {
 			num[i][j] = rand()%10000+99999;
 		}
-	//printf("chk\n");
 		key[0] = key[1] = rand()%100+1;
 		if(pos_list_insert(TEST_OBJ_NAME, (void *)key, (void *)num[i], 8) < 0) {
 			printf("insertion failed!\n");
 		}
-		//if(i == 50)
-		//if(i == 50) {
-		//	printf("pos delete!\n");
-		//	pos_delete_selected_node(TEST_OBJ_NAME, i);
-		}
 		printf("\n[USER] insert check[%d]\n", i);
-
+	}
 
 	printf("			delete start!\n");	
-	pos_delete_selected_node(TEST_OBJ_NAME, 50);
+	pos_delete_selected_node(TEST_OBJ_NAME, 5);
+	pos_local_gc(TEST_OBJ_NAME);
 
+	printf("PRINT LIST IN USER]\n");
+	print_list(TEST_OBJ_NAME);
+	printf("\n\n");
+/*
 	for(i=0; i<100; i++) {
 		for(j=0; j<2; j++) {
 			num[i][j] = rand()%10000+99999;
@@ -108,7 +101,7 @@ int main(int argc, char *argv[])
 	}
 
 	//pos_delete_selected_node(TEST_OBJ_NAME, 50);
-/*
+
 	printf("[MAKE LIST]\n");
 	make_list_for_list2(TEST_OBJ_NAME, &head);
 	printf("[LIST PRINT]\n");

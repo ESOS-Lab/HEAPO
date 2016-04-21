@@ -23,6 +23,7 @@
 #define	LIST_DEBUG		1
 
 Node *alloc_head=NULL;
+unsigned int list_state=0;
 //son end
 
 void *get_alloc_head()
@@ -48,7 +49,7 @@ int pos_list_init(char *name)
 	pos_set_prime_object(name, head);
 	head->head = NULL;
 // sb s
-	insert_node(&alloc_head, (unsigned long)head);
+	//insert_node(&alloc_head, (unsigned long)head);
 // sb e
 #if CONSISTENCY == 1
 	pos_transaction_end(name);
@@ -116,7 +117,10 @@ printf("[pos-insert] start\n");
 printf("[pos-insert] 1\n");
 #endif
 	node = (struct list_node *)pos_malloc(name, sizeof(struct list_node));
-	//insert_node(&alloc_head, (unsigned long)node);
+	//sb s
+	list_state = 1;
+//	insert_node(&alloc_head, (unsigned long)node);
+	//sb e
 #if LIST_DEBUG == 1
 printf("[pos-insert] 2\n");
 #endif
@@ -128,7 +132,10 @@ printf("[pos-insert] 2\n");
 #endif
 
 	node->value = (unsigned long *)pos_malloc(name, val_size);
+	//sb s
 	//insert_node(&alloc_head, (unsigned long)node->value);
+	//list_state = 2;
+	//sb e
 #if LIST_DEBUG == 1
 printf("[pos-insert] node->value : %p\n", node->value);
 printf("[pos-insert] 3-1\n");
@@ -162,6 +169,9 @@ printf("[pos-insert] 3-3\n");
 	pos_transaction_end(name);
 #else
 	head->head = node;
+	//sb s
+	list_state = 2;
+	//sb e
 #if LIST_DEBUG == 1
 printf("[pos-insert] 3-4\n");
 #endif
@@ -249,9 +259,9 @@ int pos_list_remove(char *name, void *_key)
 			*prev_node = node->next;
 #endif
 			pos_free(name, node->value);
-			//delete_node(&alloc_head, (unsigned long)node->value);
+			delete_node(&alloc_head, (unsigned long)node->value);
 			pos_free(name, node);
-			//delete_node(&alloc_head, (unsigned long)node);
+			delete_node(&alloc_head, (unsigned long)node);
 
 #if CONSISTENCY == 1
 			pos_transaction_end(name);
@@ -306,11 +316,17 @@ void delete_second_node(char *name)
 	cur_node->next = NULL;
 }
 
+unsigned int get_list_state()
+{
+	return list_state;
+}
+
 int pos_delete_selected_node(char *name, int idx)
 {
 	struct list_head *lh;
-	struct list_node *cur_node;
+	struct list_node *cur_node, *prev_node;
 	int i;
+
 printf("1\n");
 	lh = (struct list_head *)pos_get_prime_object(name);
 	if(lh == NULL)
@@ -318,6 +334,7 @@ printf("1\n");
 printf("2\n");
 	cur_node = lh->head;
 	for(i=0; i<idx; i++) {
+		prev_node = cur_node;
 		cur_node = cur_node->next;
 	}
 
@@ -326,6 +343,7 @@ printf("2\n");
 		return 0;
 	}
 printf("3 i - %d\n", i);
+	prev_node->next = NULL;
 	cur_node->next = NULL;
 	pos_free(name, cur_node->value);
 	pos_free(name, cur_node);
@@ -362,12 +380,8 @@ int make_list_for_list(struct list_head *lh, Node **head)
 		// insert current node's address in the alloc tree
 		value = cur_node->value;
 		insert_node(head, (unsigned long)cur_node);
-<<<<<<< HEAD
 		if(value != NULL)
 			insert_node(head, (unsigned long)value);
-=======
-		insert_node(head, (unsigned long)value);
->>>>>>> 4fcbc3e39363bec90b791895e44d3b748066c911
 #if LIST_DEBUG == 1
 		printf("cur_node(%p), value(%p), inserted\n", cur_node, value);
 #endif
