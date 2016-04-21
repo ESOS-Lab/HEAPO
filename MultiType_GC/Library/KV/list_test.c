@@ -31,7 +31,11 @@
 //#include "list/pos-list.h"
 //#include "alloc_list/alloc_list.h"
 
+<<<<<<< HEAD
 //#define TEST_OBJ_NAME "objadbA"
+=======
+#define TEST_OBJ_NAME "obj9"
+>>>>>>> 4fcbc3e39363bec90b791895e44d3b748066c911
 
 int main(int argc, char *argv[])
 {
@@ -57,9 +61,12 @@ int main(int argc, char *argv[])
 		return 0;
 	}
 	printf("node size = %lu\n", sizeof(struct list_node));
+<<<<<<< HEAD
 
 	 printf("obj_type = %d\n", obj_type);
   syscall(307, TEST_OBJ_NAME, &obj_type, &obj_size, &key_num, &val_num);
+=======
+>>>>>>> 4fcbc3e39363bec90b791895e44d3b748066c911
 
 	printf("[MAP POS]\n");
 	pos_map(TEST_OBJ_NAME);

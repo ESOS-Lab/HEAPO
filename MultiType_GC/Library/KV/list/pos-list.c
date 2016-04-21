@@ -362,8 +362,12 @@ int make_list_for_list(struct list_head *lh, Node **head)
 		// insert current node's address in the alloc tree
 		value = cur_node->value;
 		insert_node(head, (unsigned long)cur_node);
+<<<<<<< HEAD
 		if(value != NULL)
 			insert_node(head, (unsigned long)value);
+=======
+		insert_node(head, (unsigned long)value);
+>>>>>>> 4fcbc3e39363bec90b791895e44d3b748066c911
 #if LIST_DEBUG == 1
 		printf("cur_node(%p), value(%p), inserted\n", cur_node, value);
 #endif

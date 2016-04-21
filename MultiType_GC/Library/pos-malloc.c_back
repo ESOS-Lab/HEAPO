@@ -63,12 +63,6 @@ INTERNAL_SIZE_T global_max_fast = 144;
 #define pos_public_mALLOc	pos_malloc
 #define pos_public_rEALLOc	pos_realloc
 
-unsigned long total_chunks_size=0;
-int total_idx = 0;
-int seg_alloc_count = 0;
-int new_alloc_count = 0;
-unsigned long garbage_count = 0;
-
 static void pos_malloc_consolidate(char *,mstate);
 static Void_t* pos_int_malloc(char *, mstate, size_t);
 void pos_int_free(char *, mstate, mchunkptr, int);
@@ -175,42 +169,27 @@ int pos_local_gc(char* name)
 	ms_ptr = (struct malloc_state *)pos_lookup_mstate(name);  
 	p = pos_get_prime_object(name);
 	ptr = mem2chunk(p);
-<<<<<<< HEAD
 
 #if POS_DEBUG_MALLOC == 1
 		printf("[local gc] GC start!\n");
 #endif
 
-=======
-if(POS_DEBUG_MALLOC == 1)
-{
-printf("[gc] 1\n");
-}
->>>>>>> 4fcbc3e39363bec90b791895e44d3b748066c911
 	//obj_type = pos_get_object_type(name);
 	syscall(308, name, &obj_type);
 
 	type = obj_type & 0xF; //1111
 	size = obj_type & 0xF0; //11110000
 	key_count = obj_type & 0xF00; //111100000000
-<<<<<<< HEAD
 	val_count = obj_type & 0XF000; //1111000000000000
 
 #if POS_DEBUG_MALLOC == 1
 	printf("[local gc] type : %d\n", type);
 #endif
 
-=======
-	val_count = obj_type & 0XF000; //1111000000000000	
-if(POS_DEBUG_MALLOC == 1)
-{
-printf("[gc] 2\n");
-}
->>>>>>> 4fcbc3e39363bec90b791895e44d3b748066c911
 	if(type == 1) // linked list
 	{
-		make_list_for_list((struct list_head *)p, &alloc_list_head);
-		//alloc_list_head = (Node *) get_alloc_head();
+		//make_list_for_list((struct list_head *)p, &alloc_list_head);
+		alloc_list_head = (Node *) get_alloc_head();
 	}
 	else if(type == 2) //b-tree
 	{
@@ -222,7 +201,6 @@ printf("[gc] 2\n");
 	}
 	else
 	{
-<<<<<<< HEAD
 #if POS_DEBUG_MALLOC == 1
 		printf("[local gc] wrong storage type!\n");
 #endif
@@ -243,22 +221,12 @@ printf("[gc] 2\n");
 	printf("[local gc] value * 2 : %lu\n", sizeof(unsigned long)*2);
 #endif
 
-=======
-		//error
-		printf("wrong storage type!\n");
-	}
-if(POS_DEBUG_MALLOC == 1)
-{
-printf("[gc] 3\n");
-}
->>>>>>> 4fcbc3e39363bec90b791895e44d3b748066c911
 	cur_node = alloc_list_head;
 	while(ptr != ms_ptr->last_chunk_pointer)
 	{
 #if POS_DEBUG_MALLOC == 1
 		printf("[local gc] chunk addr : %p, size : %lu\n", ptr, (unsigned long)chunksize(ptr));
 #endif
-		//total_chunks_size += chunksize(ptr);
 		mem_ptr = chunk2mem(ptr);
 		if((void *)cur_node->addr == mem_ptr)
 		{
@@ -285,9 +253,6 @@ printf("[gc] 3\n");
 			printf("[local gc] 3\n");
 #endif
 			pos_free(name, mem_ptr);
-			printf("[local gc] ptr(%p) is garbage -> freed!\n", mem_ptr);
-			printf("[local gc] garbage count : %lu\n", garbage_count);
-			garbage_count++;
 			ptr = next_chunk(ptr);
 		}
 		if(chunk_is_last(ptr) == 0x4)
@@ -298,18 +263,11 @@ printf("[gc] 3\n");
 			break;
 		}
 	}
-<<<<<<< HEAD
 	remove_list(alloc_list_head);	
 
 #if POS_DEBUG_MALLOC == 1
 	printf("[local gc] GC end!\n");
 #endif
-=======
-if(POS_DEBUG_MALLOC == 1)
-{
-printf("[gc] 4\n");
-}
->>>>>>> 4fcbc3e39363bec90b791895e44d3b748066c911
 
 	return 0;
 }
@@ -352,9 +310,6 @@ pos_malloc_consolidate(char *name, mstate av)
 				clear_inuse(p);
 #endif
 				pos_int_free(name, av, p, 0);
-//sb s
-	printf("			p(%p) pos freed freed\n", p);
-//sb e
 			} while ( (p = nextp) != 0);
 		}
 	} while (fb++ != maxfb);
@@ -426,6 +381,7 @@ errout:
 #else
 			*fb = victim->fd;
 #endif
+
 			void *p = chunk2mem(victim);
 
 			return p;
@@ -433,24 +389,14 @@ errout:
 	}
 
 	// 2. small bin (<=1008)
-if(POS_DEBUG_MALLOC == 1)
-{
-	printf("[small bin] - size : %lu\n", (unsigned long)bytes);
-	printf("[small bin] - current total chunk : %lu\n", total_chunks_size);
-	printf("[small bin] nb size : %lu\n", nb);
-}
 	if (in_smallbin_range(nb)) {
 		idx = smallbin_index(nb);
 		bin = bin_at(av,idx);
 
-<<<<<<< HEAD
-
-=======
 if(POS_DEBUG_MALLOC == 1)
 {
 	printf("small bin - size : %lu\n", (unsigned long)bytes);
 }
->>>>>>> 4fcbc3e39363bec90b791895e44d3b748066c911
 		if ( (victim = last(bin)) != bin) {
 			bck = victim->bk;
 
@@ -468,15 +414,13 @@ if(POS_DEBUG_MALLOC == 1)
 			bin->bk = bck;
 			bck->fd = bin;
 #endif
+
 			void *p = chunk2mem(victim);
 
 			return p;
 		}
 	}
 	else {
-//sb s
-	printf("			fastbins consolidate!\n");
-//sb e
 		idx = largebin_index(nb);
 
 		if (have_fastchunks(av)) {
@@ -553,6 +497,7 @@ if(POS_DEBUG_MALLOC == 1)
 
 				set_foot(remainder, remainder_size);
 #endif
+
 				void *p = chunk2mem(victim);
 
 				return p;
@@ -572,6 +517,7 @@ if(POS_DEBUG_MALLOC == 1)
 #else
 				set_inuse_bit_at_offset(victim, size);
 #endif
+
 				void *p = chunk2mem(victim);
 
 				return p;
@@ -581,10 +527,6 @@ if(POS_DEBUG_MALLOC == 1)
 				victim_index = smallbin_index(size);
 				bck = bin_at(av, victim_index);
 				fwd = bck->fd;
-//sb s
-printf("			unsorted -> small bin!\n");
-printf("			size : %lu\n", size);
-//sb e
 			}
 			else {
 				victim_index = largebin_index(size);
@@ -606,9 +548,6 @@ printf("			size : %lu\n", size);
 #else
 						fwd->fd->bk_nextsize = victim->bk_nextsize->fd_nextsize = victim;
 #endif
-//sb s
-printf("			unsorted -> large bin!\n");
-//sb e
 					}
 					else {
 						while ((unsigned long) size < fwd->size) {
@@ -733,6 +672,7 @@ if(POS_DEBUG_MALLOC == 1)
 				}
 
 				void *p = chunk2mem(victim);
+
 				return p;
 			}
 		}
@@ -847,12 +787,13 @@ if(POS_DEBUG_MALLOC == 1)
 				}
 
 				void *p = chunk2mem(victim);
+
 				return p;
 			}
 		}
 
 new_alloc:
-printf("	new_alloc num : %d\n", ++new_alloc_count);
+
 		// 6. new allocation
 if(POS_DEBUG_MALLOC == 1)
 {
@@ -879,10 +820,7 @@ if(POS_DEBUG_MALLOC == 1)
 		//char* mm = (char*)(SEG_ALLOC(0, size, PROT_READ|PROT_WRITE, MAP_PRIVATE));
 		char *mm = (char *)pos_seg_alloc(name, size);
 		memset(mm , 0 , size);
-		printf("	new seg alloc count : %d\n", ++seg_alloc_count);
-		printf("	new segment start address : %p\n", mm);
-		printf("	size : %d\n", size);
-		total_chunks_size = 0;
+
 #if CONSISTENCY == 1
 		pos_log_insert_malloc_free(name, (unsigned long)mm, size);
 #endif
@@ -932,6 +870,7 @@ if(POS_DEBUG_MALLOC == 1)
   			//dk e
 //#endif
 			//return p;
+
 			return chunk2mem(p);
 		} 
 		else
@@ -1622,10 +1561,6 @@ pos_malloc_init_state(char *name, mstate av)
 	av->system_mem = PAGESIZE;
 
 	av->prime_obj = NULL;
-
-	//sb s
-	//av->total_alloc_size = 0;
-	//sb e
 }
 
 
@@ -1646,14 +1581,12 @@ pos_public_mALLOc(char *name, unsigned long _bytes)
 		//printf("Not mapped\n");
 		return NULL;
 	}*/
-printf("[%d]current total chunk size : %lu\n", total_idx, total_chunks_size);
+
 	ar_ptr = (struct malloc_state *)pos_lookup_mstate(name);
 	if (ar_ptr == NULL) {
 		return NULL;
 	}
-//sb s
-	//printf("	current total allocation size : %lu\n", ar_ptr->total_alloc_size);
-//sb e
+
 	//if(*((size_t *)ar_ptr) == POS_MAGIC)
 	if (!have_init_key(ar_ptr)) {
 		pos_malloc_init_state(name, ar_ptr);
@@ -1662,8 +1595,6 @@ printf("[%d]current total chunk size : %lu\n", total_idx, total_chunks_size);
 	(void)mutex_lock(&ar_ptr->mutex);
 	victim = pos_int_malloc(name, ar_ptr, bytes);
 	(void)mutex_unlock(&ar_ptr->mutex);
-
-total_chunks_size += chunksize(mem2chunk(victim));
 
 	return victim;
 }
