@@ -21,7 +21,19 @@
 
 //son start
 #define	LIST_DEBUG		1
+
+Node *alloc_head=NULL;
 //son end
+
+void *get_alloc_head()
+{
+	return (void *)alloc_head;
+}
+
+void remove_alloc_list()
+{
+	remove_list(alloc_head);
+}
 
 int pos_list_init(char *name)
 {
@@ -35,6 +47,9 @@ int pos_list_init(char *name)
 	head = (struct list_head *)pos_malloc(name, sizeof(struct list_head));
 	pos_set_prime_object(name, head);
 	head->head = NULL;
+// sb s
+	insert_node(&alloc_head, (unsigned long)head);
+// sb e
 #if CONSISTENCY == 1
 	pos_transaction_end(name);
 	pos_log_unmap(name);
@@ -86,15 +101,11 @@ int pos_list_insert(char *name, void *_key, void *_val, unsigned long val_size)
 	int i;
 
 #if LIST_DEBUG == 1
-printf("1\n");
+printf("[pos-insert] start\n");
 #endif
 
 #if CONSISTENCY == 1
 	pos_transaction_start(name, POS_TS_INSERT);
-#endif
-
-#if LIST_DEBUG == 1
-printf("2\n");
 #endif
 
 	key = (unsigned long *)_key;
@@ -102,11 +113,12 @@ printf("2\n");
 	
 	head = (struct list_head *)pos_get_prime_object(name);
 #if LIST_DEBUG == 1
-printf("3\n");
+printf("[pos-insert] 1\n");
 #endif
 	node = (struct list_node *)pos_malloc(name, sizeof(struct list_node));
+	//insert_node(&alloc_head, (unsigned long)node);
 #if LIST_DEBUG == 1
-printf("4\n");
+printf("[pos-insert] 2\n");
 #endif
 	for (i=0; i<KEY_SIZE; i++) {
 		node->key[i] = key[i];
@@ -115,25 +127,30 @@ printf("4\n");
 	pos_clflush_cache_range(node->key, KEY_SIZE*sizeof(unsigned long));
 #endif
 
-#if LIST_DEBUG == 1
-printf("5\n");
-#endif
 	node->value = (unsigned long *)pos_malloc(name, val_size);
+	//insert_node(&alloc_head, (unsigned long)node->value);
 #if LIST_DEBUG == 1
-printf("6\n");
+printf("[pos-insert] node->value : %p\n", node->value);
+printf("[pos-insert] 3-1\n");
 #endif
 
 #if CONSISTENCY == 1
 	pos_clflush_cache_range(&node->value, sizeof(node->value));
 #endif
+	printf("val1 : %lu, val2 : %lu, val_size : %d\n", val[0], val[1], val_size);
 	memcpy(node->value, val, val_size);
+#if LIST_DEBUG == 1
+printf("[pos-insert] 3-2\n");
+#endif
+
 #if CONSISTENCY == 1
 	pos_clflush_cache_range(node->value, val_size);
 #endif
-#if LIST_DEBUG == 1
-printf("7\n");
-#endif
 	node->next = head->head;
+#if LIST_DEBUG == 1
+printf("[pos-insert] 3-3\n");
+#endif
+
 #if CONSISTENCY == 1
 	pos_clflush_cache_range(&node->next, sizeof(node->next));
 #endif
@@ -145,14 +162,19 @@ printf("7\n");
 	pos_transaction_end(name);
 #else
 	head->head = node;
+#if LIST_DEBUG == 1
+printf("[pos-insert] 3-4\n");
+#endif
+
 #endif
 #elif MODE == 2
 	head->head = node - OFFSET_BASE;
 #endif
 
 #if LIST_DEBUG == 1
-printf("8\n");
+	printf("[pos-insert] fin\n");
 #endif
+
 	return 0;
 }
 
@@ -227,7 +249,9 @@ int pos_list_remove(char *name, void *_key)
 			*prev_node = node->next;
 #endif
 			pos_free(name, node->value);
+			//delete_node(&alloc_head, (unsigned long)node->value);
 			pos_free(name, node);
+			//delete_node(&alloc_head, (unsigned long)node);
 
 #if CONSISTENCY == 1
 			pos_transaction_end(name);
@@ -282,6 +306,33 @@ void delete_second_node(char *name)
 	cur_node->next = NULL;
 }
 
+int pos_delete_selected_node(char *name, int idx)
+{
+	struct list_head *lh;
+	struct list_node *cur_node;
+	int i;
+printf("1\n");
+	lh = (struct list_head *)pos_get_prime_object(name);
+	if(lh == NULL)
+		return 0;
+printf("2\n");
+	cur_node = lh->head;
+	for(i=0; i<idx; i++) {
+		cur_node = cur_node->next;
+	}
+
+	if(cur_node == NULL && i < idx-2) {
+		printf("wrong index!\n");
+		return 0;
+	}
+printf("3 i - %d\n", i);
+	cur_node->next = NULL;
+	pos_free(name, cur_node->value);
+	pos_free(name, cur_node);
+printf("4\n");
+	cur_node = NULL;	
+}
+
 /*
 *	make_list_for_list(struct list_head *lh, Node **head)	
 *	입력 값
@@ -297,6 +348,7 @@ int make_list_for_list(struct list_head *lh, Node **head)
 {
 	//struct list_head *lh;
 	struct list_node *cur_node;
+	unsigned long *value;
 
 	//lh = (struct list_head *)pos_get_prime_object(name);
 	//printf("lh : %p, *head : %p\n", lh, *head);	
@@ -305,11 +357,15 @@ int make_list_for_list(struct list_head *lh, Node **head)
 //printf("start real\n");
 	cur_node = lh->head;
 	// repeat while next node is not NULL
+	insert_node(head, (unsigned long)lh);
 	while(cur_node != NULL) {
 		// insert current node's address in the alloc tree
+		value = cur_node->value;
 		insert_node(head, (unsigned long)cur_node);
+		if(value != NULL)
+			insert_node(head, (unsigned long)value);
 #if LIST_DEBUG == 1
-		printf("cur_node(%p) inserted\n", cur_node);
+		printf("cur_node(%p), value(%p), inserted\n", cur_node, value);
 #endif
 		cur_node = cur_node->next;
 	}
@@ -321,6 +377,7 @@ int make_list_for_list2(char *name, Node **head)
 {
 	struct list_head *lh;
 	struct list_node *cur_node;
+	unsigned long *value;
 
 	lh = (struct list_head *)pos_get_prime_object(name);
 	//printf("lh : %p, *head : %p\n", lh, *head);	
@@ -331,12 +388,13 @@ int make_list_for_list2(char *name, Node **head)
 	// repeat while next node is not NULL
 	while(cur_node != NULL) {
 		// insert current node's address in the alloc tree
+		value = cur_node->value;
 		insert_node(head, (unsigned long)cur_node);
+		insert_node(head, (unsigned long)value);
 #if LIST_DEBUG == 1
-		printf("cur_node(%p) inserted\n", cur_node);
+		printf("cur_node(%p), value(%p), inserted\n", cur_node, value);
 #endif
 		cur_node = cur_node->next;
 	}
-
 	return 1;
 }

@@ -586,6 +586,7 @@ POS_WRITE_VAUE(name, (unsigned long *)&((mchunkptr)(((char*)(p)) + (s)))->size, 
 #define set_foot(p, s)       (((mchunkptr)((char*)(p) + (s)))->prev_size = (s))
 //dk s
 #define set_next_seg_pointer(p, s, pp) (((mchunkptr)((char*)(p) + (s)))->size = (unsigned long)(pp)) //size = pointer to next seg
+#define next_seg(p, s) ((mchunkptr)(((mchunkptr)((char*)(p) + (s)))->size))
 //dk e
 #if CONSISTENCY == 1
 #define set_head_size_log(name, p, s)   \
@@ -1044,6 +1045,7 @@ typedef struct malloc_chunk* mbinptr;
 // 2168Bytes
 //dk s
 //2168+4 bytes
+//2584
 //dk e
 struct malloc_state {
 	/* Serialize access.  */

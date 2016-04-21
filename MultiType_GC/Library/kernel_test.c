@@ -3,21 +3,24 @@
 #include <string.h>
 #include <pos-lib.h>
 
-#define NAME "objectA"
+#define NAME "objectX"
 #define LIST_TYPE 1
 
 int main(void)
 {
 	pos_create(NAME);
 	//pos_map(NAME);
-	short obj_type=0;
+	int obj_type=1;
+	int obj_size=32;
+	int key_num=2;
+	int val_num=2;
+	short tmp=0;
 
-	syscall(307, NAME, 1, 0, 0, 0);
-	syscall(308, NAME, &obj_type);
+	printf("obj_type = %d\n", obj_type);
+	syscall(307, NAME, &obj_type, &obj_size, &key_num, &val_num);
+	syscall(308, NAME, &tmp);
 
-	syscall(330, NAME);
-//obj_type = 1;
-	printf("object type : %d\n", obj_type);	
+	printf("object type : %x\n", tmp);	
 
 	return 0;
 }

@@ -2259,19 +2259,31 @@ asmlinkage int sys_pos_set_storage_type(char* __user obj_storage_name, int* __us
 	
 	char name_buf[POS_NAME_LENGTH];
 	int type_buffer;
-	int size_buffer;
+	int size_buffer, tmp_size;
 	int key_buffer;
 	int value_buffer;
+	int count=0;
 
 	copy_from_user(name_buf, obj_storage_name, POS_NAME_LENGTH);
 	copy_from_user(&type_buffer, type, sizeof(int));
 	copy_from_user(&size_buffer, size, sizeof(int));
 	copy_from_user(&key_buffer, key, sizeof(int));
 	copy_from_user(&value_buffer, value, sizeof(int));
+
+	tmp_size = size_buffer;
+	while(tmp_size > 1)
+	{
+		tmp_size = tmp_size >> 1;
+		count++;
+	}
+	size_buffer = count;
+	
+printk("[set](from) type : %d size : %d key : %d val : %d\n", *type, *size, *key, *value);
+printk("[set](to) type : %d size : %d key : %d val : %d\n", type_buffer, size_buffer, key_buffer, value_buffer);
 	
 	size_buffer = size_buffer << 4;
 	key_buffer = key_buffer << 8;
-	value_buffer = value_buffer << 16;
+	value_buffer = value_buffer << 12;
 
 	sb = pos_get_sb();
 	ptr = pos_ns_search(sb->trie_root, name_buf, strlen(name_buf));
@@ -2282,6 +2294,8 @@ asmlinkage int sys_pos_set_storage_type(char* __user obj_storage_name, int* __us
 	obj_storage_descriptor->obj_storage_type = obj_storage_descriptor->obj_storage_type | (short)size_buffer;
 	obj_storage_descriptor->obj_storage_type = obj_storage_descriptor->obj_storage_type | (short)key_buffer;
 	obj_storage_descriptor->obj_storage_type = obj_storage_descriptor->obj_storage_type | (short)value_buffer;
+
+printk("[set](to) desc->type : %x\n", obj_storage_descriptor->obj_storage_type);
 
 	return 0;
 }
@@ -2299,8 +2313,10 @@ asmlinkage short sys_pos_get_storage_type(char *obj_storage_name, short *type)
 	ptr = pos_ns_search(sb->trie_root, name_buf, strlen(name_buf));
 	obj_storage_descriptor = ptr->desc;
 
-	copy_to_user(type, obj_storage_descriptor->obj_storage_type, sizeof(short)); 
+	copy_to_user(type, &obj_storage_descriptor->obj_storage_type, sizeof(short)); 
 	
+printk("[get] desc->type : %x, type : %x\n", obj_storage_descriptor->obj_storage_type, *type);
+
 	return 0;
 }
 //dk e

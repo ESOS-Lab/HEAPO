@@ -25,6 +25,8 @@ struct list_head {
 	//struct list_node *tail;
 };
 
+void *get_alloc_head();
+void remove_alloc_list();
 int pos_list_init(char *name);
 int pos_list_destroy(char *name);
 int pos_list_open(char *name);
