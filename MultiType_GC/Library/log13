@@ -1,0 +1,4427 @@
+[INIT LIST]
+[0]current total chunk size : 0
+mstate size = 2584
+page size = 4096
+first chunk size = 0
+SIZE_SZ size = 8
+remainder : 0x5ffef8043a18, is_last : 4
+temp_p : 0x5ffef8043fe8
+next seg : 0
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 0
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+large bin - size : 8
+large bin in next size - size : 8
+remainder : 0x5ffef8043a38, is_last : 4
+node size = 32
+obj_type = 1
+[MAP POS]
+[INSERT LIST NODES]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 32
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 32
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043a68, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 80
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 80
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8043a88, is_last : 4
+[pos-insert] node->value : 0x5ffef8043a78
+[pos-insert] 3-1
+val1 : 104926, val2 : 100525, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[0]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 112
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 112
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043ab8, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 160
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 160
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8043ad8, is_last : 4
+[pos-insert] node->value : 0x5ffef8043ac8
+[pos-insert] 3-1
+val1 : 109798, val2 : 107858, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[1]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 192
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 192
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043b08, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 240
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 240
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8043b28, is_last : 4
+[pos-insert] node->value : 0x5ffef8043b18
+[pos-insert] 3-1
+val1 : 104606, val2 : 105822, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[2]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 272
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 272
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043b58, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 320
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 320
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8043b78, is_last : 4
+[pos-insert] node->value : 0x5ffef8043b68
+[pos-insert] 3-1
+val1 : 105594, val2 : 108830, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[3]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 352
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 352
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043ba8, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 400
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 400
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8043bc8, is_last : 4
+[pos-insert] node->value : 0x5ffef8043bb8
+[pos-insert] 3-1
+val1 : 105473, val2 : 104413, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[4]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 432
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 432
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043bf8, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 480
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 480
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8043c18, is_last : 4
+[pos-insert] node->value : 0x5ffef8043c08
+[pos-insert] 3-1
+val1 : 108146, val2 : 104743, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[5]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 512
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 512
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043c48, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 560
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 560
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8043c68, is_last : 4
+[pos-insert] node->value : 0x5ffef8043c58
+[pos-insert] 3-1
+val1 : 105882, val2 : 109526, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[6]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 592
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 592
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043c98, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 640
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 640
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8043cb8, is_last : 4
+[pos-insert] node->value : 0x5ffef8043ca8
+[pos-insert] 3-1
+val1 : 108935, val2 : 101178, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[7]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 672
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 672
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043ce8, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 720
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 720
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8043d08, is_last : 4
+[pos-insert] node->value : 0x5ffef8043cf8
+[pos-insert] 3-1
+val1 : 104177, val2 : 105355, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[8]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 752
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 752
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043d38, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 800
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 800
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8043d58, is_last : 4
+[pos-insert] node->value : 0x5ffef8043d48
+[pos-insert] 3-1
+val1 : 109530, val2 : 108840, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[9]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 832
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 832
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043d88, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 880
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 880
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8043da8, is_last : 4
+[pos-insert] node->value : 0x5ffef8043d98
+[pos-insert] 3-1
+val1 : 102544, val2 : 100119, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[10]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 912
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 912
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043dd8, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 960
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 960
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8043df8, is_last : 4
+[pos-insert] node->value : 0x5ffef8043de8
+[pos-insert] 3-1
+val1 : 101001, val2 : 109918, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[11]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 992
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 992
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043e28, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1040
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1040
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8043e48, is_last : 4
+[pos-insert] node->value : 0x5ffef8043e38
+[pos-insert] 3-1
+val1 : 101034, val2 : 104526, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[12]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1072
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1072
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043e78, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1120
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1120
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8043e98, is_last : 4
+[pos-insert] node->value : 0x5ffef8043e88
+[pos-insert] 3-1
+val1 : 105222, val2 : 106473, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[13]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1152
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1152
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043ec8, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1200
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1200
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8043ee8, is_last : 4
+[pos-insert] node->value : 0x5ffef8043ed8
+[pos-insert] 3-1
+val1 : 106223, val2 : 101947, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[14]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1232
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1232
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043f18, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1280
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1280
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8043f38, is_last : 4
+[pos-insert] node->value : 0x5ffef8043f28
+[pos-insert] 3-1
+val1 : 105324, val2 : 106447, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[15]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1312
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1312
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043f68, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1360
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1360
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8043f88, is_last : 4
+[pos-insert] node->value : 0x5ffef8043f78
+[pos-insert] 3-1
+val1 : 109119, val2 : 102330, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[16]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1392
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1392
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8043fb8, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1440
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1440
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+			unsorted -> small bin!
+			size : 40
+large bin - size : 8
+large bin in next size - size : 8
+	new_alloc num : 1
+new allocation - size : 8
+gc_result : 0
+[local gc] allocation list status before gc
+
+[local gc] pos list status before gc
+
+[local gc] GC start!
+[gc] 1
+[local gc] type : 1
+[gc] 2
+current addr - 0x5ffef8043a28
+current addr - 0x5ffef8043f48
+current addr - 0x5ffef8043f78
+cur_node(0x5ffef8043f48), value(0x5ffef8043f78), inserted
+current addr - 0x5ffef8043ef8
+current addr - 0x5ffef8043f28
+cur_node(0x5ffef8043ef8), value(0x5ffef8043f28), inserted
+current addr - 0x5ffef8043ea8
+current addr - 0x5ffef8043ed8
+cur_node(0x5ffef8043ea8), value(0x5ffef8043ed8), inserted
+current addr - 0x5ffef8043e58
+current addr - 0x5ffef8043e88
+cur_node(0x5ffef8043e58), value(0x5ffef8043e88), inserted
+current addr - 0x5ffef8043e08
+current addr - 0x5ffef8043e38
+cur_node(0x5ffef8043e08), value(0x5ffef8043e38), inserted
+current addr - 0x5ffef8043db8
+current addr - 0x5ffef8043de8
+cur_node(0x5ffef8043db8), value(0x5ffef8043de8), inserted
+current addr - 0x5ffef8043d68
+current addr - 0x5ffef8043d98
+cur_node(0x5ffef8043d68), value(0x5ffef8043d98), inserted
+current addr - 0x5ffef8043d18
+current addr - 0x5ffef8043d48
+cur_node(0x5ffef8043d18), value(0x5ffef8043d48), inserted
+current addr - 0x5ffef8043cc8
+current addr - 0x5ffef8043cf8
+cur_node(0x5ffef8043cc8), value(0x5ffef8043cf8), inserted
+current addr - 0x5ffef8043c78
+current addr - 0x5ffef8043ca8
+cur_node(0x5ffef8043c78), value(0x5ffef8043ca8), inserted
+current addr - 0x5ffef8043c28
+current addr - 0x5ffef8043c58
+cur_node(0x5ffef8043c28), value(0x5ffef8043c58), inserted
+current addr - 0x5ffef8043bd8
+current addr - 0x5ffef8043c08
+cur_node(0x5ffef8043bd8), value(0x5ffef8043c08), inserted
+current addr - 0x5ffef8043b88
+current addr - 0x5ffef8043bb8
+cur_node(0x5ffef8043b88), value(0x5ffef8043bb8), inserted
+current addr - 0x5ffef8043b38
+current addr - 0x5ffef8043b68
+cur_node(0x5ffef8043b38), value(0x5ffef8043b68), inserted
+current addr - 0x5ffef8043ae8
+current addr - 0x5ffef8043b18
+cur_node(0x5ffef8043ae8), value(0x5ffef8043b18), inserted
+current addr - 0x5ffef8043a98
+current addr - 0x5ffef8043ac8
+cur_node(0x5ffef8043a98), value(0x5ffef8043ac8), inserted
+current addr - 0x5ffef8043a48
+current addr - 0x5ffef8043a78
+cur_node(0x5ffef8043a48), value(0x5ffef8043a78), inserted
+[local gc] allocation list status
+[0]current node - 0x5ffef8043a28
+[1]current node - 0x5ffef8043a48
+[2]current node - 0x5ffef8043a78
+[3]current node - 0x5ffef8043a98
+[4]current node - 0x5ffef8043ac8
+[5]current node - 0x5ffef8043ae8
+[6]current node - 0x5ffef8043b18
+[7]current node - 0x5ffef8043b38
+[8]current node - 0x5ffef8043b68
+[9]current node - 0x5ffef8043b88
+[10]current node - 0x5ffef8043bb8
+[11]current node - 0x5ffef8043bd8
+[12]current node - 0x5ffef8043c08
+[13]current node - 0x5ffef8043c28
+[14]current node - 0x5ffef8043c58
+[15]current node - 0x5ffef8043c78
+[16]current node - 0x5ffef8043ca8
+[17]current node - 0x5ffef8043cc8
+[18]current node - 0x5ffef8043cf8
+[19]current node - 0x5ffef8043d18
+[20]current node - 0x5ffef8043d48
+[21]current node - 0x5ffef8043d68
+[22]current node - 0x5ffef8043d98
+[23]current node - 0x5ffef8043db8
+[24]current node - 0x5ffef8043de8
+[25]current node - 0x5ffef8043e08
+[26]current node - 0x5ffef8043e38
+[27]current node - 0x5ffef8043e58
+[28]current node - 0x5ffef8043e88
+[29]current node - 0x5ffef8043ea8
+[30]current node - 0x5ffef8043ed8
+[31]current node - 0x5ffef8043ef8
+[32]current node - 0x5ffef8043f28
+[33]current node - 0x5ffef8043f48
+[34]current node - 0x5ffef8043f78
+
+[local gc] list node size : 32
+[local gc] value * 2 : 16
+wrong storage type!
+[gc] 3
+[local gc] chunk addr : 0x5ffef8043a18, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043a28
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043a38, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043a48
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043a68, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043a78
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043a88, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043a98
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043ab8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ac8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043ad8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ae8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043b08, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043b18
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043b28, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043b38
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043b58, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043b68
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043b78, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043b88
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043ba8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043bb8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043bc8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043bd8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043bf8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043c08
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043c18, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043c28
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043c48, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043c58
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043c68, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043c78
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043c98, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ca8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043cb8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043cc8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043ce8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043cf8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043d08, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043d18
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043d38, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043d48
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043d58, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043d68
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043d88, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043d98
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043da8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043db8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043dd8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043de8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043df8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043e08
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043e28, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043e38
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043e48, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043e58
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043e78, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043e88
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043e98, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ea8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043ec8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ed8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043ee8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ef8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043f18, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043f28
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043f38, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043f48
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043f68, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043f78
+	1
+	2
+is last? : 0
+list_state : 1
+last chunk p : 0x5ffef8043fb8, next_chunk : 0x5ffef8043fb8
+next_seg_ptr : (nil)
+before remove
+after remove
+[local gc] GC end!
+[gc] 4
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1440
+[small bin] nb size : 32
+small bin - size : 8
+[pos-insert] node->value : 0x5ffef8043fc8
+[pos-insert] 3-1
+val1 : 102248, val2 : 101267, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[17]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1480
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1480
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+large bin - size : 32
+large bin in next size - size : 32
+	new_alloc num : 2
+new allocation - size : 32
+gc_result : 0
+[local gc] allocation list status before gc
+
+[local gc] pos list status before gc
+
+[local gc] GC start!
+[gc] 1
+[local gc] type : 1
+[gc] 2
+current addr - 0x5ffef8043a28
+current addr - 0x5ffef8043f98
+current addr - 0x5ffef8043fc8
+cur_node(0x5ffef8043f98), value(0x5ffef8043fc8), inserted
+current addr - 0x5ffef8043f48
+current addr - 0x5ffef8043f78
+cur_node(0x5ffef8043f48), value(0x5ffef8043f78), inserted
+current addr - 0x5ffef8043ef8
+current addr - 0x5ffef8043f28
+cur_node(0x5ffef8043ef8), value(0x5ffef8043f28), inserted
+current addr - 0x5ffef8043ea8
+current addr - 0x5ffef8043ed8
+cur_node(0x5ffef8043ea8), value(0x5ffef8043ed8), inserted
+current addr - 0x5ffef8043e58
+current addr - 0x5ffef8043e88
+cur_node(0x5ffef8043e58), value(0x5ffef8043e88), inserted
+current addr - 0x5ffef8043e08
+current addr - 0x5ffef8043e38
+cur_node(0x5ffef8043e08), value(0x5ffef8043e38), inserted
+current addr - 0x5ffef8043db8
+current addr - 0x5ffef8043de8
+cur_node(0x5ffef8043db8), value(0x5ffef8043de8), inserted
+current addr - 0x5ffef8043d68
+current addr - 0x5ffef8043d98
+cur_node(0x5ffef8043d68), value(0x5ffef8043d98), inserted
+current addr - 0x5ffef8043d18
+current addr - 0x5ffef8043d48
+cur_node(0x5ffef8043d18), value(0x5ffef8043d48), inserted
+current addr - 0x5ffef8043cc8
+current addr - 0x5ffef8043cf8
+cur_node(0x5ffef8043cc8), value(0x5ffef8043cf8), inserted
+current addr - 0x5ffef8043c78
+current addr - 0x5ffef8043ca8
+cur_node(0x5ffef8043c78), value(0x5ffef8043ca8), inserted
+current addr - 0x5ffef8043c28
+current addr - 0x5ffef8043c58
+cur_node(0x5ffef8043c28), value(0x5ffef8043c58), inserted
+current addr - 0x5ffef8043bd8
+current addr - 0x5ffef8043c08
+cur_node(0x5ffef8043bd8), value(0x5ffef8043c08), inserted
+current addr - 0x5ffef8043b88
+current addr - 0x5ffef8043bb8
+cur_node(0x5ffef8043b88), value(0x5ffef8043bb8), inserted
+current addr - 0x5ffef8043b38
+current addr - 0x5ffef8043b68
+cur_node(0x5ffef8043b38), value(0x5ffef8043b68), inserted
+current addr - 0x5ffef8043ae8
+current addr - 0x5ffef8043b18
+cur_node(0x5ffef8043ae8), value(0x5ffef8043b18), inserted
+current addr - 0x5ffef8043a98
+current addr - 0x5ffef8043ac8
+cur_node(0x5ffef8043a98), value(0x5ffef8043ac8), inserted
+current addr - 0x5ffef8043a48
+current addr - 0x5ffef8043a78
+cur_node(0x5ffef8043a48), value(0x5ffef8043a78), inserted
+[local gc] allocation list status
+[0]current node - 0x5ffef8043a28
+[1]current node - 0x5ffef8043a48
+[2]current node - 0x5ffef8043a78
+[3]current node - 0x5ffef8043a98
+[4]current node - 0x5ffef8043ac8
+[5]current node - 0x5ffef8043ae8
+[6]current node - 0x5ffef8043b18
+[7]current node - 0x5ffef8043b38
+[8]current node - 0x5ffef8043b68
+[9]current node - 0x5ffef8043b88
+[10]current node - 0x5ffef8043bb8
+[11]current node - 0x5ffef8043bd8
+[12]current node - 0x5ffef8043c08
+[13]current node - 0x5ffef8043c28
+[14]current node - 0x5ffef8043c58
+[15]current node - 0x5ffef8043c78
+[16]current node - 0x5ffef8043ca8
+[17]current node - 0x5ffef8043cc8
+[18]current node - 0x5ffef8043cf8
+[19]current node - 0x5ffef8043d18
+[20]current node - 0x5ffef8043d48
+[21]current node - 0x5ffef8043d68
+[22]current node - 0x5ffef8043d98
+[23]current node - 0x5ffef8043db8
+[24]current node - 0x5ffef8043de8
+[25]current node - 0x5ffef8043e08
+[26]current node - 0x5ffef8043e38
+[27]current node - 0x5ffef8043e58
+[28]current node - 0x5ffef8043e88
+[29]current node - 0x5ffef8043ea8
+[30]current node - 0x5ffef8043ed8
+[31]current node - 0x5ffef8043ef8
+[32]current node - 0x5ffef8043f28
+[33]current node - 0x5ffef8043f48
+[34]current node - 0x5ffef8043f78
+[35]current node - 0x5ffef8043f98
+[36]current node - 0x5ffef8043fc8
+
+[local gc] list node size : 32
+[local gc] value * 2 : 16
+wrong storage type!
+[gc] 3
+[local gc] chunk addr : 0x5ffef8043a18, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043a28
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043a38, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043a48
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043a68, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043a78
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043a88, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043a98
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043ab8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ac8
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043ad8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ae8
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043b08, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043b18
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043b28, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043b38
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043b58, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043b68
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043b78, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043b88
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043ba8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043bb8
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043bc8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043bd8
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043bf8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043c08
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043c18, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043c28
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043c48, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043c58
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043c68, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043c78
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043c98, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ca8
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043cb8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043cc8
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043ce8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043cf8
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043d08, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043d18
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043d38, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043d48
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043d58, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043d68
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043d88, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043d98
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043da8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043db8
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043dd8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043de8
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043df8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043e08
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043e28, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043e38
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043e48, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043e58
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043e78, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043e88
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043e98, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ea8
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043ec8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ed8
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043ee8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ef8
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043f18, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043f28
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043f38, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043f48
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043f68, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043f78
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043f88, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043f98
+	1
+	2
+is last? : 4
+list_state : 2
+in list state 2-0
+last chunk p : 0x5ffef8043fb8, next_chunk : 0x5ffef8043fe0
+next_seg_ptr : (nil)
+in list_state 2-2
+before remove
+after remove
+[local gc] GC end!
+[gc] 4
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1480
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+large bin - size : 32
+large bin in next size - size : 32
+	new_alloc num : 3
+new allocation - size : 32
+gc_result : 2
+[new alloc] nb : 48, MINSIZE : 32, pagemask : 4095, SIZE_SZ : 8
+DEFAULT_PAD : 131072
+	new seg alloc count : 1
+	new segment start address : 0x5ffef8044000
+	size : 4096
+remainder : 0x5ffef8044030, is_last : 4
+present_last_chunk : 0x5ffef8043fb8, size : 40
+last + size_sz : 105548687359968
+last + size_sz : 105548687359976
+last + size_sz : 105548687359984
+p_tmp : 0x5ffef8043fe8
+p_tmp : 0
+prsent last chunk size : 40, remainder chunk size : 4016
+present : 0, next seg : 0
+[pos-insert] 2
+[0]current total chunk size : 48
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 48
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+large bin - size : 8
+large bin in next size - size : 8
+remainder : 0x5ffef8044050, is_last : 4
+[pos-insert] node->value : 0x5ffef8044040
+[pos-insert] 3-1
+val1 : 102071, val2 : 101797, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[18]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 80
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 80
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044080, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 128
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 128
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80440a0, is_last : 4
+[pos-insert] node->value : 0x5ffef8044090
+[pos-insert] 3-1
+val1 : 107138, val2 : 101329, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[19]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 160
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 160
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80440d0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 208
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 208
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80440f0, is_last : 4
+[pos-insert] node->value : 0x5ffef80440e0
+[pos-insert] 3-1
+val1 : 102896, val2 : 100226, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[20]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 240
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 240
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044120, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 288
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 288
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044140, is_last : 4
+[pos-insert] node->value : 0x5ffef8044130
+[pos-insert] 3-1
+val1 : 109179, val2 : 101228, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[21]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 320
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 320
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044170, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 368
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 368
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044190, is_last : 4
+[pos-insert] node->value : 0x5ffef8044180
+[pos-insert] 3-1
+val1 : 103322, val2 : 108615, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[22]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 400
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 400
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80441c0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 448
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 448
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80441e0, is_last : 4
+[pos-insert] node->value : 0x5ffef80441d0
+[pos-insert] 3-1
+val1 : 109640, val2 : 103839, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[23]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 480
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 480
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044210, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 528
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 528
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044230, is_last : 4
+[pos-insert] node->value : 0x5ffef8044220
+[pos-insert] 3-1
+val1 : 104789, val2 : 106415, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[24]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 560
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 560
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044260, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 608
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 608
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044280, is_last : 4
+[pos-insert] node->value : 0x5ffef8044270
+[pos-insert] 3-1
+val1 : 100704, val2 : 101740, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[25]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 640
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 640
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80442b0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 688
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 688
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80442d0, is_last : 4
+[pos-insert] node->value : 0x5ffef80442c0
+[pos-insert] 3-1
+val1 : 105011, val2 : 107212, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[26]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 720
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 720
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044300, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 768
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 768
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044320, is_last : 4
+[pos-insert] node->value : 0x5ffef8044310
+[pos-insert] 3-1
+val1 : 101549, val2 : 109461, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[27]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 800
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 800
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044350, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 848
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 848
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044370, is_last : 4
+[pos-insert] node->value : 0x5ffef8044360
+[pos-insert] 3-1
+val1 : 102914, val2 : 101533, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[28]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 880
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 880
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80443a0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 928
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 928
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80443c0, is_last : 4
+[pos-insert] node->value : 0x5ffef80443b0
+[pos-insert] 3-1
+val1 : 102340, val2 : 105025, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[29]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 960
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 960
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80443f0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1008
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1008
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044410, is_last : 4
+[pos-insert] node->value : 0x5ffef8044400
+[pos-insert] 3-1
+val1 : 104255, val2 : 104274, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[30]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1040
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1040
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044440, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1088
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1088
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044460, is_last : 4
+[pos-insert] node->value : 0x5ffef8044450
+[pos-insert] 3-1
+val1 : 106290, val2 : 109806, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[31]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1120
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1120
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044490, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1168
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1168
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80444b0, is_last : 4
+[pos-insert] node->value : 0x5ffef80444a0
+[pos-insert] 3-1
+val1 : 104597, val2 : 103129, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[32]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1200
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1200
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80444e0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1248
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1248
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044500, is_last : 4
+[pos-insert] node->value : 0x5ffef80444f0
+[pos-insert] 3-1
+val1 : 107430, val2 : 109122, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[33]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1280
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1280
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044530, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1328
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1328
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044550, is_last : 4
+[pos-insert] node->value : 0x5ffef8044540
+[pos-insert] 3-1
+val1 : 106738, val2 : 100264, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[34]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1360
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1360
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044580, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1408
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1408
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80445a0, is_last : 4
+[pos-insert] node->value : 0x5ffef8044590
+[pos-insert] 3-1
+val1 : 104347, val2 : 100969, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[35]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1440
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1440
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80445d0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1488
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1488
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80445f0, is_last : 4
+[pos-insert] node->value : 0x5ffef80445e0
+[pos-insert] 3-1
+val1 : 104755, val2 : 105981, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[36]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1520
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1520
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044620, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1568
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1568
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044640, is_last : 4
+[pos-insert] node->value : 0x5ffef8044630
+[pos-insert] 3-1
+val1 : 107495, val2 : 103883, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[37]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1600
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1600
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044670, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1648
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1648
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044690, is_last : 4
+[pos-insert] node->value : 0x5ffef8044680
+[pos-insert] 3-1
+val1 : 107855, val2 : 103151, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[38]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1680
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1680
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80446c0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1728
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1728
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80446e0, is_last : 4
+[pos-insert] node->value : 0x5ffef80446d0
+[pos-insert] 3-1
+val1 : 103662, val2 : 105492, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[39]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1760
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1760
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044710, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1808
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1808
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044730, is_last : 4
+[pos-insert] node->value : 0x5ffef8044720
+[pos-insert] 3-1
+val1 : 103502, val2 : 109749, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[40]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1840
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1840
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044760, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1888
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1888
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044780, is_last : 4
+[pos-insert] node->value : 0x5ffef8044770
+[pos-insert] 3-1
+val1 : 107218, val2 : 102392, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[41]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1920
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1920
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80447b0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1968
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1968
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80447d0, is_last : 4
+[pos-insert] node->value : 0x5ffef80447c0
+[pos-insert] 3-1
+val1 : 108516, val2 : 106990, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[42]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2000
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2000
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044800, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2048
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2048
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044820, is_last : 4
+[pos-insert] node->value : 0x5ffef8044810
+[pos-insert] 3-1
+val1 : 108430, val2 : 100774, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[43]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2080
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2080
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044850, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2128
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2128
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044870, is_last : 4
+[pos-insert] node->value : 0x5ffef8044860
+[pos-insert] 3-1
+val1 : 108536, val2 : 103865, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[44]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2160
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2160
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80448a0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2208
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2208
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80448c0, is_last : 4
+[pos-insert] node->value : 0x5ffef80448b0
+[pos-insert] 3-1
+val1 : 105058, val2 : 108213, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[45]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2240
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2240
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80448f0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2288
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2288
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044910, is_last : 4
+[pos-insert] node->value : 0x5ffef8044900
+[pos-insert] 3-1
+val1 : 103321, val2 : 109322, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[46]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2320
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2320
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044940, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2368
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2368
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044960, is_last : 4
+[pos-insert] node->value : 0x5ffef8044950
+[pos-insert] 3-1
+val1 : 105150, val2 : 106818, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[47]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2400
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2400
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044990, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2448
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2448
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80449b0, is_last : 4
+[pos-insert] node->value : 0x5ffef80449a0
+[pos-insert] 3-1
+val1 : 102794, val2 : 104675, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[48]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2480
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2480
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80449e0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2528
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2528
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044a00, is_last : 4
+[pos-insert] node->value : 0x5ffef80449f0
+[pos-insert] 3-1
+val1 : 108324, val2 : 104690, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[49]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2560
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2560
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044a30, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2608
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2608
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044a50, is_last : 4
+[pos-insert] node->value : 0x5ffef8044a40
+[pos-insert] 3-1
+val1 : 108880, val2 : 108193, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[50]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2640
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2640
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044a80, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2688
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2688
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044aa0, is_last : 4
+[pos-insert] node->value : 0x5ffef8044a90
+[pos-insert] 3-1
+val1 : 100063, val2 : 101765, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[51]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2720
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2720
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044ad0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2768
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2768
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044af0, is_last : 4
+[pos-insert] node->value : 0x5ffef8044ae0
+[pos-insert] 3-1
+val1 : 104701, val2 : 100282, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[52]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2800
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2800
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044b20, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2848
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2848
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044b40, is_last : 4
+[pos-insert] node->value : 0x5ffef8044b30
+[pos-insert] 3-1
+val1 : 105174, val2 : 108713, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[53]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2880
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2880
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044b70, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2928
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2928
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044b90, is_last : 4
+[pos-insert] node->value : 0x5ffef8044b80
+[pos-insert] 3-1
+val1 : 104771, val2 : 107250, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[54]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2960
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2960
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044bc0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 3008
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 3008
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044be0, is_last : 4
+[pos-insert] node->value : 0x5ffef8044bd0
+[pos-insert] 3-1
+val1 : 104633, val2 : 102309, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[55]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 3040
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 3040
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044c10, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 3088
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 3088
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044c30, is_last : 4
+[pos-insert] node->value : 0x5ffef8044c20
+[pos-insert] 3-1
+val1 : 101817, val2 : 101983, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[56]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 3120
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 3120
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044c60, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 3168
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 3168
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044c80, is_last : 4
+[pos-insert] node->value : 0x5ffef8044c70
+[pos-insert] 3-1
+val1 : 104984, val2 : 103487, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[57]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 3200
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 3200
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044cb0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 3248
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 3248
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044cd0, is_last : 4
+[pos-insert] node->value : 0x5ffef8044cc0
+[pos-insert] 3-1
+val1 : 102036, val2 : 102634, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[58]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 3280
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 3280
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044d00, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 3328
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 3328
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044d20, is_last : 4
+[pos-insert] node->value : 0x5ffef8044d10
+[pos-insert] 3-1
+val1 : 108591, val2 : 100959, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[59]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 3360
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 3360
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044d50, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 3408
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 3408
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044d70, is_last : 4
+[pos-insert] node->value : 0x5ffef8044d60
+[pos-insert] 3-1
+val1 : 104288, val2 : 109840, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[60]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 3440
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 3440
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044da0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 3488
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 3488
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044dc0, is_last : 4
+[pos-insert] node->value : 0x5ffef8044db0
+[pos-insert] 3-1
+val1 : 106087, val2 : 109904, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[61]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 3520
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 3520
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044df0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 3568
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 3568
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044e10, is_last : 4
+[pos-insert] node->value : 0x5ffef8044e00
+[pos-insert] 3-1
+val1 : 100280, val2 : 100958, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[62]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 3600
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 3600
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044e40, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 3648
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 3648
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044e60, is_last : 4
+[pos-insert] node->value : 0x5ffef8044e50
+[pos-insert] 3-1
+val1 : 107816, val2 : 106134, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[63]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 3680
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 3680
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044e90, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 3728
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 3728
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044eb0, is_last : 4
+[pos-insert] node->value : 0x5ffef8044ea0
+[pos-insert] 3-1
+val1 : 106127, val2 : 107258, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[64]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 3760
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 3760
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044ee0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 3808
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 3808
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044f00, is_last : 4
+[pos-insert] node->value : 0x5ffef8044ef0
+[pos-insert] 3-1
+val1 : 108304, val2 : 108244, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[65]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 3840
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 3840
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044f30, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 3888
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 3888
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044f50, is_last : 4
+[pos-insert] node->value : 0x5ffef8044f40
+[pos-insert] 3-1
+val1 : 105048, val2 : 100062, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[66]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 3920
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 3920
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8044f80, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 3968
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 3968
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8044fa0, is_last : 4
+[pos-insert] node->value : 0x5ffef8044f90
+[pos-insert] 3-1
+val1 : 101115, val2 : 105048, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[67]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 4000
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 4000
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+			unsorted -> small bin!
+			size : 64
+large bin - size : 32
+large bin in next size - size : 32
+[pos-insert] 2
+[0]current total chunk size : 4064
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 4064
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+large bin - size : 8
+large bin in next size - size : 8
+	new_alloc num : 4
+new allocation - size : 8
+gc_result : 0
+[local gc] allocation list status before gc
+
+[local gc] pos list status before gc
+
+[local gc] GC start!
+[gc] 1
+[local gc] type : 1
+[gc] 2
+current addr - 0x5ffef8043a28
+current addr - 0x5ffef8044f60
+current addr - 0x5ffef8044f90
+cur_node(0x5ffef8044f60), value(0x5ffef8044f90), inserted
+current addr - 0x5ffef8044f10
+current addr - 0x5ffef8044f40
+cur_node(0x5ffef8044f10), value(0x5ffef8044f40), inserted
+current addr - 0x5ffef8044ec0
+current addr - 0x5ffef8044ef0
+cur_node(0x5ffef8044ec0), value(0x5ffef8044ef0), inserted
+current addr - 0x5ffef8044e70
+current addr - 0x5ffef8044ea0
+cur_node(0x5ffef8044e70), value(0x5ffef8044ea0), inserted
+current addr - 0x5ffef8044e20
+current addr - 0x5ffef8044e50
+cur_node(0x5ffef8044e20), value(0x5ffef8044e50), inserted
+current addr - 0x5ffef8044dd0
+current addr - 0x5ffef8044e00
+cur_node(0x5ffef8044dd0), value(0x5ffef8044e00), inserted
+current addr - 0x5ffef8044d80
+current addr - 0x5ffef8044db0
+cur_node(0x5ffef8044d80), value(0x5ffef8044db0), inserted
+current addr - 0x5ffef8044d30
+current addr - 0x5ffef8044d60
+cur_node(0x5ffef8044d30), value(0x5ffef8044d60), inserted
+current addr - 0x5ffef8044ce0
+current addr - 0x5ffef8044d10
+cur_node(0x5ffef8044ce0), value(0x5ffef8044d10), inserted
+current addr - 0x5ffef8044c90
+current addr - 0x5ffef8044cc0
+cur_node(0x5ffef8044c90), value(0x5ffef8044cc0), inserted
+current addr - 0x5ffef8044c40
+current addr - 0x5ffef8044c70
+cur_node(0x5ffef8044c40), value(0x5ffef8044c70), inserted
+current addr - 0x5ffef8044bf0
+current addr - 0x5ffef8044c20
+cur_node(0x5ffef8044bf0), value(0x5ffef8044c20), inserted
+current addr - 0x5ffef8044ba0
+current addr - 0x5ffef8044bd0
+cur_node(0x5ffef8044ba0), value(0x5ffef8044bd0), inserted
+current addr - 0x5ffef8044b50
+current addr - 0x5ffef8044b80
+cur_node(0x5ffef8044b50), value(0x5ffef8044b80), inserted
+current addr - 0x5ffef8044b00
+current addr - 0x5ffef8044b30
+cur_node(0x5ffef8044b00), value(0x5ffef8044b30), inserted
+current addr - 0x5ffef8044ab0
+current addr - 0x5ffef8044ae0
+cur_node(0x5ffef8044ab0), value(0x5ffef8044ae0), inserted
+current addr - 0x5ffef8044a60
+current addr - 0x5ffef8044a90
+cur_node(0x5ffef8044a60), value(0x5ffef8044a90), inserted
+current addr - 0x5ffef8044a10
+current addr - 0x5ffef8044a40
+cur_node(0x5ffef8044a10), value(0x5ffef8044a40), inserted
+current addr - 0x5ffef80449c0
+current addr - 0x5ffef80449f0
+cur_node(0x5ffef80449c0), value(0x5ffef80449f0), inserted
+current addr - 0x5ffef8044970
+current addr - 0x5ffef80449a0
+cur_node(0x5ffef8044970), value(0x5ffef80449a0), inserted
+current addr - 0x5ffef8044920
+current addr - 0x5ffef8044950
+cur_node(0x5ffef8044920), value(0x5ffef8044950), inserted
+current addr - 0x5ffef80448d0
+current addr - 0x5ffef8044900
+cur_node(0x5ffef80448d0), value(0x5ffef8044900), inserted
+current addr - 0x5ffef8044880
+current addr - 0x5ffef80448b0
+cur_node(0x5ffef8044880), value(0x5ffef80448b0), inserted
+current addr - 0x5ffef8044830
+current addr - 0x5ffef8044860
+cur_node(0x5ffef8044830), value(0x5ffef8044860), inserted
+current addr - 0x5ffef80447e0
+current addr - 0x5ffef8044810
+cur_node(0x5ffef80447e0), value(0x5ffef8044810), inserted
+current addr - 0x5ffef8044790
+current addr - 0x5ffef80447c0
+cur_node(0x5ffef8044790), value(0x5ffef80447c0), inserted
+current addr - 0x5ffef8044740
+current addr - 0x5ffef8044770
+cur_node(0x5ffef8044740), value(0x5ffef8044770), inserted
+current addr - 0x5ffef80446f0
+current addr - 0x5ffef8044720
+cur_node(0x5ffef80446f0), value(0x5ffef8044720), inserted
+current addr - 0x5ffef80446a0
+current addr - 0x5ffef80446d0
+cur_node(0x5ffef80446a0), value(0x5ffef80446d0), inserted
+current addr - 0x5ffef8044650
+current addr - 0x5ffef8044680
+cur_node(0x5ffef8044650), value(0x5ffef8044680), inserted
+current addr - 0x5ffef8044600
+current addr - 0x5ffef8044630
+cur_node(0x5ffef8044600), value(0x5ffef8044630), inserted
+current addr - 0x5ffef80445b0
+current addr - 0x5ffef80445e0
+cur_node(0x5ffef80445b0), value(0x5ffef80445e0), inserted
+current addr - 0x5ffef8044560
+current addr - 0x5ffef8044590
+cur_node(0x5ffef8044560), value(0x5ffef8044590), inserted
+current addr - 0x5ffef8044510
+current addr - 0x5ffef8044540
+cur_node(0x5ffef8044510), value(0x5ffef8044540), inserted
+current addr - 0x5ffef80444c0
+current addr - 0x5ffef80444f0
+cur_node(0x5ffef80444c0), value(0x5ffef80444f0), inserted
+current addr - 0x5ffef8044470
+current addr - 0x5ffef80444a0
+cur_node(0x5ffef8044470), value(0x5ffef80444a0), inserted
+current addr - 0x5ffef8044420
+current addr - 0x5ffef8044450
+cur_node(0x5ffef8044420), value(0x5ffef8044450), inserted
+current addr - 0x5ffef80443d0
+current addr - 0x5ffef8044400
+cur_node(0x5ffef80443d0), value(0x5ffef8044400), inserted
+current addr - 0x5ffef8044380
+current addr - 0x5ffef80443b0
+cur_node(0x5ffef8044380), value(0x5ffef80443b0), inserted
+current addr - 0x5ffef8044330
+current addr - 0x5ffef8044360
+cur_node(0x5ffef8044330), value(0x5ffef8044360), inserted
+current addr - 0x5ffef80442e0
+current addr - 0x5ffef8044310
+cur_node(0x5ffef80442e0), value(0x5ffef8044310), inserted
+current addr - 0x5ffef8044290
+current addr - 0x5ffef80442c0
+cur_node(0x5ffef8044290), value(0x5ffef80442c0), inserted
+current addr - 0x5ffef8044240
+current addr - 0x5ffef8044270
+cur_node(0x5ffef8044240), value(0x5ffef8044270), inserted
+current addr - 0x5ffef80441f0
+current addr - 0x5ffef8044220
+cur_node(0x5ffef80441f0), value(0x5ffef8044220), inserted
+current addr - 0x5ffef80441a0
+current addr - 0x5ffef80441d0
+cur_node(0x5ffef80441a0), value(0x5ffef80441d0), inserted
+current addr - 0x5ffef8044150
+current addr - 0x5ffef8044180
+cur_node(0x5ffef8044150), value(0x5ffef8044180), inserted
+current addr - 0x5ffef8044100
+current addr - 0x5ffef8044130
+cur_node(0x5ffef8044100), value(0x5ffef8044130), inserted
+current addr - 0x5ffef80440b0
+current addr - 0x5ffef80440e0
+cur_node(0x5ffef80440b0), value(0x5ffef80440e0), inserted
+current addr - 0x5ffef8044060
+current addr - 0x5ffef8044090
+cur_node(0x5ffef8044060), value(0x5ffef8044090), inserted
+current addr - 0x5ffef8044010
+current addr - 0x5ffef8044040
+cur_node(0x5ffef8044010), value(0x5ffef8044040), inserted
+current addr - 0x5ffef8043f98
+current addr - 0x5ffef8043fc8
+cur_node(0x5ffef8043f98), value(0x5ffef8043fc8), inserted
+current addr - 0x5ffef8043f48
+current addr - 0x5ffef8043f78
+cur_node(0x5ffef8043f48), value(0x5ffef8043f78), inserted
+current addr - 0x5ffef8043ef8
+current addr - 0x5ffef8043f28
+cur_node(0x5ffef8043ef8), value(0x5ffef8043f28), inserted
+current addr - 0x5ffef8043ea8
+current addr - 0x5ffef8043ed8
+cur_node(0x5ffef8043ea8), value(0x5ffef8043ed8), inserted
+current addr - 0x5ffef8043e58
+current addr - 0x5ffef8043e88
+cur_node(0x5ffef8043e58), value(0x5ffef8043e88), inserted
+current addr - 0x5ffef8043e08
+current addr - 0x5ffef8043e38
+cur_node(0x5ffef8043e08), value(0x5ffef8043e38), inserted
+current addr - 0x5ffef8043db8
+current addr - 0x5ffef8043de8
+cur_node(0x5ffef8043db8), value(0x5ffef8043de8), inserted
+current addr - 0x5ffef8043d68
+current addr - 0x5ffef8043d98
+cur_node(0x5ffef8043d68), value(0x5ffef8043d98), inserted
+current addr - 0x5ffef8043d18
+current addr - 0x5ffef8043d48
+cur_node(0x5ffef8043d18), value(0x5ffef8043d48), inserted
+current addr - 0x5ffef8043cc8
+current addr - 0x5ffef8043cf8
+cur_node(0x5ffef8043cc8), value(0x5ffef8043cf8), inserted
+current addr - 0x5ffef8043c78
+current addr - 0x5ffef8043ca8
+cur_node(0x5ffef8043c78), value(0x5ffef8043ca8), inserted
+current addr - 0x5ffef8043c28
+current addr - 0x5ffef8043c58
+cur_node(0x5ffef8043c28), value(0x5ffef8043c58), inserted
+current addr - 0x5ffef8043bd8
+current addr - 0x5ffef8043c08
+cur_node(0x5ffef8043bd8), value(0x5ffef8043c08), inserted
+current addr - 0x5ffef8043b88
+current addr - 0x5ffef8043bb8
+cur_node(0x5ffef8043b88), value(0x5ffef8043bb8), inserted
+current addr - 0x5ffef8043b38
+current addr - 0x5ffef8043b68
+cur_node(0x5ffef8043b38), value(0x5ffef8043b68), inserted
+current addr - 0x5ffef8043ae8
+current addr - 0x5ffef8043b18
+cur_node(0x5ffef8043ae8), value(0x5ffef8043b18), inserted
+current addr - 0x5ffef8043a98
+current addr - 0x5ffef8043ac8
+cur_node(0x5ffef8043a98), value(0x5ffef8043ac8), inserted
+current addr - 0x5ffef8043a48
+current addr - 0x5ffef8043a78
+cur_node(0x5ffef8043a48), value(0x5ffef8043a78), inserted
+[local gc] allocation list status
+[0]current node - 0x5ffef8043a28
+[1]current node - 0x5ffef8043a48
+[2]current node - 0x5ffef8043a78
+[3]current node - 0x5ffef8043a98
+[4]current node - 0x5ffef8043ac8
+[5]current node - 0x5ffef8043ae8
+[6]current node - 0x5ffef8043b18
+[7]current node - 0x5ffef8043b38
+[8]current node - 0x5ffef8043b68
+[9]current node - 0x5ffef8043b88
+[10]current node - 0x5ffef8043bb8
+[11]current node - 0x5ffef8043bd8
+[12]current node - 0x5ffef8043c08
+[13]current node - 0x5ffef8043c28
+[14]current node - 0x5ffef8043c58
+[15]current node - 0x5ffef8043c78
+[16]current node - 0x5ffef8043ca8
+[17]current node - 0x5ffef8043cc8
+[18]current node - 0x5ffef8043cf8
+[19]current node - 0x5ffef8043d18
+[20]current node - 0x5ffef8043d48
+[21]current node - 0x5ffef8043d68
+[22]current node - 0x5ffef8043d98
+[23]current node - 0x5ffef8043db8
+[24]current node - 0x5ffef8043de8
+[25]current node - 0x5ffef8043e08
+[26]current node - 0x5ffef8043e38
+[27]current node - 0x5ffef8043e58
+[28]current node - 0x5ffef8043e88
+[29]current node - 0x5ffef8043ea8
+[30]current node - 0x5ffef8043ed8
+[31]current node - 0x5ffef8043ef8
+[32]current node - 0x5ffef8043f28
+[33]current node - 0x5ffef8043f48
+[34]current node - 0x5ffef8043f78
+[35]current node - 0x5ffef8043f98
+[36]current node - 0x5ffef8043fc8
+[37]current node - 0x5ffef8044010
+[38]current node - 0x5ffef8044040
+[39]current node - 0x5ffef8044060
+[40]current node - 0x5ffef8044090
+[41]current node - 0x5ffef80440b0
+[42]current node - 0x5ffef80440e0
+[43]current node - 0x5ffef8044100
+[44]current node - 0x5ffef8044130
+[45]current node - 0x5ffef8044150
+[46]current node - 0x5ffef8044180
+[47]current node - 0x5ffef80441a0
+[48]current node - 0x5ffef80441d0
+[49]current node - 0x5ffef80441f0
+[50]current node - 0x5ffef8044220
+[51]current node - 0x5ffef8044240
+[52]current node - 0x5ffef8044270
+[53]current node - 0x5ffef8044290
+[54]current node - 0x5ffef80442c0
+[55]current node - 0x5ffef80442e0
+[56]current node - 0x5ffef8044310
+[57]current node - 0x5ffef8044330
+[58]current node - 0x5ffef8044360
+[59]current node - 0x5ffef8044380
+[60]current node - 0x5ffef80443b0
+[61]current node - 0x5ffef80443d0
+[62]current node - 0x5ffef8044400
+[63]current node - 0x5ffef8044420
+[64]current node - 0x5ffef8044450
+[65]current node - 0x5ffef8044470
+[66]current node - 0x5ffef80444a0
+[67]current node - 0x5ffef80444c0
+[68]current node - 0x5ffef80444f0
+[69]current node - 0x5ffef8044510
+[70]current node - 0x5ffef8044540
+[71]current node - 0x5ffef8044560
+[72]current node - 0x5ffef8044590
+[73]current node - 0x5ffef80445b0
+[74]current node - 0x5ffef80445e0
+[75]current node - 0x5ffef8044600
+[76]current node - 0x5ffef8044630
+[77]current node - 0x5ffef8044650
+[78]current node - 0x5ffef8044680
+[79]current node - 0x5ffef80446a0
+[80]current node - 0x5ffef80446d0
+[81]current node - 0x5ffef80446f0
+[82]current node - 0x5ffef8044720
+[83]current node - 0x5ffef8044740
+[84]current node - 0x5ffef8044770
+[85]current node - 0x5ffef8044790
+[86]current node - 0x5ffef80447c0
+[87]current node - 0x5ffef80447e0
+[88]current node - 0x5ffef8044810
+[89]current node - 0x5ffef8044830
+[90]current node - 0x5ffef8044860
+[91]current node - 0x5ffef8044880
+[92]current node - 0x5ffef80448b0
+[93]current node - 0x5ffef80448d0
+[94]current node - 0x5ffef8044900
+[95]current node - 0x5ffef8044920
+[96]current node - 0x5ffef8044950
+[97]current node - 0x5ffef8044970
+[98]current node - 0x5ffef80449a0
+[99]current node - 0x5ffef80449c0
+[100]current node - 0x5ffef80449f0
+[101]current node - 0x5ffef8044a10
+[102]current node - 0x5ffef8044a40
+[103]current node - 0x5ffef8044a60
+[104]current node - 0x5ffef8044a90
+[105]current node - 0x5ffef8044ab0
+[106]current node - 0x5ffef8044ae0
+[107]current node - 0x5ffef8044b00
+[108]current node - 0x5ffef8044b30
+[109]current node - 0x5ffef8044b50
+[110]current node - 0x5ffef8044b80
+[111]current node - 0x5ffef8044ba0
+[112]current node - 0x5ffef8044bd0
+[113]current node - 0x5ffef8044bf0
+[114]current node - 0x5ffef8044c20
+[115]current node - 0x5ffef8044c40
+[116]current node - 0x5ffef8044c70
+[117]current node - 0x5ffef8044c90
+[118]current node - 0x5ffef8044cc0
+[119]current node - 0x5ffef8044ce0
+[120]current node - 0x5ffef8044d10
+[121]current node - 0x5ffef8044d30
+[122]current node - 0x5ffef8044d60
+[123]current node - 0x5ffef8044d80
+[124]current node - 0x5ffef8044db0
+[125]current node - 0x5ffef8044dd0
+[126]current node - 0x5ffef8044e00
+[127]current node - 0x5ffef8044e20
+[128]current node - 0x5ffef8044e50
+[129]current node - 0x5ffef8044e70
+[130]current node - 0x5ffef8044ea0
+[131]current node - 0x5ffef8044ec0
+[132]current node - 0x5ffef8044ef0
+[133]current node - 0x5ffef8044f10
+[134]current node - 0x5ffef8044f40
+[135]current node - 0x5ffef8044f60
+[136]current node - 0x5ffef8044f90
+
+[local gc] list node size : 32
+[local gc] value * 2 : 16
+wrong storage type!
+[gc] 3
+[local gc] chunk addr : 0x5ffef8043a18, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043a28
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043a38, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043a48
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043a68, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043a78
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043a88, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043a98
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043ab8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ac8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043ad8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ae8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043b08, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043b18
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043b28, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043b38
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043b58, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043b68
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043b78, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043b88
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043ba8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043bb8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043bc8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043bd8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043bf8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043c08
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043c18, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043c28
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043c48, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043c58
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043c68, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043c78
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043c98, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ca8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043cb8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043cc8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043ce8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043cf8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043d08, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043d18
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043d38, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043d48
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043d58, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043d68
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043d88, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043d98
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043da8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043db8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043dd8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043de8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043df8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043e08
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043e28, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043e38
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043e48, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043e58
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043e78, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043e88
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043e98, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ea8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043ec8, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ed8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043ee8, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043ef8
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043f18, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043f28
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043f38, size : 48
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043f48
+	1
+	2
+is last? : 0
+list_state : 1
+[local gc] chunk addr : 0x5ffef8043f68, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043f78
+	1
+	2
+is last? : 0
+list_state : 1
+last chunk p : 0x5ffef8044fa0, next_chunk : 0x5ffef8043fb8
+next_seg_ptr : (nil)
+before remove
+after remove
+[local gc] GC end!
+[gc] 4
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 4064
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+large bin - size : 8
+large bin in next size - size : 8
+	new_alloc num : 5
+new allocation - size : 8
+gc_result : 2
+[new alloc] nb : 32, MINSIZE : 32, pagemask : 4095, SIZE_SZ : 8
+DEFAULT_PAD : 131072
+	new seg alloc count : 2
+	new segment start address : 0x5ffef8045000
+	size : 4096
+remainder : 0x5ffef8045020, is_last : 4
+present_last_chunk : 0x5ffef8044fa0, size : 64
+last + size_sz : 105548687364064
+last + size_sz : 105548687364072
+last + size_sz : 105548687364080
+p_tmp : 0x5ffef8044fe8
+p_tmp : 0
+prsent last chunk size : 64, remainder chunk size : 4032
+present : 0, next seg : 0
+[pos-insert] node->value : 0x5ffef8045010
+[pos-insert] 3-1
+val1 : 100354, val2 : 103437, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[68]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 32
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 32
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+large bin - size : 32
+large bin in next size - size : 32
+remainder : 0x5ffef8045050, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 80
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 80
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045070, is_last : 4
+[pos-insert] node->value : 0x5ffef8045060
+[pos-insert] 3-1
+val1 : 100620, val2 : 102029, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[69]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 112
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 112
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80450a0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 160
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 160
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80450c0, is_last : 4
+[pos-insert] node->value : 0x5ffef80450b0
+[pos-insert] 3-1
+val1 : 105578, val2 : 102671, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[70]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 192
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 192
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80450f0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 240
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 240
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045110, is_last : 4
+[pos-insert] node->value : 0x5ffef8045100
+[pos-insert] 3-1
+val1 : 105082, val2 : 108759, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[71]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 272
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 272
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045140, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 320
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 320
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045160, is_last : 4
+[pos-insert] node->value : 0x5ffef8045150
+[pos-insert] 3-1
+val1 : 106352, val2 : 105392, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[72]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 352
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 352
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045190, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 400
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 400
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80451b0, is_last : 4
+[pos-insert] node->value : 0x5ffef80451a0
+[pos-insert] 3-1
+val1 : 107905, val2 : 103209, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[73]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 432
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 432
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80451e0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 480
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 480
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045200, is_last : 4
+[pos-insert] node->value : 0x5ffef80451f0
+[pos-insert] 3-1
+val1 : 104524, val2 : 109337, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[74]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 512
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 512
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045230, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 560
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 560
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045250, is_last : 4
+[pos-insert] node->value : 0x5ffef8045240
+[pos-insert] 3-1
+val1 : 108394, val2 : 103995, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[75]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 592
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 592
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045280, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 640
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 640
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80452a0, is_last : 4
+[pos-insert] node->value : 0x5ffef8045290
+[pos-insert] 3-1
+val1 : 107278, val2 : 105396, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[76]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 672
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 672
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80452d0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 720
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 720
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80452f0, is_last : 4
+[pos-insert] node->value : 0x5ffef80452e0
+[pos-insert] 3-1
+val1 : 108146, val2 : 102865, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[77]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 752
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 752
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045320, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 800
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 800
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045340, is_last : 4
+[pos-insert] node->value : 0x5ffef8045330
+[pos-insert] 3-1
+val1 : 108855, val2 : 103220, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[78]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 832
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 832
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045370, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 880
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 880
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045390, is_last : 4
+[pos-insert] node->value : 0x5ffef8045380
+[pos-insert] 3-1
+val1 : 102198, val2 : 100193, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[79]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 912
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 912
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80453c0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 960
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 960
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80453e0, is_last : 4
+[pos-insert] node->value : 0x5ffef80453d0
+[pos-insert] 3-1
+val1 : 106502, val2 : 105772, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[80]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 992
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 992
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045410, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1040
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1040
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045430, is_last : 4
+[pos-insert] node->value : 0x5ffef8045420
+[pos-insert] 3-1
+val1 : 106998, val2 : 107207, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[81]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1072
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1072
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045460, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1120
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1120
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045480, is_last : 4
+[pos-insert] node->value : 0x5ffef8045470
+[pos-insert] 3-1
+val1 : 103752, val2 : 103560, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[82]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1152
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1152
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80454b0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1200
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1200
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80454d0, is_last : 4
+[pos-insert] node->value : 0x5ffef80454c0
+[pos-insert] 3-1
+val1 : 105113, val2 : 101466, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[83]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1232
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1232
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045500, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1280
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1280
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045520, is_last : 4
+[pos-insert] node->value : 0x5ffef8045510
+[pos-insert] 3-1
+val1 : 105313, val2 : 102343, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[84]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1312
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1312
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045550, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1360
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1360
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045570, is_last : 4
+[pos-insert] node->value : 0x5ffef8045560
+[pos-insert] 3-1
+val1 : 102772, val2 : 100738, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[85]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1392
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1392
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80455a0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1440
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1440
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80455c0, is_last : 4
+[pos-insert] node->value : 0x5ffef80455b0
+[pos-insert] 3-1
+val1 : 108476, val2 : 104369, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[86]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1472
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1472
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80455f0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1520
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1520
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045610, is_last : 4
+[pos-insert] node->value : 0x5ffef8045600
+[pos-insert] 3-1
+val1 : 104243, val2 : 102517, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[87]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1552
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1552
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045640, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1600
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1600
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045660, is_last : 4
+[pos-insert] node->value : 0x5ffef8045650
+[pos-insert] 3-1
+val1 : 107764, val2 : 101373, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[88]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1632
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1632
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045690, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1680
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1680
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80456b0, is_last : 4
+[pos-insert] node->value : 0x5ffef80456a0
+[pos-insert] 3-1
+val1 : 104722, val2 : 109924, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[89]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1712
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1712
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80456e0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1760
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1760
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045700, is_last : 4
+[pos-insert] node->value : 0x5ffef80456f0
+[pos-insert] 3-1
+val1 : 103711, val2 : 102779, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[90]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1792
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1792
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045730, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1840
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1840
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045750, is_last : 4
+[pos-insert] node->value : 0x5ffef8045740
+[pos-insert] 3-1
+val1 : 101724, val2 : 109779, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[91]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1872
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1872
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045780, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 1920
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 1920
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80457a0, is_last : 4
+[pos-insert] node->value : 0x5ffef8045790
+[pos-insert] 3-1
+val1 : 108498, val2 : 103532, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[92]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 1952
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 1952
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80457d0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2000
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2000
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80457f0, is_last : 4
+[pos-insert] node->value : 0x5ffef80457e0
+[pos-insert] 3-1
+val1 : 100665, val2 : 104998, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[93]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2032
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2032
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045820, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2080
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2080
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045840, is_last : 4
+[pos-insert] node->value : 0x5ffef8045830
+[pos-insert] 3-1
+val1 : 102394, val2 : 100312, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[94]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2112
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2112
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045870, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2160
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2160
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045890, is_last : 4
+[pos-insert] node->value : 0x5ffef8045880
+[pos-insert] 3-1
+val1 : 109814, val2 : 103085, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[95]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2192
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2192
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80458c0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2240
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2240
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80458e0, is_last : 4
+[pos-insert] node->value : 0x5ffef80458d0
+[pos-insert] 3-1
+val1 : 101230, val2 : 107914, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[96]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2272
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2272
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045910, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2320
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2320
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045930, is_last : 4
+[pos-insert] node->value : 0x5ffef8045920
+[pos-insert] 3-1
+val1 : 104396, val2 : 108510, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[97]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2352
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2352
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef8045960, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2400
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2400
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef8045980, is_last : 4
+[pos-insert] node->value : 0x5ffef8045970
+[pos-insert] 3-1
+val1 : 100427, val2 : 106275, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[98]
+[pos-insert] start
+[pos-insert] 1
+[0]current total chunk size : 2432
+fast bin - size : 32
+[small bin] - size : 32
+[small bin] - current total chunk : 2432
+[small bin] nb size : 48
+small bin - size : 32
+unsorted bin - size : 32
+remainder : 0x5ffef80459b0, is_last : 4
+[pos-insert] 2
+[0]current total chunk size : 2480
+fast bin - size : 8
+[small bin] - size : 8
+[small bin] - current total chunk : 2480
+[small bin] nb size : 32
+small bin - size : 8
+unsorted bin - size : 8
+remainder : 0x5ffef80459d0, is_last : 4
+[pos-insert] node->value : 0x5ffef80459c0
+[pos-insert] 3-1
+val1 : 106032, val2 : 100999, val_size : 8
+[pos-insert] 3-2
+[pos-insert] 3-3
+[pos-insert] 3-4
+[pos-insert] fin
+
+[USER] insert check[99]
+			delete start!
+1
+2
+3 i - 5
+4
+[local gc] allocation list status before gc
+
+[local gc] pos list status before gc
+
+[local gc] GC start!
+[gc] 1
+[local gc] type : 1
+[gc] 2
+current addr - 0x5ffef8043a28
+current addr - 0x5ffef8045990
+current addr - 0x5ffef80459c0
+cur_node(0x5ffef8045990), value(0x5ffef80459c0), inserted
+current addr - 0x5ffef8045940
+current addr - 0x5ffef8045970
+cur_node(0x5ffef8045940), value(0x5ffef8045970), inserted
+current addr - 0x5ffef80458f0
+current addr - 0x5ffef8045920
+cur_node(0x5ffef80458f0), value(0x5ffef8045920), inserted
+current addr - 0x5ffef80458a0
+current addr - 0x5ffef80458d0
+cur_node(0x5ffef80458a0), value(0x5ffef80458d0), inserted
+current addr - 0x5ffef8045850
+current addr - 0x5ffef8045880
+cur_node(0x5ffef8045850), value(0x5ffef8045880), inserted
+[local gc] allocation list status
+[0]current node - 0x5ffef8043a28
+[1]current node - 0x5ffef8045850
+[2]current node - 0x5ffef8045880
+[3]current node - 0x5ffef80458a0
+[4]current node - 0x5ffef80458d0
+[5]current node - 0x5ffef80458f0
+[6]current node - 0x5ffef8045920
+[7]current node - 0x5ffef8045940
+[8]current node - 0x5ffef8045970
+[9]current node - 0x5ffef8045990
+[10]current node - 0x5ffef80459c0
+
+[local gc] list node size : 32
+[local gc] value * 2 : 16
+wrong storage type!
+[gc] 3
+[local gc] chunk addr : 0x5ffef8043a18, size : 32
+[local gc] 1
+[local gc] cur_node->addr : 0x5ffef8043a28
+	1
+	2
+is last? : 0
+list_state : 2
+[local gc] chunk addr : 0x5ffef8043a38, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043a48) is garbage -> freed!
+[local gc] garbage count : 0
+[local gc] chunk addr : 0x5ffef8043a68, size : 32
+[local gc] 3
+[local gc] ptr(0x5ffef8043a78) is garbage -> freed!
+[local gc] garbage count : 1
+[local gc] chunk addr : 0x5ffef8043a88, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043a98) is garbage -> freed!
+[local gc] garbage count : 2
+[local gc] chunk addr : 0x5ffef8043ab8, size : 32
+[local gc] 3
+[local gc] ptr(0x5ffef8043ac8) is garbage -> freed!
+[local gc] garbage count : 3
+[local gc] chunk addr : 0x5ffef8043ad8, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043ae8) is garbage -> freed!
+[local gc] garbage count : 4
+[local gc] chunk addr : 0x5ffef8043b08, size : 32
+[local gc] 3
+[local gc] ptr(0x5ffef8043b18) is garbage -> freed!
+[local gc] garbage count : 5
+[local gc] chunk addr : 0x5ffef8043b28, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043b38) is garbage -> freed!
+[local gc] garbage count : 6
+[local gc] chunk addr : 0x5ffef8043b58, size : 32
+[local gc] 3
+[local gc] ptr(0x5ffef8043b68) is garbage -> freed!
+[local gc] garbage count : 7
+[local gc] chunk addr : 0x5ffef8043b78, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043b88) is garbage -> freed!
+[local gc] garbage count : 8
+[local gc] chunk addr : 0x5ffef8043ba8, size : 32
+[local gc] 3
+[local gc] ptr(0x5ffef8043bb8) is garbage -> freed!
+[local gc] garbage count : 9
+[local gc] chunk addr : 0x5ffef8043bc8, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043bd8) is garbage -> freed!
+[local gc] garbage count : 10
+[local gc] chunk addr : 0x5ffef8043bf8, size : 32
+[local gc] 3
+[local gc] ptr(0x5ffef8043c08) is garbage -> freed!
+[local gc] garbage count : 11
+[local gc] chunk addr : 0x5ffef8043c18, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043c28) is garbage -> freed!
+[local gc] garbage count : 12
+[local gc] chunk addr : 0x5ffef8043c48, size : 32
+[local gc] 3
+[local gc] ptr(0x5ffef8043c58) is garbage -> freed!
+[local gc] garbage count : 13
+[local gc] chunk addr : 0x5ffef8043c68, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043c78) is garbage -> freed!
+[local gc] garbage count : 14
+[local gc] chunk addr : 0x5ffef8043c98, size : 32
+[local gc] 3
+[local gc] ptr(0x5ffef8043ca8) is garbage -> freed!
+[local gc] garbage count : 15
+[local gc] chunk addr : 0x5ffef8043cb8, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043cc8) is garbage -> freed!
+[local gc] garbage count : 16
+[local gc] chunk addr : 0x5ffef8043ce8, size : 32
+[local gc] 3
+[local gc] ptr(0x5ffef8043cf8) is garbage -> freed!
+[local gc] garbage count : 17
+[local gc] chunk addr : 0x5ffef8043d08, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043d18) is garbage -> freed!
+[local gc] garbage count : 18
+[local gc] chunk addr : 0x5ffef8043d38, size : 32
+[local gc] 3
+[local gc] ptr(0x5ffef8043d48) is garbage -> freed!
+[local gc] garbage count : 19
+[local gc] chunk addr : 0x5ffef8043d58, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043d68) is garbage -> freed!
+[local gc] garbage count : 20
+[local gc] chunk addr : 0x5ffef8043d88, size : 32
+[local gc] 3
+[local gc] ptr(0x5ffef8043d98) is garbage -> freed!
+[local gc] garbage count : 21
+[local gc] chunk addr : 0x5ffef8043da8, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043db8) is garbage -> freed!
+[local gc] garbage count : 22
+[local gc] chunk addr : 0x5ffef8043dd8, size : 32
+[local gc] 3
+[local gc] ptr(0x5ffef8043de8) is garbage -> freed!
+[local gc] garbage count : 23
+[local gc] chunk addr : 0x5ffef8043df8, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043e08) is garbage -> freed!
+[local gc] garbage count : 24
+[local gc] chunk addr : 0x5ffef8043e28, size : 32
+[local gc] 3
+[local gc] ptr(0x5ffef8043e38) is garbage -> freed!
+[local gc] garbage count : 25
+[local gc] chunk addr : 0x5ffef8043e48, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043e58) is garbage -> freed!
+[local gc] garbage count : 26
+[local gc] chunk addr : 0x5ffef8043e78, size : 32
+[local gc] 3
+[local gc] ptr(0x5ffef8043e88) is garbage -> freed!
+[local gc] garbage count : 27
+[local gc] chunk addr : 0x5ffef8043e98, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043ea8) is garbage -> freed!
+[local gc] garbage count : 28
+[local gc] chunk addr : 0x5ffef8043ec8, size : 32
+[local gc] 3
+[local gc] ptr(0x5ffef8043ed8) is garbage -> freed!
+[local gc] garbage count : 29
+[local gc] chunk addr : 0x5ffef8043ee8, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043ef8) is garbage -> freed!
+[local gc] garbage count : 30
+[local gc] chunk addr : 0x5ffef8043f18, size : 32
+[local gc] 3
+[local gc] ptr(0x5ffef8043f28) is garbage -> freed!
+[local gc] garbage count : 31
+[local gc] chunk addr : 0x5ffef8043f38, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043f48) is garbage -> freed!
+[local gc] garbage count : 32
+[local gc] chunk addr : 0x5ffef8043f68, size : 32
+[local gc] 3
+[local gc] ptr(0x5ffef8043f78) is garbage -> freed!
+[local gc] garbage count : 33
+[local gc] chunk addr : 0x5ffef8043f88, size : 48
+[local gc] 3
+[local gc] ptr(0x5ffef8043f98) is garbage -> freed!
+[local gc] garbage count : 34
+[local gc] 4
+before remove
+after remove
+[local gc] GC end!
+[gc] 4
+PRINT LIST IN USER]
+cur(0x5ffef8045990)	cur(0x5ffef8045940)	cur(0x5ffef80458f0)	cur(0x5ffef80458a0)	cur(0x5ffef8045850)	
+
+
+[DISTROY LIST]
+[FINISH PROGRAM]

@@ -587,7 +587,10 @@ POS_WRITE_VAUE(name, (unsigned long *)&((mchunkptr)(((char*)(p)) + (s)))->size, 
 //dk s
 #define set_next_seg_pointer(p, s, pp) (((mchunkptr)((char*)(p) + (s) + (SIZE_SZ)))->size = (unsigned long)(pp)) //size = pointer to next seg
 //#define next_seg(p, s) ((mchunkptr)(((mchunkptr)((char*)(p) + (s) + (SIZE_SZ)))->size))
-#define next_seg(p, s) ((mchunkptr)((char*)(p) + (s) + (SIZE_SZ*2)))
+#define next_seg(p, s) ((mchunkptr)((char*)(p) + (s) + (SIZE_SZ)))
+//#define _next_seg(p, s) (mchunkptr)((char *)p + s + SIZE_SZ)
+//#define next_seg(p, s) ((mchunkptr)chunksize(_next_seg(p, s)))
+//#define next_seg(p, s) (mchunkptr)(chunksize(((char *)(p) + (s) + (SIZE_SZ))))
 //dk e
 #if CONSISTENCY == 1
 #define set_head_size_log(name, p, s)   \

@@ -261,7 +261,9 @@ printf("[gc] 3\n");
 	while(ptr != ms_ptr->last_chunk_pointer)
 	{
 #if POS_DEBUG_MALLOC == 1
-		printf("[local gc] chunk addr : %p, size : %lu\n", ptr, (unsigned long)chunksize(ptr));
+		printf("[local gc] chunk addr : %p\n", ptr);
+		printf("[local gc] chunk size : %lu\n", chunksize(ptr));
+		printf("[local gc] cur_node->addr : %p\n", (void *)cur_node->addr);
 #endif
 		//total_chunks_size += chunksize(ptr);
 		mem_ptr = chunk2mem(ptr);
@@ -286,26 +288,63 @@ printf("[gc] 3\n");
 printf("list_state : %d\n", list_state);
 			if(list_state == 1 && chunk_is_last(next_chunk) == 0x4) {
 				next_seg_ptr = next_seg(ms_ptr->last_chunk_pointer, chunksize(ms_ptr->last_chunk_pointer));
-				printf("next_seg_ptr : %lu\n", next_seg_ptr);
+				//printf("next_seg_ptr : %lu\n", next_seg_ptr);
 				printf("last chunk p : %p, next_chunk : %p\n", ms_ptr->last_chunk_pointer, next_chunk);
 				next_seg_ptr = next_seg(next_chunk, chunksize(next_chunk));
+				printf("next_seg_ptr : %p\n", (void *)chunksize(next_seg_ptr));
+
+				
+
 				if(chunksize(next_seg_ptr) != 0)
 				{
 					mem_ptr = chunk2mem(ptr);
 										
-					printf("mem_ptr : %p, next_seg_ptr : %lu\n", mem_ptr, next_seg_ptr);
+					printf("mem_ptr : %p, next_seg_ptr : %p\n", mem_ptr, (void *)chunksize(next_seg_ptr));
 					if((void *)cur_node->addr == mem_ptr)
 					{
-						ptr = next_seg_ptr;
-					}
+						//printf("123\n");
+						//ptr = next_seg_ptr;
+						printf("next_seg_ptr = %p\n", next_seg_ptr);
+						ptr = (mchunkptr)(chunksize(next_seg_ptr));
+						printf("ptr : %p\n", ptr);
+						cur_node=cur_node->next;
+						printf("ptr : %p\n", chunk2mem(ptr));
+						printf("cur_node->next->addr : %p\n", (void *)cur_node->addr);
+					
+						if(inuse(next_chunk))
+						{
+							unsigned long *l_tmp = chunk2mem(next_chunk);
+							printf("in inuse(next_chunk) l_tmp : %p, cur_node->addr : %p\n", l_tmp, (void *)cur_node->addr);
+							if(l_tmp == cur_node->addr)
+							{
+									printf("in inuse(next_chunk) and same\n");
+									cur_node = cur_node->next;
+									ptr = next_chunk(ptr);
+							}
+						}
+					}	
 					else
 					{
 						pos_free(name, mem_ptr);
 						printf("[local gc] ptr(%p) is garbage -> freed!\n", mem_ptr);
 						printf("[local gc] garbage count : %lu\n", garbage_count);
 						garbage_count++;
+						
+						if(inuse(next_chunk))
+						{
+							unsigned long *l_tmp = chunk2mem(next_chunk);
+							printf("in inuse(next_chunk) l_tmp : %p, cur_node->addr : %p\n", l_tmp, (void *)cur_node->addr);
+							if(l_tmp == cur_node->addr)
+							{
+									printf("in inuse(next_chunk) and same\n");
+									cur_node = cur_node->next;
+									ptr = next_chunk(ptr);
+							}
+						}
+						
 						ptr = next_seg_ptr;
 					}
+				
 				}
 				else
 				{
@@ -313,17 +352,31 @@ printf("list_state : %d\n", list_state);
 				}
 			}
 			else if(list_state == 2 && chunk_is_last(ptr) == 0x4) {
-				if(next_seg_ptr = next_seg(ptr, chunksize(ptr)) != (void *)0)
+				printf("in list state 2-0\n");
+				next_seg_ptr = next_seg(ms_ptr->last_chunk_pointer, chunksize(ms_ptr->last_chunk_pointer));
+				//printf("next_seg_ptr : %lu\n", next_seg_ptr);
+				printf("last chunk p : %p, next_chunk : %p\n", ms_ptr->last_chunk_pointer, next_chunk);
+			  next_seg_ptr = next_seg(next_chunk, chunksize(next_chunk));
+				printf("next_seg_ptr : %p\n", (void *)chunksize(next_seg_ptr));
+				if(chunksize(next_seg_ptr) != 0)
+				//if(next_seg_ptr != (void *)0)
 				{
-					ptr = next_seg_ptr;
+					printf("there is no next_seg\n");
+					printf("next_seg_ptr = %p\n", next_seg_ptr);
+					ptr = (mchunkptr)(chunksize(next_seg_ptr));
+					printf("ptr : %p\n", ptr);
+					//ptr = next_seg_ptr;
+					cur_node = cur_node->next;
 				}
 				else
 				{
+					printf("in list_state 2-2\n");
 					break;
 				}
+				printf("in list_state 2-3\n");
 			}
 			//sb e	
-			
+			printf("before while\n");	
 			while(inuse(ptr) != 1)
 			{
 #if POS_DEBUG_MALLOC == 1
@@ -337,12 +390,15 @@ printf("list_state : %d\n", list_state);
 #if POS_DEBUG_MALLOC == 1
 			printf("[local gc] 3\n");
 #endif
+			printf("[local gc] cur_node->addr : %p\n", (void *)cur_node->addr);
+			printf("[local gc] mem_ptr : %p\n", mem_ptr);
 			pos_free(name, mem_ptr);
 			printf("[local gc] ptr(%p) is garbage -> freed!\n", mem_ptr);
 			printf("[local gc] garbage count : %lu\n", garbage_count);
 			garbage_count++;
 			ptr = next_chunk(ptr);
 		}
+		printf("543\n");
 		if(chunk_is_last(ptr) == 0x4)
 		{
 #if POS_DEBUG_MALLOC == 1
@@ -978,13 +1034,24 @@ if(POS_DEBUG_MALLOC == 1)
 			printf("remainder : %p, is_last : %lu\n", remainder, chunk_is_last(remainder));
 			//dk s
 			present_last_chunk = av->last_chunk_pointer;
-printf("		1\n");
-		printf("present_last_chunk : %p\n", present_last_chunk);
-			set_next_seg_pointer(present_last_chunk, chunksize(present_last_chunk), p); //insert next seg pointer at present last chunk
-printf("		2\n");
+		printf("present_last_chunk : %p, size : %lu\n", present_last_chunk, chunksize(present_last_chunk));
+		//set_next_seg_pointer(present_last_chunk, chunksize(present_last_chunk), 12345); //insert next seg pointer at present last chunk
+mchunkptr p_tmp;
+//int temp;
+//		temp = 12345;
+		p_tmp = next_seg(present_last_chunk, chunksize(present_last_chunk));
+		memcpy((mchunkptr)((char *)p_tmp+SIZE_SZ), &p, sizeof(unsigned long));
+		printf("p : %p\n", p);
+
+	printf("last + last_size : %lu\n", chunksize((mchunkptr)((char *)present_last_chunk + chunksize(present_last_chunk))));
+		printf("last + last_size + size_sz : %lu\n", chunksize((mchunkptr)((char *)present_last_chunk + chunksize(present_last_chunk) + SIZE_SZ)));
+		printf("last + last_size + size_sz*2 : %lu\n", chunksize((mchunkptr)((char *)present_last_chunk + chunksize(present_last_chunk)+ (SIZE_SZ*2))));
+
+
+	//	printf("p_tmp : %p\n", p_tmp);
+	//	printf("p_tmp : %lu\n", chunksize(p_tmp));
 			set_next_seg_pointer(remainder, remainder_size, 0); //initialize next seg pointer field
 			//((mchunkptr)((char*)(remainder)+(reminder_size)))->size = 0; // next segment pointer
-printf("		3\n");
 printf("prsent last chunk size : %lu, remainder chunk size : %lu\n", chunksize(present_last_chunk), chunksize(remainder));
 			//mchunkptr plc_addr, ng_addr;
 			//plc_addr = (mchunkptr)(chunksize(present_last_chunk)+(char *)present_last_chunk);
@@ -1682,8 +1749,11 @@ pos_malloc_init_state(char *name, mstate av)
 	//dk s
 	set_next_seg_pointer(last_chunk, last_size, 0);
 	mchunkptr temp_p;
+	temp_p = next_seg(last_chunk, last_size);
+	printf("temp_p : %p\n", temp_p);
 	temp_p = (mchunkptr)((char*)last_chunk + chunksize(last_chunk)+SIZE_SZ);
 	printf("next seg : %lu\n", chunksize(temp_p));
+	
 	//dk e
 	av->last_remainder = 0;
 	for (i=0; i<BINMAPSIZE; i++) {
