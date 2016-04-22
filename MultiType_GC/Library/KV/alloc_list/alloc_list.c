@@ -110,7 +110,7 @@ void display(Node *head)
 	Node *cur_node = head;
 	int i=0;
 
-	while(cur_node != NULL) {
+	while(cur_node->next != NULL) {
 		printf("[%d]current node - 0x%lx\n", i++, cur_node->addr);
 		cur_node = cur_node->next;
 	}
