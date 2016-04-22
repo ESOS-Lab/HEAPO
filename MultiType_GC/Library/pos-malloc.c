@@ -312,8 +312,12 @@ printf("list_state : %d\n", list_state);
 							if(l_tmp == cur_node->next->addr)
 							{
 									printf("in inuse(next_chunk) and same\n");
-									//cur_node = cur_node->next;
+									cur_node = cur_node->next;
 									//ptr = next_chunk(ptr);
+							}
+							else //lastchunk == garbage
+							{
+									pos_free(name, l_tmp);
 							}
 						}
 						printf("next_seg_ptr = %p\n", next_seg_ptr);
@@ -398,13 +402,24 @@ printf("list_state : %d\n", list_state);
 			garbage_count++;
 			ptr = next_chunk(ptr);
 		}
-		printf("543\n");
+		//printf("543\n");
 		if(chunk_is_last(ptr) == 0x4)
 		{
 #if POS_DEBUG_MALLOC == 1
 			printf("[local gc] 4\n");
 #endif
-			break;
+			next_seg_ptr = next_seg(ptr, chunksize(ptr));
+			printf("next_seg_ptr : %p\n", (void *)chunksize(next_seg_ptr));
+
+			if(chunksize(next_seg_ptr) != 0)
+			//else if(next seg = pointer)
+			{
+				//ptr = next seg pointer;
+				ptr = (mchunkptr)(chunksize(next_seg_ptr));
+				printf("ptr : %p\n", ptr);
+				cur_node=cur_node->next;
+				printf("mem_ptr : %p\n", chunk2mem(ptr));
+			}
 		}
 	}
 	printf("before remove\n");
@@ -572,7 +587,9 @@ if(POS_DEBUG_MALLOC == 1)
 #else
 			//dk s
 			//set_inuse_bit_at_offset(victim, nb);
+			printf("victim : %p, nb : %lu, victim chunk size : %lu\n", victim, nb, chunksize(victim));
 			set_inuse_bit_at_offset(victim, chunksize(victim));
+			printf("next chunk size : %lu\n", chunksize(next_chunk(victim)));
 			//dk e
 			bin->bk = bck;
 			bck->fd = bin;

@@ -81,20 +81,32 @@ int main(int argc, char *argv[])
 		printf("\n[USER] insert check[%d]\n", i);
 	}
 
-	printf("			delete start!\n");	
-	pos_delete_selected_node(TEST_OBJ_NAME, 5);
-	pos_local_gc(TEST_OBJ_NAME);
+	pos_delete_selected_node(TEST_OBJ_NAME, 50);
 
-	printf("PRINT LIST IN USER]\n");
-	print_list(TEST_OBJ_NAME);
-	printf("\n\n");
-/*
 	for(i=0; i<100; i++) {
 		for(j=0; j<2; j++) {
 			num[i][j] = rand()%10000+99999;
 		}
 		key[0] = key[1] = rand()%100+1;
 		if(pos_list_insert(TEST_OBJ_NAME, (void *)key, (void *)num[i], 8) < 0) {
+			printf("insertion failed!\n");
+		}
+		printf("\n[USER] insert check[%d]\n", i);
+	}
+	//printf("			delete start!\n");	
+	//pos_delete_selected_node(TEST_OBJ_NAME, 5);
+	//pos_local_gc(TEST_OBJ_NAME);
+
+	//printf("PRINT LIST IN USER]\n");
+	//print_list(TEST_OBJ_NAME);
+	//printf("\n\n");
+/*
+	for(i=0; i<100; i++) {
+		for(j=0; j<2; j++) {
+			num[i][j] = rand()%10000+99999;
+		}
+			key[0] = key[1] = rand()%100+1;
+	 	if(pos_list_insert(TEST_OBJ_NAME, (void *)key, (void *)num[i], 8) < 0) {
 			printf("insertion failed!\n");
 		}
 		printf("\n[USER] insert check[%d]\n", i);

@@ -117,6 +117,9 @@ printf("[pos-insert] start\n");
 printf("[pos-insert] 1\n");
 #endif
 	node = (struct list_node *)pos_malloc(name, sizeof(struct list_node));
+	//dk s
+	memset(node, 0, sizeof(struct list_node));
+	//dk e
 	//sb s
 	list_state = 1;
 //	insert_node(&alloc_head, (unsigned long)node);
@@ -132,6 +135,10 @@ printf("[pos-insert] 2\n");
 #endif
 
 	node->value = (unsigned long *)pos_malloc(name, val_size);
+	//dk s
+	memset(node->value, 0, sizeof(val_size));
+	//dk e
+
 	//sb s
 	//insert_node(&alloc_head, (unsigned long)node->value);
 	//list_state = 2;
@@ -291,10 +298,11 @@ void print_list(char *name)
 		return;
 	
 	cur_node = lh->head;
+	printf("head : %p, head->head : %p\n", lh, cur_node);
 	// repeat while next node is not NULL
-	while(cur_node != NULL) {
+	while(cur_node->next != NULL) {
 #if LIST_DEBUG == 1
-		printf("cur(%p)\t", cur_node);
+		printf("cur(%p)\tcur_next(%p)\n", cur_node, cur_node->next);
 #endif
 		cur_node = cur_node->next;
 	}
@@ -334,9 +342,15 @@ printf("1\n");
 printf("2\n");
 	cur_node = lh->head;
 	for(i=0; i<idx; i++) {
+	printf("[in for]prev_node = %p\n", prev_node);
+	printf("[in for]cur_node = %p\n", cur_node);
 		prev_node = cur_node;
 		cur_node = cur_node->next;
 	}
+	printf("address check\n");
+	printf("i =%d\n", i);
+	printf("prev_node = %p\n", prev_node);
+	printf("cur_node = %p\n", cur_node);
 
 	if(cur_node == NULL && i < idx-2) {
 		printf("wrong index!\n");
