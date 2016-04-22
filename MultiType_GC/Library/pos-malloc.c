@@ -304,24 +304,24 @@ printf("list_state : %d\n", list_state);
 					{
 						//printf("123\n");
 						//ptr = next_seg_ptr;
+										
+						if(inuse(next_chunk))
+						{
+							unsigned long *l_tmp = chunk2mem(next_chunk);
+							printf("in inuse(next_chunk) l_tmp : %p, cur_node->addr : %p\n", l_tmp, (void *)cur_node->next->addr);
+							if(l_tmp == cur_node->next->addr)
+							{
+									printf("in inuse(next_chunk) and same\n");
+									//cur_node = cur_node->next;
+									//ptr = next_chunk(ptr);
+							}
+						}
 						printf("next_seg_ptr = %p\n", next_seg_ptr);
 						ptr = (mchunkptr)(chunksize(next_seg_ptr));
 						printf("ptr : %p\n", ptr);
 						cur_node=cur_node->next;
 						printf("ptr : %p\n", chunk2mem(ptr));
 						printf("cur_node->next->addr : %p\n", (void *)cur_node->addr);
-					
-						if(inuse(next_chunk))
-						{
-							unsigned long *l_tmp = chunk2mem(next_chunk);
-							printf("in inuse(next_chunk) l_tmp : %p, cur_node->addr : %p\n", l_tmp, (void *)cur_node->addr);
-							if(l_tmp == cur_node->addr)
-							{
-									printf("in inuse(next_chunk) and same\n");
-									cur_node = cur_node->next;
-									ptr = next_chunk(ptr);
-							}
-						}
 					}	
 					else
 					{
