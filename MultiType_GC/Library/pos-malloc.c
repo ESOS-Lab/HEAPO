@@ -570,7 +570,10 @@ if(POS_DEBUG_MALLOC == 1)
 			POS_WRITE_VAUE(name, (unsigned long *)&bin->bk, (unsigned long)bck);
 			POS_WRITE_VAUE(name, (unsigned long *)&bin->fd, (unsigned long)bin);
 #else
-			set_inuse_bit_at_offset(victim, nb);
+			//dk s
+			//set_inuse_bit_at_offset(victim, nb);
+			set_inuse_bit_at_offset(victim, chunksize(victim));
+			//dk e
 			bin->bk = bck;
 			bck->fd = bin;
 #endif
@@ -581,7 +584,7 @@ if(POS_DEBUG_MALLOC == 1)
 	}
 	else {
 //sb s
-	printf("			fastbins consolidate!\n");
+	printf("fastbins consolidate!\n");
 //sb e
 		idx = largebin_index(nb);
 
