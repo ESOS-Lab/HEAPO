@@ -81,7 +81,16 @@ int main(int argc, char *argv[])
 		printf("\n[USER] insert check[%d]\n", i);
 	}
 
+	head = NULL;
+	make_list_for_list2(TEST_OBJ_NAME, &head);
+	printf("[PRINT ALLOC LIST BEFORE DEL]\n");
+	display(head);
+	remove_list(head);
+	printf("[PRINT LIST BEFORE DEL]\n");
+	print_list(TEST_OBJ_NAME);
 	pos_delete_selected_node(TEST_OBJ_NAME, 50);
+	printf("[PRINT LIST AFTER DEL]\n");
+	print_list(TEST_OBJ_NAME);
 
 	for(i=0; i<100; i++) {
 		for(j=0; j<2; j++) {
@@ -91,79 +100,15 @@ int main(int argc, char *argv[])
 		if(pos_list_insert(TEST_OBJ_NAME, (void *)key, (void *)num[i], 8) < 0) {
 			printf("insertion failed!\n");
 		}
+		printf("[USER] print alloc list after insertion\n");
+		head = NULL;
+		make_list_for_list2(TEST_OBJ_NAME, &head);
+		//remove_list(head);
+		printf("chk\n");
+		display(head);
+		remove_list(head);
 		printf("\n[USER] insert check[%d]\n", i);
 	}
-	//printf("			delete start!\n");	
-	//pos_delete_selected_node(TEST_OBJ_NAME, 5);
-	//pos_local_gc(TEST_OBJ_NAME);
-
-	//printf("PRINT LIST IN USER]\n");
-	//print_list(TEST_OBJ_NAME);
-	//printf("\n\n");
-/*
-	for(i=0; i<100; i++) {
-		for(j=0; j<2; j++) {
-			num[i][j] = rand()%10000+99999;
-		}
-			key[0] = key[1] = rand()%100+1;
-	 	if(pos_list_insert(TEST_OBJ_NAME, (void *)key, (void *)num[i], 8) < 0) {
-			printf("insertion failed!\n");
-		}
-		printf("\n[USER] insert check[%d]\n", i);
-	}
-
-	//pos_delete_selected_node(TEST_OBJ_NAME, 50);
-
-	printf("[MAKE LIST]\n");
-	make_list_for_list2(TEST_OBJ_NAME, &head);
-	printf("[LIST PRINT]\n");
-	display(head);
-
-	printf("[DISPLAY LIST]\n");
-	print_list(TEST_OBJ_NAME);
-
-	printf("[DELETE FEW NODES]\n");
-	del_addr = get_node_addr(head, get_list_num(head)/4);
-	printf("del addr : %p\n", (void *)del_addr);
-	pos_free(TEST_OBJ_NAME, (void *)del_addr);
-	ln = (struct list_node *)pos_malloc(TEST_OBJ_NAME, sizeof(struct list_node));
-	ln->next = NULL;
-
-	del_addr = get_node_addr(head, get_list_num(head)/3);
-	printf("del addr : %p\n", (void *)del_addr);
-	ln = (struct list_node *)del_addr;
-	ln->next = NULL;
-	pos_free(TEST_OBJ_NAME, (void *)del_addr);
-	ln = (struct list_node *)pos_malloc(TEST_OBJ_NAME, sizeof(struct list_node));
-	
-	ln->next = NULL;
-	del_addr = get_node_addr(head, get_list_num(head)/2);
-	printf("del addr : %p\n", (void *)del_addr);
-	ln = (struct list_node *)del_addr;
-	ln->next = NULL;
-	pos_free(TEST_OBJ_NAME, (void *)del_addr);
-	ln = (struct list_node *)pos_malloc(TEST_OBJ_NAME, sizeof(struct list_node));
-	ln->next = NULL;
-*/
-/*
-	delete_second_node(TEST_OBJ_NAME);	
-
-	printf("[MAKE LIST2]\n");
-	make_list_for_list2(TEST_OBJ_NAME, &head2);
-	printf("[LIST2 PRINT]\n");
-	display(head2);
-
-	printf("[DISPLAY LIST AGAIN]\n");
-	print_list(TEST_OBJ_NAME);
-
-	printf("[DISTROY LIST]\n");
-	pos_list_destroy(TEST_OBJ_NAME);
-
-	remove_list(head);
-	remove_list(head2);
-	*/
-	//printf("[DISPLAY LIST]\n");
-	//print_list(TEST_OBJ_NAME);
 
 	printf("[DISTROY LIST]\n");
 	pos_list_destroy(TEST_OBJ_NAME);

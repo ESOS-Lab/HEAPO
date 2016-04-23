@@ -151,7 +151,7 @@ printf("[pos-insert] 3-1\n");
 #if CONSISTENCY == 1
 	pos_clflush_cache_range(&node->value, sizeof(node->value));
 #endif
-	printf("val1 : %lu, val2 : %lu, val_size : %d\n", val[0], val[1], val_size);
+	printf("val1 : %lu, val2 : %lu, val_size : %lu\n", val[0], val[1], val_size);
 	memcpy(node->value, val, val_size);
 #if LIST_DEBUG == 1
 printf("[pos-insert] 3-2\n");
@@ -300,7 +300,7 @@ void print_list(char *name)
 	cur_node = lh->head;
 	printf("head : %p, head->head : %p\n", lh, cur_node);
 	// repeat while next node is not NULL
-	while(cur_node->next != NULL) {
+	while(cur_node != NULL) {
 #if LIST_DEBUG == 1
 		printf("cur(%p)\tcur_next(%p)\n", cur_node, cur_node->next);
 #endif
@@ -359,10 +359,11 @@ printf("2\n");
 printf("3 i - %d\n", i);
 	prev_node->next = NULL;
 	cur_node->next = NULL;
+	printf("[delete in pos list] cur_node : %p, cur_node->value : %p\n", cur_node, (void *)cur_node->value);
 	pos_free(name, cur_node->value);
 	pos_free(name, cur_node);
 printf("4\n");
-	cur_node = NULL;	
+	//cur_node = NULL;	
 }
 
 /*
@@ -418,6 +419,7 @@ int make_list_for_list2(char *name, Node **head)
 //printf("start real\n");
 	cur_node = lh->head;
 	// repeat while next node is not NULL
+	insert_node(head, (unsigned long)lh);
 	while(cur_node != NULL) {
 		// insert current node's address in the alloc tree
 		value = cur_node->value;
