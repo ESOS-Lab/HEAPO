@@ -144,6 +144,9 @@ printf("[pos-insert] 2\n");
 	//list_state = 2;
 	//sb e
 #if LIST_DEBUG == 1
+	//dk s
+printf("[pos-insert] node : %p\n", node);
+	//dk e
 printf("[pos-insert] node->value : %p\n", node->value);
 printf("[pos-insert] 3-1\n");
 #endif
