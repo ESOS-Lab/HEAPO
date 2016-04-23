@@ -361,27 +361,43 @@ printf("list_state : %d\n", list_state);
 					break;
 				}
 			}
-			else if(list_state == 2 && chunk_is_last(ptr) == 0x4) {
+			else if(list_state == 2 && chunk_is_last(ptr) == 0x4) 
+			{
 				printf("in list state 2-0\n");
 				next_seg_ptr = next_seg(ms_ptr->last_chunk_pointer, chunksize(ms_ptr->last_chunk_pointer));
-				printf("last chunk p : %p, next_chunk : %p\n", ms_ptr->last_chunk_pointer, next_chunk);
-			  next_seg_ptr = next_seg(next_chunk, chunksize(next_chunk));
-				printf("next_seg_ptr : %p\n", (void *)chunksize(next_seg_ptr));
-				if(chunksize(next_seg_ptr) != 0)
-				//if(next_seg_ptr != (void *)0)
+				//printf("last chunk p : %p, next_chunk : %p\n", ms_ptr->last_chunk_pointer, next_chunk);
+				next_seg_ptr = next_seg(next_chunk, chunksize(next_chunk));
+				//printf("next_seg_ptr : %p\n", (void *)chunksize(next_seg_ptr));
+				//dk s
+				mem_ptr = chunk2mem(ptr);
+										
+				printf("mem_ptr : %p, next_seg_ptr : %p\n", mem_ptr, (void *)chunksize(next_seg_ptr));
+				if((void *)cur_node->addr == mem_ptr)
 				{
-					printf("there is no next_seg\n");
-					printf("next_seg_ptr = %p\n", next_seg_ptr);
-					ptr = (mchunkptr)(chunksize(next_seg_ptr));
-					printf("ptr : %p\n", ptr);
-					cur_node = cur_node->next;
+					if(chunksize(next_seg_ptr) != 0)
+					//if(next_seg_ptr != (void *)0)
+					{
+						printf("next_seg_ptr = %p\n", next_seg_ptr);
+						ptr = (mchunkptr)(chunksize(next_seg_ptr));
+						printf("ptr : %p\n", ptr);
+						cur_node = cur_node->next;
+					}
+					else
+					{
+						printf("there is no next_seg\n");
+						//printf("in list_state 2-2\n");
+						break;
+					}
+					printf("in list_state 2-3\n");	
 				}
-				else
+				else //there is garbage
 				{
-					printf("in list_state 2-2\n");
-					break;
+					mem_ptr = chunk2mem(ptr);
+					pos_free(name, mem_ptr);
+					printf("[local gc] ptr(%p) is garbage -> freed!\n", mem_ptr);
+					printf("[local gc] garbage count : %lu\n", garbage_count);
 				}
-				printf("in list_state 2-3\n");
+				//dk e
 			}
 			printf("before while\n");	
 			
