@@ -215,6 +215,10 @@ if(POS_DEBUG_MALLOC == 1)
 {
 printf("[gc] 2\n");
 }
+    //dk s
+    alloc_list_head = NULL;
+    //dk e
+
 	if(type == 1) // linked list
 	{
 		make_list_for_list((struct list_head *)p, &alloc_list_head);
@@ -244,17 +248,17 @@ printf("[gc] 2\n");
 	printf("\n");	
 #endif
 
-	if(alloc_list_head == NULL) {
+	if(alloc_list_head == NULL) 
+    {
 		printf("[local gc] allocation list is NULL!\n");
 		return -1;
 	}
-	else {
+	else 
+	{
 #if POS_DEBUG_MALLOC == 1
 	printf("[local gc] list node size : %lu\n", sizeof(struct list_node));
 	printf("[local gc] value * 2 : %lu\n", sizeof(unsigned long)*2);
 #endif
-		//error
-		printf("wrong storage type!\n");
 	}
 
 #if POS_DEBUG_MALLOC == 1

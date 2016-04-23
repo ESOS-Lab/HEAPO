@@ -357,9 +357,6 @@ printf("2\n");
 		return 0;
 	}
 printf("3 i - %d\n", i);
-	//dk s
-    lh->head = cur_node->next; 
-	//dk e
     prev_node->next = NULL;
 	cur_node->next = NULL;
 	
@@ -397,8 +394,8 @@ int make_list_for_list(struct list_head *lh, Node **head)
 	insert_node(head, (unsigned long)lh);
 	while(cur_node != NULL) {
 		// insert current node's address in the alloc tree
-		value = cur_node->value;
 		insert_node(head, (unsigned long)cur_node);
+		value = cur_node->value;
 		if(value != NULL)
 			insert_node(head, (unsigned long)value);
 #if LIST_DEBUG == 1
