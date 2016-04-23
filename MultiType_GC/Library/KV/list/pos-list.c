@@ -357,8 +357,12 @@ printf("2\n");
 		return 0;
 	}
 printf("3 i - %d\n", i);
-	prev_node->next = NULL;
+	//dk s
+    lh->head = cur_node->next; 
+	//dk e
+    prev_node->next = NULL;
 	cur_node->next = NULL;
+	
 	printf("[delete in pos list] cur_node : %p, cur_node->value : %p\n", cur_node, (void *)cur_node->value);
 	pos_free(name, cur_node->value);
 	pos_free(name, cur_node);
