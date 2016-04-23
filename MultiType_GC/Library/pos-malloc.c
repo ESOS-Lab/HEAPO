@@ -432,7 +432,7 @@ printf("list_state : %d\n", list_state);
 							printf("next_seg_ptr = %p\n", next_seg_ptr);
 							ptr = (mchunkptr)(chunksize(next_seg_ptr));
 							printf("ptr : %p\n", ptr);
-							cur_node = cur_node->next
+							cur_node = cur_node->next;
 						}
 						else //if last chunk is free
 						{
