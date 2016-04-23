@@ -53,14 +53,20 @@ int insert_node(Node **head, unsigned long addr)
   if(*head == NULL || addr < (*head)->addr) {
     new_node->next = *head;
     *head = new_node;
-  } else {
+  } 
+  else 
+  {
     cur_node = *head;
-    while(cur_node->next != NULL && cur_node->next->addr <= addr) {
+    while(cur_node->next != NULL && cur_node->next->addr <= addr) 
+	{
       cur_node = cur_node->next;
     }   
-    if(cur_node->next == NULL) {
+    if(cur_node->next == NULL) 
+    {
       cur_node->next = new_node;
-    } else {
+    } 
+	else 
+	{
       if(cur_node->next->addr == addr)
         return -1; 
         

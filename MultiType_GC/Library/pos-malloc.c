@@ -412,7 +412,9 @@ printf("list_state : %d\n", list_state);
 			{
 				ptr = (mchunkptr)(chunksize(next_seg_ptr));
 				printf("ptr : %p\n", ptr);
-				cur_node=cur_node->next;
+				//dk s
+				//cur_node=cur_node->next; //Error : infiniti loop
+				//dk e
 				printf("mem_ptr : %p\n", chunk2mem(ptr));
 			}
 		}
