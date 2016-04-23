@@ -386,7 +386,10 @@ int make_list_for_list(struct list_head *lh, Node **head)
 	//struct list_head *lh;
 	struct list_node *cur_node;
 	unsigned long *value;
-
+	//dk s
+	int loop_count = 0; //for debugging
+	//dk e 
+	
 	//lh = (struct list_head *)pos_get_prime_object(name);
 	//printf("lh : %p, *head : %p\n", lh, *head);	
 	if(lh == NULL)
@@ -405,6 +408,13 @@ int make_list_for_list(struct list_head *lh, Node **head)
 		printf("cur_node(%p), value(%p), inserted\n", cur_node, value);
 #endif
 		cur_node = cur_node->next;
+		//dk s
+		loop_count++;
+		if(loop_count > 200)
+		{
+			return 1;
+		}
+		
 	}
 
 	return 1;
