@@ -223,7 +223,7 @@ printf("[gc] 2\n");
 	{
 		//dk s
 		int list_ret = 0; //for debugging
-		ret = make_list_for_list((struct list_head *)p, &alloc_list_head);
+		list_ret = make_list_for_list((struct list_head *)p, &alloc_list_head);
 		if(ret > 0)
 		{
 			printf("make_list_for_list ERROR\n");
