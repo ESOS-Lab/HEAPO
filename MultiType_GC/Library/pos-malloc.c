@@ -224,7 +224,7 @@ printf("[gc] 2\n");
 		//dk s
 		int list_ret = 0; //for debugging
 		list_ret = make_list_for_list((struct list_head *)p, &alloc_list_head);
-		if(list_ret > 0)
+		if(list_ret == -1)
 		{
 			printf("make_list_for_list ERROR\n");
 			return;

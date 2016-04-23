@@ -412,7 +412,7 @@ int make_list_for_list(struct list_head *lh, Node **head)
 		loop_count++;
 		if(loop_count > 200)
 		{
-			return 1;
+			return -1;
 		}
 		
 	}
