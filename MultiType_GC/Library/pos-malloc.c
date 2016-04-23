@@ -299,7 +299,7 @@ printf("[gc] 3\n");
 
 			list_state = get_list_state();
 			next_chunk = next_chunk(ptr);
-printf("list_state : %d\n", list_state);
+			printf("list_state : %d\n", list_state);
 			if(list_state == 1 && chunk_is_last(next_chunk) == 0x4) 
 			{
 				//next_seg_ptr = next_seg(ms_ptr->last_chunk_pointer, chunksize(ms_ptr->last_chunk_pointer));
@@ -317,11 +317,11 @@ printf("list_state : %d\n", list_state);
 						if(inuse(next_chunk)) //if last chunk is in use
 						{
 							unsigned long *l_tmp = chunk2mem(next_chunk); //ptr of last chunk
-							printf("in inuse(next_chunk) l_tmp : %p, cur_node->addr : %p\n", l_tmp, (void *)cur_node->next->addr);
+							printf("in inuse(next_chunk) l_tmp : %p, cur_node->next->addr : %p\n", l_tmp, (void *)cur_node->next->addr);
 							if(l_tmp == (void *)cur_node->next->addr) //last chunk is not garbage
 							{
 								printf("in inuse(next_chunk) and same\n");
-								cur_node = cur_node->next;
+								cur_node = cur_node->next->next;
 								//dk s
 								ptr = (mchunkptr)(chunksize(next_seg_ptr));
 								//dk e
@@ -380,7 +380,7 @@ printf("list_state : %d\n", list_state);
 							if(l_tmp == (void *)cur_node->next->addr) //last chunk is not garbage
 							{
 								printf("in inuse(next_chunk) and same\n");
-								cur_node = cur_node->next;
+								cur_node = cur_node->next->next;
 								//dk s
 								ptr = (mchunkptr)(chunksize(next_seg_ptr));
 								//dk e
