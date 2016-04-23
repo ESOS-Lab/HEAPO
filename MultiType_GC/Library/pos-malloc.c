@@ -364,9 +364,9 @@ printf("list_state : %d\n", list_state);
 			else if(list_state == 2 && chunk_is_last(ptr) == 0x4) 
 			{
 				printf("in list state 2-0\n");
-				next_seg_ptr = next_seg(ms_ptr->last_chunk_pointer, chunksize(ms_ptr->last_chunk_pointer));
+				//next_seg_ptr = next_seg(ms_ptr->last_chunk_pointer, chunksize(ms_ptr->last_chunk_pointer));
 				//printf("last chunk p : %p, next_chunk : %p\n", ms_ptr->last_chunk_pointer, next_chunk);
-				next_seg_ptr = next_seg(next_chunk, chunksize(next_chunk));
+				next_seg_ptr = next_seg(ptr, chunksize(ptr));
 				//printf("next_seg_ptr : %p\n", (void *)chunksize(next_seg_ptr));
 				//dk s
 				mem_ptr = chunk2mem(ptr);
