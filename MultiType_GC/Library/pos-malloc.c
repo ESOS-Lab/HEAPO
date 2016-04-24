@@ -299,7 +299,7 @@ printf("[gc] 3\n");
 		{
 			printf("[local gc] chunk is last\n");
 		}
-		printf("[local gc] last allocated chunk : %p\n", ms_ptr->last_allocated_pointer);
+		printf("[local gc] last allocated chunk : %p\n", ms_ptr->last_allocated_chunk);
 #endif
 		//total_chunks_size += chunksize(ptr);
 //		while(!inuse(ptr))
