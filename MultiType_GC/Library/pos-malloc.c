@@ -160,7 +160,7 @@ GC_NODE create_gc_node(GC_NODE *node)
 //dk s
 int pos_local_gc(char* name)
 {
-	mchunkptr ptr, next_chunk, next_seg_ptr;
+	mchunkptr ptr, nextchunk, next_seg_ptr;
 	void *mem_ptr;
 	void *p;
 	short obj_type = 0;
@@ -340,13 +340,13 @@ printf("[gc] 3\n");
 				}
 			}
 		 }
-		next_chunk = next_chunk(ptr);
+		nextchunk = next_chunk(ptr);
 		if(chunk_is_last(ptr) == 0x4 && ptr == ms_ptr->last_allocated_chunk)
 		{
 			printf("partial allocated case 1\n");
 			break;
 		}
-		else if(chunk_is_last(next_chunk) = 0x4 && ptr == ms_ptr->last_allocated_chunk)
+		else if(chunk_is_last(nextchunk) == 0x4 && ptr == ms_ptr->last_allocated_chunk)
 		{
 			printf("partial allocated case 1\n");
 			break;
