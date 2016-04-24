@@ -359,6 +359,7 @@ printf("[gc] 3\n");
 								printf("[local gc] ptr(%p) is garbage -> freed!\n", l_tmp);
 								garbage_count++;
 								printf("[local gc] garbage count : %lu\n", garbage_count);
+								cur_node = cur_node->next;
 								ptr = (mchunkptr)(chunksize(next_seg_ptr));
 								//dk e
 							}
@@ -376,7 +377,7 @@ printf("[gc] 3\n");
 						//cur_node=cur_node->next;
 						//printf("ptr : %p\n", chunk2mem(ptr));
 						//printf("cur_node->next->addr : %p\n", (void *)cur_node->addr);
-						printf("last-1 chunk is not a garbage\n");
+						//printf("last-1 chunk is not a garbage\n");
 						//dk e
 					}	
 					else //last-1 chunk is garbage
