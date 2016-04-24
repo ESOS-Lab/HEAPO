@@ -482,8 +482,7 @@ printf("[gc] 3\n");
 			ptr = next_chunk(ptr);
 		}
 		//dk s
-		/*
-		if(chunk_is_last(ptr) == 0x4)
+		if(chunk_is_last(ptr) == 0x4) //all chunks in this segment are garbage
 		{
 #if POS_DEBUG_MALLOC == 1
 			printf("[local gc] 4\n");
@@ -501,7 +500,6 @@ printf("[gc] 3\n");
 				printf("mem_ptr : %p\n", chunk2mem(ptr));
 			}
 		}
-		*/
 		//dk e
 	}
 	printf("before remove\n");
