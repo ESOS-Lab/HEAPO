@@ -1077,6 +1077,7 @@ struct malloc_state {
 	Void_t *prime_obj;
 	struct node_info node_obj;
 	mchunkptr last_chunk_pointer;
+	mchunkptr last_allocated_chunk;
 };
 
 struct malloc_state;
