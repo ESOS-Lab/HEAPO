@@ -699,6 +699,7 @@ errout:
 #endif
 			void *p = chunk2mem(victim);
 			//dk s
+			printf("chunk %p, mem %p is alloced\n", victim, p);
 			set_inuse(victim);
 			//dk e
 			return p;
