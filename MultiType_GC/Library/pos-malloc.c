@@ -368,7 +368,8 @@ printf("[gc] 3\n");
 						}
 						else //if last chunk is free
 						{
-							//nothing to do because pointer jump is done at the last of mail while();
+							printf("last chunk is a free chunk\n");
+							ptr = (mchunkptr)(chunksize(next_seg_ptr));
 						}
 						//dk s
 						//printf("next_seg_ptr = %p\n", next_seg_ptr);
@@ -414,7 +415,8 @@ printf("[gc] 3\n");
 						}
 						else //if last chunk is free
 						{
-							//nothing to do ~~~
+							printf("last chunk is a free chunk/n");
+							ptr = (mchunkptr)(chunksize(next_seg_ptr));
 						}
 					}
 				}
@@ -440,23 +442,16 @@ printf("[gc] 3\n");
 				
 				if(chunksize(next_seg_ptr) != 0) //there is next seg
 				{
-					if((void *)cur_node->addr == mem_ptr) //last chunk is not garbage 
+					if(inuse(ptr)) //if last chunk is in-use...
 					{
-						if(inuse(ptr)) //if last chunk is in-use...
+						if((void *)cur_node->addr == mem_ptr) //last chunk is not garbage 
 						{
 							printf("next_seg_ptr = %p\n", next_seg_ptr);
 							ptr = (mchunkptr)(chunksize(next_seg_ptr));
 							printf("ptr : %p\n", ptr);
 							cur_node = cur_node->next;
 						}
-						else //if last chunk is free
-						{
-							//nothing to do, impossbile condition
-						}
-					}
-					else //last chunk is garbage
-					{
-						if(inuse(ptr)) //if last chunk is in-use -> this chunk is garbage
+						else //last chunk is garbage
 						{
 							printf("[local gc] list_state = %d, last = garbage\n", list_state);
 							pos_free(name, mem_ptr);
@@ -465,11 +460,11 @@ printf("[gc] 3\n");
 							printf("[local gc] garbage count : %lu\n", garbage_count);
 							ptr = (mchunkptr)(chunksize(next_seg_ptr));
 						}
-						else //this is not a garbage, just free chunk
-						{
-							printf("[local gc] this is not a garbage, just free chunk\n");
-							ptr = (mchunkptr)(chunksize(next_seg_ptr));
-						}
+					}
+					else //last chunk is free chunk
+					{
+						printf("last chunk is a free chunk\n");
+						ptr = (mchunkptr)(chunksize(next_seg_ptr));
 					}
 				}
 				else //there is no next seg
