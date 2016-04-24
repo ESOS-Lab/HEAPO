@@ -306,10 +306,14 @@ printf("[gc] 3\n");
 		mem_ptr = chunk2mem(ptr);
 		printf("[local gc] mem_ptr : %p\n", mem_ptr);
 		
-		while(!inuse(ptr)) //if next chunk is free, pass free chunks
+		while(inuse(ptr) != 0x1) //if next chunk is free, pass free chunks
 		{
 #if POS_DEBUG_MALLOC == 1
 			printf("[local gc] 0\n");
+			printf("[local gc] chunk addr : %p\n", ptr);
+			printf("[local gc] chunk size : %lu\n", chunksize(ptr));
+			mem_ptr = chunk2mem(ptr);
+			printf("[local gc] mem_ptr : %p\n", mem_ptr);
 #endif
 			ptr = next_chunk(ptr);
 			if(chunk_is_last(ptr) == 0x4)
