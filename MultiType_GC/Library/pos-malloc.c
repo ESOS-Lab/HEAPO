@@ -331,7 +331,7 @@ printf("[gc] 3\n");
 					printf("jump to next segment\n");
 #endif
 					ptr = (mchunkptr)(chunksize(next_seg_ptr));
-					goto while_first:
+					goto while_first;
 				}
 				else
 				{
