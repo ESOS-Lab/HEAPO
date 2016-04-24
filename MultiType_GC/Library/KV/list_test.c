@@ -20,7 +20,6 @@
 *	[FINISH PROGRAM] 부분 : allocation list, allocation list2 할당 해지
 */
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -28,11 +27,6 @@
 #include <pos-lib.h>
 #include <pos-list.h>
 #include <alloc_list.h>
-//#include "list/pos-list.h"
-//#include "alloc_list/alloc_list.h"
-
-//#define TEST_OBJ_NAME "objadbA"
-//#define TEST_OBJ_NAME "obj9"
 
 int main(int argc, char *argv[])
 {
@@ -46,7 +40,6 @@ int main(int argc, char *argv[])
   int obj_size=32;
   int key_num=2;
   int val_num=2;
-  short tmp=0;
 	char TEST_OBJ_NAME[100] = {0, };
 	int count=0;
 
@@ -59,7 +52,7 @@ int main(int argc, char *argv[])
 	}
 	printf("node size = %lu\n", sizeof(struct list_node));
 
-	 printf("obj_type = %d\n", obj_type);
+	printf("obj_type = %d\n", obj_type);
   syscall(307, TEST_OBJ_NAME, &obj_type, &obj_size, &key_num, &val_num);
 
 	printf("[MAP POS]\n");
@@ -67,10 +60,8 @@ int main(int argc, char *argv[])
 	printf("[INSERT LIST NODES]\n");	
 	srand(time(NULL));
 
-	count = atoi(argv[2]);
-	//printf("count = %d\n", count);
-	
-	for(i=0; i<100; i++) {
+	count = atoi(argv[2]);	
+	for(i=0; i<count; i++) {
 		for(j=0; j<2; j++) {
 			num[i][j] = rand()%10000+99999;
 		}
@@ -88,27 +79,25 @@ int main(int argc, char *argv[])
 	remove_list(head);
 	printf("[PRINT LIST BEFORE DEL]\n");
 	print_list(TEST_OBJ_NAME);
-	pos_delete_selected_node(TEST_OBJ_NAME, 50);
+	pos_delete_selected_node(TEST_OBJ_NAME, 100);
 	printf("[PRINT LIST AFTER DEL]\n");
 	print_list(TEST_OBJ_NAME);
 
-	for(i=0; i<100; i++) {
+	for(i=0; i<count; i++) {
 		for(j=0; j<2; j++) {
-			num[i][j] = rand()%10000+99999;
+			num[count+i][j] = rand()%10000+99999;
 		}
 		key[0] = key[1] = rand()%100+1;
-		if(pos_list_insert(TEST_OBJ_NAME, (void *)key, (void *)num[i], 8) < 0) {
+		if(pos_list_insert(TEST_OBJ_NAME, (void *)key, (void *)num[i+count], 8) < 0) {
 			printf("insertion failed!\n");
 		}
-		printf("[USER] print alloc list after insertion\n");
-		head = NULL;
-		make_list_for_list2(TEST_OBJ_NAME, &head);
-		//remove_list(head);
-		printf("chk\n");
-		display(head);
-		remove_list(head);
-		printf("\n[USER] insert check[%d]\n", i);
 	}
+
+	printf("[PRINT ALLOC LIST BEFORE FINISH PROGRAM]\n");
+	head = NULL;
+	make_list_for_list2(TEST_OBJ_NAME, &head);
+	display(head);
+	remove_list(head);
 
 	printf("[DISTROY LIST]\n");
 	pos_list_destroy(TEST_OBJ_NAME);

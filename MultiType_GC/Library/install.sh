@@ -2,6 +2,7 @@ cp pos-lib.h /usr/include/ &&
 cp pos-malloc.h /usr/include/ &&
 cp KV/list/pos-list.h /usr/include/ &&
 cp KV/hashtable/pos-hashtable.h /usr/include &&
+cp KV/hashtable/pos-hashtable_private.h /usr/include &&
 cp KV/btree/pos-btree.h /usr/include &&
 cp KV/alloc_list/alloc_list.h /usr/include &&
 gcc -fPIC -c -o pos-lib.o pos-lib.c &&

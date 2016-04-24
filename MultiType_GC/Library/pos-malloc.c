@@ -183,21 +183,21 @@ int pos_local_gc(char* name)
 	printf("\n");	
 #endif
 
-#if POS_DEBUG_MALLOC == 1
-	printf("[local gc] pos list status before gc\n");
+//#if POS_DEBUG_MALLOC == 1
+	//printf("[local gc] pos list status before gc\n");
 	//display(alloc_list_head);
 	//print_list(name);
-	printf("\n");	
-#endif
+	//printf("\n");	
+//#endif
 
 #if POS_DEBUG_MALLOC == 1
-		printf("[local gc] GC start!\n");
+	printf("[local gc] GC start!\n");
 #endif
 
-if(POS_DEBUG_MALLOC == 1)
-{
-printf("[gc] 1\n");
-}
+//if(POS_DEBUG_MALLOC == 1)
+//{
+//printf("[gc] 1\n");
+//}
 	//obj_type = pos_get_object_type(name);
 	syscall(308, name, &obj_type);
 
@@ -234,11 +234,25 @@ printf("[gc] 2\n");
 	}
 	else if(type == 2) //b-tree
 	{
-		make_list_for_btree((struct btree_head *)p, &alloc_list_head);
+		//sb s
+	  //return;
+		int btree_ret = 0;
+		btree_ret = make_list_for_btree((struct btree_head *)p, &alloc_list_head);
+		if(btree_ret == -1)
+		{
+			printf("make_list_for_btree ERRO\n");
+		}
+		//sb e
 	}
 	else if(type == 3) //hash
 	{
-		make_list_for_hashtable((struct hashtable *)p, &alloc_list_head);
+		int hash_ret = 0;
+		hash_ret = make_list_for_hashtable((struct hashtable *)p, &alloc_list_head);
+		if(hash_ret == -1)
+		{
+			printf("make_list_for_hash ERROR\n");
+			return;
+		}
 	}
 	else
 	{
@@ -251,9 +265,9 @@ printf("[gc] 2\n");
 	printf("[local gc] allocation list status\n");
 	display(alloc_list_head);
 	printf("\n");
-	printf("[local gc] pos list status\n");
-	print_list(name);
-	printf("\n");	
+	//printf("[local gc] pos list status\n");
+	//print_list(name);
+	//printf("\n");	
 #endif
 
 	if(alloc_list_head == NULL) 
@@ -278,7 +292,9 @@ printf("[gc] 3\n");
 #if POS_DEBUG_MALLOC == 1
 		printf("[local gc] chunk addr : %p\n", ptr);
 		printf("[local gc] chunk size : %lu\n", chunksize(ptr));
-		printf("[local gc] cur_node->addr : %p\n", (void *)cur_node->addr);
+		if(cur_node != NULL)
+			printf("[local gc] cur_node->addr : %p\n", (void *)cur_node->addr);
+		printf("chk\n");
 #endif
 		//total_chunks_size += chunksize(ptr);
 //		while(!inuse(ptr))
@@ -297,7 +313,16 @@ printf("[gc] 3\n");
 			ptr = next_chunk(ptr);
 			printf("is last? : %d\n", (int)chunk_is_last(ptr));
 
-			list_state = get_list_state();
+			//sb s
+			//list_state = get_list_state();
+			switch(type)
+			{
+				case 1 : list_state = get_list_state(); printf("list state!\n"); break;
+				case 2 : list_state = get_btree_state(); printf("btree state!\n"); break;
+				case 3 : list_state = get_hash_state(); printf("hashtable state!\n"); break;
+				default : printf("[local gc] wrong type!\n"); return;
+			}
+			//sb e
 			next_chunk = next_chunk(ptr);
 			printf("list_state : %d\n", list_state);
 			if(list_state == 1 && chunk_is_last(next_chunk) == 0x4) 
@@ -531,15 +556,20 @@ if(POS_DEBUG_MALLOC == 1)
 printf("[gc] 4\n");
 }
 
-//	printf("[local gc] PRINT ALLOC LIST AGAIN]\n");
+	printf("[local gc] PRINT ALLOC LIST AGAIN]\n");
+	//sb s
 	alloc_list_head = NULL;
-	make_list_for_list((struct list_head *)p, &alloc_list_head);
+	switch(type)
+	{
+		case 1 : make_list_for_list((struct list_head *)p, &alloc_list_head); break;
+		case 2 : make_list_for_btree((struct btree_head *)p, &alloc_list_head); break;
+		case 3 : make_list_for_hashtable((struct hashtable *)p, &alloc_list_head); break;
+	}
 	display(alloc_list_head);
-//	printf("[local gc] print pos list status\n");
-//	print_list(name);
 	
 	printf("[local gc] REMOVE ALLOC LIST AND FINISH GC\n");
 	remove_list(alloc_list_head);
+	//sb e
 
 	return 0;
 }
@@ -761,6 +791,7 @@ if(POS_DEBUG_MALLOC == 1)
 					if((unsigned long)av->last_chunk_pointer < (unsigned long)remainder)
 					{
 						printf("remainder : %p, is_last : %lu\n", remainder, chunk_is_last(remainder));
+						printf("victim : %p\n", victim);
 						av->last_chunk_pointer = remainder;
 					}
 					//dk e

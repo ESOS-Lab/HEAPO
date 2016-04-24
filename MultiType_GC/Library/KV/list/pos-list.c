@@ -101,9 +101,9 @@ int pos_list_insert(char *name, void *_key, void *_val, unsigned long val_size)
 	unsigned long *key, *val;
 	int i;
 
-#if LIST_DEBUG == 1
-printf("[pos-insert] start\n");
-#endif
+//#if LIST_DEBUG == 1
+//printf("[pos-insert] start\n");
+//#endif
 
 #if CONSISTENCY == 1
 	pos_transaction_start(name, POS_TS_INSERT);
@@ -113,9 +113,9 @@ printf("[pos-insert] start\n");
 	val = (unsigned long *)_val;
 	
 	head = (struct list_head *)pos_get_prime_object(name);
-#if LIST_DEBUG == 1
-printf("[pos-insert] 1\n");
-#endif
+//#if LIST_DEBUG == 1
+//printf("[pos-insert] 1\n");
+//#endif
 	node = (struct list_node *)pos_malloc(name, sizeof(struct list_node));
 	//dk s
 	memset(node, 0, sizeof(struct list_node));
@@ -124,9 +124,9 @@ printf("[pos-insert] 1\n");
 	list_state = 1;
 //	insert_node(&alloc_head, (unsigned long)node);
 	//sb e
-#if LIST_DEBUG == 1
-printf("[pos-insert] 2\n");
-#endif
+//#if LIST_DEBUG == 1
+//printf("[pos-insert] 2\n");
+//#endif
 	for (i=0; i<KEY_SIZE; i++) {
 		node->key[i] = key[i];
 	}
@@ -143,30 +143,30 @@ printf("[pos-insert] 2\n");
 	//insert_node(&alloc_head, (unsigned long)node->value);
 	//list_state = 2;
 	//sb e
-#if LIST_DEBUG == 1
+//#if LIST_DEBUG == 1
 	//dk s
-printf("[pos-insert] node : %p\n", node);
+//printf("[pos-insert] node : %p\n", node);
 	//dk e
-printf("[pos-insert] node->value : %p\n", node->value);
-printf("[pos-insert] 3-1\n");
-#endif
+//printf("[pos-insert] node->value : %p\n", node->value);
+//printf("[pos-insert] 3-1\n");
+//#endif
 
 #if CONSISTENCY == 1
 	pos_clflush_cache_range(&node->value, sizeof(node->value));
 #endif
-	printf("val1 : %lu, val2 : %lu, val_size : %lu\n", val[0], val[1], val_size);
+	//printf("val1 : %lu, val2 : %lu, val_size : %lu\n", val[0], val[1], val_size);
 	memcpy(node->value, val, val_size);
-#if LIST_DEBUG == 1
-printf("[pos-insert] 3-2\n");
-#endif
+//#if LIST_DEBUG == 1
+//printf("[pos-insert] 3-2\n");
+//#endif
 
 #if CONSISTENCY == 1
 	pos_clflush_cache_range(node->value, val_size);
 #endif
 	node->next = head->head;
-#if LIST_DEBUG == 1
-printf("[pos-insert] 3-3\n");
-#endif
+//#if LIST_DEBUG == 1
+//printf("[pos-insert] 3-3\n");
+//#endif
 
 #if CONSISTENCY == 1
 	pos_clflush_cache_range(&node->next, sizeof(node->next));
@@ -182,18 +182,18 @@ printf("[pos-insert] 3-3\n");
 	//sb s
 	list_state = 2;
 	//sb e
-#if LIST_DEBUG == 1
-printf("[pos-insert] 3-4\n");
-#endif
+//#if LIST_DEBUG == 1
+//printf("[pos-insert] 3-4\n");
+//#endif
 
 #endif
 #elif MODE == 2
 	head->head = node - OFFSET_BASE;
 #endif
 
-#if LIST_DEBUG == 1
-	printf("[pos-insert] fin\n");
-#endif
+//#if LIST_DEBUG == 1
+//	printf("[pos-insert] fin\n");
+//#endif
 
 	return 0;
 }
@@ -404,16 +404,16 @@ int make_list_for_list(struct list_head *lh, Node **head)
 		value = cur_node->value;
 		if(value != NULL)
 			insert_node(head, (unsigned long)value);
-#if LIST_DEBUG == 1
-		printf("cur_node(%p), value(%p), inserted\n", cur_node, value);
-#endif
+//#if LIST_DEBUG == 1
+//		printf("cur_node(%p), value(%p), inserted\n", cur_node, value);
+//#endif
 		cur_node = cur_node->next;
 		//dk s
-		loop_count++;
-		if(loop_count > 200)
-		{
-			return -1;
-		}
+//		loop_count++;
+//		if(loop_count > 200)
+//		{
+//			return -1;
+//		}
 		
 	}
 
@@ -439,9 +439,9 @@ int make_list_for_list2(char *name, Node **head)
 		value = cur_node->value;
 		insert_node(head, (unsigned long)cur_node);
 		insert_node(head, (unsigned long)value);
-#if LIST_DEBUG == 1
-		printf("cur_node(%p), value(%p), inserted\n", cur_node, value);
-#endif
+//#if LIST_DEBUG == 1
+//		printf("cur_node(%p), value(%p), inserted\n", cur_node, value);
+//#endif
 		cur_node = cur_node->next;
 	}
 	return 1;

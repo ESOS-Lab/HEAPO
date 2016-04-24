@@ -25,6 +25,12 @@
 #define pos_write_value	pos_write_value_kv
 #define LOG_CNT_ON		0
 
+//sb s
+#define HASH_DEBUG	1
+
+unsigned int hash_state = 0;
+//sb e
+
 
 /*
 Credit for primes table: Aaron Krowne
@@ -319,6 +325,10 @@ hashtable_insert(char *name, struct hashtable *h, unsigned long *k, unsigned lon
     e = (struct entry *)pos_malloc(name, sizeof(struct entry));
     if (NULL == e) { --(h->entrycount); return -1; } /*oom*/
 
+		//sb s
+		hash_state = 1;
+		//sb e
+
     e->h = hash(h,k);
 //#if CONSISTENCY == 1
     //pos_clflush_cache_range(&e->h, sizeof(e->h));
@@ -358,7 +368,10 @@ hashtable_insert(char *name, struct hashtable *h, unsigned long *k, unsigned lon
 #if CONSISTENCY == 1
 	pos_transaction_end(name);
 #endif
-//printf("[insert] index : %d, e : 0x%p\n", index, e);
+	
+	//sb s
+	hash_state = 2;
+	//sb e
 
     //return -1;
     return 0;
@@ -451,18 +464,21 @@ hashtable_remove(char *name, struct hashtable *h, unsigned long *k)
         if ((hashvalue == e->h) && (h->eqfn(k, e->k)))
         {
 #if CONSISTENCY == 1
-            pos_write_value(name, (unsigned long *)pE , (unsigned long)e->next);
-            pos_write_value(name, (unsigned long *)&h->entrycount, (unsigned long)(h->entrycount-1));
+            //pos_write_value(name, (unsigned long *)pE , (unsigned long)e->next);
+            //pos_write_value(name, (unsigned long *)&h->entrycount, (unsigned long)(h->entrycount-1));
 #else
-            *pE = e->next;
-            h->entrycount--;
+			//sb s -> change for making garbage!      
+						*pE = NULL;
+            //*pE = e->next;
+            //h->entrycount--;
             //v = e->v;
 #endif
 
             //freekey(e->k);
             //free(e);
-            pos_free(name, e->v);
-            pos_free(name, e);
+					  //pos_free(name, e->v);
+      //pos_free(name, e);
+			//sb e
 
 #if CONSISTENCY == 1
 		pos_transaction_end(name);
@@ -568,6 +584,14 @@ pos_hashtable_destroy(char *name)
 	return 0;
 }
 
+//sb s
+unsigned int get_hash_state()
+{
+	return hash_state;
+}
+//sb e
+
+//sb s
 /*
 * int make_list_for_hashtable(struct hashtable *h, Node **head)
 * 입력 값
@@ -585,16 +609,16 @@ pos_hashtable_destroy(char *name)
 */
 int make_list_for_hashtable(struct hashtable *h, Node **head)
 {
-	//struct hashtable *h;
 	int i;
 	struct entry *e;
 	unsigned long *value;
+	int idx=0;
 
-	//h = (struct hashtable *)pos_get_prime_object(name);	
 	if(h == NULL)
 		return 0;
 
-	//printf("tablelength : %d\n", h->tablelength);
+	insert_node(head, (unsigned long)h);
+	insert_node(head, (unsigned long)h->table);
 	for(i=0; i<h->tablelength; i++) {
 		e = h->table[i];
 
@@ -602,38 +626,41 @@ int make_list_for_hashtable(struct hashtable *h, Node **head)
 			value = e->v;
 			insert_node(head, (unsigned long)e);
 			insert_node(head, (unsigned long)value);
-			printf("[index : %d]e : %p, v : %p inserted\n", i, e, value);
+			printf("[%d](tbl idx : %d)e : %p, v : %p inserted\n", idx, i, e, value);
 			e = e->next;
-			//printf("next e : %p\n", e);
+			idx++;
 		}
 	}	
 
 	return 1;
 }
+//sb e
 
+//sb s
 int make_list_for_hashtable2(char *name, Node **head)
 {
 	struct hashtable *h;
 	int i;
 	struct entry *e;
 	unsigned long *value;
+	int idx=0;
 
 	h = (struct hashtable *)pos_get_prime_object(name);	
 	if(h == NULL)
 		return 0;
 
-	//printf("tablelength : %d\n", h->tablelength);
+	insert_node(head, (unsigned long)h);
+	insert_node(head, (unsigned long)h->table);
 	for(i=0; i<h->tablelength; i++) {
 		e = h->table[i];
 
-//		if(e != NULL) {
 		while(NULL != e) {
 			value = e->v;
 			insert_node(head, (unsigned long)e);
 			insert_node(head, (unsigned long)value);
-			printf("[index : %d]e : %p, v : %p inserted\n", i, e, value);
+			printf("[%d][index : %d]e : %p, v : %p inserted\n", idx, i, e, value);
 			e = e->next;
-			//printf("next e : %p\n", e);
+			idx++;
 		}
 	}	
 

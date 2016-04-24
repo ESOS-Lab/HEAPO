@@ -68,6 +68,8 @@
 
 //son s
 #define BTREE_DEBUG		1
+
+unsigned int btree_state = 0;
 //son e
 
 #define L1_CACHE_SHIFT	(6)	// 64bit?
@@ -738,8 +740,10 @@ static int btree_insert_level(char *name, struct btree_head *head,
 	if (head->height < level) {
 		//err = btree_grow(head, geo, gfp);
 		err = btree_grow(name, head, geo);
-		if (err)
+		if (err) {
+			printf("btree_grwo error!\n");
 			return err;
+		}
 	}
 
 retry:
@@ -755,8 +759,13 @@ retry:
 
 		//new = btree_node_alloc(head, gfp);
 		new = btree_node_alloc(name);
-		if (!new)
+		//sb s
+		btree_state = 1;
+		//sb e
+		if (!new) {
+			printf("new node alloc error!\n");
 			return -ENOMEM;
+		}
 		//err = btree_insert_level(head, geo,
 		//		bkey(geo, node, fill / 2 - 1),
 		//		new, level + 1, gfp);
@@ -766,6 +775,7 @@ retry:
 		if (err) {
 			//mempool_free(new, head->mempool);
 			////pos_free(name, new);
+			printf("btree_insert_level error!\n");
 			return err;
 		}
 		for (i = 0; i < fill / 2; i++) {
@@ -818,7 +828,7 @@ retry:
 	setval(geo, node, pos, val);
 #endif
 
-/*
+
 	if (!val_size) {
 #if CONSISTENCY == 1
 		setval_log(name, geo, node, pos, val);
@@ -831,6 +841,7 @@ retry:
 		// Allocate object and copy the content 
 		new_val = pos_malloc(name, val_size);
 		memcpy(new_val, val, val_size);
+
 #if CONSISTENCY == 1
 		pos_clflush_cache_range(new_val, val_size);
 		setval_log(name, geo, node, pos, new_val);
@@ -842,7 +853,10 @@ retry:
 #if CONSISTENCY == 1
 		pos_clflush_cache_range(node, NODESIZE); // Delayed flush in unit of NODESIZE
 #endif
-*/
+	//sb s
+	btree_state = 2;
+	//sb e
+
 	return 0;
 }
 
@@ -1075,6 +1089,121 @@ int pos_btree_remove(char *name, void *_key)
 
 }
 
+//sb s
+static int btree_remove_level2(char *name, struct btree_head *head, 
+		 struct btree_geo *geo, unsigned long *key, int level)
+{
+	unsigned long *node;
+	int i, pos, fill;
+	void *ret;
+
+	if (level > head->height) {
+		/* we recursed all the way up */
+#if CONSISTENCY == 1
+		pos_write_value(name, (unsigned long *)&head->height, (unsigned long)0);
+		pos_write_value(name, (unsigned long *)&head->node, (unsigned long)NULL);
+		pos_clflush_cache_range(head, sizeof(struct btree_head)); // Delayed flush
+#else
+		head->height = 0;
+		head->node = NULL;
+#endif
+		//return NULL;
+		return -1;
+	}
+
+	node = find_level(name, head, geo, key, level);
+	pos = getpos(geo, node, key);
+	fill = getfill(geo, node, pos);
+	if ((level == 1) && (keycmp(geo, node, pos, key) != 0))
+		//return NULL;
+		return -1;
+	ret = bval(geo, node, pos);
+
+
+	//pos_free(name, node);
+	//pos_free(name, node);
+	// Free the allocated object
+	//pos_free(name, bval(geo, node, pos));
+
+	/* remove and shift */
+
+	unsigned long tmp_key[2] = {0, };
+	unsigned long tmp_val[2] = {0, };
+	printf("before for\n");
+	for (i = pos; i < fill - 1; i++) {
+#if CONSISTENCY == 1
+		setkey_log(name, geo, node, i, bkey(geo, node, i + 1));
+		setval_log(name, geo, node, i, bval(geo, node, i + 1));
+#else
+		setkey(geo, node, i, tmp_key);
+		setval(geo, node, i, tmp_val);
+#endif
+	}
+	printf("after for\n");
+	//pos_free(name, node);
+/*
+#if CONSISTENCY == 1
+	clearpair_log(name, geo, node, fill - 1);
+#else
+	clearpair(geo, node, fill - 1);
+#endif
+
+#if CONSISTENCY == 1
+	pos_clflush_cache_range(node, NODESIZE); // Delayed flush in unit of NODESIZE
+#endif
+
+	if (fill - 1 < geo->no_pairs / 2) {
+		if (level < head->height)
+			//rebalance(head, geo, key, level, node, fill - 1);
+			rebalance(name, head, geo, key, level, node, fill - 1);
+		else if (fill - 1 == 1)
+			//btree_shrink(head, geo);
+			btree_shrink(name, head, geo);
+	}
+*/
+	//return ret;
+	return 0;
+}
+//sb e
+
+//sb s
+int pos_btree_remove2(char *name, void *_key)
+{
+	struct btree_head *head;
+	unsigned long *key;
+	int rval;
+	
+	if (name==NULL || key==NULL)
+		return -1;
+
+#if CONSISTENCY == 1
+	pos_transaction_start(name, POS_TS_REMOVE);
+#endif
+
+	key = (unsigned long *)_key;
+	head = (struct btree_head *)pos_get_prime_object(name);
+	if (head->height == 0)
+		return -1;
+
+	//return btree_remove_level(head, geo, key, 1);
+	//return btree_remove_level(name, head, &btree_geo128, key, 1);
+	rval = btree_remove_level2(name, head, &btree_geo128, key, 1);
+#if CONSISTENCY == 1
+	pos_transaction_end(name);
+#endif
+	return rval;
+
+}
+//sb e
+
+//sb s
+unsigned int get_btree_state()
+{
+	return btree_state;
+}
+//sb e
+
+//sb s
 /*
 * int __make_list_for_btree(unsigned long *input_node, Node **head)
 * 입력 값
@@ -1108,8 +1237,9 @@ int __make_list_for_btree(unsigned long *input_node, Node **head)
 #if BTREE_DEBUG ==1
 printf("key = %lu, value = %p\n", *(unsigned long *)(bkey(&btree_geo128, node, i)), value);
 #endif
-    //v = *value;  
-    if((unsigned long)value > 0x5FFEF8000000 && (unsigned long)value < 0x7FFEF8000000) 
+    v = *value;  
+    //if((unsigned long)value > 0x5FFEF8000000 && (unsigned long)value < 0x7FFEF8000000)
+		if(v < 0 || v > 30000)
     {               
       node_buf = bval(&btree_geo128, node, i);
 #if BTREE_DEBUG == 1
@@ -1119,13 +1249,14 @@ printf("key = %lu, value = %p\n", *(unsigned long *)(bkey(&btree_geo128, node, i
 #if BTREE_DEBUG == 1
 #endif
 			//insert_node(head, (unsigned long)node_buf);
-    }    
+    } 
     else 
     {    
 #if BTREE_DEBUG == 1
 			printf("[leaf node]\t");
 			printf("value[%d] : %lu\n", i, *(unsigned long *)value);
 #endif
+			insert_node(head, (unsigned long)value);
     }
   }
 	printf("----------------------------------\n");
@@ -1133,7 +1264,9 @@ printf("key = %lu, value = %p\n", *(unsigned long *)(bkey(&btree_geo128, node, i
 	
   return 1;
 }
+//sb e
 
+//sb s
 /*
 *	make_list_for_btree(struct btree_head *bh, Node **head)
 * 입력 값
@@ -1151,6 +1284,7 @@ int make_list_for_btree(struct btree_head *bh, Node **head)
 	//bh = (struct btree_head *)pos_get_prime_object(name);
 	
 	node = bh->node;
+	insert_node(head, (unsigned long)bh);
 	if(!__make_list_for_btree(node, head)) {
 #if BTREE_DEBUG == 1
 		printf("error of making list for btree!\n");
@@ -1167,6 +1301,7 @@ int make_list_for_btree2(char *name, Node **head)
 	struct btree_head *bh;
 
 	bh = (struct btree_head *)pos_get_prime_object(name);
+	insert_node(head, (unsigned long)bh);
 	
 	node = bh->node;
 	if(!__make_list_for_btree(node, head)) {
@@ -1178,7 +1313,7 @@ int make_list_for_btree2(char *name, Node **head)
 
 	return 1;
 }
-// end by son
+// sb e
 
 
 //EXPORT_SYMBOL_GPL(btree_remove);
