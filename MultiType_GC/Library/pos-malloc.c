@@ -323,8 +323,6 @@ printf("[gc] 3\n");
 				ptr = (mchunkptr)(chunksize(next_seg_ptr));
 			}
 		 }
-		printf("[local gc] chunk addr : %p\n", ptr);
-		printf("[local gc] chunk size : %lu\n", chunksize(ptr));
 
 		if((void *)cur_node->addr == mem_ptr)
 		{
@@ -391,8 +389,11 @@ printf("[gc] 3\n");
 						}
 						else //if last chunk is free
 						{
+							//dk s
 							printf("last chunk is a free chunk\n");
 							ptr = (mchunkptr)(chunksize(next_seg_ptr));
+							cur_node = cur_node->next;
+							//dk e
 						}
 						//dk s
 						//printf("next_seg_ptr = %p\n", next_seg_ptr);
@@ -438,8 +439,11 @@ printf("[gc] 3\n");
 						}
 						else //if last chunk is free
 						{
+							//dk s
 							printf("last chunk is a free chunk/n");
 							ptr = (mchunkptr)(chunksize(next_seg_ptr));
+							cur_node = cur_node->next;
+							//dk e
 						}
 					}
 				}
