@@ -472,9 +472,9 @@ printf("[gc] 3\n");
 #if POS_DEBUG_MALLOC == 1
 			printf("[local gc] 3\n");
 #endif
+			mem_ptr = chunk2mem(ptr);
 			printf("[local gc] cur_node->addr : %p\n", (void *)cur_node->addr);
 			printf("[local gc] mem_ptr : %p\n", mem_ptr);
-			mem_ptr = chunk2mem(ptr);
 			pos_free(name, mem_ptr);
 			printf("[local gc] ptr(%p) is garbage -> freed!\n", mem_ptr);
 			garbage_count++;
@@ -487,17 +487,33 @@ printf("[gc] 3\n");
 #if POS_DEBUG_MALLOC == 1
 			printf("[local gc] 4\n");
 #endif
+			mem_ptr = chunk2mem(ptr);
 			next_seg_ptr = next_seg(ptr, chunksize(ptr));
-			printf("next_seg_ptr : %p\n", (void *)chunksize(next_seg_ptr));
 
-			if(chunksize(next_seg_ptr) != 0)
+			if(chunksize(next_seg_ptr) != 0) // there is a next seg
 			{
-				ptr = (mchunkptr)(chunksize(next_seg_ptr));
-				printf("ptr : %p\n", ptr);
-				//dk s
-				//cur_node=cur_node->next; //Error : infiniti loop
-				//dk e
-				printf("mem_ptr : %p\n", chunk2mem(ptr));
+				if((void *)cur_node->addr == mem_ptr); //Last chunk is not a garbage
+				{
+					printf("next_seg_ptr = %p\n", next_seg_ptr);
+					ptr = (mchunkptr)(chunksize(next_seg_ptr));
+					printf("ptr : %p\n", ptr);
+					cur_node = cur_node->next;
+				}
+				else //last chunk is a garbage
+				{
+					printf("[local gc] cur_node->addr : %p\n", (void *)cur_node->addr);
+					printf("[local gc] mem_ptr : %p\n", mem_ptr);
+					pos_free(name, mem_ptr);
+					printf("[local gc] ptr(%p) is garbage -> freed!\n", mem_ptr);
+					garbage_count++;
+					printf("[local gc] garbage count : %lu\n", garbage_count);
+					ptr = (mchunkptr)(chunksize(next_seg_ptr));					
+				}
+			}
+			else //there is no next seg
+			{
+				printf("Just last chunk\n");
+				break;
 			}
 		}
 		//dk e
