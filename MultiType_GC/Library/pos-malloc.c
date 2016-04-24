@@ -305,7 +305,7 @@ printf("[gc] 3\n");
 		mem_ptr = chunk2mem(ptr);
 		printf("[local gc] mem_ptr : %p\n", mem_ptr);
 		
-		while(inuse(ptr) != 0x1) //if next chunk is free, pass free chunks
+		while(inuse(ptr) != 0x1) //if a chunk is free, pass free chunks
 		{
 #if POS_DEBUG_MALLOC == 1
 			printf("[local gc] 0\n");
@@ -336,6 +336,12 @@ printf("[gc] 3\n");
 			}
 		 }
 
+		if(chunk_is_last(ptr) == 0x4 && ptr == ms_ptr->last_allocated_chunk)
+		{
+			printf("last chunk = partial allocated node\n")
+			break;
+		}
+
 		if((void *)cur_node->addr == mem_ptr) //Chunk is not a garbage
 		{
 			if(chunk_is_last(ptr) == 0x4)
@@ -364,6 +370,10 @@ printf("[gc] 3\n");
 			}
 			else 
 			{
+#if POS_DEBUG_MALLOC == 1
+					printf("Chunk is not a garbage\n");
+					printf("Jump to next chunk & next list\n");
+#endif
 				ptr = next_chunk(ptr);
 				cur_node = cur_node->next;
 			}
