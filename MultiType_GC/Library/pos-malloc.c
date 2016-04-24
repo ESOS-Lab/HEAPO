@@ -390,17 +390,6 @@ printf("[gc] 3\n");
 
 						if(inuse(next_chunk)) //if last chunk is in use
 						{
-							/*
-							unsigned long *l_tmp = chunk2mem(next_chunk);
-							printf("in inuse(next_chunk) l_tmp : %p, cur_node->addr : %p\n", l_tmp, (void *)cur_node->addr);
-							if(l_tmp == (void *)cur_node->addr)
-							{
-								printf("in inuse(next_chunk) and same\n");
-								cur_node = cur_node->next;
-								ptr = next_chunk(ptr);
-							}
-							*/
-
 							unsigned long *l_tmp = chunk2mem(next_chunk); //ptr of last chunk
 							printf("in inuse(next_chunk) l_tmp : %p, cur_node->addr : %p\n", l_tmp, (void *)cur_node->next->addr);
 							if(l_tmp == (void *)cur_node->next->addr) //last chunk is not garbage
@@ -414,20 +403,12 @@ printf("[gc] 3\n");
 							else //lastchunk == garbage
 							{ 
 								//dk s
-								if(inuse(ptr)) //if last chunk is in-use -> this chunk is garbage
-								{
-									printf("[local gc] list_state = %d, last-1 = garbage, last = garbage\n", list_state);
-									pos_free(name, l_tmp);
-									printf("[local gc] ptr(%p) is garbage -> freed!\n", l_tmp);
-									garbage_count++;
-									printf("[local gc] garbage count : %lu\n", garbage_count);
-									ptr = (mchunkptr)(chunksize(next_seg_ptr));
-								}
-								else //this is not a garbage, just free chunk
-								{
-									printf("[local gc] this is not a garbage, just free chunk\n");
-									ptr = (mchunkptr)(chunksize(next_seg_ptr));
-								}
+								printf("[local gc] list_state = %d, last-1 = garbage, last = garbage\n", list_state);
+								pos_free(name, l_tmp);
+								printf("[local gc] ptr(%p) is garbage -> freed!\n", l_tmp);
+								garbage_count++;
+								printf("[local gc] garbage count : %lu\n", garbage_count);
+								ptr = (mchunkptr)(chunksize(next_seg_ptr));
 								//dk e
 							}			
 						}
@@ -470,7 +451,7 @@ printf("[gc] 3\n");
 						}
 						else //if last chunk is free
 						{
-							//nothing to do
+							//nothing to do, impossbile condition
 						}
 					}
 					else //last chunk is garbage
@@ -1310,7 +1291,8 @@ errout:
 		*fb = p;
 #endif
 		////dk s
-		//clear_inuse_bit_at_offset(p, size);
+		clear_inuse_bit_at_offset(p, size);
+		printf("is fast bin chunk [%p] in-use? : %dn", p, inuse(p));
 		////dk e
 
 		return ;
