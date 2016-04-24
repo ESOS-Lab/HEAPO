@@ -404,9 +404,9 @@ int make_list_for_list(struct list_head *lh, Node **head)
 		value = cur_node->value;
 		if(value != NULL)
 			insert_node(head, (unsigned long)value);
-//#if LIST_DEBUG == 1
-//		printf("cur_node(%p), value(%p), inserted\n", cur_node, value);
-//#endif
+#if LIST_DEBUG == 1
+		printf("cur_node(%p), value(%p), inserted\n", cur_node, value);
+#endif
 		cur_node = cur_node->next;
 		//dk s
 //		loop_count++;

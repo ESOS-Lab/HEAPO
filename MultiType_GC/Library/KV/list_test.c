@@ -42,8 +42,11 @@ int main(int argc, char *argv[])
   int val_num=2;
 	char TEST_OBJ_NAME[100] = {0, };
 	int count=0;
+	int garbage_idx = 0;
 
 	strcpy(TEST_OBJ_NAME, argv[1]);
+	count = atoi(argv[2]);
+	garbage_idx = atoi(argv[3]);
 
 	printf("[INIT LIST]\n");
 	if(pos_list_init(TEST_OBJ_NAME) < 0) {
@@ -59,8 +62,7 @@ int main(int argc, char *argv[])
 	pos_map(TEST_OBJ_NAME);
 	printf("[INSERT LIST NODES]\n");	
 	srand(time(NULL));
-
-	count = atoi(argv[2]);	
+	
 	for(i=0; i<count; i++) {
 		for(j=0; j<2; j++) {
 			num[i][j] = rand()%10000+99999;
@@ -79,7 +81,7 @@ int main(int argc, char *argv[])
 	remove_list(head);
 	printf("[PRINT LIST BEFORE DEL]\n");
 	print_list(TEST_OBJ_NAME);
-	pos_delete_selected_node(TEST_OBJ_NAME, 100);
+	pos_delete_selected_node(TEST_OBJ_NAME, garbage_idx);
 	printf("[PRINT LIST AFTER DEL]\n");
 	print_list(TEST_OBJ_NAME);
 
@@ -91,6 +93,7 @@ int main(int argc, char *argv[])
 		if(pos_list_insert(TEST_OBJ_NAME, (void *)key, (void *)num[i+count], 8) < 0) {
 			printf("insertion failed!\n");
 		}
+		printf("\n[USER] insert check[%d]\n", i);
 	}
 
 	printf("[PRINT ALLOC LIST BEFORE FINISH PROGRAM]\n");
