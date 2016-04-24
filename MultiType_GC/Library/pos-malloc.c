@@ -295,7 +295,6 @@ printf("[gc] 3\n");
 		printf("[local gc] chunk size : %lu\n", chunksize(ptr));
 		if(cur_node != NULL)
 			printf("[local gc] cur_node->addr : %p\n", (void *)cur_node->addr);
-		printf("chk\n");
 #endif
 		//total_chunks_size += chunksize(ptr);
 //		while(!inuse(ptr))
@@ -315,15 +314,136 @@ printf("[gc] 3\n");
 			mem_ptr = chunk2mem(ptr);
 			printf("[local gc] mem_ptr : %p\n", mem_ptr);
 #endif
-			ptr = next_chunk(ptr);
 			if(chunk_is_last(ptr) == 0x4)
 			{
-				printf("jump from passing free chunk to next segment\n");
 				next_seg_ptr = next_seg(ptr, chunksize(ptr));
-				ptr = (mchunkptr)(chunksize(next_seg_ptr));
+				if(chunksize(next_seg_ptr) != 0) //there is a next segment 
+				{
+#if POS_DEBUG_MALLOC == 1
+					printf("during pass free chunks\n");
+					printf("jump to next segment\n");
+#endif
+					ptr = (mchunkptr)(chunksize(next_seg_ptr));
+				}
+				else
+				{
+#if POS_DEBUG_MALLOC == 1
+					printf("durng pass free chunks\n");
+					printf("it is last chunk, end\n");
+#endif
+					break;
+				}
 			}
 		 }
 
+		if((void *)cur_node->addr == mem_ptr) //Chunk is not a garbage
+		{
+			if(chunk_is_last(ptr) == 0x4)
+			{
+				next_seg_ptr = next_seg(ptr, chunksize(ptr));
+				if(chunksize(next_seg_ptr) != 0) //there is a next segment
+				{
+#if POS_DEBUG_MALLOC == 1
+					printf("Chunk is not a garbage\n");
+					printf("jump to next segment\n");
+#endif
+					ptr = (mchunkptr)(chunksize(next_seg_ptr));
+#if POS_DEBUG_MALLOC == 1
+					printf("jump to next allocation list\n");
+#endif		
+					cur_node = cur_node->next;
+				}
+				else
+				{
+#if POS_DEBUG_MALLOC == 1
+					printf("Chunk is not a garbage\n");
+					printf("It is last chunk, end\n");
+					break;
+#endif
+				}
+			}
+			else 
+			{
+				ptr = next_chunk(ptr);
+				cur_node = cur_node->next;
+			}
+		}
+		else //Chunk is expected as a garbage
+		{
+			if(list_state == 1 && ptr == ms_ptr->last_allocated_chunk) //partial allocated case
+			{
+				next_seg_ptr = next_seg(ptr, chunksize(ptr));
+				if(chunk_is_last(ptr) == 0x4)
+				{
+					if(chunksize(next_seg_ptr) != 0) //there is a next segment
+					{
+#if POS_DEBUG_MALLOC == 1
+						printf("Chunk is not a garbage, partial allocated case\n");
+						printf("jump to next segment\n");
+#endif
+						ptr = (mchunkptr)(chunksize(next_seg_ptr));
+					}
+					else
+					{
+#if POS_DEBUG_MALLOC == 1
+						printf("Chunk is not a garbage, partial allocated case\n");
+						printf("it is last chunk, end\n");
+#endif
+						break;
+					}
+				}
+				else
+				{
+					ptr = next_chunk(ptr);
+				}
+			}
+			else //chunk is a garbage
+			{
+				mem_ptr = chunk2mem(ptr);
+
+#if POS_DEBUG_MALLOC == 1
+				printf("[local gc] cur_node->addr : %p\n", (void *)cur_node->addr);
+				printf("[local gc] mem_ptr : %p\n", mem_ptr);
+#endif
+
+				pos_free(name, mem_ptr);
+
+#if POS_DEBUG_MALLOC == 1
+				printf("[local gc] ptr(%p) is garbage -> freed!\n", mem_ptr);
+#endif
+
+				garbage_count++;
+
+#if POS_DEBUG_MALLOC == 1
+				printf("[local gc] garbage count : %lu\n", garbage_count);
+#endif
+				if(chunk_is_last(ptr) == 0x4)
+				{
+					next_seg_ptr = next_seg(ptr, chunksize(ptr));
+					if(chunksize(next_seg_ptr) != 0) //there is a next segment
+					{
+#if POS_DEBUG_MALLOC == 1
+						printf("Chunk is a garbage\n");
+						printf("jump to next segment\n");
+#endif				  
+						ptr = (mchunkptr)(chunksize(next_seg_ptr));
+					}
+					else
+					{
+#if POS_DEBUG_MALLOC == 1
+						printf("Chunk is not a garbage, partial allocated case\n");
+						printf("it is last chunk, end\n");
+#endif
+						break;
+					}
+				}
+				else
+				{
+					ptr = next_chunk(ptr);
+				}
+			}
+		}
+		/*
 		if((void *)cur_node->addr == mem_ptr)
 		{
 #if POS_DEBUG_MALLOC == 1
@@ -601,6 +721,7 @@ printf("[gc] 3\n");
 			}
 		}
 		//dk e
+		*/
 	}
 	printf("before remove\n");
 	remove_list(alloc_list_head);
@@ -750,6 +871,9 @@ errout:
 			printf("chunk %p, mem %p is alloced\n", victim, p);
 			set_inuse(victim);
 			//dk e
+			//dk s
+			av->last_allocated_chunk = victim;
+			//dk e
 			return p;
 		}
 	}
@@ -793,7 +917,9 @@ if(POS_DEBUG_MALLOC == 1)
 			bck->fd = bin;
 #endif
 			void *p = chunk2mem(victim);
-
+			//dk s
+			av->last_allocated_chunk = victim;
+			//dk e
 			return p;
 		}
 	}
@@ -880,6 +1006,9 @@ if(POS_DEBUG_MALLOC == 1)
 #endif
 				void *p = chunk2mem(victim);
 
+				//dk s
+				av->last_allocated_chunk = victim;
+				//dk e
 				return p;
 			}
 
@@ -898,6 +1027,10 @@ if(POS_DEBUG_MALLOC == 1)
 				set_inuse_bit_at_offset(victim, size);
 #endif
 				void *p = chunk2mem(victim);
+
+				//dk s
+				av->last_allocated_chunk = victim;
+				//dk e
 
 				return p;
 			}
@@ -1058,6 +1191,9 @@ if(POS_DEBUG_MALLOC == 1)
 				}
 
 				void *p = chunk2mem(victim);
+				//dk s
+				av->last_allocated_chunk = victim;
+				//dk e
 				return p;
 			}
 		}
@@ -1170,7 +1306,9 @@ if(POS_DEBUG_MALLOC == 1)
 					set_foot(remainder, remainder_size);
 #endif
 				}
-
+				//dk s
+				av->last_allocated_chunk = victim;
+				//dk e
 				void *p = chunk2mem(victim);
 				return p;
 			}
@@ -1282,6 +1420,9 @@ printf("prsent last chunk size : %lu, remainder chunk size : %lu\n", chunksize(p
   			//dk e
 //#endif
 			//return p;
+			//dk s
+			av->last_allocated_chunk = chunk2mem(p);
+			//dk e
 			return chunk2mem(p);
 		} 
 		else
