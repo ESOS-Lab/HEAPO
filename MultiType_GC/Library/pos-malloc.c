@@ -289,6 +289,7 @@ printf("[gc] 3\n");
 	cur_node = alloc_list_head;
 	while(ptr != ms_ptr->last_chunk_pointer)
 	{
+	while_first:
 #if POS_DEBUG_MALLOC == 1
 		printf("==================================================\n");
 		printf("[local gc] chunk addr : %p\n", ptr);
@@ -330,6 +331,7 @@ printf("[gc] 3\n");
 					printf("jump to next segment\n");
 #endif
 					ptr = (mchunkptr)(chunksize(next_seg_ptr));
+					goto while_first:
 				}
 				else
 				{
