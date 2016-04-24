@@ -290,6 +290,7 @@ printf("[gc] 3\n");
 	while(ptr != ms_ptr->last_chunk_pointer)
 	{
 #if POS_DEBUG_MALLOC == 1
+		printf("==================================================\n");
 		printf("[local gc] chunk addr : %p\n", ptr);
 		printf("[local gc] chunk size : %lu\n", chunksize(ptr));
 		if(cur_node != NULL)
@@ -303,6 +304,8 @@ printf("[gc] 3\n");
 //			ptr = next_chunk(ptr);
 //		}
 		mem_ptr = chunk2mem(ptr);
+		printf("[local gc] mem_ptr : %p\n", mem_ptr);
+		
 		if((void *)cur_node->addr == mem_ptr)
 		{
 #if POS_DEBUG_MALLOC == 1
@@ -477,7 +480,7 @@ printf("[gc] 3\n");
 			}
 			printf("before while\n");	
 			
-			while(inuse(ptr) != 1)
+			while(!inuse(ptr))
 			{
 #if POS_DEBUG_MALLOC == 1
 				printf("[local gc] 2\n");
@@ -1287,7 +1290,7 @@ errout:
 #endif
 		////dk s
 		clear_inuse_bit_at_offset(p, size);
-		printf("is fast bin chunk [%p] in-use? : %dn", p, inuse(p));
+		printf("is fast bin chunk [%p] in-use? : %d\n", p, inuse(p));
 		////dk e
 
 		return ;
