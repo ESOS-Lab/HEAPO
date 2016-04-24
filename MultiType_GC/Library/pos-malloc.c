@@ -502,6 +502,54 @@ printf("[gc] 3\n");
 				}
 				//dk e
 			}
+			else if(list_state == 1 && chunk_is_last(ptr) == 0x4)
+			{
+				printf("in list state 1-3\n");
+				//next_seg_ptr = next_seg(ms_ptr->last_chunk_pointer, chunksize(ms_ptr->last_chunk_pointer));
+				//printf("last chunk p : %p, next_chunk : %p\n", ms_ptr->last_chunk_pointer, next_chunk);
+				next_seg_ptr = next_seg(ptr, chunksize(ptr));
+				//printf("next_seg_ptr : %p\n", (void *)chunksize(next_seg_ptr));
+				
+				//dk s
+				mem_ptr = chunk2mem(ptr);
+										
+				printf("mem_ptr : %p, next_seg_ptr : %p\n", mem_ptr, (void *)chunksize(next_seg_ptr));
+				
+				if(chunksize(next_seg_ptr) != 0) //there is next seg
+				{
+					if(inuse(ptr)) //if last chunk is in-use...
+					{
+						if((void *)cur_node->addr == mem_ptr) //last chunk is not garbage 
+						{
+							printf("next_seg_ptr = %p\n", next_seg_ptr);
+							ptr = (mchunkptr)(chunksize(next_seg_ptr));
+							printf("ptr : %p\n", ptr);
+							cur_node = cur_node->next;
+						}
+						else //last chunk is garbage
+						{
+							printf("[local gc] list_state = %d, last = garbage\n", list_state);
+							pos_free(name, mem_ptr);
+							printf("[local gc] ptr(%p) is garbage -> freed!\n", mem_ptr);
+							garbage_count++;
+							printf("[local gc] garbage count : %lu\n", garbage_count);
+							ptr = (mchunkptr)(chunksize(next_seg_ptr));
+						}
+					}
+					else //last chunk is free chunk
+					{
+						printf("last chunk is a free chunk\n");
+						ptr = (mchunkptr)(chunksize(next_seg_ptr));
+					}
+				}
+				else //there is no next seg
+				{
+					printf("in list state 1-3 yet\n");
+					printf("there is no next seg\n");
+					break;
+				}
+				//dk e
+			}
 		}
 		else
 		{
