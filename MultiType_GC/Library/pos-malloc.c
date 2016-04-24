@@ -492,7 +492,7 @@ printf("[gc] 3\n");
 
 			if(chunksize(next_seg_ptr) != 0) // there is a next seg
 			{
-				if((void *)cur_node->addr == mem_ptr); //Last chunk is not a garbage
+				if((void *)cur_node->addr == mem_ptr) //Last chunk is not a garbage
 				{
 					printf("next_seg_ptr = %p\n", next_seg_ptr);
 					ptr = (mchunkptr)(chunksize(next_seg_ptr));
