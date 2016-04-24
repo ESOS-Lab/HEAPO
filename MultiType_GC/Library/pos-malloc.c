@@ -338,7 +338,7 @@ printf("[gc] 3\n");
 
 		if(chunk_is_last(ptr) == 0x4 && ptr == ms_ptr->last_allocated_chunk)
 		{
-			printf("last chunk = partial allocated node\n")
+			printf("last chunk = partial allocated node\n");
 			break;
 		}
 
