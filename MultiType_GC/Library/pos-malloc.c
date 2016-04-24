@@ -306,6 +306,22 @@ printf("[gc] 3\n");
 		mem_ptr = chunk2mem(ptr);
 		printf("[local gc] mem_ptr : %p\n", mem_ptr);
 		
+		while(!inuse(ptr)) //if next chunk is free, pass free chunks
+		{
+#if POS_DEBUG_MALLOC == 1
+			printf("[local gc] 0\n");
+#endif
+			ptr = next_chunk(ptr);
+			if(chunk_is_last(ptr) == 0x4)
+			{
+				printf("jump from passing free chunk to next segment\n");
+				next_seg_ptr = next_seg(ptr, chunksize(ptr));
+				ptr = (mchunkptr)(chunksize(next_seg_ptr));
+			}
+		 }
+		printf("[local gc] chunk addr : %p\n", ptr);
+		printf("[local gc] chunk size : %lu\n", chunksize(ptr));
+
 		if((void *)cur_node->addr == mem_ptr)
 		{
 #if POS_DEBUG_MALLOC == 1
@@ -477,15 +493,6 @@ printf("[gc] 3\n");
 					break;
 				}
 				//dk e
-			}
-			printf("before while\n");	
-			
-			while(!inuse(ptr))
-			{
-#if POS_DEBUG_MALLOC == 1
-				printf("[local gc] 2\n");
-#endif
-				ptr = next_chunk(ptr);
 			}
 		}
 		else
