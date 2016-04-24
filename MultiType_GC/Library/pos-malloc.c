@@ -340,10 +340,15 @@ printf("[gc] 3\n");
 				}
 			}
 		 }
-
+		next_chunk = next_chunk(ptr);
 		if(chunk_is_last(ptr) == 0x4 && ptr == ms_ptr->last_allocated_chunk)
 		{
-			printf("last chunk = partial allocated node\n");
+			printf("partial allocated case 1\n");
+			break;
+		}
+		else if(chunk_is_last(next_chunk) = 0x4 && ptr == ms_ptr->last_allocated_chunk)
+		{
+			printf("partial allocated case 1\n");
 			break;
 		}
 
