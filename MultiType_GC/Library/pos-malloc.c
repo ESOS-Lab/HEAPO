@@ -301,23 +301,24 @@ printf("[gc] 3\n");
 		}
 		printf("[local gc] last allocated chunk : %p\n", ms_ptr->last_allocated_chunk);
 #endif
-		//total_chunks_size += chunksize(ptr);
-//		while(!inuse(ptr))
-//		{
-//			printf("free chunk!\n");
-//			ptr = next_chunk(ptr);
-//		}
+
 		mem_ptr = chunk2mem(ptr);
 		printf("[local gc] mem_ptr : %p\n", mem_ptr);
-		
+		//sb s
+		//list_state = get_list_state();
+		switch(type)
+		{
+			case 1 : list_state = get_list_state(); printf("list state!\n"); break;
+			case 2 : list_state = get_btree_state(); printf("btree state!\n"); break;
+			case 3 : list_state = get_hash_state(); printf("hashtable state!\n"); break;
+			default : printf("[local gc] wrong type!\n"); return;
+		}
+		//sb e		
+
 		while(inuse(ptr) != 0x1) //if a chunk is free, pass free chunks
 		{
 #if POS_DEBUG_MALLOC == 1
 			printf("[local gc] 0\n");
-			printf("[local gc] chunk addr : %p\n", ptr);
-			printf("[local gc] chunk size : %lu\n", chunksize(ptr));
-			mem_ptr = chunk2mem(ptr);
-			printf("[local gc] mem_ptr : %p\n", mem_ptr);
 #endif
 			if(chunk_is_last(ptr) == 0x4)
 			{
@@ -422,16 +423,13 @@ printf("[gc] 3\n");
 				mem_ptr = chunk2mem(ptr);
 
 #if POS_DEBUG_MALLOC == 1
-				printf("[local gc] cur_node->addr : %p\n", (void *)cur_node->addr);
-				printf("[local gc] mem_ptr : %p\n", mem_ptr);
+				printf("Chunk is garbage\n");
 #endif
-
 				pos_free(name, mem_ptr);
 
 #if POS_DEBUG_MALLOC == 1
 				printf("[local gc] ptr(%p) is garbage -> freed!\n", mem_ptr);
 #endif
-
 				garbage_count++;
 
 #if POS_DEBUG_MALLOC == 1
