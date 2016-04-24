@@ -694,7 +694,9 @@ errout:
 			*fb = victim->fd;
 #endif
 			void *p = chunk2mem(victim);
-
+			//dk s
+			set_inuse(victim);
+			//dk e
 			return p;
 		}
 	}
