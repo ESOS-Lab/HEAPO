@@ -295,7 +295,7 @@ printf("[gc] 3\n");
 		printf("[local gc] chunk size : %lu\n", chunksize(ptr));
 		if(cur_node != NULL)
 			printf("[local gc] cur_node->addr : %p\n", (void *)cur_node->addr);
-		if(chunk_is_last == 0x4)
+		if(chunk_is_last(ptr) == 0x4)
 		{
 			printf("[local gc] chunk is last\n");
 		}
