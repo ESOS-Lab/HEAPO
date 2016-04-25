@@ -342,7 +342,13 @@ printf("[gc] 3\n");
 					break;
 				}
 			}
-		 }
+			else	//sb s for hash debug
+			{
+				printf("chunk is free, but not last chunk\n");
+				ptr = next_chunk(ptr);
+				//break;
+			}			//sb e
+		}
 		nextchunk = next_chunk(ptr);
 		if(chunk_is_last(ptr) == 0x4 && ptr == ms_ptr->last_allocated_chunk)
 		{

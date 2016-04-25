@@ -53,7 +53,6 @@
 //#include <linux/slab.h>
 //#include <linux/module.h>
 #include "pos-btree.h"
-#include "../alloc_list/alloc_list.h"
 #include <pos-lib.h>
 #include <string.h>	//memset
 #include <stdio.h>
@@ -62,13 +61,10 @@
 #define MODE			1	// 1: absolute addressing, 2: offset addressing
 #define OFFSET_BASE		(0x3FFEF8000000)	//0x5FFEF8000000 -> error.... I don't know the reason...
 
-#define CONSISTENCY		0
+#define CONSISTENCY		1
 #define pos_write_value	pos_write_value_kv_noflush
 #define LOG_CNT_ON		0
 
-//son s
-#define BTREE_DEBUG		1
-//son e
 
 #define L1_CACHE_SHIFT	(6)	// 64bit?
 #define L1_CACHE_BYTES	(1 << L1_CACHE_SHIFT)
@@ -304,25 +300,24 @@ EXPORT_SYMBOL_GPL(btree_init_mempool);*/
 int pos_btree_init(char *name)
 {
 	struct btree_head *head;
-printf("1\n");	
+	
 	if (pos_create(name) == 0)
 		return -1;
-printf("2\n");
+
 #if CONSISTENCY == 1
 	pos_log_create(name);
 	pos_transaction_start(name, POS_TS_INSERT);
 #endif
-printf("3\n");
+
 	head = (struct btree_head *)pos_malloc(name, sizeof(struct btree_head));
 
 	pos_set_prime_object(name, head);
-	printf("4\n");
-//printf("prime node in init : %p\n", head->node);	
+	
 	__btree_init(head);
 	//head->mempool = mempool_create(0, btree_alloc, btree_free, NULL);
 	//if (!head->mempool)
 	//	return -ENOMEM;
-printf("5\n");
+
 #if CONSISTENCY == 1
 	pos_transaction_end(name);
 	pos_log_unmap(name);
@@ -498,7 +493,7 @@ void *pos_btree_lookup(char *name, void *_key)
 	return btree_lookup(head, &btree_geo128, key);
 }
 
-//int btree_update(struct btree_head *head, struct btree_geo *geo,
+/*//int btree_update(struct btree_head *head, struct btree_geo *geo,
 //		 unsigned long *key, void *val)
 int btree_update(char *name, struct btree_head *head, struct btree_geo *geo, 
 		unsigned long *key, void *val, unsigned long val_size)
@@ -555,7 +550,7 @@ int pos_btree_update(char *name, void *_key, void *_val, unsigned long val_size)
 	head = (struct btree_head *)pos_get_prime_object(name);
 
 	return btree_update(name, head, &btree_geo128, key, val, val_size);
-}
+}*/
 
 /*
  * Usually this function is quite similar to normal lookup.  But the key of
@@ -815,10 +810,8 @@ retry:
 	setkey_log(name, geo, node, pos, key);
 #else
 	setkey(geo, node, pos, key);
-	setval(geo, node, pos, val);
+	//setval(geo, node, pos, val);
 #endif
-
-/*
 	if (!val_size) {
 #if CONSISTENCY == 1
 		setval_log(name, geo, node, pos, val);
@@ -842,7 +835,7 @@ retry:
 #if CONSISTENCY == 1
 		pos_clflush_cache_range(node, NODESIZE); // Delayed flush in unit of NODESIZE
 #endif
-*/
+
 	return 0;
 }
 
@@ -864,10 +857,7 @@ int pos_btree_insert(char *name, void *_key, void *_val, unsigned long val_size)
 	key = (unsigned long *)_key;
 	val = (unsigned long *)_val;
 	head = (struct btree_head *)pos_get_prime_object(name);
-#if BTREE_DEBUG	== 1
-	printf("prime node : %p\n", head->node);
-#endif
-//printf("head : %p\n", head);
+
 	//return btree_insert_level(head, geo, key, val, 1, gfp);
 	//return btree_insert_level(name, head, &btree_geo128, key, val, val_size, 1);
 	rval = btree_insert_level(name, head, &btree_geo128, key, val, val_size, 1);
@@ -1074,95 +1064,6 @@ int pos_btree_remove(char *name, void *_key)
 	return rval;
 
 }
-
-/*
-* int __make_list_for_btree(unsigned long *input_node, Node **head)
-* 입력 값
-* input_node : b+tree의 prime object(struct btree_head)가 가지는 루트 노드
-* head : allocation list를 구성할 head(리스트의 첫 번째 노드를 가리킬 포인터)
-* 출력 값 : b+tree 자료구조를 제대로 탐색해서 allocation list가 만들어 졌으면 '1'을 반환,
-*		그렇지 않으면 '-1'을 반환
-* 기능 : 도근이형이 만든 알고리즘 거의 그대로 사용. b+tree의 모든 노드들을 탐색하여 allocation list 구성
-*/
-int __make_list_for_btree(unsigned long *input_node, Node **head)
-{
-  int get_fill = 0, get_fill2=0;
-  int i, j;
-  unsigned long* node=NULL;
-  unsigned long* node_buf = NULL;
-  int level;
-  unsigned long* value = NULL;
-  unsigned long v= 0;
-
-  node = input_node;
-  get_fill = getfill(&btree_geo128, node, 0);
-#if BTREE_DEBUG == 1
-	printf("----------------------------------\n");
-	printf("prime node : %p\n", input_node);
-	printf("get_fill : %d\n", get_fill);
-#endif
-
-  for(i=0; i<get_fill; i++) 
-  {
-    value = bval(&btree_geo128, node, i);
-#if BTREE_DEBUG ==1
-printf("key = %lu, value = %p\n", *(unsigned long *)(bkey(&btree_geo128, node, i)), value);
-#endif
-    //v = *value;  
-    if((unsigned long)value > 0x5FFEF8000000 && (unsigned long)value < 0x7FFEF8000000) 
-    {               
-      node_buf = bval(&btree_geo128, node, i);
-#if BTREE_DEBUG == 1
-        printf("[make]sub node = %p\n\n", node_buf);
-#endif
-			__make_list_for_btree(node_buf, head);
-#if BTREE_DEBUG == 1
-#endif
-			//insert_node(head, (unsigned long)node_buf);
-    }    
-    else 
-    {    
-#if BTREE_DEBUG == 1
-			printf("[leaf node]\t");
-			printf("value[%d] : %lu\n", i, *(unsigned long *)value);
-#endif
-    }
-  }
-	printf("----------------------------------\n");
-	insert_node(head, (unsigned long)node);
-	
-  return 1;
-}
-
-/*
-*	make_list_for_btree(struct btree_head *bh, Node **head)
-* 입력 값
-*		name : 순회해서 allocation list를 구성할 object storage의 이름
-*		head : allocation list를 구성할 head(리스트의 첫 번째 노드를 가리킬 포인터)
-* 출력 값 : b+tree 자료구조를 제대로 탐색해서 allocation list가 만들어 졌으면 '1'을 반환, 
-*		그렇지 않으면 '-1'을 반환
-* 기능 : __make_list_for_btree() 함수를 호출하여 allocation list 구성
-*/
-int make_list_for_btree(struct btree_head *bh, Node **head)
-{
-	unsigned long *node=NULL;
-	//struct btree_head *bh;
-
-	//bh = (struct btree_head *)pos_get_prime_object(name);
-	
-	node = bh->node;
-	if(!__make_list_for_btree(node, head)) {
-#if BTREE_DEBUG == 1
-		printf("error of making list for btree!\n");
-#endif
-		return 0;
-	}
-
-	return 1;
-}
-// end by son
-
-
 //EXPORT_SYMBOL_GPL(btree_remove);
 
 //int btree_merge(struct btree_head *target, struct btree_head *victim,

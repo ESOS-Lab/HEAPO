@@ -9,9 +9,9 @@
 
 int main(int argc, char *argv[])
 {
-	int i, j;
-	unsigned long num[10000][2];
-	unsigned long key[10000][2];
+	int i, j, a=0;
+	unsigned long val[10000], tmp_val[2];
+	unsigned long key[10000], tmp_key[2];
 	Node *head=NULL;
 	char TEST_OBJ_NAME[100] = {0, };
 	int count=0;
@@ -19,10 +19,24 @@ int main(int argc, char *argv[])
   int obj_size=40;
   int key_num=2;
   int val_num=2;
+	int num_type = 0;
+	int prime_num1, prime_num2;
+	int loop_num = 0;
 
 	strcpy(TEST_OBJ_NAME, argv[1]);
-	count = atoi(argv[2]);
-	//printf("entry size : %d\n", sizeof(struct entry));
+	num_type = atoi(argv[2]);
+
+	switch(num_type)
+	{
+		case 10 : prime_num1 = 53; prime_num2 = 97; loop_num = 10; break;						// for 10 nodes freed
+		case 50 : prime_num1 = 389; prime_num2 = 769; loop_num = 50; break;					// for 50 nodes freed
+		case 100 : prime_num1 = 769; prime_num2 = 1543; loop_num = 100; break;			// for 100 nodes freed
+		case 200 : prime_num1 = 1543; prime_num2 = 3079; loop_num = 200; break;			// for 200 nodes freed
+		case 1000 : prime_num1 = 6151; prime_num2 = 12289; loop_num = 1000; break;	// for 1000 nodes freed
+		default :
+			printf("wrong prime number type!\n");
+			return 0;
+	}
 
 	printf("[INIT HASHTABLE]\n");
 	if(pos_create_hashtable(TEST_OBJ_NAME, 10, NULL, NULL) < 0) {
@@ -38,15 +52,18 @@ int main(int argc, char *argv[])
 
 	printf("[INSERT HASHTABLE NODES]\n");	
 	srand(time(NULL));
-	for(i=0; i<count; i++) {
-		for(j=0; j<2; j++) {
-			num[i][j] = rand()%10000+99999;
+	for(i=0; i<loop_num; i++) {
+		for(j=0; j<3; j++) {
+			val[a] = tmp_val[0] = tmp_val[1] = rand()%10000+9999;
+			tmp_key[0] = tmp_key[1] = j + (prime_num1*i);
+			key[a] = tmp_key[0];
+			//printf("key[%d] : %lu, val[%d] : %lu\n", a, key[a], a, val[a]);
+			if(pos_hashtable_insert(TEST_OBJ_NAME, (void *)tmp_key, (void *)tmp_val, 8)) {
+				printf("insertion failed!\n");
+			}
+			printf("[USER] INSERT[%d]\n", a);
+			++a;
 		}
-		key[i][0] = key[i][1] = rand()%100+1;
-		if(pos_hashtable_insert(TEST_OBJ_NAME, (void *)key[i], (void *)num[i], 8) < 0) {
-			printf("insertion failed!\n");
-		}
-		printf("[USER] INSERT[%d]\n\n", i);
 	}
 
 	printf("[MAKE HASHTABLE]\n");
@@ -56,10 +73,8 @@ int main(int argc, char *argv[])
 
 	printf("[DELETE SOME NODES]\n");
 	head = NULL;
-	for(i=0; i<count; i++) {
-		if(i != 0 && i%10 == 0)
-			pos_hashtable_remove(TEST_OBJ_NAME, key[i]);	
-	}
+	pos_hashtable_remove2(TEST_OBJ_NAME, 0);
+	
 	printf("[PRINT ALLOC LIST AFTER DELETE]\n");
 	make_list_for_hashtable2(TEST_OBJ_NAME, &head);
 	display(head);
@@ -67,6 +82,20 @@ int main(int argc, char *argv[])
 	printf("\n");
 	
 	printf("[INSERT HASHTABLE NODES AGAIN]\n");
+	for(i=0; i<loop_num; i++) {
+		for(j=0; j<3; j++) {
+			val[a] = tmp_val[0] = tmp_val[1] = rand()%10000+9999;
+			tmp_key[0] = tmp_key[1] = j + (prime_num2*i);
+			key[a] = tmp_key[0];
+			//printf("key[%d] : %lu, val[%d] : %lu\n", a, key[a], a, val[a]);
+			if(pos_hashtable_insert(TEST_OBJ_NAME, (void *)tmp_key, (void *)tmp_val, 8)) {
+				printf("insertion failed!\n");
+			}
+			printf("[USER] INSERT[%d]\n", a);
+			++a;
+		}
+	}
+	/*
 	for(i=0; i<count; i++) {
 		for(j=0; j<2; j++) {
 			num[count+i][j] = rand()%10000+99999;
@@ -77,7 +106,8 @@ int main(int argc, char *argv[])
 		}
 		printf("[USER] INSERT[%d]\n\n", i+count);
 	}
-	
+	*/
+
 	printf("[PRINT ALLOC LIST BEFORE FINISH PROGRAM]\n");
 	head = NULL;
 	make_list_for_hashtable2(TEST_OBJ_NAME, &head);

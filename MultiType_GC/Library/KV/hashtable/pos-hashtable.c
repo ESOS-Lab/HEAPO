@@ -190,12 +190,18 @@ hash(struct hashtable *h, unsigned long *k)
 {
     /* Aim to protect against poor hash functions by adding logic here
      * - logic taken from java 1.4 hashtable source */
+//sb s
+/*
     unsigned long i = h->hashfn(k);
     i += ~(i << 9);
-    i ^=  ((i >> 14) | (i << 18)); /* >>> */
+    i ^=  ((i >> 14) | (i << 18)); // >>>
     i +=  (i << 4);
-    i ^=  ((i >> 10) | (i << 22)); /* >>> */
+    i ^=  ((i >> 10) | (i << 22)); // >>>
+
     return i;
+*/
+		return k[0];
+//sb e
 }
 
 /*****************************************************************************/
@@ -512,6 +518,23 @@ pos_hashtable_remove(char *name, void *_k)
 	h = (struct hashtable *)pos_get_prime_object(name);
 
 	return hashtable_remove(name, h, k);
+}
+
+int
+pos_hashtable_remove2(char *name, int idx)
+{
+	struct hashtable *h;
+	struct entry **pE = NULL;
+
+	if (name==NULL)
+		return -1;
+
+	h = (struct hashtable *)pos_get_prime_object(name);
+	pE = &(h->table[idx]);
+
+	*pE = NULL;	
+
+	return 0;
 }
 
 /*****************************************************************************/

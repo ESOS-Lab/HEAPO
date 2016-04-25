@@ -14,14 +14,14 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-#include "../alloc_list/alloc_list.h"
+
 #include <pos-lib.h>
 
 
 #define MODE			1	// 1: absolute addressing, 2: offset addressing
 #define OFFSET_BASE		(0x3FFEF8000000)
 
-#define CONSISTENCY		0
+#define CONSISTENCY		1
 #define pos_write_value	pos_write_value_kv
 #define LOG_CNT_ON		0
 
@@ -123,20 +123,20 @@ pos_create_hashtable(char *name, unsigned int minsize,
                  int (*key_eq_fn) (unsigned long*,unsigned long*))
 {
 	int rval;
-printf("1\n");	
+	
 	if (pos_create(name) == 0)
 		return -1;
 #if CONSISTENCY == 1
 	pos_log_create(name);
 	pos_transaction_start(name, POS_TS_INSERT);
 #endif
-printf("2\n");
+
 	if (hashfunction == NULL && key_eq_fn == NULL) {
 		rval = create_hashtable(name, minsize, default_hashfunction, default_key_eq_fn);
 	} else {
 		rval = create_hashtable(name, minsize, hashfunction, key_eq_fn);
 	}
-printf("3\n");
+	
 #if CONSISTENCY == 1
 	pos_transaction_end(name);
 	pos_log_unmap(name);
@@ -358,7 +358,6 @@ hashtable_insert(char *name, struct hashtable *h, unsigned long *k, unsigned lon
 #if CONSISTENCY == 1
 	pos_transaction_end(name);
 #endif
-//printf("[insert] index : %d, e : 0x%p\n", index, e);
 
     //return -1;
     return 0;
@@ -566,47 +565,6 @@ pos_hashtable_destroy(char *name)
 	pos_delete(name);
 
 	return 0;
-}
-
-/*
-* int make_list_for_hashtable(struct hashtable *h, Node **head)
-* 입력 값
-*		name : 순회해서 allocation list를 구성할 object storage의 이름
-*		head : allocation list를 구성할 head(리스트의 첫 번째 노드를 가리킬 포인터)
-* 출력 값 : hashtable 자료구조를 제대로 탐색해서 allocation list가 만들어 졌으면 '1'을 반환
-* , 그렇지 않으면 '-1'을 반환
-* 기능 : name에 해당하는 object storage에서 사용하는 자료구조인 hashtable을 prime 오브젝트
-*		(해시테이블의 struct hashtable 자료구조)가 가진 table[], tablelength를 이용해 해시테이블의
-*		모든 노드를 순회하여 allocation list를 구성. 탐색 방식은 tablelength가 가지고 있는 현재 
-*		해시테이블의 테이블 사이즈(일차원 배열의 사이즈라고 생각하면 됨) 만큼 for문을 통해 모든 
-*		테이블의 인덱스를 탐색하고, 각 인덱스는 동일한 해시 값을 가지는 노드들의 리스트(체이닝 방식)
-*		로 구성되어 있기 때문에, 리스트가 NULL이 아닐때 까지 탐색하여 allocation list에 탐색된 모든
-*		노드들을 삽입
-*/
-int make_list_for_hashtable(struct hashtable *h, Node **head)
-{
-	//struct hashtable *h;
-	int i;
-	struct entry *e;
-
-	//h = (struct hashtable *)pos_get_prime_object(name);	
-	if(h == NULL)
-		return 0;
-
-	//printf("tablelength : %d\n", h->tablelength);
-	for(i=0; i<h->tablelength; i++) {
-		e = h->table[i];
-
-//		if(e != NULL) {
-		while(NULL != e) {
-			insert_node(head, (unsigned long)e);
-			printf("index : %d, e : 0x%lx\n", i, (unsigned long)e);
-			e = e->next;
-			//printf("next e : %p\n", e);
-		}
-	}	
-
-	return 1;
 }
 
 /*
