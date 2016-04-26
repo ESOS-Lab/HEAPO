@@ -144,6 +144,7 @@ struct pos_descriptor
 	fmode_t d_mode;
 	//dk s
 	short obj_storage_type;
+	char name[POS_NAME_LENGTH];
   	//dk e
 };
 

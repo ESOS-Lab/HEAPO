@@ -1702,7 +1702,13 @@ asmlinkage void *sys_pos_create(char __user *name, unsigned long size)
 	desc->d_uid = current_uid();
 	desc->d_gid = current_gid();
 	desc->d_mode = POS_DEFAULT_MODE;
-	
+
+	//dk s
+	memset(desc->name, 0, POS_NAME_LENGTH);
+	strcpy(desc->name, name_buf);
+	printk("desc->name = %s\n", desc->name);;
+	//dk e
+
 	mode = POS_USR_MODE(desc->d_mode);
 	task_pid->mode = mode;
 
@@ -2371,8 +2377,8 @@ asmlinkage int sys_pos_get_sfgc_list(char **victim_list)
 			//sb s
 			//strcpy(name_buf, ptr->str, sizeof(POS_NAME_LENGTH));
 			//strcpy(name_buf, ptr->str);
-			//copy_to_user(victim_list[obj_count], name_buf, sizeof(POS_NAME_LENGTH));
-			copy_to_user(victim_list[obj_count], ptr->str, (ptr->str_length)+1);
+			//copy_to_user(victim_list[obj_count], name_buf, POS_NAME_LENGTH);
+			copy_to_user(victim_list[obj_count], ptr->desc->name, POS_NAME_LENGTH);
 			//sb e
 			obj_count++;			
 			gc_ptr = gc_ptr->next;

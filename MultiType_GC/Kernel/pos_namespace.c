@@ -70,8 +70,8 @@ void pos_ns_burst(struct pos_ns_trie_node *prev_trie_node, int prev_index)
 			record->str = (char *)pos_kmalloc(record->str_length);
 			//dk s
 			//strncpy(record->str, str+1, record->str_length);
-			strncpy(record->str, str, (record->str_length)+1);
-			printk("record->str : %s, str : %s, str_length : %d\n", record->str, str, record->str_length);
+			strncpy(record->str, str+1, record->str_length);
+			//printk("record->str : %s, str : %s, str_length : %d\n", record->str, str, record->str_length);
 			//dk e
 		} else {
 			record->str = NULL;
@@ -322,8 +322,10 @@ insert_record_to_container:
 	record->str_length = str_length - depth + 1;
 	if (record->str_length != 0) {
 		record->str = (char *)pos_kmalloc(record->str_length);
-		strncpy(record->str, str, (record->str_length)+depth-1);
-		printk("my record->str : %s, str : %s, depth : %d, str_length : %d\n", record->str, str, depth, record->str_length);
+		//dk s
+		//strncpy(record->str, str, (record->str_length)+depth-1);
+		//printk("my record->str : %s, str : %s, depth : %d, str_length : %d\n", record->str, str, depth, record->str_length);
+		//dk e
 		strncpy(record->str, str+depth-1, record->str_length);
 		printk("org record->str : %s, str : %s, depth : %d, str_length : %d\n", record->str, str, depth, record->str_length);
 	} else {
