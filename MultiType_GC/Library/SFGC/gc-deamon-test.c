@@ -53,9 +53,9 @@ int main(void)
 	//if(cur_name[0] == 0)
 	//	printf("0\n");
 	
-	obj_storage_names = (char **)malloc(sizeof(char *)*10);
+	obj_storage_names = (char **)malloc(10);
 	for(i=0; i<10; i++)
-		obj_storage_names[i] = (char *)malloc(sizeof(char)*100);
+		obj_storage_names[i] = (char *)malloc(sizeof(char)*128);
 
 	//strcpy(obj_storage_names[0], "namename1");
 	//printf("obj 1 : %s\n", obj_storage_names[0]);
