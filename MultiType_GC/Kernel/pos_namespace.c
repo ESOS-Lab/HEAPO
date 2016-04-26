@@ -71,6 +71,7 @@ void pos_ns_burst(struct pos_ns_trie_node *prev_trie_node, int prev_index)
 			//dk s
 			//strncpy(record->str, str+1, record->str_length);
 			strncpy(record->str, str, (record->str_length)+1);
+			printk("record->str : %s, str : %s, str_length : %d\n", record->str, str, record->str_length);
 			//dk e
 		} else {
 			record->str = NULL;

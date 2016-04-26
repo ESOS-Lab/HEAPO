@@ -2355,7 +2355,7 @@ asmlinkage int sys_pos_get_sfgc_list(char **victim_list)
 	// sb s for triggering SFGC test code
 	//if((double)sb->total_vm > (double)((double)overall_NVM_page / (double)(8/10))) //if total vm = 80% overall space
 	//sb e
-	if(sb->total_vm > 190)
+	if(sb->total_vm > 10)
 	{
 	    gc_ptr = &sb->gc_list;
 			//sb s
