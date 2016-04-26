@@ -434,6 +434,7 @@ printf("[gc] 3\n");
 #if POS_DEBUG_MALLOC == 1
 				printf("Chunk is garbage\n");
 #endif
+				memset(mem_ptr, 0, chunksize(ptr)-16);
 				pos_free(name, mem_ptr);
 
 #if POS_DEBUG_MALLOC == 1

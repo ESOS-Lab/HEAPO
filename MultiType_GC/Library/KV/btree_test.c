@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	printf("[MAP POS]\n");
 	pos_map(TEST_OBJ_NAME);
 
-	printf("[INSERT BTREE NODES]\n");	
+	printf("[insert btree nodes]\n");	
 	srand(time(NULL));	
 	for(i=0; i<count; i++) {
 		for(j=0; j<2; j++) {
@@ -55,7 +55,8 @@ int main(int argc, char *argv[])
 	remove_list(head);
 	
 	printf("[DELETE FEW NODES]\n");
-
+	unlink_leaf_nodes(TEST_OBJ_NAME);
+/*
 	del_addr = get_node_addr(head, get_list_num(head)/2);
 	printf("del addr : %p\n", (void *)del_addr);
 	//*del_addr = 0;
@@ -73,7 +74,7 @@ int main(int argc, char *argv[])
 	//*del_addr = 0;
 	//memset((void *)del_addr, 0, 120);
 	pos_free(TEST_OBJ_NAME, (void *)del_addr);
-
+*/
 /*
 	for(i=0; i<count; i++) {
 		if(i != 0 && i%10 == 0) {
@@ -88,7 +89,21 @@ int main(int argc, char *argv[])
 	display(head);
 	remove_list(head);
 
+	printf("[insert btree nodes again]\n");	
+	for(i=0; i<count; i++) {
+		for(j=0; j<2; j++) {
+			num[i][j] = rand()%1000+500;
+		}
+		key[i][0] = key[i][1] = 30000+i;
+		printf("before insert\n");
+		if(pos_btree_insert(TEST_OBJ_NAME, (void *)key[i], (void *)num[i], 8) < 0) {
+			printf("insertion failed!\n");
+		}
+		printf("[USER] INSERT[%d]\n\n", i);
+	}
+	
 	printf("[DISTROY BTREE]\n");
+	pos_unmap(TEST_OBJ_NAME);
 	pos_btree_destroy(TEST_OBJ_NAME);
 
 	printf("[FINISH PROGRAM]\n");

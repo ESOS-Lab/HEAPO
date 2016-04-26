@@ -1089,6 +1089,126 @@ int pos_btree_remove(char *name, void *_key)
 
 }
 
+/*
+//sb s
+int __unlink_leaf_nodes(unsigned long *input_node)
+{
+  int get_fill = 0, get_fill2 = 0;
+  int i, j;
+  unsigned long *node=NULL;
+  unsigned long *node_buf = NULL;
+  unsigned long *value = NULL, *value2 = NULL;
+  unsigned long v = 0, v2 = 0; 
+  unsigned long zero_val[2] = {0, };
+  struct btree_head *bh; 
+
+ #if BTREE_DEBUG == 1
+  printf("----------------------------------\n");
+#endif
+
+	node = input_node;
+	get_fill = getfill(&btree_geo128, node, 0);
+  for(i=0; i<get_fill; i++) 
+  {
+    value = bval(&btree_geo128, node, i);
+#if BTREE_DEBUG ==1
+printf("[unlink_leaf_nodes] key = %lu, value = %p\n", *(unsigned long *)(bkey(&btree_geo128, node, i)), value);
+#endif
+    v = *value;
+    if(v < 0 || v > 30000)	// current node
+    {
+      node_buf = bval(&btree_geo128, node, i);
+      value2 = bval(&btree_geo128, node_buf, 0);
+			v2 = *value2;
+      if(v2 <= 30000 && v2 >= 0) {	// leaf node
+				printf("[unlink_leaf_nodes] current leaf node : %p\n", node_buf);
+        get_fill2 = getfill(&btree_geo128, node_buf, 0);
+        for(j=0; j<get_fill2; j++) {	// unlink every values of leaf node
+					printf("[unlink_leaf_nodes] [%d]leaf val : %p unlinked\n", j+1, bval(&btree_geo128, node_buf, j));
+					printf("[unlink_leaf_nodes] [%d]value : %lu\n", j, *(unsigned long *)bval(&btree_geo128, node_buf, j));
+          setval(&btree_geo128, node_buf, j, zero_val);
+        }
+      }
+      else	// child node, but not leaf node
+        __unlink_leaf_nodes(node_buf);
+		}
+	}
+
+  printf("----------------------------------\n");
+
+  return 1;
+}
+//sb e
+*/
+//sb s
+int __unlink_leaf_nodes(unsigned long *input_node)
+{
+  int get_fill = 0, get_fill2=0;
+  int i, j;
+  unsigned long* node=NULL;
+  unsigned long* node_buf = NULL;
+  int level;
+  unsigned long* value = NULL;
+  unsigned long v= 0;
+	unsigned long zero_val = 0;
+
+  node = input_node;
+  get_fill = getfill(&btree_geo128, node, 0);
+#if BTREE_DEBUG == 1
+	printf("----------------------------------\n");
+	printf("prime node : %p\n", input_node);
+	printf("get_fill : %d\n", get_fill);
+#endif
+
+  for(i=0; i<get_fill; i++) 
+  {
+    value = bval(&btree_geo128, node, i);
+#if BTREE_DEBUG ==1
+printf("key = %lu, value = %p\n", *(unsigned long *)(bkey(&btree_geo128, node, i)), value);
+#endif
+    v = *value;  
+    //if((unsigned long)value > 0x5FFEF8000000 && (unsigned long)value < 0x7FFEF8000000)
+		if(v < 0 || v > 30000)
+    {               
+      node_buf = bval(&btree_geo128, node, i);
+#if BTREE_DEBUG == 1
+        printf("[unlink] middle node\n");
+				printf("chk\n");
+#endif
+		//	__make_list_for_btree(node_buf);
+#if BTREE_DEBUG == 1
+#endif
+			__unlink_leaf_nodes(node_buf);
+			//insert_node(head, (unsigned long)node_buf);
+    } 
+    else 
+    {    
+#if BTREE_DEBUG == 1
+			printf("[unlink] leaf node\n");
+			//printf("value[%d] : %lu\n", i, *(unsigned long *)value);
+			//value = 0;
+			setval(&btree_geo128, node, i, &zero_val);
+			printf("current val : %lu\n", *(unsigned long *)bval(&btree_geo128, node, i));
+#endif
+    }
+  }
+	printf("----------------------------------\n");
+	
+  return 1;
+}
+
+int unlink_leaf_nodes(char *name)
+{
+	struct btree_head *bh;
+	unsigned long *node = NULL;
+
+	bh = (struct btree_head *)pos_get_prime_object(name);
+	node = bh->node;
+
+	return __unlink_leaf_nodes(node);
+}
+//sb e
+
 //sb s
 static int btree_remove_level2(char *name, struct btree_head *head, 
 		 struct btree_geo *geo, unsigned long *key, int level)
