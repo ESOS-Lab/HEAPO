@@ -633,11 +633,18 @@ static int getpos(struct btree_geo *geo, unsigned long *node,
 static int getfill(struct btree_geo *geo, unsigned long *node, int start)
 {
 	int i;
+	int ret = 0;
 
 	for (i = start; i < geo->no_pairs; i++)
+	{
+		ret = !bval2(geo, node ,i);
+		printf("[getfill] ret = %d\n");
 		//if (!bval(geo, node, i))
 		if (!bval2(geo, node, i))
+		{
 			break;
+		}
+	}
 	return i;
 }
 
@@ -1150,7 +1157,7 @@ int __unlink_leaf_nodes(unsigned long *input_node)
   int level;
   unsigned long* value = NULL;
   unsigned long v= 0;
-	unsigned long zero_val = 0;
+  unsigned long zero_val = 0;
 
   node = input_node;
   get_fill = getfill(&btree_geo128, node, 0);
