@@ -140,6 +140,9 @@ pos_create(char *name)
 
 	//새로운 name table entry를 할당
 	name_entry = (struct pos_name_entry *)malloc(sizeof(struct pos_name_entry));
+	//dk s
+	memset(name_entry->name, 0, POS_NAME_LENGTH);
+	//dk e
 	strcpy(name_entry->name, name);
 
 	//sys_pos_create() 시스템 콜 호출
@@ -248,6 +251,9 @@ pos_map(char* name)
 
 	//새로운 name table entry를 할당
 	name_entry = (struct pos_name_entry *)malloc(sizeof(struct pos_name_entry));
+	//dk s
+	memset(name_entry->name, 0, POS_NAME_LENGTH);
+	//dk e
 	strcpy(name_entry->name, name);
 
 	//sys_pos_map() 시스템 콜 호출
