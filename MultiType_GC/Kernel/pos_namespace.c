@@ -68,7 +68,10 @@ void pos_ns_burst(struct pos_ns_trie_node *prev_trie_node, int prev_index)
 		record->str_length--;
 		if (record->str_length) {
 			record->str = (char *)pos_kmalloc(record->str_length);
-			strncpy(record->str, str+1, record->str_length);
+			//dk s
+			//strncpy(record->str, str+1, record->str_length);
+			strncpy(record->str, str, (record->str_length)+1);
+			//dk e
 		} else {
 			record->str = NULL;
 		}
