@@ -83,7 +83,8 @@ int main(void)
 				//pos_map(names[i]);
 				printf("[GC START] %s\n", obj_storage_names[i]);
 				//pos_local_gc(obj_storage_names[i]);
-				pos_local_gc(names[i]);
+				//pos_local_gc(names[i]);
+				pos_local_gc(obj_storage_names[i]);
 				printf("[GC END] %s\n", obj_storage_names[i]);
 			}
 		}
