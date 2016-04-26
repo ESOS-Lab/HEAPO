@@ -17,7 +17,7 @@ int main(void)
 	char *cur_name = NULL;
 	int i = 0;
 	int sfgc_cnt = 0;
-
+	char names[10][100] = {" ", "objectA", "objectB", "objectC", "objectD", "objectE", "objectF", "objectG", "objectH", "objectI"};
 /*
 	pid = fork();
 
@@ -57,8 +57,8 @@ int main(void)
 	for(i=0; i<10; i++)
 		obj_storage_names[i] = (char *)malloc(sizeof(char)*100);
 
-	strcpy(obj_storage_names[0], "namename1");
-	printf("obj 1 : %s\n", obj_storage_names[0]);
+	//strcpy(obj_storage_names[0], "namename1");
+	//printf("obj 1 : %s\n", obj_storage_names[0]);
 
 	i = 0;
 	while (1)
@@ -74,7 +74,18 @@ int main(void)
 		}
 */
 		for(i=0; i<10; i++) {
-			printf("cur name : %s\n", obj_storage_names[i]);
+			printf("cur name : %s, len : %d\n", obj_storage_names[i], strlen(obj_storage_names[i]));
+			printf("cur name : %s\n", names[i]);
+			if(obj_storage_names[i][0] != 0) {
+				printf("[POS MAP]\n");
+				//obj_storage_names[i][strlen(obj_storage_names[i]+1) =
+				pos_map(obj_storage_names[i]);
+				//pos_map(names[i]);
+				printf("[GC START] %s\n", obj_storage_names[i]);
+				//pos_local_gc(obj_storage_names[i]);
+				pos_local_gc(names[i]);
+				printf("[GC END] %s\n", obj_storage_names[i]);
+			}
 		}
 		printf("(cnt : %d)sfgc triggered!\n", sfgc_cnt);
 		sfgc_cnt++;
