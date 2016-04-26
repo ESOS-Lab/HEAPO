@@ -1157,7 +1157,7 @@ int __unlink_leaf_nodes(unsigned long *input_node)
   int level;
   unsigned long* value = NULL;
   unsigned long v= 0;
-  unsigned long zero_val = 0;
+  unsigned long *zero_val = NULL;
 
   node = input_node;
   get_fill = getfill(&btree_geo128, node, 0);
@@ -1194,8 +1194,8 @@ printf("key = %lu, value = %p\n", *(unsigned long *)(bkey(&btree_geo128, node, i
 			printf("[unlink] leaf node\n");
 			//printf("value[%d] : %lu\n", i, *(unsigned long *)value);
 			//value = 0;
-			setval(&btree_geo128, node, i, &zero_val);
-			printf("current val : %lu\n", *(unsigned long *)bval(&btree_geo128, node, i));
+			setval(&btree_geo128, node, i, zero_val);
+			printf("current val : %d\n", bval(&btree_geo128, node, i));
 #endif
     }
   }
