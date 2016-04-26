@@ -1671,7 +1671,9 @@ asmlinkage void *sys_pos_create(char __user *name, unsigned long size)
 			trie_root->ptrs[i] = 0;
 		sb->trie_root = trie_root;
 	}
-
+	//dk s
+	printk("[sys_pos_create] name_buf = %s, length = %d\n", name_buf, strlen(name_buf));
+	//dk e
 	record = pos_ns_insert(sb->trie_root, name_buf, strlen(name_buf));
 	if (record == NULL) {
 		return (void *)POS_ERROR;

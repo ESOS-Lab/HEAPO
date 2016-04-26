@@ -323,7 +323,9 @@ insert_record_to_container:
 	if (record->str_length != 0) {
 		record->str = (char *)pos_kmalloc(record->str_length);
 		strncpy(record->str, str, (record->str_length)+depth-1);
-		printk("record->str : %s, str : %s, depth : %d, str_length : %d\n", record->str, str, depth, record->str_length);
+		printk("my record->str : %s, str : %s, depth : %d, str_length : %d\n", record->str, str, depth, record->str_length);
+		strncpy(record->str, str+depth-1, record->str_length);
+		printk("org record->str : %s, str : %s, depth : %d, str_length : %d\n", record->str, str, depth, record->str_length);
 	} else {
 		record->str = NULL;
 	}
