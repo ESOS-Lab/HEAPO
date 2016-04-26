@@ -1844,8 +1844,14 @@ asmlinkage void *sys_pos_map(char __user *name)
 
 	if (unlikely(sb->trie_root == NULL))
 		return NULL;
-
+	//dk s
+	printk("[sys_pos_map] check 1\n");
+	//dk e
 	record = pos_ns_search(sb->trie_root, name_buf, strlen(name_buf));
+	//dk s
+	printk("[sys_pos_map] check 1\n");
+	//dk e
+
 	if (record == NULL)
 		return NULL;
 
@@ -1875,11 +1881,11 @@ asmlinkage void *sys_pos_map(char __user *name)
 		pos_map_vma(mm, pos_vma->vm_start, pos_vma->vm_end, mode);
 	}
 
-	//dk start
+	//dk s
 	//list_del(gc_list, &record->gc_member);
 	list_del(&record->gc_member);
 	printk("[sys_pos_map] %s deleted from gc_list\n", name_buf);
-	//dk
+	//dk e
 
 	return (void *)desc->prime_seg;
 }

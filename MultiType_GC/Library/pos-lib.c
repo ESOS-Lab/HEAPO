@@ -256,6 +256,10 @@ pos_map(char* name)
 	//dk e
 	strcpy(name_entry->name, name);
 
+	//dk s
+	printf("[pos_map] name_entry->name = %s, name = %s\n", name_entry->name, name);
+	//dk e
+
 	//sys_pos_map() 시스템 콜 호출
 	name_entry->mstate = (void *)syscall(301, name);
 	if (name_entry->mstate == (void *)0) {
@@ -267,7 +271,7 @@ pos_map(char* name)
 		printf("pos_map() returns 0x%lX address.\n", (unsigned long)name_entry->mstate);
 #endif
 	}
-
+	printf("[pos_map] check\n");
 	name_entry->log_addr = NULL;
 	name_entry->seg_head = NULL;
 
