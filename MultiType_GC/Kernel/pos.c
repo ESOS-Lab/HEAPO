@@ -319,7 +319,10 @@ int pos_insert_vm_area(struct pos_superblock *sb, struct pos_vm_area *vma)
 
 	sb->total_vm += vma->nr_pages;
 	sb->vm_count++;
-	
+
+	//sb s
+	printk("[pos_insert_vm_area] sb->total_vm : %lu\n", sb->total_vm);
+	//sb e	
 	return POS_NORMAL;
 }
 
@@ -462,6 +465,8 @@ void pos_remove_vm_area(struct pos_superblock *sb, struct pos_vm_area *vma,
 
 	sb->total_vm -= vma->nr_pages;
 	sb->vm_count--;
+
+	printk("[pos_remove_vm_area] sb->total_vm : %lu\n", sb->total_vm);
 }
 
 
@@ -1812,6 +1817,9 @@ asmlinkage void *sys_pos_map(char __user *name)
 	char name_buf[POS_NAME_LENGTH];
 	fmode_t mode;
 
+	//sb s
+	printk("[sys_pos_map] start!\n");
+	//sb e
 	//dk start
 	struct list_head *gc_list;
 	gc_list = &(sb->gc_list);
@@ -1862,6 +1870,7 @@ asmlinkage void *sys_pos_map(char __user *name)
 	//dk start
 	//list_del(gc_list, &record->gc_member);
 	list_del(&record->gc_member);
+	printk("[sys_pos_map] %s deleted from gc_list\n", name_buf);
 	//dk
 
 	return (void *)desc->prime_seg;
@@ -1880,6 +1889,10 @@ asmlinkage int sys_pos_unmap(char __user *name)
 	struct mm_struct *mm;
 	char name_buf[POS_NAME_LENGTH];
 	struct list_head *gc_list;
+	
+	//sb s
+	printk("[sys_pos_unmap] start!\n");
+	//sb e
 
 	task = current;
 	mm = task->mm;
@@ -1929,6 +1942,7 @@ asmlinkage int sys_pos_unmap(char __user *name)
 	//dk start
 	//list_add_tail(gc_list, &record->gc_member);
 	list_add_tail(&record->gc_member, gc_list);
+	printk("[sys_pos_unmap] %s inserted in gc_list\n", name_buf);
 	//dk end
 
 	return POS_NORMAL;
@@ -2327,7 +2341,7 @@ asmlinkage int sys_pos_get_sfgc_list(char **victim_list)
 	struct pos_superblock *sb; //pos superblock
 	struct pos_ns_record *ptr; //name table
 	struct list_head *gc_ptr; //gc_list pointer
-	char name_buf[POS_NAME_LENGTH];               //object storage name
+	//char name_buf[POS_NAME_LENGTH];               //object storage name
 	int obj_count = 0;       //ojbect storage count               
 	int overall_NVM_page = 0;
 
@@ -2335,18 +2349,34 @@ asmlinkage int sys_pos_get_sfgc_list(char **victim_list)
 
 	sb = pos_get_sb();
 
-	if((double)sb->total_vm > (double)((double)overall_NVM_page / (double)(8/10))) //if total vm = 80% overall space
+	//sb s
+	printk("[sys_pos_get_sfgc_list] start!\n");
+	printk("[sys_pos_get_sfgc_list] current sb->total_vm : %lu\n", sb->total_vm);
+	// sb s for triggering SFGC test code
+	//if((double)sb->total_vm > (double)((double)overall_NVM_page / (double)(8/10))) //if total vm = 80% overall space
+	//sb e
+	if(sb->total_vm > 190)
 	{
 	    gc_ptr = &sb->gc_list;
+			//sb s
+			if(gc_ptr == NULL)
+				printk("[sys_pos_get_sfgc_list] gc_ptr == NULL\n");
+			//sb e
 
 		while(obj_count < 10 && gc_ptr->next != NULL)
 		{
 			ptr = list_entry(gc_ptr, struct pos_ns_record, gc_member);
+			//sb s
 			//strcpy(name_buf, ptr->str, sizeof(POS_NAME_LENGTH));
-			strcpy(name_buf, ptr->str);
-			copy_to_user(victim_list[obj_count], name_buf, sizeof(POS_NAME_LENGTH));
+			//strcpy(name_buf, ptr->str);
+			//copy_to_user(victim_list[obj_count], name_buf, sizeof(POS_NAME_LENGTH));
+			copy_to_user(victim_list[obj_count], ptr->str, ptr->str_length);
+			//sb e
 			obj_count++;			
 			gc_ptr = gc_ptr->next;
+			//sb s
+			printk("[sys_pos_get_sfgc_list2] %s inserted in gc_list!\n", ptr->str);
+			//sb e
 		}
 	}
 
