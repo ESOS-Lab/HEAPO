@@ -1748,6 +1748,10 @@ asmlinkage int sys_pos_delete(char __user *name)
 	struct mm_struct *mm;
 	char name_buf[POS_NAME_LENGTH];
 
+	//dk start
+	struct list_head *gc_list;
+	gc_list = &(sb->gc_list);
+	//dk end
 
 	task = current;
 	mm = task->mm;
@@ -1807,6 +1811,11 @@ asmlinkage int sys_pos_delete(char __user *name)
 		pos_sb = NULL;
 		pos_init();
 	}
+
+	//dk s
+	list_del(&record->gc_member);
+	printk("[sys_delete] %s deleted from gc_list\n", name_buf);
+	//dk e
 
 	return 1;
 }
@@ -2371,7 +2380,7 @@ asmlinkage int sys_pos_get_sfgc_list(char **victim_list)
 	//sb e
 	if(sb->total_vm > 10)
 	{
-	    gc_ptr = &sb->gc_list;
+	    gc_ptr = &(sb->gc_list)->next;
 			//sb s
 			if(gc_ptr == NULL)
 				printk("[sys_pos_get_sfgc_list] gc_ptr == NULL\n");
@@ -2394,7 +2403,7 @@ asmlinkage int sys_pos_get_sfgc_list(char **victim_list)
 		}
 	}
 
-	return 0;
+	return obj_count;
 }
 //dk e
 
