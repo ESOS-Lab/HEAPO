@@ -232,14 +232,18 @@ pos_map(char* name)
 	struct pos_name_entry *name_entry;
 	int index;
 	
-
+	//dk s
+	printf("[pos_map] check 1\n");
+	//dk e 
 	if (strlen(name) >= POS_NAME_LENGTH)
 		return 0;
 
 	//라이브러리에서 관리하는 name table 먼저 확인
 	index = pos_name_table_index(name);
 	name_entry = name_table[index];
-	
+	//dk s
+	printf("[pos_map] check 2\n");
+	//dk e 
 	while (name_entry) {
 		if (strcmp(name, name_entry->name) == 0) {
 			debug_printf("Already mapped\n");
@@ -248,12 +252,17 @@ pos_map(char* name)
 			name_entry = name_entry->next;
 		}
 	}
-
+	//dk s
+	printf("[pos_map] check 3\n");
+	//dk e 
 	//새로운 name table entry를 할당
 	name_entry = (struct pos_name_entry *)malloc(sizeof(struct pos_name_entry));
 	//dk s
 	//memset(name_entry->name, 0, POS_NAME_LENGTH);
 	//dk e
+	//dk s
+	printf("[pos_map] check 4\n");
+	//dk e 
 	strcpy(name_entry->name, name);
 
 	//dk s

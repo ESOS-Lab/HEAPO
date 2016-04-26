@@ -2389,7 +2389,7 @@ asmlinkage int sys_pos_get_sfgc_list(char **victim_list)
 			obj_count++;			
 			gc_ptr = gc_ptr->next;
 			//sb s
-			printk("[sys_pos_get_sfgc_list2] %s inserted in gc_list!\n", ptr->str);
+			printk("[sys_pos_get_sfgc_list2] %s inserted in gc_list!\n", ptr->str->name);
 			//sb e
 		}
 	}

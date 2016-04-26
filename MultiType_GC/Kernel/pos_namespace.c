@@ -327,7 +327,7 @@ insert_record_to_container:
 		//printk("my record->str : %s, str : %s, depth : %d, str_length : %d\n", record->str, str, depth, record->str_length);
 		//dk e
 		strncpy(record->str, str+depth-1, record->str_length);
-		printk("org record->str : %s, str : %s, depth : %d, str_length : %d\n", record->str, str, depth, record->str_length);
+		///printk("org record->str : %s, str : %s, depth : %d, str_length : %d\n", record->str, str, depth, record->str_length);
 	} else {
 		record->str = NULL;
 	}
