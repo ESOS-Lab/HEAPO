@@ -360,7 +360,8 @@ printf("[gc] 3\n");
 			printf("partial allocated case 1\n");
 			break;
 		}
-
+		mem_ptr = chunk2mem(ptr);
+		
 		if((void *)cur_node->addr == mem_ptr) //Chunk is not a garbage
 		{
 			if(chunk_is_last(ptr) == 0x4)
