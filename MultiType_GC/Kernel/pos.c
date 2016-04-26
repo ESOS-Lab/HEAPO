@@ -2370,7 +2370,7 @@ asmlinkage int sys_pos_get_sfgc_list(char **victim_list)
 			//strcpy(name_buf, ptr->str, sizeof(POS_NAME_LENGTH));
 			//strcpy(name_buf, ptr->str);
 			//copy_to_user(victim_list[obj_count], name_buf, sizeof(POS_NAME_LENGTH));
-			copy_to_user(victim_list[obj_count], ptr->str, ptr->str_length);
+			copy_to_user(victim_list[obj_count], ptr->str, (ptr->str_length)+1);
 			//sb e
 			obj_count++;			
 			gc_ptr = gc_ptr->next;
