@@ -2343,8 +2343,10 @@ asmlinkage short sys_pos_get_storage_type(char *obj_storage_name, short *type)
 	struct pos_ns_record *ptr;
 	struct pos_descriptor *obj_storage_descriptor;
 
+	printk("[sys_pos_get_storage_type] start\n");
 	char name_buf[POS_NAME_LENGTH];
 	copy_from_user(name_buf, obj_storage_name, POS_NAME_LENGTH);
+	printk("name_buf : %s, obj_storage_name : %s\n", name_buf, obj_storage_name);
 
 	sb = pos_get_sb();
 	ptr = pos_ns_search(sb->trie_root, name_buf, strlen(name_buf));
@@ -2380,12 +2382,13 @@ asmlinkage int sys_pos_get_sfgc_list(char **victim_list)
 	//sb e
 	if(sb->total_vm > 10)
 	{
-	    gc_ptr = &(sb->gc_list)->next;
+	    gc_ptr = &(sb->gc_list);
 			//sb s
 			if(gc_ptr == NULL)
 				printk("[sys_pos_get_sfgc_list] gc_ptr == NULL\n");
 			//sb e
 
+		gc_ptr = gc_ptr->next;
 		while(obj_count < 10 && gc_ptr->next != NULL)
 		{
 			ptr = list_entry(gc_ptr, struct pos_ns_record, gc_member);
@@ -2398,7 +2401,7 @@ asmlinkage int sys_pos_get_sfgc_list(char **victim_list)
 			obj_count++;			
 			gc_ptr = gc_ptr->next;
 			//sb s
-			printk("[sys_pos_get_sfgc_list2] %s inserted in gc_list!\n", ptr->str->name);
+			printk("[sys_pos_get_sfgc_list2] %s inserted in gc_list!\n", ptr->desc->name);
 			//sb e
 		}
 	}

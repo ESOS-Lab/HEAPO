@@ -75,7 +75,7 @@ int main(void)
 */
 		for(i=0; i<10; i++) {
 			printf("cur name : %s, len : %d\n", obj_storage_names[i], strlen(obj_storage_names[i]));
-			printf("cur name : %s\n", names[i]);
+			//printf("cur name : %s\n", names[i]);
 			if(obj_storage_names[i][0] != 0) {
 				printf("[POS MAP]\n");
 				//obj_storage_names[i][strlen(obj_storage_names[i]+1) =
