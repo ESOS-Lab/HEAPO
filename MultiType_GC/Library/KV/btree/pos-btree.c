@@ -67,7 +67,7 @@
 #define LOG_CNT_ON		0
 
 //son s
-#define BTREE_DEBUG		1
+#define BTREE_DEBUG		0
 
 unsigned int btree_state = 0;
 //son e
@@ -306,25 +306,25 @@ EXPORT_SYMBOL_GPL(btree_init_mempool);*/
 int pos_btree_init(char *name)
 {
 	struct btree_head *head;
-printf("1\n");	
+//printf("1\n");	
 	if (pos_create(name) == 0)
 		return -1;
-printf("2\n");
+//printf("2\n");
 #if CONSISTENCY == 1
 	pos_log_create(name);
 	pos_transaction_start(name, POS_TS_INSERT);
 #endif
-printf("3\n");
+//printf("3\n");
 	head = (struct btree_head *)pos_malloc(name, sizeof(struct btree_head));
 
 	pos_set_prime_object(name, head);
-	printf("4\n");
+	//printf("4\n");
 //printf("prime node in init : %p\n", head->node);	
 	__btree_init(head);
 	//head->mempool = mempool_create(0, btree_alloc, btree_free, NULL);
 	//if (!head->mempool)
 	//	return -ENOMEM;
-printf("5\n");
+//printf("5\n");
 #if CONSISTENCY == 1
 	pos_transaction_end(name);
 	pos_log_unmap(name);
@@ -638,7 +638,7 @@ static int getfill(struct btree_geo *geo, unsigned long *node, int start)
 	for (i = start; i < geo->no_pairs; i++)
 	{
 		ret = !bval2(geo, node ,i);
-		printf("[getfill] ret = %d\n");
+		//printf("[getfill] ret = %d\n", ret);
 		//if (!bval(geo, node, i))
 		if (!bval2(geo, node, i))
 		{
@@ -782,7 +782,7 @@ retry:
 		if (err) {
 			//mempool_free(new, head->mempool);
 			////pos_free(name, new);
-			printf("btree_insert_level error!\n");
+			//printf("btree_insert_level error!\n");
 			return err;
 		}
 		for (i = 0; i < fill / 2; i++) {
@@ -1194,12 +1194,12 @@ printf("key = %lu, value = %p\n", *(unsigned long *)(bkey(&btree_geo128, node, i
 			printf("[unlink] leaf node\n");
 			//printf("value[%d] : %lu\n", i, *(unsigned long *)value);
 			//value = 0;
-			setval(&btree_geo128, node, i, zero_val);
-			printf("current val : %d\n", bval(&btree_geo128, node, i));
 #endif
+			setval(&btree_geo128, node, i, zero_val);
+			//printf("current val : %d\n", bval(&btree_geo128, node, i));
     }
   }
-	printf("----------------------------------\n");
+//	printf("----------------------------------\n");
 	
   return 1;
 }
@@ -1256,7 +1256,7 @@ static int btree_remove_level2(char *name, struct btree_head *head,
 
 	unsigned long tmp_key[2] = {0, };
 	unsigned long tmp_val[2] = {0, };
-	printf("before for\n");
+	//printf("before for\n");
 	for (i = pos; i < fill - 1; i++) {
 #if CONSISTENCY == 1
 		setkey_log(name, geo, node, i, bkey(geo, node, i + 1));
@@ -1386,7 +1386,7 @@ printf("key = %lu, value = %p\n", *(unsigned long *)(bkey(&btree_geo128, node, i
 			insert_node(head, (unsigned long)value);
     }
   }
-	printf("----------------------------------\n");
+	//printf("----------------------------------\n");
 	insert_node(head, (unsigned long)node);
 	
   return 1;

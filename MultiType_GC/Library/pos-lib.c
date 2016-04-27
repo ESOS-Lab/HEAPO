@@ -233,7 +233,7 @@ pos_map(char* name)
 	int index;
 	
 	//dk s
-	printf("[pos_map] check 1\n");
+	//printf("[pos_map] check 1\n");
 	//dk e 
 	if (strlen(name) >= POS_NAME_LENGTH)
 		return 0;
@@ -242,7 +242,7 @@ pos_map(char* name)
 	index = pos_name_table_index(name);
 	name_entry = name_table[index];
 	//dk s
-	printf("[pos_map] check 2\n");
+	//printf("[pos_map] check 2\n");
 	//dk e 
 	while (name_entry) {
 		if (strcmp(name, name_entry->name) == 0) {
@@ -253,7 +253,7 @@ pos_map(char* name)
 		}
 	}
 	//dk s
-	printf("[pos_map] check 3\n");
+	//printf("[pos_map] check 3\n");
 	//dk e 
 	//새로운 name table entry를 할당
 	name_entry = (struct pos_name_entry *)malloc(sizeof(struct pos_name_entry));
@@ -261,12 +261,12 @@ pos_map(char* name)
 	//memset(name_entry->name, 0, POS_NAME_LENGTH);
 	//dk e
 	//dk s
-	printf("[pos_map] check 4\n");
+	//printf("[pos_map] check 4\n");
 	//dk e 
 	strcpy(name_entry->name, name);
 
 	//dk s
-	printf("[pos_map] name_entry->name = %s, name = %s\n", name_entry->name, name);
+	//printf("[pos_map] name_entry->name = %s, name = %s\n", name_entry->name, name);
 	//dk e
 
 	//sys_pos_map() 시스템 콜 호출
@@ -280,7 +280,7 @@ pos_map(char* name)
 		printf("pos_map() returns 0x%lX address.\n", (unsigned long)name_entry->mstate);
 #endif
 	}
-	printf("[pos_map] check\n");
+	//printf("[pos_map] check\n");
 	name_entry->log_addr = NULL;
 	name_entry->seg_head = NULL;
 

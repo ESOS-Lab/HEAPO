@@ -66,20 +66,20 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	printf("[MAKE HASHTABLE]\n");
-	make_list_for_hashtable2(TEST_OBJ_NAME, &head);
-	printf("[HASHTABLE PRINT]\n");
-	display(head);
+	//printf("[MAKE HASHTABLE]\n");
+	//make_list_for_hashtable2(TEST_OBJ_NAME, &head);
+	//printf("[HASHTABLE PRINT]\n");
+	//display(head);
 
 	printf("[DELETE SOME NODES]\n");
 	head = NULL;
 	pos_hashtable_remove2(TEST_OBJ_NAME, 0);
 	
-	printf("[PRINT ALLOC LIST AFTER DELETE]\n");
-	make_list_for_hashtable2(TEST_OBJ_NAME, &head);
-	display(head);
-	remove_list(head);
-	printf("\n");
+	//printf("[PRINT ALLOC LIST AFTER DELETE]\n");
+	//make_list_for_hashtable2(TEST_OBJ_NAME, &head);
+	//display(head);
+	//remove_list(head);
+	//printf("\n");
 	
 	printf("[INSERT HASHTABLE NODES AGAIN]\n");
 	for(i=0; i<loop_num; i++) {
@@ -108,15 +108,15 @@ int main(int argc, char *argv[])
 	}
 	*/
 
-	printf("[PRINT ALLOC LIST BEFORE FINISH PROGRAM]\n");
+	//printf("[PRINT ALLOC LIST BEFORE FINISH PROGRAM]\n");
 	head = NULL;
-	make_list_for_hashtable2(TEST_OBJ_NAME, &head);
-	display(head);
-	remove_list(head);
-	printf("\n");
+	//make_list_for_hashtable2(TEST_OBJ_NAME, &head);
+	//display(head);
+	//remove_list(head);
+	//printf("\n");
 
-	printf("[DISTROY HASHTABLE]\n");
-	pos_hashtable_destroy(TEST_OBJ_NAME);
+	//printf("[DISTROY HASHTABLE]\n");
+	//pos_hashtable_destroy(TEST_OBJ_NAME);
 
 	printf("[FINISH PROGRAM]\n");
 

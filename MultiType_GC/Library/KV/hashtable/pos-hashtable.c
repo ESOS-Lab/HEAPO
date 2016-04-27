@@ -26,7 +26,7 @@
 #define LOG_CNT_ON		0
 
 //sb s
-#define HASH_DEBUG	1
+#define HASH_DEBUG	0
 
 unsigned int hash_state = 0;
 //sb e
@@ -649,7 +649,7 @@ int make_list_for_hashtable(struct hashtable *h, Node **head)
 			value = e->v;
 			insert_node(head, (unsigned long)e);
 			insert_node(head, (unsigned long)value);
-			printf("[%d](tbl idx : %d)e : %p, v : %p inserted\n", idx, i, e, value);
+		//	printf("[%d](tbl idx : %d)e : %p, v : %p inserted\n", idx, i, e, value);
 			e = e->next;
 			idx++;
 		}
@@ -681,7 +681,7 @@ int make_list_for_hashtable2(char *name, Node **head)
 			value = e->v;
 			insert_node(head, (unsigned long)e);
 			insert_node(head, (unsigned long)value);
-			printf("[%d][index : %d]e : %p, v : %p inserted\n", idx, i, e, value);
+		//	printf("[%d][index : %d]e : %p, v : %p inserted\n", idx, i, e, value);
 			e = e->next;
 			idx++;
 		}

@@ -20,7 +20,7 @@
 #define pos_write_value	pos_write_value_kv
 
 //son start
-#define	LIST_DEBUG		1
+#define	LIST_DEBUG		0
 
 Node *alloc_head=NULL;
 unsigned int list_state=0;
@@ -147,8 +147,8 @@ int pos_list_insert(char *name, void *_key, void *_val, unsigned long val_size)
 	//dk s
 //printf("[pos-insert] node : %p\n", node);
 	//dk e
-printf("[pos-insert] node : %p, node->value : %p\n", node, node->value);
-printf("[pos-insert] 3-1\n");
+//printf("[pos-insert] node : %p, node->value : %p\n", node, node->value);
+//printf("[pos-insert] 3-1\n");
 #endif
 
 #if CONSISTENCY == 1
@@ -301,7 +301,7 @@ void print_list(char *name)
 		return;
 	
 	cur_node = lh->head;
-	printf("head : %p, head->head : %p\n", lh, cur_node);
+	//printf("head : %p, head->head : %p\n", lh, cur_node);
 	// repeat while next node is not NULL
 	while(cur_node != NULL) {
 #if LIST_DEBUG == 1
@@ -338,35 +338,35 @@ int pos_delete_selected_node(char *name, int idx)
 	struct list_node *cur_node, *prev_node;
 	int i;
 
-printf("1\n");
+//printf("1\n");
 	lh = (struct list_head *)pos_get_prime_object(name);
 	if(lh == NULL)
 		return 0;
-printf("2\n");
+//printf("2\n");
 	cur_node = lh->head;
 	for(i=0; i<idx; i++) {
-	printf("[in for]prev_node = %p\n", prev_node);
-	printf("[in for]cur_node = %p\n", cur_node);
+	//printf("[in for]prev_node = %p\n", prev_node);
+	//printf("[in for]cur_node = %p\n", cur_node);
 		prev_node = cur_node;
 		cur_node = cur_node->next;
 	}
-	printf("address check\n");
-	printf("i =%d\n", i);
-	printf("prev_node = %p\n", prev_node);
-	printf("cur_node = %p\n", cur_node);
+	//printf("address check\n");
+	//printf("i =%d\n", i);
+	//printf("prev_node = %p\n", prev_node);
+	//printf("cur_node = %p\n", cur_node);
 
 	if(cur_node == NULL && i < idx-2) {
 		printf("wrong index!\n");
 		return 0;
 	}
-printf("3 i - %d\n", i);
+//printf("3 i - %d\n", i);
     prev_node->next = NULL;
 	cur_node->next = NULL;
 	
-	printf("[delete in pos list] cur_node : %p, cur_node->value : %p\n", cur_node, (void *)cur_node->value);
+	//printf("[delete in pos list] cur_node : %p, cur_node->value : %p\n", cur_node, (void *)cur_node->value);
 	pos_free(name, cur_node->value);
 	pos_free(name, cur_node);
-printf("4\n");
+//printf("4\n");
 	//cur_node = NULL;	
 }
 

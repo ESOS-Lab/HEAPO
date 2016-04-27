@@ -53,9 +53,9 @@ int main(int argc, char *argv[])
 		printf("error of creating object storage!\n");
 		return 0;
 	}
-	printf("node size = %lu\n", sizeof(struct list_node));
+	//printf("node size = %lu\n", sizeof(struct list_node));
 
-	printf("obj_type = %d\n", obj_type);
+	//printf("obj_type = %d\n", obj_type);
   syscall(307, TEST_OBJ_NAME, &obj_type, &obj_size, &key_num, &val_num);
 
 	printf("[MAP POS]\n");
@@ -71,19 +71,20 @@ int main(int argc, char *argv[])
 		if(pos_list_insert(TEST_OBJ_NAME, (void *)key, (void *)num[i], 8) < 0) {
 			printf("insertion failed!\n");
 		}
-		printf("\n[USER] insert check[%d]\n", i);
+		printf("[USER] insert check[%d]\n", i);
 	}
 
 	head = NULL;
-	make_list_for_list2(TEST_OBJ_NAME, &head);
-	printf("[PRINT ALLOC LIST BEFORE DEL]\n");
-	display(head);
-	remove_list(head);
+	//make_list_for_list2(TEST_OBJ_NAME, &head);
+	//printf("[PRINT ALLOC LIST BEFORE DEL]\n");
+	//display(head);
+	//remove_list(head);
 	printf("[PRINT LIST BEFORE DEL]\n");
 	print_list(TEST_OBJ_NAME);
 	pos_delete_selected_node(TEST_OBJ_NAME, garbage_idx);
-	printf("[PRINT LIST AFTER DEL]\n");
-	print_list(TEST_OBJ_NAME);
+
+//	printf("[PRINT LIST AFTER DEL]\n");
+//	print_list(TEST_OBJ_NAME);
 
 	for(i=0; i<count; i++) {
 		for(j=0; j<2; j++) {
@@ -93,17 +94,17 @@ int main(int argc, char *argv[])
 		if(pos_list_insert(TEST_OBJ_NAME, (void *)key, (void *)num[i+count], 8) < 0) {
 			printf("insertion failed!\n");
 		}
-		printf("\n[USER] insert check[%d]\n", i);
+		printf("[USER] insert check[%d]\n", i);
 	}
 
-	printf("[PRINT ALLOC LIST BEFORE FINISH PROGRAM]\n");
-	head = NULL;
-	make_list_for_list2(TEST_OBJ_NAME, &head);
-	display(head);
-	remove_list(head);
+//	printf("[PRINT ALLOC LIST BEFORE FINISH PROGRAM]\n");
+//	head = NULL;
+//	make_list_for_list2(TEST_OBJ_NAME, &head);
+//	display(head);
+//	remove_list(head);
 
 	printf("[DISTROY LIST]\n");
-	pos_list_destroy(TEST_OBJ_NAME);
+	//pos_list_destroy(TEST_OBJ_NAME);
 
 	printf("[FINISH PROGRAM]\n");
 
