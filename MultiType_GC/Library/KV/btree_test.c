@@ -19,9 +19,11 @@ int main(int argc, char *argv[])
   int obj_size=120;
   int key_num=5;
   int val_num=5;
+	int garbage_count = 0;
 
 	strcpy(TEST_OBJ_NAME, argv[1]);
   count = atoi(argv[2]);
+	garbage_count = atoi(argv[3]);
 
 	printf("[INIT BTREE]\n");
 	if(pos_btree_init(TEST_OBJ_NAME) < 0) {
@@ -49,13 +51,20 @@ int main(int argc, char *argv[])
 		printf("[USER] INSERT[%d]\n", i);
 	}
 
-	//printf("[PRINT ALLOC LIST BEFORE DELETE]\n");
-	//make_list_for_btree2(TEST_OBJ_NAME, &head);
-	//display(head);
-	//remove_list(head);
+	printf("[PRINT ALLOC LIST BEFORE DELETE]\n");
+	make_list_for_btree2(TEST_OBJ_NAME, &head);
+	display(head);
+	remove_list(head);
 	
 	printf("[DELETE FEW NODES]\n");
-	unlink_leaf_nodes(TEST_OBJ_NAME);
+	unlink_leaf_nodes(TEST_OBJ_NAME, garbage_count);
+	
+	printf("[PRINT ALLOC LIST AFTER DELETE]\n");
+	head = NULL;
+	make_list_for_btree2(TEST_OBJ_NAME, &head);
+	display(head);
+	remove_list(head);
+
 /*
 	del_addr = get_node_addr(head, get_list_num(head)/2);
 	printf("del addr : %p\n", (void *)del_addr);
@@ -89,6 +98,8 @@ int main(int argc, char *argv[])
 	//display(head);
 	//remove_list(head);
 
+	pos_local_gc(TEST_OBJ_NAME);
+/*
 	printf("[insert btree nodes again]\n");	
 	for(i=0; i<count; i++) {
 		for(j=0; j<2; j++) {
@@ -101,6 +112,8 @@ int main(int argc, char *argv[])
 		}
 		printf("[USER] INSERT[%d]\n", i);
 	}
+*/
+//	printf("pos_malloc() count : %d\n", pos_get_pos_m_count());
 	
 	printf("[DISTROY BTREE]\n");
 	pos_unmap(TEST_OBJ_NAME);

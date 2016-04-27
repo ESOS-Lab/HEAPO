@@ -70,6 +70,7 @@
 #define BTREE_DEBUG		0
 
 unsigned int btree_state = 0;
+unsigned int pos_m_count = 0;
 //son e
 
 #define L1_CACHE_SHIFT	(6)	// 64bit?
@@ -773,6 +774,7 @@ retry:
 			printf("new node alloc error!\n");
 			return -ENOMEM;
 		}
+		//pos_m_count++;
 		//err = btree_insert_level(head, geo,
 		//		bkey(geo, node, fill / 2 - 1),
 		//		new, level + 1, gfp);
@@ -847,6 +849,7 @@ retry:
 
 		// Allocate object and copy the content 
 		new_val = pos_malloc(name, val_size);
+		//pos_m_count++;
 		memcpy(new_val, val, val_size);
 
 #if CONSISTENCY == 1
@@ -1195,7 +1198,11 @@ printf("key = %lu, value = %p\n", *(unsigned long *)(bkey(&btree_geo128, node, i
 			//printf("value[%d] : %lu\n", i, *(unsigned long *)value);
 			//value = 0;
 #endif
-			setval(&btree_geo128, node, i, zero_val);
+			//pos_m_count--;
+			if(pos_m_count > 0) {
+				setval(&btree_geo128, node, i, zero_val);
+				pos_m_count--;
+			}
 			//printf("current val : %d\n", bval(&btree_geo128, node, i));
     }
   }
@@ -1204,13 +1211,15 @@ printf("key = %lu, value = %p\n", *(unsigned long *)(bkey(&btree_geo128, node, i
   return 1;
 }
 
-int unlink_leaf_nodes(char *name)
+int unlink_leaf_nodes(char *name, int g_count)
 {
 	struct btree_head *bh;
 	unsigned long *node = NULL;
 
 	bh = (struct btree_head *)pos_get_prime_object(name);
 	node = bh->node;
+
+	pos_m_count = g_count;
 
 	return __unlink_leaf_nodes(node);
 }
@@ -1442,6 +1451,12 @@ int make_list_for_btree2(char *name, Node **head)
 }
 // sb e
 
+//sb s
+unsigned int pos_get_pos_m_count()
+{
+	return pos_m_count;
+}
+//sb e
 
 //EXPORT_SYMBOL_GPL(btree_remove);
 

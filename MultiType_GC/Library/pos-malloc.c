@@ -820,7 +820,7 @@ pos_malloc_consolidate(char *name, mstate av)
 #endif
 				pos_int_free(name, av, p, 0);
 //sb s
-	printf("			p(%p) pos freed freed\n", p);
+//	printf("			p(%p) pos freed freed\n", p);
 //sb e
 			} while ( (p = nextp) != 0);
 		}

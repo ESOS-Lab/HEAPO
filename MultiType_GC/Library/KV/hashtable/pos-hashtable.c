@@ -681,7 +681,7 @@ int make_list_for_hashtable2(char *name, Node **head)
 			value = e->v;
 			insert_node(head, (unsigned long)e);
 			insert_node(head, (unsigned long)value);
-		//	printf("[%d][index : %d]e : %p, v : %p inserted\n", idx, i, e, value);
+			printf("[%d][index : %d]e : %p, v : %p inserted\n", idx, i, e, value);
 			e = e->next;
 			idx++;
 		}

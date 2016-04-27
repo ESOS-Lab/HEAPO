@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
 	//remove_list(head);
 	printf("[PRINT LIST BEFORE DEL]\n");
 	print_list(TEST_OBJ_NAME);
-	pos_delete_selected_node(TEST_OBJ_NAME, garbage_idx);
+	pos_delete_selected_node(TEST_OBJ_NAME, garbage_idx-1);
 
 //	printf("[PRINT LIST AFTER DEL]\n");
 //	print_list(TEST_OBJ_NAME);
