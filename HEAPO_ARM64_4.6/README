@@ -14,7 +14,7 @@ $ cd ./images/linux/
 
 2. Library Compile
 
-$ cd ~/HEAPO_ARM_3.15/Library/
+$ cd ~/HEAPO_ARM64_4.6/Library/
 $ ./install
 $ make
 $ ./malloc_free create
