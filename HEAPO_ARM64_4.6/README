@@ -1,0 +1,23 @@
+Git Repository Download
+
+$ git clone https://github.com/ESOS-Lab/HEAPO.git
+
+
+1. install petalinux installer
+
+$ petalinux-create
+$ cp -R ~/HEAPO_ARM64_4.6 ~/xilinx-zcu102-2016.4/components/ext_sources/ 
+$ cd ~/xilinx-zcu102-2016.4/
+$ petalinux-config
+$ petalinux-build
+$ cd ./images/linux/
+
+2. Library Compile
+
+$ cd ~/HEAPO_ARM_3.15/Library/
+$ ./install
+$ make
+$ ./malloc_free create
+$ ./malloc_free persistency
+$ ./malloc_free persistency
+$ ./malloc_free persistency
