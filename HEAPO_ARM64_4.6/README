@@ -3,10 +3,10 @@ Git Repository Download
 $ git clone https://github.com/ESOS-Lab/HEAPO.git
 
 
-1. install petalinux installer
+1. Petalinux Compile
 
 $ petalinux-create
-$ cp -R ~/HEAPO_ARM64_4.6 ~/xilinx-zcu102-2016.4/components/ext_sources/ 
+$ cp -R ~/HEAPO_ARM64_4.6/Kernel ~/xilinx-zcu102-2016.4/components/ext_sources/ 
 $ cd ~/xilinx-zcu102-2016.4/
 $ petalinux-config
 $ petalinux-build
