@@ -1,0 +1,27 @@
+
+* Ubuntu 10.04 64bit
+* kernel version: 2.6.32
+* gcc version: 4.4.3
+
+------------------------------------------------------------------------------------------------
+
+위치: mm/mmap.c
+
+
+static int
+can_vma_merge_after(struct vm_area_struct *vma, unsigned long vm_flags,
+			struct anon_vma *anon_vma, struct file *file, pgoff_t vm_pgoff)
+{
+	if (is_mergeable_vma(vma, file, vm_flags) &&
+		is_mergeable_anon_vma(anon_vma, vma->anon_vma)) {
+			pgoff_t vm_pglen;
+			vm_pglen = (vma->vm_end - vma->vm_start) >> PAGE_SHIFT;
+			// POS (Taeho Hwang)
+			//if (vma->vm_pgoff + vm_pglen == vm_pgoff)
+			if (vma->vm_pgoff + vm_pglen == vm_pgoff || (vma->vm_pgoff==-1 && vm_pgoff==-1))
+				return 1; 
+	}
+	return 0;       
+} 
+
+------------------------------------------------------------------------------------------------

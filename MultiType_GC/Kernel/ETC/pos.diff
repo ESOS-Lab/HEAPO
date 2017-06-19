@@ -1,0 +1,734 @@
+diff -urN linux-2.6.32/arch/x86/include/asm/unistd_64.h linux-2.6.32-POS/arch/x86/include/asm/unistd_64.h
+--- linux-2.6.32/arch/x86/include/asm/unistd_64.h	2009-12-03 12:51:21.000000000 +0900
++++ linux-2.6.32-POS/arch/x86/include/asm/unistd_64.h	2012-06-19 13:41:28.012547545 +0900
+@@ -662,6 +662,22 @@
+ #define __NR_perf_event_open			298
+ __SYSCALL(__NR_perf_event_open, sys_perf_event_open)
+ 
++// POS (Taeho Hwang)
++#define __NR_pos_create				299
++__SYSCALL(__NR_pos_create, sys_pos_create)
++#define __NR_pos_delete				300
++__SYSCALL(__NR_pos_delete, sys_pos_delete)
++#define __NR_pos_map				301
++__SYSCALL(__NR_pos_map, sys_pos_map)
++#define __NR_pos_unmap				302
++__SYSCALL(__NR_pos_unmap, sys_pos_unmap)
++#define __NR_pos_seg_alloc			303
++__SYSCALL(__NR_pos_seg_alloc, sys_pos_seg_alloc)
++#define __NR_pos_seg_free			304
++__SYSCALL(__NR_pos_seg_free, sys_pos_seg_free)
++#define __NR_pos_is_mapped			305
++__SYSCALL(__NR_pos_is_mapped, sys_pos_is_mapped)
++
+ #ifndef __NO_STUBS
+ #define __ARCH_WANT_OLD_READDIR
+ #define __ARCH_WANT_OLD_STAT
+diff -urN linux-2.6.32/arch/x86/kernel/sys_x86_64.c linux-2.6.32-POS/arch/x86/kernel/sys_x86_64.c
+--- linux-2.6.32/arch/x86/kernel/sys_x86_64.c	2009-12-03 12:51:21.000000000 +0900
++++ linux-2.6.32-POS/arch/x86/kernel/sys_x86_64.c	2012-06-19 13:41:28.012547545 +0900
+@@ -157,7 +157,9 @@
+ 		goto bottomup;
+ 
+ 	/* requesting a specific address */
+-	if (addr) {
++	// POS (Taeho Hwang)
++	//if (addr) {
++	if (addr && addr < mm->mmap_base) {
+ 		addr = PAGE_ALIGN(addr);
+ 		vma = find_vma(mm, addr);
+ 		if (TASK_SIZE - len >= addr &&
+diff -urN linux-2.6.32/arch/x86/mm/mmap.c linux-2.6.32-POS/arch/x86/mm/mmap.c
+--- linux-2.6.32/arch/x86/mm/mmap.c	2009-12-03 12:51:21.000000000 +0900
++++ linux-2.6.32-POS/arch/x86/mm/mmap.c	2012-06-19 13:41:28.012547545 +0900
+@@ -31,6 +31,9 @@
+ #include <linux/sched.h>
+ #include <asm/elf.h>
+ 
++// POS (Taeho Hwang)
++#include <linux/pos.h>
++
+ static unsigned int stack_maxrandom_size(void)
+ {
+ 	unsigned int max = 0;
+@@ -94,6 +97,12 @@
+ 	return rnd << PAGE_SHIFT;
+ }
+ 
++// POS (Taeho Hwang)
++unsigned long min_gap()
++{
++	return MIN_GAP;
++}
++
+ static unsigned long mmap_base(void)
+ {
+ 	unsigned long gap = current->signal->rlim[RLIMIT_STACK].rlim_cur;
+@@ -103,7 +112,9 @@
+ 	else if (gap > MAX_GAP)
+ 		gap = MAX_GAP;
+ 
+-	return PAGE_ALIGN(TASK_SIZE - gap - mmap_rnd());
++	// POS (Taeho Hwang)
++	//return PAGE_ALIGN(TASK_SIZE - gap - mmap_rnd());
++	return PAGE_ALIGN(TASK_SIZE - gap - POS_AREA_SIZE - mmap_rnd()); // 32TB reservation
+ }
+ 
+ /*
+diff -urN linux-2.6.32/fs/binfmt_elf.c linux-2.6.32-POS/fs/binfmt_elf.c
+--- linux-2.6.32/fs/binfmt_elf.c	2009-12-03 12:51:21.000000000 +0900
++++ linux-2.6.32-POS/fs/binfmt_elf.c	2012-06-19 13:41:28.012547545 +0900
+@@ -35,6 +35,11 @@
+ #include <asm/param.h>
+ #include <asm/page.h>
+ 
++
++// POS (Taeho Hwang)
++#include <linux/pos.h>
++
++
+ static int load_elf_binary(struct linux_binprm *bprm, struct pt_regs *regs);
+ static int load_elf_library(struct file *);
+ static unsigned long elf_map(struct file *, unsigned long, struct elf_phdr *,
+@@ -355,6 +360,56 @@
+ 
+ #endif /* !elf_map */
+ 
++
++// POS (Taeho Hwang)
++static unsigned long pos_elf_map(struct file *filep, unsigned long addr,
++		struct elf_phdr *eppnt, int prot, int type)
++{
++	struct vm_area_struct *vma;
++	unsigned long vm_flags = 0;
++	unsigned long size = eppnt->p_filesz + ELF_PAGEOFFSET(eppnt->p_vaddr);
++	unsigned long off = eppnt->p_offset - ELF_PAGEOFFSET(eppnt->p_vaddr);
++	addr = ELF_PAGESTART(addr);
++	size = ELF_PAGEALIGN(size);
++
++	/* mmap() will return -EINVAL if given a zero size, but a
++	 * segment with zero filesize is perfectly valid */
++	if (!size)
++		return addr;
++
++	down_write(&current->mm->mmap_sem);
++	
++	vm_flags = VM_READ|VM_WRITE|VM_SHARED|VM_POS_SECTION;
++	
++	vma = kmem_cache_zalloc(vm_area_cachep, GFP_KERNEL);
++	if (unlikely(vma == NULL))
++		return POS_ERROR;
++
++	vma->vm_mm = current->mm;
++	vma->vm_start = addr;
++	vma->vm_end = addr+size;
++
++	vma->vm_flags = vm_flags ;
++	vma->vm_page_prot = vm_get_page_prot(vma->vm_flags);
++
++	vma->vm_ops = NULL;
++	//vma->vm_private_data = (void *)pos_vma;
++	vma->vm_file = filep;
++	vma->vm_pgoff = off >> PAGE_SHIFT;
++
++	if (unlikely(insert_vm_struct(current->mm, vma))) {
++		kmem_cache_free(vm_area_cachep, vma);
++		return POS_ERROR;
++	}
++
++	current->mm->map_count++;
++	current->mm->total_vm += (vma->vm_end-vma->vm_start)>>PAGE_SHIFT;
++
++	up_write(&current->mm->mmap_sem);
++	return addr;
++}
++
++
+ static unsigned long total_mapping_size(struct elf_phdr *cmds, int nr)
+ {
+ 	int i, first_idx = -1, last_idx = -1;
+@@ -582,6 +637,10 @@
+ 		struct elfhdr interp_elf_ex;
+ 	} *loc;
+ 
++	// POS (Taeho Hwang)
++	int cnt_load = 0;
++
++
+ 	loc = kmalloc(sizeof(*loc), GFP_KERNEL);
+ 	if (!loc) {
+ 		retval = -ENOMEM;
+@@ -829,8 +888,19 @@
+ #endif
+ 		}
+ 
+-		error = elf_map(bprm->file, load_bias + vaddr, elf_ppnt,
+-				elf_prot, elf_flags, 0);
++
++		// POS (Taeho Hwang)
++		cnt_load++;
++		//if (cnd_load == 3 && elf_ppnt->p_vaddr < TASK_SIZE)
++		if (cnt_load == 3 && elf_ppnt->p_vaddr < 0x7FFFFFFFFFFF) {
++			error = pos_elf_map(bprm->file, load_bias + vaddr, elf_ppnt, elf_prot, elf_flags);
++		} else {
++			error = elf_map(bprm->file, load_bias + vaddr, elf_ppnt, elf_prot, elf_flags, 0);
++		}
++		//error = elf_map(bprm->file, load_bias + vaddr, elf_ppnt,
++		//		elf_prot, elf_flags, 0);
++
++
+ 		if (BAD_ADDR(error)) {
+ 			send_sig(SIGKILL, current, 0);
+ 			retval = IS_ERR((void *)error) ?
+diff -urN linux-2.6.32/fs/inode.c linux-2.6.32-POS/fs/inode.c
+--- linux-2.6.32/fs/inode.c	2009-12-03 12:51:21.000000000 +0900
++++ linux-2.6.32-POS/fs/inode.c	2012-06-19 13:41:28.012547545 +0900
+@@ -38,6 +38,11 @@
+  */
+ #include <linux/buffer_head.h>
+ 
++
++// POS (Taeho Hwang)
++#include <linux/pos.h>
++
++
+ /*
+  * New inode.c implementation.
+  *
+@@ -1325,6 +1330,10 @@
+ 
+ 	if (op && op->drop_inode)
+ 		drop = op->drop_inode;
++
++	// POS (Taeho Hwang)
++	pos_find_and_remove_pval_desc(inode);
++
+ 	drop(inode);
+ }
+ 
+diff -urN linux-2.6.32/include/linux/mm.h linux-2.6.32-POS/include/linux/mm.h
+--- linux-2.6.32/include/linux/mm.h	2009-12-03 12:51:21.000000000 +0900
++++ linux-2.6.32-POS/include/linux/mm.h	2012-06-19 13:41:28.012547545 +0900
+@@ -106,6 +106,11 @@
+ #define VM_PFN_AT_MMAP	0x40000000	/* PFNMAP vma that is fully mapped at mmap time */
+ #define VM_MERGEABLE	0x80000000	/* KSM may merge identical pages */
+ 
++
++// POS (Taeho Hwang)
++#define VM_POS_SECTION	0x000100000000
++
++
+ #ifndef VM_STACK_DEFAULT_FLAGS		/* arch can override this */
+ #define VM_STACK_DEFAULT_FLAGS VM_DATA_DEFAULT_FLAGS
+ #endif
+@@ -697,6 +702,9 @@
+ #define VM_FAULT_WRITE	0x0008	/* Special case for get_user_pages */
+ #define VM_FAULT_HWPOISON 0x0010	/* Hit poisoned page */
+ 
++// POS (Taeho Hwang)
++#define VM_FAULT_POS	0x0020
++
+ #define VM_FAULT_NOPAGE	0x0100	/* ->fault installed the pte, not return page */
+ #define VM_FAULT_LOCKED	0x0200	/* ->fault locked the returned page */
+ 
+diff -urN linux-2.6.32/include/linux/posix-timers.h linux-2.6.32-POS/include/linux/posix-timers.h
+--- linux-2.6.32/include/linux/posix-timers.h	2009-12-03 12:51:21.000000000 +0900
++++ linux-2.6.32-POS/include/linux/posix-timers.h	1970-01-01 09:00:00.000000000 +0900
+@@ -1,122 +0,0 @@
+-#ifndef _linux_POSIX_TIMERS_H
+-#define _linux_POSIX_TIMERS_H
+-
+-#include <linux/spinlock.h>
+-#include <linux/list.h>
+-#include <linux/sched.h>
+-
+-union cpu_time_count {
+-	cputime_t cpu;
+-	unsigned long long sched;
+-};
+-
+-struct cpu_timer_list {
+-	struct list_head entry;
+-	union cpu_time_count expires, incr;
+-	struct task_struct *task;
+-	int firing;
+-};
+-
+-#define CPUCLOCK_PID(clock)		((pid_t) ~((clock) >> 3))
+-#define CPUCLOCK_PERTHREAD(clock) \
+-	(((clock) & (clockid_t) CPUCLOCK_PERTHREAD_MASK) != 0)
+-#define CPUCLOCK_PID_MASK	7
+-#define CPUCLOCK_PERTHREAD_MASK	4
+-#define CPUCLOCK_WHICH(clock)	((clock) & (clockid_t) CPUCLOCK_CLOCK_MASK)
+-#define CPUCLOCK_CLOCK_MASK	3
+-#define CPUCLOCK_PROF		0
+-#define CPUCLOCK_VIRT		1
+-#define CPUCLOCK_SCHED		2
+-#define CPUCLOCK_MAX		3
+-
+-#define MAKE_PROCESS_CPUCLOCK(pid, clock) \
+-	((~(clockid_t) (pid) << 3) | (clockid_t) (clock))
+-#define MAKE_THREAD_CPUCLOCK(tid, clock) \
+-	MAKE_PROCESS_CPUCLOCK((tid), (clock) | CPUCLOCK_PERTHREAD_MASK)
+-
+-/* POSIX.1b interval timer structure. */
+-struct k_itimer {
+-	struct list_head list;		/* free/ allocate list */
+-	spinlock_t it_lock;
+-	clockid_t it_clock;		/* which timer type */
+-	timer_t it_id;			/* timer id */
+-	int it_overrun;			/* overrun on pending signal  */
+-	int it_overrun_last;		/* overrun on last delivered signal */
+-	int it_requeue_pending;		/* waiting to requeue this timer */
+-#define REQUEUE_PENDING 1
+-	int it_sigev_notify;		/* notify word of sigevent struct */
+-	struct signal_struct *it_signal;
+-	union {
+-		struct pid *it_pid;	/* pid of process to send signal to */
+-		struct task_struct *it_process;	/* for clock_nanosleep */
+-	};
+-	struct sigqueue *sigq;		/* signal queue entry. */
+-	union {
+-		struct {
+-			struct hrtimer timer;
+-			ktime_t interval;
+-		} real;
+-		struct cpu_timer_list cpu;
+-		struct {
+-			unsigned int clock;
+-			unsigned int node;
+-			unsigned long incr;
+-			unsigned long expires;
+-		} mmtimer;
+-	} it;
+-};
+-
+-struct k_clock {
+-	int res;		/* in nanoseconds */
+-	int (*clock_getres) (const clockid_t which_clock, struct timespec *tp);
+-	int (*clock_set) (const clockid_t which_clock, struct timespec * tp);
+-	int (*clock_get) (const clockid_t which_clock, struct timespec * tp);
+-	int (*timer_create) (struct k_itimer *timer);
+-	int (*nsleep) (const clockid_t which_clock, int flags,
+-		       struct timespec *, struct timespec __user *);
+-	long (*nsleep_restart) (struct restart_block *restart_block);
+-	int (*timer_set) (struct k_itimer * timr, int flags,
+-			  struct itimerspec * new_setting,
+-			  struct itimerspec * old_setting);
+-	int (*timer_del) (struct k_itimer * timr);
+-#define TIMER_RETRY 1
+-	void (*timer_get) (struct k_itimer * timr,
+-			   struct itimerspec * cur_setting);
+-};
+-
+-void register_posix_clock(const clockid_t clock_id, struct k_clock *new_clock);
+-
+-/* error handlers for timer_create, nanosleep and settime */
+-int do_posix_clock_nonanosleep(const clockid_t, int flags, struct timespec *,
+-			       struct timespec __user *);
+-int do_posix_clock_nosettime(const clockid_t, struct timespec *tp);
+-
+-/* function to call to trigger timer event */
+-int posix_timer_event(struct k_itimer *timr, int si_private);
+-
+-int posix_cpu_clock_getres(const clockid_t which_clock, struct timespec *ts);
+-int posix_cpu_clock_get(const clockid_t which_clock, struct timespec *ts);
+-int posix_cpu_clock_set(const clockid_t which_clock, const struct timespec *ts);
+-int posix_cpu_timer_create(struct k_itimer *timer);
+-int posix_cpu_nsleep(const clockid_t which_clock, int flags,
+-		     struct timespec *rqtp, struct timespec __user *rmtp);
+-long posix_cpu_nsleep_restart(struct restart_block *restart_block);
+-int posix_cpu_timer_set(struct k_itimer *timer, int flags,
+-			struct itimerspec *new, struct itimerspec *old);
+-int posix_cpu_timer_del(struct k_itimer *timer);
+-void posix_cpu_timer_get(struct k_itimer *timer, struct itimerspec *itp);
+-
+-void posix_cpu_timer_schedule(struct k_itimer *timer);
+-
+-void run_posix_cpu_timers(struct task_struct *task);
+-void posix_cpu_timers_exit(struct task_struct *task);
+-void posix_cpu_timers_exit_group(struct task_struct *task);
+-
+-void set_process_cpu_timer(struct task_struct *task, unsigned int clock_idx,
+-			   cputime_t *newval, cputime_t *oldval);
+-
+-long clock_nanosleep_restart(struct restart_block *restart_block);
+-
+-void update_rlimit_cpu(unsigned long rlim_new);
+-
+-#endif
+diff -urN linux-2.6.32/include/linux/posix_acl.h linux-2.6.32-POS/include/linux/posix_acl.h
+--- linux-2.6.32/include/linux/posix_acl.h	2009-12-03 12:51:21.000000000 +0900
++++ linux-2.6.32-POS/include/linux/posix_acl.h	1970-01-01 09:00:00.000000000 +0900
+@@ -1,160 +0,0 @@
+-/*
+-  File: linux/posix_acl.h
+-
+-  (C) 2002 Andreas Gruenbacher, <a.gruenbacher@computer.org>
+-*/
+-
+-
+-#ifndef __LINUX_POSIX_ACL_H
+-#define __LINUX_POSIX_ACL_H
+-
+-#include <linux/slab.h>
+-
+-#define ACL_UNDEFINED_ID	(-1)
+-
+-/* a_type field in acl_user_posix_entry_t */
+-#define ACL_TYPE_ACCESS		(0x8000)
+-#define ACL_TYPE_DEFAULT	(0x4000)
+-
+-/* e_tag entry in struct posix_acl_entry */
+-#define ACL_USER_OBJ		(0x01)
+-#define ACL_USER		(0x02)
+-#define ACL_GROUP_OBJ		(0x04)
+-#define ACL_GROUP		(0x08)
+-#define ACL_MASK		(0x10)
+-#define ACL_OTHER		(0x20)
+-
+-/* permissions in the e_perm field */
+-#define ACL_READ		(0x04)
+-#define ACL_WRITE		(0x02)
+-#define ACL_EXECUTE		(0x01)
+-//#define ACL_ADD		(0x08)
+-//#define ACL_DELETE		(0x10)
+-
+-struct posix_acl_entry {
+-	short			e_tag;
+-	unsigned short		e_perm;
+-	unsigned int		e_id;
+-};
+-
+-struct posix_acl {
+-	atomic_t		a_refcount;
+-	unsigned int		a_count;
+-	struct posix_acl_entry	a_entries[0];
+-};
+-
+-#define FOREACH_ACL_ENTRY(pa, acl, pe) \
+-	for(pa=(acl)->a_entries, pe=pa+(acl)->a_count; pa<pe; pa++)
+-
+-
+-/*
+- * Duplicate an ACL handle.
+- */
+-static inline struct posix_acl *
+-posix_acl_dup(struct posix_acl *acl)
+-{
+-	if (acl)
+-		atomic_inc(&acl->a_refcount);
+-	return acl;
+-}
+-
+-/*
+- * Free an ACL handle.
+- */
+-static inline void
+-posix_acl_release(struct posix_acl *acl)
+-{
+-	if (acl && atomic_dec_and_test(&acl->a_refcount))
+-		kfree(acl);
+-}
+-
+-
+-/* posix_acl.c */
+-
+-extern struct posix_acl *posix_acl_alloc(int, gfp_t);
+-extern struct posix_acl *posix_acl_clone(const struct posix_acl *, gfp_t);
+-extern int posix_acl_valid(const struct posix_acl *);
+-extern int posix_acl_permission(struct inode *, const struct posix_acl *, int);
+-extern struct posix_acl *posix_acl_from_mode(mode_t, gfp_t);
+-extern int posix_acl_equiv_mode(const struct posix_acl *, mode_t *);
+-extern int posix_acl_create_masq(struct posix_acl *, mode_t *);
+-extern int posix_acl_chmod_masq(struct posix_acl *, mode_t);
+-
+-extern struct posix_acl *get_posix_acl(struct inode *, int);
+-extern int set_posix_acl(struct inode *, int, struct posix_acl *);
+-
+-#ifdef CONFIG_FS_POSIX_ACL
+-static inline struct posix_acl *get_cached_acl(struct inode *inode, int type)
+-{
+-	struct posix_acl **p, *acl;
+-	switch (type) {
+-	case ACL_TYPE_ACCESS:
+-		p = &inode->i_acl;
+-		break;
+-	case ACL_TYPE_DEFAULT:
+-		p = &inode->i_default_acl;
+-		break;
+-	default:
+-		return ERR_PTR(-EINVAL);
+-	}
+-	acl = ACCESS_ONCE(*p);
+-	if (acl) {
+-		spin_lock(&inode->i_lock);
+-		acl = *p;
+-		if (acl != ACL_NOT_CACHED)
+-			acl = posix_acl_dup(acl);
+-		spin_unlock(&inode->i_lock);
+-	}
+-	return acl;
+-}
+-
+-static inline void set_cached_acl(struct inode *inode,
+-				  int type,
+-				  struct posix_acl *acl)
+-{
+-	struct posix_acl *old = NULL;
+-	spin_lock(&inode->i_lock);
+-	switch (type) {
+-	case ACL_TYPE_ACCESS:
+-		old = inode->i_acl;
+-		inode->i_acl = posix_acl_dup(acl);
+-		break;
+-	case ACL_TYPE_DEFAULT:
+-		old = inode->i_default_acl;
+-		inode->i_default_acl = posix_acl_dup(acl);
+-		break;
+-	}
+-	spin_unlock(&inode->i_lock);
+-	if (old != ACL_NOT_CACHED)
+-		posix_acl_release(old);
+-}
+-
+-static inline void forget_cached_acl(struct inode *inode, int type)
+-{
+-	struct posix_acl *old = NULL;
+-	spin_lock(&inode->i_lock);
+-	switch (type) {
+-	case ACL_TYPE_ACCESS:
+-		old = inode->i_acl;
+-		inode->i_acl = ACL_NOT_CACHED;
+-		break;
+-	case ACL_TYPE_DEFAULT:
+-		old = inode->i_default_acl;
+-		inode->i_default_acl = ACL_NOT_CACHED;
+-		break;
+-	}
+-	spin_unlock(&inode->i_lock);
+-	if (old != ACL_NOT_CACHED)
+-		posix_acl_release(old);
+-}
+-#endif
+-
+-static inline void cache_no_acl(struct inode *inode)
+-{
+-#ifdef CONFIG_FS_POSIX_ACL
+-	inode->i_acl = NULL;
+-	inode->i_default_acl = NULL;
+-#endif
+-}
+-
+-#endif  /* __LINUX_POSIX_ACL_H */
+diff -urN linux-2.6.32/include/linux/posix_acl_xattr.h linux-2.6.32-POS/include/linux/posix_acl_xattr.h
+--- linux-2.6.32/include/linux/posix_acl_xattr.h	2009-12-03 12:51:21.000000000 +0900
++++ linux-2.6.32-POS/include/linux/posix_acl_xattr.h	1970-01-01 09:00:00.000000000 +0900
+@@ -1,58 +0,0 @@
+-/*
+-  File: linux/posix_acl_xattr.h
+-
+-  Extended attribute system call representation of Access Control Lists.
+-
+-  Copyright (C) 2000 by Andreas Gruenbacher <a.gruenbacher@computer.org>
+-  Copyright (C) 2002 SGI - Silicon Graphics, Inc <linux-xfs@oss.sgi.com>
+- */
+-#ifndef _POSIX_ACL_XATTR_H
+-#define _POSIX_ACL_XATTR_H
+-
+-#include <linux/posix_acl.h>
+-
+-/* Extended attribute names */
+-#define POSIX_ACL_XATTR_ACCESS	"system.posix_acl_access"
+-#define POSIX_ACL_XATTR_DEFAULT	"system.posix_acl_default"
+-
+-/* Supported ACL a_version fields */
+-#define POSIX_ACL_XATTR_VERSION	0x0002
+-
+-
+-/* An undefined entry e_id value */
+-#define ACL_UNDEFINED_ID	(-1)
+-
+-typedef struct {
+-	__le16			e_tag;
+-	__le16			e_perm;
+-	__le32			e_id;
+-} posix_acl_xattr_entry;
+-
+-typedef struct {
+-	__le32			a_version;
+-	posix_acl_xattr_entry	a_entries[0];
+-} posix_acl_xattr_header;
+-
+-
+-static inline size_t
+-posix_acl_xattr_size(int count)
+-{
+-	return (sizeof(posix_acl_xattr_header) +
+-		(count * sizeof(posix_acl_xattr_entry)));
+-}
+-
+-static inline int
+-posix_acl_xattr_count(size_t size)
+-{
+-	if (size < sizeof(posix_acl_xattr_header))
+-		return -1;
+-	size -= sizeof(posix_acl_xattr_header);
+-	if (size % sizeof(posix_acl_xattr_entry))
+-		return -1;
+-	return size / sizeof(posix_acl_xattr_entry);
+-}
+-
+-struct posix_acl *posix_acl_from_xattr(const void *value, size_t size);
+-int posix_acl_to_xattr(const struct posix_acl *acl, void *buffer, size_t size);
+-
+-#endif	/* _POSIX_ACL_XATTR_H */
+diff -urN linux-2.6.32/include/linux/posix_types.h linux-2.6.32-POS/include/linux/posix_types.h
+--- linux-2.6.32/include/linux/posix_types.h	2009-12-03 12:51:21.000000000 +0900
++++ linux-2.6.32-POS/include/linux/posix_types.h	1970-01-01 09:00:00.000000000 +0900
+@@ -1,49 +0,0 @@
+-#ifndef _LINUX_POSIX_TYPES_H
+-#define _LINUX_POSIX_TYPES_H
+-
+-#include <linux/stddef.h>
+-
+-/*
+- * This allows for 1024 file descriptors: if NR_OPEN is ever grown
+- * beyond that you'll have to change this too. But 1024 fd's seem to be
+- * enough even for such "real" unices like OSF/1, so hopefully this is
+- * one limit that doesn't have to be changed [again].
+- *
+- * Note that POSIX wants the FD_CLEAR(fd,fdsetp) defines to be in
+- * <sys/time.h> (and thus <linux/time.h>) - but this is a more logical
+- * place for them. Solved by having dummy defines in <sys/time.h>.
+- */
+-
+-/*
+- * Those macros may have been defined in <gnu/types.h>. But we always
+- * use the ones here. 
+- */
+-#undef __NFDBITS
+-#define __NFDBITS	(8 * sizeof(unsigned long))
+-
+-#undef __FD_SETSIZE
+-#define __FD_SETSIZE	1024
+-
+-#undef __FDSET_LONGS
+-#define __FDSET_LONGS	(__FD_SETSIZE/__NFDBITS)
+-
+-#undef __FDELT
+-#define	__FDELT(d)	((d) / __NFDBITS)
+-
+-#undef __FDMASK
+-#define	__FDMASK(d)	(1UL << ((d) % __NFDBITS))
+-
+-typedef struct {
+-	unsigned long fds_bits [__FDSET_LONGS];
+-} __kernel_fd_set;
+-
+-/* Type of a signal handler.  */
+-typedef void (*__kernel_sighandler_t)(int);
+-
+-/* Type of a SYSV IPC key.  */
+-typedef int __kernel_key_t;
+-typedef int __kernel_mqd_t;
+-
+-#include <asm/posix_types.h>
+-
+-#endif /* _LINUX_POSIX_TYPES_H */
+diff -urN linux-2.6.32/include/linux/syscalls.h linux-2.6.32-POS/include/linux/syscalls.h
+--- linux-2.6.32/include/linux/syscalls.h	2009-12-03 12:51:21.000000000 +0900
++++ linux-2.6.32-POS/include/linux/syscalls.h	2012-06-19 13:41:28.012547545 +0900
+@@ -879,4 +879,14 @@
+ asmlinkage long sys_perf_event_open(
+ 		struct perf_event_attr __user *attr_uptr,
+ 		pid_t pid, int cpu, int group_fd, unsigned long flags);
++
++// POS (Taeho Hwang)
++asmlinkage void *sys_pos_create(char *name);
++asmlinkage int sys_pos_delete(char *name);
++asmlinkage void *sys_pos_map(char *name);
++asmlinkage int sys_pos_unmap(char *name);
++asmlinkage void *sys_pos_seg_alloc(char *name, unsigned long len);
++asmlinkage int sys_pos_seg_free(char *name, void *addr, unsigned long len);
++asmlinkage void *sys_pos_is_mapped(char *name);
++
+ #endif
+diff -urN linux-2.6.32/init/main.c linux-2.6.32-POS/init/main.c
+--- linux-2.6.32/init/main.c	2009-12-03 12:51:21.000000000 +0900
++++ linux-2.6.32-POS/init/main.c	2012-06-19 13:41:28.012547545 +0900
+@@ -77,6 +77,9 @@
+ #include <asm/sections.h>
+ #include <asm/cacheflush.h>
+ 
++// POS (Taeho Hwang)
++#include <linux/pos.h>
++
+ #ifdef CONFIG_X86_LOCAL_APIC
+ #include <asm/smp.h>
+ #endif
+@@ -683,6 +686,9 @@
+ 
+ 	ftrace_init();
+ 
++	// POS (Taeho Hwang)
++	pos_init();
++
+ 	/* Do the rest non-__init'ed, we're now alive */
+ 	rest_init();
+ }
+diff -urN linux-2.6.32/mm/Makefile linux-2.6.32-POS/mm/Makefile
+--- linux-2.6.32/mm/Makefile	2009-12-03 12:51:21.000000000 +0900
++++ linux-2.6.32-POS/mm/Makefile	2012-06-19 13:41:28.012547545 +0900
+@@ -11,7 +11,7 @@
+ 			   maccess.o page_alloc.o page-writeback.o \
+ 			   readahead.o swap.o truncate.o vmscan.o shmem.o \
+ 			   prio_tree.o util.o mmzone.o vmstat.o backing-dev.o \
+-			   page_isolation.o mm_init.o mmu_context.o \
++			   page_isolation.o mm_init.o mmu_context.o pos.o pos_namespace.o \
+ 			   $(mmu-y)
+ obj-y += init-mm.o
+ 
+diff -urN linux-2.6.32/mm/memory.c linux-2.6.32-POS/mm/memory.c
+--- linux-2.6.32/mm/memory.c	2009-12-03 12:51:21.000000000 +0900
++++ linux-2.6.32-POS/mm/memory.c	2012-06-19 13:41:28.012547545 +0900
+@@ -64,6 +64,9 @@
+ #include <asm/tlbflush.h>
+ #include <asm/pgtable.h>
+ 
++// POS (Taeho Hwang)
++#include <linux/pos.h>
++
+ #include "internal.h"
+ 
+ #ifndef CONFIG_NEED_MULTIPLE_NODES
+@@ -2940,6 +2943,15 @@
+ 	entry = *pte;
+ 	if (!pte_present(entry)) {
+ 		if (pte_none(entry)) {
++			
++			// POS (Taeho Hwang)
++			if (POS_AREA_START <= address && address < POS_AREA_END)
++				return do_pos_area_fault(mm, vma, address, pmd, entry);
++			
++			// POS (Taeho Hwang)
++			if (vma->vm_flags & VM_POS_SECTION)
++				return do_pos_section_fault(mm, vma, address, pmd, entry);
++
+ 			if (vma->vm_ops) {
+ 				if (likely(vma->vm_ops->fault))
+ 					return do_linear_fault(mm, vma, address,
+diff -urN linux-2.6.32/mm/mmap.c linux-2.6.32-POS/mm/mmap.c
+--- linux-2.6.32/mm/mmap.c	2009-12-03 12:51:21.000000000 +0900
++++ linux-2.6.32-POS/mm/mmap.c	2012-06-19 13:49:50.102555977 +0900
+@@ -717,7 +717,9 @@
+ 	    is_mergeable_anon_vma(anon_vma, vma->anon_vma)) {
+ 		pgoff_t vm_pglen;
+ 		vm_pglen = (vma->vm_end - vma->vm_start) >> PAGE_SHIFT;
+-		if (vma->vm_pgoff + vm_pglen == vm_pgoff)
++		// POS (Taeho Hwang)
++		//if (vma->vm_pgoff + vm_pglen == vm_pgoff)
++		if (vma->vm_pgoff + vm_pglen == vm_pgoff || (vma->vm_pgoff==-1 && vm_pgoff==-1))
+ 			return 1;
+ 	}
+ 	return 0;
