@@ -1,0 +1,669 @@
+/application -p ./ -d 0 -n 10000 -j 2 -s 1 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+random_insert:177:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 11
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 2 -s 2 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+random_insert:177:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 11
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 3 -s 0 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+random_insert:177:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 11
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 3 -s 1 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+random_insert:177:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 11
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 3 -s 2 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+random_insert:177:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 11
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 4 -s 0 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+random_insert:177:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 11
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 4 -s 1 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+random_insert:177:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 11
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 4 -s 2 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+random_insert:177:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 11
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 5 -s 0 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+random_insert:177:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 11
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 5 -s 1 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+random_insert:177:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 11
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 5 -s 2 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+random_insert:177:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 11
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 0 -s 0 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 0 -s 1 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 0 -s 2 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 1 -s 0 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 1 -s 1 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 1 -s 2 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 2 -s 0 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 2 -s 1 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 2 -s 2 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 3 -s 0 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 3 -s 1 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 3 -s 2 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 4 -s 0 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 4 -s 1 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 4 -s 2 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 5 -s 0 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 5 -s 1 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 5 -s 2 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 0 -s 0 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 0 -s 1 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 0 -s 2 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 1 -s 0 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 1 -s 1 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 1 -s 2 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 2 -s 0 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 2 -s 1 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 2 -s 2 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 3 -s 0 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 3 -s 1 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 3 -s 2 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 4 -s 0 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 4 -s 1 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 4 -s 2 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 5 -s 0 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 5 -s 1 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 5 -s 2 -g
+s_CPUTick:275:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+print_IOPS:172:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+numberOfTable:175:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+num_threads:148:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+j_nr_switches:427:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_transactions:152:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_mode:151:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+db_interval:156:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+b_quiet:159:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+Latency_state:169:/home/hanyang/regen/regen_experiment/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 247, NVRAM: 10
+[Heap Variable Summary] : ALL: 15, NVRAM:   0 fit nvram 

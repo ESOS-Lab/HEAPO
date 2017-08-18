@@ -1,0 +1,1633 @@
+Potal Memory Access Inst:2080
+GV:103
+ST:1633
+HP:0
+Unknown:344
+
+
+Ftn : _GLOBAL__sub_I_HJM_Securities.cpp
+Ftn : _Z10HJM_DriftsPdPS_iidS0_
+	BB:2	 Vars :9
+-		0 , 1  : iFactors.addr
+-		0 , 1  : ddelt
+-		1 , 1  : dYears.addr
+-		0 , 1  : ppdFactors.addr
+-		0 , 1  : ppdDrifts.addr
+-		1 , 1  : iN.addr
+-		0 , 1  : iSuccess
+-		0 , 1  : i
+-		0 , 1  : pdTotalDrift.addr
+	BB:3	 Vars :2
+-		1 , 0  : iFactors.addr
+-		1 , 0  : i
+	BB:4	 Vars :4
+-		1 , 0  : ddelt
+-		2 , 0  : ppdFactors.addr
+-		1 , 0  : ppdDrifts.addr
+-		3 , 0  : i
+	BB:5	 Vars :1
+-		1 , 1  : i
+	BB:6	 Vars :1
+-		0 , 1  : i
+	BB:7	 Vars :2
+-		1 , 0  : iFactors.addr
+-		1 , 0  : i
+	BB:8	 Vars :1
+-		0 , 1  : j
+	BB:9	 Vars :2
+-		1 , 0  : j
+-		1 , 0  : iN.addr
+	BB:10	 Vars :4
+-		1 , 0  : j
+-		0 , 1  : l
+-		1 , 0  : ppdDrifts.addr
+-		1 , 0  : i
+	BB:11	 Vars :2
+-		1 , 0  : j
+-		1 , 0  : l
+	BB:12	 Vars :4
+-		1 , 0  : j
+-		1 , 0  : l
+-		2 , 0  : ppdDrifts.addr
+-		2 , 0  : i
+	BB:13	 Vars :1
+-		1 , 1  : l
+	BB:14	 Vars :2
+-		0 , 1  : l
+-		0 , 1  : dSumVol
+	BB:15	 Vars :2
+-		1 , 0  : j
+-		1 , 0  : l
+	BB:16	 Vars :4
+-		1 , 0  : l
+-		1 , 1  : dSumVol
+-		1 , 0  : ppdFactors.addr
+-		1 , 0  : i
+	BB:17	 Vars :1
+-		1 , 1  : l
+	BB:18	 Vars :5
+-		1 , 0  : j
+-		1 , 0  : ddelt
+-		2 , 0  : dSumVol
+-		1 , 0  : ppdDrifts.addr
+-		1 , 0  : i
+	BB:19	 Vars :1
+-		1 , 1  : j
+	BB:21	 Vars :1
+-		1 , 1  : i
+	BB:22	 Vars :1
+-		0 , 1  : i
+	BB:23	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : i
+	BB:24	 Vars :3
+-		0 , 1  : j
+-		1 , 0  : i
+-		1 , 0  : pdTotalDrift.addr
+	BB:25	 Vars :2
+-		1 , 0  : iFactors.addr
+-		1 , 0  : j
+	BB:26	 Vars :4
+-		1 , 0  : j
+-		1 , 0  : ppdDrifts.addr
+-		2 , 0  : i
+-		1 , 0  : pdTotalDrift.addr
+	BB:27	 Vars :1
+-		1 , 1  : j
+	BB:29	 Vars :1
+-		1 , 1  : i
+	BB:30	 Vars :1
+-		1 , 1  : iSuccess
+Ftn : _Z11HJM_FactorsPPdiiS_S0_
+	BB:31	 Vars :7
+-		0 , 1  : iSuccess
+-		0 , 1  : ppdFactors.addr
+-		0 , 1  : iN.addr
+-		0 , 1  : iFactors.addr
+-		0 , 1  : pdVol.addr
+-		0 , 1  : ppdFacBreak.addr
+-		0 , 1  : i
+	BB:32	 Vars :2
+-		1 , 0  : iFactors.addr
+-		1 , 0  : i
+	BB:33	 Vars :1
+-		0 , 1  : j
+	BB:34	 Vars :2
+-		1 , 0  : j
+-		1 , 0  : iN.addr
+	BB:35	 Vars :5
+-		4 , 0  : j
+-		1 , 0  : ppdFactors.addr
+-		2 , 0  : pdVol.addr
+-		1 , 0  : ppdFacBreak.addr
+-		2 , 0  : i
+	BB:36	 Vars :1
+-		1 , 1  : j
+	BB:38	 Vars :1
+-		1 , 1  : i
+	BB:39	 Vars :1
+-		1 , 1  : iSuccess
+Ftn : _Z11print_usagePc
+	BB:40	 Vars :2
+-		6 , 0  : stderr
+-		1 , 1  : name.addr
+Ftn : _Z12CumNormalInvd
+	BB:41	 Vars :2
+-		1 , 1  : u.addr
+-		1 , 1  : x
+	BB:42	 Vars :5
+-		4 , 0  : _ZL1a
+-		4 , 0  : _ZL1b
+-		0 , 1  : retval
+-		3 , 0  : x
+-		8 , 2  : r
+	BB:43	 Vars :3
+-		1 , 0  : u.addr
+-		1 , 0  : x
+-		0 , 1  : r
+	BB:44	 Vars :2
+-		1 , 0  : u.addr
+-		0 , 1  : r
+	BB:45	 Vars :3
+-		9 , 0  : _ZL1c
+-		1 , 0  : x
+-		9 , 2  : r
+	BB:46	 Vars :1
+-		1 , 1  : r
+	BB:47	 Vars :2
+-		0 , 1  : retval
+-		1 , 0  : r
+	BB:48	 Vars :1
+-		1 , 0  : retval
+Ftn : _Z12free_dmatrixPPdllll
+	BB:49	 Vars :5
+-		2 , 1  : m.addr
+-		2 , 1  : nrl.addr
+-		0 , 1  : nrh.addr
+-		1 , 1  : ncl.addr
+-		0 , 1  : nch.addr
+Ftn : _Z12free_dvectorPdll
+	BB:50	 Vars :3
+-		1 , 1  : v.addr
+-		1 , 1  : nl.addr
+-		0 , 1  : nh.addr
+Ftn : _Z12free_ivectorPill
+	BB:51	 Vars :3
+-		1 , 1  : v.addr
+-		1 , 1  : nl.addr
+-		0 , 1  : nh.addr
+Ftn : _Z13icdf_baselineiPdS_
+	BB:52	 Vars :27
+-		0 , 1  : a5
+-		0 , 1  : N.addr
+-		0 , 1  : in.addr
+-		0 , 1  : out.addr
+-		0 , 1  : a1
+-		0 , 1  : a2
+-		0 , 1  : a3
+-		0 , 1  : a4
+-		0 , 1  : c5
+-		0 , 1  : c6
+-		0 , 1  : d1
+-		0 , 1  : a6
+-		0 , 1  : b1
+-		0 , 1  : b2
+-		0 , 1  : b3
+-		0 , 1  : b4
+-		0 , 1  : b5
+-		0 , 1  : c1
+-		0 , 1  : c2
+-		0 , 1  : c3
+-		0 , 1  : c4
+-		0 , 1  : d2
+-		0 , 1  : d3
+-		0 , 1  : d4
+-		0 , 1  : u_low
+-		0 , 1  : u_high
+-		0 , 1  : i
+	BB:53	 Vars :2
+-		1 , 0  : N.addr
+-		1 , 0  : i
+	BB:54	 Vars :3
+-		1 , 0  : in.addr
+-		1 , 0  : i
+-		1 , 1  : u
+	BB:55	 Vars :2
+-		9 , 2  : z
+-		1 , 0  : u
+	BB:56	 Vars :1
+-		1 , 0  : u
+	BB:57	 Vars :3
+-		3 , 2  : z
+-		10 , 1  : r
+-		1 , 0  : u
+	BB:58	 Vars :2
+-		9 , 2  : z
+-		1 , 0  : u
+	BB:60	 Vars :3
+-		1 , 0  : out.addr
+-		1 , 0  : z
+-		1 , 0  : i
+	BB:61	 Vars :1
+-		1 , 1  : i
+Ftn : _Z16Discount_FactorsPdidS_
+	BB:63	 Vars :6
+-		0 , 1  : ddelt
+-		0 , 1  : pdDiscountFactors.addr
+-		1 , 1  : iN.addr
+-		1 , 1  : dYears.addr
+-		0 , 1  : pdRatePath.addr
+-		0 , 1  : i
+	BB:64	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : i
+	BB:65	 Vars :2
+-		1 , 0  : pdDiscountFactors.addr
+-		1 , 0  : i
+	BB:66	 Vars :1
+-		1 , 1  : i
+	BB:67	 Vars :1
+-		0 , 1  : i
+	BB:68	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : i
+	BB:69	 Vars :1
+-		0 , 1  : j
+	BB:70	 Vars :2
+-		1 , 0  : i
+-		1 , 0  : j
+	BB:71	 Vars :5
+-		1 , 0  : ddelt
+-		1 , 0  : pdDiscountFactors.addr
+-		1 , 0  : pdRatePath.addr
+-		1 , 0  : i
+-		1 , 0  : j
+	BB:72	 Vars :1
+-		1 , 1  : j
+	BB:74	 Vars :1
+-		1 , 1  : i
+	BB:75	 Vars :1
+-		1 , 1  : iSuccess
+Ftn : _Z16HJM_CorrelationsPPdiiS0_
+	BB:76	 Vars :8
+-		0 , 1  : ppdHJMCorr.addr
+-		2 , 1  : iN.addr
+-		1 , 1  : iFactors.addr
+-		0 , 1  : ppdFactors.addr
+-		0 , 1  : iSuccess
+-		0 , 1  : i
+-		0 , 1  : pdTotalVol
+-		0 , 1  : ppdWeights
+	BB:77	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : i
+	BB:78	 Vars :3
+-		1 , 0  : i
+-		0 , 1  : j
+-		1 , 0  : pdTotalVol
+	BB:79	 Vars :2
+-		1 , 0  : iFactors.addr
+-		1 , 0  : j
+	BB:80	 Vars :4
+-		2 , 0  : ppdFactors.addr
+-		3 , 0  : i
+-		2 , 0  : j
+-		1 , 0  : pdTotalVol
+	BB:81	 Vars :1
+-		1 , 1  : j
+	BB:82	 Vars :2
+-		2 , 0  : i
+-		2 , 0  : pdTotalVol
+	BB:83	 Vars :1
+-		1 , 1  : i
+	BB:84	 Vars :1
+-		0 , 1  : i
+	BB:85	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : i
+	BB:86	 Vars :1
+-		0 , 1  : j
+	BB:87	 Vars :2
+-		1 , 0  : iFactors.addr
+-		1 , 0  : j
+	BB:88	 Vars :5
+-		1 , 0  : ppdFactors.addr
+-		3 , 0  : i
+-		2 , 0  : j
+-		1 , 0  : pdTotalVol
+-		1 , 0  : ppdWeights
+	BB:89	 Vars :1
+-		1 , 1  : j
+	BB:91	 Vars :1
+-		1 , 1  : i
+	BB:92	 Vars :1
+-		0 , 1  : i
+	BB:93	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : i
+	BB:94	 Vars :1
+-		0 , 1  : j
+	BB:95	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : j
+	BB:96	 Vars :3
+-		1 , 0  : ppdHJMCorr.addr
+-		1 , 0  : i
+-		1 , 0  : j
+	BB:97	 Vars :1
+-		1 , 1  : j
+	BB:99	 Vars :1
+-		1 , 1  : i
+	BB:100	 Vars :1
+-		0 , 1  : i
+	BB:101	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : i
+	BB:102	 Vars :2
+-		1 , 0  : i
+-		0 , 1  : j
+	BB:103	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : j
+	BB:104	 Vars :1
+-		0 , 1  : l
+	BB:105	 Vars :2
+-		1 , 0  : l
+-		1 , 0  : iFactors.addr
+	BB:106	 Vars :5
+-		2 , 0  : l
+-		1 , 0  : ppdHJMCorr.addr
+-		2 , 0  : i
+-		2 , 0  : j
+-		2 , 0  : ppdWeights
+	BB:107	 Vars :1
+-		1 , 1  : l
+	BB:109	 Vars :1
+-		1 , 1  : j
+	BB:111	 Vars :1
+-		1 , 1  : i
+	BB:112	 Vars :5
+-		2 , 0  : iN.addr
+-		1 , 0  : iFactors.addr
+-		1 , 1  : iSuccess
+-		1 , 0  : pdTotalVol
+-		1 , 0  : ppdWeights
+Ftn : _Z17HJM_SimPath_YieldPPdiidS_S0_Pl
+	BB:113	 Vars :11
+-		0 , 1  : dYears.addr
+-		1 , 1  : pdYield.addr
+-		0 , 1  : ppdHJMPath.addr
+-		4 , 1  : iN.addr
+-		1 , 1  : iFactors.addr
+-		0 , 1  : ppdFactors.addr
+-		0 , 1  : lRndSeed.addr
+-		1 , 2  : iSuccess
+-		1 , 1  : pdForward
+-		0 , 1  : ppdDrifts
+-		0 , 1  : pdTotalDrift
+	BB:114	 Vars :7
+-		0 , 1  : retval
+-		3 , 0  : iN.addr
+-		1 , 0  : iFactors.addr
+-		1 , 0  : iSuccess
+-		1 , 0  : pdForward
+-		1 , 0  : ppdDrifts
+-		1 , 0  : pdTotalDrift
+	BB:115	 Vars :7
+-		1 , 0  : dYears.addr
+-		1 , 0  : iN.addr
+-		1 , 0  : iFactors.addr
+-		1 , 0  : ppdFactors.addr
+-		1 , 1  : iSuccess
+-		1 , 0  : ppdDrifts
+-		1 , 0  : pdTotalDrift
+	BB:116	 Vars :7
+-		0 , 1  : retval
+-		3 , 0  : iN.addr
+-		1 , 0  : iFactors.addr
+-		1 , 0  : iSuccess
+-		1 , 0  : pdForward
+-		1 , 0  : ppdDrifts
+-		1 , 0  : pdTotalDrift
+	BB:117	 Vars :9
+-		1 , 0  : dYears.addr
+-		1 , 0  : ppdHJMPath.addr
+-		1 , 0  : iN.addr
+-		1 , 0  : iFactors.addr
+-		1 , 0  : ppdFactors.addr
+-		1 , 0  : lRndSeed.addr
+-		1 , 1  : iSuccess
+-		1 , 0  : pdForward
+-		1 , 0  : pdTotalDrift
+	BB:118	 Vars :7
+-		0 , 1  : retval
+-		3 , 0  : iN.addr
+-		1 , 0  : iFactors.addr
+-		1 , 0  : iSuccess
+-		1 , 0  : pdForward
+-		1 , 0  : ppdDrifts
+-		1 , 0  : pdTotalDrift
+	BB:119	 Vars :7
+-		0 , 1  : retval
+-		3 , 0  : iN.addr
+-		1 , 0  : iFactors.addr
+-		1 , 1  : iSuccess
+-		1 , 0  : pdForward
+-		1 , 0  : ppdDrifts
+-		1 , 0  : pdTotalDrift
+	BB:120	 Vars :1
+-		1 , 0  : retval
+Ftn : _Z19HJM_SimPath_ForwardPPdiidS_S_S0_Pl
+	BB:121	 Vars :12
+-		1 , 1  : dYears.addr
+-		0 , 1  : pdForward.addr
+-		0 , 1  : ppdHJMPath.addr
+-		1 , 1  : iN.addr
+-		1 , 1  : iFactors.addr
+-		0 , 1  : pdTotalDrift.addr
+-		0 , 1  : ppdFactors.addr
+-		0 , 1  : lRndSeed.addr
+-		0 , 1  : iSuccess
+-		0 , 1  : i
+-		0 , 1  : ddelt
+-		0 , 1  : pdZ
+	BB:122	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : i
+	BB:123	 Vars :1
+-		0 , 1  : j
+	BB:124	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : j
+	BB:125	 Vars :3
+-		1 , 0  : ppdHJMPath.addr
+-		1 , 0  : i
+-		1 , 0  : j
+	BB:126	 Vars :1
+-		1 , 1  : j
+	BB:128	 Vars :1
+-		1 , 1  : i
+	BB:129	 Vars :1
+-		0 , 1  : i
+	BB:130	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : i
+	BB:131	 Vars :3
+-		1 , 0  : pdForward.addr
+-		1 , 0  : ppdHJMPath.addr
+-		2 , 0  : i
+	BB:132	 Vars :1
+-		1 , 1  : i
+	BB:133	 Vars :1
+-		0 , 1  : j
+	BB:134	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : j
+	BB:135	 Vars :1
+-		0 , 1  : l
+	BB:136	 Vars :2
+-		1 , 0  : iFactors.addr
+-		1 , 0  : l
+	BB:137	 Vars :3
+-		1 , 0  : lRndSeed.addr
+-		1 , 0  : l
+-		1 , 0  : pdZ
+	BB:138	 Vars :1
+-		1 , 1  : l
+	BB:139	 Vars :1
+-		0 , 1  : l
+	BB:140	 Vars :3
+-		1 , 0  : iN.addr
+-		1 , 0  : j
+-		1 , 0  : l
+	BB:141	 Vars :2
+-		0 , 1  : i
+-		0 , 1  : dTotalShock
+	BB:142	 Vars :2
+-		1 , 0  : iFactors.addr
+-		1 , 0  : i
+	BB:143	 Vars :5
+-		1 , 0  : ppdFactors.addr
+-		2 , 0  : i
+-		1 , 0  : l
+-		1 , 1  : dTotalShock
+-		1 , 0  : pdZ
+	BB:144	 Vars :1
+-		1 , 1  : i
+	BB:145	 Vars :6
+-		2 , 0  : ppdHJMPath.addr
+-		1 , 0  : pdTotalDrift.addr
+-		2 , 0  : j
+-		3 , 0  : l
+-		2 , 0  : ddelt
+-		1 , 0  : dTotalShock
+	BB:146	 Vars :1
+-		1 , 1  : l
+	BB:148	 Vars :1
+-		1 , 1  : j
+	BB:149	 Vars :3
+-		1 , 0  : iFactors.addr
+-		1 , 1  : iSuccess
+-		1 , 0  : pdZ
+Ftn : _Z20Discount_Factors_optPdidS_
+	BB:150	 Vars :7
+-		0 , 1  : ddelt
+-		0 , 1  : pdDiscountFactors.addr
+-		2 , 1  : iN.addr
+-		1 , 1  : dYears.addr
+-		0 , 1  : pdRatePath.addr
+-		0 , 1  : i
+-		0 , 1  : pdexpRes
+	BB:151	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : i
+	BB:152	 Vars :2
+-		1 , 0  : pdDiscountFactors.addr
+-		1 , 0  : i
+	BB:153	 Vars :1
+-		1 , 1  : i
+	BB:154	 Vars :1
+-		0 , 1  : j
+	BB:155	 Vars :2
+-		1 , 0  : i
+-		1 , 0  : j
+	BB:156	 Vars :4
+-		1 , 0  : ddelt
+-		1 , 0  : pdRatePath.addr
+-		2 , 0  : j
+-		1 , 0  : pdexpRes
+	BB:157	 Vars :1
+-		1 , 1  : j
+	BB:158	 Vars :1
+-		0 , 1  : j
+	BB:159	 Vars :2
+-		1 , 0  : i
+-		1 , 0  : j
+	BB:160	 Vars :2
+-		2 , 0  : j
+-		2 , 0  : pdexpRes
+	BB:161	 Vars :1
+-		1 , 1  : j
+	BB:162	 Vars :1
+-		0 , 1  : i
+	BB:163	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : i
+	BB:164	 Vars :1
+-		0 , 1  : j
+	BB:165	 Vars :2
+-		1 , 0  : i
+-		1 , 0  : j
+	BB:166	 Vars :4
+-		1 , 0  : pdDiscountFactors.addr
+-		1 , 0  : i
+-		1 , 0  : j
+-		1 , 0  : pdexpRes
+	BB:167	 Vars :1
+-		1 , 1  : j
+	BB:169	 Vars :1
+-		1 , 1  : i
+	BB:170	 Vars :3
+-		1 , 0  : iN.addr
+-		1 , 1  : iSuccess
+-		1 , 0  : pdexpRes
+Ftn : _Z20HJM_Forward_to_YieldPdiS_
+	BB:171	 Vars :5
+-		1 , 1  : pdYield.addr
+-		0 , 1  : iN.addr
+-		1 , 1  : pdForward.addr
+-		0 , 1  : iSuccess
+-		0 , 1  : i
+	BB:172	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : i
+	BB:173	 Vars :3
+-		2 , 0  : pdYield.addr
+-		1 , 0  : pdForward.addr
+-		5 , 0  : i
+	BB:174	 Vars :1
+-		1 , 1  : i
+	BB:175	 Vars :1
+-		1 , 1  : iSuccess
+Ftn : _Z20HJM_Yield_to_ForwardPdiS_
+	BB:176	 Vars :5
+-		1 , 1  : pdForward.addr
+-		0 , 1  : iN.addr
+-		1 , 1  : pdYield.addr
+-		0 , 1  : iSuccess
+-		0 , 1  : i
+	BB:177	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : i
+	BB:178	 Vars :3
+-		1 , 0  : pdForward.addr
+-		2 , 0  : pdYield.addr
+-		5 , 0  : i
+	BB:179	 Vars :1
+-		1 , 1  : i
+	BB:180	 Vars :1
+-		1 , 1  : iSuccess
+Ftn : _Z21HJM_Swaption_BlockingPddddddiidS_PS_llii
+	BB:181	 Vars :18
+-		0 , 1  : iFactors.addr
+-		1 , 1  : dYears.addr
+-		0 , 1  : pdYield.addr
+-		0 , 1  : pdSwaptionPrice.addr
+-		0 , 1  : dStrike.addr
+-		1 , 1  : dCompounding.addr
+-		0 , 1  : dMaturity.addr
+-		0 , 1  : dTenor.addr
+-		1 , 1  : dPaymentInterval.addr
+-		1 , 1  : iN.addr
+-		0 , 1  : ppdFactors.addr
+-		0 , 1  : iRndSeed.addr
+-		0 , 1  : lTrials.addr
+-		0 , 1  : BLOCKSIZE.addr
+-		0 , 1  : tid.addr
+-		0 , 1  : iSuccess
+-		1 , 1  : ddelt
+-		0 , 1  : iFreqRatio
+	BB:182	 Vars :2
+-		1 , 0  : dStrike.addr
+-		0 , 1  : dStrikeCont
+	BB:183	 Vars :3
+-		1 , 0  : dStrike.addr
+-		2 , 0  : dCompounding.addr
+-		0 , 1  : dStrikeCont
+	BB:184	 Vars :20
+-		0 , 1  : iSwapStartTimeIndex
+-		1 , 0  : iFactors.addr
+-		0 , 1  : iSwapTimePoints
+-		0 , 1  : pdSwapPayoffs
+-		2 , 0  : dMaturity.addr
+-		1 , 0  : dTenor.addr
+-		8 , 0  : iN.addr
+-		0 , 1  : dSwapVectorYears
+-		5 , 0  : BLOCKSIZE.addr
+-		0 , 1  : i
+-		4 , 0  : ddelt
+-		4 , 1  : iSwapVectorLength
+-		0 , 1  : ppdHJMPath
+-		0 , 1  : pdForward
+-		0 , 1  : ppdDrifts
+-		0 , 1  : pdTotalDrift
+-		0 , 1  : pdDiscountingRatePath
+-		0 , 1  : pdPayoffDiscountFactors
+-		0 , 1  : pdSwapRatePath
+-		0 , 1  : pdSwapDiscountFactors
+	BB:185	 Vars :2
+-		1 , 0  : i
+-		1 , 0  : iSwapVectorLength
+	BB:186	 Vars :2
+-		1 , 0  : pdSwapPayoffs
+-		1 , 0  : i
+	BB:187	 Vars :1
+-		1 , 1  : i
+	BB:188	 Vars :2
+-		0 , 1  : i
+-		1 , 0  : iFreqRatio
+	BB:189	 Vars :2
+-		1 , 0  : iSwapTimePoints
+-		1 , 0  : i
+	BB:190	 Vars :2
+-		1 , 0  : iSwapTimePoints
+-		1 , 0  : i
+	BB:191	 Vars :4
+-		1 , 0  : pdSwapPayoffs
+-		1 , 0  : dPaymentInterval.addr
+-		1 , 0  : i
+-		1 , 0  : dStrikeCont
+	BB:192	 Vars :2
+-		1 , 0  : iSwapTimePoints
+-		1 , 0  : i
+	BB:193	 Vars :4
+-		1 , 0  : pdSwapPayoffs
+-		1 , 0  : dPaymentInterval.addr
+-		1 , 0  : i
+-		1 , 0  : dStrikeCont
+	BB:195	 Vars :2
+-		1 , 1  : i
+-		1 , 0  : iFreqRatio
+	BB:196	 Vars :4
+-		1 , 0  : pdYield.addr
+-		1 , 0  : iN.addr
+-		1 , 1  : iSuccess
+-		1 , 0  : pdForward
+	BB:197	 Vars :2
+-		0 , 1  : retval
+-		1 , 0  : iSuccess
+	BB:198	 Vars :7
+-		1 , 0  : iFactors.addr
+-		1 , 0  : dYears.addr
+-		1 , 0  : iN.addr
+-		1 , 0  : ppdFactors.addr
+-		1 , 1  : iSuccess
+-		1 , 0  : ppdDrifts
+-		1 , 0  : pdTotalDrift
+	BB:199	 Vars :2
+-		0 , 1  : retval
+-		1 , 0  : iSuccess
+	BB:200	 Vars :3
+-		0 , 1  : dSumSquareSimSwaptionPrice
+-		0 , 1  : dSumSimSwaptionPrice
+-		0 , 1  : l
+	BB:201	 Vars :2
+-		1 , 0  : lTrials.addr
+-		1 , 0  : l
+	BB:202	 Vars :9
+-		1 , 0  : iFactors.addr
+-		1 , 0  : dYears.addr
+-		1 , 0  : iN.addr
+-		1 , 0  : ppdFactors.addr
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 1  : iSuccess
+-		1 , 0  : ppdHJMPath
+-		1 , 0  : pdForward
+-		1 , 0  : pdTotalDrift
+	BB:203	 Vars :2
+-		0 , 1  : retval
+-		1 , 0  : iSuccess
+	BB:204	 Vars :1
+-		0 , 1  : i
+	BB:205	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : i
+	BB:206	 Vars :1
+-		0 , 1  : b
+	BB:207	 Vars :2
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 0  : b
+	BB:208	 Vars :5
+-		1 , 0  : BLOCKSIZE.addr
+-		2 , 0  : i
+-		2 , 0  : b
+-		1 , 0  : ppdHJMPath
+-		1 , 0  : pdDiscountingRatePath
+	BB:209	 Vars :1
+-		1 , 1  : b
+	BB:211	 Vars :1
+-		1 , 1  : i
+	BB:212	 Vars :6
+-		1 , 0  : dYears.addr
+-		1 , 0  : iN.addr
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 1  : iSuccess
+-		1 , 0  : pdDiscountingRatePath
+-		1 , 0  : pdPayoffDiscountFactors
+	BB:213	 Vars :2
+-		0 , 1  : retval
+-		1 , 0  : iSuccess
+	BB:214	 Vars :1
+-		0 , 1  : i
+	BB:215	 Vars :2
+-		1 , 0  : i
+-		1 , 0  : iSwapVectorLength
+	BB:216	 Vars :1
+-		0 , 1  : b
+	BB:217	 Vars :2
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 0  : b
+	BB:218	 Vars :6
+-		1 , 0  : iSwapStartTimeIndex
+-		2 , 0  : BLOCKSIZE.addr
+-		2 , 0  : i
+-		2 , 0  : b
+-		1 , 0  : ppdHJMPath
+-		1 , 0  : pdSwapRatePath
+	BB:219	 Vars :1
+-		1 , 1  : b
+	BB:221	 Vars :1
+-		1 , 1  : i
+	BB:222	 Vars :6
+-		1 , 0  : dSwapVectorYears
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 1  : iSuccess
+-		1 , 0  : iSwapVectorLength
+-		1 , 0  : pdSwapRatePath
+-		1 , 0  : pdSwapDiscountFactors
+	BB:223	 Vars :2
+-		0 , 1  : retval
+-		1 , 0  : iSuccess
+	BB:224	 Vars :1
+-		0 , 1  : b
+	BB:225	 Vars :2
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 0  : b
+	BB:226	 Vars :2
+-		0 , 1  : dFixedLegValue
+-		0 , 1  : i
+	BB:227	 Vars :2
+-		1 , 0  : i
+-		1 , 0  : iSwapVectorLength
+	BB:228	 Vars :6
+-		1 , 0  : pdSwapPayoffs
+-		1 , 1  : dFixedLegValue
+-		1 , 0  : BLOCKSIZE.addr
+-		2 , 0  : i
+-		1 , 0  : b
+-		1 , 0  : pdSwapDiscountFactors
+	BB:229	 Vars :1
+-		1 , 1  : i
+	BB:230	 Vars :9
+-		1 , 0  : iSwapStartTimeIndex
+-		1 , 1  : dSumSquareSimSwaptionPrice
+-		1 , 1  : dSwaptionPayoff
+-		3 , 1  : dDiscSwaptionPayoff
+-		1 , 0  : dFixedLegValue
+-		1 , 1  : dSumSimSwaptionPrice
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 0  : b
+-		1 , 0  : pdPayoffDiscountFactors
+	BB:231	 Vars :1
+-		1 , 1  : b
+	BB:233	 Vars :2
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 1  : l
+	BB:234	 Vars :8
+-		1 , 0  : dSumSquareSimSwaptionPrice
+-		1 , 1  : dSimSwaptionMeanPrice
+-		1 , 1  : dSimSwaptionStdError
+-		0 , 1  : retval
+-		2 , 0  : pdSwaptionPrice.addr
+-		3 , 0  : dSumSimSwaptionPrice
+-		4 , 0  : lTrials.addr
+-		1 , 1  : iSuccess
+	BB:235	 Vars :1
+-		1 , 0  : retval
+Ftn : _Z25Discount_Factors_BlockingPdidS_i
+	BB:236	 Vars :8
+-		0 , 1  : j
+-		0 , 1  : pdDiscountFactors.addr
+-		2 , 1  : iN.addr
+-		1 , 1  : dYears.addr
+-		0 , 1  : pdRatePath.addr
+-		1 , 1  : BLOCKSIZE.addr
+-		0 , 1  : ddelt
+-		0 , 1  : pdexpRes
+	BB:237	 Vars :3
+-		1 , 0  : j
+-		1 , 0  : iN.addr
+-		1 , 0  : BLOCKSIZE.addr
+	BB:238	 Vars :4
+-		2 , 0  : j
+-		1 , 0  : pdRatePath.addr
+-		1 , 0  : ddelt
+-		1 , 0  : pdexpRes
+	BB:239	 Vars :1
+-		1 , 1  : j
+	BB:240	 Vars :1
+-		0 , 1  : j
+	BB:241	 Vars :3
+-		1 , 0  : j
+-		1 , 0  : iN.addr
+-		1 , 0  : BLOCKSIZE.addr
+	BB:242	 Vars :2
+-		2 , 0  : j
+-		2 , 0  : pdexpRes
+	BB:243	 Vars :1
+-		1 , 1  : j
+	BB:244	 Vars :1
+-		0 , 1  : i
+	BB:245	 Vars :3
+-		1 , 0  : iN.addr
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 0  : i
+	BB:246	 Vars :2
+-		1 , 0  : pdDiscountFactors.addr
+-		1 , 0  : i
+	BB:247	 Vars :1
+-		1 , 1  : i
+	BB:248	 Vars :1
+-		0 , 1  : i
+	BB:249	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : i
+	BB:250	 Vars :1
+-		0 , 1  : b
+	BB:251	 Vars :2
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 0  : b
+	BB:252	 Vars :1
+-		0 , 1  : j
+	BB:253	 Vars :2
+-		1 , 0  : j
+-		1 , 0  : i
+	BB:254	 Vars :6
+-		1 , 0  : j
+-		1 , 0  : pdDiscountFactors.addr
+-		2 , 0  : BLOCKSIZE.addr
+-		1 , 0  : i
+-		2 , 0  : b
+-		1 , 0  : pdexpRes
+	BB:255	 Vars :1
+-		1 , 1  : j
+	BB:257	 Vars :1
+-		1 , 1  : b
+	BB:259	 Vars :1
+-		1 , 1  : i
+	BB:260	 Vars :4
+-		1 , 0  : iN.addr
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 1  : iSuccess
+-		1 , 0  : pdexpRes
+Ftn : _Z28HJM_SimPath_Forward_BlockingPPdiidS_S_S0_Pli
+	BB:261	 Vars :15
+-		2 , 1  : iFactors.addr
+-		1 , 1  : dYears.addr
+-		0 , 1  : ppdHJMPath.addr
+-		3 , 1  : iN.addr
+-		0 , 1  : randZ
+-		1 , 1  : ddelt
+-		0 , 1  : pdForward.addr
+-		0 , 1  : pdTotalDrift.addr
+-		0 , 1  : ppdFactors.addr
+-		0 , 1  : lRndSeed.addr
+-		2 , 1  : BLOCKSIZE.addr
+-		0 , 1  : iSuccess
+-		0 , 1  : pdZ
+-		0 , 1  : sqrt_ddelt
+-		0 , 1  : b
+	BB:262	 Vars :2
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 0  : b
+	BB:263	 Vars :1
+-		0 , 1  : j
+	BB:264	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : j
+	BB:265	 Vars :6
+-		1 , 0  : ppdHJMPath.addr
+-		1 , 0  : pdForward.addr
+-		1 , 0  : BLOCKSIZE.addr
+-		0 , 1  : i
+-		2 , 0  : j
+-		1 , 0  : b
+	BB:266	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : i
+	BB:267	 Vars :5
+-		1 , 0  : ppdHJMPath.addr
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 0  : i
+-		1 , 0  : j
+-		1 , 0  : b
+	BB:268	 Vars :1
+-		1 , 1  : i
+	BB:270	 Vars :1
+-		1 , 1  : j
+	BB:272	 Vars :1
+-		1 , 1  : b
+	BB:273	 Vars :1
+-		0 , 1  : b35
+	BB:274	 Vars :2
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 0  : b35
+	BB:275	 Vars :1
+-		0 , 1  : s
+	BB:276	 Vars :1
+-		1 , 0  : s
+	BB:277	 Vars :1
+-		0 , 1  : j
+	BB:278	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : j
+	BB:279	 Vars :1
+-		0 , 1  : l
+	BB:280	 Vars :2
+-		1 , 0  : iFactors.addr
+-		1 , 0  : l
+	BB:281	 Vars :7
+-		1 , 0  : randZ
+-		1 , 0  : lRndSeed.addr
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 0  : j
+-		1 , 0  : l
+-		1 , 0  : b35
+-		1 , 0  : s
+	BB:282	 Vars :1
+-		1 , 1  : l
+	BB:284	 Vars :1
+-		1 , 1  : j
+	BB:286	 Vars :1
+-		1 , 1  : s
+	BB:288	 Vars :1
+-		1 , 1  : b35
+	BB:289	 Vars :6
+-		1 , 0  : iFactors.addr
+-		1 , 0  : iN.addr
+-		1 , 0  : randZ
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 0  : pdZ
+-		0 , 1  : b70
+	BB:290	 Vars :2
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 0  : b70
+	BB:291	 Vars :1
+-		0 , 1  : j
+	BB:292	 Vars :2
+-		1 , 0  : iN.addr
+-		1 , 0  : j
+	BB:293	 Vars :1
+-		0 , 1  : l
+	BB:294	 Vars :3
+-		1 , 0  : iN.addr
+-		1 , 0  : j
+-		1 , 0  : l
+	BB:295	 Vars :2
+-		0 , 1  : dTotalShock
+-		0 , 1  : i
+	BB:296	 Vars :2
+-		1 , 0  : iFactors.addr
+-		1 , 0  : i
+	BB:297	 Vars :8
+-		1 , 1  : dTotalShock
+-		1 , 0  : ppdFactors.addr
+-		1 , 0  : BLOCKSIZE.addr
+-		2 , 0  : i
+-		1 , 0  : j
+-		1 , 0  : l
+-		1 , 0  : pdZ
+-		1 , 0  : b70
+	BB:298	 Vars :1
+-		1 , 1  : i
+	BB:299	 Vars :9
+-		2 , 0  : ppdHJMPath.addr
+-		1 , 0  : dTotalShock
+-		1 , 0  : ddelt
+-		1 , 0  : pdTotalDrift.addr
+-		2 , 0  : BLOCKSIZE.addr
+-		2 , 0  : j
+-		3 , 0  : l
+-		1 , 0  : sqrt_ddelt
+-		2 , 0  : b70
+	BB:300	 Vars :1
+-		1 , 1  : l
+	BB:302	 Vars :1
+-		1 , 1  : j
+	BB:304	 Vars :1
+-		1 , 1  : b70
+	BB:305	 Vars :6
+-		2 , 0  : iFactors.addr
+-		2 , 0  : iN.addr
+-		1 , 0  : randZ
+-		2 , 0  : BLOCKSIZE.addr
+-		1 , 1  : iSuccess
+-		1 , 0  : pdZ
+Ftn : _Z4dMaxdd
+	BB:306	 Vars :2
+-		1 , 1  : dA.addr
+-		1 , 1  : dB.addr
+	BB:307	 Vars :1
+-		1 , 0  : dA.addr
+	BB:308	 Vars :1
+-		1 , 0  : dB.addr
+Ftn : _Z6choldcPPdi
+	BB:310	 Vars :3
+-		0 , 1  : a.addr
+-		0 , 1  : n.addr
+-		0 , 1  : i
+	BB:311	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : i
+	BB:312	 Vars :2
+-		1 , 0  : i
+-		0 , 1  : j
+	BB:313	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : j
+	BB:314	 Vars :5
+-		1 , 0  : a.addr
+-		2 , 0  : i
+-		1 , 0  : j
+-		0 , 1  : k
+-		0 , 1  : sum
+	BB:315	 Vars :1
+-		1 , 0  : k
+	BB:316	 Vars :5
+-		2 , 0  : a.addr
+-		1 , 0  : i
+-		1 , 0  : j
+-		2 , 0  : k
+-		1 , 1  : sum
+	BB:317	 Vars :1
+-		1 , 1  : k
+	BB:318	 Vars :2
+-		1 , 0  : i
+-		1 , 0  : j
+	BB:319	 Vars :1
+-		1 , 0  : sum
+	BB:320	 Vars :1
+-		0 , 1  : retval
+	BB:321	 Vars :3
+-		1 , 0  : a.addr
+-		2 , 0  : i
+-		1 , 0  : sum
+	BB:322	 Vars :4
+-		2 , 0  : a.addr
+-		3 , 0  : i
+-		1 , 0  : j
+-		1 , 0  : sum
+	BB:324	 Vars :1
+-		1 , 1  : j
+	BB:326	 Vars :1
+-		1 , 1  : i
+	BB:327	 Vars :1
+-		0 , 1  : i
+	BB:328	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : i
+	BB:329	 Vars :2
+-		1 , 0  : i
+-		0 , 1  : j
+	BB:330	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : j
+	BB:331	 Vars :3
+-		1 , 0  : a.addr
+-		1 , 0  : i
+-		1 , 0  : j
+	BB:332	 Vars :1
+-		1 , 1  : j
+	BB:334	 Vars :1
+-		1 , 1  : i
+	BB:335	 Vars :1
+-		0 , 1  : retval
+	BB:336	 Vars :1
+-		1 , 0  : retval
+Ftn : _Z6gaussjPPdiS0_i
+	BB:337	 Vars :10
+-		0 , 1  : a.addr
+-		3 , 1  : n.addr
+-		0 , 1  : b.addr
+-		0 , 1  : m.addr
+-		0 , 1  : indxc
+-		0 , 1  : indxr
+-		0 , 1  : ipiv
+-		0 , 1  : icol
+-		0 , 1  : irow
+-		0 , 1  : j
+	BB:338	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : j
+	BB:339	 Vars :2
+-		1 , 0  : ipiv
+-		1 , 0  : j
+	BB:340	 Vars :1
+-		1 , 1  : j
+	BB:341	 Vars :1
+-		0 , 1  : i
+	BB:342	 Vars :2
+-		1 , 0  : i
+-		1 , 0  : n.addr
+	BB:343	 Vars :2
+-		0 , 1  : j
+-		0 , 1  : big
+	BB:344	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : j
+	BB:345	 Vars :2
+-		1 , 0  : ipiv
+-		1 , 0  : j
+	BB:346	 Vars :1
+-		0 , 1  : k
+	BB:347	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : k
+	BB:348	 Vars :2
+-		1 , 0  : ipiv
+-		1 , 0  : k
+	BB:349	 Vars :4
+-		1 , 0  : a.addr
+-		1 , 0  : j
+-		1 , 0  : k
+-		1 , 0  : big
+	BB:350	 Vars :6
+-		1 , 0  : a.addr
+-		0 , 1  : icol
+-		0 , 1  : irow
+-		2 , 0  : j
+-		2 , 0  : k
+-		0 , 1  : big
+	BB:352	 Vars :2
+-		1 , 0  : ipiv
+-		1 , 0  : k
+	BB:356	 Vars :1
+-		1 , 1  : k
+	BB:359	 Vars :1
+-		1 , 1  : j
+	BB:360	 Vars :3
+-		1 , 0  : ipiv
+-		2 , 0  : icol
+-		1 , 0  : irow
+	BB:361	 Vars :1
+-		0 , 1  : l
+	BB:362	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : l
+	BB:363	 Vars :5
+-		4 , 0  : a.addr
+-		2 , 0  : icol
+-		2 , 0  : irow
+-		4 , 0  : l
+-		1 , 1  : temp
+	BB:364	 Vars :1
+-		1 , 1  : l
+	BB:365	 Vars :1
+-		0 , 1  : l
+	BB:366	 Vars :2
+-		1 , 0  : m.addr
+-		1 , 0  : l
+	BB:367	 Vars :5
+-		4 , 0  : b.addr
+-		2 , 0  : icol
+-		2 , 0  : irow
+-		4 , 0  : l
+-		1 , 1  : temp
+	BB:368	 Vars :1
+-		1 , 1  : l
+	BB:370	 Vars :6
+-		2 , 0  : i
+-		1 , 0  : a.addr
+-		1 , 0  : indxc
+-		1 , 0  : indxr
+-		3 , 0  : icol
+-		1 , 0  : irow
+	BB:372	 Vars :4
+-		2 , 0  : a.addr
+-		4 , 0  : icol
+-		0 , 1  : l
+-		0 , 1  : pivinv
+	BB:373	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : l
+	BB:374	 Vars :4
+-		1 , 0  : a.addr
+-		1 , 0  : icol
+-		1 , 0  : l
+-		1 , 0  : pivinv
+	BB:375	 Vars :1
+-		1 , 1  : l
+	BB:376	 Vars :1
+-		0 , 1  : l
+	BB:377	 Vars :2
+-		1 , 0  : m.addr
+-		1 , 0  : l
+	BB:378	 Vars :4
+-		1 , 0  : b.addr
+-		1 , 0  : icol
+-		1 , 0  : l
+-		1 , 0  : pivinv
+	BB:379	 Vars :1
+-		1 , 1  : l
+	BB:380	 Vars :1
+-		0 , 1  : ll
+	BB:381	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : ll
+	BB:382	 Vars :2
+-		1 , 0  : icol
+-		1 , 0  : ll
+	BB:383	 Vars :5
+-		2 , 0  : a.addr
+-		2 , 0  : icol
+-		0 , 1  : l
+-		2 , 0  : ll
+-		0 , 1  : dum
+	BB:384	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : l
+	BB:385	 Vars :5
+-		2 , 0  : a.addr
+-		1 , 0  : icol
+-		2 , 0  : l
+-		1 , 0  : ll
+-		1 , 0  : dum
+	BB:386	 Vars :1
+-		1 , 1  : l
+	BB:387	 Vars :1
+-		0 , 1  : l
+	BB:388	 Vars :2
+-		1 , 0  : m.addr
+-		1 , 0  : l
+	BB:389	 Vars :5
+-		2 , 0  : b.addr
+-		1 , 0  : icol
+-		2 , 0  : l
+-		1 , 0  : ll
+-		1 , 0  : dum
+	BB:390	 Vars :1
+-		1 , 1  : l
+	BB:393	 Vars :1
+-		1 , 1  : ll
+	BB:395	 Vars :1
+-		1 , 1  : i
+	BB:396	 Vars :2
+-		1 , 0  : n.addr
+-		0 , 1  : l
+	BB:397	 Vars :1
+-		1 , 0  : l
+	BB:398	 Vars :3
+-		1 , 0  : indxc
+-		1 , 0  : indxr
+-		2 , 0  : l
+	BB:399	 Vars :1
+-		0 , 1  : k
+	BB:400	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : k
+	BB:401	 Vars :6
+-		4 , 0  : a.addr
+-		2 , 0  : indxc
+-		2 , 0  : indxr
+-		4 , 0  : k
+-		4 , 0  : l
+-		1 , 1  : temp
+	BB:402	 Vars :1
+-		1 , 1  : k
+	BB:405	 Vars :1
+-		1 , 1  : l
+	BB:406	 Vars :4
+-		3 , 0  : n.addr
+-		1 , 0  : indxc
+-		1 , 0  : indxr
+-		1 , 0  : ipiv
+Ftn : _Z6workerPv
+	BB:407	 Vars :4
+-		1 , 0  : nThreads
+-		1 , 0  : nSwaptions
+-		1 , 1  : arg.addr
+-		1 , 1  : tid
+	BB:408	 Vars :6
+-		1 , 0  : nThreads
+-		1 , 0  : nSwaptions
+-		2 , 0  : tid
+-		0 , 1  : beg
+-		0 , 1  : end
+-		2 , 1  : chunksize
+	BB:409	 Vars :8
+-		2 , 0  : nThreads
+-		2 , 0  : nSwaptions
+-		2 , 0  : tid
+-		0 , 1  : beg
+-		0 , 1  : end
+-		3 , 1  : chunksize
+-		3 , 1  : offsetThread
+-		2 , 1  : offset
+	BB:410	 Vars :2
+-		1 , 0  : nThreads
+-		1 , 0  : tid
+	BB:411	 Vars :2
+-		1 , 0  : nSwaptions
+-		0 , 1  : end
+	BB:412	 Vars :2
+-		1 , 0  : beg
+-		0 , 1  : i
+	BB:413	 Vars :2
+-		1 , 0  : end
+-		1 , 0  : i
+	BB:414	 Vars :5
+-		10 , 0  : swaptions
+-		1 , 0  : swaption_seed
+-		1 , 0  : NUM_TRIALS
+-		11 , 0  : i
+-		1 , 1  : iSuccess
+	BB:418	 Vars :3
+-		2 , 0  : swaptions
+-		2 , 0  : pdSwaptionPrice
+-		2 , 0  : i
+	BB:419	 Vars :1
+-		1 , 1  : i
+Ftn : _Z7RanUnifPl
+	BB:421	 Vars :3
+-		1 , 1  : s.addr
+-		3 , 2  : ix
+-		2 , 1  : k1
+	BB:422	 Vars :1
+-		1 , 1  : ix
+	BB:423	 Vars :3
+-		1 , 0  : s.addr
+-		2 , 0  : ix
+-		1 , 1  : dRes
+Ftn : _Z7dmatrixllll
+	BB:424	 Vars :7
+-		1 , 1  : m
+-		1 , 1  : nrl.addr
+-		1 , 1  : nrh.addr
+-		1 , 1  : ncl.addr
+-		1 , 1  : nch.addr
+-		1 , 1  : nrow
+-		0 , 1  : ncol
+	BB:426	 Vars :4
+-		4 , 2  : m
+-		3 , 0  : nrl.addr
+-		1 , 0  : nrow
+-		1 , 0  : ncol
+	BB:428	 Vars :4
+-		2 , 0  : m
+-		3 , 0  : nrl.addr
+-		1 , 0  : ncl.addr
+-		0 , 1  : i
+	BB:429	 Vars :2
+-		1 , 0  : nrh.addr
+-		1 , 0  : i
+	BB:430	 Vars :3
+-		2 , 0  : m
+-		2 , 0  : i
+-		1 , 0  : ncol
+	BB:431	 Vars :1
+-		1 , 1  : i
+	BB:432	 Vars :1
+-		1 , 0  : m
+Ftn : _Z7dvectorll
+	BB:433	 Vars :3
+-		1 , 1  : nl.addr
+-		1 , 1  : nh.addr
+-		1 , 1  : v
+	BB:435	 Vars :2
+-		1 , 0  : nl.addr
+-		1 , 0  : v
+Ftn : _Z7ivectorll
+	BB:436	 Vars :3
+-		1 , 1  : nl.addr
+-		1 , 1  : nh.addr
+-		1 , 1  : v
+	BB:438	 Vars :2
+-		1 , 0  : nl.addr
+-		1 , 0  : v
+Ftn : _Z7nrerrorPKc
+	BB:439	 Vars :2
+-		3 , 0  : stderr
+-		1 , 1  : error_text.addr
+Ftn : _Z7serialBPPdS0_iii
+	BB:441	 Vars :6
+-		0 , 1  : pdZ.addr
+-		0 , 1  : randZ.addr
+-		0 , 1  : BLOCKSIZE.addr
+-		0 , 1  : iN.addr
+-		0 , 1  : iFactors.addr
+-		0 , 1  : l
+	BB:442	 Vars :2
+-		1 , 0  : iFactors.addr
+-		1 , 0  : l
+	BB:443	 Vars :1
+-		0 , 1  : b
+	BB:444	 Vars :2
+-		1 , 0  : BLOCKSIZE.addr
+-		1 , 0  : b
+	BB:445	 Vars :1
+-		0 , 1  : j
+	BB:446	 Vars :2
+-		1 , 0  : j
+-		1 , 0  : iN.addr
+	BB:447	 Vars :6
+-		2 , 0  : j
+-		1 , 0  : pdZ.addr
+-		1 , 0  : randZ.addr
+-		2 , 0  : BLOCKSIZE.addr
+-		2 , 0  : l
+-		2 , 0  : b
+	BB:448	 Vars :1
+-		1 , 1  : j
+	BB:450	 Vars :1
+-		1 , 1  : b
+	BB:452	 Vars :1
+-		1 , 1  : l
+Ftn : __cxx_global_var_init
+Ftn : new_main
+	BB:455	 Vars :5
+-		0 , 1  : retval
+-		1 , 1  : argc.addr
+-		0 , 1  : argv.addr
+-		0 , 1  : iSuccess
+-		0 , 1  : factors
+	BB:456	 Vars :1
+-		1 , 0  : argv.addr
+	BB:457	 Vars :1
+-		0 , 1  : j2
+	BB:458	 Vars :2
+-		1 , 0  : argc.addr
+-		1 , 0  : j2
+	BB:459	 Vars :2
+-		1 , 0  : argv.addr
+-		1 , 0  : j2
+	BB:460	 Vars :3
+-		0 , 1  : NUM_TRIALS
+-		1 , 0  : argv.addr
+-		1 , 1  : j2
+	BB:461	 Vars :2
+-		1 , 0  : argv.addr
+-		1 , 0  : j2
+	BB:462	 Vars :3
+-		0 , 1  : nThreads
+-		1 , 0  : argv.addr
+-		1 , 1  : j2
+	BB:463	 Vars :2
+-		1 , 0  : argv.addr
+-		1 , 0  : j2
+	BB:464	 Vars :3
+-		0 , 1  : nSwaptions
+-		1 , 0  : argv.addr
+-		1 , 1  : j2
+	BB:465	 Vars :2
+-		1 , 0  : argv.addr
+-		1 , 0  : j2
+	BB:466	 Vars :3
+-		0 , 1  : seed
+-		1 , 0  : argv.addr
+-		1 , 1  : j2
+	BB:467	 Vars :3
+-		1 , 0  : stderr
+-		2 , 0  : argv.addr
+-		1 , 0  : j2
+	BB:472	 Vars :1
+-		1 , 1  : j2
+	BB:473	 Vars :2
+-		1 , 0  : nThreads
+-		1 , 0  : nSwaptions
+	BB:474	 Vars :2
+-		1 , 0  : stderr
+-		1 , 0  : argv.addr
+	BB:475	 Vars :4
+-		0 , 1  : swaption_seed
+-		1 , 0  : NUM_TRIALS
+-		2 , 0  : nThreads
+-		1 , 0  : nSwaptions
+	BB:476	 Vars :1
+-		1 , 0  : stderr
+	BB:477	 Vars :6
+-		1 , 0  : iN
+-		1 , 0  : iFactors
+-		0 , 1  : swaptions
+-		1 , 0  : nSwaptions
+-		0 , 1  : i
+-		30 , 1  : factors
+	BB:478	 Vars :2
+-		1 , 0  : nSwaptions
+-		1 , 0  : i
+	BB:479	 Vars :5
+-		2 , 0  : iN
+-		1 , 0  : iFactors
+-		11 , 0  : swaptions
+-		12 , 0  : i
+-		0 , 1  : j
+	BB:480	 Vars :3
+-		1 , 0  : swaptions
+-		1 , 0  : i
+-		1 , 0  : j
+	BB:481	 Vars :3
+-		2 , 0  : swaptions
+-		2 , 0  : i
+-		2 , 0  : j
+	BB:482	 Vars :1
+-		1 , 1  : j
+	BB:483	 Vars :3
+-		3 , 0  : swaptions
+-		3 , 0  : i
+-		0 , 1  : k
+	BB:484	 Vars :3
+-		1 , 0  : swaptions
+-		1 , 0  : i
+-		1 , 0  : k
+	BB:485	 Vars :1
+-		0 , 1  : j
+	BB:486	 Vars :3
+-		1 , 0  : swaptions
+-		1 , 0  : i
+-		1 , 0  : j
+	BB:487	 Vars :5
+-		1 , 0  : swaptions
+-		1 , 0  : i
+-		2 , 0  : j
+-		1 , 0  : factors
+-		2 , 0  : k
+	BB:488	 Vars :1
+-		1 , 1  : j
+	BB:490	 Vars :1
+-		1 , 1  : k
+	BB:492	 Vars :1
+-		1 , 1  : i
+	BB:493	 Vars :2
+-		0 , 1  : threadID
+-		0 , 1  : i
+	BB:494	 Vars :2
+-		1 , 0  : nSwaptions
+-		1 , 0  : i
+	BB:495	 Vars :3
+-		2 , 0  : swaptions
+-		1 , 0  : stderr
+-		3 , 0  : i
+	BB:496	 Vars :1
+-		1 , 1  : i
+	BB:497	 Vars :1
+-		0 , 1  : i
+	BB:498	 Vars :2
+-		1 , 0  : nSwaptions
+-		1 , 0  : i
+	BB:499	 Vars :2
+-		5 , 0  : swaptions
+-		5 , 0  : i
+	BB:500	 Vars :1
+-		1 , 1  : i
+	BB:501	 Vars :2
+-		1 , 0  : swaptions
+-		1 , 0  : iSuccess

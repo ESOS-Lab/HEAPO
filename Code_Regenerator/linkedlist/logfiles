@@ -1,0 +1,121 @@
+
+stderr:::@stderr = external global %struct._IO_FILE*
+Link application with profile functions : profile_functions.bc
+Temporary Application file /tmp/file62OAzX.bc
+Link command : llvm-link /tmp/fileCtshEIpf.bc list.bc -o /tmp/file62OAzX.bc
+App Target Triple : x86_64-unknown-linux-gnu
+App Data Layout : e-m:e-i64:64-f80:128-n8:16:32:64-S128
+App global variable : .str
+App global variable : .str1
+App global variable : .str2
+App global variable : .str3
+App global variable : .str4
+App global variable : .str5
+App global variable : .str6
+App global variable : .str7
+App global variable : .str8
+App global variable : .str9
+App global variable : .str10
+App global variable : .str11
+App global variable : .str12
+App global variable : .str13
+App global variable : .str14
+App global variable : .str15
+App global variable : .str16
+App global variable : .str17
+App global variable : .str18
+App global variable : stdin
+App global variable : .str19
+App global variable : .str20
+App global variable : .str21
+App global variable : .str22
+App global variable : .str23
+App global variable : .str24
+App global variable : .str25
+App global variable : NUM
+App global variable : TAG
+App global variable : .str26
+App global variable : .str127
+App global variable : .str228
+App global variable : .str329
+App global variable : .str430
+App global variable : .str531
+App global variable : .str632
+App global variable : .str733
+App global variable : .str834
+App global variable : .str935
+App function : 1	main
+App function : 2	puts
+App function : 3	__isoc99_scanf
+App function : 4	fflush
+App function : 5	__fpurge
+App function : 6	getchar
+App function : 7	CreateList
+App function : 8	AddNode
+App function : 9	PrintList
+App function : 10	InsertNode
+App function : 11	DeleteNode
+App function : 12	ResetList
+App function : 13	SwapNodes
+App function : 14	ReverseList
+memory access instructions count : 5374
+  %call = call noalias i8* @malloc(i64 8) #5, !dbg !544	Line info : 13 linkedlist.c /home/user/regen/linkedlist
+  %call = call noalias i8* @malloc(i64 16) #5, !dbg !550	Line info : 27 linkedlist.c /home/user/regen/linkedlist
+  %call2 = call noalias i8* @malloc(i64 16) #5, !dbg !566	Line info : 90 linkedlist.c /home/user/regen/linkedlist
+  call void @free(i8* %20) #5, !dbg !574	Line info : 167 linkedlist.c /home/user/regen/linkedlist
+  call void @free(i8* %32) #5, !dbg !587	Line info : 181 linkedlist.c /home/user/regen/linkedlist
+  call void @free(i8* %38) #5, !dbg !593	Line info : 190 linkedlist.c /home/user/regen/linkedlist
+  call void @free(i8* %9) #5, !dbg !558	Line info : 222 linkedlist.c /home/user/regen/linkedlist
+  call void @free(i8* %22) #5, !dbg !573	Line info : 240 linkedlist.c /home/user/regen/linkedlist
+  call void @free(i8* %28) #5, !dbg !580	Line info : 245 linkedlist.c /home/user/regen/linkedlist
+  call void @free(i8* %30) #5, !dbg !582	Line info : 247 linkedlist.c /home/user/regen/linkedlist
+  call void @free(i8* %36) #5, !dbg !588	Line info : 252 linkedlist.c /home/user/regen/linkedlist
+  %retval = alloca i32, align 4	Line number : --
+  %L = alloca %struct.ListHead*, align 8	Line number : --
+  %menu = alloca i8, align 1	Line number : --
+  %node_1 = alloca i32, align 4	Line number : --
+  %node_2 = alloca i32, align 4	Line number : --
+  %temp = alloca i32, align 4	Line number : --
+  %ch = alloca i32, align 4	Line number : --
+  %L = alloca %struct.ListHead*, align 8	Line number : --
+  %L.addr = alloca %struct.ListHead*, align 8	Line number : --
+  %NewNode = alloca %struct.ListNode*, align 8	Line number : --
+  %p = alloca %struct.ListNode*, align 8	Line number : --
+  %L.addr = alloca %struct.ListHead*, align 8	Line number : --
+  %p = alloca %struct.ListNode*, align 8	Line number : --
+  %L.addr = alloca %struct.ListHead*, align 8	Line number : --
+  %tag.addr = alloca i32, align 4	Line number : --
+  %p = alloca %struct.ListNode*, align 8	Line number : --
+  %q = alloca %struct.ListNode*, align 8	Line number : --
+  %Newnode = alloca %struct.ListNode*, align 8	Line number : --
+  %tagtemp = alloca i32, align 4	Line number : --
+  %i = alloca i32, align 4	Line number : --
+  %j = alloca i32, align 4	Line number : --
+  %L.addr = alloca %struct.ListHead*, align 8	Line number : --
+  %tag.addr = alloca i32, align 4	Line number : --
+  %p = alloca %struct.ListNode*, align 8	Line number : --
+  %q = alloca %struct.ListNode*, align 8	Line number : --
+  %i = alloca i32, align 4	Line number : --
+  %L.addr = alloca %struct.ListHead*, align 8	Line number : --
+  %p = alloca %struct.ListNode*, align 8	Line number : --
+  %q = alloca %struct.ListNode*, align 8	Line number : --
+  %L.addr = alloca %struct.ListHead*, align 8	Line number : --
+  %node_1.addr = alloca i32, align 4	Line number : --
+  %node_2.addr = alloca i32, align 4	Line number : --
+  %temp = alloca i32, align 4	Line number : --
+  %p = alloca %struct.ListNode*, align 8	Line number : --
+  %q = alloca %struct.ListNode*, align 8	Line number : --
+  %r = alloca %struct.ListNode*, align 8	Line number : --
+  %p32 = alloca %struct.ListNode*, align 8	Line number : --
+  %q33 = alloca %struct.ListNode*, align 8	Line number : --
+  %r34 = alloca %struct.ListNode*, align 8	Line number : --
+  %s = alloca %struct.ListNode*, align 8	Line number : --
+  %w = alloca %struct.ListNode*, align 8	Line number : --
+  %L.addr = alloca %struct.ListHead*, align 8	Line number : --
+  %p = alloca %struct.ListNode*, align 8	Line number : --
+  %q = alloca %struct.ListNode*, align 8	Line number : --
+  %r = alloca %struct.ListNode*, align 8	Line number : --
+Place pf init and end functions call in main function
+store heap info in app : 13 1
+store heap info in app : 27 2
+store heap info in app : 90 3

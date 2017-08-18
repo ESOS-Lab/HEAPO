@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="/Users/thomashaywooddadzie/ProfileTool/tool/tool.workspace">
+  <int Value="0" Name="m_selectedTab"/>
+  <wxString Value="/Users/thomashaywooddadzie/ProfileTool/tool/tool.workspace" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="/Users/thomashaywooddadzie/ProfileTool/tool/main.cpp" Name="FileName"/>
+      <int Value="35" Name="FirstVisibleLine"/>
+      <int Value="51" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds">
+        <IntVectorItem Value="188"/>
+        <IntVectorItem Value="211"/>
+        <IntVectorItem Value="1043"/>
+        <IntVectorItem Value="1111"/>
+        <IntVectorItem Value="1152"/>
+      </IntVector>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/thomashaywooddadzie/ProfileTool/tool/utils.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="15" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/thomashaywooddadzie/ProfileTool/tool/utils.h" Name="FileName"/>
+      <int Value="80" Name="FirstVisibleLine"/>
+      <int Value="287" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/thomashaywooddadzie/ProfileTool/tool/pFunctions.cpp" Name="FileName"/>
+      <int Value="1148" Name="FirstVisibleLine"/>
+      <int Value="1216" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds">
+        <IntVectorItem Value="597"/>
+      </IntVector>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/thomashaywooddadzie/ProfileTool/tool/main.h" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="2" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/thomashaywooddadzie/ProfileTool/tool/Makefile" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="21" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="0" Name="Count"/>
+  </SerializedObject>
+</Session>

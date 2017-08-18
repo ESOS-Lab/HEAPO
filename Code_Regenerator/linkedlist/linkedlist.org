@@ -1,0 +1,355 @@
+#include <stdio.h>
+#include <stdio_ext.h>
+#include <stdlib.h>
+#include "linkedlist.h"
+
+int NUM = 0;
+int TAG = 0;
+
+ListHead* CreateList(void)
+{
+	ListHead *L;
+	
+	L = (ListHead *)malloc(sizeof(ListHead));
+	L->Header = NULL;
+
+	return L;
+}
+
+
+void AddNode(ListHead *L)
+{
+	ListNode *NewNode;
+	ListNode *p;
+
+	++TAG;
+	++NUM;
+	NewNode = (ListNode *)malloc(sizeof(ListNode));	
+	NewNode->tag = TAG;
+	NewNode->data = NUM;
+	NewNode->link = NULL;
+
+
+	if(L->Header == NULL)
+	{
+		L->Header = NewNode;
+		printf("New node has been added.\n");
+		return;
+	}
+
+
+	p = L->Header;
+	while(p->link != NULL)
+	{
+		p = p->link;
+	}
+	p->link = NewNode;
+
+	printf("New node has been added.\n");
+
+}
+
+void PrintList(ListHead *L)
+{
+	ListNode *p;
+	
+
+	if(L->Header == NULL)
+	{
+		printf("List L is already empty.\n");
+		return;
+	}
+
+	p = L->Header;	
+
+		while(p != NULL)
+		{
+			__fpurge(stdin);		
+			printf("|%-2d|link|--->",p->data);
+			p = p->link;
+		}
+
+	printf(" NULL\n");
+
+	return;
+}
+
+void InsertNode(ListHead *L,int tag)
+{
+	ListNode *p, *q;
+	ListNode *Newnode;
+	int tagtemp;
+	int i;
+	int j;
+
+	if(L->Header == NULL){	printf("List L is already empty\n");	return;}
+	
+	++TAG;
+	++NUM;
+
+	Newnode = (ListNode *)malloc(sizeof(ListNode));
+	Newnode->tag = tag;
+	Newnode->data = NUM;
+	Newnode->link = NULL;
+
+	p = L->Header;
+	q = L->Header;
+	
+	while(p->tag != tag)
+	{	
+		q = p;
+		p = p->link;
+	}
+	
+	if(p == L->Header)
+	{
+		Newnode->link = L->Header;
+		L->Header = Newnode;
+
+		p = Newnode;
+
+		for(i = tag; i <= TAG; i++)
+		{
+			p->tag = i;
+			p = p->link;
+		}
+
+	}
+	else if(p->link == NULL)
+	{	
+
+		Newnode->link = p;
+		q->link = Newnode;
+		p->tag = tag+1;
+
+	}else
+	{
+		Newnode->link = p;
+		q->link = Newnode;
+
+		for(i = tag +1; i <= TAG; i++)
+		{
+			p->tag = i;
+			p = p->link;
+		}
+		
+	}
+	printf("New node has been inserted.\n");
+}
+
+
+
+void DeleteNode(ListHead *L, int tag)
+{
+	ListNode *p = NULL, *q = NULL;
+	int i = 0;
+	
+	if(L->Header == NULL)
+	{
+		printf("List L is already empty.\n");
+		return;
+
+	}
+
+		p = L->Header;
+		q = p;
+	
+		while(p->tag != tag)
+		{
+			q = p;
+			p = p->link;
+		}
+
+
+		if((p == L->Header) &&( q == p))
+		{
+			L->Header = p->link;
+			free(q);
+
+			p = L->Header;
+			
+			i = tag;
+			while(p != NULL)
+			{
+				p->tag = i++;
+				p = p->link;
+			}
+
+		}
+		else if(p->link == NULL)
+		{
+			free(p);
+			q->link = NULL;
+			//printf("L->Header->dta = %d\n",L->Header->data);
+			//printf("q->data = %d\n",q->data);
+
+		}
+		else
+		{
+			q->link = p->link;
+			free(p);
+			
+			q = q->link;
+			
+			i = tag;
+			while(q != NULL)
+			{
+				q->tag = i++;
+				q = q->link;
+			}
+
+		}
+
+		TAG--;
+
+	printf("The node has been deleted.\n");
+
+}
+
+void ResetList(ListHead *L)
+{
+	ListNode *p, *q;
+	
+	if(L->Header == NULL)
+	{
+			printf("List L is already empty.\n");
+			return;
+	}
+	if(L->Header->link == NULL)
+	{
+		p = L->Header;
+		L->Header = NULL;
+		free(p);
+		printf("List L has been reset.\n");
+		NUM = 0;
+		return;
+	}
+
+	p = L->Header;
+	q = p;
+
+	while(q->link != NULL)
+	{
+		q = q->link;
+	}
+	
+	L->Header = q;
+	q = p->link;
+	while(1)
+	{
+			free(p);
+			p = q->link;
+				if(p == NULL)
+				{
+					L->Header = NULL;
+					free(q);break;
+				}
+			free(q);
+			q = p->link;
+				if(q == NULL)
+				{
+					L->Header = NULL;
+					free(p);	break;	
+				}
+	}
+
+	NUM = 0;
+	TAG = 0;
+	printf("List L has been reset.\n");
+}
+
+void SwapNodes(ListHead *L, int node_1, int node_2)
+{
+	int temp = 0;
+
+	if(node_2-node_1 == 1)
+	{
+		ListNode *p, *q, *r;
+		p = L->Header;
+		q = NULL;
+		r = NULL;
+
+		while(p->link != NULL){
+			
+			if(p->link->tag == node_1) r = p;
+			if(p->tag == node_1)	break;
+			p = p->link;
+		}
+		q = p->link;		
+		
+		if((r == NULL) && (node_1 == 1)){
+			L->Header = q;
+		}else  r->link = q;
+
+		p->link = q->link;
+		q->link = p;
+
+		temp = p->tag;
+		p->tag = q->tag;
+		q->tag = temp;
+	}
+	else 
+	{
+		ListNode *p, *q, *r, *s, *w;
+		p = L->Header;
+		q = NULL;
+		r = NULL;
+		s = NULL;
+		w = NULL;
+
+		while(p->link != NULL){
+			
+			if(p->link->tag == node_1) r = p;
+			if(p->tag == node_1) w = p->link;
+			if(p->link->tag == node_2){
+				 s = p;	
+				break;
+			}	
+			p = p->link;
+		}
+		q = s->link;
+
+		if((r == NULL) && (node_1 == 1)){
+			p = L->Header;
+			L->Header = q;
+		}else  {
+			p = r->link;
+			r->link = q;
+		}
+
+		p->link = q->link;
+		s->link = p;
+		q->link = w;	
+
+		temp = p->tag;
+		p->tag = q->tag;
+		q->tag = temp;
+	}
+
+	printf("They have been swapped.\n");
+}
+
+
+
+void ReverseList(ListHead *L){
+	
+	ListNode *p, *q, *r;
+	
+	if(L->Header == NULL){
+		printf("List L is already empty.\n");
+		exit(0);
+	}
+
+	p = L->Header;
+	r = NULL;	
+
+	while(p != NULL){
+		q = p ;
+		p = p->link;
+		q->link = r;
+		r = q;
+	}
+
+	L->Header = q;	
+	printf("List L has been successfully reversed.\n");
+}

@@ -1,0 +1,17 @@
+Num of threads ,1
+Thread,Call to Malloc,Call to Free,No. Heap Allo at Peak,Searches,Search in Addr Range,Not in Addr Range,Search Miss,Cache Hits ,Cache Updates
+0,5603,4501,1407,21482597,20809980,672617,672617,20796077,13903
+All threads,5603,4501
+
+Application RunTime,0.442526 
+
+Heap Variable Memory Region Profile Result
+
+Index,Read Count,Write Count,Pointer Name,Pointer Type,Function Name,Line Number,Source File,HitCount,Min Size,Max Size,By
+1,4933572,2665430,,,_Z7dmatrixllll,168,nr_routines.c,1701,248,15496,malloc
+2,7593607,9305,,,_Z7dmatrixllll,162,nr_routines.c,1701,32,96,malloc
+3,3599284,1995682,,,_Z7dvectorll,138,nr_routines.c,2200,80,1416,malloc
+4,0,0,,,_Z7ivectorll,119,nr_routines.c,0,0,0,malloc
+5,11800,1300,,,new_main,253,HJM_Securities.cpp,1,10400,10400,malloc
+
+

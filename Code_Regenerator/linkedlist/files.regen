@@ -1,0 +1,3 @@
+./linkedlist.c
+./subdir/sub.c
+./main.c

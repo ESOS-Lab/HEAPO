@@ -1,0 +1,757 @@
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 1000 -j 0 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 0 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 0 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 0 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 0 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 0 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 0 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 1 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 1 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 1 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 2 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 2 -s 1 -g
+/application -p ./ -d 0 -n 10000 -j 2 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 2 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 3 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 3 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 3 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 4 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 4 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 4 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 5 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 5 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 0 -n 10000 -j 5 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 0 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 0 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 0 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 1 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 1 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 1 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 2 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 2 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 2 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 3 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 3 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 3 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 4 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 4 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 4 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 5 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 5 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 1 -n 10000 -j 5 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 0 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 0 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 0 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 1 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 1 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 1 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 2 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 2 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 2 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 3 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 3 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 3 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 4 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 4 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 4 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 5 -s 0 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 5 -s 1 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+/application -p ./ -d 2 -n 10000 -j 5 -s 2 -g
+s_CPUTick:268:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/profiletool_publish-2015-09-30/mobibench/mobibench.c
+
+[Global Variable Summary] ALL: 235, NVRAM: 9
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 
+[Heap Variable Summary] : 0 heap variables among 15 fit nvram 

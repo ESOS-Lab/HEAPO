@@ -1,0 +1,184 @@
+#	Code Regenerator
+#	Author: Seongsu Lee(su880214@hanyang.ac.kr)
+#	Embedded Software System Laboratory, Hanyang University
+#!/bin/bash
+
+####	file extension		####
+extension=".c"
+
+####	files from profiletool	####
+profile_file="heapo_gen_result.csv"
+
+#### 	sed variables		####
+s="s"
+entry=1
+index="1"
+add="0"
+p="p"
+
+####	parenthesis		####
+lparen="\("
+rparen="\)"
+
+####	current directory	####
+	dir=($(pwd | awk '{split($0, info, "/"); 
+		for(i = 2; info[i] != null; i++){  } 
+		printf("\n%s\n",info[i-1]);}'))	
+
+#### 	object name		####
+object=("\""$dir"_obj\"")
+
+#### 	pos_create		####
+pcreate="{\n\tif(pos_create($object) < 0){ \n\t\tif(pos_map($object) < 0){\n\t\t\treturn 0;\n\t\t} \n\t}"
+
+#### 	pos-lib.h		####
+pheader="#include \"pos-lib.h\""
+
+#### 	pos_malloc  		####
+pmalloc="pos_malloc($object, "
+
+#### 	POS AREA region		####
+pos_start="0x5FFEF8000000"
+pos_end="0x7FFEF8000000"
+
+#### 	pos_free 		####
+#pfree="if($variable < $pos_end \&\& $variable >= $pos_start){\n\tpos_free($object,$variable);\n}else{\n\tfree($variable);\n}"
+
+#### 	backup files 		####
+backup=($dir"_origin")
+mkdir /tmp/regen
+cp -R * /tmp/regen/
+mkdir $backup
+mv /tmp/regen/* $backup
+rm -r /tmp/regen
+rm -r $backup
+
+
+#### 	make file list		####
+find . -name "*"$extension -print > files.regen
+
+####	first file from list	####
+file=$(sed -n '1p' files.regen)
+
+
+####	tour all files		####
+while [ -n "$file" ]; do
+
+	echo $file
+	
+	####	lookup main		####
+	main1=$(sed -n '/\smain\s*(/p' $file)
+	#case2=$(sed -n '/^mains*(/p' $file)
+	
+	if [ -n "$main1" ]; then
+	
+		#get the line number where main is 
+		curly=$(echo $main1 | sed -n -e '/{/p')
+		#echo $curly
+		line=$(sed -n '/\smain\s*(/=' $file)
+
+		while [ -z "$curly" ]; do
+			
+			line=`expr "$line" "+" "1"`	
+			curly=$(sed -n $line'p' $file | sed -n -e '/{/p')
+		done
+		#echo $line
+		#insert pos_create at the start line of main func	
+		sed -i "$line$s/{/$pcreate/" $file
+
+		modif=1
+
+	fi
+	
+
+	frees1=$(sed -n '/[^A-Za-z0-9_$]\s*free[^A-Za-z0-9_$].*/=' $file)
+	echo $frees1
+
+	if [ -n "$frees1" ]; then 
+		
+		free=($(echo $frees1 | awk '{split($0, info, " ");
+				for(i = 1; info[i] !=null; i++){	
+
+				printf("%s ",info[i]);}}'))
+
+		while [ -n "${free[$index]}" ]; do	
+	
+
+			add=`expr "$index" "*" 4`
+			free[$index]=`expr "${free[$index]}" "+" "$add"`
+			echo ${free[$index]}
+			let index++
+		done
+
+	fi
+
+
+
+	echo here
+
+
+	####	insert pos header 	####
+	if [ $modif ]; then
+	
+		firstline=$(sed -n 1p $file)	
+		if [ "$firstline" != "$pheader" ]; then
+			sed -i "/$firstline/i$pheader" $file	
+			
+		fi
+		modif=0	
+	fi
+
+
+	####	move to next file	####
+	let entry++
+	file=$(sed -n $entry'p' files.regen)
+
+done
+
+
+####	first entry for malloc	####
+mdata=$(sed -n $index$p $profile_file)
+
+
+####	info[0]=file name	#### 
+####	info[1]=line number	#### 
+####	info[2]=func name	####
+info=($(echo $mdata | awk '{ split($0,info,":"); printf("%s %s %s\n", info[1],info[2],info[3]);}'))	
+prvfile=$file
+
+####	tour all entries for malloc	####
+while [ -n "$mdata" ]; do
+
+	line=(${info[1]})
+	file=(${info[0]})
+	prvfile=($file) 
+
+	####	malloc substitution ####	
+	sed -i "$line$s/malloc[^A-Za-z0-9_$]*(/$pmalloc/" $file
+
+	if [ "$prvfile" != "$file" ] ; then
+		firstline=$(sed -n 1p $prvfile)		
+		if [ "$firstline" != "$pheader" ]; then
+			firstline=$(sed -n 1p $prvfile)	
+			sed -i "/$firstline/i$pheader" $prvfile
+		fi
+
+	fi
+
+	####	next entry	####
+	let index++ 
+	mdata=$(sed -n $index$p $profile_file)	
+	info=($(echo $mdata | awk '{ split($0,info,":"); printf("%s %s %s\n", info[1],info[2],info[3]);}'))	
+
+done
+
+
+
+firstline=$(sed -n 1p $prvfile)		
+if [ "$firstline" != "$pheader" ]; then
+	firstline=$(sed -n 1p $prvfile)	
+	sed -i "/$firstline/i$pheader" $file
+fi
+
+
+#rm files.regen

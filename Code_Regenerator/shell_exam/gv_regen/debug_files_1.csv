@@ -1,0 +1,8 @@
+Global Variable Memory Region Profile Result
+
+Index,Read Count,Write Count,Memory Size,Name, Type  
+3,0,0,8,test,i32* 
+2,0,0,8,static_test.test,i32* 
+1,0,0,8,.str,[18 x i8]* 
+
+

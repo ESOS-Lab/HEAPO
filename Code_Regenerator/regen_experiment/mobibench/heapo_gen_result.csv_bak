@@ -1,0 +1,11 @@
+PUTick:268:/home/sslee/work/regen/test/mobibench/mobibench.c
+print_IOPS:168:/home/sslee/work/regen/test/mobibench/mobibench.c
+num_threads:144:/home/sslee/work/regen/test/mobibench/mobibench.c
+j_nr_switches:420:/home/sslee/work/regen/test/mobibench/mobibench.c
+db_transactions:148:/home/sslee/work/regen/test/mobibench/mobibench.c
+db_mode:147:/home/sslee/work/regen/test/mobibench/mobibench.c
+db_interval:152:/home/sslee/work/regen/test/mobibench/mobibench.c
+b_quiet:155:/home/sslee/work/regen/test/mobibench/mobibench.c
+Latency_state:165:/home/sslee/work/regen/test/mobibench/mobibench.c
+
+sqlite3.c:14293:sqlite3MemMalloc

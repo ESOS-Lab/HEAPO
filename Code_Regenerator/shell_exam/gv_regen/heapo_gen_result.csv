@@ -1,0 +1,24 @@
+----------------------------------
+[Global Variable Summary] : 0 global variables among 2 fit nvram 
+----------------------------------
+----------------------------------
+i32* static_test.test:0:-/-
+[18 x i8]* .str:0:-/-
+[Global Variable Summary] : 2 global variables among 2 fit nvram 
+----------------------------------
+----------------------------------
+i32* static_test.test:0:-/-: read: 1000, write: 0 
+[18 x i8]* .str:0:-/-: read: 0, write: 0 
+[Global Variable Summary] : 2 global variables among 2 fit nvram 
+----------------------------------
+----------------------------------
+i32* test:5:/home/sslee/work/regen/gv_regen/static.c: read: 1000, write: 0 
+i32* static_test.test:0:-/-: read: 1000, write: 0 
+[18 x i8]* .str:0:-/-: read: 0, write: 0 
+[Global Variable Summary] : 3 global variables among 3 fit nvram 
+----------------------------------
+----------------------------------
+i32* test:5:/home/sslee/work/regen/gv_regen/static.c: read: 1000, write: 0 
+i32* static_test.test:0:-/-: read: 1000, write: 0 
+[Global Variable Summary] : 2 global variables among 3 fit nvram 
+----------------------------------
