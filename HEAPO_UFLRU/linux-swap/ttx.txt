@@ -1,0 +1,107 @@
+====== making target debian/stamp/conf/minimal_debian [new prereqs: ]======
+This is kernel package version 12.036+nmu3.
+test -d debian             || mkdir debian
+test ! -e stamp-building || rm -f stamp-building
+install -p -m 755 /usr/share/kernel-package/rules debian/rules
+for file in ChangeLog  Control  Control.bin86 config templates.in rules; do                                      \
+            cp -f  /usr/share/kernel-package/$file ./debian/;                               \
+        done
+for dir  in Config docs examples ruleset scripts pkg po;  do                                      \
+          cp -af /usr/share/kernel-package/$dir  ./debian/;                                 \
+        done
+test -f debian/control || sed         -e 's/=V/3.15.0/g'  \
+                -e 's/=D/1.2.UFLRU/g'         -e 's/=A/i386/g'  \
+		-e 's/=SA//g'  \
+		-e 's/=I//g'				    \
+		-e 's/=CV/3.15/g'			    \
+		-e 's/=M/Unknown Kernel Package Maintainer <unknown@unconfigured.in.etc.kernel-pkg.conf>/g'			    \
+		-e 's/=ST/linux/g'      -e 's/=B/i386/g'    \
+                  /usr/share/kernel-package/Control > debian/control
+test -f debian/changelog ||  sed -e 's/=V/3.15.0/g'       \
+            -e 's/=D/1.2.UFLRU/g'        -e 's/=A/i386/g'       \
+            -e 's/=ST/linux/g'     -e 's/=B/i386/g'         \
+            -e 's/=M/Unknown Kernel Package Maintainer <unknown@unconfigured.in.etc.kernel-pkg.conf>/g'                            \
+             /usr/share/kernel-package/changelog > debian/changelog
+chmod 0644 debian/control debian/changelog
+test -d ./debian/stamp || mkdir debian/stamp 
+make -f debian/rules debian/stamp/conf/kernel-conf
+make[1]: Entering directory `/home/jedisty/HEAPO_SWAP/linux-swap'
+====== making target debian/stamp/conf/kernel-conf [new prereqs: ]======
+make    ARCH=i386 \
+                    oldconfig;
+make[2]: Entering directory `/home/jedisty/HEAPO_SWAP/linux-swap'
+scripts/kconfig/conf --oldconfig Kconfig
+#
+# configuration written to .config
+#
+make[2]: Leaving directory `/home/jedisty/HEAPO_SWAP/linux-swap'
+make    ARCH=i386 prepare
+make[2]: Entering directory `/home/jedisty/HEAPO_SWAP/linux-swap'
+scripts/kconfig/conf --silentoldconfig Kconfig
+make[2]: Leaving directory `/home/jedisty/HEAPO_SWAP/linux-swap'
+make[2]: Entering directory `/home/jedisty/HEAPO_SWAP/linux-swap'
+  CHK     include/config/kernel.release
+  CHK     include/generated/uapi/linux/version.h
+  CHK     include/generated/utsrelease.h
+  CALL    scripts/checksyscalls.sh
+make[2]: Leaving directory `/home/jedisty/HEAPO_SWAP/linux-swap'
+echo done > debian/stamp/conf/kernel-conf
+make[1]: Leaving directory `/home/jedisty/HEAPO_SWAP/linux-swap'
+make -f debian/rules debian/stamp/conf/full-changelog
+make[1]: Entering directory `/home/jedisty/HEAPO_SWAP/linux-swap'
+====== making target debian/stamp/conf/full-changelog [new prereqs: ]======
+for file in ChangeLog  Control  Control.bin86 config templates.in rules; do				\
+	     cp -f  /usr/share/kernel-package/$file ./debian/;			\
+	done
+for dir  in Config docs examples ruleset scripts pkg po;	do				\
+	   cp -af /usr/share/kernel-package/$dir  ./debian/;				\
+	done
+install -p -m 755 /usr/share/kernel-package/rules debian/rules
+sed         -e 's/=V/3.15.0/g'  \
+                -e 's/=D/1.2.UFLRU/g'         -e 's/=A/i386/g'  \
+		-e 's/=SA//g'  \
+		-e 's/=I//g'				    \
+		-e 's/=CV/3.15/g'			    \
+		-e 's/=M/Unknown Kernel Package Maintainer <unknown@unconfigured.in.etc.kernel-pkg.conf>/g'			    \
+		-e 's/=ST/linux/g'      -e 's/=B/i386/g'    \
+                  /usr/share/kernel-package/Control > debian/control
+sed -e 's/=V/3.15.0/g' -e 's/=D/1.2.UFLRU/g'	      \
+	    -e 's/=A/i386/g' -e 's/=M/Unknown Kernel Package Maintainer <unknown@unconfigured.in.etc.kernel-pkg.conf>/g' \
+	    -e 's/=ST/linux/g'	 -e 's/=B/i386/g'	      \
+		/usr/share/kernel-package/changelog > debian/changelog
+chmod 0644 debian/control debian/changelog
+make -f debian/rules debian/stamp/conf/kernel-conf
+make[2]: Entering directory `/home/jedisty/HEAPO_SWAP/linux-swap'
+make[2]: `debian/stamp/conf/kernel-conf' is up to date.
+make[2]: Leaving directory `/home/jedisty/HEAPO_SWAP/linux-swap'
+make[1]: Leaving directory `/home/jedisty/HEAPO_SWAP/linux-swap'
+echo done > debian/stamp/conf/minimal_debian
+====== making target debian/stamp/conf/vars [new prereqs: ]======
+
+====== making target debian/stamp/build/kernel [new prereqs: vars]======
+This is kernel package version 12.036+nmu3.
+restore_upstream_debianization
+test ! -f scripts/package/builddeb.kpkg-dist ||	mv -f scripts/package/builddeb.kpkg-dist scripts/package/builddeb
+test ! -f scripts/package/Makefile.kpkg-dist ||	mv -f scripts/package/Makefile.kpkg-dist scripts/package/Makefile
+/usr/bin/make    ARCH=i386 \
+			     bzImage
+make[1]: Entering directory `/home/jedisty/HEAPO_SWAP/linux-swap'
+  CHK     include/config/kernel.release
+  CHK     include/generated/uapi/linux/version.h
+  CHK     include/generated/utsrelease.h
+  CALL    scripts/checksyscalls.sh
+  CHK     include/generated/compile.h
+  PASYMS  arch/x86/realmode/rm/pasyms.h
+  LDS     arch/x86/realmode/rm/realmode.lds
+  LD      arch/x86/realmode/rm/realmode.elf
+  RELOCS  arch/x86/realmode/rm/realmode.relocs
+  OBJCOPY arch/x86/realmode/rm/realmode.bin
+  AS      arch/x86/realmode/rmpiggy.o
+  LD      arch/x86/realmode/built-in.o
+  VDSOSYM arch/x86/vdso/vdso32-int80-syms.lds
+  VDSOSYM arch/x86/vdso/vdso32-sysenter-syms.lds
+  VDSOSYM arch/x86/vdso/vdso32-syms.lds
+  LD      arch/x86/vdso/built-in.o
+  LD      arch/x86/built-in.o
+  CC      mm/vmscan.o
+make[1]: Leaving directory `/home/jedisty/HEAPO_SWAP/linux-swap'
