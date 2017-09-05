@@ -1,0 +1,414 @@
+Totals GV:3
+ST:279
+HP:0
+Unknown:37
+Total Memory Access Inst:319
+
+
+BB:1
+	ST  Inst:   store i8* %p, i8** %p.addr, align 8 Source:   %p.addr = alloca i8*, align 8
+	ST  Inst:   store i8* %name, i8** %name.addr, align 8 Source:   %name.addr = alloca i8*, align 8
+	ST  Inst:   %0 = load i8** %p.addr, align 8, !dbg !50 Source:   %p.addr = alloca i8*, align 8
+BB:2
+	GV  Inst:   %1 = load %struct._IO_FILE.1** @stderr, align 8, !dbg !52 Source: @stderr = external global %struct._IO_FILE.1*
+	ST  Inst:   %2 = load i8** %name.addr, align 8, !dbg !52 Source:   %name.addr = alloca i8*, align 8
+BB:3
+BB:4
+	ST  Inst:   store i32 %NumSamples, i32* %NumSamples.addr, align 4 Source:   %NumSamples.addr = alloca i32, align 4
+	ST  Inst:   store i32 %Index, i32* %Index.addr, align 4 Source:   %Index.addr = alloca i32, align 4
+	ST  Inst:   %0 = load i32* %Index.addr, align 4, !dbg !50 Source:   %Index.addr = alloca i32, align 4
+	ST  Inst:   %1 = load i32* %NumSamples.addr, align 4, !dbg !50 Source:   %NumSamples.addr = alloca i32, align 4
+BB:5
+	ST  Inst:   store double 0.000000e+00, double* %retval, !dbg !52 Source:   %retval = alloca double, align 8
+BB:6
+	ST  Inst:   %2 = load i32* %Index.addr, align 4, !dbg !53 Source:   %Index.addr = alloca i32, align 4
+	ST  Inst:   %3 = load i32* %NumSamples.addr, align 4, !dbg !53 Source:   %NumSamples.addr = alloca i32, align 4
+BB:7
+	ST  Inst:   %4 = load i32* %Index.addr, align 4, !dbg !55 Source:   %Index.addr = alloca i32, align 4
+	ST  Inst:   %5 = load i32* %NumSamples.addr, align 4, !dbg !55 Source:   %NumSamples.addr = alloca i32, align 4
+	ST  Inst:   store double %div4, double* %retval, !dbg !55 Source:   %retval = alloca double, align 8
+BB:8
+BB:9
+	ST  Inst:   %6 = load i32* %NumSamples.addr, align 4, !dbg !56 Source:   %NumSamples.addr = alloca i32, align 4
+	ST  Inst:   %7 = load i32* %Index.addr, align 4, !dbg !56 Source:   %Index.addr = alloca i32, align 4
+	ST  Inst:   %8 = load i32* %NumSamples.addr, align 4, !dbg !56 Source:   %NumSamples.addr = alloca i32, align 4
+	ST  Inst:   store double %div9, double* %retval, !dbg !56 Source:   %retval = alloca double, align 8
+BB:10
+	ST  Inst:   %9 = load double* %retval, !dbg !57 Source:   %retval = alloca double, align 8
+BB:11
+	ST  Inst:   store i32 %x, i32* %x.addr, align 4 Source:   %x.addr = alloca i32, align 4
+	ST  Inst:   %0 = load i32* %x.addr, align 4, !dbg !48 Source:   %x.addr = alloca i32, align 4
+BB:12
+	ST  Inst:   store i32 0, i32* %retval, !dbg !50 Source:   %retval = alloca i32, align 4
+BB:13
+	ST  Inst:   %1 = load i32* %x.addr, align 4, !dbg !51 Source:   %x.addr = alloca i32, align 4
+	ST  Inst:   %2 = load i32* %x.addr, align 4, !dbg !51 Source:   %x.addr = alloca i32, align 4
+BB:14
+	ST  Inst:   store i32 0, i32* %retval, !dbg !53 Source:   %retval = alloca i32, align 4
+BB:15
+	ST  Inst:   store i32 1, i32* %retval, !dbg !54 Source:   %retval = alloca i32, align 4
+BB:16
+	ST  Inst:   %3 = load i32* %retval, !dbg !55 Source:   %retval = alloca i32, align 4
+BB:17
+	ST  Inst:   store i32 %PowerOfTwo, i32* %PowerOfTwo.addr, align 4 Source:   %PowerOfTwo.addr = alloca i32, align 4
+	ST  Inst:   %0 = load i32* %PowerOfTwo.addr, align 4, !dbg !50 Source:   %PowerOfTwo.addr = alloca i32, align 4
+BB:18
+	GV  Inst:   %1 = load %struct._IO_FILE.1** @stderr, align 8, !dbg !52 Source: @stderr = external global %struct._IO_FILE.1*
+	ST  Inst:   %2 = load i32* %PowerOfTwo.addr, align 4, !dbg !52 Source:   %PowerOfTwo.addr = alloca i32, align 4
+BB:19
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !55 Source:   %i = alloca i32, align 4
+BB:20
+	ST  Inst:   %3 = load i32* %PowerOfTwo.addr, align 4, !dbg !57 Source:   %PowerOfTwo.addr = alloca i32, align 4
+	ST  Inst:   %4 = load i32* %i, align 4, !dbg !57 Source:   %i = alloca i32, align 4
+BB:21
+	ST  Inst:   %5 = load i32* %i, align 4, !dbg !60 Source:   %i = alloca i32, align 4
+BB:22
+BB:23
+	ST  Inst:   %6 = load i32* %i, align 4, !dbg !62 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc, i32* %i, align 4, !dbg !62 Source:   %i = alloca i32, align 4
+BB:24
+	ST  Inst:   store i32 %index, i32* %index.addr, align 4 Source:   %index.addr = alloca i32, align 4
+	ST  Inst:   store i32 %NumBits, i32* %NumBits.addr, align 4 Source:   %NumBits.addr = alloca i32, align 4
+	ST  Inst:   store i32 0, i32* %rev, align 4, !dbg !54 Source:   %rev = alloca i32, align 4
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !54 Source:   %i = alloca i32, align 4
+BB:25
+	ST  Inst:   %0 = load i32* %i, align 4, !dbg !56 Source:   %i = alloca i32, align 4
+	ST  Inst:   %1 = load i32* %NumBits.addr, align 4, !dbg !56 Source:   %NumBits.addr = alloca i32, align 4
+BB:26
+	ST  Inst:   %2 = load i32* %rev, align 4, !dbg !59 Source:   %rev = alloca i32, align 4
+	ST  Inst:   %3 = load i32* %index.addr, align 4, !dbg !59 Source:   %index.addr = alloca i32, align 4
+	ST  Inst:   store i32 %or, i32* %rev, align 4, !dbg !59 Source:   %rev = alloca i32, align 4
+	ST  Inst:   %4 = load i32* %index.addr, align 4, !dbg !61 Source:   %index.addr = alloca i32, align 4
+	ST  Inst:   store i32 %shr, i32* %index.addr, align 4, !dbg !61 Source:   %index.addr = alloca i32, align 4
+BB:27
+	ST  Inst:   %5 = load i32* %i, align 4, !dbg !63 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc, i32* %i, align 4, !dbg !63 Source:   %i = alloca i32, align 4
+BB:28
+	ST  Inst:   %6 = load i32* %rev, align 4, !dbg !64 Source:   %rev = alloca i32, align 4
+BB:29
+	ST  Inst:   store i32 0, i32* %retval Source:   %retval = alloca i32, align 4
+	ST  Inst:   store i32 %argc, i32* %argc.addr, align 4 Source:   %argc.addr = alloca i32, align 4
+	ST  Inst:   store i8** %argv, i8*** %argv.addr, align 8 Source:   %argv.addr = alloca i8**, align 8
+	ST  Inst:   store i32 0, i32* %invfft, align 4, !dbg !72 Source:   %invfft = alloca i32, align 4
+	ST  Inst:   %0 = load i32* %argc.addr, align 4, !dbg !73 Source:   %argc.addr = alloca i32, align 4
+BB:30
+BB:31
+	ST  Inst:   %1 = load i32* %argc.addr, align 4, !dbg !81 Source:   %argc.addr = alloca i32, align 4
+BB:32
+	ST  Inst:   %2 = load i8*** %argv.addr, align 8, !dbg !83 Source:   %argv.addr = alloca i8**, align 8
+	--  Inst:   %3 = load i8** %arrayidx, align 8, !dbg !83 Source: --
+	ST  Inst:   store i32 %lnot.ext, i32* %invfft, align 4, !dbg !83 Source:   %invfft = alloca i32, align 4
+BB:33
+BB:34
+	ST  Inst:   %4 = load i8*** %argv.addr, align 8, !dbg !84 Source:   %argv.addr = alloca i8**, align 8
+	--  Inst:   %5 = load i8** %arrayidx8, align 8, !dbg !84 Source: --
+	ST  Inst:   store i32 %call9, i32* %MAXSIZE, align 4, !dbg !84 Source:   %MAXSIZE = alloca i32, align 4
+	ST  Inst:   %6 = load i8*** %argv.addr, align 8, !dbg !85 Source:   %argv.addr = alloca i8**, align 8
+	--  Inst:   %7 = load i8** %arrayidx10, align 8, !dbg !85 Source: --
+	ST  Inst:   store i32 %call11, i32* %MAXWAVES, align 4, !dbg !85 Source:   %MAXWAVES = alloca i32, align 4
+	ST  Inst:   %8 = load i32* %MAXSIZE, align 4, !dbg !87 Source:   %MAXSIZE = alloca i32, align 4
+	ST  Inst:   store float* %9, float** %RealIn, align 8, !dbg !87 Source:   %RealIn = alloca float*, align 8
+	ST  Inst:   %10 = load i32* %MAXSIZE, align 4, !dbg !88 Source:   %MAXSIZE = alloca i32, align 4
+	ST  Inst:   store float* %11, float** %ImagIn, align 8, !dbg !88 Source:   %ImagIn = alloca float*, align 8
+	ST  Inst:   %12 = load i32* %MAXSIZE, align 4, !dbg !89 Source:   %MAXSIZE = alloca i32, align 4
+	ST  Inst:   store float* %13, float** %RealOut, align 8, !dbg !89 Source:   %RealOut = alloca float*, align 8
+	ST  Inst:   %14 = load i32* %MAXSIZE, align 4, !dbg !90 Source:   %MAXSIZE = alloca i32, align 4
+	ST  Inst:   store float* %15, float** %ImagOut, align 8, !dbg !90 Source:   %ImagOut = alloca float*, align 8
+	ST  Inst:   %16 = load i32* %MAXWAVES, align 4, !dbg !91 Source:   %MAXWAVES = alloca i32, align 4
+	ST  Inst:   store float* %17, float** %coeff, align 8, !dbg !91 Source:   %coeff = alloca float*, align 8
+	ST  Inst:   %18 = load i32* %MAXWAVES, align 4, !dbg !92 Source:   %MAXWAVES = alloca i32, align 4
+	ST  Inst:   store float* %19, float** %amp, align 8, !dbg !92 Source:   %amp = alloca float*, align 8
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !93 Source:   %i = alloca i32, align 4
+BB:35
+	ST  Inst:   %20 = load i32* %i, align 4, !dbg !95 Source:   %i = alloca i32, align 4
+	ST  Inst:   %21 = load i32* %MAXWAVES, align 4, !dbg !95 Source:   %MAXWAVES = alloca i32, align 4
+BB:36
+	ST  Inst:   %22 = load i32* %i, align 4, !dbg !98 Source:   %i = alloca i32, align 4
+	ST  Inst:   %23 = load float** %coeff, align 8, !dbg !98 Source:   %coeff = alloca float*, align 8
+	--  Inst:   store float %conv31, float* %arrayidx32, align 4, !dbg !98 Source: --
+	ST  Inst:   %24 = load i32* %i, align 4, !dbg !100 Source:   %i = alloca i32, align 4
+	ST  Inst:   %25 = load float** %amp, align 8, !dbg !100 Source:   %amp = alloca float*, align 8
+	--  Inst:   store float %conv35, float* %arrayidx37, align 4, !dbg !100 Source: --
+BB:37
+	ST  Inst:   %26 = load i32* %i, align 4, !dbg !102 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc, i32* %i, align 4, !dbg !102 Source:   %i = alloca i32, align 4
+BB:38
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !103 Source:   %i = alloca i32, align 4
+BB:39
+	ST  Inst:   %27 = load i32* %i, align 4, !dbg !105 Source:   %i = alloca i32, align 4
+	ST  Inst:   %28 = load i32* %MAXSIZE, align 4, !dbg !105 Source:   %MAXSIZE = alloca i32, align 4
+BB:40
+	ST  Inst:   %29 = load i32* %i, align 4, !dbg !108 Source:   %i = alloca i32, align 4
+	ST  Inst:   %30 = load float** %RealIn, align 8, !dbg !108 Source:   %RealIn = alloca float*, align 8
+	--  Inst:   store float 0.000000e+00, float* %arrayidx43, align 4, !dbg !108 Source: --
+	ST  Inst:   store i32 0, i32* %j, align 4, !dbg !110 Source:   %j = alloca i32, align 4
+BB:41
+	ST  Inst:   %31 = load i32* %j, align 4, !dbg !112 Source:   %j = alloca i32, align 4
+	ST  Inst:   %32 = load i32* %MAXWAVES, align 4, !dbg !112 Source:   %MAXWAVES = alloca i32, align 4
+BB:42
+BB:43
+	ST  Inst:   %33 = load i32* %j, align 4, !dbg !118 Source:   %j = alloca i32, align 4
+	ST  Inst:   %34 = load float** %coeff, align 8, !dbg !118 Source:   %coeff = alloca float*, align 8
+	--  Inst:   %35 = load float* %arrayidx53, align 4, !dbg !118 Source: --
+	ST  Inst:   %36 = load i32* %j, align 4, !dbg !120 Source:   %j = alloca i32, align 4
+	ST  Inst:   %37 = load float** %amp, align 8, !dbg !120 Source:   %amp = alloca float*, align 8
+	--  Inst:   %38 = load float* %arrayidx56, align 4, !dbg !120 Source: --
+	ST  Inst:   %39 = load i32* %i, align 4, !dbg !120 Source:   %i = alloca i32, align 4
+	ST  Inst:   %40 = load i32* %i, align 4, !dbg !120 Source:   %i = alloca i32, align 4
+	ST  Inst:   %41 = load float** %RealIn, align 8, !dbg !120 Source:   %RealIn = alloca float*, align 8
+	--  Inst:   %42 = load float* %arrayidx63, align 4, !dbg !120 Source: --
+	--  Inst:   store float %conv65, float* %arrayidx63, align 4, !dbg !120 Source: --
+BB:44
+	ST  Inst:   %43 = load i32* %j, align 4, !dbg !122 Source:   %j = alloca i32, align 4
+	ST  Inst:   %44 = load float** %coeff, align 8, !dbg !122 Source:   %coeff = alloca float*, align 8
+	--  Inst:   %45 = load float* %arrayidx68, align 4, !dbg !122 Source: --
+	ST  Inst:   %46 = load i32* %j, align 4, !dbg !124 Source:   %j = alloca i32, align 4
+	ST  Inst:   %47 = load float** %amp, align 8, !dbg !124 Source:   %amp = alloca float*, align 8
+	--  Inst:   %48 = load float* %arrayidx71, align 4, !dbg !124 Source: --
+	ST  Inst:   %49 = load i32* %i, align 4, !dbg !124 Source:   %i = alloca i32, align 4
+	ST  Inst:   %50 = load i32* %i, align 4, !dbg !124 Source:   %i = alloca i32, align 4
+	ST  Inst:   %51 = load float** %RealIn, align 8, !dbg !124 Source:   %RealIn = alloca float*, align 8
+	--  Inst:   %52 = load float* %arrayidx78, align 4, !dbg !124 Source: --
+	--  Inst:   store float %conv81, float* %arrayidx78, align 4, !dbg !124 Source: --
+BB:45
+	ST  Inst:   %53 = load i32* %i, align 4, !dbg !125 Source:   %i = alloca i32, align 4
+	ST  Inst:   %54 = load float** %ImagIn, align 8, !dbg !125 Source:   %ImagIn = alloca float*, align 8
+	--  Inst:   store float 0.000000e+00, float* %arrayidx84, align 4, !dbg !125 Source: --
+BB:46
+	ST  Inst:   %55 = load i32* %j, align 4, !dbg !127 Source:   %j = alloca i32, align 4
+	ST  Inst:   store i32 %inc86, i32* %j, align 4, !dbg !127 Source:   %j = alloca i32, align 4
+BB:47
+BB:48
+	ST  Inst:   %56 = load i32* %i, align 4, !dbg !129 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc89, i32* %i, align 4, !dbg !129 Source:   %i = alloca i32, align 4
+BB:49
+	ST  Inst:   %57 = load i32* %MAXSIZE, align 4, !dbg !130 Source:   %MAXSIZE = alloca i32, align 4
+	ST  Inst:   %58 = load i32* %invfft, align 4, !dbg !130 Source:   %invfft = alloca i32, align 4
+	ST  Inst:   %59 = load float** %RealIn, align 8, !dbg !130 Source:   %RealIn = alloca float*, align 8
+	ST  Inst:   %60 = load float** %ImagIn, align 8, !dbg !130 Source:   %ImagIn = alloca float*, align 8
+	ST  Inst:   %61 = load float** %RealOut, align 8, !dbg !130 Source:   %RealOut = alloca float*, align 8
+	ST  Inst:   %62 = load float** %ImagOut, align 8, !dbg !130 Source:   %ImagOut = alloca float*, align 8
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !132 Source:   %i = alloca i32, align 4
+BB:50
+	ST  Inst:   %63 = load i32* %i, align 4, !dbg !134 Source:   %i = alloca i32, align 4
+	ST  Inst:   %64 = load i32* %MAXSIZE, align 4, !dbg !134 Source:   %MAXSIZE = alloca i32, align 4
+BB:51
+	ST  Inst:   %65 = load i32* %i, align 4, !dbg !137 Source:   %i = alloca i32, align 4
+	ST  Inst:   %66 = load float** %RealOut, align 8, !dbg !137 Source:   %RealOut = alloca float*, align 8
+	--  Inst:   %67 = load float* %arrayidx98, align 4, !dbg !137 Source: --
+BB:52
+	ST  Inst:   %68 = load i32* %i, align 4, !dbg !138 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc102, i32* %i, align 4, !dbg !138 Source:   %i = alloca i32, align 4
+BB:53
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !141 Source:   %i = alloca i32, align 4
+BB:54
+	ST  Inst:   %69 = load i32* %i, align 4, !dbg !143 Source:   %i = alloca i32, align 4
+	ST  Inst:   %70 = load i32* %MAXSIZE, align 4, !dbg !143 Source:   %MAXSIZE = alloca i32, align 4
+BB:55
+	ST  Inst:   %71 = load i32* %i, align 4, !dbg !146 Source:   %i = alloca i32, align 4
+	ST  Inst:   %72 = load float** %ImagOut, align 8, !dbg !146 Source:   %ImagOut = alloca float*, align 8
+	--  Inst:   %73 = load float* %arrayidx111, align 4, !dbg !146 Source: --
+BB:56
+	ST  Inst:   %74 = load i32* %i, align 4, !dbg !147 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc115, i32* %i, align 4, !dbg !147 Source:   %i = alloca i32, align 4
+BB:57
+	ST  Inst:   %75 = load float** %RealIn, align 8, !dbg !149 Source:   %RealIn = alloca float*, align 8
+	ST  Inst:   %77 = load float** %ImagIn, align 8, !dbg !150 Source:   %ImagIn = alloca float*, align 8
+	ST  Inst:   %79 = load float** %RealOut, align 8, !dbg !151 Source:   %RealOut = alloca float*, align 8
+	ST  Inst:   %81 = load float** %ImagOut, align 8, !dbg !152 Source:   %ImagOut = alloca float*, align 8
+	ST  Inst:   %83 = load float** %coeff, align 8, !dbg !153 Source:   %coeff = alloca float*, align 8
+	ST  Inst:   %85 = load float** %amp, align 8, !dbg !154 Source:   %amp = alloca float*, align 8
+BB:58
+	ST  Inst:   %87 = load i32* %retval, !dbg !156 Source:   %retval = alloca i32, align 4
+BB:59
+	ST  Inst:   store i32 %NumSamples, i32* %NumSamples.addr, align 4 Source:   %NumSamples.addr = alloca i32, align 4
+	ST  Inst:   store i32 %InverseTransform, i32* %InverseTransform.addr, align 4 Source:   %InverseTransform.addr = alloca i32, align 4
+	ST  Inst:   store float* %RealIn, float** %RealIn.addr, align 8 Source:   %RealIn.addr = alloca float*, align 8
+	ST  Inst:   store float* %ImagIn, float** %ImagIn.addr, align 8 Source:   %ImagIn.addr = alloca float*, align 8
+	ST  Inst:   store float* %RealOut, float** %RealOut.addr, align 8 Source:   %RealOut.addr = alloca float*, align 8
+	ST  Inst:   store float* %ImagOut, float** %ImagOut.addr, align 8 Source:   %ImagOut.addr = alloca float*, align 8
+	ST  Inst:   store double 0x401921FB54442D18, double* %angle_numerator, align 8, !dbg !74 Source:   %angle_numerator = alloca double, align 8
+	ST  Inst:   %0 = load i32* %NumSamples.addr, align 4, !dbg !79 Source:   %NumSamples.addr = alloca i32, align 4
+BB:60
+	GV  Inst:   %2 = load %struct._IO_FILE.1** @stderr, align 8, !dbg !81 Source: @stderr = external global %struct._IO_FILE.1*
+	ST  Inst:   %3 = load i32* %NumSamples.addr, align 4, !dbg !81 Source:   %NumSamples.addr = alloca i32, align 4
+BB:61
+	ST  Inst:   %4 = load i32* %InverseTransform.addr, align 4, !dbg !84 Source:   %InverseTransform.addr = alloca i32, align 4
+BB:62
+	ST  Inst:   %5 = load double* %angle_numerator, align 8, !dbg !86 Source:   %angle_numerator = alloca double, align 8
+	ST  Inst:   store double %sub, double* %angle_numerator, align 8, !dbg !86 Source:   %angle_numerator = alloca double, align 8
+BB:63
+	ST  Inst:   %6 = load float** %RealIn.addr, align 8, !dbg !87 Source:   %RealIn.addr = alloca float*, align 8
+	ST  Inst:   %8 = load float** %RealOut.addr, align 8, !dbg !88 Source:   %RealOut.addr = alloca float*, align 8
+	ST  Inst:   %10 = load float** %ImagOut.addr, align 8, !dbg !89 Source:   %ImagOut.addr = alloca float*, align 8
+	ST  Inst:   %12 = load i32* %NumSamples.addr, align 4, !dbg !90 Source:   %NumSamples.addr = alloca i32, align 4
+	ST  Inst:   store i32 %13, i32* %NumBits, align 4, !dbg !90 Source:   %NumBits = alloca i32, align 4
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !91 Source:   %i = alloca i32, align 4
+BB:64
+	ST  Inst:   %14 = load i32* %i, align 4, !dbg !93 Source:   %i = alloca i32, align 4
+	ST  Inst:   %15 = load i32* %NumSamples.addr, align 4, !dbg !93 Source:   %NumSamples.addr = alloca i32, align 4
+BB:65
+	ST  Inst:   %16 = load i32* %i, align 4, !dbg !96 Source:   %i = alloca i32, align 4
+	ST  Inst:   %17 = load i32* %NumBits, align 4, !dbg !96 Source:   %NumBits = alloca i32, align 4
+	ST  Inst:   store i32 %18, i32* %j, align 4, !dbg !96 Source:   %j = alloca i32, align 4
+	ST  Inst:   %19 = load i32* %i, align 4, !dbg !98 Source:   %i = alloca i32, align 4
+	ST  Inst:   %20 = load float** %RealIn.addr, align 8, !dbg !98 Source:   %RealIn.addr = alloca float*, align 8
+	--  Inst:   %21 = load float* %arrayidx, align 4, !dbg !98 Source: --
+	ST  Inst:   %22 = load i32* %j, align 4, !dbg !98 Source:   %j = alloca i32, align 4
+	ST  Inst:   %23 = load float** %RealOut.addr, align 8, !dbg !98 Source:   %RealOut.addr = alloca float*, align 8
+	--  Inst:   store float %21, float* %arrayidx8, align 4, !dbg !98 Source: --
+	ST  Inst:   %24 = load float** %ImagIn.addr, align 8, !dbg !99 Source:   %ImagIn.addr = alloca float*, align 8
+BB:66
+BB:67
+	ST  Inst:   %25 = load i32* %i, align 4, !dbg !102 Source:   %i = alloca i32, align 4
+	ST  Inst:   %26 = load float** %ImagIn.addr, align 8, !dbg !102 Source:   %ImagIn.addr = alloca float*, align 8
+	--  Inst:   %27 = load float* %arrayidx11, align 4, !dbg !102 Source: --
+BB:68
+	ST  Inst:   %28 = load i32* %j, align 4, !dbg !104 Source:   %j = alloca i32, align 4
+	ST  Inst:   %29 = load float** %ImagOut.addr, align 8, !dbg !104 Source:   %ImagOut.addr = alloca float*, align 8
+	--  Inst:   store float %conv12, float* %arrayidx14, align 4, !dbg !104 Source: --
+BB:69
+	ST  Inst:   %30 = load i32* %i, align 4, !dbg !108 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc, i32* %i, align 4, !dbg !108 Source:   %i = alloca i32, align 4
+BB:70
+	ST  Inst:   store i32 1, i32* %BlockEnd, align 4, !dbg !109 Source:   %BlockEnd = alloca i32, align 4
+	ST  Inst:   store i32 2, i32* %BlockSize, align 4, !dbg !110 Source:   %BlockSize = alloca i32, align 4
+BB:71
+	ST  Inst:   %31 = load i32* %BlockSize, align 4, !dbg !112 Source:   %BlockSize = alloca i32, align 4
+	ST  Inst:   %32 = load i32* %NumSamples.addr, align 4, !dbg !112 Source:   %NumSamples.addr = alloca i32, align 4
+BB:72
+	ST  Inst:   %33 = load double* %angle_numerator, align 8, !dbg !118 Source:   %angle_numerator = alloca double, align 8
+	ST  Inst:   %34 = load i32* %BlockSize, align 4, !dbg !118 Source:   %BlockSize = alloca i32, align 4
+	ST  Inst:   store double %div, double* %delta_angle, align 8, !dbg !118 Source:   %delta_angle = alloca double, align 8
+	ST  Inst:   %35 = load double* %delta_angle, align 8, !dbg !121 Source:   %delta_angle = alloca double, align 8
+	ST  Inst:   store double %call20, double* %sm2, align 8, !dbg !121 Source:   %sm2 = alloca double, align 8
+	ST  Inst:   %36 = load double* %delta_angle, align 8, !dbg !124 Source:   %delta_angle = alloca double, align 8
+	ST  Inst:   store double %call22, double* %sm1, align 8, !dbg !124 Source:   %sm1 = alloca double, align 8
+	ST  Inst:   %37 = load double* %delta_angle, align 8, !dbg !127 Source:   %delta_angle = alloca double, align 8
+	ST  Inst:   store double %call24, double* %cm2, align 8, !dbg !127 Source:   %cm2 = alloca double, align 8
+	ST  Inst:   %38 = load double* %delta_angle, align 8, !dbg !130 Source:   %delta_angle = alloca double, align 8
+	ST  Inst:   store double %call26, double* %cm1, align 8, !dbg !130 Source:   %cm1 = alloca double, align 8
+	ST  Inst:   %39 = load double* %cm1, align 8, !dbg !133 Source:   %cm1 = alloca double, align 8
+	ST  Inst:   store double %mul27, double* %w, align 8, !dbg !133 Source:   %w = alloca double, align 8
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !143 Source:   %i = alloca i32, align 4
+BB:73
+	ST  Inst:   %40 = load i32* %i, align 4, !dbg !145 Source:   %i = alloca i32, align 4
+	ST  Inst:   %41 = load i32* %NumSamples.addr, align 4, !dbg !145 Source:   %NumSamples.addr = alloca i32, align 4
+BB:74
+	ST  Inst:   %42 = load double* %cm2, align 8, !dbg !148 Source:   %cm2 = alloca double, align 8
+	ST  Inst:   store double %42, double* %arrayidx32, align 8, !dbg !148 Source:   %ar = alloca [3 x double], align 16
+	ST  Inst:   %43 = load double* %cm1, align 8, !dbg !150 Source:   %cm1 = alloca double, align 8
+	ST  Inst:   store double %43, double* %arrayidx33, align 8, !dbg !150 Source:   %ar = alloca [3 x double], align 16
+	ST  Inst:   %44 = load double* %sm2, align 8, !dbg !151 Source:   %sm2 = alloca double, align 8
+	ST  Inst:   store double %44, double* %arrayidx34, align 8, !dbg !151 Source:   %ai = alloca [3 x double], align 16
+	ST  Inst:   %45 = load double* %sm1, align 8, !dbg !152 Source:   %sm1 = alloca double, align 8
+	ST  Inst:   store double %45, double* %arrayidx35, align 8, !dbg !152 Source:   %ai = alloca [3 x double], align 16
+	ST  Inst:   %46 = load i32* %i, align 4, !dbg !153 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %46, i32* %j, align 4, !dbg !153 Source:   %j = alloca i32, align 4
+	ST  Inst:   store i32 0, i32* %n, align 4, !dbg !153 Source:   %n = alloca i32, align 4
+BB:75
+	ST  Inst:   %47 = load i32* %n, align 4, !dbg !155 Source:   %n = alloca i32, align 4
+	ST  Inst:   %48 = load i32* %BlockEnd, align 4, !dbg !155 Source:   %BlockEnd = alloca i32, align 4
+BB:76
+	ST  Inst:   %49 = load double* %w, align 8, !dbg !158 Source:   %w = alloca double, align 8
+	ST  Inst:   %50 = load double* %arrayidx40, align 8, !dbg !158 Source:   %ar = alloca [3 x double], align 16
+	ST  Inst:   %51 = load double* %arrayidx42, align 8, !dbg !158 Source:   %ar = alloca [3 x double], align 16
+	ST  Inst:   store double %sub43, double* %arrayidx44, align 8, !dbg !158 Source:   %ar = alloca [3 x double], align 16
+	ST  Inst:   %52 = load double* %arrayidx45, align 8, !dbg !160 Source:   %ar = alloca [3 x double], align 16
+	ST  Inst:   store double %52, double* %arrayidx46, align 8, !dbg !160 Source:   %ar = alloca [3 x double], align 16
+	ST  Inst:   %53 = load double* %arrayidx47, align 8, !dbg !161 Source:   %ar = alloca [3 x double], align 16
+	ST  Inst:   store double %53, double* %arrayidx48, align 8, !dbg !161 Source:   %ar = alloca [3 x double], align 16
+	ST  Inst:   %54 = load double* %w, align 8, !dbg !162 Source:   %w = alloca double, align 8
+	ST  Inst:   %55 = load double* %arrayidx49, align 8, !dbg !162 Source:   %ai = alloca [3 x double], align 16
+	ST  Inst:   %56 = load double* %arrayidx51, align 8, !dbg !162 Source:   %ai = alloca [3 x double], align 16
+	ST  Inst:   store double %sub52, double* %arrayidx53, align 8, !dbg !162 Source:   %ai = alloca [3 x double], align 16
+	ST  Inst:   %57 = load double* %arrayidx54, align 8, !dbg !163 Source:   %ai = alloca [3 x double], align 16
+	ST  Inst:   store double %57, double* %arrayidx55, align 8, !dbg !163 Source:   %ai = alloca [3 x double], align 16
+	ST  Inst:   %58 = load double* %arrayidx56, align 8, !dbg !164 Source:   %ai = alloca [3 x double], align 16
+	ST  Inst:   store double %58, double* %arrayidx57, align 8, !dbg !164 Source:   %ai = alloca [3 x double], align 16
+	ST  Inst:   %59 = load i32* %j, align 4, !dbg !165 Source:   %j = alloca i32, align 4
+	ST  Inst:   %60 = load i32* %BlockEnd, align 4, !dbg !165 Source:   %BlockEnd = alloca i32, align 4
+	ST  Inst:   store i32 %add, i32* %k, align 4, !dbg !165 Source:   %k = alloca i32, align 4
+	ST  Inst:   %61 = load double* %arrayidx58, align 8, !dbg !166 Source:   %ar = alloca [3 x double], align 16
+	ST  Inst:   %62 = load i32* %k, align 4, !dbg !166 Source:   %k = alloca i32, align 4
+	ST  Inst:   %63 = load float** %RealOut.addr, align 8, !dbg !166 Source:   %RealOut.addr = alloca float*, align 8
+	--  Inst:   %64 = load float* %arrayidx60, align 4, !dbg !166 Source: --
+	ST  Inst:   %65 = load double* %arrayidx63, align 8, !dbg !166 Source:   %ai = alloca [3 x double], align 16
+	ST  Inst:   %66 = load i32* %k, align 4, !dbg !166 Source:   %k = alloca i32, align 4
+	ST  Inst:   %67 = load float** %ImagOut.addr, align 8, !dbg !166 Source:   %ImagOut.addr = alloca float*, align 8
+	--  Inst:   %68 = load float* %arrayidx65, align 4, !dbg !166 Source: --
+	ST  Inst:   store double %sub68, double* %tr, align 8, !dbg !166 Source:   %tr = alloca double, align 8
+	ST  Inst:   %69 = load double* %arrayidx69, align 8, !dbg !167 Source:   %ar = alloca [3 x double], align 16
+	ST  Inst:   %70 = load i32* %k, align 4, !dbg !167 Source:   %k = alloca i32, align 4
+	ST  Inst:   %71 = load float** %ImagOut.addr, align 8, !dbg !167 Source:   %ImagOut.addr = alloca float*, align 8
+	--  Inst:   %72 = load float* %arrayidx71, align 4, !dbg !167 Source: --
+	ST  Inst:   %73 = load double* %arrayidx74, align 8, !dbg !167 Source:   %ai = alloca [3 x double], align 16
+	ST  Inst:   %74 = load i32* %k, align 4, !dbg !167 Source:   %k = alloca i32, align 4
+	ST  Inst:   %75 = load float** %RealOut.addr, align 8, !dbg !167 Source:   %RealOut.addr = alloca float*, align 8
+	--  Inst:   %76 = load float* %arrayidx76, align 4, !dbg !167 Source: --
+	ST  Inst:   store double %add79, double* %ti, align 8, !dbg !167 Source:   %ti = alloca double, align 8
+	ST  Inst:   %77 = load i32* %j, align 4, !dbg !168 Source:   %j = alloca i32, align 4
+	ST  Inst:   %78 = load float** %RealOut.addr, align 8, !dbg !168 Source:   %RealOut.addr = alloca float*, align 8
+	--  Inst:   %79 = load float* %arrayidx81, align 4, !dbg !168 Source: --
+	ST  Inst:   %80 = load double* %tr, align 8, !dbg !168 Source:   %tr = alloca double, align 8
+	ST  Inst:   %81 = load i32* %k, align 4, !dbg !168 Source:   %k = alloca i32, align 4
+	ST  Inst:   %82 = load float** %RealOut.addr, align 8, !dbg !168 Source:   %RealOut.addr = alloca float*, align 8
+	--  Inst:   store float %conv84, float* %arrayidx86, align 4, !dbg !168 Source: --
+	ST  Inst:   %83 = load i32* %j, align 4, !dbg !169 Source:   %j = alloca i32, align 4
+	ST  Inst:   %84 = load float** %ImagOut.addr, align 8, !dbg !169 Source:   %ImagOut.addr = alloca float*, align 8
+	--  Inst:   %85 = load float* %arrayidx88, align 4, !dbg !169 Source: --
+	ST  Inst:   %86 = load double* %ti, align 8, !dbg !169 Source:   %ti = alloca double, align 8
+	ST  Inst:   %87 = load i32* %k, align 4, !dbg !169 Source:   %k = alloca i32, align 4
+	ST  Inst:   %88 = load float** %ImagOut.addr, align 8, !dbg !169 Source:   %ImagOut.addr = alloca float*, align 8
+	--  Inst:   store float %conv91, float* %arrayidx93, align 4, !dbg !169 Source: --
+	ST  Inst:   %89 = load double* %tr, align 8, !dbg !170 Source:   %tr = alloca double, align 8
+	ST  Inst:   %90 = load i32* %j, align 4, !dbg !170 Source:   %j = alloca i32, align 4
+	ST  Inst:   %91 = load float** %RealOut.addr, align 8, !dbg !170 Source:   %RealOut.addr = alloca float*, align 8
+	--  Inst:   %92 = load float* %arrayidx95, align 4, !dbg !170 Source: --
+	--  Inst:   store float %conv98, float* %arrayidx95, align 4, !dbg !170 Source: --
+	ST  Inst:   %93 = load double* %ti, align 8, !dbg !171 Source:   %ti = alloca double, align 8
+	ST  Inst:   %94 = load i32* %j, align 4, !dbg !171 Source:   %j = alloca i32, align 4
+	ST  Inst:   %95 = load float** %ImagOut.addr, align 8, !dbg !171 Source:   %ImagOut.addr = alloca float*, align 8
+	--  Inst:   %96 = load float* %arrayidx100, align 4, !dbg !171 Source: --
+	--  Inst:   store float %conv103, float* %arrayidx100, align 4, !dbg !171 Source: --
+BB:77
+	ST  Inst:   %97 = load i32* %j, align 4, !dbg !173 Source:   %j = alloca i32, align 4
+	ST  Inst:   store i32 %inc105, i32* %j, align 4, !dbg !173 Source:   %j = alloca i32, align 4
+	ST  Inst:   %98 = load i32* %n, align 4, !dbg !173 Source:   %n = alloca i32, align 4
+	ST  Inst:   store i32 %inc106, i32* %n, align 4, !dbg !173 Source:   %n = alloca i32, align 4
+BB:78
+BB:79
+	ST  Inst:   %99 = load i32* %BlockSize, align 4, !dbg !175 Source:   %BlockSize = alloca i32, align 4
+	ST  Inst:   %100 = load i32* %i, align 4, !dbg !175 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %add109, i32* %i, align 4, !dbg !175 Source:   %i = alloca i32, align 4
+BB:80
+	ST  Inst:   %101 = load i32* %BlockSize, align 4, !dbg !176 Source:   %BlockSize = alloca i32, align 4
+	ST  Inst:   store i32 %101, i32* %BlockEnd, align 4, !dbg !176 Source:   %BlockEnd = alloca i32, align 4
+BB:81
+	ST  Inst:   %102 = load i32* %BlockSize, align 4, !dbg !178 Source:   %BlockSize = alloca i32, align 4
+	ST  Inst:   store i32 %shl, i32* %BlockSize, align 4, !dbg !178 Source:   %BlockSize = alloca i32, align 4
+BB:82
+	ST  Inst:   %103 = load i32* %InverseTransform.addr, align 4, !dbg !179 Source:   %InverseTransform.addr = alloca i32, align 4
+BB:83
+	ST  Inst:   %104 = load i32* %NumSamples.addr, align 4, !dbg !184 Source:   %NumSamples.addr = alloca i32, align 4
+	ST  Inst:   store double %conv115, double* %denom, align 8, !dbg !184 Source:   %denom = alloca double, align 8
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !185 Source:   %i = alloca i32, align 4
+BB:84
+	ST  Inst:   %105 = load i32* %i, align 4, !dbg !187 Source:   %i = alloca i32, align 4
+	ST  Inst:   %106 = load i32* %NumSamples.addr, align 4, !dbg !187 Source:   %NumSamples.addr = alloca i32, align 4
+BB:85
+	ST  Inst:   %107 = load double* %denom, align 8, !dbg !190 Source:   %denom = alloca double, align 8
+	ST  Inst:   %108 = load i32* %i, align 4, !dbg !190 Source:   %i = alloca i32, align 4
+	ST  Inst:   %109 = load float** %RealOut.addr, align 8, !dbg !190 Source:   %RealOut.addr = alloca float*, align 8
+	--  Inst:   %110 = load float* %arrayidx121, align 4, !dbg !190 Source: --
+	--  Inst:   store float %conv124, float* %arrayidx121, align 4, !dbg !190 Source: --
+	ST  Inst:   %111 = load double* %denom, align 8, !dbg !192 Source:   %denom = alloca double, align 8
+	ST  Inst:   %112 = load i32* %i, align 4, !dbg !192 Source:   %i = alloca i32, align 4
+	ST  Inst:   %113 = load float** %ImagOut.addr, align 8, !dbg !192 Source:   %ImagOut.addr = alloca float*, align 8
+	--  Inst:   %114 = load float* %arrayidx126, align 4, !dbg !192 Source: --
+	--  Inst:   store float %conv129, float* %arrayidx126, align 4, !dbg !192 Source: --
+BB:86
+	ST  Inst:   %115 = load i32* %i, align 4, !dbg !194 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc131, i32* %i, align 4, !dbg !194 Source:   %i = alloca i32, align 4
+BB:87
+BB:88

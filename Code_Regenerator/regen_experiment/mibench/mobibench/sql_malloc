@@ -1,0 +1,597 @@
+389:**     SQLITE_SYSTEM_MALLOC          // Use normal system malloc()
+390:**     SQLITE_MEMDEBUG               // Debugging version of system malloc()
+865:** from [sqlite3_malloc()] and passed back through the 5th parameter.
+931:#define SQLITE_NOMEM        7   /* A malloc() failed */
+1698:** malloc() and free() functions from the standard C library.
+1716:** Every memory allocation request coming in through [sqlite3_malloc()]
+1854:** [sqlite3_malloc()] will be used to obtain the memory needed.</dd>
+1872:** SQLite goes to [sqlite3_malloc()] for the additional storage space.
+1884:** to using its default memory allocator (the system malloc() implementation),
+1996:** lookaside buffer itself using [sqlite3_malloc()]. ^The second argument is the
+2370:** release the memory that was malloced.  Because of the way the
+2371:** [sqlite3_malloc()] happens within sqlite3_get_table(), the calling
+2400:** results into memory obtained from [sqlite3_malloc()].
+2403:** NULL pointer if [sqlite3_malloc()] is unable to allocate enough
+2498:** Windows VFS uses native malloc() and free() for some operations.
+2500:** ^The sqlite3_malloc() routine returns a pointer to a block
+2502:** ^If sqlite3_malloc() is unable to obtain sufficient free
+2504:** sqlite3_malloc() is zero or negative then sqlite3_malloc() returns
+2508:** by sqlite3_malloc() or sqlite3_realloc() releases that memory so
+2516:** was not obtained from sqlite3_malloc() or sqlite3_realloc().
+2523:** sqlite3_malloc(N) where N is the second parameter to sqlite3_realloc().
+2535:** ^The memory returned by sqlite3_malloc() and sqlite3_realloc()
+2546:** the system malloc() and free() directly when converting
+2555:** invocation of [sqlite3_malloc()] or [sqlite3_realloc()] that have
+2562:SQLITE_API void *sqlite3_malloc(int);
+2570:** of the [sqlite3_malloc()], [sqlite3_free()], and [sqlite3_realloc()]
+2574:** of memory currently outstanding (malloced but not freed).
+2579:** added by SQLite in its implementation of [sqlite3_malloc()],
+2581:** routines that [sqlite3_malloc()] may call.
+3375:** index is out of range.  ^[SQLITE_NOMEM] is returned if malloc() fails.
+3488:** ^If sqlite3_malloc() fails during the processing of either routine
+4362:** from [sqlite3_malloc()] before it returns.
+4618:** it to point to memory obtained from [sqlite3_malloc].  ^Furthermore,
+4621:** [sqlite3_malloc] and the pragma may attempt to free that memory
+4624:** made NULL or made to point to memory obtained from [sqlite3_malloc]
+4974:** obtained from [sqlite3_malloc()]. The calling function
+5186:  char *idxStr;              /* String, possibly obtained from sqlite3_malloc */
+5748:** ^xMutexInit() must not use SQLite memory allocation ([sqlite3_malloc()]
+5818:#define SQLITE_MUTEX_STATIC_MEM       3  /* sqlite3_malloc() */
+5959:** using [sqlite3_malloc()], either directly or indirectly.  The
+5960:** figure includes calls made to [sqlite3_malloc()] by the application
+5969:** handed to [sqlite3_malloc()] or [sqlite3_realloc()] (or their
+5987:** buffer and where forced to overflow to [sqlite3_malloc()].  The
+6010:** buffer and where forced to overflow to [sqlite3_malloc()].  The values
+6083:** <dd>This parameter returns the number malloc attempts that were 
+6089:** <dd>This parameter returns the number malloc attempts that might have
+6097:** <dd>This parameter returns the number malloc attempts that might have
+7327:** underlying malloc() implemention might return us 4-byte aligned
+8780:** sqlite3_malloc() to obtain space for the file-handle structure.
+8928:** Lookaside malloc is a set of fixed-size buffers that can be used
+8931:** lookaside malloc provides a significant performance enhancement
+8932:** (approx 10%) by avoiding numerous malloc/free requests while parsing
+8936:** lookaside malloc subsystem.  Each available memory allocation in
+8950:  u8 bMalloced;           /* True if pStart obtained from sqlite3_malloc() */
+9008:  u8 mallocFailed;              /* True if we have seen a malloc failure */
+9057:  Lookaside lookaside;          /* Lookaside malloc configuration */
+9894:#define EP_Static     0x4000  /* Held in memory not obtained from malloc() */
+10580:  char *zBase;         /* A base allocation.  Not from malloc. */
+10585:  u8   mallocFailed;   /* Becomes true if any memory allocation fails */
+10586:  u8   useMalloc;      /* 0: none,  1: sqlite3DbMalloc,  2: sqlite3_malloc */
+10632:  int isMallocInit;                 /* True after malloc is initialized */
+10633:  int isPCacheInit;                 /* True after malloc is initialized */
+10766:** obtain space from malloc().
+11296:** malloc failures. This is only present if SQLITE_OMIT_BUILTIN_TEST
+11406:#define MEMTYPE_DB         0x10  /* Uses sqlite3DbMalloc, not sqlite_malloc */
+12198:  char *zMalloc;      /* Dynamic buffer allocated by sqlite3_malloc() */
+12306:** malloc failure when SQLite is invoked recursively by a virtual table 
+13791:** So we test the effects of a malloc() failing and the sqlite3OsXXX()
+13794:** The following functions are instrumented for malloc() failure 
+14000:** ability to simulate a malloc failure, so that the handling of an
+14004:  void *p = sqlite3_malloc(10);
+14115:** malloc failures (when the xMalloc() or xRealloc() method of the
+14119:** Most malloc failures are non-benign. After they occur, SQLite
+14122:** fatal. For example, if a malloc fails while resizing a hash table, this 
+14124:** hash table will continue to function normally.  So a malloc failure 
+14171:** subsequent malloc failures are benign. A call to sqlite3EndBenignMalloc()
+14172:** indicates that subsequent malloc failures are non-benign.
+14265:** SQLite will use the standard C-library malloc/realloc/free interface
+14280:** Like malloc(), but remember the size of the allocation
+14291:  p = malloc( nByte+8 );
+14417:** SQLite will use the standard C-library malloc/realloc/free interface
+14473:** Number of malloc size increments to track.
+14593:    /* If memory status is enabled, then the malloc.c wrapper will already
+14656:  p = malloc(totalSize);
+14948:** use of malloc(). The SQLite user supplies a block of memory
+15150:** will already be held (obtained by code in malloc.c) if
+15432:  assert( nBytes>0 );          /* malloc.c filters out 0 byte requests */
+15456:    return sqlite3_malloc(nBytes);
+15637:** use of malloc(). The application gives SQLite a block of memory
+15728:  u64 nAlloc;         /* Total number of calls to malloc */
+15729:  u64 totalAlloc;     /* Total of all malloc calls - includes internal frag */
+15807:** will already be held (obtained by code in malloc.c) if
+17526:/************** Begin file malloc.c ******************************************/
+17785:static int mallocWithAlarm(int n, void **pp){
+17817:** Allocate memory.  This routine is like sqlite3_malloc() except that it
+17829:    ** this amount.  The only way to reach the limit is with sqlite3_malloc() */
+17833:    mallocWithAlarm(n, &p);
+17847:SQLITE_API void *sqlite3_malloc(int n){
+17888:      n = mallocWithAlarm(n, &p);
+17967:** sqlite3Malloc() or sqlite3_malloc().
+18105:** the mallocFailed flag in the connection pointer.
+18117:** the mallocFailed flag in the connection pointer.
+18119:** If db!=0 and db->mallocFailed is true (indicating a prior malloc
+18121:** Hence for a particular database connection, once malloc starts
+18122:** failing, it fails consistently until mallocFailed is reset.
+18130:** In other words, if a subsequent malloc (ex: "b") worked, it is assumed
+18131:** that all prior mallocs (ex: "a") worked too.
+18140:    if( db->mallocFailed ){
+18160:  if( db && db->mallocFailed ){
+18166:    db->mallocFailed = 1;
+18175:** resize fails, set the mallocFailed flag in the connection object.
+18181:  if( db->mallocFailed==0 ){
+18201:        db->mallocFailed = 1;
+18212:** and set the mallocFailed flag in the database connection.
+18277:** returning control to the user) that has called sqlite3_malloc or
+18281:** function. However, if a malloc() failure has occurred since the previous
+18284:** If the first argument, db, is not NULL and a malloc() error has occurred,
+18290:  ** mutex here. Otherwise the read (and possible write) of db->mallocFailed 
+18294:  if( db && (db->mallocFailed || rc==SQLITE_IOERR_NOMEM) ){
+18296:    db->mallocFailed = 0;
+18302:/************** End of malloc.c **********************************************/
+18325:**                          obtained from malloc.
+18968:            pAccum->mallocFailed = 1;
+19048:  if( p->tooBig | p->mallocFailed ){
+19050:    testcase(p->mallocFailed);
+19087:        p->mallocFailed = 1;
+19109:        p->zText = sqlite3_malloc(p->nChar+1);
+19114:        p->mallocFailed = 1;
+19122:** Reset an StrAccum string.  Reclaim all malloced memory.
+19146:  p->mallocFailed = 0;
+19163:  if( acc.mallocFailed ){
+19164:    db->mallocFailed = 1;
+19201:** Print into memory obtained from sqlite3_malloc().  Omit the internal
+19219:** Print into memory obtained from sqlite3_malloc()().  Omit the internal
+19746:  ** from sqlite3_malloc().
+19909:** Memory to hold the UTF-8 string is obtained from sqlite3_malloc and must
+19920:  if( db->mallocFailed ){
+19924:  assert( (m.flags & MEM_Term)!=0 || db->mallocFailed );
+19925:  assert( (m.flags & MEM_Str)!=0 || db->mallocFailed );
+19926:  assert( (m.flags & MEM_Dyn)!=0 || db->mallocFailed );
+19927:  assert( m.z || db->mallocFailed );
+19938:** If a malloc failure occurs, NULL is returned and the db.mallocFailed
+19948:    assert( db->mallocFailed );
+21023:** binary value has been obtained from malloc and must be freed by
+21197:** The hash table might fail to resize if sqlite3_malloc() fails or
+21325:** The key is not copied in this instance.  If a malloc fails, then
+21557:** This driver uses malloc()/free() directly rather than going through
+21558:** the SQLite-wrappers sqlite3_malloc()/sqlite3_free().  Those wrappers
+21560:** malloc failures happen frequently.  OS/2 does not typically run on
+21566:** wrappers then we will get simulated malloc() failures within this
+21568:** could enhance SQLite to deal with simulated malloc failures within
+21570:** be exercised on Linux (which does not need to malloc() in the driver)
+21576:** avoid the use of malloc()/free().  Those routines work ok on OS/2
+23625:  pNew = sqlite3_malloc( sizeof(*pNew) + (n+1) );
+23946:    pInode = sqlite3_malloc( sizeof(*pInode) );
+26454:  p = sqlite3_malloc( sizeof(*p) );
+26483:    pShmNode = sqlite3_malloc( sizeof(*pShmNode) + nShmFilename );
+27208:      **   (b) A malloc failed.
+27212:      ** descriptors on this file, then no malloc would be required by
+27233:    pNew->lockingContext = pCtx = sqlite3_malloc( sizeof(*pCtx) );
+27262:    zLockFile = (char *)sqlite3_malloc(nFilename);
+27639:      pUnused = sqlite3_malloc(sizeof(*pUnused));
+28384:** sqlite3_malloc) and open the file named "path" in the file descriptor.
+28413:    pUnused = sqlite3_malloc(sizeof(*pUnused));
+28446:  pNew = (unixFile *)sqlite3_malloc(sizeof(*pNew));
+28904:** Store the conch filename in memory obtained from sqlite3_malloc().
+28920:  *pConchPath = conchPath = (char *)sqlite3_malloc(len + 8);
+29035:  pCtx = sqlite3_malloc( sizeof(*pCtx) );
+29434:** This driver uses malloc()/free() directly rather than going through
+29435:** the SQLite-wrappers sqlite3_malloc()/sqlite3_free().  Those wrappers
+29437:** malloc failures happen frequently.  Win32 does not typically run on
+29443:** wrappers then we will get simulated malloc() failures within this
+29445:** could enhance SQLite to deal with simulated malloc failures within
+29447:** be exercised on Linux (which does not need to malloc() in the driver)
+29453:** avoid the use of malloc()/free().  Those routines work ok on windows
+29792:** Space to hold the returned string is obtained from malloc.
+29799:  zWideFilename = malloc( nChar*sizeof(zWideFilename[0]) );
+29813:** obtained from malloc().
+29820:  zFilename = malloc( nByte );
+29838:** from malloc.
+29846:  zMbcsFilename = malloc( nByte*sizeof(zMbcsFilename[0]) );
+29863:** malloc().
+29871:  zFilename = malloc( nByte );
+29886:** returned string is obtained from malloc().
+29903:** returned string is obtained from malloc().
+31065:  p = sqlite3_malloc( sizeof(*p) );
+31069:  pNew = sqlite3_malloc( sizeof(*pShmNode) + nName + 15 );
+31500:** is obtained from malloc and must be freed by the calling
+32042:    zTemp = malloc( nByte*sizeof(zTemp[0]) );
+32059:    zTemp = malloc( nByte*sizeof(zTemp[0]) );
+32514:** malloc fails.
+32724:** on both a Bitvec object and on a linear array of bits obtained from malloc.
+32745:  pV = sqlite3_malloc( (sz+7)/8 + 1 );
+32746:  pTmpSpace = sqlite3_malloc(BITVEC_SZ);
+33528:  void *pStart, *pEnd;           /* Bounds of pagecache malloc range */
+33786:  apNew = (PgHdr1 **)sqlite3_malloc(sizeof(PgHdr1 *)*nNew);
+33971:  pCache = (PCache1 *)sqlite3_malloc(sz);
+34532:** The mallocFailed flag of the database connection is set if a
+36450:    ** Use a testcase() macro to make sure that malloc failure within 
+36599:** or SQLITE_NOMEM if a malloc failure occurs.
+36904:** malloc error occurs during a rollback, then this will itself cause 
+37089:  ** not be in the pager cache. Later: if a malloc() or IO error occurs
+37261:** fails, SQLITE_NOMEM is returned. Otherwise, if no IO or malloc errors 
+37294:  ** sqlite3_malloc() and pointed to by zMasterJournal.   Also obtain
+37492:** If an I/O or malloc() error occurs, the journal-file is not deleted
+37651:  ** malloc error that occurred after the change-counter was updated but 
+38989:** SQLITE_NOMEM if a malloc fails while setting a bit in a savepoint
+39917:        ** to test the case where a malloc error occurs while trying to set 
+40987:    ** malloc failure occurs while populating it in the for(...) loop below.
+41291:    ** to a malloc() or IO failure), clear the bit in the pInJournal[]
+41576:  ** (e.g. due to malloc() failure), return an error code.
+41684:** page content. If a malloc fails, this function may return NULL.
+42827:    aFrame = (u8 *)sqlite3_malloc(szFrame);
+45030:**   A unrecoverable error (an I/O error or a malloc failure) has occurred
+45136:  int mallocFailed; /* A memory allocation error has occurred */
+45783:** is returned if a malloc attempt fails.
+46072:  ** table, then malloc space for and store the pCur->nKey bytes of key 
+46149:  char aSpace[150];          /* Temp space for pIdxKey - to avoid a malloc */
+47372:          db->mallocFailed = 0;
+48770:    /* This is a horrible situation. An IO or malloc() error occurred whilst
+48772:    ** the result of a constraint, malloc() failure or IO error) then 
+52908:  if( pCheck->errMsg.mallocFailed ){
+52909:    pCheck->mallocFailed = 1;
+52955:    if( rc==SQLITE_NOMEM || rc==SQLITE_IOERR_NOMEM ) pCheck->mallocFailed = 1;
+53213:    pCheck->mallocFailed = 1;
+53279:** malloc is returned if *pnErr is non-zero.  If *pnErr==0 then NULL is
+53303:  sCheck.mallocFailed = 0;
+53377:  if( sCheck.mallocFailed ){
+53794:    p = (sqlite3_backup *)sqlite3_malloc(sizeof(sqlite3_backup));
+54347:** SQLITE_NOMEM may be returned if a malloc() fails during conversion
+54427:** malloc().  In this way, we know that the memory is safe to be
+54430:** Return SQLITE_OK on success or SQLITE_NOMEM if malloc fails.
+54871:  if( db->mallocFailed ){
+55207:** If this routine fails for any reason (malloc returns NULL or unable
+55295:              || pVal->db->mallocFailed );
+55418:  db->mallocFailed = 1;
+55688:** Zero is returned if a malloc() fails.
+55839:  /* Return true if hasAbort==mayAbort. Or if a malloc failure occured.
+55840:  ** If malloc failed, then the while() loop above may not have iterated
+55844:  return ( v->db->mallocFailed || hasAbort==mayAbort );
+55919:  assert( aOp && !p->db->mallocFailed );
+56140:** the string is made into memory obtained from sqlite3_malloc().
+56146:** sqlite3_malloc, to be freed when the Vdbe is finalized.
+56148:** stored in memory that the caller has obtained from sqlite3_malloc. The 
+56164:  if( p->aOp==0 || db->mallocFailed ){
+56204:      p->db->mallocFailed = 1;
+56236:  assert( p->aOp==0 || p->aOp[p->nOp-1].zComment==0 || p->db->mallocFailed );
+56250:  assert( p->aOp==0 || p->aOp[p->nOp-1].zComment==0 || p->db->mallocFailed );
+56293:  assert( (addr>=0 && addr<p->nOp) || p->db->mallocFailed );
+56294:  if( p->db->mallocFailed ){
+56455:    u8 malloc_failed = db->mallocFailed;
+56486:    db->mallocFailed = malloc_failed;
+56544:    /* This happens if a malloc() inside a call to sqlite3_column_text() or
+56546:    db->mallocFailed = 1;
+56653:      assert( p->db->mallocFailed );
+56670:        assert( p->db->mallocFailed );
+56845:  if( nVar>=0 && ALWAYS(db->mallocFailed==0) ){
+56882:    }while( nByte && !db->mallocFailed );
+57077:  if( p->db->mallocFailed ){
+57506:  if( p->db->mallocFailed ){
+57668:  if( p->db->mallocFailed ){
+57968:  assert( pMem->db->mallocFailed || flags&(MEM_Str|MEM_Blob) );
+58212:** not big enough, space is obtained from sqlite3_malloc().
+58930:  pCtx->s.db->mallocFailed = 1;
+58996:  /* Check that malloc() has not failed. If it has, return early. */
+58998:  if( db->mallocFailed ){
+59118:    if( !db->mallocFailed ){
+59345:** select list of a SELECT statement) that may cause a malloc() failure. If 
+59346:** malloc() has failed, the threads mallocFailed flag is cleared and the result
+59362:  /* If malloc() failed during an encoding conversion within an
+59382:  ** need to call malloc() to expand the result of a zeroblob() 
+59479:    assert( db->mallocFailed==0 );
+59481:     /* A malloc may have failed inside of the xFunc() call. If this
+59482:    ** is the case, clear the mallocFailed flag and return NULL.
+59484:    if( db->mallocFailed ){
+59485:      db->mallocFailed = 0;
+60235:** already. Return non-zero if a malloc() fails.
+60309:  **     minimizes the number of malloc calls made by the system.
+60694:** in memory obtained from sqlite3_malloc) into a Vdbe.zErrMsg (text stored
+60722:** from sqlite3_malloc() and p->zErrMsg is made to point to that memory.
+61166:    /* This happens if a malloc() inside a call to sqlite3_column_text() or
+61194:    if( db->mallocFailed ) goto no_mem;
+61736:  if( db->mallocFailed ) goto no_mem;
+62007:  if( db->mallocFailed ){
+62008:    /* Even though a malloc() has failed, the implementation of the
+62174:  assert( pIn1->flags & MEM_Str || db->mallocFailed );
+62194:    assert( pIn1->flags & MEM_Str || db->mallocFailed );
+62375:      if( db->mallocFailed ) goto no_mem;
+65332:      assert( !db->mallocFailed );
+66219:      db->mallocFailed = 1;
+66631:  if( rc==SQLITE_IOERR_NOMEM ) db->mallocFailed = 1;
+66650:  /* Jump to here if a malloc() fails.
+66653:  db->mallocFailed = 1;
+66663:  if( db->mallocFailed ) rc = SQLITE_NOMEM;
+66933:    assert( pBlob->pStmt || db->mallocFailed );
+66977:      if( !db->mallocFailed ){
+66986:    if( db->mallocFailed ){
+66994:  if( rc==SQLITE_OK && db->mallocFailed==0 ){
+67526:      FileChunk *pNew = sqlite3_malloc(sizeof(FileChunk));
+68389:  return (pParse->nErr || pParse->db->mallocFailed) ? WRC_Abort : WRC_Continue;
+68562:          if( !db->mallocFailed ){
+68617:  if( pOrderBy==0 || pParse->db->mallocFailed ) return 0;
+68737:    return (pParse->nErr || db->mallocFailed) ? WRC_Abort : WRC_Prune;
+68784:        if( pParse->nErr || db->mallocFailed ) return WRC_Abort;
+68835:    if( db->mallocFailed ){
+68845:      if( resolveOrderGroupBy(&sNC, p, pGroupBy, "GROUP") || db->mallocFailed ){
+69436:    assert( db->mallocFailed );
+69462:** Expr node.  Or, if an OOM error occurs, set pParse->db->mallocFailed,
+69506:    sqlite3ExprListDelete(db, pList); /* Avoid memory leak when malloc fails */
+69588:      if( !db->mallocFailed ){
+69995:  /* Avoid leaking memory if malloc has failed. */
+70006:** NULL.  If a memory allocation fails, the pParse->db->mallocFailed flag
+70015:  assert( pList!=0 || pParse->db->mallocFailed!=0 );
+70031:** NULL.  If a memory allocation fails, the pParse->db->mallocFailed flag
+70040:  assert( pList!=0 || db->mallocFailed!=0 );
+70044:    assert( db->mallocFailed || pItem->pExpr==pSpan->pExpr );
+70587:    assert( testAddr>0 || pParse->db->mallocFailed );
+71260:    assert( pParse->db->mallocFailed );
+71809:      assert( db->mallocFailed || pParse->nErr>0 
+71880:    assert( pParse->pVdbe || pParse->db->mallocFailed );
+72478:** the new element.  Return a negative number if malloc fails.
+72496:** the new element.  Return a negative number if malloc fails.
+73139:  if( NEVER(db->mallocFailed) ) goto exit_rename_table;
+73364:  if( pParse->nErr || db->mallocFailed ) return;
+73421:      db->mallocFailed = 1;
+73488:  if( db->mallocFailed ) goto exit_begin_add_column;
+73526:    db->mallocFailed = 1;
+73834:    if( db->mallocFailed ){
+73835:      /* If a malloc failure has occurred, then the result of the expression 
+74134:** If an OOM error occurs, this function always sets db->mallocFailed.
+74207:                db->mallocFailed = 1;
+74235:                    db->mallocFailed = 1;
+74250:    db->mallocFailed = 1;
+74464:      db->mallocFailed = 1;
+74591:  assert( v || db->mallocFailed );
+75140:    pToplevel->db->mallocFailed = 1;
+75181:  if( db->mallocFailed ) return;
+75241:  if( v && ALWAYS(pParse->nErr==0) && !db->mallocFailed ){
+75292:    return;   /* A malloc must have failed */
+75848:    db->mallocFailed = 1;
+76411:    db->mallocFailed = 1;
+76483:  if( (pEnd==0 && pSelect==0) || db->mallocFailed ){
+76653:      db->mallocFailed = 1;
+76724:  if( db->mallocFailed ){
+76762:  sqlite3 *db = pParse->db;  /* Database connection for malloc errors */
+77004:  if( db->mallocFailed ){
+77267:    db->mallocFailed = 1;
+77432:  if( db->mallocFailed || IN_DECLARE_VTAB ){
+77474:    if( !pTab || db->mallocFailed ) goto exit_create_index;
+77603:  if( db->mallocFailed ){
+77752:      db->mallocFailed = 1;
+77912:  if( db->mallocFailed ){
+77989:  sqlite3 *db,      /* Connection to notify of malloc failures */
+78021:** A new IdList is returned, or NULL if malloc() fails.
+78090:** db->mallocFailed flag will be set to true.
+78114:      assert( db->mallocFailed );
+78175:  sqlite3 *db,        /* Connection to notify of malloc failures */
+78188:  if( db->mallocFailed ){
+78212:  assert(pList || pParse->db->mallocFailed );
+78456:      db->mallocFailed = 1;
+78914:      /* If a malloc() failure occurred in sqlite3HashInsert(), it will 
+78920:        db->mallocFailed = 1;
+79187:    db->mallocFailed = 1;
+79439:  if( pParse->nErr || db->mallocFailed ){
+80127:** Allocate nByte bytes of space using sqlite3_malloc(). If the
+80129:** the database handle that malloc() has failed and return NULL.
+80815:            || sqlite3_context_db_handle(context)->mallocFailed );
+81238:    }else if( pAccum->mallocFailed ){
+81256:    db->mallocFailed = 1;
+81608:** pParse->db->mallocFailed flag is set.
+82156:      if( !isIgnoreErrors || db->mallocFailed ) return;
+82219:      if( !isIgnoreErrors || db->mallocFailed ) return;
+82525:    if( db->mallocFailed==1 ){
+82693:      db->mallocFailed = 1;
+82735:      db->mallocFailed = 1;
+83101:  if( pParse->nErr || db->mallocFailed ){
+83226:    if( rc || NEVER(pParse->nErr) || db->mallocFailed ){
+84476:** malloc() and make *pzErrMsg point to that message.
+84547:              db->mallocFailed = 1;
+84723:  void *(*malloc)(int);
+84924:#define sqlite3_malloc                 sqlite3_api->malloc
+85221:  sqlite3_malloc,
+85441:      *pzErrMsg = zErrmsg = sqlite3_malloc(nMsg);
+85454:      *pzErrMsg = zErrmsg = sqlite3_malloc(nMsg);
+86087:        db->mallocFailed = 1;
+87206:  if( !db->mallocFailed && (db->flags & SQLITE_RecoveryMode)==0 ){
+87215:  pData->rc = db->mallocFailed ? SQLITE_NOMEM : SQLITE_CORRUPT;
+87239:  if( db->mallocFailed ){
+87272:          db->mallocFailed = 1;
+87518:  if( db->mallocFailed ){
+87547:    db->mallocFailed = 1;
+87642:        db->mallocFailed = 1;
+87720:  assert( !db->mallocFailed );
+87787:  if( db->mallocFailed ){
+87797:  if( db->mallocFailed ){
+87833:  if( pParse->pVdbe && (rc!=SQLITE_OK || db->mallocFailed) ){
+87910:      db->mallocFailed = 1;
+88106:  assert( db->mallocFailed || !pOffset || pLimit ); /* OFFSET implies LIMIT */
+88128:  if( db->mallocFailed ) {
+88782:** Space to hold the KeyInfo structure is obtain from malloc.  The calling
+89197:  if( pParse->colNamesSet || NEVER(v==0) || db->mallocFailed ) return;
+89302:    if( db->mallocFailed ){
+89324:  if( db->mallocFailed ){
+89363:  assert( nCol==pSelect->pEList->nExpr || db->mallocFailed );
+89364:  if( db->mallocFailed ) return;
+89409:  if( db->mallocFailed ){
+89966:  if( pParse->db->mallocFailed ) return 0;
+90227:    for(i=1; db->mallocFailed==0 && i<=p->pEList->nExpr; i++){
+90295:    assert( nOrderBy>=nExpr || db->mallocFailed );
+90528:  sqlite3 *db,        /* Report malloc errors to this connection */
+90560:  sqlite3 *db,         /* Report malloc errors here */
+90572:  sqlite3 *db,         /* Report malloc errors here */
+90894:    if( db->mallocFailed ) return 1;
+90959:        assert( db->mallocFailed );
+90981:      if( db->mallocFailed ){
+91197:  if( db->mallocFailed  ){
+91267:  if( db->mallocFailed || sqliteProcessJoin(pParse, p) ){
+91332:          if( db->mallocFailed ) break;
+91433:** and/or pParse->db->mallocFailed.
+91525:  if( pParse->nErr || db->mallocFailed ) return;
+91527:  if( pParse->nErr || db->mallocFailed ) return;
+91738:  if( p==0 || db->mallocFailed || pParse->nErr ){
+91757:  if( pParse->nErr || db->mallocFailed ){
+91813:    if( /*pParse->nErr ||*/ db->mallocFailed ){
+92002:    if( db->mallocFailed ) goto select_end;
+92300:          if( pMinMax && !db->mallocFailed ){
+92530:    if( azNew==0 ) goto malloc_failed;
+92541:      if( z==0 ) goto malloc_failed;
+92561:        z = sqlite3_malloc( n );
+92562:        if( z==0 ) goto malloc_failed;
+92571:malloc_failed:
+92578:** malloc() for space to hold the result and return the entire results
+92582:** from malloc().  But the caller cannot free this memory directly.  
+92607:  res.azResult = sqlite3_malloc(sizeof(char*)*res.nAlloc );
+92650:** This routine frees the space the sqlite3_get_table() malloced.
+92792:  if( !pTableName || db->mallocFailed ){
+92802:  if( db->mallocFailed ) goto trigger_cleanup;
+92977:      db->mallocFailed = 1;
+93017:** If an OOM error occurs, NULL is returned and db->mallocFailed is set.
+93055:  assert(pEList != 0 || pSelect != 0 || db->mallocFailed);
+93147:  if( db->mallocFailed ) goto drop_trigger_cleanup;
+93522:       && db->mallocFailed==0 
+93541:    if( db->mallocFailed==0 ){
+93610:  assert( pPrg || pParse->nErr || pParse->db->mallocFailed );
+93899:  if( pParse->nErr || db->mallocFailed ){
+94619:   || NEVER(db->mallocFailed)
+94825:      db->mallocFailed = 1;
+95168:      db->mallocFailed = 1;
+95238:  if( rc==SQLITE_NOMEM ) db->mallocFailed = 1;
+95439:     && !db->mallocFailed
+95632:  sqlite3 *db,    /* Database connection for reporting malloc problems */
+95712:    pToplevel->db->mallocFailed = 1;
+96032:** the db->mallocFailed flag so that higher-level functions can detect it.
+96585:  if( db->mallocFailed ) return;
+96612:        testcase( db->mallocFailed );
+96613:        if( !db->mallocFailed ){
+96824:  if( db->mallocFailed ){
+96869:        if( db->mallocFailed ){
+96968:    if( !db->mallocFailed ){
+97743:      pParse->db->mallocFailed = 1;
+97800:  ** malloc in allocateIndexInfo() fails and this function returns leaving
+97992:            assert( db->mallocFailed );
+98648:    assert( pParse->db->mallocFailed );
+98808:    pParse->db->mallocFailed = 1;
+99673:        /* assert( pInfo->needToFreeIdxStr==0 || db->mallocFailed ); */
+99832:  if( db->mallocFailed ){
+99909:  if( db->mallocFailed ){
+100116:  if( pParse->nErr || db->mallocFailed ){
+100199:  if( db->mallocFailed ) goto whereBeginError;
+100267:  /* Jump here if malloc fails */
+100368:    if( (pLevel->plan.wsFlags & WHERE_INDEXED)!=0 && !db->mallocFailed){
+100516:    if( db->mallocFailed==0 && pY->op==TK_NULL ){
+101739:** malloc.
+101748:SQLITE_PRIVATE void *sqlite3ParserAlloc(void *(*mallocProc)(size_t)){
+101750:  pParser = (yyParser*)(*mallocProc)( (size_t)sizeof(yyParser) );
+101894:**       from malloc.
+104490:** memory obtained from sqlite3_malloc() and to make *pzErrMsg point to that
+104514:    db->mallocFailed = 1;
+104525:  while( !db->mallocFailed && zSql[i]!=0 ){
+104579:  if( db->mallocFailed ){
+105144:  /* Initialize the malloc() system and the recursive pInitMutex mutex.
+105147:  ** malloc subsystem - this implies that the allocation of a static
+105148:  ** mutex must not require support from the malloc subsystem.
+105171:  /* If rc is not SQLITE_OK at this point, then either the malloc
+105334:      /* Specify an alternative malloc implementation */
+105339:      /* Retrieve the current malloc() implementation */
+105345:      /* Enable or disable the malloc status collection */
+105386:        /* If the heap pointer is NULL, then restore the malloc implementation
+105387:        ** back to NULL pointers too.  This will cause the malloc to go
+105445:** space for the lookaside memory is obtained from sqlite3_malloc().
+105983:** that if a malloc() fails in sqlite3_create_function(), an error code
+105984:** is returned and the mallocFailed flag cleared. 
+106047:      assert( !db->mallocFailed );
+106055:  assert(p || db->mallocFailed);
+106144:  assert( !db->mallocFailed );
+106461:  if( db->mallocFailed ){
+106465:    assert( !db->mallocFailed );
+106500:  if( db->mallocFailed ){
+106509:    /* A malloc() may have failed within the call to sqlite3_value_text16()
+106510:    ** above. If this is the case, then the db->mallocFailed flag needs to
+106514:    db->mallocFailed = 0;
+106523:** passed to this function, we assume a malloc() failed during sqlite3_open().
+106529:  if( !db || db->mallocFailed ){
+106538:  if( !db || db->mallocFailed ){
+106850:  ** conversions. The only error that can occur here is a malloc() failure.
+106860:  if( db->mallocFailed ){
+106894:  if( db->mallocFailed ){
+106915:  if( !db->mallocFailed ){
+106922:  if( !db->mallocFailed && rc==SQLITE_OK ){
+106929:  if( !db->mallocFailed && rc==SQLITE_OK ){
+106935:  if( !db->mallocFailed && rc==SQLITE_OK ){
+106941:  if( !db->mallocFailed && rc==SQLITE_OK){
+106958:  /* Enable the lookaside-malloc subsystem */
+107049:  assert( !db->mallocFailed );
+107069:  assert( !db->mallocFailed );
+107090:  assert( !db->mallocFailed );
+107141:** malloc() failure, but SQLite now does this automatically.
+107440:    ** Register hooks to call to indicate which malloc() failures 
+107792:  assert( !db->mallocFailed );
+107838:  void *aStatic[16];         /* Starter space for aArg[].  No malloc required */
+108638:  char **azColumn;                /* column names.  malloced */
+108655:  ** pending data, including hash table overhead, but not malloc overhead. 
+108749:** is true, then aDoclist points to a malloced buffer, size nDoclist bytes, 
+109277:  aCol = (const char **)sqlite3_malloc(sizeof(const char *) * (argc-2) );
+109354:  p = (Fts3Table*)sqlite3_malloc(nByte);
+109434:  char **pzErr                    /* OUT: sqlite3_malloc'd error message */
+109444:  char **pzErr                    /* OUT: sqlite3_malloc'd error message */
+109519:  *ppCsr = pCsr = (sqlite3_vtab_cursor *)sqlite3_malloc(sizeof(Fts3Cursor));
+110179:** If successful, SQLITE_OK is returned. Otherwise, if a malloc error
+110304:        aTmp = sqlite3_malloc(2*(n1+n2+1));
+110378:        char *aNew = sqlite3_malloc(nNew);
+110424:    pTS->aaOutput[0] = sqlite3_malloc(nDoclist);
+110448:      aNew = sqlite3_malloc(nNew);
+110488:    *ppOut = sqlite3_malloc(nSource);
+110495:    *ppOut = sqlite3_malloc(*pnOut);
+110784:  char **paOut,                   /* OUT: Pointer to malloc'd result buffer */
+110949:  char **paOut,                   /* OUT: Results of merge (malloced) */
+110957:  aOut = sqlite3_malloc(nLeft+nRight+1);
+111133:** the resulting doclist in *paOut and *pnOut. This routine mallocs for
+111174:  char **paOut,                   /* OUT: Pointer to malloc'd result buffer */
+111209:        aExpr = sqlite3_malloc(sizeof(ExprAndCost) * nExpr);
+111307:            char *aBuffer = sqlite3_malloc(nRight+nLeft+1);
+112018:  pHash = sqlite3_malloc(sizeof(Fts3Hash));
+112196:** Allocate nByte bytes of memory using sqlite3_malloc(). If successful,
+112201:  void *pRet = sqlite3_malloc(nByte);
+112401:** if a malloc failure occurs, or SQLITE_ERROR if a parse error is encountered.
+112875:** sqlite3_malloc(). It is the responsibility of the caller to use 
+112981:  azCol = (char **)sqlite3_malloc(nCol*sizeof(char *));
+113059:  void *p = sqlite3_malloc(n);
+113339:** The key is not copied in this instance.  If a malloc fails, then
+113469:  t = (porter_tokenizer *) sqlite3_malloc(sizeof(*t));
+113499:  c = (porter_tokenizer_cursor *) sqlite3_malloc(sizeof(*c));
+114200:  char **pzErr                    /* OUT: Set to malloced error message */
+114602:  t = (simple_tokenizer *) sqlite3_malloc(sizeof(*t));
+114657:  c = (simple_tokenizer_cursor *) sqlite3_malloc(sizeof(*c));
+114812:** table. The hash table entry maps from term (a string) to a malloc'd
+114899:  int nMalloc;                    /* Size of malloc'd buffer at zMalloc */
+114903:  char *aData;                    /* Pointer to block from malloc() */
+114923:  int nMalloc;                    /* Size of malloc'd buffer at zMalloc */
+115018:      zVarlist = (char *)sqlite3_malloc(2*p->nColumn+2);
+115196:    p = sqlite3_malloc(sizeof(*p) + 100);
+115602:** NULL, then a buffer is allocated using sqlite3_malloc() and populated
+115625:  char **paBlob,                  /* OUT: Blob data in malloc'd buffer */
+115648:      char *aByte = sqlite3_malloc(nByte + FTS3_NODE_PADDING);
+115949:  pReader = (Fts3SegReader *)sqlite3_malloc(sizeof(Fts3SegReader) + nExtra);
+116055:    pReader = (Fts3SegReader *)sqlite3_malloc(nByte);
+116331:        ** enough. Use a separately malloced buffer instead This wastes
+116337:        pTree->aData = (char *)sqlite3_malloc(nReq);
+116381:  pNew = (SegmentNode *)sqlite3_malloc(sizeof(SegmentNode) + p->nNodeSize);
+116528:    pWriter = (SegmentWriter *)sqlite3_malloc(sizeof(SegmentWriter));
+116534:    pWriter->aData = (char *)sqlite3_malloc(p->nNodeSize);
+117114:  apSegment = (Fts3SegReader**)sqlite3_malloc(sizeof(Fts3SegReader *)*nSegment);
+117276:  pBlob = sqlite3_malloc( 10*p->nColumn );
+117326:  a = sqlite3_malloc( (sizeof(u32)+10)*nStat );
+117543:  pDeferred = sqlite3_malloc(sizeof(*pDeferred));
+117581:  aSzIns = sqlite3_malloc( sizeof(aSzIns[0])*(p->nColumn+1)*2 );
+118138:  ** the required space using malloc().
+118141:  sIter.aPhrase = (SnippetPhrase *)sqlite3_malloc(nByte);
+118711:  aIter = sqlite3_malloc(sizeof(LcsIterator) * pCsr->nPhrase);
+118937:    pCsr->aMatchinfo = (u32 *)sqlite3_malloc(sizeof(u32)*nMatchinfo + nArg + 1);
+119134:  sCtx.aTerm = (TermOffset *)sqlite3_malloc(sizeof(TermOffset)*nToken);
+119731:  pNode = (RtreeNode *)sqlite3_malloc(sizeof(RtreeNode) + pRtree->iNodeSize);
+119776:      pNode = (RtreeNode *)sqlite3_malloc(sizeof(RtreeNode)+pRtree->iNodeSize);
+120089:  pCsr = (RtreeCursor *)sqlite3_malloc(sizeof(RtreeCursor));
+120489:  pGeom = (sqlite3_rtree_geometry *)sqlite3_malloc(
+120548:      pCsr->aConstraint = sqlite3_malloc(sizeof(RtreeConstraint)*argc);
+120895:      aCell = sqlite3_malloc(sizeof(RtreeCell)*nCell);
+121320:  aaSorted = (int **)sqlite3_malloc(nByte);
+121417:  aiUsed = sqlite3_malloc(sizeof(int)*nCell);
+121497:  aCell = sqlite3_malloc((sizeof(RtreeCell)+sizeof(int))*(nCell+1));
+121782:  aCell = (RtreeCell *)sqlite3_malloc(nCell * (
+122326:  pRtree = (Rtree *)sqlite3_malloc(sizeof(Rtree)+nDb+nName+2);
+122499:  pBlob = (RtreeMatchArg *)sqlite3_malloc(nBlob);
+122527:  pGeomCtx = (RtreeGeomCallback *)sqlite3_malloc(sizeof(RtreeGeomCallback));
+122896:  zOutput = sqlite3_malloc(nOutput);
+123112:  p = (IcuTokenizer *)sqlite3_malloc(sizeof(IcuTokenizer)+n);
+123166:  pCsr = (IcuCursor *)sqlite3_malloc(

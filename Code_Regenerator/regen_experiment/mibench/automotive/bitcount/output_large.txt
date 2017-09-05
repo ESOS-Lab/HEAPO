@@ -1,0 +1,12 @@
+Bit counter algorithm benchmark
+
+Optimized 1 bit/loop counter          > Time:   0.407 sec.; Bits: 18563087
+Ratko's mystery algorithm             > Time:   0.038 sec.; Bits: 17272864
+Recursive bit count by nybbles        > Time:   0.213 sec.; Bits: 17116098
+Non-recursive bit count by nybbles    > Time:   0.038 sec.; Bits: 18244704
+Non-recursive bit count by bytes (BW) > Time:   0.051 sec.; Bits: 18730970
+Non-recursive bit count by bytes (AR) > Time:   0.049 sec.; Bits: 16962481
+Shift and count bits                  > Time:   1.186 sec.; Bits: 17759895
+
+Best  > Ratko's mystery algorithm
+Worst > Shift and count bits

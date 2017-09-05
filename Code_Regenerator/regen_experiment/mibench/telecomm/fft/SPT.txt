@@ -1,0 +1,285 @@
+Total Memory Access Inst:319
+GV:3
+ST:279
+HP:0
+Unknown:37
+
+
+Ftn : CheckPointer
+	BB:1	 Vars :2
+-		1 , 1  : p.addr
+-		0 , 1  : name.addr
+	BB:2	 Vars :2
+-		1 , 0  : stderr
+-		1 , 0  : name.addr
+Ftn : Index_to_frequency
+	BB:4	 Vars :2
+-		1 , 1  : Index.addr
+-		1 , 1  : NumSamples.addr
+	BB:5	 Vars :1
+-		0 , 1  : retval
+	BB:6	 Vars :2
+-		1 , 0  : Index.addr
+-		1 , 0  : NumSamples.addr
+	BB:7	 Vars :3
+-		1 , 0  : Index.addr
+-		0 , 1  : retval
+-		1 , 0  : NumSamples.addr
+	BB:9	 Vars :3
+-		1 , 0  : Index.addr
+-		0 , 1  : retval
+-		2 , 0  : NumSamples.addr
+	BB:10	 Vars :1
+-		1 , 0  : retval
+Ftn : IsPowerOfTwo
+	BB:11	 Vars :1
+-		1 , 1  : x.addr
+	BB:12	 Vars :1
+-		0 , 1  : retval
+	BB:13	 Vars :1
+-		2 , 0  : x.addr
+	BB:14	 Vars :1
+-		0 , 1  : retval
+	BB:15	 Vars :1
+-		0 , 1  : retval
+	BB:16	 Vars :1
+-		1 , 0  : retval
+Ftn : NumberOfBitsNeeded
+	BB:17	 Vars :1
+-		1 , 1  : PowerOfTwo.addr
+	BB:18	 Vars :2
+-		1 , 0  : stderr
+-		1 , 0  : PowerOfTwo.addr
+	BB:19	 Vars :1
+-		0 , 1  : i
+	BB:20	 Vars :2
+-		1 , 0  : PowerOfTwo.addr
+-		1 , 0  : i
+	BB:21	 Vars :1
+-		1 , 0  : i
+	BB:23	 Vars :1
+-		1 , 1  : i
+Ftn : ReverseBits
+	BB:24	 Vars :4
+-		0 , 1  : index.addr
+-		0 , 1  : NumBits.addr
+-		0 , 1  : i
+-		0 , 1  : rev
+	BB:25	 Vars :2
+-		1 , 0  : NumBits.addr
+-		1 , 0  : i
+	BB:26	 Vars :2
+-		2 , 1  : index.addr
+-		1 , 1  : rev
+	BB:27	 Vars :1
+-		1 , 1  : i
+	BB:28	 Vars :1
+-		1 , 0  : rev
+Ftn : fft_float
+	BB:29	 Vars :7
+-		0 , 1  : ImagOut.addr
+-		1 , 1  : NumSamples.addr
+-		0 , 1  : InverseTransform.addr
+-		0 , 1  : RealIn.addr
+-		0 , 1  : ImagIn.addr
+-		0 , 1  : RealOut.addr
+-		0 , 1  : angle_numerator
+	BB:30	 Vars :2
+-		1 , 0  : stderr
+-		1 , 0  : NumSamples.addr
+	BB:31	 Vars :1
+-		1 , 0  : InverseTransform.addr
+	BB:32	 Vars :1
+-		1 , 1  : angle_numerator
+	BB:33	 Vars :6
+-		1 , 0  : ImagOut.addr
+-		0 , 1  : NumBits
+-		1 , 0  : NumSamples.addr
+-		1 , 0  : RealIn.addr
+-		1 , 0  : RealOut.addr
+-		0 , 1  : i
+	BB:34	 Vars :2
+-		1 , 0  : NumSamples.addr
+-		1 , 0  : i
+	BB:35	 Vars :6
+-		1 , 0  : NumBits
+-		1 , 0  : RealIn.addr
+-		1 , 0  : ImagIn.addr
+-		1 , 0  : RealOut.addr
+-		2 , 0  : i
+-		1 , 1  : j
+	BB:37	 Vars :2
+-		1 , 0  : ImagIn.addr
+-		1 , 0  : i
+	BB:38	 Vars :2
+-		1 , 0  : ImagOut.addr
+-		1 , 0  : j
+	BB:39	 Vars :1
+-		1 , 1  : i
+	BB:40	 Vars :2
+-		0 , 1  : BlockSize
+-		0 , 1  : BlockEnd
+	BB:41	 Vars :2
+-		1 , 0  : NumSamples.addr
+-		1 , 0  : BlockSize
+	BB:42	 Vars :9
+-		0 , 1  : sm2
+-		0 , 1  : sm1
+-		0 , 1  : cm2
+-		0 , 1  : i
+-		1 , 0  : BlockSize
+-		1 , 0  : angle_numerator
+-		4 , 1  : delta_angle
+-		1 , 1  : cm1
+-		0 , 1  : w
+	BB:43	 Vars :2
+-		1 , 0  : NumSamples.addr
+-		1 , 0  : i
+	BB:44	 Vars :9
+-		1 , 0  : sm2
+-		1 , 0  : sm1
+-		1 , 0  : cm2
+-		1 , 0  : i
+-		0 , 1  : j
+-		0 , 1  : n
+-		1 , 0  : cm1
+-		0 , 2  : ar
+-		0 , 2  : ai
+	BB:45	 Vars :2
+-		1 , 0  : n
+-		1 , 0  : BlockEnd
+	BB:46	 Vars :10
+-		5 , 0  : ImagOut.addr
+-		5 , 0  : RealOut.addr
+-		5 , 0  : j
+-		6 , 1  : k
+-		1 , 0  : BlockEnd
+-		2 , 1  : tr
+-		2 , 1  : ti
+-		2 , 0  : w
+-		6 , 3  : ar
+-		6 , 3  : ai
+	BB:47	 Vars :2
+-		1 , 1  : j
+-		1 , 1  : n
+	BB:49	 Vars :2
+-		1 , 1  : i
+-		1 , 0  : BlockSize
+	BB:50	 Vars :2
+-		1 , 0  : BlockSize
+-		0 , 1  : BlockEnd
+	BB:51	 Vars :1
+-		1 , 1  : BlockSize
+	BB:52	 Vars :1
+-		1 , 0  : InverseTransform.addr
+	BB:53	 Vars :3
+-		1 , 0  : NumSamples.addr
+-		0 , 1  : i
+-		0 , 1  : denom
+	BB:54	 Vars :2
+-		1 , 0  : NumSamples.addr
+-		1 , 0  : i
+	BB:55	 Vars :4
+-		1 , 0  : ImagOut.addr
+-		1 , 0  : RealOut.addr
+-		2 , 0  : i
+-		2 , 0  : denom
+	BB:56	 Vars :1
+-		1 , 1  : i
+Ftn : new_main
+	BB:59	 Vars :4
+-		0 , 1  : retval
+-		1 , 1  : argc.addr
+-		0 , 1  : argv.addr
+-		0 , 1  : invfft
+	BB:61	 Vars :1
+-		1 , 0  : argc.addr
+	BB:62	 Vars :2
+-		1 , 0  : argv.addr
+-		0 , 1  : invfft
+	BB:64	 Vars :10
+-		0 , 1  : RealOut
+-		2 , 0  : argv.addr
+-		4 , 1  : MAXSIZE
+-		2 , 1  : MAXWAVES
+-		0 , 1  : i
+-		0 , 1  : RealIn
+-		0 , 1  : ImagIn
+-		0 , 1  : ImagOut
+-		0 , 1  : coeff
+-		0 , 1  : amp
+	BB:65	 Vars :2
+-		1 , 0  : MAXWAVES
+-		1 , 0  : i
+	BB:66	 Vars :3
+-		2 , 0  : i
+-		1 , 0  : coeff
+-		1 , 0  : amp
+	BB:67	 Vars :1
+-		1 , 1  : i
+	BB:68	 Vars :1
+-		0 , 1  : i
+	BB:69	 Vars :2
+-		1 , 0  : MAXSIZE
+-		1 , 0  : i
+	BB:70	 Vars :3
+-		1 , 0  : i
+-		0 , 1  : j
+-		1 , 0  : RealIn
+	BB:71	 Vars :2
+-		1 , 0  : MAXWAVES
+-		1 , 0  : j
+	BB:73	 Vars :5
+-		2 , 0  : i
+-		2 , 0  : j
+-		1 , 0  : RealIn
+-		1 , 0  : coeff
+-		1 , 0  : amp
+	BB:74	 Vars :5
+-		2 , 0  : i
+-		2 , 0  : j
+-		1 , 0  : RealIn
+-		1 , 0  : coeff
+-		1 , 0  : amp
+	BB:75	 Vars :2
+-		1 , 0  : i
+-		1 , 0  : ImagIn
+	BB:76	 Vars :1
+-		1 , 1  : j
+	BB:78	 Vars :1
+-		1 , 1  : i
+	BB:79	 Vars :7
+-		1 , 0  : RealOut
+-		1 , 0  : MAXSIZE
+-		0 , 1  : i
+-		1 , 0  : RealIn
+-		1 , 0  : ImagIn
+-		1 , 0  : ImagOut
+-		1 , 0  : invfft
+	BB:80	 Vars :2
+-		1 , 0  : MAXSIZE
+-		1 , 0  : i
+	BB:81	 Vars :2
+-		1 , 0  : RealOut
+-		1 , 0  : i
+	BB:82	 Vars :1
+-		1 , 1  : i
+	BB:83	 Vars :1
+-		0 , 1  : i
+	BB:84	 Vars :2
+-		1 , 0  : MAXSIZE
+-		1 , 0  : i
+	BB:85	 Vars :2
+-		1 , 0  : i
+-		1 , 0  : ImagOut
+	BB:86	 Vars :1
+-		1 , 1  : i
+	BB:87	 Vars :6
+-		1 , 0  : RealOut
+-		1 , 0  : RealIn
+-		1 , 0  : ImagIn
+-		1 , 0  : ImagOut
+-		1 , 0  : coeff
+-		1 , 0  : amp
+	BB:88	 Vars :1
+-		1 , 0  : retval

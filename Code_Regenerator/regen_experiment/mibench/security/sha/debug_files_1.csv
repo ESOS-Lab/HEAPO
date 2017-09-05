@@ -1,0 +1,9 @@
+Global Variable Memory Region Profile Result
+
+Index,Read Count,Write Count,Memory Size,Name, Type  
+4,0,0,8,stdin,%struct._IO_FILE.1** 
+3,0,0,8,.str12,[28 x i8]* 
+2,0,0,8,.str1,[31 x i8]* 
+1,0,0,8,.str,[18 x i8]* 
+
+

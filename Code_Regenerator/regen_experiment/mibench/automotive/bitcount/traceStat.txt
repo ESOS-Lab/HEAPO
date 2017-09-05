@@ -1,0 +1,349 @@
+Totals GV:23
+ST:209
+HP:0
+Unknown:41
+Total Memory Access Inst:273
+
+
+BB:1
+	ST  Inst:   store i64 %x, i64* %x.addr, align 8 Source:   %x.addr = alloca i64, align 8
+	ST  Inst:   store i8* %0, i8** %Ptr, align 8, !dbg !163 Source:   %Ptr = alloca i8*, align 8
+	ST  Inst:   %1 = load i8** %Ptr, align 8, !dbg !166 Source:   %Ptr = alloca i8*, align 8
+	ST  Inst:   store i8* %incdec.ptr, i8** %Ptr, align 8, !dbg !166 Source:   %Ptr = alloca i8*, align 8
+	--  Inst:   %2 = load i8* %1, align 1, !dbg !166 Source: --
+	GV  Inst:   %3 = load i8* %arrayidx, align 1, !dbg !166 Source: @bits = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16
+	ST  Inst:   store i32 %conv, i32* %Accu, align 4, !dbg !166 Source:   %Accu = alloca i32, align 4
+	ST  Inst:   %4 = load i8** %Ptr, align 8, !dbg !167 Source:   %Ptr = alloca i8*, align 8
+	ST  Inst:   store i8* %incdec.ptr1, i8** %Ptr, align 8, !dbg !167 Source:   %Ptr = alloca i8*, align 8
+	--  Inst:   %5 = load i8* %4, align 1, !dbg !167 Source: --
+	GV  Inst:   %6 = load i8* %arrayidx3, align 1, !dbg !167 Source: @bits = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16
+	ST  Inst:   %7 = load i32* %Accu, align 4, !dbg !167 Source:   %Accu = alloca i32, align 4
+	ST  Inst:   store i32 %add, i32* %Accu, align 4, !dbg !167 Source:   %Accu = alloca i32, align 4
+	ST  Inst:   %8 = load i8** %Ptr, align 8, !dbg !168 Source:   %Ptr = alloca i8*, align 8
+	ST  Inst:   store i8* %incdec.ptr5, i8** %Ptr, align 8, !dbg !168 Source:   %Ptr = alloca i8*, align 8
+	--  Inst:   %9 = load i8* %8, align 1, !dbg !168 Source: --
+	GV  Inst:   %10 = load i8* %arrayidx7, align 1, !dbg !168 Source: @bits = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16
+	ST  Inst:   %11 = load i32* %Accu, align 4, !dbg !168 Source:   %Accu = alloca i32, align 4
+	ST  Inst:   store i32 %add9, i32* %Accu, align 4, !dbg !168 Source:   %Accu = alloca i32, align 4
+	ST  Inst:   %12 = load i8** %Ptr, align 8, !dbg !169 Source:   %Ptr = alloca i8*, align 8
+	--  Inst:   %13 = load i8* %12, align 1, !dbg !169 Source: --
+	GV  Inst:   %14 = load i8* %arrayidx11, align 1, !dbg !169 Source: @bits = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16
+	ST  Inst:   %15 = load i32* %Accu, align 4, !dbg !169 Source:   %Accu = alloca i32, align 4
+	ST  Inst:   store i32 %add13, i32* %Accu, align 4, !dbg !169 Source:   %Accu = alloca i32, align 4
+	ST  Inst:   %16 = load i32* %Accu, align 4, !dbg !170 Source:   %Accu = alloca i32, align 4
+BB:2
+	ST  Inst:   store i64 %x, i64* %x.addr, align 8 Source:   %x.addr = alloca i64, align 8
+	ST  Inst:   %0 = load i64* %x.addr, align 8, !dbg !169 Source:   %x.addr = alloca i64, align 8
+	--  Inst:   store i64 %0, i64* %y, align 8, !dbg !169 Source: --
+	--  Inst:   %1 = load i8* %arrayidx, align 1, !dbg !170 Source: --
+	GV  Inst:   %2 = load i8* %arrayidx1, align 1, !dbg !170 Source: @bits = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16
+	--  Inst:   %3 = load i8* %arrayidx3, align 1, !dbg !170 Source: --
+	GV  Inst:   %4 = load i8* %arrayidx5, align 1, !dbg !170 Source: @bits = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16
+	--  Inst:   %5 = load i8* %arrayidx8, align 1, !dbg !170 Source: --
+	GV  Inst:   %6 = load i8* %arrayidx10, align 1, !dbg !170 Source: @bits = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16
+	--  Inst:   %7 = load i8* %arrayidx14, align 1, !dbg !170 Source: --
+	GV  Inst:   %8 = load i8* %arrayidx16, align 1, !dbg !170 Source: @bits = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16
+BB:3
+	ST  Inst:   store i32 0, i32* %retval Source:   %retval = alloca i32, align 4
+	ST  Inst:   store i32 %argc, i32* %argc.addr, align 4 Source:   %argc.addr = alloca i32, align 4
+	ST  Inst:   store i8** %argv, i8*** %argv.addr, align 8 Source:   %argv.addr = alloca i8**, align 8
+	ST  Inst:   store double 0x7FEFFFFFFFFFFFFF, double* %cmin, align 8, !dbg !173 Source:   %cmin = alloca double, align 8
+	ST  Inst:   store double 0.000000e+00, double* %cmax, align 8, !dbg !173 Source:   %cmax = alloca double, align 8
+	ST  Inst:   %0 = load i32* %argc.addr, align 4, !dbg !190 Source:   %argc.addr = alloca i32, align 4
+BB:4
+	GV  Inst:   %1 = load %struct._IO_FILE.1** @stderr, align 8, !dbg !192 Source: @stderr = external global %struct._IO_FILE.1*
+BB:5
+	ST  Inst:   %2 = load i8*** %argv.addr, align 8, !dbg !195 Source:   %argv.addr = alloca i8**, align 8
+	--  Inst:   %3 = load i8** %arrayidx, align 8, !dbg !195 Source: --
+	ST  Inst:   store i32 %call1, i32* %iterations, align 4, !dbg !195 Source:   %iterations = alloca i32, align 4
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !197 Source:   %i = alloca i32, align 4
+BB:6
+	ST  Inst:   %4 = load i32* %i, align 4, !dbg !199 Source:   %i = alloca i32, align 4
+BB:7
+	ST  Inst:   store i64 %call4, i64* %start, align 8, !dbg !202 Source:   %start = alloca i64, align 8
+	ST  Inst:   store i64 0, i64* %n, align 8, !dbg !204 Source:   %n = alloca i64, align 8
+	ST  Inst:   store i64 0, i64* %j, align 8, !dbg !204 Source:   %j = alloca i64, align 8
+	ST  Inst:   store i64 %conv, i64* %seed, align 8, !dbg !206 Source:   %seed = alloca i64, align 8
+BB:8
+	ST  Inst:   %5 = load i64* %j, align 8, !dbg !207 Source:   %j = alloca i64, align 8
+	ST  Inst:   %6 = load i32* %iterations, align 4, !dbg !207 Source:   %iterations = alloca i32, align 4
+BB:9
+	ST  Inst:   %7 = load i32* %i, align 4, !dbg !210 Source:   %i = alloca i32, align 4
+	GV  Inst:   %8 = load i32 (i64)** %arrayidx11, align 8, !dbg !210 Source: @main.pBitCntFunc = internal global [7 x i32 (i64)*] [i32 (i64)* @bit_count_original, i32 (i64)* @bitcount_original, i32 (i64)* @ntbl_bitcnt_original, i32 (i64)* @ntbl_bitcount_original, i32 (i64)* @BW_btbl_bitcount_original, i32 (i64)* @AR_btbl_bitcount_original, i32 (i64)* @bit_shifter_original], align 16
+	ST  Inst:   %9 = load i64* %seed, align 8, !dbg !210 Source:   %seed = alloca i64, align 8
+	ST  Inst:   %10 = load i64* %n, align 8, !dbg !210 Source:   %n = alloca i64, align 8
+	ST  Inst:   store i64 %add, i64* %n, align 8, !dbg !210 Source:   %n = alloca i64, align 8
+BB:10
+	ST  Inst:   %11 = load i64* %j, align 8, !dbg !211 Source:   %j = alloca i64, align 8
+	ST  Inst:   store i64 %inc, i64* %j, align 8, !dbg !211 Source:   %j = alloca i64, align 8
+	ST  Inst:   %12 = load i64* %seed, align 8, !dbg !211 Source:   %seed = alloca i64, align 8
+	ST  Inst:   store i64 %add14, i64* %seed, align 8, !dbg !211 Source:   %seed = alloca i64, align 8
+BB:11
+	ST  Inst:   store i64 %call15, i64* %stop, align 8, !dbg !212 Source:   %stop = alloca i64, align 8
+	ST  Inst:   %13 = load i64* %stop, align 8, !dbg !213 Source:   %stop = alloca i64, align 8
+	ST  Inst:   %14 = load i64* %start, align 8, !dbg !213 Source:   %start = alloca i64, align 8
+	ST  Inst:   store double %div, double* %ct, align 8, !dbg !213 Source:   %ct = alloca double, align 8
+	ST  Inst:   %15 = load double* %ct, align 8, !dbg !214 Source:   %ct = alloca double, align 8
+	ST  Inst:   %16 = load double* %cmin, align 8, !dbg !214 Source:   %cmin = alloca double, align 8
+BB:12
+	ST  Inst:   %17 = load double* %ct, align 8, !dbg !216 Source:   %ct = alloca double, align 8
+	ST  Inst:   store double %17, double* %cmin, align 8, !dbg !216 Source:   %cmin = alloca double, align 8
+	ST  Inst:   %18 = load i32* %i, align 4, !dbg !218 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %18, i32* %cminix, align 4, !dbg !218 Source:   %cminix = alloca i32, align 4
+BB:13
+	ST  Inst:   %19 = load double* %ct, align 8, !dbg !220 Source:   %ct = alloca double, align 8
+	ST  Inst:   %20 = load double* %cmax, align 8, !dbg !220 Source:   %cmax = alloca double, align 8
+BB:14
+	ST  Inst:   %21 = load double* %ct, align 8, !dbg !222 Source:   %ct = alloca double, align 8
+	ST  Inst:   store double %21, double* %cmax, align 8, !dbg !222 Source:   %cmax = alloca double, align 8
+	ST  Inst:   %22 = load i32* %i, align 4, !dbg !224 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %22, i32* %cmaxix, align 4, !dbg !224 Source:   %cmaxix = alloca i32, align 4
+BB:15
+	ST  Inst:   %23 = load i32* %i, align 4, !dbg !226 Source:   %i = alloca i32, align 4
+	GV  Inst:   %24 = load i8** %arrayidx26, align 8, !dbg !226 Source: @main.text = internal global [7 x i8*] [i8* getelementptr inbounds ([29 x i8]* @.str1, i32 0, i32 0), i8* getelementptr inbounds ([26 x i8]* @.str16, i32 0, i32 0), i8* getelementptr inbounds ([31 x i8]* @.str2, i32 0, i32 0), i8* getelementptr inbounds ([35 x i8]* @.str37, i32 0, i32 0), i8* getelementptr inbounds ([38 x i8]* @.str48, i32 0, i32 0), i8* getelementptr inbounds ([38 x i8]* @.str59, i32 0, i32 0), i8* getelementptr inbounds ([21 x i8]* @.str610, i32 0, i32 0)], align 16
+	ST  Inst:   %25 = load double* %ct, align 8, !dbg !226 Source:   %ct = alloca double, align 8
+	ST  Inst:   %26 = load i64* %n, align 8, !dbg !226 Source:   %n = alloca i64, align 8
+BB:16
+	ST  Inst:   %27 = load i32* %i, align 4, !dbg !228 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc29, i32* %i, align 4, !dbg !228 Source:   %i = alloca i32, align 4
+BB:17
+	ST  Inst:   %28 = load i32* %cminix, align 4, !dbg !229 Source:   %cminix = alloca i32, align 4
+	GV  Inst:   %29 = load i8** %arrayidx32, align 8, !dbg !229 Source: @main.text = internal global [7 x i8*] [i8* getelementptr inbounds ([29 x i8]* @.str1, i32 0, i32 0), i8* getelementptr inbounds ([26 x i8]* @.str16, i32 0, i32 0), i8* getelementptr inbounds ([31 x i8]* @.str2, i32 0, i32 0), i8* getelementptr inbounds ([35 x i8]* @.str37, i32 0, i32 0), i8* getelementptr inbounds ([38 x i8]* @.str48, i32 0, i32 0), i8* getelementptr inbounds ([38 x i8]* @.str59, i32 0, i32 0), i8* getelementptr inbounds ([21 x i8]* @.str610, i32 0, i32 0)], align 16
+	ST  Inst:   %30 = load i32* %cmaxix, align 4, !dbg !230 Source:   %cmaxix = alloca i32, align 4
+	GV  Inst:   %31 = load i8** %arrayidx35, align 8, !dbg !230 Source: @main.text = internal global [7 x i8*] [i8* getelementptr inbounds ([29 x i8]* @.str1, i32 0, i32 0), i8* getelementptr inbounds ([26 x i8]* @.str16, i32 0, i32 0), i8* getelementptr inbounds ([31 x i8]* @.str2, i32 0, i32 0), i8* getelementptr inbounds ([35 x i8]* @.str37, i32 0, i32 0), i8* getelementptr inbounds ([38 x i8]* @.str48, i32 0, i32 0), i8* getelementptr inbounds ([38 x i8]* @.str59, i32 0, i32 0), i8* getelementptr inbounds ([21 x i8]* @.str610, i32 0, i32 0)], align 16
+BB:18
+	ST  Inst:   store %struct.bfile.2* %bf, %struct.bfile.2** %bf.addr, align 8 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	ST  Inst:   %0 = load %struct.bfile.2** %bf.addr, align 8, !dbg !211 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	--  Inst:   %1 = load %struct._IO_FILE.1** %file, align 8, !dbg !211 Source: --
+	ST  Inst:   %2 = load %struct.bfile.2** %bf.addr, align 8, !dbg !212 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+BB:19
+	ST  Inst:   store i8* %name, i8** %name.addr, align 8 Source:   %name.addr = alloca i8*, align 8
+	ST  Inst:   store i8* %mode, i8** %mode.addr, align 8 Source:   %mode.addr = alloca i8*, align 8
+	ST  Inst:   store %struct.bfile.2* %0, %struct.bfile.2** %bf, align 8, !dbg !215 Source:   %bf = alloca %struct.bfile.2*, align 8
+	ST  Inst:   %1 = load %struct.bfile.2** %bf, align 8, !dbg !216 Source:   %bf = alloca %struct.bfile.2*, align 8
+BB:20
+	ST  Inst:   store %struct.bfile.2* null, %struct.bfile.2** %retval, !dbg !218 Source:   %retval = alloca %struct.bfile.2*, align 8
+BB:21
+	ST  Inst:   %2 = load i8** %name.addr, align 8, !dbg !219 Source:   %name.addr = alloca i8*, align 8
+	ST  Inst:   %3 = load i8** %mode.addr, align 8, !dbg !219 Source:   %mode.addr = alloca i8*, align 8
+	ST  Inst:   %4 = load %struct.bfile.2** %bf, align 8, !dbg !219 Source:   %bf = alloca %struct.bfile.2*, align 8
+	--  Inst:   store %struct._IO_FILE.1* %call1, %struct._IO_FILE.1** %file, align 8, !dbg !219 Source: --
+	ST  Inst:   %5 = load %struct.bfile.2** %bf, align 8, !dbg !220 Source:   %bf = alloca %struct.bfile.2*, align 8
+	--  Inst:   %6 = load %struct._IO_FILE.1** %file2, align 8, !dbg !220 Source: --
+BB:22
+	ST  Inst:   %7 = load %struct.bfile.2** %bf, align 8, !dbg !222 Source:   %bf = alloca %struct.bfile.2*, align 8
+	ST  Inst:   store %struct.bfile.2* null, %struct.bfile.2** %retval, !dbg !224 Source:   %retval = alloca %struct.bfile.2*, align 8
+BB:23
+	ST  Inst:   %9 = load %struct.bfile.2** %bf, align 8, !dbg !225 Source:   %bf = alloca %struct.bfile.2*, align 8
+	--  Inst:   store i8 0, i8* %rcnt, align 1, !dbg !225 Source: --
+	ST  Inst:   %10 = load %struct.bfile.2** %bf, align 8, !dbg !226 Source:   %bf = alloca %struct.bfile.2*, align 8
+	--  Inst:   store i8 0, i8* %wcnt, align 1, !dbg !226 Source: --
+	ST  Inst:   %11 = load %struct.bfile.2** %bf, align 8, !dbg !227 Source:   %bf = alloca %struct.bfile.2*, align 8
+	ST  Inst:   store %struct.bfile.2* %11, %struct.bfile.2** %retval, !dbg !227 Source:   %retval = alloca %struct.bfile.2*, align 8
+BB:24
+	ST  Inst:   %12 = load %struct.bfile.2** %retval, !dbg !228 Source:   %retval = alloca %struct.bfile.2*, align 8
+BB:25
+	ST  Inst:   store %struct.bfile.2* %bf, %struct.bfile.2** %bf.addr, align 8 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	ST  Inst:   %0 = load %struct.bfile.2** %bf.addr, align 8, !dbg !211 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	--  Inst:   %1 = load i8* %rcnt, align 1, !dbg !211 Source: --
+BB:26
+	ST  Inst:   %2 = load %struct.bfile.2** %bf.addr, align 8, !dbg !213 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	--  Inst:   %3 = load %struct._IO_FILE.1** %file, align 8, !dbg !213 Source: --
+	ST  Inst:   %4 = load %struct.bfile.2** %bf.addr, align 8, !dbg !213 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	--  Inst:   store i8 %conv2, i8* %rbuf, align 1, !dbg !213 Source: --
+	ST  Inst:   %5 = load %struct.bfile.2** %bf.addr, align 8, !dbg !215 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	--  Inst:   store i8 8, i8* %rcnt3, align 1, !dbg !215 Source: --
+BB:27
+	ST  Inst:   %6 = load %struct.bfile.2** %bf.addr, align 8, !dbg !217 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	--  Inst:   %7 = load i8* %rcnt4, align 1, !dbg !217 Source: --
+	--  Inst:   store i8 %dec, i8* %rcnt4, align 1, !dbg !217 Source: --
+	ST  Inst:   %8 = load %struct.bfile.2** %bf.addr, align 8, !dbg !218 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	--  Inst:   %9 = load i8* %rbuf5, align 1, !dbg !218 Source: --
+	ST  Inst:   %10 = load %struct.bfile.2** %bf.addr, align 8, !dbg !218 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	--  Inst:   %11 = load i8* %rcnt7, align 1, !dbg !218 Source: --
+BB:28
+	ST  Inst:   store i32 %bit, i32* %bit.addr, align 4 Source:   %bit.addr = alloca i32, align 4
+	ST  Inst:   store %struct.bfile.2* %bf, %struct.bfile.2** %bf.addr, align 8 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	ST  Inst:   %0 = load %struct.bfile.2** %bf.addr, align 8, !dbg !213 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	--  Inst:   %1 = load i8* %wcnt, align 1, !dbg !213 Source: --
+BB:29
+	ST  Inst:   %2 = load %struct.bfile.2** %bf.addr, align 8, !dbg !215 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	--  Inst:   %3 = load i8* %wbuf, align 1, !dbg !215 Source: --
+	ST  Inst:   %4 = load %struct.bfile.2** %bf.addr, align 8, !dbg !215 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	--  Inst:   %5 = load %struct._IO_FILE.1** %file, align 8, !dbg !215 Source: --
+	ST  Inst:   %6 = load %struct.bfile.2** %bf.addr, align 8, !dbg !217 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	--  Inst:   store i8 0, i8* %wcnt3, align 1, !dbg !217 Source: --
+BB:30
+	ST  Inst:   %7 = load %struct.bfile.2** %bf.addr, align 8, !dbg !219 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	--  Inst:   %8 = load i8* %wcnt4, align 1, !dbg !219 Source: --
+	--  Inst:   store i8 %inc, i8* %wcnt4, align 1, !dbg !219 Source: --
+	ST  Inst:   %9 = load %struct.bfile.2** %bf.addr, align 8, !dbg !220 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	--  Inst:   %10 = load i8* %wbuf5, align 1, !dbg !220 Source: --
+	--  Inst:   store i8 %conv7, i8* %wbuf5, align 1, !dbg !220 Source: --
+	ST  Inst:   %11 = load i32* %bit.addr, align 4, !dbg !221 Source:   %bit.addr = alloca i32, align 4
+	ST  Inst:   %12 = load %struct.bfile.2** %bf.addr, align 8, !dbg !221 Source:   %bf.addr = alloca %struct.bfile.2*, align 8
+	--  Inst:   %13 = load i8* %wbuf8, align 1, !dbg !221 Source: --
+	--  Inst:   store i8 %conv10, i8* %wbuf8, align 1, !dbg !221 Source: --
+BB:31
+	ST  Inst:   store i64 %x, i64* %x.addr, align 8 Source:   %x.addr = alloca i64, align 8
+	ST  Inst:   store i32 0, i32* %n, align 4, !dbg !161 Source:   %n = alloca i32, align 4
+	ST  Inst:   %0 = load i64* %x.addr, align 8, !dbg !162 Source:   %x.addr = alloca i64, align 8
+BB:32
+BB:33
+	ST  Inst:   %1 = load i32* %n, align 4, !dbg !166 Source:   %n = alloca i32, align 4
+	ST  Inst:   store i32 %inc, i32* %n, align 4, !dbg !166 Source:   %n = alloca i32, align 4
+BB:34
+	ST  Inst:   %2 = load i64* %x.addr, align 8, !dbg !168 Source:   %x.addr = alloca i64, align 8
+	ST  Inst:   %3 = load i64* %x.addr, align 8, !dbg !168 Source:   %x.addr = alloca i64, align 8
+	ST  Inst:   store i64 %and, i64* %x.addr, align 8, !dbg !168 Source:   %x.addr = alloca i64, align 8
+BB:35
+BB:36
+	ST  Inst:   %4 = load i32* %n, align 4, !dbg !172 Source:   %n = alloca i32, align 4
+BB:37
+	ST  Inst:   store i64 %x, i64* %x.addr, align 8 Source:   %x.addr = alloca i64, align 8
+	ST  Inst:   store i32 0, i32* %n, align 4, !dbg !163 Source:   %n = alloca i32, align 4
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !163 Source:   %i = alloca i32, align 4
+BB:38
+	ST  Inst:   %0 = load i64* %x.addr, align 8, !dbg !165 Source:   %x.addr = alloca i64, align 8
+BB:39
+	ST  Inst:   %1 = load i32* %i, align 4, !dbg !168 Source:   %i = alloca i32, align 4
+BB:40
+BB:41
+	ST  Inst:   %3 = load i64* %x.addr, align 8, !dbg !172 Source:   %x.addr = alloca i64, align 8
+	ST  Inst:   %4 = load i32* %n, align 4, !dbg !172 Source:   %n = alloca i32, align 4
+	ST  Inst:   store i32 %add, i32* %n, align 4, !dbg !172 Source:   %n = alloca i32, align 4
+BB:42
+	ST  Inst:   %5 = load i32* %i, align 4, !dbg !173 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc, i32* %i, align 4, !dbg !173 Source:   %i = alloca i32, align 4
+	ST  Inst:   %6 = load i64* %x.addr, align 8, !dbg !173 Source:   %x.addr = alloca i64, align 8
+	ST  Inst:   store i64 %shr, i64* %x.addr, align 8, !dbg !173 Source:   %x.addr = alloca i64, align 8
+BB:43
+	ST  Inst:   %7 = load i32* %n, align 4, !dbg !174 Source:   %n = alloca i32, align 4
+BB:44
+	ST  Inst:   store i64 %i, i64* %i.addr, align 8 Source:   %i.addr = alloca i64, align 8
+	ST  Inst:   %0 = load i64* %i.addr, align 8, !dbg !159 Source:   %i.addr = alloca i64, align 8
+	ST  Inst:   %1 = load i64* %i.addr, align 8, !dbg !159 Source:   %i.addr = alloca i64, align 8
+	ST  Inst:   store i64 %add, i64* %i.addr, align 8, !dbg !159 Source:   %i.addr = alloca i64, align 8
+	ST  Inst:   %2 = load i64* %i.addr, align 8, !dbg !160 Source:   %i.addr = alloca i64, align 8
+	ST  Inst:   %3 = load i64* %i.addr, align 8, !dbg !160 Source:   %i.addr = alloca i64, align 8
+	ST  Inst:   store i64 %add5, i64* %i.addr, align 8, !dbg !160 Source:   %i.addr = alloca i64, align 8
+	ST  Inst:   %4 = load i64* %i.addr, align 8, !dbg !161 Source:   %i.addr = alloca i64, align 8
+	ST  Inst:   %5 = load i64* %i.addr, align 8, !dbg !161 Source:   %i.addr = alloca i64, align 8
+	ST  Inst:   store i64 %add9, i64* %i.addr, align 8, !dbg !161 Source:   %i.addr = alloca i64, align 8
+	ST  Inst:   %6 = load i64* %i.addr, align 8, !dbg !162 Source:   %i.addr = alloca i64, align 8
+	ST  Inst:   %7 = load i64* %i.addr, align 8, !dbg !162 Source:   %i.addr = alloca i64, align 8
+	ST  Inst:   store i64 %add13, i64* %i.addr, align 8, !dbg !162 Source:   %i.addr = alloca i64, align 8
+	ST  Inst:   %8 = load i64* %i.addr, align 8, !dbg !163 Source:   %i.addr = alloca i64, align 8
+	ST  Inst:   %9 = load i64* %i.addr, align 8, !dbg !163 Source:   %i.addr = alloca i64, align 8
+	ST  Inst:   store i64 %add17, i64* %i.addr, align 8, !dbg !163 Source:   %i.addr = alloca i64, align 8
+	ST  Inst:   %10 = load i64* %i.addr, align 8, !dbg !164 Source:   %i.addr = alloca i64, align 8
+BB:45
+	ST  Inst:   store i8* %str, i8** %str.addr, align 8 Source:   %str.addr = alloca i8*, align 8
+	ST  Inst:   store i64 %byze, i64* %byze.addr, align 8 Source:   %byze.addr = alloca i64, align 8
+	ST  Inst:   store i32 %biz, i32* %biz.addr, align 4 Source:   %biz.addr = alloca i32, align 4
+	ST  Inst:   store i32 %strwid, i32* %strwid.addr, align 4 Source:   %strwid.addr = alloca i32, align 4
+	ST  Inst:   %0 = load i32* %strwid.addr, align 4, !dbg !169 Source:   %strwid.addr = alloca i32, align 4
+	ST  Inst:   %1 = load i32* %biz.addr, align 4, !dbg !169 Source:   %biz.addr = alloca i32, align 4
+	ST  Inst:   %2 = load i32* %biz.addr, align 4, !dbg !169 Source:   %biz.addr = alloca i32, align 4
+	ST  Inst:   %3 = load i32* %biz.addr, align 4, !dbg !169 Source:   %biz.addr = alloca i32, align 4
+	ST  Inst:   store i32 %sub1, i32* %j, align 4, !dbg !169 Source:   %j = alloca i32, align 4
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !170 Source:   %i = alloca i32, align 4
+BB:46
+	ST  Inst:   %4 = load i32* %i, align 4, !dbg !172 Source:   %i = alloca i32, align 4
+	ST  Inst:   %5 = load i32* %j, align 4, !dbg !172 Source:   %j = alloca i32, align 4
+BB:47
+	ST  Inst:   %6 = load i8** %str.addr, align 8, !dbg !175 Source:   %str.addr = alloca i8*, align 8
+	ST  Inst:   store i8* %incdec.ptr, i8** %str.addr, align 8, !dbg !175 Source:   %str.addr = alloca i8*, align 8
+	--  Inst:   store i8 32, i8* %6, align 1, !dbg !175 Source: --
+BB:48
+	ST  Inst:   %7 = load i32* %i, align 4, !dbg !176 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc, i32* %i, align 4, !dbg !176 Source:   %i = alloca i32, align 4
+BB:49
+BB:50
+	ST  Inst:   %8 = load i32* %biz.addr, align 4, !dbg !178 Source:   %biz.addr = alloca i32, align 4
+	ST  Inst:   store i32 %dec, i32* %biz.addr, align 4, !dbg !178 Source:   %biz.addr = alloca i32, align 4
+BB:51
+	ST  Inst:   %9 = load i64* %byze.addr, align 8, !dbg !180 Source:   %byze.addr = alloca i64, align 8
+	ST  Inst:   %10 = load i32* %biz.addr, align 4, !dbg !180 Source:   %biz.addr = alloca i32, align 4
+	ST  Inst:   %11 = load i8** %str.addr, align 8, !dbg !180 Source:   %str.addr = alloca i8*, align 8
+	ST  Inst:   store i8* %incdec.ptr5, i8** %str.addr, align 8, !dbg !180 Source:   %str.addr = alloca i8*, align 8
+	--  Inst:   store i8 %conv, i8* %11, align 1, !dbg !180 Source: --
+	ST  Inst:   %12 = load i32* %biz.addr, align 4, !dbg !182 Source:   %biz.addr = alloca i32, align 4
+BB:52
+	ST  Inst:   %13 = load i32* %biz.addr, align 4, !dbg !184 Source:   %biz.addr = alloca i32, align 4
+BB:53
+	ST  Inst:   %14 = load i8** %str.addr, align 8, !dbg !186 Source:   %str.addr = alloca i8*, align 8
+	ST  Inst:   store i8* %incdec.ptr9, i8** %str.addr, align 8, !dbg !186 Source:   %str.addr = alloca i8*, align 8
+	--  Inst:   store i8 32, i8* %14, align 1, !dbg !186 Source: --
+BB:54
+BB:55
+	ST  Inst:   %15 = load i8** %str.addr, align 8, !dbg !188 Source:   %str.addr = alloca i8*, align 8
+	--  Inst:   store i8 0, i8* %15, align 1, !dbg !188 Source: --
+BB:56
+	ST  Inst:   store i8* %cptr, i8** %cptr.addr, align 8 Source:   %cptr.addr = alloca i8*, align 8
+	ST  Inst:   store i32 0, i32* %j, align 4, !dbg !163 Source:   %j = alloca i32, align 4
+BB:57
+	ST  Inst:   %0 = load i8** %cptr.addr, align 8, !dbg !165 Source:   %cptr.addr = alloca i8*, align 8
+BB:58
+	ST  Inst:   %1 = load i8** %cptr.addr, align 8, !dbg !167 Source:   %cptr.addr = alloca i8*, align 8
+	--  Inst:   %2 = load i8* %1, align 1, !dbg !167 Source: --
+BB:59
+	ST  Inst:   %3 = load i8** %cptr.addr, align 8, !dbg !169 Source:   %cptr.addr = alloca i8*, align 8
+	--  Inst:   %4 = load i8* %3, align 1, !dbg !169 Source: --
+BB:60
+BB:61
+	ST  Inst:   %6 = load i8** %cptr.addr, align 8, !dbg !174 Source:   %cptr.addr = alloca i8*, align 8
+	ST  Inst:   store i8* %incdec.ptr, i8** %cptr.addr, align 8, !dbg !174 Source:   %cptr.addr = alloca i8*, align 8
+	--  Inst:   %7 = load i8* %6, align 1, !dbg !174 Source: --
+	ST  Inst:   store i32 %sub, i32* %i, align 4, !dbg !174 Source:   %i = alloca i32, align 4
+	ST  Inst:   %8 = load i32* %j, align 4, !dbg !176 Source:   %j = alloca i32, align 4
+	ST  Inst:   store i32 %shl, i32* %j, align 4, !dbg !176 Source:   %j = alloca i32, align 4
+	ST  Inst:   %9 = load i32* %i, align 4, !dbg !177 Source:   %i = alloca i32, align 4
+	ST  Inst:   %10 = load i32* %j, align 4, !dbg !177 Source:   %j = alloca i32, align 4
+	ST  Inst:   store i32 %or, i32* %j, align 4, !dbg !177 Source:   %j = alloca i32, align 4
+BB:62
+	ST  Inst:   %11 = load i32* %j, align 4, !dbg !179 Source:   %j = alloca i32, align 4
+BB:63
+	ST  Inst:   store i64 %x, i64* %x.addr, align 8 Source:   %x.addr = alloca i64, align 8
+	--  Inst:   %1 = load i8* %arrayidx, align 1, !dbg !161 Source: --
+	GV  Inst:   %2 = load i8* %arrayidx1, align 1, !dbg !161 Source: @bits1 = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16
+	ST  Inst:   store i32 %conv2, i32* %cnt, align 4, !dbg !161 Source:   %cnt = alloca i32, align 4
+	ST  Inst:   %3 = load i64* %x.addr, align 8, !dbg !162 Source:   %x.addr = alloca i64, align 8
+	ST  Inst:   store i64 %shr, i64* %x.addr, align 8, !dbg !162 Source:   %x.addr = alloca i64, align 8
+BB:64
+	ST  Inst:   %4 = load i64* %x.addr, align 8, !dbg !164 Source:   %x.addr = alloca i64, align 8
+	ST  Inst:   %6 = load i32* %cnt, align 4, !dbg !164 Source:   %cnt = alloca i32, align 4
+	ST  Inst:   store i32 %add, i32* %cnt, align 4, !dbg !164 Source:   %cnt = alloca i32, align 4
+BB:65
+	ST  Inst:   %7 = load i32* %cnt, align 4, !dbg !165 Source:   %cnt = alloca i32, align 4
+BB:66
+	ST  Inst:   store i64 %x, i64* %x.addr, align 8 Source:   %x.addr = alloca i64, align 8
+	ST  Inst:   %0 = load i64* %x.addr, align 8, !dbg !161 Source:   %x.addr = alloca i64, align 8
+	GV  Inst:   %1 = load i8* %arrayidx, align 1, !dbg !161 Source: @bits1 = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16
+	ST  Inst:   store i32 %conv1, i32* %cnt, align 4, !dbg !161 Source:   %cnt = alloca i32, align 4
+	ST  Inst:   %2 = load i64* %x.addr, align 8, !dbg !162 Source:   %x.addr = alloca i64, align 8
+	ST  Inst:   store i64 %shr, i64* %x.addr, align 8, !dbg !162 Source:   %x.addr = alloca i64, align 8
+BB:67
+	ST  Inst:   %3 = load i64* %x.addr, align 8, !dbg !164 Source:   %x.addr = alloca i64, align 8
+	ST  Inst:   %5 = load i32* %cnt, align 4, !dbg !164 Source:   %cnt = alloca i32, align 4
+	ST  Inst:   store i32 %add, i32* %cnt, align 4, !dbg !164 Source:   %cnt = alloca i32, align 4
+BB:68
+	ST  Inst:   %6 = load i32* %cnt, align 4, !dbg !165 Source:   %cnt = alloca i32, align 4
+BB:69
+	ST  Inst:   store i64 %x, i64* %x.addr, align 8 Source:   %x.addr = alloca i64, align 8
+	ST  Inst:   %0 = load i64* %x.addr, align 8, !dbg !159 Source:   %x.addr = alloca i64, align 8
+	GV  Inst:   %1 = load i8* %arrayidx, align 1, !dbg !159 Source: @bits = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16
+	ST  Inst:   %2 = load i64* %x.addr, align 8, !dbg !159 Source:   %x.addr = alloca i64, align 8
+	GV  Inst:   %3 = load i8* %arrayidx5, align 1, !dbg !159 Source: @bits = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16
+	ST  Inst:   %4 = load i64* %x.addr, align 8, !dbg !159 Source:   %x.addr = alloca i64, align 8
+	GV  Inst:   %5 = load i8* %arrayidx11, align 1, !dbg !159 Source: @bits = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16
+	ST  Inst:   %6 = load i64* %x.addr, align 8, !dbg !159 Source:   %x.addr = alloca i64, align 8
+	GV  Inst:   %7 = load i8* %arrayidx18, align 1, !dbg !159 Source: @bits = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16
+	ST  Inst:   %8 = load i64* %x.addr, align 8, !dbg !159 Source:   %x.addr = alloca i64, align 8
+	GV  Inst:   %9 = load i8* %arrayidx25, align 1, !dbg !159 Source: @bits = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16
+	ST  Inst:   %10 = load i64* %x.addr, align 8, !dbg !159 Source:   %x.addr = alloca i64, align 8
+	GV  Inst:   %11 = load i8* %arrayidx32, align 1, !dbg !159 Source: @bits = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16
+	ST  Inst:   %12 = load i64* %x.addr, align 8, !dbg !159 Source:   %x.addr = alloca i64, align 8
+	GV  Inst:   %13 = load i8* %arrayidx39, align 1, !dbg !159 Source: @bits = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16
+	ST  Inst:   %14 = load i64* %x.addr, align 8, !dbg !159 Source:   %x.addr = alloca i64, align 8
+	GV  Inst:   %15 = load i8* %arrayidx46, align 1, !dbg !159 Source: @bits = internal global [256 x i8] c"\00\01\01\02\01\02\02\03\01\02\02\03\02\03\03\04\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\01\02\02\03\02\03\03\04\02\03\03\04\03\04\04\05\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\02\03\03\04\03\04\04\05\03\04\04\05\04\05\05\06\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\03\04\04\05\04\05\05\06\04\05\05\06\05\06\06\07\04\05\05\06\05\06\06\07\05\06\06\07\06\07\07\08", align 16

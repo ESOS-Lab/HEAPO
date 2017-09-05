@@ -1,0 +1,28 @@
+Num of threads ,1
+Thread,Call to Malloc,Call to Free,No. Heap Allo at Peak,Searches,Search in Addr Range,Not in Addr Range,Search Miss,Cache Hits ,Cache Updates
+0,0,0,0,0,0,0,0,0,0
+All threads,0,0
+
+Application RunTime,0.000522 
+
+Heap Variable Memory Region Profile Result
+
+Index,Read Count,Write Count,Pointer Name,Pointer Type,Function Name,Line Number,Source File,HitCount,Min Size,Max Size,By
+1,0,0,,,init_file,785,mobibench.c,0,0,0,malloc
+2,0,0,,,initfile,513,mobibench.c,0,0,0,malloc
+3,0,0,,,replay_script,1865,mobibench.c,0,0,0,malloc
+4,0,0,,,replay_script,1920,mobibench.c,0,0,0,malloc
+5,0,0,,,replay_script,1891,mobibench.c,0,0,0,malloc
+6,0,0,,,replay_script,1896,mobibench.c,0,0,0,malloc
+7,0,0,,,replay_script,2004,mobibench.c,0,0,0,malloc
+8,0,0,,,replay_script,2011,mobibench.c,0,0,0,malloc
+9,0,0,,,replay_script,2019,mobibench.c,0,0,0,malloc
+10,0,0,,,replay_script,2027,mobibench.c,0,0,0,malloc
+11,0,0,,,replay_script,2035,mobibench.c,0,0,0,malloc
+12,0,0,,,replay_script,2036,mobibench.c,0,0,0,malloc
+13,0,0,,,sqlite3MemMalloc,14293,sqlite3.c,0,0,0,malloc
+14,0,0,,,thread_main,885,mobibench.c,0,0,0,malloc
+15,0,0,,,thread_main,886,mobibench.c,0,0,0,malloc
+16,0,0,,,thread_main,987,mobibench.c,0,0,0,malloc
+
+

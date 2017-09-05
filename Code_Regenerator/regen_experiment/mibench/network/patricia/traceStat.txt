@@ -1,0 +1,644 @@
+Totals GV:1
+ST:325
+HP:0
+Unknown:161
+Total Memory Access Inst:487
+
+
+BB:1
+	ST  Inst:   store i32 0, i32* %retval Source:   %retval = alloca i32, align 4
+	ST  Inst:   store i32 %argc, i32* %argc.addr, align 4 Source:   %argc.addr = alloca i32, align 4
+	ST  Inst:   store i8** %argv, i8*** %argv.addr, align 8 Source:   %argv.addr = alloca i8**, align 8
+	ST  Inst:   store i64 4294967295, i64* %mask, align 8, !dbg !160 Source:   %mask = alloca i64, align 8
+	ST  Inst:   %0 = load i32* %argc.addr, align 4, !dbg !164 Source:   %argc.addr = alloca i32, align 4
+BB:2
+	ST  Inst:   %1 = load i8*** %argv.addr, align 8, !dbg !166 Source:   %argv.addr = alloca i8**, align 8
+	--  Inst:   %2 = load i8** %arrayidx, align 8, !dbg !166 Source: --
+BB:3
+	ST  Inst:   %3 = load i8*** %argv.addr, align 8, !dbg !169 Source:   %argv.addr = alloca i8**, align 8
+	--  Inst:   %4 = load i8** %arrayidx1, align 8, !dbg !169 Source: --
+	ST  Inst:   store %struct._IO_FILE.1* %call2, %struct._IO_FILE.1** %fp, align 8, !dbg !169 Source:   %fp = alloca %struct._IO_FILE.1*, align 8
+BB:4
+	ST  Inst:   %5 = load i8*** %argv.addr, align 8, !dbg !171 Source:   %argv.addr = alloca i8**, align 8
+	--  Inst:   %6 = load i8** %arrayidx5, align 8, !dbg !171 Source: --
+BB:5
+	ST  Inst:   store %struct.ptree.3* %7, %struct.ptree.3** %phead, align 8, !dbg !174 Source:   %phead = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %8 = load %struct.ptree.3** %phead, align 8, !dbg !175 Source:   %phead = alloca %struct.ptree.3*, align 8
+BB:6
+BB:7
+	ST  Inst:   %9 = load %struct.ptree.3** %phead, align 8, !dbg !180 Source:   %phead = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %12 = load %struct.ptree.3** %phead, align 8, !dbg !181 Source:   %phead = alloca %struct.ptree.3*, align 8
+	--  Inst:   store %struct.ptree_mask.2* %11, %struct.ptree_mask.2** %p_m, align 8, !dbg !181 Source: --
+	ST  Inst:   %13 = load %struct.ptree.3** %phead, align 8, !dbg !182 Source:   %phead = alloca %struct.ptree.3*, align 8
+	--  Inst:   %14 = load %struct.ptree_mask.2** %p_m12, align 8, !dbg !182 Source: --
+BB:8
+BB:9
+	ST  Inst:   %15 = load %struct.ptree.3** %phead, align 8, !dbg !187 Source:   %phead = alloca %struct.ptree.3*, align 8
+	--  Inst:   %16 = load %struct.ptree_mask.2** %p_m16, align 8, !dbg !187 Source: --
+	ST  Inst:   %18 = load %struct.ptree.3** %phead, align 8, !dbg !188 Source:   %phead = alloca %struct.ptree.3*, align 8
+	--  Inst:   %19 = load %struct.ptree_mask.2** %p_m17, align 8, !dbg !188 Source: --
+	ST  Inst:   store %struct.ptree_mask.2* %19, %struct.ptree_mask.2** %pm, align 8, !dbg !188 Source:   %pm = alloca %struct.ptree_mask.2*, align 8
+	ST  Inst:   %22 = load %struct.ptree_mask.2** %pm, align 8, !dbg !189 Source:   %pm = alloca %struct.ptree_mask.2*, align 8
+	--  Inst:   store i8* %21, i8** %pm_data, align 8, !dbg !189 Source: --
+	ST  Inst:   %23 = load %struct.ptree_mask.2** %pm, align 8, !dbg !190 Source:   %pm = alloca %struct.ptree_mask.2*, align 8
+	--  Inst:   %24 = load i8** %pm_data19, align 8, !dbg !190 Source: --
+BB:10
+BB:11
+	ST  Inst:   %25 = load %struct.ptree_mask.2** %pm, align 8, !dbg !195 Source:   %pm = alloca %struct.ptree_mask.2*, align 8
+	--  Inst:   %26 = load i8** %pm_data23, align 8, !dbg !195 Source: --
+	ST  Inst:   %27 = load %struct.ptree.3** %phead, align 8, !dbg !196 Source:   %phead = alloca %struct.ptree.3*, align 8
+	--  Inst:   store i8 1, i8* %p_mlen, align 1, !dbg !196 Source: --
+	ST  Inst:   %28 = load %struct.ptree.3** %phead, align 8, !dbg !197 Source:   %phead = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %29 = load %struct.ptree.3** %phead, align 8, !dbg !197 Source:   %phead = alloca %struct.ptree.3*, align 8
+	--  Inst:   store %struct.ptree.3* %28, %struct.ptree.3** %p_right, align 8, !dbg !197 Source: --
+	ST  Inst:   %30 = load %struct.ptree.3** %phead, align 8, !dbg !197 Source:   %phead = alloca %struct.ptree.3*, align 8
+	--  Inst:   store %struct.ptree.3* %28, %struct.ptree.3** %p_left, align 8, !dbg !197 Source: --
+BB:12
+	ST  Inst:   %31 = load %struct._IO_FILE.1** %fp, align 8, !dbg !199 Source:   %fp = alloca %struct._IO_FILE.1*, align 8
+BB:13
+	ST  Inst:   store %struct.ptree.3* %33, %struct.ptree.3** %p, align 8, !dbg !203 Source:   %p = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %34 = load %struct.ptree.3** %p, align 8, !dbg !204 Source:   %p = alloca %struct.ptree.3*, align 8
+BB:14
+BB:15
+	ST  Inst:   %35 = load %struct.ptree.3** %p, align 8, !dbg !209 Source:   %p = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %38 = load %struct.ptree.3** %p, align 8, !dbg !210 Source:   %p = alloca %struct.ptree.3*, align 8
+	--  Inst:   store %struct.ptree_mask.2* %37, %struct.ptree_mask.2** %p_m33, align 8, !dbg !210 Source: --
+	ST  Inst:   %39 = load %struct.ptree.3** %p, align 8, !dbg !211 Source:   %p = alloca %struct.ptree.3*, align 8
+	--  Inst:   %40 = load %struct.ptree_mask.2** %p_m34, align 8, !dbg !211 Source: --
+BB:16
+BB:17
+	ST  Inst:   %41 = load %struct.ptree.3** %p, align 8, !dbg !216 Source:   %p = alloca %struct.ptree.3*, align 8
+	--  Inst:   %42 = load %struct.ptree_mask.2** %p_m38, align 8, !dbg !216 Source: --
+	ST  Inst:   %44 = load %struct.ptree.3** %p, align 8, !dbg !217 Source:   %p = alloca %struct.ptree.3*, align 8
+	--  Inst:   %45 = load %struct.ptree_mask.2** %p_m39, align 8, !dbg !217 Source: --
+	ST  Inst:   store %struct.ptree_mask.2* %45, %struct.ptree_mask.2** %pm, align 8, !dbg !217 Source:   %pm = alloca %struct.ptree_mask.2*, align 8
+	ST  Inst:   %48 = load %struct.ptree_mask.2** %pm, align 8, !dbg !218 Source:   %pm = alloca %struct.ptree_mask.2*, align 8
+	--  Inst:   store i8* %47, i8** %pm_data41, align 8, !dbg !218 Source: --
+	ST  Inst:   %49 = load %struct.ptree_mask.2** %pm, align 8, !dbg !219 Source:   %pm = alloca %struct.ptree_mask.2*, align 8
+	--  Inst:   %50 = load i8** %pm_data42, align 8, !dbg !219 Source: --
+BB:18
+BB:19
+	ST  Inst:   %51 = load %struct.ptree_mask.2** %pm, align 8, !dbg !224 Source:   %pm = alloca %struct.ptree_mask.2*, align 8
+	--  Inst:   %52 = load i8** %pm_data46, align 8, !dbg !224 Source: --
+	ST  Inst:   %53 = load i32* %s_addr, align 4, !dbg !225 Source:   %addr = alloca %struct.in_addr.4, align 4
+	ST  Inst:   %54 = load %struct.ptree.3** %p, align 8, !dbg !225 Source:   %p = alloca %struct.ptree.3*, align 8
+	--  Inst:   store i64 %conv, i64* %p_key, align 8, !dbg !225 Source: --
+	ST  Inst:   %55 = load i64* %mask, align 8, !dbg !226 Source:   %mask = alloca i64, align 8
+	ST  Inst:   %56 = load %struct.ptree.3** %p, align 8, !dbg !226 Source:   %p = alloca %struct.ptree.3*, align 8
+	--  Inst:   %57 = load %struct.ptree_mask.2** %p_m50, align 8, !dbg !226 Source: --
+	--  Inst:   store i64 %conv49, i64* %pm_mask, align 8, !dbg !226 Source: --
+	ST  Inst:   %58 = load i32* %s_addr51, align 4, !dbg !227 Source:   %addr = alloca %struct.in_addr.4, align 4
+	ST  Inst:   %59 = load %struct.ptree.3** %phead, align 8, !dbg !227 Source:   %phead = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %60, %struct.ptree.3** %pfind, align 8, !dbg !227 Source:   %pfind = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %61 = load %struct.ptree.3** %pfind, align 8, !dbg !228 Source:   %pfind = alloca %struct.ptree.3*, align 8
+	--  Inst:   %62 = load i64* %p_key54, align 8, !dbg !228 Source: --
+	ST  Inst:   %63 = load i32* %s_addr55, align 4, !dbg !228 Source:   %addr = alloca %struct.in_addr.4, align 4
+BB:20
+	ST  Inst:   %64 = load float* %time, align 4, !dbg !230 Source:   %time = alloca float, align 4
+	ST  Inst:   %65 = load i32* %s_addr61, align 4, !dbg !230 Source:   %addr = alloca %struct.in_addr.4, align 4
+BB:21
+	ST  Inst:   %66 = load %struct.ptree.3** %p, align 8, !dbg !234 Source:   %p = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %67 = load %struct.ptree.3** %phead, align 8, !dbg !234 Source:   %phead = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %68, %struct.ptree.3** %p, align 8, !dbg !234 Source:   %p = alloca %struct.ptree.3*, align 8
+BB:22
+	ST  Inst:   %69 = load %struct.ptree.3** %p, align 8, !dbg !236 Source:   %p = alloca %struct.ptree.3*, align 8
+BB:23
+	GV  Inst:   %70 = load %struct._IO_FILE.1** @stderr, align 8, !dbg !238 Source: @stderr = external global %struct._IO_FILE.1*
+BB:24
+BB:25
+BB:26
+	ST  Inst:   %71 = load i32* %retval, !dbg !243 Source:   %retval = alloca i32, align 4
+BB:27
+	ST  Inst:   store i32 %i, i32* %i.addr, align 4 Source:   %i.addr = alloca i32, align 4
+	ST  Inst:   store i64 %key, i64* %key.addr, align 8 Source:   %key.addr = alloca i64, align 8
+	ST  Inst:   %0 = load i64* %key.addr, align 8, !dbg !56 Source:   %key.addr = alloca i64, align 8
+	ST  Inst:   %1 = load i32* %i.addr, align 4, !dbg !56 Source:   %i.addr = alloca i32, align 4
+BB:28
+	ST  Inst:   store %struct.ptree.3* %h, %struct.ptree.3** %h.addr, align 8 Source:   %h.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %n, %struct.ptree.3** %n.addr, align 8 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store i32 %d, i32* %d.addr, align 4 Source:   %d.addr = alloca i32, align 4
+	ST  Inst:   store %struct.ptree.3* %p, %struct.ptree.3** %p.addr, align 8 Source:   %p.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %0 = load %struct.ptree.3** %h.addr, align 8, !dbg !77 Source:   %h.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %1 = load i8* %p_b, align 1, !dbg !77 Source: --
+	ST  Inst:   %2 = load i32* %d.addr, align 4, !dbg !77 Source:   %d.addr = alloca i32, align 4
+BB:29
+	ST  Inst:   %3 = load %struct.ptree.3** %h.addr, align 8, !dbg !79 Source:   %h.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %4 = load i8* %p_b2, align 1, !dbg !79 Source: --
+	ST  Inst:   %5 = load %struct.ptree.3** %p.addr, align 8, !dbg !79 Source:   %p.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %6 = load i8* %p_b4, align 1, !dbg !79 Source: --
+BB:30
+	ST  Inst:   %7 = load i32* %d.addr, align 4, !dbg !81 Source:   %d.addr = alloca i32, align 4
+	ST  Inst:   %8 = load %struct.ptree.3** %n.addr, align 8, !dbg !81 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   store i8 %conv8, i8* %p_b9, align 1, !dbg !81 Source: --
+	ST  Inst:   %9 = load i32* %d.addr, align 4, !dbg !83 Source:   %d.addr = alloca i32, align 4
+	ST  Inst:   %10 = load %struct.ptree.3** %n.addr, align 8, !dbg !83 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %11 = load i64* %p_key, align 8, !dbg !83 Source: --
+BB:31
+	ST  Inst:   %13 = load %struct.ptree.3** %h.addr, align 8, !dbg !84 Source:   %h.addr = alloca %struct.ptree.3*, align 8
+BB:32
+	ST  Inst:   %14 = load %struct.ptree.3** %n.addr, align 8, !dbg !86 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+BB:33
+	ST  Inst:   %15 = load %struct.ptree.3** %n.addr, align 8, !dbg !88 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   store %struct.ptree.3* %cond, %struct.ptree.3** %p_left, align 8, !dbg !88 Source: --
+	ST  Inst:   %16 = load i32* %d.addr, align 4, !dbg !91 Source:   %d.addr = alloca i32, align 4
+	ST  Inst:   %17 = load %struct.ptree.3** %n.addr, align 8, !dbg !91 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %18 = load i64* %p_key10, align 8, !dbg !91 Source: --
+BB:34
+	ST  Inst:   %20 = load %struct.ptree.3** %n.addr, align 8, !dbg !92 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+BB:35
+	ST  Inst:   %21 = load %struct.ptree.3** %h.addr, align 8, !dbg !94 Source:   %h.addr = alloca %struct.ptree.3*, align 8
+BB:36
+	ST  Inst:   %22 = load %struct.ptree.3** %n.addr, align 8, !dbg !96 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   store %struct.ptree.3* %cond16, %struct.ptree.3** %p_right, align 8, !dbg !96 Source: --
+	ST  Inst:   %23 = load %struct.ptree.3** %n.addr, align 8, !dbg !99 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %23, %struct.ptree.3** %retval, !dbg !99 Source:   %retval = alloca %struct.ptree.3*, align 8
+BB:37
+	ST  Inst:   %24 = load %struct.ptree.3** %h.addr, align 8, !dbg !100 Source:   %h.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %25 = load i8* %p_b17, align 1, !dbg !100 Source: --
+	ST  Inst:   %26 = load %struct.ptree.3** %n.addr, align 8, !dbg !100 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %27 = load i64* %p_key19, align 8, !dbg !100 Source: --
+BB:38
+	ST  Inst:   %29 = load %struct.ptree.3** %h.addr, align 8, !dbg !102 Source:   %h.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %30 = load %struct.ptree.3** %p_right23, align 8, !dbg !102 Source: --
+	ST  Inst:   %31 = load %struct.ptree.3** %n.addr, align 8, !dbg !102 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %32 = load i32* %d.addr, align 4, !dbg !102 Source:   %d.addr = alloca i32, align 4
+	ST  Inst:   %33 = load %struct.ptree.3** %h.addr, align 8, !dbg !102 Source:   %h.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %35 = load %struct.ptree.3** %h.addr, align 8, !dbg !102 Source:   %h.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   store %struct.ptree.3* %34, %struct.ptree.3** %p_right25, align 8, !dbg !102 Source: --
+BB:39
+	ST  Inst:   %36 = load %struct.ptree.3** %h.addr, align 8, !dbg !103 Source:   %h.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %37 = load %struct.ptree.3** %p_left26, align 8, !dbg !103 Source: --
+	ST  Inst:   %38 = load %struct.ptree.3** %n.addr, align 8, !dbg !103 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %39 = load i32* %d.addr, align 4, !dbg !103 Source:   %d.addr = alloca i32, align 4
+	ST  Inst:   %40 = load %struct.ptree.3** %h.addr, align 8, !dbg !103 Source:   %h.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %42 = load %struct.ptree.3** %h.addr, align 8, !dbg !103 Source:   %h.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   store %struct.ptree.3* %41, %struct.ptree.3** %p_left28, align 8, !dbg !103 Source: --
+BB:40
+	ST  Inst:   %43 = load %struct.ptree.3** %h.addr, align 8, !dbg !104 Source:   %h.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %43, %struct.ptree.3** %retval, !dbg !104 Source:   %retval = alloca %struct.ptree.3*, align 8
+BB:41
+	ST  Inst:   %44 = load %struct.ptree.3** %retval, !dbg !105 Source:   %retval = alloca %struct.ptree.3*, align 8
+BB:42
+	ST  Inst:   store %struct.ptree.3* %n, %struct.ptree.3** %n.addr, align 8 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %head, %struct.ptree.3** %head.addr, align 8 Source:   %head.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %0 = load %struct.ptree.3** %head.addr, align 8, !dbg !83 Source:   %head.addr = alloca %struct.ptree.3*, align 8
+BB:43
+	ST  Inst:   %1 = load %struct.ptree.3** %n.addr, align 8, !dbg !85 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+BB:44
+	ST  Inst:   %2 = load %struct.ptree.3** %n.addr, align 8, !dbg !87 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %3 = load %struct.ptree_mask.2** %p_m, align 8, !dbg !87 Source: --
+BB:45
+	ST  Inst:   store %struct.ptree.3* null, %struct.ptree.3** %retval, !dbg !89 Source:   %retval = alloca %struct.ptree.3*, align 8
+BB:46
+	ST  Inst:   %4 = load %struct.ptree.3** %n.addr, align 8, !dbg !90 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %5 = load %struct.ptree_mask.2** %p_m4, align 8, !dbg !90 Source: --
+	--  Inst:   %6 = load i64* %pm_mask, align 8, !dbg !90 Source: --
+	ST  Inst:   %7 = load %struct.ptree.3** %n.addr, align 8, !dbg !90 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %8 = load i64* %p_key, align 8, !dbg !90 Source: --
+	--  Inst:   store i64 %and, i64* %p_key, align 8, !dbg !90 Source: --
+	ST  Inst:   %9 = load %struct.ptree.3** %head.addr, align 8, !dbg !91 Source:   %head.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %9, %struct.ptree.3** %t, align 8, !dbg !91 Source:   %t = alloca %struct.ptree.3*, align 8
+BB:47
+	ST  Inst:   %10 = load %struct.ptree.3** %t, align 8, !dbg !93 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %11 = load i8* %p_b, align 1, !dbg !93 Source: --
+	ST  Inst:   store i32 %conv, i32* %i, align 4, !dbg !93 Source:   %i = alloca i32, align 4
+	ST  Inst:   %12 = load %struct.ptree.3** %t, align 8, !dbg !95 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %13 = load i8* %p_b5, align 1, !dbg !95 Source: --
+	ST  Inst:   %14 = load %struct.ptree.3** %n.addr, align 8, !dbg !95 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %15 = load i64* %p_key7, align 8, !dbg !95 Source: --
+BB:48
+	ST  Inst:   %17 = load %struct.ptree.3** %t, align 8, !dbg !96 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %18 = load %struct.ptree.3** %p_right, align 8, !dbg !96 Source: --
+BB:49
+	ST  Inst:   %19 = load %struct.ptree.3** %t, align 8, !dbg !98 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %20 = load %struct.ptree.3** %p_left, align 8, !dbg !98 Source: --
+BB:50
+	ST  Inst:   store %struct.ptree.3* %cond, %struct.ptree.3** %t, align 8, !dbg !100 Source:   %t = alloca %struct.ptree.3*, align 8
+BB:51
+	ST  Inst:   %21 = load i32* %i, align 4, !dbg !104 Source:   %i = alloca i32, align 4
+	ST  Inst:   %22 = load %struct.ptree.3** %t, align 8, !dbg !104 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %23 = load i8* %p_b9, align 1, !dbg !104 Source: --
+BB:52
+	ST  Inst:   %24 = load %struct.ptree.3** %n.addr, align 8, !dbg !106 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %25 = load i64* %p_key12, align 8, !dbg !106 Source: --
+	ST  Inst:   %26 = load %struct.ptree.3** %t, align 8, !dbg !106 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %27 = load i64* %p_key13, align 8, !dbg !106 Source: --
+BB:53
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !108 Source:   %i = alloca i32, align 4
+BB:54
+	ST  Inst:   %28 = load i32* %i, align 4, !dbg !111 Source:   %i = alloca i32, align 4
+	ST  Inst:   %29 = load %struct.ptree.3** %t, align 8, !dbg !111 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %30 = load i8* %p_mlen, align 1, !dbg !111 Source: --
+BB:55
+	ST  Inst:   %31 = load %struct.ptree.3** %n.addr, align 8, !dbg !114 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %32 = load %struct.ptree_mask.2** %p_m20, align 8, !dbg !114 Source: --
+	--  Inst:   %33 = load i64* %pm_mask21, align 8, !dbg !114 Source: --
+	ST  Inst:   %34 = load i32* %i, align 4, !dbg !114 Source:   %i = alloca i32, align 4
+	ST  Inst:   %35 = load %struct.ptree.3** %t, align 8, !dbg !114 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %36 = load %struct.ptree_mask.2** %p_m22, align 8, !dbg !114 Source: --
+	--  Inst:   %37 = load i64* %pm_mask23, align 8, !dbg !114 Source: --
+BB:56
+	ST  Inst:   %38 = load %struct.ptree.3** %n.addr, align 8, !dbg !117 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %39 = load %struct.ptree_mask.2** %p_m27, align 8, !dbg !117 Source: --
+	--  Inst:   %40 = load i8** %pm_data, align 8, !dbg !117 Source: --
+	ST  Inst:   %41 = load i32* %i, align 4, !dbg !117 Source:   %i = alloca i32, align 4
+	ST  Inst:   %42 = load %struct.ptree.3** %t, align 8, !dbg !117 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %43 = load %struct.ptree_mask.2** %p_m29, align 8, !dbg !117 Source: --
+	--  Inst:   store i8* %40, i8** %pm_data31, align 8, !dbg !117 Source: --
+	ST  Inst:   %44 = load %struct.ptree.3** %n.addr, align 8, !dbg !119 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %45 = load %struct.ptree_mask.2** %p_m32, align 8, !dbg !119 Source: --
+	ST  Inst:   %47 = load %struct.ptree.3** %n.addr, align 8, !dbg !120 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* null, %struct.ptree.3** %n.addr, align 8, !dbg !121 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %49 = load %struct.ptree.3** %t, align 8, !dbg !122 Source:   %t = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %49, %struct.ptree.3** %retval, !dbg !122 Source:   %retval = alloca %struct.ptree.3*, align 8
+BB:57
+BB:58
+	ST  Inst:   %50 = load i32* %i, align 4, !dbg !124 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc, i32* %i, align 4, !dbg !124 Source:   %i = alloca i32, align 4
+BB:59
+	ST  Inst:   %51 = load %struct.ptree.3** %t, align 8, !dbg !125 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %52 = load i8* %p_mlen34, align 1, !dbg !125 Source: --
+	ST  Inst:   store %struct.ptree_mask.2* %53, %struct.ptree_mask.2** %buf, align 8, !dbg !125 Source:   %buf = alloca %struct.ptree_mask.2*, align 8
+	ST  Inst:   store i32 0, i32* %copied, align 4, !dbg !126 Source:   %copied = alloca i32, align 4
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !127 Source:   %i = alloca i32, align 4
+	ST  Inst:   %54 = load %struct.ptree_mask.2** %buf, align 8, !dbg !127 Source:   %buf = alloca %struct.ptree_mask.2*, align 8
+	ST  Inst:   store %struct.ptree_mask.2* %54, %struct.ptree_mask.2** %pm, align 8, !dbg !127 Source:   %pm = alloca %struct.ptree_mask.2*, align 8
+BB:60
+	ST  Inst:   %55 = load i32* %i, align 4, !dbg !129 Source:   %i = alloca i32, align 4
+	ST  Inst:   %56 = load %struct.ptree.3** %t, align 8, !dbg !129 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %57 = load i8* %p_mlen39, align 1, !dbg !129 Source: --
+BB:61
+	ST  Inst:   %58 = load %struct.ptree.3** %n.addr, align 8, !dbg !132 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %59 = load %struct.ptree_mask.2** %p_m44, align 8, !dbg !132 Source: --
+	--  Inst:   %60 = load i64* %pm_mask45, align 8, !dbg !132 Source: --
+	ST  Inst:   %61 = load i32* %i, align 4, !dbg !132 Source:   %i = alloca i32, align 4
+	ST  Inst:   %62 = load %struct.ptree.3** %t, align 8, !dbg !132 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %63 = load %struct.ptree_mask.2** %p_m47, align 8, !dbg !132 Source: --
+	--  Inst:   %64 = load i64* %pm_mask49, align 8, !dbg !132 Source: --
+BB:62
+	ST  Inst:   %65 = load %struct.ptree.3** %t, align 8, !dbg !135 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %66 = load %struct.ptree_mask.2** %p_m53, align 8, !dbg !135 Source: --
+	ST  Inst:   %67 = load i32* %i, align 4, !dbg !135 Source:   %i = alloca i32, align 4
+	ST  Inst:   %69 = load %struct.ptree_mask.2** %pm, align 8, !dbg !135 Source:   %pm = alloca %struct.ptree_mask.2*, align 8
+	ST  Inst:   %71 = load i32* %i, align 4, !dbg !137 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc54, i32* %i, align 4, !dbg !137 Source:   %i = alloca i32, align 4
+BB:63
+	ST  Inst:   %72 = load %struct.ptree.3** %n.addr, align 8, !dbg !139 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %73 = load %struct.ptree_mask.2** %p_m55, align 8, !dbg !139 Source: --
+	ST  Inst:   %75 = load %struct.ptree_mask.2** %pm, align 8, !dbg !139 Source:   %pm = alloca %struct.ptree_mask.2*, align 8
+	ST  Inst:   %77 = load %struct.ptree.3** %n.addr, align 8, !dbg !141 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %78 = load %struct.ptree_mask.2** %p_m56, align 8, !dbg !141 Source: --
+	--  Inst:   store i64 4294967295, i64* %pm_mask57, align 8, !dbg !141 Source: --
+	ST  Inst:   store i32 1, i32* %copied, align 4, !dbg !142 Source:   %copied = alloca i32, align 4
+BB:64
+BB:65
+	ST  Inst:   %79 = load %struct.ptree_mask.2** %pm, align 8, !dbg !144 Source:   %pm = alloca %struct.ptree_mask.2*, align 8
+	ST  Inst:   store %struct.ptree_mask.2* %incdec.ptr, %struct.ptree_mask.2** %pm, align 8, !dbg !144 Source:   %pm = alloca %struct.ptree_mask.2*, align 8
+BB:66
+	ST  Inst:   %80 = load i32* %copied, align 4, !dbg !145 Source:   %copied = alloca i32, align 4
+BB:67
+	ST  Inst:   %81 = load %struct.ptree.3** %n.addr, align 8, !dbg !147 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %82 = load %struct.ptree_mask.2** %p_m63, align 8, !dbg !147 Source: --
+	ST  Inst:   %84 = load %struct.ptree_mask.2** %pm, align 8, !dbg !147 Source:   %pm = alloca %struct.ptree_mask.2*, align 8
+BB:68
+	ST  Inst:   %86 = load %struct.ptree.3** %n.addr, align 8, !dbg !150 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %87 = load %struct.ptree_mask.2** %p_m65, align 8, !dbg !150 Source: --
+	ST  Inst:   %89 = load %struct.ptree.3** %n.addr, align 8, !dbg !151 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* null, %struct.ptree.3** %n.addr, align 8, !dbg !152 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %91 = load %struct.ptree.3** %t, align 8, !dbg !153 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %92 = load i8* %p_mlen66, align 1, !dbg !153 Source: --
+	--  Inst:   store i8 %inc67, i8* %p_mlen66, align 1, !dbg !153 Source: --
+	ST  Inst:   %93 = load %struct.ptree.3** %t, align 8, !dbg !154 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %94 = load %struct.ptree_mask.2** %p_m68, align 8, !dbg !154 Source: --
+	ST  Inst:   %96 = load %struct.ptree_mask.2** %buf, align 8, !dbg !155 Source:   %buf = alloca %struct.ptree_mask.2*, align 8
+	ST  Inst:   %97 = load %struct.ptree.3** %t, align 8, !dbg !155 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   store %struct.ptree_mask.2* %96, %struct.ptree_mask.2** %p_m69, align 8, !dbg !155 Source: --
+	ST  Inst:   %98 = load %struct.ptree.3** %t, align 8, !dbg !156 Source:   %t = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %98, %struct.ptree.3** %retval, !dbg !156 Source:   %retval = alloca %struct.ptree.3*, align 8
+BB:69
+	ST  Inst:   store i32 1, i32* %i, align 4, !dbg !157 Source:   %i = alloca i32, align 4
+BB:70
+	ST  Inst:   %99 = load i32* %i, align 4, !dbg !159 Source:   %i = alloca i32, align 4
+BB:71
+	ST  Inst:   %100 = load i32* %i, align 4, !dbg !162 Source:   %i = alloca i32, align 4
+	ST  Inst:   %101 = load %struct.ptree.3** %n.addr, align 8, !dbg !162 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %102 = load i64* %p_key74, align 8, !dbg !162 Source: --
+	ST  Inst:   %104 = load i32* %i, align 4, !dbg !164 Source:   %i = alloca i32, align 4
+	ST  Inst:   %105 = load %struct.ptree.3** %t, align 8, !dbg !164 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %106 = load i64* %p_key76, align 8, !dbg !164 Source: --
+BB:72
+BB:73
+BB:74
+	ST  Inst:   %109 = load i32* %i, align 4, !dbg !169 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc82, i32* %i, align 4, !dbg !169 Source:   %i = alloca i32, align 4
+BB:75
+	ST  Inst:   %110 = load %struct.ptree.3** %head.addr, align 8, !dbg !171 Source:   %head.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %111 = load i8* %p_b84, align 1, !dbg !171 Source: --
+	ST  Inst:   %112 = load %struct.ptree.3** %n.addr, align 8, !dbg !171 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %113 = load i64* %p_key86, align 8, !dbg !171 Source: --
+BB:76
+	ST  Inst:   %115 = load %struct.ptree.3** %head.addr, align 8, !dbg !173 Source:   %head.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %116 = load %struct.ptree.3** %p_right90, align 8, !dbg !173 Source: --
+	ST  Inst:   %117 = load %struct.ptree.3** %n.addr, align 8, !dbg !173 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %118 = load i32* %i, align 4, !dbg !173 Source:   %i = alloca i32, align 4
+	ST  Inst:   %119 = load %struct.ptree.3** %head.addr, align 8, !dbg !173 Source:   %head.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %121 = load %struct.ptree.3** %head.addr, align 8, !dbg !173 Source:   %head.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   store %struct.ptree.3* %120, %struct.ptree.3** %p_right92, align 8, !dbg !173 Source: --
+BB:77
+	ST  Inst:   %122 = load %struct.ptree.3** %head.addr, align 8, !dbg !174 Source:   %head.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %123 = load %struct.ptree.3** %p_left94, align 8, !dbg !174 Source: --
+	ST  Inst:   %124 = load %struct.ptree.3** %n.addr, align 8, !dbg !174 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %125 = load i32* %i, align 4, !dbg !174 Source:   %i = alloca i32, align 4
+	ST  Inst:   %126 = load %struct.ptree.3** %head.addr, align 8, !dbg !174 Source:   %head.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %128 = load %struct.ptree.3** %head.addr, align 8, !dbg !174 Source:   %head.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   store %struct.ptree.3* %127, %struct.ptree.3** %p_left96, align 8, !dbg !174 Source: --
+BB:78
+	ST  Inst:   %129 = load %struct.ptree.3** %n.addr, align 8, !dbg !175 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %129, %struct.ptree.3** %retval, !dbg !175 Source:   %retval = alloca %struct.ptree.3*, align 8
+BB:79
+	ST  Inst:   %130 = load %struct.ptree.3** %retval, !dbg !176 Source:   %retval = alloca %struct.ptree.3*, align 8
+BB:80
+	ST  Inst:   store %struct.ptree.3* %n, %struct.ptree.3** %n.addr, align 8 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %head, %struct.ptree.3** %head.addr, align 8 Source:   %head.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %0 = load %struct.ptree.3** %n.addr, align 8, !dbg !89 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+BB:81
+	ST  Inst:   %1 = load %struct.ptree.3** %n.addr, align 8, !dbg !91 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %2 = load %struct.ptree_mask.2** %p_m, align 8, !dbg !91 Source: --
+BB:82
+	ST  Inst:   %3 = load %struct.ptree.3** %t, align 8, !dbg !93 Source:   %t = alloca %struct.ptree.3*, align 8
+BB:83
+	ST  Inst:   store i32 0, i32* %retval, !dbg !95 Source:   %retval = alloca i32, align 4
+BB:84
+	ST  Inst:   %4 = load %struct.ptree.3** %head.addr, align 8, !dbg !96 Source:   %head.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %4, %struct.ptree.3** %t, align 8, !dbg !96 Source:   %t = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %4, %struct.ptree.3** %p, align 8, !dbg !96 Source:   %p = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %4, %struct.ptree.3** %g, align 8, !dbg !96 Source:   %g = alloca %struct.ptree.3*, align 8
+BB:85
+	ST  Inst:   %5 = load %struct.ptree.3** %t, align 8, !dbg !98 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %6 = load i8* %p_b, align 1, !dbg !98 Source: --
+	ST  Inst:   store i32 %conv, i32* %i, align 4, !dbg !98 Source:   %i = alloca i32, align 4
+	ST  Inst:   %7 = load %struct.ptree.3** %p, align 8, !dbg !100 Source:   %p = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %7, %struct.ptree.3** %g, align 8, !dbg !100 Source:   %g = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %8 = load %struct.ptree.3** %t, align 8, !dbg !101 Source:   %t = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %8, %struct.ptree.3** %p, align 8, !dbg !101 Source:   %p = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %9 = load %struct.ptree.3** %t, align 8, !dbg !102 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %10 = load i8* %p_b4, align 1, !dbg !102 Source: --
+	ST  Inst:   %11 = load %struct.ptree.3** %n.addr, align 8, !dbg !102 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %12 = load i64* %p_key, align 8, !dbg !102 Source: --
+BB:86
+	ST  Inst:   %14 = load %struct.ptree.3** %t, align 8, !dbg !103 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %15 = load %struct.ptree.3** %p_right, align 8, !dbg !103 Source: --
+BB:87
+	ST  Inst:   %16 = load %struct.ptree.3** %t, align 8, !dbg !105 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %17 = load %struct.ptree.3** %p_left, align 8, !dbg !105 Source: --
+BB:88
+	ST  Inst:   store %struct.ptree.3* %cond, %struct.ptree.3** %t, align 8, !dbg !107 Source:   %t = alloca %struct.ptree.3*, align 8
+BB:89
+	ST  Inst:   %18 = load i32* %i, align 4, !dbg !111 Source:   %i = alloca i32, align 4
+	ST  Inst:   %19 = load %struct.ptree.3** %t, align 8, !dbg !111 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %20 = load i8* %p_b7, align 1, !dbg !111 Source: --
+BB:90
+	ST  Inst:   %21 = load %struct.ptree.3** %t, align 8, !dbg !113 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %22 = load i64* %p_key10, align 8, !dbg !113 Source: --
+	ST  Inst:   %23 = load %struct.ptree.3** %n.addr, align 8, !dbg !113 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %24 = load i64* %p_key11, align 8, !dbg !113 Source: --
+BB:91
+	ST  Inst:   store i32 0, i32* %retval, !dbg !115 Source:   %retval = alloca i32, align 4
+BB:92
+	ST  Inst:   %25 = load %struct.ptree.3** %t, align 8, !dbg !116 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %26 = load i8* %p_mlen, align 1, !dbg !116 Source: --
+BB:93
+	ST  Inst:   %27 = load %struct.ptree.3** %t, align 8, !dbg !118 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %28 = load i8* %p_b20, align 1, !dbg !118 Source: --
+BB:94
+	ST  Inst:   store i32 0, i32* %retval, !dbg !121 Source:   %retval = alloca i32, align 4
+BB:95
+	ST  Inst:   %29 = load %struct.ptree.3** %t, align 8, !dbg !122 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %30 = load %struct.ptree_mask.2** %p_m26, align 8, !dbg !122 Source: --
+	--  Inst:   %31 = load i64* %pm_mask, align 8, !dbg !122 Source: --
+	ST  Inst:   %32 = load %struct.ptree.3** %n.addr, align 8, !dbg !122 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %33 = load %struct.ptree_mask.2** %p_m27, align 8, !dbg !122 Source: --
+	--  Inst:   %34 = load i64* %pm_mask28, align 8, !dbg !122 Source: --
+BB:96
+	ST  Inst:   store i32 0, i32* %retval, !dbg !124 Source:   %retval = alloca i32, align 4
+BB:97
+	ST  Inst:   %35 = load %struct.ptree.3** %p, align 8, !dbg !125 Source:   %p = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %35, %struct.ptree.3** %pt, align 8, !dbg !125 Source:   %pt = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %35, %struct.ptree.3** %pp, align 8, !dbg !125 Source:   %pp = alloca %struct.ptree.3*, align 8
+BB:98
+	ST  Inst:   %36 = load %struct.ptree.3** %pt, align 8, !dbg !127 Source:   %pt = alloca %struct.ptree.3*, align 8
+	--  Inst:   %37 = load i8* %p_b34, align 1, !dbg !127 Source: --
+	ST  Inst:   store i32 %conv35, i32* %i, align 4, !dbg !127 Source:   %i = alloca i32, align 4
+	ST  Inst:   %38 = load %struct.ptree.3** %pt, align 8, !dbg !129 Source:   %pt = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %38, %struct.ptree.3** %pp, align 8, !dbg !129 Source:   %pp = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %39 = load %struct.ptree.3** %pt, align 8, !dbg !130 Source:   %pt = alloca %struct.ptree.3*, align 8
+	--  Inst:   %40 = load i8* %p_b36, align 1, !dbg !130 Source: --
+	ST  Inst:   %41 = load %struct.ptree.3** %p, align 8, !dbg !130 Source:   %p = alloca %struct.ptree.3*, align 8
+	--  Inst:   %42 = load i64* %p_key38, align 8, !dbg !130 Source: --
+BB:99
+	ST  Inst:   %44 = load %struct.ptree.3** %pt, align 8, !dbg !131 Source:   %pt = alloca %struct.ptree.3*, align 8
+	--  Inst:   %45 = load %struct.ptree.3** %p_right42, align 8, !dbg !131 Source: --
+BB:100
+	ST  Inst:   %46 = load %struct.ptree.3** %pt, align 8, !dbg !133 Source:   %pt = alloca %struct.ptree.3*, align 8
+	--  Inst:   %47 = load %struct.ptree.3** %p_left44, align 8, !dbg !133 Source: --
+BB:101
+	ST  Inst:   store %struct.ptree.3* %cond46, %struct.ptree.3** %pt, align 8, !dbg !135 Source:   %pt = alloca %struct.ptree.3*, align 8
+BB:102
+	ST  Inst:   %48 = load i32* %i, align 4, !dbg !139 Source:   %i = alloca i32, align 4
+	ST  Inst:   %49 = load %struct.ptree.3** %pt, align 8, !dbg !139 Source:   %pt = alloca %struct.ptree.3*, align 8
+	--  Inst:   %50 = load i8* %p_b48, align 1, !dbg !139 Source: --
+BB:103
+	ST  Inst:   %51 = load %struct.ptree.3** %pp, align 8, !dbg !141 Source:   %pp = alloca %struct.ptree.3*, align 8
+	--  Inst:   %52 = load i8* %p_b53, align 1, !dbg !141 Source: --
+	ST  Inst:   %53 = load %struct.ptree.3** %p, align 8, !dbg !141 Source:   %p = alloca %struct.ptree.3*, align 8
+	--  Inst:   %54 = load i64* %p_key55, align 8, !dbg !141 Source: --
+BB:104
+	ST  Inst:   %56 = load %struct.ptree.3** %t, align 8, !dbg !143 Source:   %t = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %57 = load %struct.ptree.3** %pp, align 8, !dbg !143 Source:   %pp = alloca %struct.ptree.3*, align 8
+	--  Inst:   store %struct.ptree.3* %56, %struct.ptree.3** %p_right59, align 8, !dbg !143 Source: --
+BB:105
+	ST  Inst:   %58 = load %struct.ptree.3** %t, align 8, !dbg !144 Source:   %t = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %59 = load %struct.ptree.3** %pp, align 8, !dbg !144 Source:   %pp = alloca %struct.ptree.3*, align 8
+	--  Inst:   store %struct.ptree.3* %58, %struct.ptree.3** %p_left60, align 8, !dbg !144 Source: --
+BB:106
+	ST  Inst:   %60 = load %struct.ptree.3** %g, align 8, !dbg !145 Source:   %g = alloca %struct.ptree.3*, align 8
+	--  Inst:   %61 = load i8* %p_b62, align 1, !dbg !145 Source: --
+	ST  Inst:   %62 = load %struct.ptree.3** %n.addr, align 8, !dbg !145 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %63 = load i64* %p_key64, align 8, !dbg !145 Source: --
+BB:107
+	ST  Inst:   %65 = load %struct.ptree.3** %p, align 8, !dbg !147 Source:   %p = alloca %struct.ptree.3*, align 8
+	--  Inst:   %66 = load i8* %p_b68, align 1, !dbg !147 Source: --
+	ST  Inst:   %67 = load %struct.ptree.3** %n.addr, align 8, !dbg !147 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %68 = load i64* %p_key70, align 8, !dbg !147 Source: --
+BB:108
+	ST  Inst:   %70 = load %struct.ptree.3** %p, align 8, !dbg !148 Source:   %p = alloca %struct.ptree.3*, align 8
+	--  Inst:   %71 = load %struct.ptree.3** %p_left74, align 8, !dbg !148 Source: --
+BB:109
+	ST  Inst:   %72 = load %struct.ptree.3** %p, align 8, !dbg !150 Source:   %p = alloca %struct.ptree.3*, align 8
+	--  Inst:   %73 = load %struct.ptree.3** %p_right76, align 8, !dbg !150 Source: --
+BB:110
+	ST  Inst:   %74 = load %struct.ptree.3** %g, align 8, !dbg !152 Source:   %g = alloca %struct.ptree.3*, align 8
+	--  Inst:   store %struct.ptree.3* %cond78, %struct.ptree.3** %p_right79, align 8, !dbg !152 Source: --
+BB:111
+	ST  Inst:   %75 = load %struct.ptree.3** %p, align 8, !dbg !155 Source:   %p = alloca %struct.ptree.3*, align 8
+	--  Inst:   %76 = load i8* %p_b81, align 1, !dbg !155 Source: --
+	ST  Inst:   %77 = load %struct.ptree.3** %n.addr, align 8, !dbg !155 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %78 = load i64* %p_key83, align 8, !dbg !155 Source: --
+BB:112
+	ST  Inst:   %80 = load %struct.ptree.3** %p, align 8, !dbg !156 Source:   %p = alloca %struct.ptree.3*, align 8
+	--  Inst:   %81 = load %struct.ptree.3** %p_left87, align 8, !dbg !156 Source: --
+BB:113
+	ST  Inst:   %82 = load %struct.ptree.3** %p, align 8, !dbg !158 Source:   %p = alloca %struct.ptree.3*, align 8
+	--  Inst:   %83 = load %struct.ptree.3** %p_right89, align 8, !dbg !158 Source: --
+BB:114
+	ST  Inst:   %84 = load %struct.ptree.3** %g, align 8, !dbg !160 Source:   %g = alloca %struct.ptree.3*, align 8
+	--  Inst:   store %struct.ptree.3* %cond91, %struct.ptree.3** %p_left92, align 8, !dbg !160 Source: --
+BB:115
+	ST  Inst:   %85 = load %struct.ptree.3** %t, align 8, !dbg !163 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %86 = load %struct.ptree_mask.2** %p_m94, align 8, !dbg !163 Source: --
+	--  Inst:   %87 = load i8** %pm_data, align 8, !dbg !163 Source: --
+BB:116
+	ST  Inst:   %88 = load %struct.ptree.3** %t, align 8, !dbg !165 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %89 = load %struct.ptree_mask.2** %p_m97, align 8, !dbg !165 Source: --
+	--  Inst:   %90 = load i8** %pm_data98, align 8, !dbg !165 Source: --
+BB:117
+	ST  Inst:   %91 = load %struct.ptree.3** %t, align 8, !dbg !166 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %92 = load %struct.ptree_mask.2** %p_m100, align 8, !dbg !166 Source: --
+	ST  Inst:   %94 = load %struct.ptree.3** %t, align 8, !dbg !167 Source:   %t = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %95 = load %struct.ptree.3** %p, align 8, !dbg !167 Source:   %p = alloca %struct.ptree.3*, align 8
+BB:118
+	ST  Inst:   %96 = load %struct.ptree.3** %p, align 8, !dbg !169 Source:   %p = alloca %struct.ptree.3*, align 8
+	--  Inst:   %97 = load i64* %p_key104, align 8, !dbg !169 Source: --
+	ST  Inst:   %98 = load %struct.ptree.3** %t, align 8, !dbg !169 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   store i64 %97, i64* %p_key105, align 8, !dbg !169 Source: --
+	ST  Inst:   %99 = load %struct.ptree.3** %p, align 8, !dbg !171 Source:   %p = alloca %struct.ptree.3*, align 8
+	--  Inst:   %100 = load %struct.ptree_mask.2** %p_m106, align 8, !dbg !171 Source: --
+	ST  Inst:   %101 = load %struct.ptree.3** %t, align 8, !dbg !171 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   store %struct.ptree_mask.2* %100, %struct.ptree_mask.2** %p_m107, align 8, !dbg !171 Source: --
+	ST  Inst:   %102 = load %struct.ptree.3** %p, align 8, !dbg !172 Source:   %p = alloca %struct.ptree.3*, align 8
+	--  Inst:   %103 = load i8* %p_mlen108, align 1, !dbg !172 Source: --
+	ST  Inst:   %104 = load %struct.ptree.3** %t, align 8, !dbg !172 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   store i8 %103, i8* %p_mlen109, align 1, !dbg !172 Source: --
+BB:119
+	ST  Inst:   %105 = load %struct.ptree.3** %p, align 8, !dbg !174 Source:   %p = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store i32 1, i32* %retval, !dbg !175 Source:   %retval = alloca i32, align 4
+BB:120
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !176 Source:   %i = alloca i32, align 4
+BB:121
+	ST  Inst:   %107 = load i32* %i, align 4, !dbg !178 Source:   %i = alloca i32, align 4
+	ST  Inst:   %108 = load %struct.ptree.3** %t, align 8, !dbg !178 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %109 = load i8* %p_mlen112, align 1, !dbg !178 Source: --
+BB:122
+	ST  Inst:   %110 = load %struct.ptree.3** %n.addr, align 8, !dbg !181 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %111 = load %struct.ptree_mask.2** %p_m116, align 8, !dbg !181 Source: --
+	--  Inst:   %112 = load i64* %pm_mask117, align 8, !dbg !181 Source: --
+	ST  Inst:   %113 = load i32* %i, align 4, !dbg !181 Source:   %i = alloca i32, align 4
+	ST  Inst:   %114 = load %struct.ptree.3** %t, align 8, !dbg !181 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %115 = load %struct.ptree_mask.2** %p_m118, align 8, !dbg !181 Source: --
+	--  Inst:   %116 = load i64* %pm_mask119, align 8, !dbg !181 Source: --
+BB:123
+BB:124
+BB:125
+	ST  Inst:   %117 = load i32* %i, align 4, !dbg !186 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc, i32* %i, align 4, !dbg !186 Source:   %i = alloca i32, align 4
+BB:126
+	ST  Inst:   %118 = load i32* %i, align 4, !dbg !187 Source:   %i = alloca i32, align 4
+	ST  Inst:   %119 = load %struct.ptree.3** %t, align 8, !dbg !187 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %120 = load i8* %p_mlen124, align 1, !dbg !187 Source: --
+BB:127
+	ST  Inst:   store i32 0, i32* %retval, !dbg !189 Source:   %retval = alloca i32, align 4
+BB:128
+	ST  Inst:   %121 = load %struct.ptree.3** %t, align 8, !dbg !190 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %122 = load i8* %p_mlen130, align 1, !dbg !190 Source: --
+	ST  Inst:   store %struct.ptree_mask.2* %123, %struct.ptree_mask.2** %buf, align 8, !dbg !190 Source:   %buf = alloca %struct.ptree_mask.2*, align 8
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !191 Source:   %i = alloca i32, align 4
+	ST  Inst:   %124 = load %struct.ptree_mask.2** %buf, align 8, !dbg !191 Source:   %buf = alloca %struct.ptree_mask.2*, align 8
+	ST  Inst:   store %struct.ptree_mask.2* %124, %struct.ptree_mask.2** %pm, align 8, !dbg !191 Source:   %pm = alloca %struct.ptree_mask.2*, align 8
+BB:129
+	ST  Inst:   %125 = load i32* %i, align 4, !dbg !193 Source:   %i = alloca i32, align 4
+	ST  Inst:   %126 = load %struct.ptree.3** %t, align 8, !dbg !193 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %127 = load i8* %p_mlen135, align 1, !dbg !193 Source: --
+BB:130
+	ST  Inst:   %128 = load %struct.ptree.3** %n.addr, align 8, !dbg !196 Source:   %n.addr = alloca %struct.ptree.3*, align 8
+	--  Inst:   %129 = load %struct.ptree_mask.2** %p_m140, align 8, !dbg !196 Source: --
+	--  Inst:   %130 = load i64* %pm_mask141, align 8, !dbg !196 Source: --
+	ST  Inst:   %131 = load i32* %i, align 4, !dbg !196 Source:   %i = alloca i32, align 4
+	ST  Inst:   %132 = load %struct.ptree.3** %t, align 8, !dbg !196 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %133 = load %struct.ptree_mask.2** %p_m143, align 8, !dbg !196 Source: --
+	--  Inst:   %134 = load i64* %pm_mask145, align 8, !dbg !196 Source: --
+BB:131
+	ST  Inst:   %135 = load %struct.ptree.3** %t, align 8, !dbg !199 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %136 = load %struct.ptree_mask.2** %p_m149, align 8, !dbg !199 Source: --
+	ST  Inst:   %137 = load i32* %i, align 4, !dbg !199 Source:   %i = alloca i32, align 4
+	ST  Inst:   %139 = load %struct.ptree_mask.2** %pm, align 8, !dbg !199 Source:   %pm = alloca %struct.ptree_mask.2*, align 8
+	ST  Inst:   store %struct.ptree_mask.2* %incdec.ptr, %struct.ptree_mask.2** %pm, align 8, !dbg !199 Source:   %pm = alloca %struct.ptree_mask.2*, align 8
+BB:132
+BB:133
+	ST  Inst:   %141 = load i32* %i, align 4, !dbg !203 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc152, i32* %i, align 4, !dbg !203 Source:   %i = alloca i32, align 4
+BB:134
+	ST  Inst:   %142 = load %struct.ptree.3** %t, align 8, !dbg !204 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %143 = load i8* %p_mlen154, align 1, !dbg !204 Source: --
+	--  Inst:   store i8 %dec, i8* %p_mlen154, align 1, !dbg !204 Source: --
+	ST  Inst:   %144 = load %struct.ptree.3** %t, align 8, !dbg !205 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %145 = load %struct.ptree_mask.2** %p_m155, align 8, !dbg !205 Source: --
+	ST  Inst:   %147 = load %struct.ptree_mask.2** %buf, align 8, !dbg !206 Source:   %buf = alloca %struct.ptree_mask.2*, align 8
+	ST  Inst:   %148 = load %struct.ptree.3** %t, align 8, !dbg !206 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   store %struct.ptree_mask.2* %147, %struct.ptree_mask.2** %p_m156, align 8, !dbg !206 Source: --
+	ST  Inst:   store i32 1, i32* %retval, !dbg !207 Source:   %retval = alloca i32, align 4
+BB:135
+	ST  Inst:   %149 = load i32* %retval, !dbg !208 Source:   %retval = alloca i32, align 4
+BB:136
+	ST  Inst:   store i64 %key, i64* %key.addr, align 8 Source:   %key.addr = alloca i64, align 8
+	ST  Inst:   store %struct.ptree.3* %head, %struct.ptree.3** %head.addr, align 8 Source:   %head.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* null, %struct.ptree.3** %p, align 8, !dbg !75 Source:   %p = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %0 = load %struct.ptree.3** %head.addr, align 8, !dbg !75 Source:   %head.addr = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %0, %struct.ptree.3** %t, align 8, !dbg !75 Source:   %t = alloca %struct.ptree.3*, align 8
+	ST  Inst:   %1 = load %struct.ptree.3** %t, align 8, !dbg !80 Source:   %t = alloca %struct.ptree.3*, align 8
+BB:137
+	ST  Inst:   store %struct.ptree.3* null, %struct.ptree.3** %retval, !dbg !82 Source:   %retval = alloca %struct.ptree.3*, align 8
+BB:138
+BB:139
+	ST  Inst:   %2 = load %struct.ptree.3** %t, align 8, !dbg !84 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %3 = load i64* %p_key, align 8, !dbg !84 Source: --
+	ST  Inst:   %4 = load i64* %key.addr, align 8, !dbg !84 Source:   %key.addr = alloca i64, align 8
+	ST  Inst:   %5 = load %struct.ptree.3** %t, align 8, !dbg !84 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %6 = load %struct.ptree_mask.2** %p_m, align 8, !dbg !84 Source: --
+	--  Inst:   %7 = load i64* %pm_mask, align 8, !dbg !84 Source: --
+BB:140
+	ST  Inst:   %8 = load %struct.ptree.3** %t, align 8, !dbg !87 Source:   %t = alloca %struct.ptree.3*, align 8
+	ST  Inst:   store %struct.ptree.3* %8, %struct.ptree.3** %p, align 8, !dbg !87 Source:   %p = alloca %struct.ptree.3*, align 8
+BB:141
+	ST  Inst:   %9 = load %struct.ptree.3** %t, align 8, !dbg !90 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %10 = load i8* %p_b, align 1, !dbg !90 Source: --
+	ST  Inst:   store i32 %conv, i32* %i, align 4, !dbg !90 Source:   %i = alloca i32, align 4
+	ST  Inst:   %11 = load %struct.ptree.3** %t, align 8, !dbg !91 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %12 = load i8* %p_b3, align 1, !dbg !91 Source: --
+	ST  Inst:   %13 = load i64* %key.addr, align 8, !dbg !91 Source:   %key.addr = alloca i64, align 8
+BB:142
+	ST  Inst:   %15 = load %struct.ptree.3** %t, align 8, !dbg !92 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %16 = load %struct.ptree.3** %p_right, align 8, !dbg !92 Source: --
+BB:143
+	ST  Inst:   %17 = load %struct.ptree.3** %t, align 8, !dbg !94 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %18 = load %struct.ptree.3** %p_left, align 8, !dbg !94 Source: --
+BB:144
+	ST  Inst:   store %struct.ptree.3* %cond, %struct.ptree.3** %t, align 8, !dbg !96 Source:   %t = alloca %struct.ptree.3*, align 8
+BB:145
+	ST  Inst:   %19 = load i32* %i, align 4, !dbg !100 Source:   %i = alloca i32, align 4
+	ST  Inst:   %20 = load %struct.ptree.3** %t, align 8, !dbg !100 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %21 = load i8* %p_b6, align 1, !dbg !100 Source: --
+BB:146
+	ST  Inst:   %22 = load %struct.ptree.3** %t, align 8, !dbg !102 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %23 = load i64* %p_key10, align 8, !dbg !102 Source: --
+	ST  Inst:   %24 = load i64* %key.addr, align 8, !dbg !102 Source:   %key.addr = alloca i64, align 8
+	ST  Inst:   %25 = load %struct.ptree.3** %t, align 8, !dbg !102 Source:   %t = alloca %struct.ptree.3*, align 8
+	--  Inst:   %26 = load %struct.ptree_mask.2** %p_m11, align 8, !dbg !102 Source: --
+	--  Inst:   %27 = load i64* %pm_mask12, align 8, !dbg !102 Source: --
+BB:147
+	ST  Inst:   %28 = load %struct.ptree.3** %t, align 8, !dbg !103 Source:   %t = alloca %struct.ptree.3*, align 8
+BB:148
+	ST  Inst:   %29 = load %struct.ptree.3** %p, align 8, !dbg !105 Source:   %p = alloca %struct.ptree.3*, align 8
+BB:149
+	ST  Inst:   store %struct.ptree.3* %cond19, %struct.ptree.3** %retval, !dbg !107 Source:   %retval = alloca %struct.ptree.3*, align 8
+BB:150
+	ST  Inst:   %30 = load %struct.ptree.3** %retval, !dbg !110 Source:   %retval = alloca %struct.ptree.3*, align 8

@@ -1,0 +1,252 @@
+Total Memory Access Inst:281
+GV:0
+ST:268
+HP:0
+Unknown:13
+
+
+Ftn : SolveCubic
+	BB:1	 Vars :12
+-		1 , 1  : b.addr
+-		1 , 1  : c.addr
+-		0 , 1  : x.addr
+-		2 , 1  : a2
+-		3 , 1  : a.addr
+-		1 , 1  : d.addr
+-		0 , 1  : solutions.addr
+-		3 , 1  : Q
+-		2 , 1  : R
+-		6 , 1  : a1
+-		1 , 1  : a3
+-		1 , 1  : R2_Q3
+	BB:2	 Vars :6
+-		3 , 0  : x.addr
+-		1 , 0  : solutions.addr
+-		6 , 0  : Q
+-		1 , 0  : R
+-		3 , 0  : a1
+-		3 , 1  : theta
+	BB:3	 Vars :6
+-		5 , 0  : x.addr
+-		1 , 0  : solutions.addr
+-		1 , 0  : Q
+-		2 , 0  : R
+-		1 , 0  : a1
+-		1 , 0  : R2_Q3
+Ftn : deg2rad
+	BB:5	 Vars :1
+-		1 , 1  : deg.addr
+Ftn : new_main
+	BB:6	 Vars :8
+-		0 , 1  : retval
+-		1 , 1  : a1
+-		1 , 1  : b1
+-		1 , 1  : c1
+-		1 , 1  : d1
+-		0 , 1  : i
+-		0 , 1  : l
+-		0 , 1  : n
+	BB:7	 Vars :2
+-		1 , 0  : solutions
+-		1 , 0  : i
+	BB:8	 Vars :2
+-		1 , 0  : x
+-		1 , 0  : i
+	BB:9	 Vars :1
+-		1 , 1  : i
+	BB:10	 Vars :5
+-		1 , 1  : a1
+-		1 , 1  : b1
+-		1 , 1  : c1
+-		1 , 1  : d1
+-		0 , 1  : i
+	BB:11	 Vars :2
+-		1 , 0  : solutions
+-		1 , 0  : i
+	BB:12	 Vars :2
+-		1 , 0  : x
+-		1 , 0  : i
+	BB:13	 Vars :1
+-		1 , 1  : i
+	BB:14	 Vars :5
+-		1 , 1  : a1
+-		1 , 1  : b1
+-		1 , 1  : c1
+-		1 , 1  : d1
+-		0 , 1  : i
+	BB:15	 Vars :2
+-		1 , 0  : solutions
+-		1 , 0  : i
+	BB:16	 Vars :2
+-		1 , 0  : x
+-		1 , 0  : i
+	BB:17	 Vars :1
+-		1 , 1  : i
+	BB:18	 Vars :5
+-		1 , 1  : a1
+-		1 , 1  : b1
+-		1 , 1  : c1
+-		1 , 1  : d1
+-		0 , 1  : i
+	BB:19	 Vars :2
+-		1 , 0  : solutions
+-		1 , 0  : i
+	BB:20	 Vars :2
+-		1 , 0  : x
+-		1 , 0  : i
+	BB:21	 Vars :1
+-		1 , 1  : i
+	BB:22	 Vars :5
+-		1 , 1  : a1
+-		1 , 1  : b1
+-		1 , 1  : c1
+-		1 , 1  : d1
+-		0 , 1  : i
+	BB:23	 Vars :2
+-		1 , 0  : solutions
+-		1 , 0  : i
+	BB:24	 Vars :2
+-		1 , 0  : x
+-		1 , 0  : i
+	BB:25	 Vars :1
+-		1 , 1  : i
+	BB:26	 Vars :5
+-		1 , 1  : a1
+-		1 , 1  : b1
+-		1 , 1  : c1
+-		1 , 1  : d1
+-		0 , 1  : i
+	BB:27	 Vars :2
+-		1 , 0  : solutions
+-		1 , 0  : i
+	BB:28	 Vars :2
+-		1 , 0  : x
+-		1 , 0  : i
+	BB:29	 Vars :1
+-		1 , 1  : i
+	BB:30	 Vars :5
+-		1 , 1  : a1
+-		1 , 1  : b1
+-		1 , 1  : c1
+-		1 , 1  : d1
+-		0 , 1  : i
+	BB:31	 Vars :2
+-		1 , 0  : solutions
+-		1 , 0  : i
+	BB:32	 Vars :2
+-		1 , 0  : x
+-		1 , 0  : i
+	BB:33	 Vars :1
+-		1 , 1  : i
+	BB:34	 Vars :5
+-		1 , 1  : a1
+-		1 , 1  : b1
+-		1 , 1  : c1
+-		1 , 1  : d1
+-		0 , 1  : i
+	BB:35	 Vars :2
+-		1 , 0  : solutions
+-		1 , 0  : i
+	BB:36	 Vars :2
+-		1 , 0  : x
+-		1 , 0  : i
+	BB:37	 Vars :1
+-		1 , 1  : i
+	BB:38	 Vars :1
+-		0 , 1  : a1
+	BB:39	 Vars :1
+-		1 , 0  : a1
+	BB:40	 Vars :1
+-		0 , 1  : b1
+	BB:41	 Vars :1
+-		1 , 0  : b1
+	BB:42	 Vars :1
+-		0 , 1  : c1
+	BB:43	 Vars :1
+-		1 , 0  : c1
+	BB:44	 Vars :1
+-		0 , 1  : d1
+	BB:45	 Vars :1
+-		1 , 0  : d1
+	BB:46	 Vars :5
+-		1 , 0  : a1
+-		1 , 0  : b1
+-		1 , 0  : c1
+-		1 , 0  : d1
+-		0 , 1  : i
+	BB:47	 Vars :2
+-		1 , 0  : solutions
+-		1 , 0  : i
+	BB:48	 Vars :2
+-		1 , 0  : x
+-		1 , 0  : i
+	BB:49	 Vars :1
+-		1 , 1  : i
+	BB:51	 Vars :1
+-		1 , 1  : d1
+	BB:53	 Vars :1
+-		1 , 1  : c1
+	BB:55	 Vars :1
+-		1 , 1  : b1
+	BB:57	 Vars :1
+-		1 , 1  : a1
+	BB:58	 Vars :1
+-		0 , 1  : i
+	BB:59	 Vars :1
+-		1 , 0  : i
+	BB:60	 Vars :2
+-		2 , 0  : i
+-		1 , 0  : q
+	BB:61	 Vars :1
+-		1 , 1  : i
+	BB:62	 Vars :1
+-		0 , 1  : l
+	BB:63	 Vars :1
+-		1 , 0  : l
+	BB:64	 Vars :2
+-		2 , 0  : l
+-		1 , 0  : q
+	BB:65	 Vars :1
+-		1 , 1  : l
+	BB:66	 Vars :1
+-		0 , 1  : X
+	BB:67	 Vars :1
+-		1 , 0  : X
+	BB:68	 Vars :1
+-		2 , 0  : X
+	BB:69	 Vars :1
+-		1 , 1  : X
+	BB:70	 Vars :1
+-		0 , 1  : X
+	BB:71	 Vars :1
+-		1 , 0  : X
+	BB:72	 Vars :1
+-		2 , 0  : X
+	BB:73	 Vars :1
+-		1 , 1  : X
+Ftn : rad2deg
+	BB:75	 Vars :1
+-		1 , 1  : rad.addr
+Ftn : usqrt
+	BB:76	 Vars :6
+-		0 , 1  : x.addr
+-		0 , 1  : q.addr
+-		0 , 1  : a
+-		0 , 1  : r
+-		0 , 1  : e
+-		0 , 1  : i
+	BB:77	 Vars :1
+-		1 , 0  : i
+	BB:78	 Vars :4
+-		2 , 1  : x.addr
+-		2 , 1  : a
+-		2 , 1  : r
+-		1 , 1  : e
+	BB:79	 Vars :3
+-		1 , 1  : a
+-		1 , 1  : r
+-		1 , 0  : e
+	BB:81	 Vars :1
+-		1 , 1  : i
+	BB:82	 Vars :1
+-		1 , 0  : q.addr

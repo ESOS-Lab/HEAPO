@@ -1,0 +1,373 @@
+Totals GV:1
+ST:258
+HP:0
+Unknown:51
+Total Memory Access Inst:310
+
+
+BB:1
+	ST  Inst:   store i32 0, i32* %retval Source:   %retval = alloca i32, align 4
+	ST  Inst:   store i32 %argc, i32* %argc.addr, align 4 Source:   %argc.addr = alloca i32, align 4
+	ST  Inst:   store i8** %argv, i8*** %argv.addr, align 8 Source:   %argv.addr = alloca i8**, align 8
+	ST  Inst:   %0 = load i32* %argc.addr, align 4, !dbg !169 Source:   %argc.addr = alloca i32, align 4
+BB:2
+	GV  Inst:   %1 = load %struct._IO_FILE.1** @stdin, align 8, !dbg !171 Source: @stdin = external global %struct._IO_FILE.1*
+	ST  Inst:   store %struct._IO_FILE.1* %1, %struct._IO_FILE.1** %fin, align 8, !dbg !171 Source:   %fin = alloca %struct._IO_FILE.1*, align 8
+	ST  Inst:   %2 = load %struct._IO_FILE.1** %fin, align 8, !dbg !173 Source:   %fin = alloca %struct._IO_FILE.1*, align 8
+BB:3
+BB:4
+	ST  Inst:   %3 = load i32* %argc.addr, align 4, !dbg !178 Source:   %argc.addr = alloca i32, align 4
+	ST  Inst:   store i32 %dec, i32* %argc.addr, align 4, !dbg !178 Source:   %argc.addr = alloca i32, align 4
+BB:5
+	ST  Inst:   %4 = load i8*** %argv.addr, align 8, !dbg !180 Source:   %argv.addr = alloca i8**, align 8
+	ST  Inst:   store i8** %incdec.ptr, i8*** %argv.addr, align 8, !dbg !180 Source:   %argv.addr = alloca i8**, align 8
+	--  Inst:   %5 = load i8** %incdec.ptr, align 8, !dbg !180 Source: --
+	ST  Inst:   store %struct._IO_FILE.1* %call, %struct._IO_FILE.1** %fin, align 8, !dbg !180 Source:   %fin = alloca %struct._IO_FILE.1*, align 8
+	ST  Inst:   %6 = load %struct._IO_FILE.1** %fin, align 8, !dbg !182 Source:   %fin = alloca %struct._IO_FILE.1*, align 8
+BB:6
+	ST  Inst:   %7 = load i8*** %argv.addr, align 8, !dbg !184 Source:   %argv.addr = alloca i8**, align 8
+	--  Inst:   %8 = load i8** %7, align 8, !dbg !184 Source: --
+BB:7
+	ST  Inst:   %9 = load %struct._IO_FILE.1** %fin, align 8, !dbg !187 Source:   %fin = alloca %struct._IO_FILE.1*, align 8
+	ST  Inst:   %10 = load %struct._IO_FILE.1** %fin, align 8, !dbg !190 Source:   %fin = alloca %struct._IO_FILE.1*, align 8
+BB:8
+BB:9
+BB:10
+BB:11
+	ST  Inst:   store i64* %buffer, i64** %buffer.addr, align 8 Source:   %buffer.addr = alloca i64*, align 8
+	ST  Inst:   store i32 %count, i32* %count.addr, align 4 Source:   %count.addr = alloca i32, align 4
+	ST  Inst:   %0 = load i32* %count.addr, align 4, !dbg !127 Source:   %count.addr = alloca i32, align 4
+	ST  Inst:   store i32 %conv1, i32* %count.addr, align 4, !dbg !127 Source:   %count.addr = alloca i32, align 4
+	ST  Inst:   %1 = load i64** %buffer.addr, align 8, !dbg !128 Source:   %buffer.addr = alloca i64*, align 8
+	ST  Inst:   store i8* %2, i8** %cp, align 8, !dbg !128 Source:   %cp = alloca i8*, align 8
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !129 Source:   %i = alloca i32, align 4
+BB:12
+	ST  Inst:   %3 = load i32* %i, align 4, !dbg !131 Source:   %i = alloca i32, align 4
+	ST  Inst:   %4 = load i32* %count.addr, align 4, !dbg !131 Source:   %count.addr = alloca i32, align 4
+BB:13
+	ST  Inst:   %5 = load i8** %cp, align 8, !dbg !134 Source:   %cp = alloca i8*, align 8
+	--  Inst:   %6 = load i8* %arrayidx, align 1, !dbg !134 Source: --
+	ST  Inst:   store i8 %6, i8* %arrayidx3, align 1, !dbg !134 Source:   %ct = alloca [4 x i8], align 1
+	ST  Inst:   %7 = load i8** %cp, align 8, !dbg !136 Source:   %cp = alloca i8*, align 8
+	--  Inst:   %8 = load i8* %arrayidx4, align 1, !dbg !136 Source: --
+	ST  Inst:   store i8 %8, i8* %arrayidx5, align 1, !dbg !136 Source:   %ct = alloca [4 x i8], align 1
+	ST  Inst:   %9 = load i8** %cp, align 8, !dbg !137 Source:   %cp = alloca i8*, align 8
+	--  Inst:   %10 = load i8* %arrayidx6, align 1, !dbg !137 Source: --
+	ST  Inst:   store i8 %10, i8* %arrayidx7, align 1, !dbg !137 Source:   %ct = alloca [4 x i8], align 1
+	ST  Inst:   %11 = load i8** %cp, align 8, !dbg !138 Source:   %cp = alloca i8*, align 8
+	--  Inst:   %12 = load i8* %arrayidx8, align 1, !dbg !138 Source: --
+	ST  Inst:   store i8 %12, i8* %arrayidx9, align 1, !dbg !138 Source:   %ct = alloca [4 x i8], align 1
+	ST  Inst:   %13 = load i8* %arrayidx10, align 1, !dbg !139 Source:   %ct = alloca [4 x i8], align 1
+	ST  Inst:   %14 = load i8** %cp, align 8, !dbg !139 Source:   %cp = alloca i8*, align 8
+	--  Inst:   store i8 %13, i8* %arrayidx11, align 1, !dbg !139 Source: --
+	ST  Inst:   %15 = load i8* %arrayidx12, align 1, !dbg !140 Source:   %ct = alloca [4 x i8], align 1
+	ST  Inst:   %16 = load i8** %cp, align 8, !dbg !140 Source:   %cp = alloca i8*, align 8
+	--  Inst:   store i8 %15, i8* %arrayidx13, align 1, !dbg !140 Source: --
+	ST  Inst:   %17 = load i8* %arrayidx14, align 1, !dbg !141 Source:   %ct = alloca [4 x i8], align 1
+	ST  Inst:   %18 = load i8** %cp, align 8, !dbg !141 Source:   %cp = alloca i8*, align 8
+	--  Inst:   store i8 %17, i8* %arrayidx15, align 1, !dbg !141 Source: --
+	ST  Inst:   %19 = load i8* %arrayidx16, align 1, !dbg !142 Source:   %ct = alloca [4 x i8], align 1
+	ST  Inst:   %20 = load i8** %cp, align 8, !dbg !142 Source:   %cp = alloca i8*, align 8
+	--  Inst:   store i8 %19, i8* %arrayidx17, align 1, !dbg !142 Source: --
+	ST  Inst:   %21 = load i8** %cp, align 8, !dbg !143 Source:   %cp = alloca i8*, align 8
+	ST  Inst:   store i8* %add.ptr, i8** %cp, align 8, !dbg !143 Source:   %cp = alloca i8*, align 8
+BB:14
+	ST  Inst:   %22 = load i32* %i, align 4, !dbg !145 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc, i32* %i, align 4, !dbg !145 Source:   %i = alloca i32, align 4
+BB:15
+BB:16
+	ST  Inst:   store %struct.SHA_INFO.2* %sha_info, %struct.SHA_INFO.2** %sha_info.addr, align 8 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	ST  Inst:   %0 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !133 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %1 = load i64* %count_lo, align 8, !dbg !133 Source: --
+	ST  Inst:   store i64 %1, i64* %lo_bit_count, align 8, !dbg !133 Source:   %lo_bit_count = alloca i64, align 8
+	ST  Inst:   %2 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !134 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %3 = load i64* %count_hi, align 8, !dbg !134 Source: --
+	ST  Inst:   store i64 %3, i64* %hi_bit_count, align 8, !dbg !134 Source:   %hi_bit_count = alloca i64, align 8
+	ST  Inst:   %4 = load i64* %lo_bit_count, align 8, !dbg !135 Source:   %lo_bit_count = alloca i64, align 8
+	ST  Inst:   store i32 %conv, i32* %count, align 4, !dbg !135 Source:   %count = alloca i32, align 4
+	ST  Inst:   %5 = load i32* %count, align 4, !dbg !136 Source:   %count = alloca i32, align 4
+	ST  Inst:   store i32 %inc, i32* %count, align 4, !dbg !136 Source:   %count = alloca i32, align 4
+	ST  Inst:   %6 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !136 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   store i8 -128, i8* %arrayidx, align 1, !dbg !136 Source: --
+	ST  Inst:   %8 = load i32* %count, align 4, !dbg !137 Source:   %count = alloca i32, align 4
+BB:17
+	ST  Inst:   %9 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !139 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	ST  Inst:   %11 = load i32* %count, align 4, !dbg !139 Source:   %count = alloca i32, align 4
+	ST  Inst:   %12 = load i32* %count, align 4, !dbg !139 Source:   %count = alloca i32, align 4
+	ST  Inst:   %13 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !141 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	ST  Inst:   %14 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !142 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	ST  Inst:   %15 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !143 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+BB:18
+	ST  Inst:   %17 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !145 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	ST  Inst:   %19 = load i32* %count, align 4, !dbg !145 Source:   %count = alloca i32, align 4
+	ST  Inst:   %20 = load i32* %count, align 4, !dbg !145 Source:   %count = alloca i32, align 4
+BB:19
+	ST  Inst:   %21 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !147 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	ST  Inst:   %22 = load i64* %hi_bit_count, align 8, !dbg !148 Source:   %hi_bit_count = alloca i64, align 8
+	ST  Inst:   %23 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !148 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   store i64 %22, i64* %arrayidx15, align 8, !dbg !148 Source: --
+	ST  Inst:   %24 = load i64* %lo_bit_count, align 8, !dbg !149 Source:   %lo_bit_count = alloca i64, align 8
+	ST  Inst:   %25 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !149 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   store i64 %24, i64* %arrayidx17, align 8, !dbg !149 Source: --
+	ST  Inst:   %26 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !150 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+BB:20
+	ST  Inst:   store %struct.SHA_INFO.2* %sha_info, %struct.SHA_INFO.2** %sha_info.addr, align 8 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	ST  Inst:   %0 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !127 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   store i64 1732584193, i64* %arrayidx, align 8, !dbg !127 Source: --
+	ST  Inst:   %1 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !128 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   store i64 4023233417, i64* %arrayidx2, align 8, !dbg !128 Source: --
+	ST  Inst:   %2 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !129 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   store i64 2562383102, i64* %arrayidx4, align 8, !dbg !129 Source: --
+	ST  Inst:   %3 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !130 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   store i64 271733878, i64* %arrayidx6, align 8, !dbg !130 Source: --
+	ST  Inst:   %4 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !131 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   store i64 3285377520, i64* %arrayidx8, align 8, !dbg !131 Source: --
+	ST  Inst:   %5 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !132 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   store i64 0, i64* %count_lo, align 8, !dbg !132 Source: --
+	ST  Inst:   %6 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !133 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   store i64 0, i64* %count_hi, align 8, !dbg !133 Source: --
+BB:21
+	ST  Inst:   store %struct.SHA_INFO.2* %sha_info, %struct.SHA_INFO.2** %sha_info.addr, align 8 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	ST  Inst:   %0 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !127 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %1 = load i64* %arrayidx, align 8, !dbg !127 Source: --
+	ST  Inst:   %2 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !127 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %3 = load i64* %arrayidx2, align 8, !dbg !127 Source: --
+	ST  Inst:   %4 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !127 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %5 = load i64* %arrayidx4, align 8, !dbg !127 Source: --
+	ST  Inst:   %6 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !127 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %7 = load i64* %arrayidx6, align 8, !dbg !127 Source: --
+	ST  Inst:   %8 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !127 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %9 = load i64* %arrayidx8, align 8, !dbg !127 Source: --
+BB:22
+	ST  Inst:   store %struct.SHA_INFO.2* %sha_info, %struct.SHA_INFO.2** %sha_info.addr, align 8 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	ST  Inst:   store %struct._IO_FILE.1* %fin, %struct._IO_FILE.1** %fin.addr, align 8 Source:   %fin.addr = alloca %struct._IO_FILE.1*, align 8
+	ST  Inst:   %0 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !176 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+BB:23
+	ST  Inst:   %1 = load %struct._IO_FILE.1** %fin.addr, align 8, !dbg !178 Source:   %fin.addr = alloca %struct._IO_FILE.1*, align 8
+	ST  Inst:   store i32 %conv, i32* %i, align 4, !dbg !178 Source:   %i = alloca i32, align 4
+BB:24
+	ST  Inst:   %2 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !180 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	ST  Inst:   %3 = load i32* %i, align 4, !dbg !180 Source:   %i = alloca i32, align 4
+BB:25
+	ST  Inst:   %4 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !183 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+BB:26
+	ST  Inst:   store %struct.SHA_INFO.2* %sha_info, %struct.SHA_INFO.2** %sha_info.addr, align 8 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !146 Source:   %i = alloca i32, align 4
+BB:27
+	ST  Inst:   %0 = load i32* %i, align 4, !dbg !148 Source:   %i = alloca i32, align 4
+BB:28
+	ST  Inst:   %1 = load i32* %i, align 4, !dbg !151 Source:   %i = alloca i32, align 4
+	ST  Inst:   %2 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !151 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %3 = load i64* %arrayidx, align 8, !dbg !151 Source: --
+	ST  Inst:   %4 = load i32* %i, align 4, !dbg !151 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i64 %3, i64* %arrayidx2, align 8, !dbg !151 Source:   %W = alloca [80 x i64], align 16
+BB:29
+	ST  Inst:   %5 = load i32* %i, align 4, !dbg !154 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc, i32* %i, align 4, !dbg !154 Source:   %i = alloca i32, align 4
+BB:30
+	ST  Inst:   store i32 16, i32* %i, align 4, !dbg !155 Source:   %i = alloca i32, align 4
+BB:31
+	ST  Inst:   %6 = load i32* %i, align 4, !dbg !157 Source:   %i = alloca i32, align 4
+BB:32
+	ST  Inst:   %7 = load i32* %i, align 4, !dbg !160 Source:   %i = alloca i32, align 4
+	ST  Inst:   %8 = load i64* %arrayidx7, align 8, !dbg !160 Source:   %W = alloca [80 x i64], align 16
+	ST  Inst:   %9 = load i32* %i, align 4, !dbg !160 Source:   %i = alloca i32, align 4
+	ST  Inst:   %10 = load i64* %arrayidx10, align 8, !dbg !160 Source:   %W = alloca [80 x i64], align 16
+	ST  Inst:   %11 = load i32* %i, align 4, !dbg !160 Source:   %i = alloca i32, align 4
+	ST  Inst:   %12 = load i64* %arrayidx13, align 8, !dbg !160 Source:   %W = alloca [80 x i64], align 16
+	ST  Inst:   %13 = load i32* %i, align 4, !dbg !160 Source:   %i = alloca i32, align 4
+	ST  Inst:   %14 = load i64* %arrayidx17, align 8, !dbg !160 Source:   %W = alloca [80 x i64], align 16
+	ST  Inst:   %15 = load i32* %i, align 4, !dbg !160 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i64 %xor18, i64* %arrayidx20, align 8, !dbg !160 Source:   %W = alloca [80 x i64], align 16
+BB:33
+	ST  Inst:   %16 = load i32* %i, align 4, !dbg !163 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc22, i32* %i, align 4, !dbg !163 Source:   %i = alloca i32, align 4
+BB:34
+	ST  Inst:   %17 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !164 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %18 = load i64* %arrayidx24, align 8, !dbg !164 Source: --
+	ST  Inst:   store i64 %18, i64* %A, align 8, !dbg !164 Source:   %A = alloca i64, align 8
+	ST  Inst:   %19 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !165 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %20 = load i64* %arrayidx26, align 8, !dbg !165 Source: --
+	ST  Inst:   store i64 %20, i64* %B, align 8, !dbg !165 Source:   %B = alloca i64, align 8
+	ST  Inst:   %21 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !166 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %22 = load i64* %arrayidx28, align 8, !dbg !166 Source: --
+	ST  Inst:   store i64 %22, i64* %C, align 8, !dbg !166 Source:   %C = alloca i64, align 8
+	ST  Inst:   %23 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !167 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %24 = load i64* %arrayidx30, align 8, !dbg !167 Source: --
+	ST  Inst:   store i64 %24, i64* %D, align 8, !dbg !167 Source:   %D = alloca i64, align 8
+	ST  Inst:   %25 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !168 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %26 = load i64* %arrayidx32, align 8, !dbg !168 Source: --
+	ST  Inst:   store i64 %26, i64* %E, align 8, !dbg !168 Source:   %E = alloca i64, align 8
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !169 Source:   %i = alloca i32, align 4
+BB:35
+	ST  Inst:   %27 = load i32* %i, align 4, !dbg !171 Source:   %i = alloca i32, align 4
+BB:36
+	ST  Inst:   %28 = load i64* %A, align 8, !dbg !174 Source:   %A = alloca i64, align 8
+	ST  Inst:   %29 = load i64* %A, align 8, !dbg !174 Source:   %A = alloca i64, align 8
+	ST  Inst:   %30 = load i64* %B, align 8, !dbg !174 Source:   %B = alloca i64, align 8
+	ST  Inst:   %31 = load i64* %C, align 8, !dbg !174 Source:   %C = alloca i64, align 8
+	ST  Inst:   %32 = load i64* %B, align 8, !dbg !174 Source:   %B = alloca i64, align 8
+	ST  Inst:   %33 = load i64* %D, align 8, !dbg !174 Source:   %D = alloca i64, align 8
+	ST  Inst:   %34 = load i64* %E, align 8, !dbg !174 Source:   %E = alloca i64, align 8
+	ST  Inst:   %35 = load i32* %i, align 4, !dbg !174 Source:   %i = alloca i32, align 4
+	ST  Inst:   %36 = load i64* %arrayidx40, align 8, !dbg !174 Source:   %W = alloca [80 x i64], align 16
+	ST  Inst:   store i64 %add42, i64* %temp, align 8, !dbg !174 Source:   %temp = alloca i64, align 8
+	ST  Inst:   %37 = load i64* %D, align 8, !dbg !174 Source:   %D = alloca i64, align 8
+	ST  Inst:   store i64 %37, i64* %E, align 8, !dbg !174 Source:   %E = alloca i64, align 8
+	ST  Inst:   %38 = load i64* %C, align 8, !dbg !174 Source:   %C = alloca i64, align 8
+	ST  Inst:   store i64 %38, i64* %D, align 8, !dbg !174 Source:   %D = alloca i64, align 8
+	ST  Inst:   %39 = load i64* %B, align 8, !dbg !174 Source:   %B = alloca i64, align 8
+	ST  Inst:   %40 = load i64* %B, align 8, !dbg !174 Source:   %B = alloca i64, align 8
+	ST  Inst:   store i64 %or45, i64* %C, align 8, !dbg !174 Source:   %C = alloca i64, align 8
+	ST  Inst:   %41 = load i64* %A, align 8, !dbg !174 Source:   %A = alloca i64, align 8
+	ST  Inst:   store i64 %41, i64* %B, align 8, !dbg !174 Source:   %B = alloca i64, align 8
+	ST  Inst:   %42 = load i64* %temp, align 8, !dbg !174 Source:   %temp = alloca i64, align 8
+	ST  Inst:   store i64 %42, i64* %A, align 8, !dbg !174 Source:   %A = alloca i64, align 8
+BB:37
+	ST  Inst:   %43 = load i32* %i, align 4, !dbg !177 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc47, i32* %i, align 4, !dbg !177 Source:   %i = alloca i32, align 4
+BB:38
+	ST  Inst:   store i32 20, i32* %i, align 4, !dbg !178 Source:   %i = alloca i32, align 4
+BB:39
+	ST  Inst:   %44 = load i32* %i, align 4, !dbg !180 Source:   %i = alloca i32, align 4
+BB:40
+	ST  Inst:   %45 = load i64* %A, align 8, !dbg !183 Source:   %A = alloca i64, align 8
+	ST  Inst:   %46 = load i64* %A, align 8, !dbg !183 Source:   %A = alloca i64, align 8
+	ST  Inst:   %47 = load i64* %B, align 8, !dbg !183 Source:   %B = alloca i64, align 8
+	ST  Inst:   %48 = load i64* %C, align 8, !dbg !183 Source:   %C = alloca i64, align 8
+	ST  Inst:   %49 = load i64* %D, align 8, !dbg !183 Source:   %D = alloca i64, align 8
+	ST  Inst:   %50 = load i64* %E, align 8, !dbg !183 Source:   %E = alloca i64, align 8
+	ST  Inst:   %51 = load i32* %i, align 4, !dbg !183 Source:   %i = alloca i32, align 4
+	ST  Inst:   %52 = load i64* %arrayidx60, align 8, !dbg !183 Source:   %W = alloca [80 x i64], align 16
+	ST  Inst:   store i64 %add62, i64* %temp, align 8, !dbg !183 Source:   %temp = alloca i64, align 8
+	ST  Inst:   %53 = load i64* %D, align 8, !dbg !183 Source:   %D = alloca i64, align 8
+	ST  Inst:   store i64 %53, i64* %E, align 8, !dbg !183 Source:   %E = alloca i64, align 8
+	ST  Inst:   %54 = load i64* %C, align 8, !dbg !183 Source:   %C = alloca i64, align 8
+	ST  Inst:   store i64 %54, i64* %D, align 8, !dbg !183 Source:   %D = alloca i64, align 8
+	ST  Inst:   %55 = load i64* %B, align 8, !dbg !183 Source:   %B = alloca i64, align 8
+	ST  Inst:   %56 = load i64* %B, align 8, !dbg !183 Source:   %B = alloca i64, align 8
+	ST  Inst:   store i64 %or65, i64* %C, align 8, !dbg !183 Source:   %C = alloca i64, align 8
+	ST  Inst:   %57 = load i64* %A, align 8, !dbg !183 Source:   %A = alloca i64, align 8
+	ST  Inst:   store i64 %57, i64* %B, align 8, !dbg !183 Source:   %B = alloca i64, align 8
+	ST  Inst:   %58 = load i64* %temp, align 8, !dbg !183 Source:   %temp = alloca i64, align 8
+	ST  Inst:   store i64 %58, i64* %A, align 8, !dbg !183 Source:   %A = alloca i64, align 8
+BB:41
+	ST  Inst:   %59 = load i32* %i, align 4, !dbg !186 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc67, i32* %i, align 4, !dbg !186 Source:   %i = alloca i32, align 4
+BB:42
+	ST  Inst:   store i32 40, i32* %i, align 4, !dbg !187 Source:   %i = alloca i32, align 4
+BB:43
+	ST  Inst:   %60 = load i32* %i, align 4, !dbg !189 Source:   %i = alloca i32, align 4
+BB:44
+	ST  Inst:   %61 = load i64* %A, align 8, !dbg !192 Source:   %A = alloca i64, align 8
+	ST  Inst:   %62 = load i64* %A, align 8, !dbg !192 Source:   %A = alloca i64, align 8
+	ST  Inst:   %63 = load i64* %B, align 8, !dbg !192 Source:   %B = alloca i64, align 8
+	ST  Inst:   %64 = load i64* %C, align 8, !dbg !192 Source:   %C = alloca i64, align 8
+	ST  Inst:   %65 = load i64* %B, align 8, !dbg !192 Source:   %B = alloca i64, align 8
+	ST  Inst:   %66 = load i64* %D, align 8, !dbg !192 Source:   %D = alloca i64, align 8
+	ST  Inst:   %67 = load i64* %C, align 8, !dbg !192 Source:   %C = alloca i64, align 8
+	ST  Inst:   %68 = load i64* %D, align 8, !dbg !192 Source:   %D = alloca i64, align 8
+	ST  Inst:   %69 = load i64* %E, align 8, !dbg !192 Source:   %E = alloca i64, align 8
+	ST  Inst:   %70 = load i32* %i, align 4, !dbg !192 Source:   %i = alloca i32, align 4
+	ST  Inst:   %71 = load i64* %arrayidx83, align 8, !dbg !192 Source:   %W = alloca [80 x i64], align 16
+	ST  Inst:   store i64 %add85, i64* %temp, align 8, !dbg !192 Source:   %temp = alloca i64, align 8
+	ST  Inst:   %72 = load i64* %D, align 8, !dbg !192 Source:   %D = alloca i64, align 8
+	ST  Inst:   store i64 %72, i64* %E, align 8, !dbg !192 Source:   %E = alloca i64, align 8
+	ST  Inst:   %73 = load i64* %C, align 8, !dbg !192 Source:   %C = alloca i64, align 8
+	ST  Inst:   store i64 %73, i64* %D, align 8, !dbg !192 Source:   %D = alloca i64, align 8
+	ST  Inst:   %74 = load i64* %B, align 8, !dbg !192 Source:   %B = alloca i64, align 8
+	ST  Inst:   %75 = load i64* %B, align 8, !dbg !192 Source:   %B = alloca i64, align 8
+	ST  Inst:   store i64 %or88, i64* %C, align 8, !dbg !192 Source:   %C = alloca i64, align 8
+	ST  Inst:   %76 = load i64* %A, align 8, !dbg !192 Source:   %A = alloca i64, align 8
+	ST  Inst:   store i64 %76, i64* %B, align 8, !dbg !192 Source:   %B = alloca i64, align 8
+	ST  Inst:   %77 = load i64* %temp, align 8, !dbg !192 Source:   %temp = alloca i64, align 8
+	ST  Inst:   store i64 %77, i64* %A, align 8, !dbg !192 Source:   %A = alloca i64, align 8
+BB:45
+	ST  Inst:   %78 = load i32* %i, align 4, !dbg !195 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc90, i32* %i, align 4, !dbg !195 Source:   %i = alloca i32, align 4
+BB:46
+	ST  Inst:   store i32 60, i32* %i, align 4, !dbg !196 Source:   %i = alloca i32, align 4
+BB:47
+	ST  Inst:   %79 = load i32* %i, align 4, !dbg !198 Source:   %i = alloca i32, align 4
+BB:48
+	ST  Inst:   %80 = load i64* %A, align 8, !dbg !201 Source:   %A = alloca i64, align 8
+	ST  Inst:   %81 = load i64* %A, align 8, !dbg !201 Source:   %A = alloca i64, align 8
+	ST  Inst:   %82 = load i64* %B, align 8, !dbg !201 Source:   %B = alloca i64, align 8
+	ST  Inst:   %83 = load i64* %C, align 8, !dbg !201 Source:   %C = alloca i64, align 8
+	ST  Inst:   %84 = load i64* %D, align 8, !dbg !201 Source:   %D = alloca i64, align 8
+	ST  Inst:   %85 = load i64* %E, align 8, !dbg !201 Source:   %E = alloca i64, align 8
+	ST  Inst:   %86 = load i32* %i, align 4, !dbg !201 Source:   %i = alloca i32, align 4
+	ST  Inst:   %87 = load i64* %arrayidx103, align 8, !dbg !201 Source:   %W = alloca [80 x i64], align 16
+	ST  Inst:   store i64 %add105, i64* %temp, align 8, !dbg !201 Source:   %temp = alloca i64, align 8
+	ST  Inst:   %88 = load i64* %D, align 8, !dbg !201 Source:   %D = alloca i64, align 8
+	ST  Inst:   store i64 %88, i64* %E, align 8, !dbg !201 Source:   %E = alloca i64, align 8
+	ST  Inst:   %89 = load i64* %C, align 8, !dbg !201 Source:   %C = alloca i64, align 8
+	ST  Inst:   store i64 %89, i64* %D, align 8, !dbg !201 Source:   %D = alloca i64, align 8
+	ST  Inst:   %90 = load i64* %B, align 8, !dbg !201 Source:   %B = alloca i64, align 8
+	ST  Inst:   %91 = load i64* %B, align 8, !dbg !201 Source:   %B = alloca i64, align 8
+	ST  Inst:   store i64 %or108, i64* %C, align 8, !dbg !201 Source:   %C = alloca i64, align 8
+	ST  Inst:   %92 = load i64* %A, align 8, !dbg !201 Source:   %A = alloca i64, align 8
+	ST  Inst:   store i64 %92, i64* %B, align 8, !dbg !201 Source:   %B = alloca i64, align 8
+	ST  Inst:   %93 = load i64* %temp, align 8, !dbg !201 Source:   %temp = alloca i64, align 8
+	ST  Inst:   store i64 %93, i64* %A, align 8, !dbg !201 Source:   %A = alloca i64, align 8
+BB:49
+	ST  Inst:   %94 = load i32* %i, align 4, !dbg !204 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc110, i32* %i, align 4, !dbg !204 Source:   %i = alloca i32, align 4
+BB:50
+	ST  Inst:   %95 = load i64* %A, align 8, !dbg !205 Source:   %A = alloca i64, align 8
+	ST  Inst:   %96 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !205 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %97 = load i64* %arrayidx113, align 8, !dbg !205 Source: --
+	--  Inst:   store i64 %add114, i64* %arrayidx113, align 8, !dbg !205 Source: --
+	ST  Inst:   %98 = load i64* %B, align 8, !dbg !206 Source:   %B = alloca i64, align 8
+	ST  Inst:   %99 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !206 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %100 = load i64* %arrayidx116, align 8, !dbg !206 Source: --
+	--  Inst:   store i64 %add117, i64* %arrayidx116, align 8, !dbg !206 Source: --
+	ST  Inst:   %101 = load i64* %C, align 8, !dbg !207 Source:   %C = alloca i64, align 8
+	ST  Inst:   %102 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !207 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %103 = load i64* %arrayidx119, align 8, !dbg !207 Source: --
+	--  Inst:   store i64 %add120, i64* %arrayidx119, align 8, !dbg !207 Source: --
+	ST  Inst:   %104 = load i64* %D, align 8, !dbg !208 Source:   %D = alloca i64, align 8
+	ST  Inst:   %105 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !208 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %106 = load i64* %arrayidx122, align 8, !dbg !208 Source: --
+	--  Inst:   store i64 %add123, i64* %arrayidx122, align 8, !dbg !208 Source: --
+	ST  Inst:   %107 = load i64* %E, align 8, !dbg !209 Source:   %E = alloca i64, align 8
+	ST  Inst:   %108 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !209 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %109 = load i64* %arrayidx125, align 8, !dbg !209 Source: --
+	--  Inst:   store i64 %add126, i64* %arrayidx125, align 8, !dbg !209 Source: --
+BB:51
+	ST  Inst:   store %struct.SHA_INFO.2* %sha_info, %struct.SHA_INFO.2** %sha_info.addr, align 8 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	ST  Inst:   store i8* %buffer, i8** %buffer.addr, align 8 Source:   %buffer.addr = alloca i8*, align 8
+	ST  Inst:   store i32 %count, i32* %count.addr, align 4 Source:   %count.addr = alloca i32, align 4
+	ST  Inst:   %0 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !131 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %1 = load i64* %count_lo, align 8, !dbg !131 Source: --
+	ST  Inst:   %2 = load i32* %count.addr, align 4, !dbg !131 Source:   %count.addr = alloca i32, align 4
+	ST  Inst:   %3 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !131 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %4 = load i64* %count_lo1, align 8, !dbg !131 Source: --
+BB:52
+	ST  Inst:   %5 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !133 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %6 = load i64* %count_hi, align 8, !dbg !133 Source: --
+	--  Inst:   store i64 %inc, i64* %count_hi, align 8, !dbg !133 Source: --
+BB:53
+	ST  Inst:   %7 = load i32* %count.addr, align 4, !dbg !136 Source:   %count.addr = alloca i32, align 4
+	ST  Inst:   %8 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !136 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %9 = load i64* %count_lo5, align 8, !dbg !136 Source: --
+	--  Inst:   store i64 %add6, i64* %count_lo5, align 8, !dbg !136 Source: --
+	ST  Inst:   %10 = load i32* %count.addr, align 4, !dbg !137 Source:   %count.addr = alloca i32, align 4
+	ST  Inst:   %11 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !137 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	--  Inst:   %12 = load i64* %count_hi8, align 8, !dbg !137 Source: --
+	--  Inst:   store i64 %add9, i64* %count_hi8, align 8, !dbg !137 Source: --
+BB:54
+	ST  Inst:   %13 = load i32* %count.addr, align 4, !dbg !139 Source:   %count.addr = alloca i32, align 4
+BB:55
+	ST  Inst:   %14 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !141 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	ST  Inst:   %16 = load i8** %buffer.addr, align 8, !dbg !141 Source:   %buffer.addr = alloca i8*, align 8
+	ST  Inst:   %17 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !143 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	ST  Inst:   %18 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !144 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	ST  Inst:   %19 = load i8** %buffer.addr, align 8, !dbg !145 Source:   %buffer.addr = alloca i8*, align 8
+	ST  Inst:   store i8* %add.ptr, i8** %buffer.addr, align 8, !dbg !145 Source:   %buffer.addr = alloca i8*, align 8
+	ST  Inst:   %20 = load i32* %count.addr, align 4, !dbg !146 Source:   %count.addr = alloca i32, align 4
+	ST  Inst:   store i32 %sub, i32* %count.addr, align 4, !dbg !146 Source:   %count.addr = alloca i32, align 4
+BB:56
+	ST  Inst:   %21 = load %struct.SHA_INFO.2** %sha_info.addr, align 8, !dbg !148 Source:   %sha_info.addr = alloca %struct.SHA_INFO.2*, align 8
+	ST  Inst:   %23 = load i8** %buffer.addr, align 8, !dbg !148 Source:   %buffer.addr = alloca i8*, align 8
+	ST  Inst:   %24 = load i32* %count.addr, align 4, !dbg !148 Source:   %count.addr = alloca i32, align 4

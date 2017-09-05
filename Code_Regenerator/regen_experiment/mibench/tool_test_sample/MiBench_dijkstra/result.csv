@@ -1,0 +1,15 @@
+Num of threads ,1
+Thread,Call to Malloc,Call to Free,No. Heap Allo at Peak,Searches,Search in Addr Range,Not in Addr Range,Search Miss,Cache Hits ,Cache Updates
+0,75721,0,75721,9615376,9614298,1078,1078,319818,9294480
+All threads,75721,0
+
+Application RunTime,4.602006 
+
+Heap Variable Memory Region Profile Result
+
+Index,Read Count,Write Count,Pointer Name,Pointer Type,Function Name,Line Number,Source File,HitCount,Min Size,Max Size,By
+1,60,400,,,dijkstra,49,dijkstra_large.c,100,24,24,malloc
+2,9538832,377890,,,dijkstra,49,dijkstra_large.c,75621,24,24,malloc
+3,0,0,,,enqueue,49,dijkstra_large.c,0,0,0,malloc
+
+

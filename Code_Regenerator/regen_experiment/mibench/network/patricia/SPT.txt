@@ -1,0 +1,394 @@
+Total Memory Access Inst:487
+GV:1
+ST:325
+HP:0
+Unknown:161
+
+
+Ftn : bit
+	BB:1	 Vars :2
+-		1 , 1  : i.addr
+-		1 , 1  : key.addr
+Ftn : insertR
+	BB:2	 Vars :4
+-		1 , 1  : h.addr
+-		0 , 1  : n.addr
+-		1 , 1  : d.addr
+-		0 , 1  : p.addr
+	BB:3	 Vars :2
+-		1 , 0  : h.addr
+-		1 , 0  : p.addr
+	BB:4	 Vars :2
+-		2 , 0  : n.addr
+-		2 , 0  : d.addr
+	BB:5	 Vars :1
+-		1 , 0  : h.addr
+	BB:6	 Vars :1
+-		1 , 0  : n.addr
+	BB:7	 Vars :2
+-		2 , 0  : n.addr
+-		1 , 0  : d.addr
+	BB:8	 Vars :1
+-		1 , 0  : n.addr
+	BB:9	 Vars :1
+-		1 , 0  : h.addr
+	BB:10	 Vars :2
+-		0 , 1  : retval
+-		2 , 0  : n.addr
+	BB:11	 Vars :2
+-		1 , 0  : h.addr
+-		1 , 0  : n.addr
+	BB:12	 Vars :3
+-		3 , 0  : h.addr
+-		1 , 0  : n.addr
+-		1 , 0  : d.addr
+	BB:13	 Vars :3
+-		3 , 0  : h.addr
+-		1 , 0  : n.addr
+-		1 , 0  : d.addr
+	BB:14	 Vars :2
+-		0 , 1  : retval
+-		1 , 0  : h.addr
+	BB:15	 Vars :1
+-		1 , 0  : retval
+Ftn : new_main
+	BB:16	 Vars :4
+-		0 , 1  : retval
+-		1 , 1  : argc.addr
+-		0 , 1  : argv.addr
+-		0 , 1  : mask
+	BB:17	 Vars :1
+-		1 , 0  : argv.addr
+	BB:18	 Vars :2
+-		1 , 0  : argv.addr
+-		0 , 1  : fp
+	BB:19	 Vars :1
+-		1 , 0  : argv.addr
+	BB:20	 Vars :1
+-		1 , 1  : phead
+	BB:22	 Vars :1
+-		3 , 0  : phead
+	BB:24	 Vars :2
+-		2 , 0  : phead
+-		2 , 1  : pm
+	BB:26	 Vars :2
+-		4 , 0  : phead
+-		1 , 0  : pm
+	BB:27	 Vars :1
+-		1 , 0  : fp
+	BB:28	 Vars :1
+-		1 , 1  : p
+	BB:30	 Vars :1
+-		3 , 0  : p
+	BB:32	 Vars :2
+-		2 , 0  : p
+-		2 , 1  : pm
+	BB:34	 Vars :6
+-		1 , 0  : phead
+-		2 , 0  : p
+-		1 , 1  : pfind
+-		1 , 0  : pm
+-		1 , 0  : mask
+-		3 , 0  : addr
+	BB:35	 Vars :2
+-		1 , 0  : time
+-		1 , 0  : addr
+	BB:36	 Vars :2
+-		1 , 0  : phead
+-		1 , 1  : p
+	BB:37	 Vars :1
+-		1 , 0  : p
+	BB:38	 Vars :1
+-		1 , 0  : stderr
+	BB:41	 Vars :1
+-		1 , 0  : retval
+Ftn : pat_insert
+	BB:42	 Vars :2
+-		0 , 1  : n.addr
+-		1 , 1  : head.addr
+	BB:43	 Vars :1
+-		1 , 0  : n.addr
+	BB:44	 Vars :1
+-		1 , 0  : n.addr
+	BB:45	 Vars :1
+-		0 , 1  : retval
+	BB:46	 Vars :3
+-		2 , 0  : n.addr
+-		1 , 0  : head.addr
+-		0 , 1  : t
+	BB:47	 Vars :3
+-		1 , 0  : n.addr
+-		2 , 0  : t
+-		0 , 1  : i
+	BB:48	 Vars :1
+-		1 , 0  : t
+	BB:49	 Vars :1
+-		1 , 0  : t
+	BB:50	 Vars :1
+-		0 , 1  : t
+	BB:51	 Vars :2
+-		1 , 0  : t
+-		1 , 0  : i
+	BB:52	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : t
+	BB:53	 Vars :1
+-		0 , 1  : i
+	BB:54	 Vars :2
+-		1 , 0  : t
+-		1 , 0  : i
+	BB:55	 Vars :3
+-		1 , 0  : n.addr
+-		1 , 0  : t
+-		1 , 0  : i
+	BB:56	 Vars :4
+-		0 , 1  : retval
+-		3 , 1  : n.addr
+-		2 , 0  : t
+-		1 , 0  : i
+	BB:58	 Vars :1
+-		1 , 1  : i
+	BB:59	 Vars :5
+-		1 , 0  : t
+-		1 , 1  : buf
+-		0 , 1  : pm
+-		0 , 1  : i
+-		0 , 1  : copied
+	BB:60	 Vars :2
+-		1 , 0  : t
+-		1 , 0  : i
+	BB:61	 Vars :3
+-		1 , 0  : n.addr
+-		1 , 0  : t
+-		1 , 0  : i
+	BB:62	 Vars :3
+-		1 , 0  : t
+-		1 , 0  : pm
+-		2 , 1  : i
+	BB:63	 Vars :3
+-		2 , 0  : n.addr
+-		1 , 0  : pm
+-		0 , 1  : copied
+	BB:65	 Vars :1
+-		1 , 1  : pm
+	BB:66	 Vars :1
+-		1 , 0  : copied
+	BB:67	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : pm
+	BB:68	 Vars :4
+-		0 , 1  : retval
+-		2 , 1  : n.addr
+-		4 , 0  : t
+-		1 , 0  : buf
+	BB:69	 Vars :1
+-		0 , 1  : i
+	BB:70	 Vars :1
+-		1 , 0  : i
+	BB:71	 Vars :3
+-		1 , 0  : n.addr
+-		1 , 0  : t
+-		2 , 0  : i
+	BB:74	 Vars :1
+-		1 , 1  : i
+	BB:75	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : head.addr
+	BB:76	 Vars :3
+-		1 , 0  : n.addr
+-		3 , 0  : head.addr
+-		1 , 0  : i
+	BB:77	 Vars :3
+-		1 , 0  : n.addr
+-		3 , 0  : head.addr
+-		1 , 0  : i
+	BB:78	 Vars :2
+-		0 , 1  : retval
+-		1 , 0  : n.addr
+	BB:79	 Vars :1
+-		1 , 0  : retval
+Ftn : pat_remove
+	BB:80	 Vars :2
+-		1 , 1  : n.addr
+-		0 , 1  : head.addr
+	BB:81	 Vars :1
+-		1 , 0  : n.addr
+	BB:82	 Vars :1
+-		1 , 0  : t
+	BB:83	 Vars :1
+-		0 , 1  : retval
+	BB:84	 Vars :4
+-		1 , 0  : head.addr
+-		0 , 1  : p
+-		0 , 1  : g
+-		0 , 1  : t
+	BB:85	 Vars :5
+-		1 , 0  : n.addr
+-		1 , 1  : p
+-		0 , 1  : g
+-		3 , 0  : t
+-		0 , 1  : i
+	BB:86	 Vars :1
+-		1 , 0  : t
+	BB:87	 Vars :1
+-		1 , 0  : t
+	BB:88	 Vars :1
+-		0 , 1  : t
+	BB:89	 Vars :2
+-		1 , 0  : t
+-		1 , 0  : i
+	BB:90	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : t
+	BB:91	 Vars :1
+-		0 , 1  : retval
+	BB:92	 Vars :1
+-		1 , 0  : t
+	BB:93	 Vars :1
+-		1 , 0  : t
+	BB:94	 Vars :1
+-		0 , 1  : retval
+	BB:95	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : t
+	BB:96	 Vars :1
+-		0 , 1  : retval
+	BB:97	 Vars :3
+-		1 , 0  : p
+-		0 , 1  : pt
+-		0 , 1  : pp
+	BB:98	 Vars :4
+-		1 , 0  : p
+-		3 , 0  : pt
+-		0 , 1  : pp
+-		0 , 1  : i
+	BB:99	 Vars :1
+-		1 , 0  : pt
+	BB:100	 Vars :1
+-		1 , 0  : pt
+	BB:101	 Vars :1
+-		0 , 1  : pt
+	BB:102	 Vars :2
+-		1 , 0  : pt
+-		1 , 0  : i
+	BB:103	 Vars :2
+-		1 , 0  : p
+-		1 , 0  : pp
+	BB:104	 Vars :2
+-		1 , 0  : pp
+-		1 , 0  : t
+	BB:105	 Vars :2
+-		1 , 0  : pp
+-		1 , 0  : t
+	BB:106	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : g
+	BB:107	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : p
+	BB:108	 Vars :1
+-		1 , 0  : p
+	BB:109	 Vars :1
+-		1 , 0  : p
+	BB:110	 Vars :1
+-		1 , 0  : g
+	BB:111	 Vars :2
+-		1 , 0  : n.addr
+-		1 , 0  : p
+	BB:112	 Vars :1
+-		1 , 0  : p
+	BB:113	 Vars :1
+-		1 , 0  : p
+	BB:114	 Vars :1
+-		1 , 0  : g
+	BB:115	 Vars :1
+-		1 , 0  : t
+	BB:116	 Vars :1
+-		1 , 0  : t
+	BB:117	 Vars :2
+-		1 , 0  : p
+-		2 , 0  : t
+	BB:118	 Vars :2
+-		3 , 0  : p
+-		3 , 0  : t
+	BB:119	 Vars :2
+-		0 , 1  : retval
+-		1 , 0  : p
+	BB:120	 Vars :1
+-		0 , 1  : i
+	BB:121	 Vars :2
+-		1 , 0  : t
+-		1 , 0  : i
+	BB:122	 Vars :3
+-		1 , 0  : n.addr
+-		1 , 0  : t
+-		1 , 0  : i
+	BB:125	 Vars :1
+-		1 , 1  : i
+	BB:126	 Vars :2
+-		1 , 0  : t
+-		1 , 0  : i
+	BB:127	 Vars :1
+-		0 , 1  : retval
+	BB:128	 Vars :4
+-		0 , 1  : pm
+-		1 , 0  : t
+-		1 , 1  : buf
+-		0 , 1  : i
+	BB:129	 Vars :2
+-		1 , 0  : t
+-		1 , 0  : i
+	BB:130	 Vars :3
+-		1 , 0  : n.addr
+-		1 , 0  : t
+-		1 , 0  : i
+	BB:131	 Vars :3
+-		1 , 1  : pm
+-		1 , 0  : t
+-		1 , 0  : i
+	BB:133	 Vars :1
+-		1 , 1  : i
+	BB:134	 Vars :3
+-		0 , 1  : retval
+-		3 , 0  : t
+-		1 , 0  : buf
+	BB:135	 Vars :1
+-		1 , 0  : retval
+Ftn : pat_search
+	BB:136	 Vars :4
+-		0 , 1  : key.addr
+-		1 , 1  : head.addr
+-		0 , 1  : p
+-		1 , 1  : t
+	BB:137	 Vars :1
+-		0 , 1  : retval
+	BB:139	 Vars :2
+-		1 , 0  : key.addr
+-		2 , 0  : t
+	BB:140	 Vars :2
+-		0 , 1  : p
+-		1 , 0  : t
+	BB:141	 Vars :3
+-		1 , 0  : key.addr
+-		2 , 0  : t
+-		0 , 1  : i
+	BB:142	 Vars :1
+-		1 , 0  : t
+	BB:143	 Vars :1
+-		1 , 0  : t
+	BB:144	 Vars :1
+-		0 , 1  : t
+	BB:145	 Vars :2
+-		1 , 0  : t
+-		1 , 0  : i
+	BB:146	 Vars :2
+-		1 , 0  : key.addr
+-		2 , 0  : t
+	BB:147	 Vars :1
+-		1 , 0  : t
+	BB:148	 Vars :1
+-		1 , 0  : p
+	BB:149	 Vars :1
+-		0 , 1  : retval
+	BB:150	 Vars :1
+-		1 , 0  : retval

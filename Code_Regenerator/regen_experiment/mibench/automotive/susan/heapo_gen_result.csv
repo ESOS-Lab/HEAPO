@@ -1,0 +1,12 @@
+
+[Global Variable Summary] ALL: 33, NVRAM: 0
+
+susan.c:475:setup_brightness_lut
+susan.c:711:susan_smoothing
+susan.c:724:susan_smoothing
+[Heap Variable Summary] : 3 heap variables among 9 fit nvram 
+
+
+[Global Variable Summary] ALL: 33, NVRAM: 0
+
+[Global Variable Summary] ALL: 33, NVRAM: 0

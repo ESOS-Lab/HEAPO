@@ -1,0 +1,5 @@
+len:20:/home/sslee/work/regen/test/mibench/office/stringsearch/pbmsrch_large.c
+
+[Global Variable Summary] ALL: 233, NVRAM: 1
+[Heap Variable Summary] : ALL: 0, NVRAM:   0 fit nvram 
+[Heap Variable Summary] : ALL: 0, NVRAM:   0 fit nvram 

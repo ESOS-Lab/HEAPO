@@ -1,0 +1,207 @@
+Totals GV:44
+ST:76
+HP:0
+Unknown:28
+Total Memory Access Inst:148
+
+
+BB:1
+	ST  Inst:   store i32 0, i32* %retval Source:   %retval = alloca i32, align 4
+	ST  Inst:   store i32 %argc, i32* %argc.addr, align 4 Source:   %argc.addr = alloca i32, align 4
+	ST  Inst:   store i8** %argv, i8*** %argv.addr, align 8 Source:   %argv.addr = alloca i8**, align 8
+	ST  Inst:   %0 = load i32* %argc.addr, align 4, !dbg !134 Source:   %argc.addr = alloca i32, align 4
+BB:2
+	GV  Inst:   %1 = load %struct._IO_FILE.1** @stderr, align 8, !dbg !136 Source: @stderr = external global %struct._IO_FILE.1*
+	GV  Inst:   %2 = load %struct._IO_FILE.1** @stderr, align 8, !dbg !138 Source: @stderr = external global %struct._IO_FILE.1*
+BB:3
+	ST  Inst:   %3 = load i8*** %argv.addr, align 8, !dbg !140 Source:   %argv.addr = alloca i8**, align 8
+	--  Inst:   %4 = load i8** %arrayidx, align 8, !dbg !140 Source: --
+	ST  Inst:   store %struct._IO_FILE.1* %call2, %struct._IO_FILE.1** %fp, align 8, !dbg !140 Source:   %fp = alloca %struct._IO_FILE.1*, align 8
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !141 Source:   %i = alloca i32, align 4
+BB:4
+	ST  Inst:   %5 = load i32* %i, align 4, !dbg !143 Source:   %i = alloca i32, align 4
+BB:5
+	ST  Inst:   store i32 0, i32* %j, align 4, !dbg !146 Source:   %j = alloca i32, align 4
+BB:6
+	ST  Inst:   %6 = load i32* %j, align 4, !dbg !149 Source:   %j = alloca i32, align 4
+BB:7
+	ST  Inst:   %7 = load %struct._IO_FILE.1** %fp, align 8, !dbg !152 Source:   %fp = alloca %struct._IO_FILE.1*, align 8
+	ST  Inst:   %8 = load i32* %k, align 4, !dbg !154 Source:   %k = alloca i32, align 4
+	ST  Inst:   %9 = load i32* %j, align 4, !dbg !154 Source:   %j = alloca i32, align 4
+	ST  Inst:   %10 = load i32* %i, align 4, !dbg !154 Source:   %i = alloca i32, align 4
+	--  Inst:   store i32 %8, i32* %arrayidx10, align 4, !dbg !154 Source: --
+BB:8
+	ST  Inst:   %11 = load i32* %j, align 4, !dbg !156 Source:   %j = alloca i32, align 4
+	ST  Inst:   store i32 %inc, i32* %j, align 4, !dbg !156 Source:   %j = alloca i32, align 4
+BB:9
+BB:10
+	ST  Inst:   %12 = load i32* %i, align 4, !dbg !158 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc12, i32* %i, align 4, !dbg !158 Source:   %i = alloca i32, align 4
+BB:11
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !159 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 50, i32* %j, align 4, !dbg !159 Source:   %j = alloca i32, align 4
+BB:12
+	ST  Inst:   %13 = load i32* %i, align 4, !dbg !161 Source:   %i = alloca i32, align 4
+BB:13
+	ST  Inst:   %14 = load i32* %j, align 4, !dbg !164 Source:   %j = alloca i32, align 4
+	ST  Inst:   store i32 %rem, i32* %j, align 4, !dbg !164 Source:   %j = alloca i32, align 4
+	ST  Inst:   %15 = load i32* %i, align 4, !dbg !166 Source:   %i = alloca i32, align 4
+	ST  Inst:   %16 = load i32* %j, align 4, !dbg !166 Source:   %j = alloca i32, align 4
+BB:14
+	ST  Inst:   %18 = load i32* %i, align 4, !dbg !168 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc19, i32* %i, align 4, !dbg !168 Source:   %i = alloca i32, align 4
+	ST  Inst:   %19 = load i32* %j, align 4, !dbg !168 Source:   %j = alloca i32, align 4
+	ST  Inst:   store i32 %inc20, i32* %j, align 4, !dbg !168 Source:   %j = alloca i32, align 4
+BB:15
+BB:16
+	ST  Inst:   %20 = load i32* %retval, !dbg !170 Source:   %retval = alloca i32, align 4
+BB:17
+	ST  Inst:   store i32* %piNode, i32** %piNode.addr, align 8 Source:   %piNode.addr = alloca i32*, align 8
+	ST  Inst:   store i32* %piDist, i32** %piDist.addr, align 8 Source:   %piDist.addr = alloca i32*, align 8
+	ST  Inst:   store i32* %piPrev, i32** %piPrev.addr, align 8 Source:   %piPrev.addr = alloca i32*, align 8
+	GV  Inst:   %0 = load %struct._QITEM.2** @qHead, align 8, !dbg !79 Source: @qHead = global %struct._QITEM.2* null, align 8
+	ST  Inst:   store %struct._QITEM.2* %0, %struct._QITEM.2** %qKill, align 8, !dbg !79 Source:   %qKill = alloca %struct._QITEM.2*, align 8
+	GV  Inst:   %1 = load %struct._QITEM.2** @qHead, align 8, !dbg !80 Source: @qHead = global %struct._QITEM.2* null, align 8
+BB:18
+	GV  Inst:   %2 = load %struct._QITEM.2** @qHead, align 8, !dbg !82 Source: @qHead = global %struct._QITEM.2* null, align 8
+	--  Inst:   %3 = load i32* %iNode, align 4, !dbg !82 Source: --
+	ST  Inst:   %4 = load i32** %piNode.addr, align 8, !dbg !82 Source:   %piNode.addr = alloca i32*, align 8
+	--  Inst:   store i32 %3, i32* %4, align 4, !dbg !82 Source: --
+	GV  Inst:   %5 = load %struct._QITEM.2** @qHead, align 8, !dbg !84 Source: @qHead = global %struct._QITEM.2* null, align 8
+	--  Inst:   %6 = load i32* %iDist, align 4, !dbg !84 Source: --
+	ST  Inst:   %7 = load i32** %piDist.addr, align 8, !dbg !84 Source:   %piDist.addr = alloca i32*, align 8
+	--  Inst:   store i32 %6, i32* %7, align 4, !dbg !84 Source: --
+	GV  Inst:   %8 = load %struct._QITEM.2** @qHead, align 8, !dbg !85 Source: @qHead = global %struct._QITEM.2* null, align 8
+	--  Inst:   %9 = load i32* %iPrev, align 4, !dbg !85 Source: --
+	ST  Inst:   %10 = load i32** %piPrev.addr, align 8, !dbg !85 Source:   %piPrev.addr = alloca i32*, align 8
+	--  Inst:   store i32 %9, i32* %10, align 4, !dbg !85 Source: --
+	GV  Inst:   %11 = load %struct._QITEM.2** @qHead, align 8, !dbg !86 Source: @qHead = global %struct._QITEM.2* null, align 8
+	--  Inst:   %12 = load %struct._QITEM.2** %qNext, align 8, !dbg !86 Source: --
+	GV  Inst:   store %struct._QITEM.2* %12, %struct._QITEM.2** @qHead, align 8, !dbg !86 Source: @qHead = global %struct._QITEM.2* null, align 8
+	ST  Inst:   %13 = load %struct._QITEM.2** %qKill, align 8, !dbg !87 Source:   %qKill = alloca %struct._QITEM.2*, align 8
+	GV  Inst:   %14 = load i32* @g_qCount, align 4, !dbg !88 Source: @g_qCount = global i32 0, align 4
+	GV  Inst:   store i32 %dec, i32* @g_qCount, align 4, !dbg !88 Source: @g_qCount = global i32 0, align 4
+BB:19
+BB:20
+	ST  Inst:   store i32 %chStart, i32* %chStart.addr, align 4 Source:   %chStart.addr = alloca i32, align 4
+	ST  Inst:   store i32 %chEnd, i32* %chEnd.addr, align 4 Source:   %chEnd.addr = alloca i32, align 4
+	GV  Inst:   store i32 0, i32* @ch, align 4, !dbg !66 Source: @ch = common global i32 0, align 4
+BB:21
+	GV  Inst:   %0 = load i32* @ch, align 4, !dbg !68 Source: @ch = common global i32 0, align 4
+BB:22
+	GV  Inst:   %1 = load i32* @ch, align 4, !dbg !71 Source: @ch = common global i32 0, align 4
+	--  Inst:   store i32 9999, i32* %iDist, align 4, !dbg !71 Source: --
+	GV  Inst:   %2 = load i32* @ch, align 4, !dbg !73 Source: @ch = common global i32 0, align 4
+	--  Inst:   store i32 9999, i32* %iPrev, align 4, !dbg !73 Source: --
+BB:23
+	GV  Inst:   %3 = load i32* @ch, align 4, !dbg !75 Source: @ch = common global i32 0, align 4
+	GV  Inst:   store i32 %inc, i32* @ch, align 4, !dbg !75 Source: @ch = common global i32 0, align 4
+BB:24
+	ST  Inst:   %4 = load i32* %chStart.addr, align 4, !dbg !76 Source:   %chStart.addr = alloca i32, align 4
+	ST  Inst:   %5 = load i32* %chEnd.addr, align 4, !dbg !76 Source:   %chEnd.addr = alloca i32, align 4
+BB:25
+BB:26
+	ST  Inst:   %6 = load i32* %chStart.addr, align 4, !dbg !81 Source:   %chStart.addr = alloca i32, align 4
+	--  Inst:   store i32 0, i32* %iDist6, align 4, !dbg !81 Source: --
+	ST  Inst:   %7 = load i32* %chStart.addr, align 4, !dbg !83 Source:   %chStart.addr = alloca i32, align 4
+	--  Inst:   store i32 9999, i32* %iPrev9, align 4, !dbg !83 Source: --
+	ST  Inst:   %8 = load i32* %chStart.addr, align 4, !dbg !84 Source:   %chStart.addr = alloca i32, align 4
+BB:27
+BB:28
+	GV  Inst:   store i32 0, i32* @i, align 4, !dbg !90 Source: @i = common global i32 0, align 4
+BB:29
+	GV  Inst:   %10 = load i32* @i, align 4, !dbg !92 Source: @i = common global i32 0, align 4
+BB:30
+	GV  Inst:   %11 = load i32* @i, align 4, !dbg !95 Source: @i = common global i32 0, align 4
+	GV  Inst:   %12 = load i32* @iNode, align 4, !dbg !95 Source: @iNode = common global i32 0, align 4
+	--  Inst:   %13 = load i32* %arrayidx18, align 4, !dbg !95 Source: --
+	GV  Inst:   store i32 %13, i32* @iCost, align 4, !dbg !95 Source: @iCost = common global i32 0, align 4
+BB:31
+	GV  Inst:   %14 = load i32* @i, align 4, !dbg !98 Source: @i = common global i32 0, align 4
+	--  Inst:   %15 = load i32* %iDist23, align 4, !dbg !98 Source: --
+BB:32
+	GV  Inst:   %16 = load i32* @i, align 4, !dbg !101 Source: @i = common global i32 0, align 4
+	--  Inst:   %17 = load i32* %iDist27, align 4, !dbg !101 Source: --
+	GV  Inst:   %18 = load i32* @iCost, align 4, !dbg !101 Source: @iCost = common global i32 0, align 4
+	GV  Inst:   %19 = load i32* @iDist, align 4, !dbg !101 Source: @iDist = common global i32 0, align 4
+BB:33
+	GV  Inst:   %20 = load i32* @iDist, align 4, !dbg !103 Source: @iDist = common global i32 0, align 4
+	GV  Inst:   %21 = load i32* @iCost, align 4, !dbg !103 Source: @iCost = common global i32 0, align 4
+	GV  Inst:   %22 = load i32* @i, align 4, !dbg !103 Source: @i = common global i32 0, align 4
+	--  Inst:   store i32 %add30, i32* %iDist33, align 4, !dbg !103 Source: --
+	GV  Inst:   %23 = load i32* @iNode, align 4, !dbg !105 Source: @iNode = common global i32 0, align 4
+	GV  Inst:   %24 = load i32* @i, align 4, !dbg !105 Source: @i = common global i32 0, align 4
+	--  Inst:   store i32 %23, i32* %iPrev36, align 4, !dbg !105 Source: --
+	GV  Inst:   %25 = load i32* @i, align 4, !dbg !106 Source: @i = common global i32 0, align 4
+	GV  Inst:   %26 = load i32* @iDist, align 4, !dbg !106 Source: @iDist = common global i32 0, align 4
+	GV  Inst:   %27 = load i32* @iCost, align 4, !dbg !106 Source: @iCost = common global i32 0, align 4
+	GV  Inst:   %28 = load i32* @iNode, align 4, !dbg !106 Source: @iNode = common global i32 0, align 4
+BB:34
+BB:35
+BB:36
+	GV  Inst:   %29 = load i32* @i, align 4, !dbg !110 Source: @i = common global i32 0, align 4
+	GV  Inst:   store i32 %inc40, i32* @i, align 4, !dbg !110 Source: @i = common global i32 0, align 4
+BB:37
+BB:38
+	ST  Inst:   %30 = load i32* %chEnd.addr, align 4, !dbg !112 Source:   %chEnd.addr = alloca i32, align 4
+	--  Inst:   %31 = load i32* %iDist44, align 4, !dbg !112 Source: --
+	ST  Inst:   %32 = load i32* %chEnd.addr, align 4, !dbg !114 Source:   %chEnd.addr = alloca i32, align 4
+BB:39
+	ST  Inst:   %33 = load i32* %retval, !dbg !116 Source:   %retval = alloca i32, align 4
+BB:40
+	ST  Inst:   store i32 %iNode, i32* %iNode.addr, align 4 Source:   %iNode.addr = alloca i32, align 4
+	ST  Inst:   store i32 %iDist, i32* %iDist.addr, align 4 Source:   %iDist.addr = alloca i32, align 4
+	ST  Inst:   store i32 %iPrev, i32* %iPrev.addr, align 4 Source:   %iPrev.addr = alloca i32, align 4
+	ST  Inst:   store %struct._QITEM.2* %0, %struct._QITEM.2** %qNew, align 8, !dbg !79 Source:   %qNew = alloca %struct._QITEM.2*, align 8
+	GV  Inst:   %1 = load %struct._QITEM.2** @qHead, align 8, !dbg !82 Source: @qHead = global %struct._QITEM.2* null, align 8
+	ST  Inst:   store %struct._QITEM.2* %1, %struct._QITEM.2** %qLast, align 8, !dbg !82 Source:   %qLast = alloca %struct._QITEM.2*, align 8
+	ST  Inst:   %2 = load %struct._QITEM.2** %qNew, align 8, !dbg !83 Source:   %qNew = alloca %struct._QITEM.2*, align 8
+BB:41
+	GV  Inst:   %3 = load %struct._IO_FILE.1** @stderr, align 8, !dbg !85 Source: @stderr = external global %struct._IO_FILE.1*
+BB:42
+	ST  Inst:   %4 = load i32* %iNode.addr, align 4, !dbg !88 Source:   %iNode.addr = alloca i32, align 4
+	ST  Inst:   %5 = load %struct._QITEM.2** %qNew, align 8, !dbg !88 Source:   %qNew = alloca %struct._QITEM.2*, align 8
+	--  Inst:   store i32 %4, i32* %iNode2, align 4, !dbg !88 Source: --
+	ST  Inst:   %6 = load i32* %iDist.addr, align 4, !dbg !89 Source:   %iDist.addr = alloca i32, align 4
+	ST  Inst:   %7 = load %struct._QITEM.2** %qNew, align 8, !dbg !89 Source:   %qNew = alloca %struct._QITEM.2*, align 8
+	--  Inst:   store i32 %6, i32* %iDist3, align 4, !dbg !89 Source: --
+	ST  Inst:   %8 = load i32* %iPrev.addr, align 4, !dbg !90 Source:   %iPrev.addr = alloca i32, align 4
+	ST  Inst:   %9 = load %struct._QITEM.2** %qNew, align 8, !dbg !90 Source:   %qNew = alloca %struct._QITEM.2*, align 8
+	--  Inst:   store i32 %8, i32* %iPrev4, align 4, !dbg !90 Source: --
+	ST  Inst:   %10 = load %struct._QITEM.2** %qNew, align 8, !dbg !91 Source:   %qNew = alloca %struct._QITEM.2*, align 8
+	--  Inst:   store %struct._QITEM.2* null, %struct._QITEM.2** %qNext, align 8, !dbg !91 Source: --
+	ST  Inst:   %11 = load %struct._QITEM.2** %qLast, align 8, !dbg !92 Source:   %qLast = alloca %struct._QITEM.2*, align 8
+BB:43
+	ST  Inst:   %12 = load %struct._QITEM.2** %qNew, align 8, !dbg !94 Source:   %qNew = alloca %struct._QITEM.2*, align 8
+	GV  Inst:   store %struct._QITEM.2* %12, %struct._QITEM.2** @qHead, align 8, !dbg !94 Source: @qHead = global %struct._QITEM.2* null, align 8
+BB:44
+BB:45
+	ST  Inst:   %13 = load %struct._QITEM.2** %qLast, align 8, !dbg !99 Source:   %qLast = alloca %struct._QITEM.2*, align 8
+	--  Inst:   %14 = load %struct._QITEM.2** %qNext7, align 8, !dbg !99 Source: --
+BB:46
+	ST  Inst:   %15 = load %struct._QITEM.2** %qLast, align 8, !dbg !102 Source:   %qLast = alloca %struct._QITEM.2*, align 8
+	--  Inst:   %16 = load %struct._QITEM.2** %qNext9, align 8, !dbg !102 Source: --
+	ST  Inst:   store %struct._QITEM.2* %16, %struct._QITEM.2** %qLast, align 8, !dbg !102 Source:   %qLast = alloca %struct._QITEM.2*, align 8
+BB:47
+	ST  Inst:   %17 = load %struct._QITEM.2** %qNew, align 8, !dbg !104 Source:   %qNew = alloca %struct._QITEM.2*, align 8
+	ST  Inst:   %18 = load %struct._QITEM.2** %qLast, align 8, !dbg !104 Source:   %qLast = alloca %struct._QITEM.2*, align 8
+	--  Inst:   store %struct._QITEM.2* %17, %struct._QITEM.2** %qNext10, align 8, !dbg !104 Source: --
+BB:48
+	GV  Inst:   %19 = load i32* @g_qCount, align 4, !dbg !105 Source: @g_qCount = global i32 0, align 4
+	GV  Inst:   store i32 %inc, i32* @g_qCount, align 4, !dbg !105 Source: @g_qCount = global i32 0, align 4
+BB:49
+	ST  Inst:   store %struct._NODE.3* %rgnNodes, %struct._NODE.3** %rgnNodes.addr, align 8 Source:   %rgnNodes.addr = alloca %struct._NODE.3*, align 8
+	ST  Inst:   store i32 %chNode, i32* %chNode.addr, align 4 Source:   %chNode.addr = alloca i32, align 4
+	ST  Inst:   %0 = load i32* %chNode.addr, align 4, !dbg !75 Source:   %chNode.addr = alloca i32, align 4
+	ST  Inst:   %1 = load %struct._NODE.3** %rgnNodes.addr, align 8, !dbg !75 Source:   %rgnNodes.addr = alloca %struct._NODE.3*, align 8
+	--  Inst:   %2 = load i32* %iPrev, align 4, !dbg !75 Source: --
+BB:50
+	ST  Inst:   %3 = load %struct._NODE.3** %rgnNodes.addr, align 8, !dbg !77 Source:   %rgnNodes.addr = alloca %struct._NODE.3*, align 8
+	ST  Inst:   %4 = load i32* %chNode.addr, align 4, !dbg !77 Source:   %chNode.addr = alloca i32, align 4
+	ST  Inst:   %5 = load %struct._NODE.3** %rgnNodes.addr, align 8, !dbg !77 Source:   %rgnNodes.addr = alloca %struct._NODE.3*, align 8
+	--  Inst:   %6 = load i32* %iPrev3, align 4, !dbg !77 Source: --
+BB:51
+	ST  Inst:   %7 = load i32* %chNode.addr, align 4, !dbg !80 Source:   %chNode.addr = alloca i32, align 4
+	GV  Inst:   %8 = load %struct._IO_FILE.1** @stdout, align 8, !dbg !81 Source: @stdout = external global %struct._IO_FILE.1*
+BB:52
+	GV  Inst:   %0 = load i32* @g_qCount, align 4, !dbg !62 Source: @g_qCount = global i32 0, align 4

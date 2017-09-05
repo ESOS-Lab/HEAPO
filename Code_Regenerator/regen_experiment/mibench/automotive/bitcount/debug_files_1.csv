@@ -1,0 +1,23 @@
+Global Variable Memory Region Profile Result
+
+Index,Read Count,Write Count,Memory Size,Name, Type  
+18,0,0,8,stderr,%struct._IO_FILE.1** 
+17,0,0,8,main.text,[7 x i8*]* 
+16,0,0,8,main.pBitCntFunc,[7 x i32 (i64)*]* 
+15,0,0,8,bits1,[256 x i8]* 
+14,0,0,8,bits,[256 x i8]* 
+13,0,0,8,.str9,[171 x i8]* 
+12,0,0,8,.str8,[26 x i8]* 
+11,0,0,8,.str7,[124 x i8]* 
+10,0,0,8,.str6,[4 x i8]* 
+9,0,0,8,.str5,[23 x i8]* 
+8,0,0,8,.str4,[100 x i8]* 
+7,0,0,8,.str3,[3 x i8]* 
+6,0,0,8,.str2,[31 x i8]* 
+5,0,0,8,.str12,[28 x i8]* 
+4,0,0,8,.str11,[18 x i8]* 
+3,0,0,8,.str10,[43 x i8]* 
+2,0,0,8,.str1,[29 x i8]* 
+1,0,0,8,.str,[18 x i8]* 
+
+

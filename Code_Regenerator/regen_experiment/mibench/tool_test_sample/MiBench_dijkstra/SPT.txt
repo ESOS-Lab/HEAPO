@@ -1,0 +1,86 @@
+Total Memory Access Inst:84
+GV:52
+ST:1
+HP:12
+Unknown:19
+
+
+Ftn : dequeue
+	BB:1	 Vars :1
+-		1 , 0  : qHead
+	BB:2	 Vars :2
+-		0 , 1  : qHead
+-		1 , 1  : g_qCount
+Ftn : dijkstra
+	BB:4	 Vars :1
+-		0 , 1  : ch
+	BB:5	 Vars :1
+-		0 , 8  : rgnNodes
+	BB:6	 Vars :1
+-		0 , 1  : ch
+	BB:8	 Vars :2
+-		1 , 0  : qHead
+-		0 , 2  : rgnNodes
+	BB:9	 Vars :1
+-		1 , 0  : stderr
+	BB:10	 Vars :1
+-		0 , 4  : call.i
+	BB:12	 Vars :1
+-		0 , 1  : qHead
+	BB:15	 Vars :1
+-		1 , 1  : g_qCount
+	BB:18	 Vars :1
+-		1 , 0  : qHead
+	BB:19	 Vars :5
+-		0 , 1  : qHead
+-		1 , 1  : g_qCount
+-		0 , 1  : iNode
+-		0 , 1  : iDist
+-		0 , 1  : iPrev
+	BB:20	 Vars :2
+-		1 , 0  : iNode
+-		0 , 1  : i
+	BB:21	 Vars :2
+-		1 , 0  : AdjMatrix
+-		0 , 1  : iCost
+	BB:22	 Vars :2
+-		1 , 0  : rgnNodes
+-		1 , 0  : iDist
+	BB:23	 Vars :2
+-		1 , 0  : qHead
+-		0 , 2  : rgnNodes
+	BB:24	 Vars :1
+-		1 , 0  : stderr
+	BB:25	 Vars :1
+-		0 , 4  : call.i60
+	BB:27	 Vars :1
+-		0 , 1  : qHead
+	BB:30	 Vars :1
+-		0 , 1  : g_qCount
+	BB:31	 Vars :1
+-		0 , 1  : i
+	BB:33	 Vars :1
+-		1 , 0  : rgnNodes
+Ftn : enqueue
+	BB:35	 Vars :1
+-		1 , 0  : qHead
+	BB:36	 Vars :1
+-		1 , 0  : stderr
+	BB:37	 Vars :1
+-		0 , 4  : call
+	BB:39	 Vars :1
+-		0 , 1  : qHead
+	BB:42	 Vars :1
+-		1 , 1  : g_qCount
+Ftn : new_main
+	BB:44	 Vars :1
+-		2 , 0  : stderr
+	BB:47	 Vars :2
+-		1 , 0  : k
+-		0 , 1  : AdjMatrix
+Ftn : print_path
+	BB:54	 Vars :1
+-		1 , 0  : stdout
+Ftn : qcount
+	BB:55	 Vars :1
+-		1 , 0  : g_qCount

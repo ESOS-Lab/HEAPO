@@ -1,0 +1,80 @@
+Totals GV:1
+ST:43
+HP:0
+Unknown:10
+Total Memory Access Inst:54
+
+
+BB:1
+	ST  Inst:   store i32 0, i32* %retval Source:   %retval = alloca i32, align 4
+	ST  Inst:   store i32 %argc, i32* %argc.addr, align 4 Source:   %argc.addr = alloca i32, align 4
+	ST  Inst:   store i8** %argv, i8*** %argv.addr, align 8 Source:   %argv.addr = alloca i8**, align 8
+	ST  Inst:   store i32 0, i32* %count, align 4, !dbg !102 Source:   %count = alloca i32, align 4
+	ST  Inst:   %0 = load i32* %argc.addr, align 4, !dbg !109 Source:   %argc.addr = alloca i32, align 4
+BB:2
+	GV  Inst:   %1 = load %struct._IO_FILE.1** @stderr, align 8, !dbg !111 Source: @stderr = external global %struct._IO_FILE.1*
+BB:3
+	ST  Inst:   %2 = load i8*** %argv.addr, align 8, !dbg !114 Source:   %argv.addr = alloca i8**, align 8
+	--  Inst:   %3 = load i8** %arrayidx, align 8, !dbg !114 Source: --
+	ST  Inst:   store %struct._IO_FILE.1* %call1, %struct._IO_FILE.1** %fp, align 8, !dbg !114 Source:   %fp = alloca %struct._IO_FILE.1*, align 8
+BB:4
+	ST  Inst:   %4 = load %struct._IO_FILE.1** %fp, align 8, !dbg !117 Source:   %fp = alloca %struct._IO_FILE.1*, align 8
+BB:5
+	ST  Inst:   %5 = load %struct._IO_FILE.1** %fp, align 8, !dbg !119 Source:   %fp = alloca %struct._IO_FILE.1*, align 8
+BB:6
+	ST  Inst:   %6 = load %struct._IO_FILE.1** %fp, align 8, !dbg !121 Source:   %fp = alloca %struct._IO_FILE.1*, align 8
+BB:7
+	ST  Inst:   %7 = load i32* %count, align 4, !dbg !123 Source:   %count = alloca i32, align 4
+BB:8
+BB:9
+	ST  Inst:   %9 = load i32* %x, align 4, !dbg !129 Source:   %x = alloca i32, align 4
+	ST  Inst:   %10 = load i32* %count, align 4, !dbg !129 Source:   %count = alloca i32, align 4
+	--  Inst:   store i32 %9, i32* %x11, align 4, !dbg !129 Source: --
+	ST  Inst:   %11 = load i32* %y, align 4, !dbg !131 Source:   %y = alloca i32, align 4
+	ST  Inst:   %12 = load i32* %count, align 4, !dbg !131 Source:   %count = alloca i32, align 4
+	--  Inst:   store i32 %11, i32* %y14, align 4, !dbg !131 Source: --
+	ST  Inst:   %13 = load i32* %z, align 4, !dbg !132 Source:   %z = alloca i32, align 4
+	ST  Inst:   %14 = load i32* %count, align 4, !dbg !132 Source:   %count = alloca i32, align 4
+	--  Inst:   store i32 %13, i32* %z17, align 4, !dbg !132 Source: --
+	ST  Inst:   %15 = load i32* %x, align 4, !dbg !133 Source:   %x = alloca i32, align 4
+	ST  Inst:   %16 = load i32* %y, align 4, !dbg !134 Source:   %y = alloca i32, align 4
+	ST  Inst:   %17 = load i32* %z, align 4, !dbg !135 Source:   %z = alloca i32, align 4
+	ST  Inst:   %18 = load i32* %count, align 4, !dbg !136 Source:   %count = alloca i32, align 4
+	--  Inst:   store double %call24, double* %distance, align 8, !dbg !136 Source: --
+	ST  Inst:   %19 = load i32* %count, align 4, !dbg !137 Source:   %count = alloca i32, align 4
+	ST  Inst:   store i32 %inc, i32* %count, align 4, !dbg !137 Source:   %count = alloca i32, align 4
+BB:10
+BB:11
+	ST  Inst:   %20 = load i32* %count, align 4, !dbg !139 Source:   %count = alloca i32, align 4
+	ST  Inst:   %22 = load i32* %count, align 4, !dbg !140 Source:   %count = alloca i32, align 4
+	ST  Inst:   store i32 0, i32* %i, align 4, !dbg !141 Source:   %i = alloca i32, align 4
+BB:12
+	ST  Inst:   %23 = load i32* %i, align 4, !dbg !143 Source:   %i = alloca i32, align 4
+	ST  Inst:   %24 = load i32* %count, align 4, !dbg !143 Source:   %count = alloca i32, align 4
+BB:13
+	ST  Inst:   %25 = load i32* %i, align 4, !dbg !146 Source:   %i = alloca i32, align 4
+	--  Inst:   %26 = load i32* %x33, align 4, !dbg !146 Source: --
+	ST  Inst:   %27 = load i32* %i, align 4, !dbg !146 Source:   %i = alloca i32, align 4
+	--  Inst:   %28 = load i32* %y36, align 4, !dbg !146 Source: --
+	ST  Inst:   %29 = load i32* %i, align 4, !dbg !146 Source:   %i = alloca i32, align 4
+	--  Inst:   %30 = load i32* %z39, align 4, !dbg !146 Source: --
+BB:14
+	ST  Inst:   %31 = load i32* %i, align 4, !dbg !147 Source:   %i = alloca i32, align 4
+	ST  Inst:   store i32 %inc41, i32* %i, align 4, !dbg !147 Source:   %i = alloca i32, align 4
+BB:15
+BB:16
+	ST  Inst:   store i8* %elem1, i8** %elem1.addr, align 8 Source:   %elem1.addr = alloca i8*, align 8
+	ST  Inst:   store i8* %elem2, i8** %elem2.addr, align 8 Source:   %elem2.addr = alloca i8*, align 8
+	ST  Inst:   %0 = load i8** %elem1.addr, align 8, !dbg !29 Source:   %elem1.addr = alloca i8*, align 8
+	--  Inst:   %2 = load double* %distance, align 8, !dbg !29 Source: --
+	ST  Inst:   store double %2, double* %distance1, align 8, !dbg !29 Source:   %distance1 = alloca double, align 8
+	ST  Inst:   %3 = load i8** %elem2.addr, align 8, !dbg !30 Source:   %elem2.addr = alloca i8*, align 8
+	--  Inst:   %5 = load double* %distance3, align 8, !dbg !30 Source: --
+	ST  Inst:   store double %5, double* %distance2, align 8, !dbg !30 Source:   %distance2 = alloca double, align 8
+	ST  Inst:   %6 = load double* %distance1, align 8, !dbg !31 Source:   %distance1 = alloca double, align 8
+	ST  Inst:   %7 = load double* %distance2, align 8, !dbg !31 Source:   %distance2 = alloca double, align 8
+BB:17
+BB:18
+	ST  Inst:   %8 = load double* %distance1, align 8, !dbg !34 Source:   %distance1 = alloca double, align 8
+	ST  Inst:   %9 = load double* %distance2, align 8, !dbg !34 Source:   %distance2 = alloca double, align 8
+BB:19
