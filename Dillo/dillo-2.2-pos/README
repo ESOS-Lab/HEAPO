@@ -1,0 +1,70 @@
+===================
+ Dillo web browser
+===================
+
+  Dillo 2.2 features a major overhaul of the cookies subsystem,
+a reimplementation of the Dillo Plugin (DPI) API, a configurable
+connection limit, and various CSS improvements.
+
+  This release is part of the Dillo2 series. In Dillo2, significant
+parts of the codebase were ported to C++, and the rendering engine was
+modified to use the FLTK2 library rather than GTK1.
+
+  Here's a list of some well-known problems:
+
+         * no FRAMES rendering
+         * no https (there's a barebones prototype).
+
+-----
+FLTK2
+-----
+
+  The FLTK2 library is statically linked into Dillo2.
+  You can get it from fltk.org.
+The recommended version is >= r6916. e.g. in:
+
+  http://fltk.org/software.php?VERSION=2.0.x-r6916
+
+
+------------
+Dpi programs
+------------
+
+  These  are  installed by "make install". If you don't have root
+access,  copy  "dillo"  and "dpid" to some directory in your path
+and  install  the  dpis by running "./install-dpi-local" from the
+top directory (they will be installed under ~/.dillo).
+
+
+----
+*BSD
+----
+
+  Dillo   compiles on *BSD systems; please report on this anyway,
+and note that you'll need GNU make.
+
+  If your dillo crashes or locks at times, just use:
+
+    ./configure --disable-threaded-dns
+
+  so dillo uses a single thread for name resolving.
+
+
+-------
+Solaris
+-------
+
+  Dillo may compile and run OK on Solaris but (please report):
+
+    * use gmake (a symbolic link make -> gmake works OK)
+
+  Solaris is very inconsistent so you may need to add/remove:
+
+  -lrt -lposix4
+
+  at link time.
+
+    
+Jorge.-
+(jcid@dillo.org)
+June, 2009

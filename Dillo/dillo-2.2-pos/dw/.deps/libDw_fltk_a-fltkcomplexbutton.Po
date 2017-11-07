@@ -1,0 +1,102 @@
+libDw_fltk_a-fltkcomplexbutton.o: fltkcomplexbutton.cc \
+ /usr/local/include/fltk/events.h /usr/local/include/fltk/FL_API.h \
+ /usr/local/include/fltk/damage.h /usr/local/include/fltk/Group.h \
+ /usr/local/include/fltk/Widget.h /usr/local/include/fltk/Style.h \
+ /usr/local/include/fltk/Color.h /usr/local/include/fltk/Flags.h \
+ /usr/local/include/fltk/Rectangle.h /usr/local/include/fltk/Box.h \
+ /usr/local/include/fltk/Symbol.h /usr/local/include/fltk/PixelType.h \
+ /usr/include/stdlib.h /usr/include/features.h \
+ /usr/include/bits/predefs.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/xlocale.h \
+ /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h fltkcomplexbutton.hh \
+ /usr/local/include/fltk/draw.h
+
+/usr/local/include/fltk/events.h:
+
+/usr/local/include/fltk/FL_API.h:
+
+/usr/local/include/fltk/damage.h:
+
+/usr/local/include/fltk/Group.h:
+
+/usr/local/include/fltk/Widget.h:
+
+/usr/local/include/fltk/Style.h:
+
+/usr/local/include/fltk/Color.h:
+
+/usr/local/include/fltk/Flags.h:
+
+/usr/local/include/fltk/Rectangle.h:
+
+/usr/local/include/fltk/Box.h:
+
+/usr/local/include/fltk/Symbol.h:
+
+/usr/local/include/fltk/PixelType.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/bits/stdlib.h:
+
+fltkcomplexbutton.hh:
+
+/usr/local/include/fltk/draw.h:

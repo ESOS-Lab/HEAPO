@@ -1,0 +1,622 @@
+paths: Cannot open file '/root/.dillo/dillorc'
+paths: Using /usr/local/etc/dillo/dillorc
+paths: Cannot open file '/root/.dillo/keysrc'
+paths: Using /usr/local/etc/dillo/keysrc
+dillo_dns_init: Here we go! (threaded)
+Disabling cookies.
+Nav_open_url: new url='http://www.naver.com'
+Dns_server [0]: www.naver.com is 222.122.195.6 202.131.29.70
+Connecting to 222.122.195.6
+initDw: new textblock
+  Html_tag_open_link(): addCssUrl http://www.naver.com/css/navermain.css?20110817
+NumPendingStyleSheets=1
+hr
+list
+list
+list
+list
+button
+input/text/EntryResource
+button
+image
+image
+Html_tag_open_area
+Html_tag_open_area
+image
+Html_tag_open_area
+Html_tag_open_area
+hr
+select
+input/text/EntryResource
+image/complexButton
+input/image/complexButton
+EntryResource
+EntryResource
+EntryResource
+image
+frame
+image
+image
+image
+hr
+image
+image
+image
+image
+image
+image
+image
+image
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+EntryResource
+select
+EntryResource
+LabelButtonResource
+hr
+frame
+list
+list
+list
+list
+list
+list
+image
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+button
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+Dns_server [0]: static.naver.com is 211.206.124.238 222.231.8.178 175.158.11.67
+Dns_server [1]: static.naver.net is 58.229.121.217 119.205.216.140 219.255.135.174
+list
+list
+list
+list
+list
+list
+image
+image
+image
+image
+list
+list
+image
+list
+list
+list
+list
+list
+list
+image
+image
+image
+button
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+image
+image
+image
+button
+image
+list
+list
+list
+list
+image
+image
+image
+list
+list
+list
+list
+list
+list
+list
+image
+image
+image
+list
+list
+list
+image
+list
+list
+list
+list
+image
+image
+list
+list
+list
+list
+list
+list
+list
+list
+image
+list
+image
+list
+image
+list
+image
+list
+image
+image
+frame
+list
+list
+list
+image
+image
+input/text/EntryResource
+image
+Html_tag_open_area
+Html_tag_open_area
+Html_tag_open_area
+Html_tag_open_area
+Html_tag_open_area
+frame
+frame
+list
+Dns_server [2]: thumb.opencast.naver.net is 120.143.249.25 121.189.13.140 58.227.194.109
+Dns_server [3]: wstatic.naver.com is 175.158.11.51 58.227.194.67 119.205.216.134
+image
+image
+hr
+image
+image
+>>> a_Nav_repush <<<<
+Nav_open_url: new url='http://www.naver.com'
+** WARNING **: IO_write, closing with pending data not sent
+** WARNING **:  "GET /www/u/2010/0405/nmms_135828120.jpg HTTP/1.1\x0D
+Connection: close\x0D
+Accept-Charset: utf-8,*;q=0.8\x0D
+Accept-Encoding: gzip\x0D
+Host: static.naver.com\x0D
+Referer: http://static.naver.com/\x0D
+User-Agent: Dillo/2.2\x0D
+\x0D
+"
+** WARNING **: IO_write, closing with pending data not sent
+** WARNING **:  "GET /www/u/2010/1221/nmms_14458984_c.jpg HTTP/1.1\x0D
+Connection: close\x0D
+Accept-Charset: utf-8,*;q=0.8\x0D
+Accept-Encoding: gzip\x0D
+Host: static.naver.com\x0D
+Referer: http://static.naver.com/\x0D
+User-Agent: Dillo/2.2\x0D
+\x0D
+"
+** WARNING **: IO_write, closing with pending data not sent
+** WARNING **:  "GET /w9/mn_cafe.gif HTTP/1.1\x0D
+Connection: close\x0D
+Accept-Charset: utf-8,*;q=0.8\x0D
+Accept-Encoding: gzip\x0D
+Host: static.naver.net\x0D
+Referer: http://static.naver.net/\x0D
+User-Agent: Dillo/2.2\x0D
+\x0D
+"
+** WARNING **: IO_write, closing with pending data not sent
+** WARNING **:  "GET /w9/mn_mail.gif HTTP/1.1\x0D
+Connection: close\x0D
+Accept-Charset: utf-8,*;q=0.8\x0D
+Accept-Encoding: gzip\x0D
+Host: static.naver.net\x0D
+Referer: http://static.naver.net/\x0D
+User-Agent: Dillo/2.2\x0D
+\x0D
+"
+** WARNING **: IO_write, closing with pending data not sent
+** WARNING **:  "GET /w9/blank.gif HTTP/1.1\x0D
+Connection: close\x0D
+Accept-Charset: utf-8,*;q=0.8\x0D
+Accept-Encoding: gzip\x0D
+Host: static.naver.net\x0D
+Referer: http://static.naver.net/\x0D
+User-Agent: Dillo/2.2\x0D
+\x0D
+"
+** WARNING **: IO_write, closing with pending data not sent
+** WARNING **:  "GET /w9/btn_atcmp_down_on.gif HTTP/1.1\x0D
+Connection: close\x0D
+Accept-Charset: utf-8,*;q=0.8\x0D
+Accept-Encoding: gzip\x0D
+Host: static.naver.net\x0D
+Referer: http://static.naver.net/\x0D
+User-Agent: Dillo/2.2\x0D
+\x0D
+"
+** WARNING **: IO_write, closing with pending data not sent
+** WARNING **:  "GET /w9/btn_sch.gif HTTP/1.1\x0D
+Connection: close\x0D
+Accept-Charset: utf-8,*;q=0.8\x0D
+Accept-Encoding: gzip\x0D
+Host: static.naver.net\x0D
+Referer: http://static.naver.net/\x0D
+User-Agent: Dillo/2.2\x0D
+\x0D
+"
+** WARNING **: IO_write, closing with pending data not sent
+** WARNING **:  "GET /w9/h_notice.gif HTTP/1.1\x0D
+Connection: close\x0D
+Accept-Charset: utf-8,*;q=0.8\x0D
+Accept-Encoding: gzip\x0D
+Host: static.naver.net\x0D
+Referer: http://static.naver.net/\x0D
+User-Agent: Dillo/2.2\x0D
+\x0D
+"
+** WARNING **: IO_write, closing with pending data not sent
+** WARNING **:  "GET /www/main_sliding_880x41_new.jpg HTTP/1.1\x0D
+Connection: close\x0D
+Accept-Charset: utf-8,*;q=0.8\x0D
+Accept-Encoding: gzip\x0D
+Host: static.naver.net\x0D
+Referer: http://static.naver.net/\x0D
+User-Agent: Dillo/2.2\x0D
+\x0D
+"
+** WARNING **: IO_write, closing with pending data not sent
+** WARNING **:  "GET /w9/btn_svc_all.png HTTP/1.1\x0D
+Connection: close\x0D
+Accept-Charset: utf-8,*;q=0.8\x0D
+Accept-Encoding: gzip\x0D
+Host: static.naver.net\x0D
+Referer: http://static.naver.net/\x0D
+User-Agent: Dillo/2.2\x0D
+\x0D
+"
+initDw: new textblock
+a_Nav_expect_done: repush!
+  Html_tag_open_link(): addCssUrl http://www.naver.com/css/navermain.css?20110817
+
+hr
+list
+list
+list
+list
+button
+input/text/EntryResource
+button
+image
+image
+Html_tag_open_area
+Html_tag_open_area
+image
+Html_tag_open_area
+Html_tag_open_area
+hr
+select
+input/text/EntryResource
+image/complexButton
+input/image/complexButton
+EntryResource
+EntryResource
+EntryResource
+image
+frame
+image
+image
+image
+hr
+image
+image
+image
+image
+image
+image
+image
+image
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+EntryResource
+select
+EntryResource
+LabelButtonResource
+hr
+frame
+list
+list
+list
+list
+list
+list
+image
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+button
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+image
+image
+image
+image
+list
+list
+image
+list
+list
+list
+list
+list
+list
+image
+image
+image
+button
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+list
+image
+image
+image
+button
+image
+list
+list
+list
+list
+image
+image
+image
+list
+list
+list
+list
+list
+list
+list
+image
+image
+image
+list
+list
+list
+image
+list
+list
+list
+list
+image
+image
+list
+list
+list
+list
+list
+list
+list
+list
+image
+list
+image
+list
+image
+list
+image
+list
+image
+image
+frame
+list
+list
+list
+image
+image
+input/text/EntryResource
+image
+Html_tag_open_area
+Html_tag_open_area
+Html_tag_open_area
+Html_tag_open_area
+Html_tag_open_area
+frame
+frame
+list
+image
+image
+hr
+image
+image
+a_UIcmd_close_bw
+POS-lib debug: There isn't target object storage!
+
+Dillo: normal exit!

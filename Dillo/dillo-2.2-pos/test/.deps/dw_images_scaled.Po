@@ -1,0 +1,248 @@
+dw_images_scaled.o: dw_images_scaled.cc /usr/local/include/fltk/Window.h \
+ /usr/local/include/fltk/Group.h /usr/local/include/fltk/Widget.h \
+ /usr/local/include/fltk/Style.h /usr/local/include/fltk/Color.h \
+ /usr/local/include/fltk/FL_API.h /usr/local/include/fltk/Flags.h \
+ /usr/local/include/fltk/Rectangle.h /usr/local/include/fltk/run.h \
+ /usr/include/stdio.h /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h \
+ /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h ../dw/core.hh \
+ ../dw/../lout/object.hh /usr/include/stdlib.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/xlocale.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/sys/select.h \
+ /usr/include/bits/select.h /usr/include/bits/sigset.h \
+ /usr/include/bits/time.h /usr/include/sys/sysmacros.h \
+ /usr/include/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib.h /usr/include/string.h \
+ /usr/include/bits/string3.h ../dw/../lout/misc.hh /usr/include/assert.h \
+ /usr/include/pos-lib.h ../dw/../lout/../myconfig.h \
+ ../dw/../lout/container.hh ../dw/../lout/object.hh \
+ ../dw/../lout/signal.hh ../dw/../lout/container.hh ../dw/types.hh \
+ ../dw/events.hh ../dw/imgbuf.hh ../dw/style.hh /usr/include/stdint.h \
+ /usr/include/bits/wchar.h ../dw/../myconfig.h ../dw/view.hh \
+ ../dw/platform.hh ../dw/iterator.hh ../dw/findtext.hh \
+ /usr/include/ctype.h ../dw/selection.hh ../dw/layout.hh ../dw/widget.hh \
+ ../dw/../lout/identity.hh ../dw/../lout/signal.hh ../dw/core.hh \
+ ../dw/ui.hh ../dw/fltkcore.hh /usr/local/include/fltk/Widget.h \
+ ../dw/fltkimgbuf.hh ../dw/fltkplatform.hh /usr/local/include/fltk/Font.h \
+ ../dw/fltkui.hh /usr/local/include/fltk/Button.h \
+ /usr/local/include/fltk/Menu.h /usr/local/include/fltk/TextBuffer.h \
+ /usr/local/include/fltk/Item.h /usr/local/include/fltk/ItemGroup.h \
+ /usr/local/include/fltk/Menu.h ../dw/fltkviewport.hh \
+ /usr/local/include/fltk/Group.h /usr/local/include/fltk/Scrollbar.h \
+ /usr/local/include/fltk/Slider.h /usr/local/include/fltk/Valuator.h \
+ ../dw/fltkcore.hh ../dw/fltkviewbase.hh /usr/include/sys/time.h \
+ /usr/local/include/fltk/Image.h /usr/local/include/fltk/Symbol.h \
+ /usr/local/include/fltk/PixelType.h ../dw/textblock.hh \
+ ../dw/../lout/misc.hh ../dw/image.hh ../myconfig.h
+
+/usr/local/include/fltk/Window.h:
+
+/usr/local/include/fltk/Group.h:
+
+/usr/local/include/fltk/Widget.h:
+
+/usr/local/include/fltk/Style.h:
+
+/usr/local/include/fltk/Color.h:
+
+/usr/local/include/fltk/FL_API.h:
+
+/usr/local/include/fltk/Flags.h:
+
+/usr/local/include/fltk/Rectangle.h:
+
+/usr/local/include/fltk/run.h:
+
+/usr/include/stdio.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stdarg.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/include/bits/stdio2.h:
+
+../dw/core.hh:
+
+../dw/../lout/object.hh:
+
+/usr/include/stdlib.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/bits/stdlib.h:
+
+/usr/include/string.h:
+
+/usr/include/bits/string3.h:
+
+../dw/../lout/misc.hh:
+
+/usr/include/assert.h:
+
+/usr/include/pos-lib.h:
+
+../dw/../lout/../myconfig.h:
+
+../dw/../lout/container.hh:
+
+../dw/../lout/object.hh:
+
+../dw/../lout/signal.hh:
+
+../dw/../lout/container.hh:
+
+../dw/types.hh:
+
+../dw/events.hh:
+
+../dw/imgbuf.hh:
+
+../dw/style.hh:
+
+/usr/include/stdint.h:
+
+/usr/include/bits/wchar.h:
+
+../dw/../myconfig.h:
+
+../dw/view.hh:
+
+../dw/platform.hh:
+
+../dw/iterator.hh:
+
+../dw/findtext.hh:
+
+/usr/include/ctype.h:
+
+../dw/selection.hh:
+
+../dw/layout.hh:
+
+../dw/widget.hh:
+
+../dw/../lout/identity.hh:
+
+../dw/../lout/signal.hh:
+
+../dw/core.hh:
+
+../dw/ui.hh:
+
+../dw/fltkcore.hh:
+
+/usr/local/include/fltk/Widget.h:
+
+../dw/fltkimgbuf.hh:
+
+../dw/fltkplatform.hh:
+
+/usr/local/include/fltk/Font.h:
+
+../dw/fltkui.hh:
+
+/usr/local/include/fltk/Button.h:
+
+/usr/local/include/fltk/Menu.h:
+
+/usr/local/include/fltk/TextBuffer.h:
+
+/usr/local/include/fltk/Item.h:
+
+/usr/local/include/fltk/ItemGroup.h:
+
+/usr/local/include/fltk/Menu.h:
+
+../dw/fltkviewport.hh:
+
+/usr/local/include/fltk/Group.h:
+
+/usr/local/include/fltk/Scrollbar.h:
+
+/usr/local/include/fltk/Slider.h:
+
+/usr/local/include/fltk/Valuator.h:
+
+../dw/fltkcore.hh:
+
+../dw/fltkviewbase.hh:
+
+/usr/include/sys/time.h:
+
+/usr/local/include/fltk/Image.h:
+
+/usr/local/include/fltk/Symbol.h:
+
+/usr/local/include/fltk/PixelType.h:
+
+../dw/textblock.hh:
+
+../dw/../lout/misc.hh:
+
+../dw/image.hh:
+
+../myconfig.h:

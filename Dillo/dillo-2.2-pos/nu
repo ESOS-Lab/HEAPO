@@ -1,0 +1,23 @@
+#ifndef __POS_DBG
+#define __POS_DBG
+
+#define __POS_MODE
+
+#define __POS_CREATE 1
+#define __POS_MAP 2
+
+#define __RW_MODE __POS_CREATE
+#define __RW_MODE __POS_MAP
+
+#if (__RW_MODE == 1)
+	#define __CREATE
+	#undef __MAP
+#endif 
+
+#if (__RW_MODE == 2)
+	#undef __CREATE
+	#define __MAP
+#endif 
+
+#define __POS_OBJ_NAME "object5"
+#endif

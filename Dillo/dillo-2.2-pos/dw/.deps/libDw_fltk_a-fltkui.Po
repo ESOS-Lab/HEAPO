@@ -1,0 +1,274 @@
+libDw_fltk_a-fltkui.o: fltkui.cc fltkcore.hh \
+ /usr/local/include/fltk/Widget.h /usr/local/include/fltk/Style.h \
+ /usr/local/include/fltk/Color.h /usr/local/include/fltk/FL_API.h \
+ /usr/local/include/fltk/Flags.h /usr/local/include/fltk/Rectangle.h \
+ core.hh ../lout/object.hh /usr/include/stdlib.h /usr/include/features.h \
+ /usr/include/bits/predefs.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/xlocale.h \
+ /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/string.h \
+ /usr/include/bits/string3.h ../lout/misc.hh /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/assert.h /usr/include/pos-lib.h ../lout/../myconfig.h \
+ ../lout/container.hh ../lout/object.hh ../lout/signal.hh \
+ ../lout/container.hh types.hh events.hh imgbuf.hh style.hh \
+ /usr/include/stdint.h /usr/include/bits/wchar.h ../myconfig.h view.hh \
+ platform.hh iterator.hh findtext.hh /usr/include/ctype.h selection.hh \
+ layout.hh widget.hh ../lout/identity.hh ../lout/signal.hh ui.hh \
+ fltkimgbuf.hh fltkplatform.hh /usr/local/include/fltk/Font.h fltkui.hh \
+ /usr/local/include/fltk/Button.h /usr/local/include/fltk/Menu.h \
+ /usr/local/include/fltk/Group.h /usr/local/include/fltk/TextBuffer.h \
+ /usr/local/include/fltk/Item.h /usr/local/include/fltk/ItemGroup.h \
+ /usr/local/include/fltk/Menu.h fltkflatview.hh \
+ /usr/local/include/fltk/Group.h /usr/local/include/fltk/Scrollbar.h \
+ /usr/local/include/fltk/Slider.h /usr/local/include/fltk/Valuator.h \
+ fltkviewbase.hh /usr/include/sys/time.h /usr/local/include/fltk/Image.h \
+ /usr/local/include/fltk/Symbol.h /usr/local/include/fltk/PixelType.h \
+ fltkcomplexbutton.hh ../lout/msg.h ../lout/misc.hh \
+ /usr/local/include/fltk/Input.h /usr/local/include/fltk/TextEditor.h \
+ /usr/local/include/fltk/TextDisplay.h /usr/local/include/fltk/draw.h \
+ /usr/local/include/fltk/Widget.h /usr/local/include/fltk/Scrollbar.h \
+ /usr/local/include/fltk/TextBuffer.h /usr/local/include/fltk/Font.h \
+ /usr/local/include/fltk/RadioButton.h \
+ /usr/local/include/fltk/CheckButton.h /usr/local/include/fltk/Button.h \
+ /usr/local/include/fltk/CheckButton.h /usr/local/include/fltk/Choice.h \
+ /usr/local/include/fltk/Browser.h /usr/local/include/fltk/draw.h \
+ /usr/local/include/fltk/Symbol.h /usr/local/include/fltk/events.h
+
+fltkcore.hh:
+
+/usr/local/include/fltk/Widget.h:
+
+/usr/local/include/fltk/Style.h:
+
+/usr/local/include/fltk/Color.h:
+
+/usr/local/include/fltk/FL_API.h:
+
+/usr/local/include/fltk/Flags.h:
+
+/usr/local/include/fltk/Rectangle.h:
+
+core.hh:
+
+../lout/object.hh:
+
+/usr/include/stdlib.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/bits/stdlib.h:
+
+/usr/include/string.h:
+
+/usr/include/bits/string3.h:
+
+../lout/misc.hh:
+
+/usr/include/stdio.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stdarg.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/include/bits/stdio2.h:
+
+/usr/include/assert.h:
+
+/usr/include/pos-lib.h:
+
+../lout/../myconfig.h:
+
+../lout/container.hh:
+
+../lout/object.hh:
+
+../lout/signal.hh:
+
+../lout/container.hh:
+
+types.hh:
+
+events.hh:
+
+imgbuf.hh:
+
+style.hh:
+
+/usr/include/stdint.h:
+
+/usr/include/bits/wchar.h:
+
+../myconfig.h:
+
+view.hh:
+
+platform.hh:
+
+iterator.hh:
+
+findtext.hh:
+
+/usr/include/ctype.h:
+
+selection.hh:
+
+layout.hh:
+
+widget.hh:
+
+../lout/identity.hh:
+
+../lout/signal.hh:
+
+ui.hh:
+
+fltkimgbuf.hh:
+
+fltkplatform.hh:
+
+/usr/local/include/fltk/Font.h:
+
+fltkui.hh:
+
+/usr/local/include/fltk/Button.h:
+
+/usr/local/include/fltk/Menu.h:
+
+/usr/local/include/fltk/Group.h:
+
+/usr/local/include/fltk/TextBuffer.h:
+
+/usr/local/include/fltk/Item.h:
+
+/usr/local/include/fltk/ItemGroup.h:
+
+/usr/local/include/fltk/Menu.h:
+
+fltkflatview.hh:
+
+/usr/local/include/fltk/Group.h:
+
+/usr/local/include/fltk/Scrollbar.h:
+
+/usr/local/include/fltk/Slider.h:
+
+/usr/local/include/fltk/Valuator.h:
+
+fltkviewbase.hh:
+
+/usr/include/sys/time.h:
+
+/usr/local/include/fltk/Image.h:
+
+/usr/local/include/fltk/Symbol.h:
+
+/usr/local/include/fltk/PixelType.h:
+
+fltkcomplexbutton.hh:
+
+../lout/msg.h:
+
+../lout/misc.hh:
+
+/usr/local/include/fltk/Input.h:
+
+/usr/local/include/fltk/TextEditor.h:
+
+/usr/local/include/fltk/TextDisplay.h:
+
+/usr/local/include/fltk/draw.h:
+
+/usr/local/include/fltk/Widget.h:
+
+/usr/local/include/fltk/Scrollbar.h:
+
+/usr/local/include/fltk/TextBuffer.h:
+
+/usr/local/include/fltk/Font.h:
+
+/usr/local/include/fltk/RadioButton.h:
+
+/usr/local/include/fltk/CheckButton.h:
+
+/usr/local/include/fltk/Button.h:
+
+/usr/local/include/fltk/CheckButton.h:
+
+/usr/local/include/fltk/Choice.h:
+
+/usr/local/include/fltk/Browser.h:
+
+/usr/local/include/fltk/draw.h:
+
+/usr/local/include/fltk/Symbol.h:
+
+/usr/local/include/fltk/events.h:

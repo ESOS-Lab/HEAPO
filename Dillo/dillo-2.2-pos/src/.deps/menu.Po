@@ -1,0 +1,242 @@
+menu.o: menu.cc /usr/local/include/fltk/events.h \
+ /usr/local/include/fltk/FL_API.h /usr/local/include/fltk/PopupMenu.h \
+ /usr/local/include/fltk/Menu.h /usr/local/include/fltk/Group.h \
+ /usr/local/include/fltk/Widget.h /usr/local/include/fltk/Style.h \
+ /usr/local/include/fltk/Color.h /usr/local/include/fltk/Flags.h \
+ /usr/local/include/fltk/Rectangle.h /usr/local/include/fltk/Item.h \
+ /usr/local/include/fltk/ToggleItem.h /usr/local/include/fltk/Item.h \
+ /usr/local/include/fltk/Divider.h ../lout/misc.hh /usr/include/stdio.h \
+ /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h \
+ /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/stdlib.h /usr/include/bits/waitflags.h \
+ /usr/include/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/string.h \
+ /usr/include/bits/string3.h /usr/include/assert.h /usr/include/pos-lib.h \
+ ../lout/../myconfig.h msg.h prefs.h url.h ../d_size.h ../config.h \
+ /usr/include/inttypes.h /usr/include/stdint.h /usr/include/bits/wchar.h \
+ ../dlib/dlib.h /usr/include/strings.h menu.hh bw.h uicmd.hh history.h \
+ html.hh ui.hh /usr/local/include/fltk/Window.h \
+ /usr/local/include/fltk/Widget.h /usr/local/include/fltk/Button.h \
+ /usr/local/include/fltk/Input.h /usr/local/include/fltk/PackedGroup.h \
+ /usr/local/include/fltk/Output.h /usr/local/include/fltk/Input.h \
+ /usr/local/include/fltk/Image.h /usr/local/include/fltk/Symbol.h \
+ /usr/local/include/fltk/PixelType.h /usr/local/include/fltk/MultiImage.h \
+ /usr/local/include/fltk/MenuBuild.h /usr/local/include/fltk/ItemGroup.h \
+ /usr/local/include/fltk/Divider.h /usr/local/include/fltk/MenuBar.h \
+ /usr/local/include/fltk/Choice.h /usr/local/include/fltk/PopupMenu.h \
+ /usr/local/include/fltk/events.h /usr/local/include/fltk/TabGroup.h \
+ findbar.hh /usr/local/include/fltk/xpmImage.h \
+ /usr/local/include/fltk/Image.h \
+ /usr/local/include/fltk/HighlightButton.h \
+ /usr/local/include/fltk/Button.h /usr/local/include/fltk/Group.h \
+ /usr/local/include/fltk/CheckButton.h keys.hh timeout.hh
+
+/usr/local/include/fltk/events.h:
+
+/usr/local/include/fltk/FL_API.h:
+
+/usr/local/include/fltk/PopupMenu.h:
+
+/usr/local/include/fltk/Menu.h:
+
+/usr/local/include/fltk/Group.h:
+
+/usr/local/include/fltk/Widget.h:
+
+/usr/local/include/fltk/Style.h:
+
+/usr/local/include/fltk/Color.h:
+
+/usr/local/include/fltk/Flags.h:
+
+/usr/local/include/fltk/Rectangle.h:
+
+/usr/local/include/fltk/Item.h:
+
+/usr/local/include/fltk/ToggleItem.h:
+
+/usr/local/include/fltk/Item.h:
+
+/usr/local/include/fltk/Divider.h:
+
+../lout/misc.hh:
+
+/usr/include/stdio.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stdarg.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/include/bits/stdio2.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/bits/stdlib.h:
+
+/usr/include/string.h:
+
+/usr/include/bits/string3.h:
+
+/usr/include/assert.h:
+
+/usr/include/pos-lib.h:
+
+../lout/../myconfig.h:
+
+msg.h:
+
+prefs.h:
+
+url.h:
+
+../d_size.h:
+
+../config.h:
+
+/usr/include/inttypes.h:
+
+/usr/include/stdint.h:
+
+/usr/include/bits/wchar.h:
+
+../dlib/dlib.h:
+
+/usr/include/strings.h:
+
+menu.hh:
+
+bw.h:
+
+uicmd.hh:
+
+history.h:
+
+html.hh:
+
+ui.hh:
+
+/usr/local/include/fltk/Window.h:
+
+/usr/local/include/fltk/Widget.h:
+
+/usr/local/include/fltk/Button.h:
+
+/usr/local/include/fltk/Input.h:
+
+/usr/local/include/fltk/PackedGroup.h:
+
+/usr/local/include/fltk/Output.h:
+
+/usr/local/include/fltk/Input.h:
+
+/usr/local/include/fltk/Image.h:
+
+/usr/local/include/fltk/Symbol.h:
+
+/usr/local/include/fltk/PixelType.h:
+
+/usr/local/include/fltk/MultiImage.h:
+
+/usr/local/include/fltk/MenuBuild.h:
+
+/usr/local/include/fltk/ItemGroup.h:
+
+/usr/local/include/fltk/Divider.h:
+
+/usr/local/include/fltk/MenuBar.h:
+
+/usr/local/include/fltk/Choice.h:
+
+/usr/local/include/fltk/PopupMenu.h:
+
+/usr/local/include/fltk/events.h:
+
+/usr/local/include/fltk/TabGroup.h:
+
+findbar.hh:
+
+/usr/local/include/fltk/xpmImage.h:
+
+/usr/local/include/fltk/Image.h:
+
+/usr/local/include/fltk/HighlightButton.h:
+
+/usr/local/include/fltk/Button.h:
+
+/usr/local/include/fltk/Group.h:
+
+/usr/local/include/fltk/CheckButton.h:
+
+keys.hh:
+
+timeout.hh:
