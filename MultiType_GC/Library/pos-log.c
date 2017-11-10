@@ -7,13 +7,13 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <pos-lib.h>
+#include "pos-lib.h"
 
 #include <unistd.h>
 #include <syscall.h>
 
 
-#define LOG_SIZE_KB			64		// Unit of KByte (Must be multiple of 16)
+#define LOG_SIZE_KB			32		// Unit of KByte (Must be multiple of 16)
 #define LOG_SIZE				(LOG_SIZE_KB*1024)
 #define T_NAME			"TS"
 
@@ -79,7 +79,7 @@ int pos_log_create(char *name)
 	strcat(log_name, T_NAME);
 
 	// Call sys_pos_create() to create log object storage.
-	name_entry->log_addr = (void *)syscall(299, log_name, LOG_SIZE_KB);
+	name_entry->log_addr = (void *)syscall(383, log_name, LOG_SIZE_KB);
 	if (name_entry->log_addr == NULL)
 		return 0;
 	
@@ -97,7 +97,7 @@ int pos_log_delete(char *name)
 	strcpy(log_name, name);
 	strcat(log_name, T_NAME);
 
-	return syscall(300, log_name); // sys_pos_delete()
+	return syscall(384, log_name); // sys_pos_delete()
 }
 
 int pos_log_map(char *name)
@@ -115,7 +115,7 @@ int pos_log_map(char *name)
 	strcat(log_name, T_NAME);
 
 	// Call sys_pos_map() to create log object storage.
-	name_entry->log_addr = (void *)syscall(301, log_name);
+	name_entry->log_addr = (void *)syscall(385, log_name);
 	if (name_entry->log_addr == NULL)
 		return 0;
 
@@ -131,7 +131,7 @@ int pos_log_unmap(char *name)
 	strcpy(log_name, name);
 	strcat(log_name, T_NAME);
 
-	return syscall(302, log_name); // sys_pos_unmap()
+	return syscall(386, log_name); // sys_pos_unmap()
 }
 
 int pos_log_clear_ptr(unsigned long *log_addr)
@@ -159,7 +159,6 @@ int pos_transaction_start(char *name, unsigned long type)
 
 	name_entry = pos_lookup_name_entry(name);
 	log_addr = name_entry->log_addr;
-
 	// 1. Clear counter
 	pos_log_clear_ptr(log_addr);
 	pos_log_clear_free(log_addr);
@@ -171,7 +170,6 @@ int pos_transaction_start(char *name, unsigned long type)
 	// 3. Set insert/remove flag
 	log_addr[1] = type;
 	pos_clflush_cache_range(&log_addr[1], sizeof(unsigned long));
-	
 	return 1;
 }
 
@@ -479,19 +477,24 @@ int pos_recovery(char *name)
 	}
 }
 
-#define mb() 	asm volatile("mfence":::"memory")
+//#define mb() asm volatile("DSB":::"memory"); 
 
 static inline void clflush(volatile void *__p)
 {
-	//asm volatile("clflush %0" : "+m" (*(volatile char __force *)__p));
-	asm volatile("clflush %0" : "+m" (*(volatile char *)__p));
+//	asm volatile("ldr r1, %0" : "+m" (*(volatile char *)__p));
+//	asm volatile("mcr p15, 0, r1, c7, c7, 0" :::"memory");
+//	cache_flush(__p);
+//	asm volatile ("mcr p15, 0, r0, c7, c11, 1");
+//	clflush(__p);
+	write_dccmvac(__p);
+//	WRITE_CP32(__p, DCCMVAC);
 
 #if LOG_CNT_ON == 1
 	clflush_cnt++;
 #endif
 }
 
-int x86_64_clflush_size = 64;
+//int arm_clflush_size = 32;
 
 /**
  * clflush_cache_range - flush a cache range with clflush
@@ -503,18 +506,20 @@ int x86_64_clflush_size = 64;
  */
 void pos_clflush_cache_range(void *vaddr, unsigned int size)
 {
-//	return ; // for test...
+	return ; // for test...
 
+//	int cacheline_bytes = READ_CP32(CCSIDR);
+	int cacheline_bytes = read_ccsidr();
 	void *vend = vaddr + size - 1;
 
-	mb();
+	dsb();
 
-	for (; vaddr < vend; vaddr += x86_64_clflush_size)
+	for (; vaddr < vend; vaddr += cacheline_bytes)
 		clflush(vaddr);
 	/*
 	 * Flush any possible final partial cacheline:
 	 */
 	clflush(vend);
 
-	mb();
+	dsb();
 }

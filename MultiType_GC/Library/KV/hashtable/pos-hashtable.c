@@ -7,7 +7,7 @@
 
 
 /* Copyright (C) 2004 Christopher Clark <firstname.lastname@cl.cam.ac.uk> */
-
+/*
 #include "pos-hashtable.h"
 #include "pos-hashtable_private.h"
 #include <stdlib.h>
@@ -16,6 +16,17 @@
 #include <math.h>
 #include "../alloc_list/alloc_list.h"
 #include <pos-lib.h>
+#include <pthread.h>
+*/
+#include "pos-hashtable_private.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <float.h>
+#include <pthread.h>
+#include "../alloc_list/alloc_list.h"
+#include "../../pos-lib.h"
 
 
 #define MODE			1	// 1: absolute addressing, 2: offset addressing
@@ -27,7 +38,8 @@
 
 #define HASH_DEBUG	0
 
-unsigned int hash_state = 0;
+__thread unsigned int hash_state = 0;
+pthread_mutex_t h_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 
 /*
@@ -216,6 +228,8 @@ hashtable_expand(char *name, struct hashtable *h)
     if (h->primeindex == (prime_table_length - 1)) return 0;
     newsize = primes[++(h->primeindex)];
 
+// SSB 170817
+//pthread_mutex_lock(&h_mutex);
     //newtable = (struct entry **)malloc(sizeof(struct entry*) * newsize);
     newtable = (struct entry **)pos_malloc(name, sizeof(struct entry*) * newsize);
     if (NULL != newtable)
@@ -249,10 +263,12 @@ hashtable_expand(char *name, struct hashtable *h)
         }
         //free(h->table);
 #if CONSISTENCY != 1
+//printf("[sb debug : %s] old table : 0x%p, new table : 0x%p\n", __func__, h->table, newtable);
         pos_free(name, h->table);////////////////////////////////// 
 #endif
         h->table = newtable;
     }
+//pthread_mutex_unlock(&h_mutex);
     /* Plan B: realloc instead */
     /*else 
     {
@@ -287,6 +303,7 @@ hashtable_expand(char *name, struct hashtable *h)
     h->tablelength = newsize;
     h->loadlimit   = (unsigned int) ceil(newsize * max_load_factor);
 #endif
+	//printf("\t\t\t table length : %lu\n", h->tablelength);
     return -1;
 }
 
@@ -312,6 +329,7 @@ hashtable_insert(char *name, struct hashtable *h, unsigned long *k, unsigned lon
 	pos_transaction_start(name, POS_TS_INSERT);
 #endif
 
+	pthread_mutex_lock(&h_mutex);
     if (++(h->entrycount) > h->loadlimit)
     {
         /* Ignore the return value. If expand fails, we should
@@ -324,18 +342,28 @@ hashtable_insert(char *name, struct hashtable *h, unsigned long *k, unsigned lon
 
     //e = (struct entry *)malloc(sizeof(struct entry));
     //if (NULL == e) { --(h->entrycount); return 0; } /*oom*/
+//printf("chk1\n");
+//	pthread_mutex_lock(&h_mutex);
+//printf("chk2\n");
     e = (struct entry *)pos_malloc(name, sizeof(struct entry));
+//printf("[sb debug : %s] entry : 0x%p\n", __func__, e);
+//printf("chk3\n");
     if (NULL == e) { --(h->entrycount); return -1; } /*oom*/
 
 		//sb s
 		hash_state = 1;
 		//sb e
 
-    e->h = hash(h,k);
+	e->h = hash(h,k);
 //#if CONSISTENCY == 1
     //pos_clflush_cache_range(&e->h, sizeof(e->h));
 //#endif
+
     index = indexFor(h->tablelength,e->h);
+
+     e->next = h->table[index];
+        h->table[index] = e;
+//        pthread_mutex_unlock(&h_mutex);
 
     //e->k = k;
     //e->v = v;
@@ -343,15 +371,21 @@ hashtable_insert(char *name, struct hashtable *h, unsigned long *k, unsigned lon
 //#if CONSISTENCY == 1
 //   pos_clflush_cache_range(e->k, sizeof(unsigned long)*KEY_SIZE);
 //#endif
+//	pthread_mutex_lock(&h_mutex);
+//printf("chk4\n");
     e->v = (unsigned long *)pos_malloc(name, v_size);
+//printf("[sb debug : %s] value : 0x%p\n", __func__, e->v);
+//printf("chk5\n");
     memcpy(e->v, v, v_size);
 #if CONSISTENCY == 1
    //pos_clflush_cache_range(&e->v, sizeof(e->v));
    pos_clflush_cache_range(e->v, v_size);
 #endif
-
-    e->next = h->table[index];
-
+	//sb 170124
+    //e->next = h->table[index];
+	pthread_mutex_unlock(&h_mutex);
+//printf("chk6\n");
+//usleep(100);
 #if CONSISTENCY == 1
     //pos_clflush_cache_range(&e->next, sizeof(e->next));
     pos_clflush_cache_range(e, sizeof(struct entry)); // Delayed flush
@@ -361,7 +395,8 @@ hashtable_insert(char *name, struct hashtable *h, unsigned long *k, unsigned lon
 #if CONSISTENCY == 1
     pos_write_value(name, (unsigned long *)&h->table[index], (unsigned long)e);
 #else
-    h->table[index] = e;
+	//sb 170124
+    //h->table[index] = e;
 #endif
 #elif MODE == 2
     h->table[index] = e - OFFSET_BASE;
@@ -370,11 +405,10 @@ hashtable_insert(char *name, struct hashtable *h, unsigned long *k, unsigned lon
 #if CONSISTENCY == 1
 	pos_transaction_end(name);
 #endif
-	
+
 	//sb s
 	hash_state = 2;
 	//sb e
-
     //return -1;
     return 0;
 }
@@ -636,7 +670,8 @@ int make_list_for_hashtable(struct hashtable *h, Node **head)
 	while(NULL != e) {
 			value = e->v;
 			insert_node(head, (unsigned long)e);
-			insert_node(head, (unsigned long)value);
+			if(value)
+				insert_node(head, (unsigned long)value);
 			e = e->next;
 			idx++;
 		}

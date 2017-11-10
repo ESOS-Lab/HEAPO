@@ -5,7 +5,6 @@
 	Embedded Software Systems Laboratory, Hanyang University
 
 	This interfaces is for list sorted in ascending order by addr of struct node and used for making alloction list used to local GC
-	by 손성배
 */
 
 #ifndef	__ALLOC_LIST_H__

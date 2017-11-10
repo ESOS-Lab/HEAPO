@@ -13,8 +13,8 @@
 #include <unistd.h>
 #include <syscall.h>
 
-#include <pos-lib.h>
-#include <pos-malloc.h>
+#include "pos-lib.h"
+#include "pos-malloc.h"
 
 //#define POS_NAME_LENGTH	128
 #define POS_NAME_TABLE		25
@@ -149,7 +149,7 @@ pos_create(char *name)
 //#if CONSISTENCY == 1
 	//name_entry->mstate = (void *)syscall(299, name, 1024*1024); // Contiguous object whose size is about 1GB...
 //#else
-	name_entry->mstate = (void *)syscall(299, name, 4); // 4KB
+	name_entry->mstate = (void *)syscall(394, name, 4); // 4KB
 //#endif
 	if (name_entry->mstate == (void *)0) {
 		debug_printf("pos_create() error!\n");
@@ -207,7 +207,7 @@ pos_delete(char *name)
 		clear_init_key(ms);
 
 		//sys_pos_delete() 시스템 콜 호출
-		if (syscall(300, name) == 0) {
+		if (syscall(395, name) == 0) {
 			debug_printf("pos_delete() error!\n");
 			return 0;
 		}
@@ -270,7 +270,7 @@ pos_map(char* name)
 	//dk e
 
 	//sys_pos_map() 시스템 콜 호출
-	name_entry->mstate = (void *)syscall(301, name);
+	name_entry->mstate = (void *)syscall(396, name);
 	if (name_entry->mstate == (void *)0) {
 		debug_printf("pos_map() error!\n");
 		free(name_entry);
@@ -312,7 +312,7 @@ pos_unmap(char *name)
 		if (strcmp(name, name_entry->name) == 0) {
 
 			//sys_pos_unmap() 시스템 콜 호출
-			if (syscall(302, name) == 0) {
+			if (syscall(397, name) == 0) {
 				debug_printf("pos_unmap() error!\n");
 				return 0;
 			}
@@ -355,7 +355,7 @@ pos_seg_alloc(char *name, unsigned long len)
 			void *addr;
 
 			//sys_pos_seg_alloc() 시스템 콜 호출
-			addr = (void *)syscall(303, name, len);
+			addr = (void *)syscall(398, name, len);
 			if (addr == (void *)0) {
 				debug_printf("pos_seg_alloc() error!\n");
 			} else {
@@ -394,7 +394,7 @@ pos_seg_free(char *name, void *addr, unsigned long len)
 		if (strcmp(name, name_entry->name) == 0) {
 
 			//sys_pos_seg_free() 시스템 콜 호출
-			if (syscall(304, name, addr, len) ==0) {
+			if (syscall(399, name, addr, len) ==0) {
 				debug_printf("pos_seg_free() error!\n");
 			} else {
 #if DEBUG==1
@@ -424,7 +424,7 @@ pos_is_mapped(char *name)
 		return 0;
 
 	//sys_pos_is_mapped() 시스템 콜 호출
-	prime_seg = (void *)syscall(305, name);
+	prime_seg = (void *)syscall(400, name);
 	if (prime_seg == (void *)0) {
 		//printf("sys_pos_is_mapped() returns NULL\n");
 		//return NULL;

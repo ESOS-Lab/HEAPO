@@ -4,9 +4,8 @@
    Author: Taeho Hwang (htaeh@hanyang.ac.kr)
    Embedded Software Systems Laboratory, Hanyang University
 */
-
-/*Dokeun Lee(16.12.13) : Including header for mutex linking*/
 #include <bits/libc-lock.h>
+#include <pthread.h>
 
 #ifndef _LINUX_POS_MALLOC_H
 #define _LINUX_POS_MALLOC_H
@@ -51,8 +50,7 @@
 #include <sys/types.h>
 #endif
 
-#include <pos-lib.h>
-
+#include "pos-lib.h"
 
 //#include <malloc-machine.h>
 /* The mutex functions used to do absolutely nothing, i.e. lock,
@@ -61,23 +59,22 @@
    legitimately as an `in use' flag.  To make the code that is
    protected by a mutex async-signal safe, these macros would have to
    be based on atomic test-and-set operations, for example. */
+//typedef int mutex_t;
 
-/*Dokeun Lee(16.12.13) : eliminate typedef for mutex linking
-typedef int mutex_t;
-*/
-
-/*Dokeun Lee(16.12.13) : eliminate typedef for mutex linking
-#define mutex_init(m)              (*(m) = 0)
-#define mutex_lock(m)              ((*(m) = 1), 0)
-#define mutex_trylock(m)           (*(m) ? 1 : ((*(m) = 1), 0))
-#define mutex_unlock(m)            (*(m) = 0)
-*/
-
+#define mutex_init(m)              (m)
+//#define mutex_lock(m)              ((*(m) = 1), 0)
+//#define mutex_trylock(m)           (*(m) ? 1 : ((*(m) = 1), 0))
+//#define mutex_unlock(m)            (*(m) = 0)
 /*Dokeun Lee(16.12.13) : new linking code for mutex*/
-#define mutex_init(m)              __libc_lock_init(*(m))
-#define mutex_lock(m)              __libc_lock_lock(*(m))
-#define mutex_trylock(m)           __libc_lock_trylock((*(m))
-#define mutex_unlock(m)            __libc_lock_unlock(*(m))
+//#define mutex_init(m)              __libc_lock_init(*(m))
+//#define mutex_lock(m)              __libc_lock_lock(*(m))
+//#define mutex_trylock(m)           __libc_lock_trylock((*(m))
+//#define mutex_unlock(m)            __libc_lock_unlock(*(m))
+//#define mutex_init(m)              pthread_mutex_init(m)
+#define mutex_lock(m)              pthread_mutex_lock(m)
+#define mutex_trylock(m)           pthread_mutex_trylock(m)
+#define mutex_unlock(m)            pthread_mutex_unlock(m)
+
 
 
 #ifdef _LIBC
@@ -110,7 +107,7 @@ extern "C" {
 #include <errno.h>    /* needed for optional MALLOC_FAILURE_ACTION */
 
 /* For uintptr_t.  */
-#include <stdint.h>
+//#include <stdint.h>
 
 /* For va_arg, va_start, va_end.  */
 #include <stdarg.h>
@@ -1058,20 +1055,20 @@ typedef struct malloc_chunk* mbinptr;
    ----------- Internal state representation and initialization -----------
 */
 // 2168Bytes
-/* Dokeun Lee(161212) : For mutex linking
-   MTGC version of malloc_state : 2592Byte
-   MTGC pthread extension of malloc_state : 2632Byte 
-*/
+//dk s
+//2168+4 bytes
+//2584
+//dk e
 struct malloc_state {
 	/* Serialize access.  */
-        //mutex_t mutex; eliminated for pthread mutex
-        pthread_mutex_t mutex; //new mutex variable using pthread
+	//mutex_t mutex;
+	pthread_mutex_t mutex;
 
 	/* Flags (formerly in max_fast).  */
 	int flags;
 
 	/* Fastbins */
-	mfastbinptr      fastbinsY[NFASTBINS];	// 10  <-defaultë¡œëŠ” 8ê°œë§Œ ì‚¬ìš©ë¨
+	mfastbinptr      fastbinsY[NFASTBINS];	// 10  <-default·Î´Â 8°³¸¸ »ç¿ëµÊ
 
 	/* The remainder from the most recent split of a small request */
 	mchunkptr        last_remainder;
@@ -1080,7 +1077,7 @@ struct malloc_state {
 	mchunkptr        bins[NBINS * 2 - 2];	// 254
 
 	/* Bitmap of bins */
-	unsigned int     binmap[BINMAPSIZE];	// 4ê°œ*64bit=256ê°œ    // 4ê°œ*32bit = 128ê°œ 
+	unsigned int     binmap[BINMAPSIZE];	// 4°³*64bit=256°³    // 4°³*32bit = 128°³ 
 
 	/* Memory allocated from the system in this arena.  */
 	INTERNAL_SIZE_T system_mem;
@@ -1090,6 +1087,11 @@ struct malloc_state {
 	struct node_info node_obj;
 	mchunkptr last_chunk_pointer;
 	mchunkptr last_allocated_chunk;
+        /* Dokeun Lee(161223) : Segment counter for LGC trigger */
+        unsigned int segment_counter;
+
+        /* Dokeun Lee(170203) : Allocated chunk size counter */
+        unsigned int size_counter;
 };
 
 struct malloc_state;
@@ -1097,7 +1099,7 @@ typedef struct malloc_state * mstate;
 
 #define DEFAULT_PAD 131072	//128KB
 
-#include <pos-lib.h>
+#include "pos-lib.h"
 
 
 #endif /* _LINUX_POS_MALLOC_H */

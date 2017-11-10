@@ -52,6 +52,7 @@
 //#include <linux/kernel.h>
 //#include <linux/slab.h>
 //#include <linux/module.h>
+/*
 #include "pos-btree.h"
 #include "../alloc_list/alloc_list.h"
 #include <pos-lib.h>
@@ -59,6 +60,15 @@
 #include <stdio.h>
 #include <sys/time.h>
 #include <unistd.h>
+#include <pthread.h>
+*/
+#include "pos-btree.h"
+#include "../alloc_list/alloc_list.h"
+#include "../../pos-lib.h"
+#include <string.h>     //memset
+#include <stdio.h>
+#include <sys/time.h>
+#include <pthread.h>
 
 #define MODE			1	// 1: absolute addressing, 2: offset addressing
 #define OFFSET_BASE		(0x3FFEF8000000)	//0x5FFEF8000000 -> error.... I don't know the reason...
@@ -70,21 +80,29 @@
 unsigned int btree_state = 0;		/* State of allocating the latest Node */
 unsigned int pos_m_count = 0;		/* Level of Current B+tree */
 unsigned int btree_garbage_count = 0;	/* Number of garbage for creating */
+pthread_mutex_t b_mutex = PTHREAD_MUTEX_INITIALIZER;
+unsigned int alloc_cnt = 0;
 
 #define L1_CACHE_SHIFT	(6)	// 64bit?
 #define L1_CACHE_BYTES	(1 << L1_CACHE_SHIFT)
 
-#define BITS_PER_LONG	64	// 64bit
+//#define BITS_PER_LONG	64	// 64bit
+#define	BITS_PER_LONG 32
 
 #define ENOENT		2	/* No such file or directory */
 #define ENOMEM		12	/* Out of Memory */
 
 //typedef unsigned int	__kernel_size_t;	// 32bit
-typedef unsigned long	__kernel_size_t;	// 64bit
-typedef __kernel_size_t		size_t;
+//typedef unsigned long	__kernel_size_t;	// 64bit
+//typedef __kernel_size_t		size_t;
 
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
-#define NODESIZE MAX(L1_CACHE_BYTES, 128)	// 128
+//#define NODESIZE MAX(L1_CACHE_BYTES, 128)	// 128
+//#define NODESIZE	128
+#define NODESIZE      64
+
+#define SB_DEBUG	0
+#define BTREE_DEBUG	0
 
 struct btree_geo {
 	int keylen;
@@ -100,20 +118,24 @@ struct btree_geo {
 EXPORT_SYMBOL_GPL(btree_geo32);*/
 
 #define LONG_PER_U64 (64 / BITS_PER_LONG)	// 1
-/*struct btree_geo btree_geo64 = {
+//#define LONG_PER_U32 (32 / BITS_PER_LONG)
+//struct btree_geo btree_geo64 = {
+struct btree_geo btree_geo128 = {
 	.keylen = LONG_PER_U64,
 	.no_pairs = NODESIZE / sizeof(long) / (1 + LONG_PER_U64),
 	.no_longs = LONG_PER_U64 * (NODESIZE / sizeof(long) / (1 + LONG_PER_U64)),
 };
-EXPORT_SYMBOL_GPL(btree_geo64);*/
+//EXPORT_SYMBOL_GPL(btree_geo128);
+//EXPORT_SYMBOL_GPL(btree_geo64);
 
+/*
 struct btree_geo btree_geo128 = {
 	.keylen = 2 * LONG_PER_U64,	// 2
 	.no_pairs = NODESIZE / sizeof(long) / (1 + 2 * LONG_PER_U64), // 5
 	.no_longs = 2 * LONG_PER_U64 * (NODESIZE / sizeof(long) / (1 + 2 * LONG_PER_U64)), // 10
 };
 //EXPORT_SYMBOL_GPL(btree_geo128);
-
+*/
 /*static struct kmem_cache *btree_cachep;
 
 void *btree_alloc(gfp_t gfp_mask, void *pool_data)
@@ -135,7 +157,13 @@ static unsigned long *btree_node_alloc(char *name)
 	int i;
 	
 	//node = mempool_alloc(head->mempool, gfp);
+#if BTREE_DEBUG
+	printf("[sb debug : %s] start\n", __func__);
+#endif
 	node = (unsigned long *)pos_malloc(name, NODESIZE);
+#if BTREE_DEBUG
+	printf("[sb debug : %s] node : %p\n", __func__, node);
+#endif
 	//if (likely(node))
 	if (node) {
 //#if CONSISTENCY == 1
@@ -143,6 +171,9 @@ static unsigned long *btree_node_alloc(char *name)
 //			pos_write_value(name, (unsigned long *)&node[i], (unsigned long)0);
 //		}
 //#else
+#if BTREE_DEBUG
+	printf("[sb debug : %s] chk\n", __func__);
+#endif
 		memset(node, 0, NODESIZE);
 //#endif
 	}
@@ -150,6 +181,9 @@ static unsigned long *btree_node_alloc(char *name)
 	pos_clflush_cache_range(&node, NODESIZE);
 #endif
 
+#if BTREE_DEBUG
+	printf("[sb debug : %s] end\n", __func__);
+#endif
 	return node;
 }
 
@@ -258,12 +292,28 @@ static void setval(struct btree_geo *geo, unsigned long *node, int n,
 		   void *val)
 {
 #if MODE == 1
+#if BTREE_DEBUG
+	printf("[sb debug : %s] start, n : %d, no_longs : %d\n", __func__, n, geo->no_longs);
+#endif
 	node[geo->no_longs + n] = (unsigned long) val;
+#if BTREE_DEBUG
+	printf("[sb debug : %s] 1\n", __func__);
+#endif
 #if CONSISTENCY == 1
+#if BTREE_DEBUG
+	printf("[sb debug : %s] 2\n", __func__);
+#endif
 	pos_clflush_cache_range(&node[geo->no_longs + n], sizeof(unsigned long));
 #endif
 #elif MODE == 2
+#if BTREE_DEBUG
+
+	printf("[sb debug : %s] 3\n", __func__);
+#endif
 	node[geo->no_longs + n] = (unsigned long) val - OFFSET_BASE; // offset addressing mode;
+#endif
+#if BTREE_DEBUG
+	printf("[sb debug : %s] end\n", __func__);
 #endif
 }
 
@@ -318,10 +368,11 @@ int pos_btree_init(char *name)
 	pos_m_count++;
 #if BTREE_DEBUG == 1
 	printf("[pos_btree_init] pos_malloc count : %d\n", pos_m_count);
+	printf("[sb debug : %s] name : %s, head : %p\n", __func__, name, head);
 #endif
 	pos_set_prime_object(name, head);
 	//printf("4\n");
-//printf("prime node in init : %p\n", head->node);	
+//printf("prime node in init : %p\n", head->node);
 	__btree_init(head);
 	//head->mempool = mempool_create(0, btree_alloc, btree_free, NULL);
 	//if (!head->mempool)
@@ -697,14 +748,32 @@ static int btree_grow(char *name, struct btree_head *head, struct btree_geo *geo
 	static int grow_count=0;
 
 	//node = btree_node_alloc(head, gfp);
+#if BTREE_DEBUG
+	printf("[sb debug : %s] start\n", __func__);
+#endif
 	node = btree_node_alloc(name);
+#if BTREE_DEBUG
+	printf("[sb debug : %s] node : %p\n", __func__, node);
+#endif
 	if (!node)
 		return -ENOMEM;
 	if (head->node) {
+#if BTREE_DEBUG
+	printf("[sb debug : %s] chk1\n", __func__);
+#endif
 		fill = getfill(geo, head->node, 0);
+#if BTREE_DEBUG
+	printf("[sb debug : %s] chk2\n", __func__);
+#endif
 		setkey(geo, node, 0, bkey(geo, head->node, fill - 1));
+#if BTREE_DEBUG
+	printf("[sb debug : %s] chk3\n", __func__);
+#endif
 		setval(geo, node, 0, head->node);
 	}
+#if BTREE_DEBUG
+	printf("[sb debug : %s] chk4\n", __func__);
+#endif
 #if CONSISTENCY == 1
 	pos_write_value(name, (unsigned long *)&head->node, (unsigned long)node);
 	pos_write_value(name, (unsigned long *)&head->height, (unsigned long)(head->height+1));
@@ -715,7 +784,9 @@ static int btree_grow(char *name, struct btree_head *head, struct btree_geo *geo
 #endif
 //sb s
 grow_count++;
-//printf("grow count : %d!\n", grow_count);
+#if SB_DEBUG
+printf("\t tree level : %d!\n", grow_count);
+#endif
 //sb e
 	return 0;
 }
@@ -755,6 +826,9 @@ static int btree_insert_level(char *name, struct btree_head *head,
 	unsigned long *node;
 	int i, pos, fill, err;
 	int backup_state;
+#if BTREE_DEBUG
+	printf("[sb debug : %s] start, head : %p\n", __func__, head);
+#endif
 	//BUG_ON(!val);
 	if (head->height < level) {
 		//err = btree_grow(head, geo, gfp);
@@ -764,26 +838,39 @@ static int btree_insert_level(char *name, struct btree_head *head,
 			return err;
 		}
 	}
-
+//printf("[170124] 1\n");
 	backup_state = btree_state;
 retry:
-	btree_state = 3;
+#if BTREE_DEBUG
+	printf("[sb debug : %s] chk1\n", __func__);
+#endif
+//	btree_state = 3;
 	node = find_level(name, head, geo, key, level);
 	pos = getpos(geo, node, key);
 	fill = getfill(geo, node, pos);
 	/* two identical keys are not allowed */
 	//BUG_ON(pos < fill && keycmp(geo, node, pos, key) == 0);
 
+#if BTREE_DEBUG
+	printf("[sb debug : %s] chk2\n", __func__);
+#endif
 	if (fill == geo->no_pairs) {
 		/* need to split node */
 		unsigned long *new;
-
+#if BTREE_DEBUG
+	printf("[sb debug : %s] in\n", __func__);
+#endif
+//printf("[170124] 2\n");
 		//new = btree_node_alloc(head, gfp);
 		//printf("[btree_insert_level] check1\n");
 		new = btree_node_alloc(name);
+		// SSB 170818
+		alloc_cnt++;
 #if	BTREE_DEBUG == 1
 	printf("[btree_insert_level1] pos_malloc count : %d\n", pos_m_count);
 #endif
+//printf("[sb debug : %s] new node : %p\n", __func__, new);
+//printf("[170124] 3\n");
 		//sb s
 		//btree_state = 1;
 		//sb e
@@ -795,15 +882,31 @@ retry:
 		//err = btree_insert_level(head, geo,
 		//		bkey(geo, node, fill / 2 - 1),
 		//		new, level + 1, gfp);
+#if BTREE_DEBUG
+	printf("[sb debug : %s] before calling level\n", __func__);
+#endif
 		err = btree_insert_level(name, head, geo,
 				bkey(geo, node, fill / 2 - 1),
 				new, 0, level + 1);	// Val_size(0) indicates whether copy or not.
+//printf("[170124] 4\n");
+#if BTREE_DEBUG
+	printf("[sb debug : %s] after calling level, fill : %d\n", __func__, fill);
+#endif
 		if (err) {
+#if BTREE_DEBUG
+	printf("[sb debug : %s] reterned by err\n", __func__);
+#endif
 			//mempool_free(new, head->mempool);
 			////pos_free(name, new);
 			//printf("btree_insert_level error!\n");
 			return err;
 		}
+#if BTREE_DEBUG
+	//sleep(1);
+	usleep(10);
+	printf("[sb debug : %s] chk3, fill : %d\n", __func__, fill);
+#endif
+	//usleep(10);
 		//printf("[btree_insert_level] check2\n");
 		for (i = 0; i < fill / 2; i++) {
 			setkey(geo, new, i, bkey(geo, node, i));
@@ -818,6 +921,13 @@ retry:
 			clearpair(geo, node, i + fill / 2);
 #endif
 		}
+#if BTREE_DEBUG
+	//sleep(1);
+	usleep(10);
+	printf("[sb debug : %s] chk4\n", __func__);
+#endif
+	//usleep(10);
+//printf("[170124] 5\n");
 	//	printf("[btree_insert_level] check3\n");
 		if (fill & 1) {
 #if CONSISTENCY == 1
@@ -837,6 +947,10 @@ retry:
 
 		goto retry;
 	}
+#if BTREE_DEBUG
+	printf("[sb debug : %s] chk5\n", __func__);
+#endif
+//printf("[170124] 6\n");
 	//BUG_ON(fill >= geo->no_pairs);
 	btree_state = backup_state;
 	/* shift and insert */
@@ -845,6 +959,9 @@ retry:
 		setkey_log(name, geo, node, i, bkey(geo, node, i - 1));
 		setval_log(name, geo, node, i, bval(geo, node, i - 1));
 #else
+#if BTREE_DEBUG
+	printf("[sb debug : %s] chk6\n", __func__);
+#endif
 		setkey(geo, node, i, bkey(geo, node, i - 1));
 		setval(geo, node, i, bval(geo, node, i - 1));
 #endif
@@ -852,24 +969,50 @@ retry:
 #if CONSISTENCY == 1
 	setkey_log(name, geo, node, pos, key);
 #else
+#if BTREE_DEBUG
+	printf("[sb debug : %s] chk7\n", __func__);
+#endif
 	setkey(geo, node, pos, key);
 	setval(geo, node, pos, val);
 #endif
+//printf("[170124] 7\n");
 
-
+#if BTREE_DEBUG
+	printf("[sb debug : %s] chk8\n", __func__);
+#endif
 	if (!val_size) {
 #if CONSISTENCY == 1
 		setval_log(name, geo, node, pos, val);
 #else
+#if BTREE_DEBUG
+	printf("[sb debug : %s] before setval1\n", __func__);
+#endif
 		setval(geo, node, pos, val);
+#if BTREE_DEBUG
+	printf("[sb debug : %s] after setval1\n", __func__);
+#endif
 #endif
 	} else {
 		void *new_val;
 		//printf("[btree_insert_level] check4\n");
 		// Allocate object and copy the content 
+		//pthread_mutex_lock(&b_mutex);
+//printf("[170124] 8\n");
 		new_val = pos_malloc(name, val_size);
+		// SSB 180818
+		alloc_cnt = 0;
+//printf("[sb debug : %s] new_val : %p\n", __func__, new_val);
+		//sb 170124
+#if BTREE_DEBUG
+	printf("[sb debug : %s] before setval2\n", __func__);
+#endif
+		setval(geo, node, pos, new_val);
+		//pthread_mutex_unlock(&b_mutex);
+#if BTREE_DEBUG
+	printf("[sb debug : %s] after setval2\n", __func__);
+#endif
 		pos_m_count++;
-#if BTREE_DEBUG == 1
+#if BTREE_DEBUG
 	printf("[pos_btree_init2] pos_malloc count : %d\n", pos_m_count);
 #endif
 		//sb s
@@ -882,16 +1025,19 @@ retry:
 		setval_log(name, geo, node, pos, new_val);
 #else
 		//if(btree_garbage_count > 0) {
-			setval(geo, node, pos, new_val);
+			//setval(geo, node, pos, new_val);
 		//	btree_garbage_count--;
 	//	}
 #endif
 	}
-
+//printf("[170124] 9\n");
 #if CONSISTENCY == 1
 		pos_clflush_cache_range(node, NODESIZE); // Delayed flush in unit of NODESIZE
 #endif
 
+#if BTREE_DEBUG
+	printf("[sb debug : %s] end\n", __func__);
+#endif
 	return 0;
 }
 
@@ -905,7 +1051,9 @@ int pos_btree_insert(char *name, void *_key, void *_val, unsigned long val_size)
 	
 	if (name==NULL || _key==NULL || _val==NULL || val_size <0)
 		return -1;
-
+#if BTREE_DEBUG
+	printf("[sb debug : %s] start\n", __func__);
+#endif
 #if CONSISTENCY == 1
 	pos_transaction_start(name, POS_TS_INSERT);
 #endif
@@ -914,14 +1062,33 @@ int pos_btree_insert(char *name, void *_key, void *_val, unsigned long val_size)
 	val = (unsigned long *)_val;
 	head = (struct btree_head *)pos_get_prime_object(name);
 #if BTREE_DEBUG	== 1
-	printf("prime node : %p\n", head->node);
+	printf("prime node : %p\n", head);
 #endif
 //printf("head : %p\n", head);
 	//return btree_insert_level(head, geo, key, val, 1, gfp);
 	//return btree_insert_level(name, head, &btree_geo128, key, val, val_size, 1);
+#if BTREE_DEBUG
+	printf("[sb debug : %s] before mutex\n", __func__);
+#endif
+	pthread_mutex_lock(&b_mutex);
+#if BTREE_DEBUG
+	usleep(100);
+	printf("[sb debug : %s] chk1\n", __func__);
+#endif
 	rval = btree_insert_level(name, head, &btree_geo128, key, val, val_size, 1);
+#if BTREE_DEBUG
+	usleep(100);
+	printf("[sb debug : %s] chk2\n", __func__);
+#endif
+	pthread_mutex_unlock(&b_mutex);
+#if BTREE_DEBUG
+	printf("[sb debug : %s] after mutex\n", __func__);
+#endif
 #if CONSISTENCY == 1
 	pos_transaction_end(name);
+#endif
+#if BTREE_DEBUG
+	printf("[sb debug : %s] end\n", __func__);
 #endif
 	return rval;
 }
@@ -1144,7 +1311,8 @@ int __unlink_leaf_nodes(unsigned long *input_node)
   	node = input_node;
   	get_fill = getfill(&btree_geo128, node, 0);
 
-  	for(i=0; i<get_fill; i++) 
+//  	for(i=0; i<get_fill; i++)
+	for (i=get_fill-1; i>=0; i--)
   	{
     		value = bval(&btree_geo128, node, i);
     		v = *value;  
@@ -1156,6 +1324,7 @@ int __unlink_leaf_nodes(unsigned long *input_node)
     			else 
     			{			    
 				if(btree_garbage_count > 0) {
+				//printf("val : %p is garbaged\n", bval(&btree_geo128, node, i));
 					setval(&btree_geo128, node, i, zero_val);
 					btree_garbage_count--;
 				}
@@ -1193,12 +1362,17 @@ unsigned int get_btree_state()
 	return btree_state;
 }
 
+unsigned int get_btree_alloc_cnt()
+{
+	return alloc_cnt;
+}
+
 //기능 : Btree를 순회하여 탐색된 노드들로 Allocation List 구성
 //입력 값
 //      input_node : Btree 순회 중 현재 탐색된 노드(초기 input_node는 Root Node)
 //      head : Allocation List를 구성할 List의 head
 //출력 값 : 정상적으로 수행 시 '1' 반환, 그렇지 않으면 '0' 반환
-int __make_list_for_btree(unsigned long *input_node, Node **head)
+int __make_list_for_btree(unsigned long *input_node, Node **head, struct btree_head *pn)
 {
   	int get_fill = 0, get_fill2=0;
   	int i, j;
@@ -1210,23 +1384,26 @@ int __make_list_for_btree(unsigned long *input_node, Node **head)
 
   	node = input_node;
   	get_fill = getfill(&btree_geo128, node, 0);
-
   	for(i=0; i<get_fill; i++) 
   	{
     		value = bval(&btree_geo128, node, i);
-    		v = *value;  
+    		v = *value;
 		if(v < 0 || v > 30000)
-    		{               
+    		{
      	 		node_buf = bval(&btree_geo128, node, i);
-			__make_list_for_btree(node_buf, head);
-    		} 
+			__make_list_for_btree(node_buf, head, pn);
+    		}
     		else 
-    		{    
-			insert_node(head, (unsigned long)value);
+    		{
+			//printf("[SB DEBUG : %s] v %p inserted\n", __func__, value);
+			//printf("[SB DEBUG : %s] *v : %lu\n", __func__, *value);
+			if (value > (unsigned long *)pn)
+				insert_node(head, (unsigned long)value);
     		}
   	}
+//printf("[SB DEBUG : %s] n %p inserted\n", __func__, node);
 	insert_node(head, (unsigned long)node);
-	
+
   	return 1;
 }
 
@@ -1238,13 +1415,18 @@ int __make_list_for_btree(unsigned long *input_node, Node **head)
 int make_list_for_btree(struct btree_head *bh, Node **head)
 {
 	unsigned long *node=NULL;
-	
+
+	//printf("check1\n");
 	node = bh->node;
+	//printf("check2\n");
 	insert_node(head, (unsigned long)bh);
-	if(!__make_list_for_btree(node, head)) {
+	//printf("[sb debug : %s] head : %p inserted\n", __func__, bh);
+        //printf("check3\n");
+	if(!__make_list_for_btree(node, head, bh)) {
 		printf("error of making list for btree!\n");
 		return 0;
 	}
+	//printf("check4\n");
 
 	return 1;
 }

@@ -169,6 +169,8 @@ int pos_btree_insert(char *name, void *key, void *val, unsigned long val_size);
 //		   unsigned long *key);
 int pos_btree_remove(char *name, void *key);
 
+// SSB 170818
+unsigned int get_btree_alloc_cnt();
 /**
  * btree_merge - merge two btrees
  *

@@ -39,7 +39,7 @@
   3. gc_node structure added
   4. rb-tree initialization routine added
 */
-
+/*
 #include <pos-malloc.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -51,20 +51,52 @@
 #include "KV/list/pos-list.h"
 #include "KV/hashtable/pos-hashtable.h"
 #include "KV/btree/pos-btree.h"
+*/
+#include "pos-malloc.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <syscall.h>
+//#include <stdint.h>
+#include <time.h>
+//sb s
+#include "KV/alloc_list/alloc_list.h"
+#include "KV/list/pos-list.h"
+#include "KV/hashtable/pos-hashtable.h"
+#include "KV/btree/pos-btree.h"
+//sb e
 
 INTERNAL_SIZE_T global_max_fast = 144;
 
 #define POS_GC_DEBUG	1
+#define DK_DEBUG	0
+#define SB_DEBUG	0
 #define	BILLION 1000000000L
 
 #define pos_public_fREe		pos_free
 #define pos_public_mALLOc	pos_malloc
 #define pos_public_rEALLOc	pos_realloc
 
-#if POS_GC_DEBUG == 1
+//#if POS_GC_DEBUG == 1
 unsigned long total_chunks_size=0;
 unsigned long garbage_count = 0;
-#endif
+
+unsigned long listCnt=0;
+#define MAXSIZE 10   // max size of List
+
+typedef struct __list {
+	struct __listnode *head;
+	struct __listnode *tail;
+} linkedList;
+typedef struct __listnode {
+	unsigned long addr;
+	struct __listnode *prev;
+	struct __listnode *next;
+} listnode;
+
+linkedList gc_list;
+//#endif
+
+pthread_mutex_t gc_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 static void pos_malloc_consolidate(char *,mstate);
 static Void_t* pos_int_malloc(char *, mstate, size_t);
@@ -85,6 +117,84 @@ Void_t* pos_unsafe_region_relocate(char *name, mstate av, Void_t *p);
 void pos_check_unsafe_region(char *name, mstate av, struct seg_info *head, mchunkptr chunk_ptr);
 void chunk_change_pointer(mchunkptr chunk_ptr, Void_t *p , unsigned long offset);
 
+
+
+
+void insertNode(unsigned long addr) {
+	listnode *tmp;
+	listnode *newNode = (listnode *)malloc(sizeof(listnode));
+	newNode->addr = addr;
+	newNode->prev = NULL;
+	newNode->next = NULL;
+	if(gc_list.head == NULL && gc_list.tail == NULL)
+		gc_list.head = gc_list.tail = newNode;	
+	else {
+		newNode->next = gc_list.head;
+		gc_list.head->prev = newNode;
+		gc_list.head = newNode;
+		if (listCnt > 10) {
+			tmp = gc_list.tail;
+			tmp->prev->next = NULL;
+			gc_list.tail = tmp->prev;
+			free(tmp);
+		}
+	}
+}
+
+int searchNode(unsigned long addr) {
+	listnode *p = gc_list.head;
+	int ret = 0;
+
+	while (p != NULL) {
+		if (p->addr == addr) {
+			ret = 1;
+			break;
+		}
+		p = p->next;
+	}
+
+	return ret;
+}
+
+int searchNode2(unsigned long addr, unsigned int cnt) {
+	listnode *p = gc_list.head;
+	int ret = 0, i;
+
+#if SB_DEBUG
+	printf("[sb debug : %s] addr : 0x%lx, cnt : %u\n", __func__, addr, cnt);
+#endif
+	for (i=0; i<cnt; i++) {
+#if SB_DEBUG
+	printf("current addr : 0x%lx\n", p->addr);
+#endif
+		if (p->addr == addr) {
+			ret = 1;
+			break;
+		}
+		p = p->next;
+	}
+
+	return ret;
+}
+
+void printNodes() {
+	listnode *p = gc_list.head;	
+	printf("\n");
+	putchar('[');
+	while(p != NULL) {
+		printf("0x%lx, ", p->addr);
+		p = p->next;
+	}
+	putchar(']');
+	putchar('\n');
+}
+
+
+
+
+
+
+
 //기능 : GC 수행 시간 출력 함수(Allocation List 구성 시간, 가비지 회수 시간, 전체 시간)
 //입력 값
 //      T1, T2 : GC 수행 시작과 종료 시간
@@ -98,16 +208,16 @@ void print_gc_time(struct timespec T1 , struct timespec T2, struct timespec allo
   	double time2;
   	double rate;
 
-	uint64_t diff, diff2, diff3;
+	//uint64_t diff, diff2, diff3;
+	unsigned long diff, diff2, diff3;
 	
 	diff = BILLION * (T2.tv_sec - T1.tv_sec) + T2.tv_nsec - T1.tv_nsec;
 	diff2 = BILLION * (alloc_T2.tv_sec - alloc_T1.tv_sec) + alloc_T2.tv_nsec - alloc_T1.tv_nsec;
 	diff3 = BILLION * (free_T.tv_sec) + free_T.tv_nsec;
 	
-	printf("\tAlloc list make time : %llu ns\n", (long long unsigned int)diff2);
-	printf("\tTotal free time : %llu ns\n", (long long unsigned int)diff3);
-	printf("\tExecution Time : %llu ns\n\n", (long long unsigned int)diff);
-
+	printf("\tAlloc list make time : %llu ns (%llu us, %llu ms, %llu sec)\n", (long long unsigned int)diff2, (long long unsigned int)diff2/1000, (long long unsigned int)diff2/(1000*1000), (long long unsigned int)diff2/(1000*1000*1000));
+	printf("\tTotal free time : %llu ns (%llu us, %llu ms, %llu sec)\n", (long long unsigned int)diff3, (long long unsigned int)diff3/1000, (long long unsigned int)diff3/(1000*1000), (long long unsigned int)diff3/(1000*1000*1000));
+	printf("\tExecution Time : %llu ns (%llu us, %llu ms, %llu sec)\n\n", (long long unsigned int)diff, (long long unsigned int)diff/1000, (long long unsigned int)diff/(1000*1000), (long long unsigned int)diff/(1000*1000*1000));
 }
 
 //기능 : HEAPO Local GC 수행 함수, Allocation List와 객체저장소의 청크 리스트
@@ -131,6 +241,11 @@ int pos_local_gc(char* name)
 	struct timespec alloc_list_T1, alloc_list_T2;
 	struct timespec total_free_T;
 	long long unsigned int diff;
+	long long unsigned int alloc_list_diff;
+	int alloc_cnt;
+	int free_cnt;
+
+//printf("[SSB DEBUG : %s] start test!\n", __func__);
 
 #if POS_GC_DEBUG == 1	
 	total_free_T.tv_sec = 0;
@@ -143,7 +258,7 @@ int pos_local_gc(char* name)
 	ptr = mem2chunk(p);
 
 	//obj_type = pos_get_object_type(name);
-	syscall(308, name, &obj_type);
+	syscall(403, name, &obj_type);
 
 	type = obj_type & 0xF; //1111
 	size = obj_type & 0xF0; //11110000
@@ -154,7 +269,9 @@ int pos_local_gc(char* name)
     	clock_gettime(CLOCK_MONOTONIC, &alloc_list_T1);
 #endif
 	alloc_list_head = NULL;
-	printf("__[DEBUG] pos_local_gc: data structure selection start\n");
+#if SB_DEBUG
+	printf("[SB DEBUG: %s] data structure selection start\n", __func__);
+#endif
 	if(type == 1) // linked list
 	{
 		int list_ret = 0; //for debugging
@@ -193,22 +310,58 @@ int pos_local_gc(char* name)
 		return -1;
 	}
 
+	//printf("first list print\n");
+	//display(alloc_list_head);
+
 #if POS_GC_DEBUG == 1
 	clock_gettime(CLOCK_MONOTONIC, &alloc_list_T2);
+	alloc_list_diff = BILLION * (alloc_list_T2.tv_sec - alloc_list_T1.tv_sec) + alloc_list_T2.tv_nsec - alloc_list_T1.tv_nsec;
+	//printf("allocation list creation time = %llu ns\n", (long long unsigned int)alloc_list_diff);
 #endif
 
 	cur_node = alloc_list_head;
-	printf("__[DEBUG] pos_local_gc: garbage detection start\n");
+#if SB_DEBUG
+	printf("[SB DEBUG : %s] garbage detection start\n", __func__);
+#endif
+before_while:
 	while(ptr != ms_ptr->last_chunk_pointer)
 	{
 	while_first:
+		//printf("	check1\n");
 		mem_ptr = chunk2mem(ptr);
+	//printf("[sb debug : %s] c node : 0x%lx, c chunk : %p\n", __func__, cur_node->addr, mem_ptr);
+	#if SB_DEBUG
+	printf("[sb debug : %s] c node : %p, ", __func__, cur_node);
+	if (cur_node != NULL)
+		printf("node addr : 0x%lx, ", cur_node->addr);
+	printf("mem_ptr : %p\n", mem_ptr);
+	#endif
+		//printf("	check2\n");
+		/* deleted for multi-thread
 		switch(type)
 		{
 			case 1 : list_state = get_list_state(); break;
 			case 2 : list_state = get_btree_state(); break;
 			case 3 : list_state = get_hash_state(); break;
 			default : printf("[local gc] wrong type!\n"); return;
+		}
+		*/
+		// SSB for btree
+		if (cur_node == NULL) {
+		#if SB_DEBUG
+			printNodes();
+		#endif
+			alloc_cnt = get_btree_alloc_cnt();
+			if (alloc_cnt) {
+				if (searchNode2((unsigned long)mem_ptr, alloc_cnt)) {
+				#if SB_DEBUG
+					printf("\tmem_ptr : %p in gc_list\n", mem_ptr);
+				#endif
+					ptr = next_chunk(ptr);
+					//goto while_first;
+					goto before_while;
+				}
+			}
 		}
 
 		while(inuse(ptr) != 0x1) //if a chunk is free, pass free chunks
@@ -218,23 +371,41 @@ int pos_local_gc(char* name)
 				next_seg_ptr = next_seg(ptr, chunksize(ptr));
 				if(chunksize(next_seg_ptr) != 0) //there is a next segment 
 				{
-				  	printf("__[DEBUG] pos_local_gc() : there is a next segment\n");
+				#if DK_DEBUG
+				        printf("__[DEBUG] pos_local_gc() : there is a next segment\n");
+				#endif
+				#if SB_DEBUG
+					printf("[debug sb : %s] free chunk1 : %p\n", __func__, ptr);
+				#endif
 					ptr = (mchunkptr)(chunksize(next_seg_ptr));
 					goto while_first;
 				}
 				else
 				{
+				#if DK_DEBUG
 				        printf("__[DEBUG] pos_local_gc() : there is no next segment\n");
+				#endif
+				#if SB_DEBUG
+					printf("[debug sb : %s] free chunk2 : %p\n", __func__, ptr);
+				#endif
 					break;
 				}
 			}
 			else
 			{
- 			        printf("__[DEBUG] pos_local_gc() : free chunk is detected\n");
+			#if DK_DEBUG
+			        printf("__[DEBUG] pos_local_gc() : free chunk is detected\n");
+			#endif
+			#if SB_DEBUG
+				printf("[debug sb : %s] free chunk3 : %p\n", __func__, ptr);
+			#endif
 				ptr = next_chunk(ptr);
 			}
 		}
-		nextchunk = next_chunk(ptr);
+       		
+     		//nextchunk = next_chunk(ptr);
+				
+		/*
 		if(type == 1 || type == 3)
 		{
 			if(chunk_is_last(ptr) == 0x4 && ptr == ms_ptr->last_allocated_chunk)
@@ -253,10 +424,13 @@ int pos_local_gc(char* name)
 				break;
 			}
 		}
+		*/
+		//printf("check5\n");
 
 		mem_ptr = chunk2mem(ptr);
 		if((void *)cur_node->addr == mem_ptr) //Chunk is not a garbage
 		{
+//	       	        printf("__[DEBUG] pos_local_gc() : garbage is not detected\n");
 			if(chunk_is_last(ptr) == 0x4)
 			{
 				next_seg_ptr = next_seg(ptr, chunksize(ptr));
@@ -278,6 +452,62 @@ int pos_local_gc(char* name)
 		}
 		else //Chunk is expected as a garbage
 		{
+		#if DK_DEBUG
+		        printf("__[DEBUG] pos_local_gc() : garbage is detected\n");
+		#endif
+		        mem_ptr = chunk2mem(ptr);
+
+			struct timespec temp_T1, temp_T2;
+			long long unsigned int temp_diff;	
+
+			memset(mem_ptr, 0, chunksize(ptr)-16);
+			
+#if POS_GC_DEBUG
+			clock_gettime(CLOCK_MONOTONIC, &temp_T1);
+#endif
+
+		        //printf("__[DEBUG] pos_local_gc() : garbage = %p\n", mem_ptr );
+			//				pos_free(name, mem_ptr);
+			pos_int_free(name, ms_ptr, mem2chunk(mem_ptr), 1);
+#if POS_GC_DEBUG
+
+			clock_gettime(CLOCK_MONOTONIC, &temp_T2);
+			total_free_T.tv_sec += (temp_T2.tv_sec - temp_T1.tv_sec);
+			total_free_T.tv_nsec += (temp_T2.tv_nsec - temp_T1.tv_nsec);
+			garbage_count++;
+if (garbage_count == 1)
+printf("[FREE NODES' POINTERS]\n");
+
+printf("[%d] 0x%lx ", garbage_count, (unsigned int)mem_ptr);
+#endif
+
+			if(chunk_is_last(ptr) == 0x4)
+			{
+
+			        next_seg_ptr = next_seg(ptr, chunksize(ptr));
+				if(chunksize(next_seg_ptr) != 0) //there is a next segment
+				{
+				#if DK_DEBUG
+				        printf("__[DEBUG] pos_local_gc() : garbage and there is a next segment\n");
+				#endif
+					ptr = (mchunkptr)(chunksize(next_seg_ptr));
+					}
+					else
+					{
+					#if DK_DEBUG
+					        printf("__[DEBUG] pos_local_gc() : garbage and there is no next segment\n");
+					#endif
+						break;
+					}
+				}
+				else
+				{
+				#if DK_DEBUG
+				        printf("__[DEBUG] pos_local_gc() : garbage and go to next chunk\n");
+				#endif
+					ptr = next_chunk(ptr);
+				}
+		        /*
 			if(list_state == 1 && ptr == ms_ptr->last_allocated_chunk) //partial allocated case
 			{
 				next_seg_ptr = next_seg(ptr, chunksize(ptr));
@@ -338,21 +568,27 @@ int pos_local_gc(char* name)
   				        printf("__[DEBUG] pos_local_gc() : garbage and go to next chunk\n");
 					ptr = next_chunk(ptr);
 				}
-			}
-		}
+				}*/
+		        }
 
-	}
+	        }
+	
+        //for debug
+//	display(alloc_list_head);
 
-#if POS_GC_DEBUG
+	//Free the Allocation List 
+	remove_list(alloc_list_head);
+//printf("[SSB DEBUG : %s] end test, garbage_count : %d\n", __func__, garbage_count);
+#if POS_GC_DEBUG == 1
 	clock_gettime(CLOCK_MONOTONIC, &T_2);
 	if(garbage_count) {
-		printf("\n\tTotal garbage count : %lu\n", garbage_count);
+		printf("\n\n\tTotal garbage count : %lu\n", garbage_count);
 		print_gc_time(T_1, T_2, alloc_list_T1, alloc_list_T2, total_free_T);
 		garbage_count = 0;
 	}
 #endif
 
-	return 0;
+	return garbage_count;
 }
 
 /*
@@ -436,7 +672,7 @@ pos_int_malloc(char *name, mstate av, size_t bytes)
 
 	// 1. fast bin (<=144)
 	if ((unsigned long)(nb) <= (unsigned long)(get_max_fast())) {
-		idx = fastbin_index(nb);
+	      	idx = fastbin_index(nb);
 		mfastbinptr* fb = &fastbin(av, idx);
 
 		victim = *fb;
@@ -451,12 +687,16 @@ pos_int_malloc(char *name, mstate av, size_t bytes)
 			void *p = chunk2mem(victim);
 			//마지막 할당된 청크를 기록
 			av->last_allocated_chunk = victim;
+			//dk s
+			set_inuse_bit_at_offset(victim, chunksize(victim));
+			//printf("pos_malloc(): fastbin\n");
+			//dk e
 			return p;
 		}
 	}
 
 	// 2. small bin (<=1008)
-	printf("[DEBUG] small bin start\n");
+	//printf("[DEBUG] small bin start\n");
 	if (in_smallbin_range(nb)) {
 		idx = smallbin_index(nb);
 		bin = bin_at(av,idx);
@@ -489,7 +729,7 @@ pos_int_malloc(char *name, mstate av, size_t bytes)
 		int iters = 0;
 
 		// 3. unsorted bin
-		printf("[DEBUG] unsorted bin start\n");
+		//printf("[DEBUG] unsorted bin start\n");
 		while ((victim = unsorted_chunks(av)->bk) != unsorted_chunks(av)) {
 			bck = victim->bk;
 			size = chunksize(victim);
@@ -498,7 +738,7 @@ pos_int_malloc(char *name, mstate av, size_t bytes)
 			   bck == unsorted_chunks(av) &&
 			   victim == av->last_remainder &&
 				(unsigned long)(size) > (unsigned long)(nb + MINSIZE)) { //initial state 
-			        printf("[DEBUG] in unsorted bin : victim is small bin range\n");
+			        //printf("[DEBUG] in unsorted bin : victim is small bin range\n");
 				remainder_size = size - nb;
 				remainder = chunk_at_offset(victim, nb);
 #if CONSISTENCY == 1
@@ -518,12 +758,12 @@ pos_int_malloc(char *name, mstate av, size_t bytes)
 // Remainder dosen't need logging...
 				if (chunk_is_last(victim))
 				{
-				        printf("victim chunk is last\n");
+			     	       //printf("victim chunk is last\n");
 					set_head(remainder, remainder_size | LAST_CHUNK | PREV_INUSE);
 					//마지막 청크에서 할당한 후 나머지 부분을 마지막 청크로 기록
 					if((unsigned long)av->last_chunk_pointer < (unsigned long)remainder)
 					{
-					  printf("reminder setting\n");
+					  //printf("reminder setting\n");
 						av->last_chunk_pointer = remainder;
 					}
 				}
@@ -547,7 +787,7 @@ pos_int_malloc(char *name, mstate av, size_t bytes)
 #else
 				if (chunk_is_first(victim))
 				{
-				        printf("victim chunk is first\n");
+				        //printf("victim chunk is first\n");
 					set_head(victim, nb | FIRST_CHUNK | PREV_INUSE);
 				}
 				else
@@ -657,7 +897,7 @@ pos_int_malloc(char *name, mstate av, size_t bytes)
 		}
 
 		// 4. large bin (1024<=)
-		printf("[DEBUG] large bin start\n");
+		//printf("[DEBUG] large bin start\n");
 		if (!in_smallbin_range(nb)) {
 
 			bin = bin_at(av, idx);
@@ -735,7 +975,7 @@ pos_int_malloc(char *name, mstate av, size_t bytes)
 		}
 
 		// 5. large bin in next size
-		printf("[DEBUG] large bin in next size start\n");		
+		//printf("[DEBUG] large bin in next size start\n");		
 		++idx;
 		bin = bin_at(av,idx);
 		block = idx2block(idx);
@@ -805,10 +1045,10 @@ pos_int_malloc(char *name, mstate av, size_t bytes)
 						av->last_remainder = remainder;
 #endif
 					}
-					printf("[DEBUG] victim address = %p\n", victim);
+					//printf("[DEBUG] victim address = %p\n", victim);
 					if (chunk_is_last(victim))
 					{
-					  	printf("[DEBUG] victim chunk is last(large bin)\n");
+					        //printf("[DEBUG] victim chunk is last(large bin)\n");
 						set_head(remainder, remainder_size | LAST_CHUNK | PREV_INUSE);
 						//마지막 청크에서 할당 후 나머지 부분을 마지막 청크로 기록
 						if((unsigned long)av->last_chunk_pointer < (unsigned long)remainder)
@@ -831,7 +1071,7 @@ pos_int_malloc(char *name, mstate av, size_t bytes)
 #else
 					if (chunk_is_first(victim))
 					{
-					  	printf("[DEBUG] victim chunk is first(large bin)\n");
+					        //printf("[DEBUG] victim chunk is first(large bin)\n");
 						set_head(victim, nb | FIRST_CHUNK | PREV_INUSE);
 					}	
 					else
@@ -845,24 +1085,33 @@ pos_int_malloc(char *name, mstate av, size_t bytes)
 				//가장 최근에 할당된 청크를 기록
 				av->last_allocated_chunk = victim;
 				void *p = chunk2mem(victim);
-				printf("[DEBUG] pos_malloc(): victim address(large bin) : %p\n", victim);
+				//printf("[DEBUG] pos_malloc(): victim address(large bin) : %p\n", victim);
 				return p;
 			}
 		}
 
 new_alloc:
-		printf("[DEBUG] new alloc start\n");
+		//printf("[DEBUG] new alloc start\n");
 		//새로운 세그먼트 할당 전에 한 번 Local GC 수행
+		//if(gc_result < 1 && ((av->segment_counter)%1000 == 0) && av->segment_counter > 1000)
 		if(gc_result < 1)
+		//if (!gc_result)
 		{
 			struct timeval T1, T2;
 			struct timespec T_1, T_2;
+		#if SB_DEBUG
 			printf("[DEBUG] pos_local_gc() is calling\n");
+		#endif
+			(void)mutex_lock(&gc_mutex);
 			pos_local_gc(name);
+			(void)mutex_unlock(&gc_mutex);
+		#if SB_DEBUG
 			printf("[DEBUG] pos_local_gc() is ended\n");
+		#endif
 		}
 		//한 번 이상 GC가 trigger 되는 것을 방지
-		if(gc_result == 1)
+		if (gc_result == 1)
+		//if(!gc_result)
 		{
 			gc_result++;
 			goto first;
@@ -870,7 +1119,7 @@ new_alloc:
 
 		size = (nb + MINSIZE +4*SIZE_SZ + pagemask) & ~pagemask;
 		char *mm = (char *)pos_seg_alloc(name, size);
-		printf("__[DEBUG] pos_seg_alloc is finished\n");
+		//printf("__[DEBUG] pos_seg_alloc is finished\n");
 		memset(mm , 0 , size);
 		total_chunks_size = 0;
 
@@ -891,7 +1140,7 @@ new_alloc:
 			//remainder_size 재 조정
 			remainder_size = size - nb - 4*SIZE_SZ;
 			remainder = chunk_at_offset(p, nb);
-			printf("__[DEBUG] reminder size adjust in finished\n");
+			//printf("__[DEBUG] reminder size adjust in finished\n");
 
 #if CONSISTENCY == 1
 			insert_to_unsorted_log(name, av, remainder, bck, fwd, remainder_size);
@@ -913,7 +1162,12 @@ new_alloc:
 			set_next_seg_pointer(remainder, remainder_size, 0); //initialize next seg pointer field
 			av->last_chunk_pointer = remainder;
 			av->last_allocated_chunk = chunk2mem(p);
-			
+
+			/* Dokeu Lee(161223) : Segment counter increase */
+	                av->segment_counter++;
+		#if DK_DEBUG
+			printf("segment_counter : %d\n", av->segment_counter);
+		#endif
 			return chunk2mem(p);
 		} 
 		else
@@ -942,7 +1196,7 @@ pos_int_free(char *name, mstate av, mchunkptr p, int flag)
 
 	//const char *errstr = NULL;
 
-
+	//printf("pos_int_free() : %p\n", p);
 	size = chunksize(p);
 	/*if ((uintptr_t) p > (uintptr_t) -size || misaligned_chunk (p)) {
 		errstr = "free(): invalid pointer";
@@ -960,6 +1214,7 @@ errout:
 
 	// fastbin
 	if (flag==1 && (unsigned long)(size) <= (unsigned long)(get_max_fast ())) {
+		//printf("pos_int_free() : fastbin\n");
 		/*if (chunk_at_offset (p, size)->size <= 2 * SIZE_SZ
 		   || chunksize (chunk_at_offset (p, size)) >= av->system_mem) {
 			errstr = "free(): invalid next size (fast)";
@@ -985,19 +1240,19 @@ errout:
 		p->fd = *fb;
 		*fb = p;
 #endif
-
+		clear_inuse_bit_at_offset(p, size);
 		return ;
 	}
 
 	// 1. First chunk
 	if (chunk_is_first(p)) {
-
+		//printf("pos_int_free() : 1\n");
 		nextchunk = next_chunk(p);
 		nextsize = chunksize(nextchunk);
 
 		// 1-1. (free F), free L
 		if (chunk_is_last(nextchunk) && !inuse(nextchunk)) {
-
+			//printf("pos_int_free() : 1-1\n");
 			//if (av < p && p < (char *)(av+PAGESIZE)){
 			if ((char*)av+sizeof(struct malloc_state) == (char*)p) {
 #if CONSISTENCY == 1
@@ -1030,8 +1285,16 @@ errout:
 					goto errout;
 				}*/
 				//FREE((char*)p, size);
+
 				pos_seg_free(name, (void *)p, size);
 				av->system_mem -= size;
+
+                                /* Dokeu Lee(161223) : Segment counter initialization */
+				av->segment_counter--;
+			#if DK_DEBUG
+				printf("pos_seg_free called, segment_counter = %d\n", av->segment_counter);
+			#endif
+
 #endif
 
 				goto out;
@@ -1041,6 +1304,7 @@ errout:
 
 		// 1-3. (free F), free M
 		else if (!inuse(nextchunk)) {
+			//printf("pos_int_free() : 1-3\n");
 #if CONSISTENCY == 1
 			unlink_log(name, nextchunk, bck, fwd);
 			size += nextsize;
@@ -1064,6 +1328,7 @@ errout:
 
 		// 1-2. (free F), inuse L & 1-4. (free F), inuse M
 		else {
+			//printf("pos_int_free() : 1-2\n");
 #if CONSISTENCY == 1
 			insert_to_unsorted_log(name, av, p, bck, fwd, size);
 
@@ -1083,14 +1348,14 @@ errout:
 
 	// 2. Last chunk
 	else if (chunk_is_last(p)) {
-
+		//printf("pos_int_free() : 2\n");
 		if (!prev_inuse(p)) {
 			prevchunk = prev_chunk(p);
 			prevsize = chunksize(prevchunk);
 
 			// 2-1. free F, (free L)
 			if (chunk_is_first(prevchunk)) {
-
+				printf("pos_int_free() : 2-1\n");
 				//if (av < prevchunk && prevchunk < av+PAGESIZE){
 				if((char*)av+sizeof(struct malloc_state) == (char*)prevchunk) {
 #if CONSISTENCY == 1
@@ -1123,6 +1388,11 @@ errout:
 					}*/
 					//FREE((char*)p, size);
 					pos_seg_free(name, (void *)p, size);
+					/* Dokeu Lee(161223) : Segment counter initialization */
+	                                av->segment_counter--;
+				#if DK_DEBUG
+					printf("pos_seg_free called, segment_counter = %d\n", av->segment_counter);
+				#endif
 					av->system_mem -= size;
 #endif
 
@@ -1133,6 +1403,7 @@ errout:
 
 			// 2-3. free M, (free L)
 			else {
+				//printf("pos_int_free() : 2-3\n");
 #if CONSISTENCY == 1
 				unlink_log(name, prevchunk, bck, fwd);
 				size += prevsize;
@@ -1166,6 +1437,7 @@ errout:
 
 		// 2-2. inuse F, (free L) & 2-4. inuse M, (free L)
 		else {
+			//printf("pos_int_free() : 2-2\n");
 #if CONSISTENCY == 1
 			insert_to_unsorted_log(name, av, p, bck, fwd, size);
   
@@ -1185,7 +1457,7 @@ errout:
 
 	// 3. Middle chunk
 	else {
-
+		//printf("pos_int_free() : 3\n");
 		nextchunk = next_chunk(p);
 		nextsize = chunksize(nextchunk);
 
@@ -1195,7 +1467,7 @@ errout:
 
 			// 3-1. free F, (free M), free L
 			if (chunk_is_first(prevchunk) && chunk_is_last(nextchunk) && !inuse(nextchunk) ) {
-	
+				//printf("pos_int_free() : 3-1\n");
 				//if (av < prevchunk && prevchunk < av+PAGESIZE){
 				if((char*)av+sizeof(struct malloc_state) == (char*)prevchunk) {
 #if CONSISTENCY == 1
@@ -1244,6 +1516,11 @@ errout:
 					}*/
 					//FREE((char*)p, size);
 					pos_seg_free(name, (void *)p, size);
+					/* Dokeu Lee(161223) : Segment counter initialization */
+	                                av->segment_counter--;
+				#if DK_DEBUG
+					printf("pos_seg_free called, segment_counter = %d\n", av->segment_counter);
+				#endif
 					av->system_mem -= size;
   #endif
   
@@ -1490,7 +1767,136 @@ errout:
   ------------------------------ pos_malloc_init_state ------------------------------
 */
 
+//static void
+/*
+void
+pos_malloc_init_state(char *name, mstate av)
+{
+	mchunkptr	first_chunk;
+	unsigned long	first_size;
+	mchunkptr	last_chunk;
+	unsigned long	last_size;
+
+	mchunkptr       bck;
+	mchunkptr       fwd;
+
+	int	i;
+	mbinptr	bin;
+
+
+	// initialize malloc_state
+#if CONSISTENCY == 1
+	set_init_key_log(name, av);
+#else
+	set_init_key(av);
+#endif
+
+// Below codes don't need logging.
+
+	//for test
+	//printf("======================= FOR TEST ========================\n");
+	//printf("size of malloc_state =%lu\n", sizeof(struct malloc_state));
+	//printf("=========================================================\n");
+
+
+	//mutex init
+	mutex_init(&av->mutex);
+		   
+	for (i=1; i < NBINS; i++) {
+		bin = bin_at(av,i);
+		bin->fd = bin->bk = bin;
+	}
+
+	//set_max_fast(DEFAULT_MXFAST);
+	clear_fastchunks(av);
+	for (i=0; i< NFASTBINS ; i++) {
+		av->fastbinsY[i] = 0;
+	}
+
+	// first chunk
+	first_chunk = chunk_at_offset(av, sizeof(struct malloc_state));
+//170908
+//	first_size = (PAGESIZE - sizeof(struct malloc_state) - 4*SIZE_SZ)/2;
+first_size = (PAGESIZE - sizeof(struct malloc_state) - 4*SIZE_SZ)/2;
+	//printf("first chunk size = %d\n", first_size);
+	//printf("size_sz =%d\n", SIZE_SZ);
+       
+	//first_size = 0;
+//#endif
+//170907
+//insert_to_unsorted(av, first_chunk, bck, fwd, first_size);
+
+    	set_head(first_chunk, first_size | FIRST_CHUNK | PREV_INUSE);
+	//set_head(first_chunk, first_size | FIRST_CHUNK);
+	set_foot(first_chunk, first_size);
+	clear_inuse_bit_at_offset(first_chunk, first_size);
+	//printf("[DEBUG] pos_malloc_init_state(): first address = %p\n", first_chunk);
+	//printf("[DEBUG] first : chunk_is_first? : %d\n", chunk_is_first(first_chunk));
+	//printf("[DEBUG] first : chunk_is_last? : %d\n", chunk_is_last(first_chunk));
+	//printf("[DEBUG] first : value = %d\n", first_size|FIRST_CHUNK|PREV_INUSE);
+
+	// last_chunk
+	last_chunk = chunk_at_offset(first_chunk, first_size);
+	//last_size = first_size;
+//#if CONSISTENCY == 1
+	////last_size = (128*1024)*4096 + 944; // 536867760
+	//last_size = (256*1024)*4096 - first_size - 2*SIZE_SZ;
+	//last_size = request2size(last_size); // 536874032
+//#else
+//	last_size = 988;
+//	last_size = 1480;
+     	last_size = first_size;
+
+#if SB_DEBUG
+	printf("[sb debug : %s] first chunk : %p\n", __func__, first_chunk);
+	printf("[sb debug : %s] last chunk : %p\n", __func__, last_chunk);
+#endif
+//#endif
+#if SB_DEBUG
+	printf("[sb debug : %s] 1 bck : %p, fwd : %p\n", __func__, bck, fwd);
+	usleep(10);
+#endif
+	insert_to_unsorted(av, last_chunk, bck, fwd, last_size);
+//170907
+#if SB_DEBUG
+	printf("[sb debug : %s] 2 bck : %p, fwd : %p\n", __func__, bck, fwd);
+	usleep(10);
+#endif
+	insert_to_unsorted(av, first_chunk, bck, fwd, first_size);
+
+	set_head(last_chunk, last_size | LAST_CHUNK | PREV_INUSE);
+	//마지막 청크 초기화
+	av->last_chunk_pointer = last_chunk;
+	set_foot(last_chunk, last_size);
+	clear_inuse_bit_at_offset(last_chunk, last_size);
+	//printf("[DEBUG] pos_malloc_init_state(): last address = %p\n", last_chunk);
+	//printf("[DEBUG] last : chunk_is_first? : %d\n", chunk_is_first(last_chunk));
+	//printf("[DEBUG] last : chunk_is_last? : %d\n", chunk_is_last(last_chunk));
+
+	//다음 세그먼트 관리를 위한 메타데이터 초기화
+	set_next_seg_pointer(last_chunk, last_size, 0);
+	mchunkptr temp_p;
+	temp_p = next_seg(last_chunk, last_size);
+	temp_p = (mchunkptr)((char*)last_chunk + chunksize(last_chunk)+SIZE_SZ);
+	
+	av->last_remainder = 0;
+	for (i=0; i<BINMAPSIZE; i++) {
+		av->binmap[i] = 0;
+	}
+	av->system_mem = PAGESIZE;
+
+	av->prime_obj = NULL;
+	
+	// Dokeu Lee(161223) : Segment counter initialization
+	av->segment_counter = 0;
+
+	// SSB for gc_list
+	gc_list.head = gc_list.tail = NULL;
+}
+*/
 //static void 
+
+//170908
 void
 pos_malloc_init_state(char *name, mstate av)
 {
@@ -1517,15 +1923,6 @@ pos_malloc_init_state(char *name, mstate av)
 
 // Below codes don't need logging.
 
-	//for test
-	printf("======================= FOR TEST ========================\n");
-	printf("size of malloc_state =%lu\n", sizeof(struct malloc_state));
-	printf("=========================================================\n");
-
-
-	//mutex init
-	mutex_init(&av->mutex);
-		   
 	for (i=1; i < NBINS; i++) {
 		bin = bin_at(av,i);
 		bin->fd = bin->bk = bin;
@@ -1539,22 +1936,34 @@ pos_malloc_init_state(char *name, mstate av)
 
 	// first chunk
 	first_chunk = chunk_at_offset(av, sizeof(struct malloc_state));
-	first_size = (PAGESIZE - sizeof(struct malloc_state) - 5*SIZE_SZ)/2;
-	printf("first chunk size = %d\n", first_size);
-	printf("size_sz =%d\n", SIZE_SZ);
-       
-	//first_size = 0;
-//#endif
-	insert_to_unsorted(av, first_chunk, bck, fwd, first_size);
+	//first_size = (PAGESIZE - sizeof(struct malloc_state) - 2*SIZE_SZ)/2;	// 956
+	//dk s
+	first_size = (PAGESIZE - sizeof(struct malloc_state) - 4*SIZE_SZ)/2;	// 4kb - 2172 - 16
+	first_size = 0;
+	//printf("mstate size = %lu\n", sizeof(struct malloc_state));
+	//printf("page size = %d\n", PAGESIZE);
+	//printf("first chunk size = %lu\n", first_size);
+	//printf("SIZE_SZ size = %lu\n", SIZE_SZ);
+	//dk e
+   
 
-    	set_head(first_chunk, first_size | FIRST_CHUNK | PREV_INUSE);
-	//set_head(first_chunk, first_size | FIRST_CHUNK);
+//#if CONSISTENCY == 1
+	//first_size = (128*1024-1)*4096 + 960; //536867776
+	//first_size = request2size(first_size); // 536867792
+//#else
+	//dk s
+//	first_size = 0;
+	//dk e
+//#endif
+//insert_to_unsorted(av, first_chunk, bck, fwd, first_size);
+
+	set_head(first_chunk, first_size | FIRST_CHUNK | PREV_INUSE);
 	set_foot(first_chunk, first_size);
 	clear_inuse_bit_at_offset(first_chunk, first_size);
-	printf("[DEBUG] pos_malloc_init_state(): first address = %p\n", first_chunk);
-	printf("[DEBUG] first : chunk_is_first? : %d\n", chunk_is_first(first_chunk));
-	printf("[DEBUG] first : chunk_is_last? : %d\n", chunk_is_last(first_chunk));
-	printf("[DEBUG] first : value = %d\n", first_size|FIRST_CHUNK|PREV_INUSE);
+	//dk s
+	//insert_to_unsorted(av, first_chunk, bck, fwd, first_size);
+	//dk e
+
 	// last_chunk
 	last_chunk = chunk_at_offset(first_chunk, first_size);
 	//last_size = first_size;
@@ -1564,25 +1973,35 @@ pos_malloc_init_state(char *name, mstate av)
 	//last_size = request2size(last_size); // 536874032
 //#else
 //	last_size = 988;
-//	last_size = 1480;
-     	last_size = first_size;
+	//dk s
+	//last_size = 1456;
+	//last_size = first_size;
+	last_size = 1480;
+	//dk e
 //#endif
 	insert_to_unsorted(av, last_chunk, bck, fwd, last_size);
 
 	set_head(last_chunk, last_size | LAST_CHUNK | PREV_INUSE);
-	//마지막 청크 초기화
+	//dk s
+	//av->last_chunk_pointer = last_chunk;
+	//if((unsigned long)av->last_chunk_pointer < (unsigned long)last_chunk)
+	//{
+	//	printf("remainder : %p, is_last : %lu\n", last_chunk, chunk_is_last(last_chunk));
 	av->last_chunk_pointer = last_chunk;
+	//}
+	//dk e
 	set_foot(last_chunk, last_size);
 	clear_inuse_bit_at_offset(last_chunk, last_size);
-	printf("[DEBUG] pos_malloc_init_state(): last address = %p\n", last_chunk);
-	printf("[DEBUG] last : chunk_is_first? : %d\n", chunk_is_first(last_chunk));
-	printf("[DEBUG] last : chunk_is_last? : %d\n", chunk_is_last(last_chunk));
-	//다음 세그먼트 관리를 위한 메타데이터 초기화
+
+	//dk s
 	set_next_seg_pointer(last_chunk, last_size, 0);
 	mchunkptr temp_p;
 	temp_p = next_seg(last_chunk, last_size);
+	//printf("temp_p : %p\n", temp_p);
 	temp_p = (mchunkptr)((char*)last_chunk + chunksize(last_chunk)+SIZE_SZ);
+	//printf("next seg : %lu\n", chunksize(temp_p));
 	
+	//dk e
 	av->last_remainder = 0;
 	for (i=0; i<BINMAPSIZE; i++) {
 		av->binmap[i] = 0;
@@ -1590,9 +2009,13 @@ pos_malloc_init_state(char *name, mstate av)
 	av->system_mem = PAGESIZE;
 
 	av->prime_obj = NULL;
+
+	av->segment_counter = 0;
+	gc_list.head = gc_list.tail = NULL;
+	//sb s
+	//av->total_alloc_size = 0;
+	//sb e
 }
-
-
 
 /*
   ------------------------------ pos_malloc_wrapper ------------------------------
@@ -1623,6 +2046,15 @@ pos_public_mALLOc(char *name, unsigned long _bytes)
 
 	(void)mutex_lock(&ar_ptr->mutex);
 	victim = pos_int_malloc(name, ar_ptr, bytes);
+	// SSB for btree
+	insertNode((unsigned long)victim);
+	if (listCnt < 100)
+		listCnt++;
+	//printNodes();
+	//end
+	#if SB_DEBUG
+	printf("new chunk %p is allocated\n", victim);
+	#endif
 	(void)mutex_unlock(&ar_ptr->mutex);
 
 #if POS_GC_DEBUG == 1
@@ -1741,11 +2173,25 @@ pos_set_prime_object(char *name, void *obj)
 	struct malloc_state *ar_ptr;
 
 	ar_ptr = (struct malloc_state *)pos_lookup_mstate(name);
+#if SB_DEBUG
+	usleep(10);
+	printf("[sb debug : %s] name : %s, ar_ptr : %p, obj : %p\n", __func__, name, ar_ptr, obj);
+	usleep(10);
+#endif
 	if (ar_ptr == NULL) {
+#if SB_DEBUG
+	printf("[sb debug : %s] returned!\n", __func__);
+	usleep(10);
+#endif
 		return;
 	}
 
 	ar_ptr->prime_obj = obj;
+
+#if SB_DEBUG
+	printf("[sb debug : %s] name : %s, ar_ptr->prime_obj : %p, obj : %p\n", __func__, name, ar_ptr->prime_obj, obj);
+	usleep(10);
+#endif
 /*#if CONSISTENCY == 1
 	POS_WRITE_VAUE(name, (unsigned long *)&ar_ptr->prime_obj, (unsigned long)obj);
 #else
